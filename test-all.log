@@ -10,3 +10,442 @@ d0f0efc0919dafdb8387c7a7dc69027d5e8949d5
 ~/cron/ldms-test /mnt/300G/data/2022-09-20-003518
 ~/cron/ldms-test/weekly-report ~/cron/ldms-test /mnt/300G/data/2022-09-20-003518
 HEAD is now at 5394f45 2022-09-19-221015
+[master 51889d4] 2022-09-20-003518
+ 2 files changed, 14 insertions(+), 17435 deletions(-)
+ rewrite test-all.log (99%)
+To github.com:ldms-test/weekly-report
+   5394f45..51889d4  master -> master
+~/cron/ldms-test /mnt/300G/data/2022-09-20-003518
+2022-09-20 00:35:21 INFO: ==== OVIS+SOS Installation Completed ====
+2022-09-20 00:35:21 INFO: ==== Start batch testing ====
+~/cron/ldms-test /mnt/300G/data/2022-09-20-003518 ~/cron/ldms-test ~/cron/ldms-test
+2022-09-20 00:35:21 INFO: ======== direct_ldms_ls_conn_test ========
+2022-09-20 00:35:21 INFO: CMD: python3 direct_ldms_ls_conn_test --prefix /opt/ovis --src /mnt/300G/data --data_root /mnt/300G/data/2022-09-20-003518/data/direct_ldms_ls_conn_test
+2022-09-20 00:35:22,404 TADA INFO starting test `direct_ldms_ls_conn_test`
+2022-09-20 00:35:22,404 TADA INFO   test-id: 23fa3eb387cdd58e198e036e87e6e6752f7e21f5b114c0fb47b7e3d402f23d66
+2022-09-20 00:35:22,404 TADA INFO   test-suite: LDMSD
+2022-09-20 00:35:22,404 TADA INFO   test-name: direct_ldms_ls_conn_test
+2022-09-20 00:35:22,405 TADA INFO   test-user: narate
+2022-09-20 00:35:22,405 TADA INFO   commit-id: d0f0efc0919dafdb8387c7a7dc69027d5e8949d5
+2022-09-20 00:35:22,638 __main__ INFO starting munged on cygnus-01-iw
+2022-09-20 00:35:22,951 __main__ INFO starting munged on localhost
+2022-09-20 00:35:23,202 __main__ INFO starting ldmsd on cygnus-01-iw
+2022-09-20 00:35:23,669 TADA INFO assertion 0, Start ldmsd sampler and munged: OK, passed
+2022-09-20 00:35:29,000 TADA INFO assertion 1, ldms_ls to the sampler: OK, passed
+2022-09-20 00:35:29,000 __main__ INFO Stopping sampler daemon ...
+2022-09-20 00:35:34,411 TADA INFO assertion 2, Kill the sampler: OK, passed
+2022-09-20 00:35:34,447 TADA INFO assertion 3, ldms_ls to the dead sampler: got expected output, passed
+2022-09-20 00:35:34,481 TADA INFO assertion 4, ldms_ls to a dead host: got expected output, passed
+2022-09-20 00:35:34,481 TADA INFO test direct_ldms_ls_conn_test ended
+2022-09-20 00:35:34,692 __main__ INFO stopping munged on cygnus-01-iw
+2022-09-20 00:35:35,091 __main__ INFO stopping munged on localhost
+2022-09-20 00:35:35 INFO: ----------------------------------------------
+2022-09-20 00:35:35 INFO: ======== direct_prdcr_subscribe_test ========
+2022-09-20 00:35:35 INFO: CMD: python3 direct_prdcr_subscribe_test --prefix /opt/ovis --src /mnt/300G/data --data_root /mnt/300G/data/2022-09-20-003518/data/direct_prdcr_subscribe_test
+2022-09-20 00:35:35,935 TADA INFO starting test `direct_prdcr_subscribe_test`
+2022-09-20 00:35:35,936 TADA INFO   test-id: 4bc71ab474883c71167659ece21634eac8929780132877a6f5efbb44317a4a28
+2022-09-20 00:35:35,936 TADA INFO   test-suite: LDMSD
+2022-09-20 00:35:35,936 TADA INFO   test-name: direct_prdcr_subscribe_test
+2022-09-20 00:35:35,936 TADA INFO   test-user: narate
+2022-09-20 00:35:35,936 TADA INFO   commit-id: d0f0efc0919dafdb8387c7a7dc69027d5e8949d5
+2022-09-20 00:35:38,603 __main__ INFO starting munged on cygnus-01-iw
+2022-09-20 00:35:39,365 __main__ INFO starting munged on cygnus-02-iw
+2022-09-20 00:35:40,089 __main__ INFO starting munged on cygnus-03-iw
+2022-09-20 00:35:40,833 __main__ INFO starting munged on cygnus-04-iw
+2022-09-20 00:35:41,146 __main__ INFO starting munged on localhost
+2022-09-20 00:35:41,375 __main__ INFO starting ldmsd on cygnus-01-iw
+2022-09-20 00:35:41,872 __main__ INFO starting ldmsd on cygnus-02-iw
+2022-09-20 00:35:42,392 __main__ INFO starting ldmsd on cygnus-03-iw
+2022-09-20 00:35:42,927 __main__ INFO starting ldmsd on cygnus-04-iw
+2022-09-20 00:35:49,818 TADA INFO assertion 0, ldmsd_stream_publish of JSON data to stream-sampler-1 succeeds: verify JSON data, passed
+2022-09-20 00:35:49,819 TADA INFO assertion 1, ldmsd_stream_publish of STRING data to stream-sampler-1 succeeds: verify STRING data, passed
+2022-09-20 00:35:49,819 TADA INFO assertion 2, ldmsd_stream_publish to JSON data to stream-sampler-2 succeeds: verify JSON data, passed
+2022-09-20 00:35:49,820 TADA INFO assertion 3, ldmsd_stream_publish of STRING data to stream-sampler-2 succeeds: verify STRING data, passed
+2022-09-20 00:35:49,821 TADA INFO assertion 4, ldmsd_stream data check on agg-2: agg2 stream data verified, passed
+2022-09-20 00:35:49,954 TADA INFO assertion 5, Stopping the producers succeeds: agg-1 producers stopped, passed
+2022-09-20 00:35:50,956 TADA INFO assertion 6, Restarting the producers succeeds: agg-1 producers started, passed
+2022-09-20 00:35:57,528 TADA INFO assertion 7, JSON stream data resumes after producer restart on stream-sampler-1: verify JSON data, passed
+2022-09-20 00:35:57,529 TADA INFO assertion 8, STRING stream data resumes after producer rerestart on stream-sampler-1: verify STRING data, passed
+2022-09-20 00:35:57,530 TADA INFO assertion 9, JSON stream data resumes after producer restart on stream-sampler-2: verify JSON data, passed
+2022-09-20 00:35:57,530 TADA INFO assertion 10, STRING stream data resumes after producer rerestart on stream-sampler-2: verify STRING data, passed
+2022-09-20 00:35:57,531 TADA INFO assertion 11, ldmsd_stream data resume check on agg-2: agg2 stream data verified, passed
+2022-09-20 00:35:57,532 __main__ INFO stopping sampler-1
+2022-09-20 00:35:58,931 TADA INFO assertion 12, stream-sampler-1 is not running: sampler-1 stopped, passed
+2022-09-20 00:35:58,931 __main__ INFO starting sampler-1
+2022-09-20 00:36:00,187 TADA INFO assertion 13, stream-sampler-1 has restarted: sampler-1 running, passed
+2022-09-20 00:36:00,187 __main__ INFO allow some time for prdcr to reconnect ...
+2022-09-20 00:36:06,110 TADA INFO assertion 14, JSON stream data resumes after stream-sampler-1 restart: verify JSON data, passed
+2022-09-20 00:36:06,111 TADA INFO assertion 15, STRING stream data resumes after stream-sampler-1 restart: verify STRING data, passed
+2022-09-20 00:36:06,111 TADA INFO assertion 16, ldmsd_stream data check on agg-2 after stream-sampler-1 restart: agg2 stream data verified, passed
+2022-09-20 00:36:06,113 TADA INFO assertion 17, agg-1 unsubscribes stream-sampler-1: unsubscribed, passed
+2022-09-20 00:36:08,265 TADA INFO assertion 18, agg-1 receives data only from stream-sampler-2: data verified, passed
+2022-09-20 00:36:08,270 __main__ INFO stopping agg-1
+2022-09-20 00:36:13,493 TADA INFO assertion 19, stream-sampler-2 removes agg-1 stream client after disconnected: verified, passed
+2022-09-20 00:36:13,494 TADA INFO test direct_prdcr_subscribe_test ended
+2022-09-20 00:36:13,700 __main__ INFO stopping munged on cygnus-01-iw
+2022-09-20 00:36:14,101 __main__ INFO stopping ldmsd on cygnus-01-iw
+2022-09-20 00:36:14,503 __main__ INFO stopping munged on cygnus-02-iw
+2022-09-20 00:36:14,901 __main__ INFO stopping ldmsd on cygnus-02-iw
+2022-09-20 00:36:15,316 __main__ INFO stopping munged on cygnus-03-iw
+2022-09-20 00:36:15,958 __main__ INFO stopping munged on cygnus-04-iw
+2022-09-20 00:36:16,388 __main__ INFO stopping ldmsd on cygnus-04-iw
+2022-09-20 00:36:16,602 __main__ INFO stopping munged on localhost
+2022-09-20 00:36:16 INFO: ----------------------------------------------
+2022-09-20 00:36:16 INFO: ======== agg_slurm_test ========
+2022-09-20 00:36:16 INFO: CMD: python3 agg_slurm_test --prefix /home/narate/cron/ldms-test/ldms-containers/ovis --runtime docker --image ovishpc/ldms-dev --src /mnt/300G/data --data_root /mnt/300G/data/2022-09-20-003518/data/agg_slurm_test
+2022-09-20 00:36:17,504 TADA INFO starting test `agg_slurm_test`
+2022-09-20 00:36:17,504 TADA INFO   test-id: e23d7b258f85e783737cd1f4b8666a6f799c8a4cf86ef2757035cd37e1b56024
+2022-09-20 00:36:17,505 TADA INFO   test-suite: LDMSD
+2022-09-20 00:36:17,505 TADA INFO   test-name: agg_slurm_test
+2022-09-20 00:36:17,505 TADA INFO   test-user: narate
+2022-09-20 00:36:17,505 TADA INFO   commit-id: d0f0efc0919dafdb8387c7a7dc69027d5e8949d5
+2022-09-20 00:36:17,506 __main__ INFO -- Get or create the cluster --
+2022-09-20 00:37:31,139 __main__ INFO -- Preparing syspapi JSON file --
+2022-09-20 00:37:31,237 __main__ INFO -- Preparing jobpapi JSON file --
+2022-09-20 00:37:31,334 __main__ INFO -- Preparing job script & programs --
+2022-09-20 00:37:34,110 __main__ INFO -- Start daemons --
+2022-09-20 00:37:49,330 __main__ INFO ... wait a bit to make sure ldmsd's are up
+2022-09-20 00:37:54,334 __main__ INFO -- ldms_ls to agg-2 --
+2022-09-20 00:37:54,456 TADA INFO assertion 1, ldms_ls agg-2: dir result verified, passed
+2022-09-20 00:37:54,626 __main__ INFO -- Give syspapi some time to work before submitting job --
+2022-09-20 00:37:59,630 __main__ INFO -- Submitting jobs --
+2022-09-20 00:37:59,782 __main__ INFO job_one: 1
+2022-09-20 00:37:59,892 __main__ INFO job_two: 2
+2022-09-20 00:38:09,902 __main__ INFO -- Cancelling jobs --
+2022-09-20 00:38:09,902 __main__ INFO job_one: 1
+2022-09-20 00:38:10,048 __main__ INFO job_two: 2
+2022-09-20 00:39:19,416 TADA INFO assertion 2, slurm data verification: get expected data from store, passed
+2022-09-20 00:39:19,416 TADA INFO assertion 3, meminfo data verification: No data missing, failed
+Traceback (most recent call last):
+  File "agg_slurm_test", line 590, in <module>
+    test.assert_test(3, len(meminfo) > 5 and missing_counts == 0, "No data missing")
+  File "/home/narate/cron/ldms-test/TADA.py", line 157, in assert_test
+    raise AssertionException(self.test_desc + ", " + cond_str + ": FAILED")
+TADA.AssertionException: LDMSD 2-level agg with slurm, No data missing: FAILED
+2022-09-20 00:39:19,422 TADA INFO assertion 4, (SYS/JOB) PAPI data verification: skipped
+2022-09-20 00:39:19,422 TADA INFO test agg_slurm_test ended
+2022-09-20 00:40:48 INFO: ----------------------------------------------
+2022-09-20 00:40:49 INFO: ======== maestro_cfg_test ========
+2022-09-20 00:40:49 INFO: CMD: python3 maestro_cfg_test --prefix /home/narate/cron/ldms-test/ldms-containers/ovis --runtime docker --image ovishpc/ldms-dev --src /mnt/300G/data --data_root /mnt/300G/data/2022-09-20-003518/data/maestro_cfg_test
+2022-09-20 00:40:49,901 TADA INFO starting test `maestro_cfg_test`
+2022-09-20 00:40:49,901 TADA INFO   test-id: 6172c6de3763945d08b7169c8784a4deb5e3bce6371545038ed13d517a2bc423
+2022-09-20 00:40:49,901 TADA INFO   test-suite: LDMSD
+2022-09-20 00:40:49,901 TADA INFO   test-name: maestro_cfg_test
+2022-09-20 00:40:49,901 TADA INFO   test-user: narate
+2022-09-20 00:40:49,901 TADA INFO   commit-id: d0f0efc0919dafdb8387c7a7dc69027d5e8949d5
+2022-09-20 00:40:59,913 __main__ INFO -- Get or create cluster --
+2022-09-20 00:43:36,715 __main__ INFO -- Start daemons --
+2022-09-20 00:43:59,445 __main__ INFO ... make sure ldmsd's are up
+2022-09-20 00:44:32,437 TADA INFO assertion 1, load maestro etcd cluster: etcd cluster loaded successfully, passed
+2022-09-20 00:45:12,459 TADA INFO assertion 2, config ldmsd cluster with maestro: Maestro ldmsd configuration successful, passed
+2022-09-20 00:45:14,044 TADA INFO assertion 3, verify sampler daemons: OK, passed
+2022-09-20 00:45:14,627 TADA INFO assertion 4, verify L1 aggregator daemons: OK, passed
+2022-09-20 00:45:14,886 TADA INFO assertion 5, verify L2 aggregator daemon: OK, passed
+2022-09-20 00:45:15,177 TADA INFO assertion 6, verify data storage: OK, passed
+---Wait for config to write to file---
+2022-09-20 00:45:15,178 TADA INFO test maestro_cfg_test ended
+2022-09-20 00:47:57 INFO: ----------------------------------------------
+rm: cannot remove '/mnt/300G/data/2022-09-20-003518/data/maestro_cfg_test/containers/ldms_data': Permission denied
+2022-09-20 00:47:58 INFO: ======== test-ldms ========
+2022-09-20 00:47:58 INFO: CMD: /home/narate/cron/ldms-test/ldms-containers/test/test-ldms/test.sh
+2022-09-20T00:47:58-05:00 INFO: starting test-samp-1
+0eea65a5388247322775c30af7a4f0409c3b4103948056d7d329f6a836bc58cf
+2022-09-20T00:48:25-05:00 INFO: starting test-samp-2
+c8a99dd927f0b828150de55340c2778b001f061f8b180c5ba6f9f32f868d54c7
+2022-09-20T00:48:34-05:00 INFO: starting test-samp-3
+9b13cc1c1a01499234228fa99beac6cfeb00f6fc8d1c13c7378beaa72633b1fe
+2022-09-20T00:48:41-05:00 INFO: starting test-samp-4
+7901d8ed366c29d2924269a74caa6186744f5fe69e1cc98305505ac61902105c
+2022-09-20T00:48:48-05:00 INFO: test-samp-1 is running
+2022-09-20T00:48:48-05:00 INFO: test-samp-2 is running
+2022-09-20T00:48:48-05:00 INFO: test-samp-3 is running
+2022-09-20T00:48:48-05:00 INFO: test-samp-4 is running
+2022-09-20T00:48:48-05:00 INFO: starting test-agg-11
+1390e5f9571d0a5acaf06dfd02261dc7a77a2211b6b229ea0e45ff07e80de6f0
+2022-09-20T00:48:55-05:00 INFO: starting test-agg-12
+1ec95841d4ecc6790070d803e416672a863c9070e920a5b14c86e6f8cd23415e
+2022-09-20T00:49:01-05:00 INFO: test-agg-11 is running
+2022-09-20T00:49:01-05:00 INFO: test-agg-12 is running
+2022-09-20T00:49:01-05:00 INFO: starting test-agg-2
+55cef3776883e1e252f26a01bf745b34cf0c3830d1b2e2d6a84778505609c646
+2022-09-20T00:49:08-05:00 INFO: test-agg-2 is running
+2022-09-20T00:49:08-05:00 INFO: Collecting data (into SOS)
+2022-09-20T00:49:18-05:00 INFO: Checking SOS data
+Component IDs: {1, 2, 3, 4}
+2022-09-20T00:49:29-05:00 INFO: check rc: 0
+2022-09-20T00:49:29-05:00 INFO: Cleaning up ...
+test-samp-1
+test-samp-2
+test-samp-3
+test-samp-4
+test-agg-11
+test-agg-12
+test-agg-2
+2022-09-20T00:49:49-05:00 INFO: DONE
+2022-09-20 00:49:59 INFO: ----------------------------------------------
+2022-09-20 00:49:59 INFO: ======== test-maestro ========
+2022-09-20 00:49:59 INFO: CMD: /home/narate/cron/ldms-test/ldms-containers/test/test-maestro/test.sh
+2022-09-20T00:49:59-05:00 INFO: starting mtest-maestro
+510558aaf1dcf6cb39cc4cf92e8233f57de05a8eb58d5b3cd5c68d2822682904
+2022-09-20T00:50:07-05:00 INFO: starting mtest-samp-1
+fcaa17cd286f1f553df22676227c44ef9910e055616c45cfc3254415ea3b5939
+2022-09-20T00:50:16-05:00 INFO: starting mtest-samp-2
+674238fe9a84906369f57084864d33bdc682edab98bc0228cc602ffd47d36b80
+2022-09-20T00:50:24-05:00 INFO: starting mtest-samp-3
+539997a6587f64bbf2bfd65ecd4ed1adb1e3b5d15c142acd989562c3dde06174
+2022-09-20T00:50:34-05:00 INFO: starting mtest-samp-4
+b1f43b6b995dcfd2d410e81dc344f5ec46ad121e58ce3c18bd8e7f3c7ffc7787
+2022-09-20T00:50:43-05:00 INFO: mtest-samp-1 is running
+2022-09-20T00:50:43-05:00 INFO: mtest-samp-2 is running
+2022-09-20T00:50:43-05:00 INFO: mtest-samp-3 is running
+2022-09-20T00:50:43-05:00 INFO: mtest-samp-4 is running
+2022-09-20T00:50:43-05:00 INFO: starting mtest-agg-11
+b2b1a7475f8512fd504ce76b32f947a2a20b3aefdc322940e6c8d4684b31408b
+2022-09-20T00:50:53-05:00 INFO: starting mtest-agg-12
+ac9fa0b2942d603dba232e03b486163337caf73883004b2e86b88e623f1cbcc8
+2022-09-20T00:50:59-05:00 INFO: mtest-agg-11 is running
+2022-09-20T00:50:59-05:00 INFO: mtest-agg-12 is running
+2022-09-20T00:50:59-05:00 INFO: starting mtest-agg-2
+773b8ea0fb8c7f6b768895d839e1342bdb120fec7f117c81b836e09ad6d72b49
+2022-09-20T00:51:05-05:00 INFO: mtest-agg-2 is running
+2022-09-20T00:51:05-05:00 INFO: Collecting data (into SOS)
+mtest-agg-11
+mtest-agg-12
+2022-09-20T00:51:18-05:00 INFO: Checking SOS data
+Component IDs: {1, 2, 3, 4}
+2022-09-20T00:51:30-05:00 INFO: sos check rc: 0
+2022-09-20T00:51:32-05:00 INFO: starting mtest-ui
+50d8e8c387a74ecf2d4545f74ade1993a47608d869313a3d22fb51d7308c9aeb
+2022-09-20T00:51:43-05:00 INFO: Checking query from mtest-ui: http://mtest-ui/grafana/query
+query results: b'[{"target": "Active", "datapoints": [[3838728, 1663653070001.63], [3839100, 1663653071001.137], [3839100, 1663653071001.23], [3839100, 1663653071001.349], [3839100, 1663653071002.493], [3839112, 1663653072001.307], [3839112, 1663653072001.334], [3839112, 1663653072001.3372], [3839112, 1663653072001.587], [3839112, 1663653073001.321], [3839112, 1663653073001.454], [3839112, 1663653073001.461], [3839112, 1663653073001.466], [3839112, 1663653074000.9548], [3839112, 1663653074001.444], [3839112, 1663653074001.465], [3839112, 1663653074001.571], [3839112, 1663653075001.385], [3839112, 1663653075001.601], [3839112, 1663653075001.602], [3839112, 1663653075001.6052]]}, {"target": "component_id", "datapoints": [[3, 1663653070001.63], [4, 1663653071001.137], [1, 1663653071001.23], [2, 1663653071001.349], [3, 1663653071002.493], [4, 1663653072001.307], [2, 1663653072001.334], [1, 1663653072001.3372], [3, 1663653072001.587], [2, 1663653073001.321], [3, 1663653073001.454], [4, 1663653073001.461], [1, 1663653073001.466], [3, 1663653074000.9548], [1, 1663653074001.444], [2, 1663653074001.465], [4, 1663653074001.571], [2, 1663653075001.385], [1, 1663653075001.601], [4, 1663653075001.602], [3, 1663653075001.6052]]}, {"target": "job_id", "datapoints": [[0, 1663653070001.63], [0, 1663653071001.137], [0, 1663653071001.23], [0, 1663653071001.349], [0, 1663653071002.493], [0, 1663653072001.307], [0, 1663653072001.334], [0, 1663653072001.3372], [0, 1663653072001.587], [0, 1663653073001.321], [0, 1663653073001.454], [0, 1663653073001.461], [0, 1663653073001.466], [0, 1663653074000.9548], [0, 1663653074001.444], [0, 1663653074001.465], [0, 1663653074001.571], [0, 1663653075001.385], [0, 1663653075001.601], [0, 1663653075001.602], [0, 1663653075001.6052]]}]'
+comp_ids:{1, 2, 3, 4}
+2022-09-20T00:51:59-05:00 INFO: query check RC: 0
+11070451c5a7ec7c261ccb366969581dcc8865189f8410fb673eab4e0d46262a
+2022-09-20T00:52:14-05:00 INFO: Adding DSOS data source in Grafana
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100   113    0     0  100   113      0  89257 --:--:-- --:--:-- --:--:--  110k
+curl: (56) Recv failure: Connection reset by peer
+
+2022-09-20T00:52:15-05:00 INFO: Checking grafana data
+Traceback (most recent call last):
+  File "/home/narate/cron/ldms-test/ldms-containers/test/test-maestro/grafana_check.py", line 24, in <module>
+    rsp = urllib.request.urlopen(req)
+  File "/usr/lib64/python3.6/urllib/request.py", line 223, in urlopen
+    return opener.open(url, data, timeout)
+  File "/usr/lib64/python3.6/urllib/request.py", line 526, in open
+    response = self._open(req, data)
+  File "/usr/lib64/python3.6/urllib/request.py", line 544, in _open
+    '_open', req)
+  File "/usr/lib64/python3.6/urllib/request.py", line 504, in _call_chain
+    result = func(*args)
+  File "/usr/lib64/python3.6/urllib/request.py", line 1377, in http_open
+    return self.do_open(http.client.HTTPConnection, req)
+  File "/usr/lib64/python3.6/urllib/request.py", line 1352, in do_open
+    r = h.getresponse()
+  File "/usr/lib64/python3.6/http/client.py", line 1383, in getresponse
+    response.begin()
+  File "/usr/lib64/python3.6/http/client.py", line 320, in begin
+    version, status, reason = self._read_status()
+  File "/usr/lib64/python3.6/http/client.py", line 281, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+  File "/usr/lib64/python3.6/socket.py", line 586, in readinto
+    return self._sock.recv_into(b)
+ConnectionResetError: [Errno 104] Connection reset by peer
+2022-09-20T00:52:15-05:00 INFO: Grafana data check, rc: 1
+2022-09-20T00:52:15-05:00 INFO: Cleaning up ...
+mtest-samp-1
+mtest-samp-2
+mtest-samp-3
+mtest-samp-4
+mtest-agg-11
+mtest-agg-12
+mtest-agg-2
+mtest-maestro
+mtest-ui
+mtest-grafana
+2022-09-20T00:52:40-05:00 INFO: DONE
+2022-09-20 00:52:50 INFO: ----------------------------------------------
+2022-09-20 00:52:50 INFO: ======== test-maestro-hostmunge ========
+2022-09-20 00:52:50 INFO: CMD: /home/narate/cron/ldms-test/ldms-containers/test/test-maestro-hostmunge/test.sh
+2022-09-20T00:52:50-05:00 INFO: Checking munge on localhost
+2022-09-20T00:52:50-05:00 INFO: munge encode/decode successfully
+2022-09-20T00:52:50-05:00 INFO: starting mtest-maestro
+b6ff0a30a456d7b237b2e75135c4f38954e64ec316ab7315b5c66c847a8f0113
+2022-09-20T00:53:01-05:00 INFO: starting mtest-samp-1
+11047d2c2451c26aca99f61fb9625371ede2224d2148b14d8858228af8b9658b
+2022-09-20T00:53:10-05:00 INFO: starting mtest-samp-2
+a6dcd7336eee7855e7465098328f484412e732fb5a6139e0d0fc7da2c6c53ec3
+2022-09-20T00:53:22-05:00 INFO: starting mtest-samp-3
+0758722e864af59e333f7f17f8d7f320e40596e9d3d8e83167630369667ae419
+2022-09-20T00:53:32-05:00 INFO: starting mtest-samp-4
+ef0d8d73dacdb4b8e0e32f823145eecc1f15201977deda1191965a43e559e87a
+2022-09-20T00:53:42-05:00 INFO: mtest-samp-1 is running
+2022-09-20T00:53:42-05:00 INFO: mtest-samp-2 is running
+2022-09-20T00:53:42-05:00 INFO: mtest-samp-3 is running
+2022-09-20T00:53:42-05:00 INFO: mtest-samp-4 is running
+2022-09-20T00:53:42-05:00 INFO: starting mtest-agg-11
+30e4861a6f76ffbdcae3f39c99427f930427b922c3919f16d981beaa0f77b0cb
+2022-09-20T00:53:51-05:00 INFO: starting mtest-agg-12
+656b2756be232e119c46efac29fda2d74040f57c9275e968fbfb535536e59c80
+2022-09-20T00:53:57-05:00 INFO: mtest-agg-11 is running
+2022-09-20T00:53:57-05:00 INFO: mtest-agg-12 is running
+2022-09-20T00:53:57-05:00 INFO: starting mtest-agg-2
+7f0711670c3fca1c3c2ff9cfffc13cfc1dec4ff09b6a16b9a480ba169e02445f
+2022-09-20T00:54:04-05:00 INFO: mtest-agg-2 is running
+2022-09-20T00:54:04-05:00 INFO: Collecting data (into SOS)
+mtest-agg-11
+mtest-agg-12
+2022-09-20T00:54:17-05:00 INFO: Checking SOS data
+Component IDs: {1, 2, 3, 4}
+2022-09-20T00:54:29-05:00 INFO: sos check rc: 0
+2022-09-20T00:54:31-05:00 INFO: starting mtest-ui
+8de5dcee21e9b5dc6f41a6b8f92a28533f17ecdfcef799c355119ee8c2fe6c80
+2022-09-20T00:54:38-05:00 INFO: Checking query from mtest-ui: http://mtest-ui/grafana/query
+query results: b'[{"target": "Active", "datapoints": [[3867680, 1663653249001.958], [3867680, 1663653249001.961], [3868052, 1663653250001.2869], [3868052, 1663653250001.2952], [3868052, 1663653250001.384], [3868052, 1663653250001.495], [3868064, 1663653251001.427], [3868064, 1663653251001.439], [3868064, 1663653251001.4521], [3868064, 1663653251001.595], [3868064, 1663653252001.562], [3868064, 1663653252001.585], [3868064, 1663653252001.588], [3868064, 1663653252001.697], [3868064, 1663653253001.708], [3868064, 1663653253001.7139], [3868064, 1663653253001.734], [3868064, 1663653253001.84]]}, {"target": "component_id", "datapoints": [[3, 1663653249001.958], [1, 1663653249001.961], [3, 1663653250001.2869], [2, 1663653250001.2952], [4, 1663653250001.384], [1, 1663653250001.495], [1, 1663653251001.427], [3, 1663653251001.439], [2, 1663653251001.4521], [4, 1663653251001.595], [3, 1663653252001.562], [2, 1663653252001.585], [1, 1663653252001.588], [4, 1663653252001.697], [3, 1663653253001.708], [2, 1663653253001.7139], [4, 1663653253001.734], [1, 1663653253001.84]]}, {"target": "job_id", "datapoints": [[0, 1663653249001.958], [0, 1663653249001.961], [0, 1663653250001.2869], [0, 1663653250001.2952], [0, 1663653250001.384], [0, 1663653250001.495], [0, 1663653251001.427], [0, 1663653251001.439], [0, 1663653251001.4521], [0, 1663653251001.595], [0, 1663653252001.562], [0, 1663653252001.585], [0, 1663653252001.588], [0, 1663653252001.697], [0, 1663653253001.708], [0, 1663653253001.7139], [0, 1663653253001.734], [0, 1663653253001.84]]}]'
+comp_ids:{1, 2, 3, 4}
+2022-09-20T00:54:58-05:00 INFO: query check RC: 0
+f26003074de323fcb847fd4560e235f5021f5a9de06ce30015c4decfbd906763
+2022-09-20T00:55:09-05:00 INFO: Adding DSOS data source in Grafana
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100   113    0     0  100   113      0  86923 --:--:-- --:--:-- --:--:--  110k
+curl: (56) Recv failure: Connection reset by peer
+
+2022-09-20T00:55:10-05:00 INFO: Checking grafana data
+Traceback (most recent call last):
+  File "/home/narate/cron/ldms-test/ldms-containers/test/test-maestro-hostmunge/grafana_check.py", line 24, in <module>
+    rsp = urllib.request.urlopen(req)
+  File "/usr/lib64/python3.6/urllib/request.py", line 223, in urlopen
+    return opener.open(url, data, timeout)
+  File "/usr/lib64/python3.6/urllib/request.py", line 526, in open
+    response = self._open(req, data)
+  File "/usr/lib64/python3.6/urllib/request.py", line 544, in _open
+    '_open', req)
+  File "/usr/lib64/python3.6/urllib/request.py", line 504, in _call_chain
+    result = func(*args)
+  File "/usr/lib64/python3.6/urllib/request.py", line 1377, in http_open
+    return self.do_open(http.client.HTTPConnection, req)
+  File "/usr/lib64/python3.6/urllib/request.py", line 1352, in do_open
+    r = h.getresponse()
+  File "/usr/lib64/python3.6/http/client.py", line 1383, in getresponse
+    response.begin()
+  File "/usr/lib64/python3.6/http/client.py", line 320, in begin
+    version, status, reason = self._read_status()
+  File "/usr/lib64/python3.6/http/client.py", line 281, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+  File "/usr/lib64/python3.6/socket.py", line 586, in readinto
+    return self._sock.recv_into(b)
+ConnectionResetError: [Errno 104] Connection reset by peer
+2022-09-20T00:55:10-05:00 INFO: Grafana data check, rc: 1
+2022-09-20T00:55:10-05:00 INFO: Cleaning up ...
+mtest-samp-1
+mtest-samp-2
+mtest-samp-3
+mtest-samp-4
+mtest-agg-11
+mtest-agg-12
+mtest-agg-2
+mtest-maestro
+mtest-ui
+mtest-grafana
+2022-09-20T00:55:32-05:00 INFO: DONE
+2022-09-20 00:55:42 INFO: ----------------------------------------------
+2022-09-20 00:55:42 INFO: ======== test-maestro-munge ========
+2022-09-20 00:55:42 INFO: CMD: /home/narate/cron/ldms-test/ldms-containers/test/test-maestro-munge/test.sh
+1+0 records in
+1+0 records out
+4096 bytes (4.1 kB, 4.0 KiB) copied, 0.00017355 s, 23.6 MB/s
+2022-09-20T00:55:51-05:00 INFO: starting mtest-maestro
+d71c1114b3b53faf28ae5b185b14b3ab867eaf5d51352bfbff46558f5573c087
+2022-09-20T00:55:58-05:00 INFO: starting mtest-samp-1
+2f09dbb26aa459119fbb1be819435e6880179a59ff377e386c6db1bb2198db8a
+2022-09-20T00:56:06-05:00 INFO: starting mtest-samp-2
+a1af100263d60e9f83a7b64febe94d69b6fc484ecd44f8f412c38424983b25c9
+2022-09-20T00:56:17-05:00 INFO: starting mtest-samp-3
+1e6c8df106eb434ffc485fb44c0f6987e7d9f8a69fd5426d37e2614a2b7d8402
+2022-09-20T00:56:29-05:00 INFO: starting mtest-samp-4
+f20e26222ec93ed51b0ad7f45de363e6f71ef7c58d8559faea8faa34046aeee2
+2022-09-20T00:56:39-05:00 INFO: mtest-samp-1 is running
+2022-09-20T00:56:39-05:00 INFO: mtest-samp-2 is running
+2022-09-20T00:56:39-05:00 INFO: mtest-samp-3 is running
+2022-09-20T00:56:39-05:00 INFO: mtest-samp-4 is running
+2022-09-20T00:56:39-05:00 INFO: starting mtest-agg-11
+1326bd8a6fe7653a636eaa7f467e633d020d8879f0459289374f43ad30922cd8
+2022-09-20T00:56:50-05:00 INFO: starting mtest-agg-12
+4a509f077c2b2f65f03adb2a6c0be043a974d4d687b6bc9063189191167db218
+2022-09-20T00:56:59-05:00 INFO: mtest-agg-11 is running
+2022-09-20T00:56:59-05:00 INFO: mtest-agg-12 is running
+2022-09-20T00:56:59-05:00 INFO: starting mtest-agg-2
+3288b47969c399c519fd457f441b3812f487f5552fa3ed64564097ebf14ec44b
+2022-09-20T00:57:06-05:00 INFO: mtest-agg-2 is running
+2022-09-20T00:57:06-05:00 INFO: Collecting data (into SOS)
+mtest-agg-11
+mtest-agg-12
+2022-09-20T00:57:20-05:00 INFO: Checking SOS data
+Component IDs: {1, 2, 3, 4}
+2022-09-20T00:57:31-05:00 INFO: sos check rc: 0
+2022-09-20T00:57:33-05:00 INFO: starting mtest-ui
+2bef6f0fd44fca820fa1a23f5c85b361915c40bf86e9d59ae032d978d64882b5
+2022-09-20T00:57:40-05:00 INFO: Checking query from mtest-ui: http://mtest-ui/grafana/query
+query results: b'[{"target": "Active", "datapoints": [[3881092, 1663653431001.365], [3881092, 1663653431001.546], [3881448, 1663653432001.3289], [3881448, 1663653432001.332], [3881448, 1663653432001.3372], [3881448, 1663653432001.349], [3881488, 1663653433001.154], [3881488, 1663653433001.2852], [3881488, 1663653433001.479], [3881488, 1663653433001.481], [3881488, 1663653434000.725], [3881488, 1663653434001.289], [3881488, 1663653434001.307], [3881488, 1663653434001.629], [3881488, 1663653435000.792], [3881488, 1663653435001.3262], [3881488, 1663653435001.387], [3881488, 1663653435001.461], [3881488, 1663653436001.482], [3881488, 1663653436001.4878], [3881488, 1663653436001.518], [3881488, 1663653436001.938]]}, {"target": "component_id", "datapoints": [[1, 1663653431001.365], [3, 1663653431001.546], [4, 1663653432001.3289], [2, 1663653432001.332], [3, 1663653432001.3372], [1, 1663653432001.349], [1, 1663653433001.154], [3, 1663653433001.2852], [2, 1663653433001.479], [4, 1663653433001.481], [2, 1663653434000.725], [3, 1663653434001.289], [1, 1663653434001.307], [4, 1663653434001.629], [1, 1663653435000.792], [4, 1663653435001.3262], [2, 1663653435001.387], [3, 1663653435001.461], [3, 1663653436001.482], [4, 1663653436001.4878], [2, 1663653436001.518], [1, 1663653436001.938]]}, {"target": "job_id", "datapoints": [[0, 1663653431001.365], [0, 1663653431001.546], [0, 1663653432001.3289], [0, 1663653432001.332], [0, 1663653432001.3372], [0, 1663653432001.349], [0, 1663653433001.154], [0, 1663653433001.2852], [0, 1663653433001.479], [0, 1663653433001.481], [0, 1663653434000.725], [0, 1663653434001.289], [0, 1663653434001.307], [0, 1663653434001.629], [0, 1663653435000.792], [0, 1663653435001.3262], [0, 1663653435001.387], [0, 1663653435001.461], [0, 1663653436001.482], [0, 1663653436001.4878], [0, 1663653436001.518], [0, 1663653436001.938]]}]'
+comp_ids:{1, 2, 3, 4}
+2022-09-20T00:57:58-05:00 INFO: query check RC: 0
+3c6d00de4e487779eef656981f30a334193d07435128344198f0745ec275d51a
+2022-09-20T00:58:09-05:00 INFO: Adding DSOS data source in Grafana
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100   113    0     0  100   113      0   100k --:--:-- --:--:-- --:--:--  110k
+curl: (56) Recv failure: Connection reset by peer
+
+2022-09-20T00:58:10-05:00 INFO: Checking grafana data
+Traceback (most recent call last):
+  File "/home/narate/cron/ldms-test/ldms-containers/test/test-maestro-munge/grafana_check.py", line 24, in <module>
+    rsp = urllib.request.urlopen(req)
+  File "/usr/lib64/python3.6/urllib/request.py", line 223, in urlopen
+    return opener.open(url, data, timeout)
+  File "/usr/lib64/python3.6/urllib/request.py", line 526, in open
+    response = self._open(req, data)
+  File "/usr/lib64/python3.6/urllib/request.py", line 544, in _open
+    '_open', req)
+  File "/usr/lib64/python3.6/urllib/request.py", line 504, in _call_chain
+    result = func(*args)
+  File "/usr/lib64/python3.6/urllib/request.py", line 1377, in http_open
+    return self.do_open(http.client.HTTPConnection, req)
+  File "/usr/lib64/python3.6/urllib/request.py", line 1352, in do_open
+    r = h.getresponse()
+  File "/usr/lib64/python3.6/http/client.py", line 1383, in getresponse
+    response.begin()
+  File "/usr/lib64/python3.6/http/client.py", line 320, in begin
+    version, status, reason = self._read_status()
+  File "/usr/lib64/python3.6/http/client.py", line 281, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+  File "/usr/lib64/python3.6/socket.py", line 586, in readinto
+    return self._sock.recv_into(b)
+ConnectionResetError: [Errno 104] Connection reset by peer
+2022-09-20T00:58:10-05:00 INFO: Grafana data check, rc: 1
+2022-09-20T00:58:10-05:00 INFO: Cleaning up ...
+mtest-samp-1
+mtest-samp-2
+mtest-samp-3
+mtest-samp-4
+mtest-agg-11
+mtest-agg-12
+mtest-agg-2
+mtest-maestro
+mtest-ui
+mtest-grafana
+2022-09-20T00:58:31-05:00 INFO: DONE
+2022-09-20 00:58:41 INFO: ----------------------------------------------
+2022-09-20 00:58:41 INFO: ==== Summary ====
+maestro_cfg_test: [01;32mPASSED[0m
+agg_slurm_test: [01;31mFAILED[0m
+direct_prdcr_subscribe_test: [01;32mPASSED[0m
+cont-test-maestro-munge: [01;31mFAILED[0m
+cont-test-ldms: [01;32mPASSED[0m
+cont-test-maestro-hostmunge: [01;31mFAILED[0m
+cont-test-maestro: [01;31mFAILED[0m
+direct_ldms_ls_conn_test: [01;32mPASSED[0m
+------------------------------------------
+Total tests passed: 4/8
+------------------------------------------
