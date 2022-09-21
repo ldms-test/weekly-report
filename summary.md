@@ -4,7 +4,7 @@ Test Summary
 * [papi_store_test](test-log/papi_store_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
 * [updtr_status_test](test-log/updtr_status_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
 * [ldmsd_auth_ovis_test](test-log/ldmsd_auth_ovis_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
-* [store_app_test](test-log/store_app_test.log): $\textcolor{red}{\text{FAILED}}$
+* [store_app_test](test-log/store_app_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
 * [store_list_record_test](test-log/store_list_record_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
 * [set_array_test](test-log/set_array_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
 * [ovis_ev_test](test-log/ovis_ev_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
@@ -36,7 +36,7 @@ Test Summary
 * [updtr_prdcr_add_test](test-log/updtr_prdcr_add_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
 * [mt-slurm-test](test-log/mt-slurm-test.log): $\textcolor{lightgreen}{\text{PASSED}}$
 * [ovis_json_test](test-log/ovis_json_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
-* [papi_sampler_test](test-log/papi_sampler_test.log): $\textcolor{red}{\text{FAILED}}$
+* [papi_sampler_test](test-log/papi_sampler_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
 * [syspapi_test](test-log/syspapi_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
 * [updtr_del_test](test-log/updtr_del_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
 * [ldmsd_autointerval_test](test-log/ldmsd_autointerval_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
