@@ -1,13 +1,19 @@
-2022-10-11 00:53:58,875 TADA INFO starting test `papi_store_test`
-2022-10-11 00:53:58,875 TADA INFO   test-id: 0c6acbf8cfacd3d0084be5b2fbdab8c1a737b81c9cc989bf1706ba225b1f4980
-2022-10-11 00:53:58,876 TADA INFO   test-suite: LDMSD
-2022-10-11 00:53:58,876 TADA INFO   test-name: papi_store_test
-2022-10-11 00:53:58,876 TADA INFO   test-user: narate
-2022-10-11 00:53:58,876 TADA INFO   commit-id: 97af49193da233e71cfa66bf6d4cc55aea4f67b4
-2022-10-11 00:53:58,877 __main__ INFO -- Get or create the cluster --
-2022-10-11 00:54:06,426 __main__ INFO -- Start daemons --
-2022-10-11 00:54:37,899 TADA INFO assertion 1, Every job in the input data is represented in the output: {1, 2, 3, 4} = {1, 2, 3, 4}, passed
-2022-10-11 00:54:37,899 TADA INFO assertion 2, Every event in every job results in a separate row in the output: verified, passed
-2022-10-11 00:54:37,899 TADA INFO assertion 3, The schema name in the output matches the event name: verified, passed
-2022-10-11 00:54:37,899 TADA INFO assertion 4, Each rank in the job results in a row per event in the output: verified, passed
-2022-10-11 00:54:37,899 TADA INFO test papi_store_test ended
+2022-10-12 00:54:02,942 TADA INFO starting test `papi_store_test`
+2022-10-12 00:54:02,942 TADA INFO   test-id: b264b9a107a23130dbbabffc9857c229f3ed656261159e89e118fe5ebec27081
+2022-10-12 00:54:02,943 TADA INFO   test-suite: LDMSD
+2022-10-12 00:54:02,943 TADA INFO   test-name: papi_store_test
+2022-10-12 00:54:02,943 TADA INFO   test-user: narate
+2022-10-12 00:54:02,943 TADA INFO   commit-id: 9cbd76c351db4cd527813ccb28896ff45dd2f79d
+2022-10-12 00:54:02,944 __main__ INFO -- Get or create the cluster --
+2022-10-12 00:54:10,606 __main__ INFO -- Start daemons --
+2022-10-12 00:54:42,039 TADA INFO assertion 1, Every job in the input data is represented in the output: {1, 2, 3, 4} = {2, 4}, failed
+Traceback (most recent call last):
+  File "papi_store_test", line 342, in <module>
+    test.assert_test(1, False, "{} = {}".format(all_job_ids, job_ids))
+  File "/home/narate/cron/ldms-test/TADA.py", line 157, in assert_test
+    raise AssertionException(self.test_desc + ", " + cond_str + ": FAILED")
+TADA.AssertionException: Multi-tenant PAPI store test., {1, 2, 3, 4} = {2, 4}: FAILED
+2022-10-12 00:54:42,040 TADA INFO assertion 2, Every event in every job results in a separate row in the output: skipped
+2022-10-12 00:54:42,040 TADA INFO assertion 3, The schema name in the output matches the event name: skipped
+2022-10-12 00:54:42,040 TADA INFO assertion 4, Each rank in the job results in a row per event in the output: skipped
+2022-10-12 00:54:42,040 TADA INFO test papi_store_test ended
