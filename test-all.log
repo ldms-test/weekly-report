@@ -12458,3 +12458,2018 @@ Successfully tagged ovishpc/ldms-grafana:latest
 ~/cron/ldms-test /mnt/300G/data/2022-10-21-003001
 ~/cron/ldms-test/weekly-report ~/cron/ldms-test /mnt/300G/data/2022-10-21-003001
 HEAD is now at 61cede4 2022-10-20-003001
+[master 17a8a66] 2022-10-21-003001
+ 2 files changed, 1135 insertions(+), 3144 deletions(-)
+To github.com:ldms-test/weekly-report
+   61cede4..17a8a66  master -> master
+~/cron/ldms-test /mnt/300G/data/2022-10-21-003001
+2022-10-21 00:48:57 INFO: ==== OVIS+SOS Installation Completed ====
+2022-10-21 00:48:57 INFO: ==== Start batch testing ====
+~/cron/ldms-test /mnt/300G/data/2022-10-21-003001 ~/cron/ldms-test ~
+2022-10-21 00:48:57 INFO: ======== direct_ldms_ls_conn_test ========
+2022-10-21 00:48:57 INFO: CMD: python3 direct_ldms_ls_conn_test --prefix /opt/ovis --src /mnt/300G/data --data_root /mnt/300G/data/2022-10-21-003001/data/direct_ldms_ls_conn_test
+2022-10-21 00:48:58,545 TADA INFO starting test `direct_ldms_ls_conn_test`
+2022-10-21 00:48:58,545 TADA INFO   test-id: 7ab5bb72846486ca1160dcd0aba28ce3cc4fe9d69836526aa1941d7678d8d964
+2022-10-21 00:48:58,545 TADA INFO   test-suite: LDMSD
+2022-10-21 00:48:58,545 TADA INFO   test-name: direct_ldms_ls_conn_test
+2022-10-21 00:48:58,545 TADA INFO   test-user: narate
+2022-10-21 00:48:58,545 TADA INFO   commit-id: c6bbe5530e620865002d2995a48a3d2811fa26ac
+2022-10-21 00:48:58,997 __main__ INFO starting munged on cygnus-01-iw
+2022-10-21 00:48:59,317 __main__ INFO starting munged on localhost
+2022-10-21 00:48:59,540 __main__ INFO starting ldmsd on cygnus-01-iw
+2022-10-21 00:48:59,876 TADA INFO assertion 0, Start ldmsd sampler and munged: OK, passed
+2022-10-21 00:49:05,071 TADA INFO assertion 1, ldms_ls to the sampler: OK, passed
+2022-10-21 00:49:05,071 __main__ INFO Stopping sampler daemon ...
+2022-10-21 00:49:10,485 TADA INFO assertion 2, Kill the sampler: OK, passed
+2022-10-21 00:49:10,532 TADA INFO assertion 3, ldms_ls to the dead sampler: got expected output, passed
+2022-10-21 00:49:10,565 TADA INFO assertion 4, ldms_ls to a dead host: got expected output, passed
+2022-10-21 00:49:10,566 TADA INFO test direct_ldms_ls_conn_test ended
+2022-10-21 00:49:10,778 __main__ INFO stopping munged on cygnus-01-iw
+2022-10-21 00:49:11,193 __main__ INFO stopping munged on localhost
+2022-10-21 00:49:11 INFO: ----------------------------------------------
+2022-10-21 00:49:11 INFO: ======== direct_prdcr_subscribe_test ========
+2022-10-21 00:49:11 INFO: CMD: python3 direct_prdcr_subscribe_test --prefix /opt/ovis --src /mnt/300G/data --data_root /mnt/300G/data/2022-10-21-003001/data/direct_prdcr_subscribe_test
+2022-10-21 00:49:12,019 TADA INFO starting test `direct_prdcr_subscribe_test`
+2022-10-21 00:49:12,019 TADA INFO   test-id: b572313810d961ffffe861ab824c6ca3d8127e1941f4a2d832b9b278c7266c5c
+2022-10-21 00:49:12,019 TADA INFO   test-suite: LDMSD
+2022-10-21 00:49:12,019 TADA INFO   test-name: direct_prdcr_subscribe_test
+2022-10-21 00:49:12,019 TADA INFO   test-user: narate
+2022-10-21 00:49:12,019 TADA INFO   commit-id: c6bbe5530e620865002d2995a48a3d2811fa26ac
+2022-10-21 00:49:13,929 __main__ INFO starting munged on cygnus-01-iw
+2022-10-21 00:49:14,709 __main__ INFO starting munged on cygnus-02-iw
+2022-10-21 00:49:15,469 __main__ INFO starting munged on cygnus-03-iw
+2022-10-21 00:49:16,230 __main__ INFO starting munged on cygnus-04-iw
+2022-10-21 00:49:16,528 __main__ INFO starting munged on localhost
+2022-10-21 00:49:16,760 __main__ INFO starting ldmsd on cygnus-01-iw
+2022-10-21 00:49:17,301 __main__ INFO starting ldmsd on cygnus-02-iw
+2022-10-21 00:49:17,841 __main__ INFO starting ldmsd on cygnus-03-iw
+2022-10-21 00:49:18,365 __main__ INFO starting ldmsd on cygnus-04-iw
+2022-10-21 00:49:25,315 TADA INFO assertion 0, ldmsd_stream_publish of JSON data to stream-sampler-1 succeeds: verify JSON data, passed
+2022-10-21 00:49:25,316 TADA INFO assertion 1, ldmsd_stream_publish of STRING data to stream-sampler-1 succeeds: verify STRING data, passed
+2022-10-21 00:49:25,316 TADA INFO assertion 2, ldmsd_stream_publish to JSON data to stream-sampler-2 succeeds: verify JSON data, passed
+2022-10-21 00:49:25,317 TADA INFO assertion 3, ldmsd_stream_publish of STRING data to stream-sampler-2 succeeds: verify STRING data, passed
+2022-10-21 00:49:25,317 TADA INFO assertion 4, ldmsd_stream data check on agg-2: agg2 stream data verified, passed
+2022-10-21 00:49:25,349 TADA INFO assertion 5, Stopping the producers succeeds: agg-1 producers stopped, passed
+2022-10-21 00:49:26,351 TADA INFO assertion 6, Restarting the producers succeeds: agg-1 producers started, passed
+2022-10-21 00:49:32,954 TADA INFO assertion 7, JSON stream data resumes after producer restart on stream-sampler-1: verify JSON data, passed
+2022-10-21 00:49:32,954 TADA INFO assertion 8, STRING stream data resumes after producer rerestart on stream-sampler-1: verify STRING data, passed
+2022-10-21 00:49:32,955 TADA INFO assertion 9, JSON stream data resumes after producer restart on stream-sampler-2: verify JSON data, passed
+2022-10-21 00:49:32,955 TADA INFO assertion 10, STRING stream data resumes after producer rerestart on stream-sampler-2: verify STRING data, passed
+2022-10-21 00:49:32,956 TADA INFO assertion 11, ldmsd_stream data resume check on agg-2: agg2 stream data verified, passed
+2022-10-21 00:49:32,957 __main__ INFO stopping sampler-1
+2022-10-21 00:49:34,369 TADA INFO assertion 12, stream-sampler-1 is not running: sampler-1 stopped, passed
+2022-10-21 00:49:34,369 __main__ INFO starting sampler-1
+2022-10-21 00:49:35,617 TADA INFO assertion 13, stream-sampler-1 has restarted: sampler-1 running, passed
+2022-10-21 00:49:35,618 __main__ INFO allow some time for prdcr to reconnect ...
+2022-10-21 00:49:41,594 TADA INFO assertion 14, JSON stream data resumes after stream-sampler-1 restart: verify JSON data, passed
+2022-10-21 00:49:41,595 TADA INFO assertion 15, STRING stream data resumes after stream-sampler-1 restart: verify STRING data, passed
+2022-10-21 00:49:41,596 TADA INFO assertion 16, ldmsd_stream data check on agg-2 after stream-sampler-1 restart: agg2 stream data verified, passed
+2022-10-21 00:49:41,597 TADA INFO assertion 17, agg-1 unsubscribes stream-sampler-1: unsubscribed, passed
+2022-10-21 00:49:43,924 TADA INFO assertion 18, agg-1 receives data only from stream-sampler-2: data verified, passed
+2022-10-21 00:49:43,928 __main__ INFO stopping agg-1
+2022-10-21 00:49:49,139 TADA INFO assertion 19, stream-sampler-2 removes agg-1 stream client after disconnected: verified, passed
+2022-10-21 00:49:49,140 TADA INFO test direct_prdcr_subscribe_test ended
+2022-10-21 00:49:49,358 __main__ INFO stopping munged on cygnus-01-iw
+2022-10-21 00:49:49,822 __main__ INFO stopping ldmsd on cygnus-01-iw
+2022-10-21 00:49:50,228 __main__ INFO stopping munged on cygnus-02-iw
+2022-10-21 00:49:50,642 __main__ INFO stopping ldmsd on cygnus-02-iw
+2022-10-21 00:49:51,064 __main__ INFO stopping munged on cygnus-03-iw
+2022-10-21 00:49:51,699 __main__ INFO stopping munged on cygnus-04-iw
+2022-10-21 00:49:52,162 __main__ INFO stopping ldmsd on cygnus-04-iw
+2022-10-21 00:49:52,379 __main__ INFO stopping munged on localhost
+2022-10-21 00:49:52 INFO: ----------------------------------------------
+2022-10-21 00:49:52 INFO: ======== agg_slurm_test ========
+2022-10-21 00:49:52 INFO: CMD: python3 agg_slurm_test --prefix /home/narate/cron/ldms-test/ldms-containers/ovis --runtime docker --image ovishpc/ldms-dev --src /mnt/300G/data --data_root /mnt/300G/data/2022-10-21-003001/data/agg_slurm_test
+2022-10-21 00:49:53,248 TADA INFO starting test `agg_slurm_test`
+2022-10-21 00:49:53,248 TADA INFO   test-id: abbcc9c583cf586e887cfaa99e4304572284ca3a42c9d6bc97d8975c4a163281
+2022-10-21 00:49:53,248 TADA INFO   test-suite: LDMSD
+2022-10-21 00:49:53,248 TADA INFO   test-name: agg_slurm_test
+2022-10-21 00:49:53,248 TADA INFO   test-user: narate
+2022-10-21 00:49:53,249 TADA INFO   commit-id: c6bbe5530e620865002d2995a48a3d2811fa26ac
+2022-10-21 00:49:53,249 __main__ INFO -- Get or create the cluster --
+2022-10-21 00:50:07,238 __main__ INFO -- Preparing syspapi JSON file --
+2022-10-21 00:50:07,337 __main__ INFO -- Preparing jobpapi JSON file --
+2022-10-21 00:50:07,456 __main__ INFO -- Preparing job script & programs --
+2022-10-21 00:50:08,912 __main__ INFO -- Start daemons --
+2022-10-21 00:50:21,185 __main__ INFO ... wait a bit to make sure ldmsd's are up
+2022-10-21 00:50:26,190 __main__ INFO -- ldms_ls to agg-2 --
+2022-10-21 00:50:26,308 TADA INFO assertion 1, ldms_ls agg-2: dir result verified, passed
+2022-10-21 00:50:26,445 __main__ INFO -- Give syspapi some time to work before submitting job --
+2022-10-21 00:50:31,450 __main__ INFO -- Submitting jobs --
+2022-10-21 00:50:31,579 __main__ INFO job_one: 1
+2022-10-21 00:50:31,686 __main__ INFO job_two: 2
+2022-10-21 00:50:41,696 __main__ INFO -- Cancelling jobs --
+2022-10-21 00:50:41,697 __main__ INFO job_one: 1
+2022-10-21 00:50:41,855 __main__ INFO job_two: 2
+2022-10-21 00:51:48,913 TADA INFO assertion 2, slurm data verification: get expected data from store, passed
+2022-10-21 00:51:48,914 TADA INFO assertion 3, meminfo data verification: No data missing, failed
+Traceback (most recent call last):
+  File "agg_slurm_test", line 590, in <module>
+    test.assert_test(3, len(meminfo) > 5 and missing_counts == 0, "No data missing")
+  File "/home/narate/cron/ldms-test/TADA.py", line 157, in assert_test
+    raise AssertionException(self.test_desc + ", " + cond_str + ": FAILED")
+TADA.AssertionException: LDMSD 2-level agg with slurm, No data missing: FAILED
+2022-10-21 00:51:48,915 TADA INFO assertion 4, (SYS/JOB) PAPI data verification: skipped
+2022-10-21 00:51:48,915 TADA INFO test agg_slurm_test ended
+2022-10-21 00:52:03 INFO: ----------------------------------------------
+2022-10-21 00:52:04 INFO: ======== papi_sampler_test ========
+2022-10-21 00:52:04 INFO: CMD: python3 papi_sampler_test --prefix /home/narate/cron/ldms-test/ldms-containers/ovis --runtime docker --image ovishpc/ldms-dev --src /mnt/300G/data --data_root /mnt/300G/data/2022-10-21-003001/data/papi_sampler_test
+2022-10-21 00:52:04,796 TADA INFO starting test `papi_sampler_test`
+2022-10-21 00:52:04,796 TADA INFO   test-id: c4b5835f06b34634ce0c8f0a072572fe93dac254b7430a407f1d86f6f3a8d3ff
+2022-10-21 00:52:04,796 TADA INFO   test-suite: LDMSD
+2022-10-21 00:52:04,797 TADA INFO   test-name: papi_sampler_test
+2022-10-21 00:52:04,797 TADA INFO   test-user: narate
+2022-10-21 00:52:04,797 TADA INFO   commit-id: c6bbe5530e620865002d2995a48a3d2811fa26ac
+2022-10-21 00:52:04,797 __main__ INFO -- Get or create the cluster --
+2022-10-21 00:52:10,101 __main__ INFO -- Start daemons --
+2022-10-21 00:52:20,150 TADA INFO assertion 0, ldmsd has started: verified, passed
+2022-10-21 00:52:20,384 TADA INFO assertion 1.1, Non-papi job is submitted: jobid(1) > 0, passed
+2022-10-21 00:52:25,496 TADA INFO assertion 1.2, Non-papi job is running before ldms_ls: STATE = RUNNING, passed
+2022-10-21 00:52:25,671 TADA INFO assertion 1.3, Non-papi job is running after ldms_ls: STATE = RUNNING, passed
+2022-10-21 00:52:25,671 TADA INFO assertion 1, Non-papi job does not create set: verified, passed
+2022-10-21 00:52:39,503 TADA INFO assertion 2, papi job creates set: PAPI set created, passed
+2022-10-21 00:52:39,503 TADA INFO assertion 2.2, Schema name is set accordingly: schema name == papi0, passed
+2022-10-21 00:52:39,503 TADA INFO assertion 2.1, Events in papi job set created according to config file: {'PAPI_TOT_INS'} == {'PAPI_TOT_INS'}, passed
+2022-10-21 00:52:39,503 TADA INFO assertion 2.3, PAPI set has correct job_id: 2 == 2, passed
+2022-10-21 00:52:39,748 TADA INFO assertion 2.4, PAPI set has correct task_pids: jobid/ranks/pids verified, passed
+2022-10-21 00:52:45,547 TADA INFO assertion 3, papi job creates set: PAPI set created, passed
+2022-10-21 00:52:45,547 TADA INFO assertion 3.2, Schema name is set accordingly: schema name == papi1, passed
+2022-10-21 00:52:45,547 TADA INFO assertion 3.1, Events in papi job set created according to config file: {'PAPI_BR_MSP', 'PAPI_TOT_INS'} == {'PAPI_BR_MSP', 'PAPI_TOT_INS'}, passed
+2022-10-21 00:52:45,547 TADA INFO assertion 3.3, PAPI set has correct job_id: 3 == 3, passed
+2022-10-21 00:52:45,765 TADA INFO assertion 3.4, PAPI set has correct task_pids: jobid/ranks/pids verified, passed
+2022-10-21 00:52:45,765 TADA INFO assertion 4, Multiple, concurrent jobs results in concurrent, multiple sets: LDMS sets ({'node-1/papi0/2.0', 'node-1/meminfo', 'node-1/papi1/3.0'}), passed
+2022-10-21 00:52:56,312 TADA INFO assertion 6, PAPI set persists within `job_expiry` after job exited: verified, passed
+2022-10-21 00:53:36,645 TADA INFO assertion 7, PAPI set is deleted after `2.2 x job_expiry` since job exited: node-1/meminfo deleted, passed
+2022-10-21 00:53:39,001 TADA INFO assertion 8, Missing config file attribute is logged: : papi_sampler[519]: papi_config object must contain either the 'file' or 'config' attribute., passed
+2022-10-21 00:53:44,433 TADA INFO assertion 9, Bad config file is logged: : papi_sampler: configuration file syntax error., passed
+2022-10-21 00:53:49,873 TADA INFO assertion 10, Unsupported events are logged: : papi_sampler: PAPI error 'Event does not exist' translating event code 'FOO', passed
+2022-10-21 00:53:49,873 __main__ INFO -- Finishing Test --
+2022-10-21 00:53:49,874 TADA INFO test papi_sampler_test ended
+2022-10-21 00:53:49,874 __main__ INFO -- Cleaning up files --
+2022-10-21 00:53:49,874 __main__ INFO -- Removing the virtual cluster --
+2022-10-21 00:54:01 INFO: ----------------------------------------------
+2022-10-21 00:54:02 INFO: ======== papi_store_test ========
+2022-10-21 00:54:02 INFO: CMD: python3 papi_store_test --prefix /home/narate/cron/ldms-test/ldms-containers/ovis --runtime docker --image ovishpc/ldms-dev --src /mnt/300G/data --data_root /mnt/300G/data/2022-10-21-003001/data/papi_store_test
+2022-10-21 00:54:02,928 TADA INFO starting test `papi_store_test`
+2022-10-21 00:54:02,929 TADA INFO   test-id: 0243fa4e0d0d22726ea5547bde9fedea0667020ec85fc548a8fe0908c7b3729a
+2022-10-21 00:54:02,929 TADA INFO   test-suite: LDMSD
+2022-10-21 00:54:02,929 TADA INFO   test-name: papi_store_test
+2022-10-21 00:54:02,929 TADA INFO   test-user: narate
+2022-10-21 00:54:02,929 TADA INFO   commit-id: c6bbe5530e620865002d2995a48a3d2811fa26ac
+2022-10-21 00:54:02,930 __main__ INFO -- Get or create the cluster --
+2022-10-21 00:54:10,532 __main__ INFO -- Start daemons --
+2022-10-21 00:54:43,173 TADA INFO assertion 1, Every job in the input data is represented in the output: {1, 2, 3, 4} = {1, 2, 3, 4}, passed
+2022-10-21 00:54:43,173 TADA INFO assertion 2, Every event in every job results in a separate row in the output: verified, passed
+2022-10-21 00:54:43,173 TADA INFO assertion 3, The schema name in the output matches the event name: verified, passed
+2022-10-21 00:54:43,173 TADA INFO assertion 4, Each rank in the job results in a row per event in the output: verified, passed
+2022-10-21 00:54:43,174 TADA INFO test papi_store_test ended
+2022-10-21 00:54:55 INFO: ----------------------------------------------
+2022-10-21 00:54:56 INFO: ======== store_app_test ========
+2022-10-21 00:54:56 INFO: CMD: python3 store_app_test --prefix /home/narate/cron/ldms-test/ldms-containers/ovis --runtime docker --image ovishpc/ldms-dev --src /mnt/300G/data --data_root /mnt/300G/data/2022-10-21-003001/data/store_app_test
+2022-10-21 00:54:57,211 TADA INFO starting test `store_app_test`
+2022-10-21 00:54:57,211 TADA INFO   test-id: e325e533113811bb3634739e2c2b097fd9f4223361c59d5a39cb9ad19f3f7902
+2022-10-21 00:54:57,212 TADA INFO   test-suite: LDMSD
+2022-10-21 00:54:57,212 TADA INFO   test-name: store_app_test
+2022-10-21 00:54:57,212 TADA INFO   test-user: narate
+2022-10-21 00:54:57,212 TADA INFO   commit-id: c6bbe5530e620865002d2995a48a3d2811fa26ac
+2022-10-21 00:54:57,212 __main__ INFO -- Get or create the cluster --
+2022-10-21 00:55:11,756 __main__ INFO -- Preparing job script & programs --
+2022-10-21 00:55:12,136 __main__ INFO -- Start daemons --
+2022-10-21 00:55:24,480 __main__ INFO ... wait a bit to make sure ldmsd's are up
+2022-10-21 00:55:29,486 __main__ INFO -- Submitting jobs --
+2022-10-21 00:55:29,717 __main__ INFO job_one: 1
+2022-10-21 00:55:34,930 __main__ INFO job_two: 2
+2022-10-21 00:55:44,381 __main__ INFO Verifying data ...
+2022-10-21 00:57:40,388 TADA INFO assertion 1, Verify data: sos data is not empty and sos data < ldms_ls data, passed
+2022-10-21 00:57:40,388 TADA INFO test store_app_test ended
+2022-10-21 00:57:54 INFO: ----------------------------------------------
+2022-10-21 00:57:55 INFO: ======== syspapi_test ========
+2022-10-21 00:57:55 INFO: CMD: python3 syspapi_test --prefix /home/narate/cron/ldms-test/ldms-containers/ovis --runtime docker --image ovishpc/ldms-dev --src /mnt/300G/data --data_root /mnt/300G/data/2022-10-21-003001/data/syspapi_test
+2022-10-21 00:57:55,976 TADA INFO starting test `syspapi_test`
+2022-10-21 00:57:55,977 TADA INFO   test-id: 87c67553bf48f86b8b1615d0b552e527b05111b1d536bbbb786532675e3db2b1
+2022-10-21 00:57:55,977 TADA INFO   test-suite: LDMSD
+2022-10-21 00:57:55,977 TADA INFO   test-name: syspapi_test
+2022-10-21 00:57:55,977 TADA INFO   test-user: narate
+2022-10-21 00:57:55,977 TADA INFO   commit-id: c6bbe5530e620865002d2995a48a3d2811fa26ac
+2022-10-21 00:57:55,978 __main__ INFO -- Get or create the cluster --
+2022-10-21 00:58:07,409 __main__ INFO -- Write syspapi JSON config files --
+2022-10-21 00:58:07,409 __main__ INFO    - db/syspapi-1.json
+2022-10-21 00:58:07,410 __main__ INFO    - db/syspapi-bad.json
+2022-10-21 00:58:07,411 __main__ INFO -- Start daemons --
+2022-10-21 00:58:15,890 __main__ INFO ... wait a bit to make sure ldmsd's are up
+2022-10-21 00:58:20,894 __main__ INFO -- Verifying --
+2022-10-21 00:58:21,021 TADA INFO assertion 1, verify set creation by cfg_file: set existed (with correct instance name), passed
+2022-10-21 00:58:21,021 TADA INFO assertion 2, verify schema name by cfg_file: verify schema name, passed
+2022-10-21 00:58:21,126 TADA INFO assertion 3, verify metrics (events) by cfg_file: verify events (metrics), passed
+2022-10-21 00:58:23,239 TADA INFO assertion 4, verify increment counters: verify increment of supported counters, passed
+2022-10-21 00:58:23,353 TADA INFO assertion 5, verify cfg_file syntax error report: verify JSON parse error, passed
+2022-10-21 00:58:23,465 TADA INFO assertion 6, verify cfg_file unsupported events report: verify unsupported event report, passed
+2022-10-21 00:58:44,895 TADA INFO assertion 7, verify cfg_file for many events: each event has either 'sucees' or 'failed' report, passed
+2022-10-21 00:58:44,895 __main__ INFO  events succeeded: 77
+2022-10-21 00:58:44,895 __main__ INFO  events failed: 114
+2022-10-21 00:58:44,896 TADA INFO test syspapi_test ended
+2022-10-21 00:58:58 INFO: ----------------------------------------------
+2022-10-21 00:58:58 INFO: ======== agg_test ========
+2022-10-21 00:58:58 INFO: CMD: python3 agg_test --prefix /home/narate/cron/ldms-test/ldms-containers/ovis --runtime docker --image ovishpc/ldms-dev --src /mnt/300G/data --data_root /mnt/300G/data/2022-10-21-003001/data/agg_test
+2022-10-21 00:58:59,630 TADA INFO starting test `agg_test`
+2022-10-21 00:58:59,630 TADA INFO   test-id: 8459040dd3f291f4c07f9815cb3e68385d7bb29c695fdd58b1189c93690807e9
+2022-10-21 00:58:59,630 TADA INFO   test-suite: LDMSD
+2022-10-21 00:58:59,630 TADA INFO   test-name: agg_test
+2022-10-21 00:58:59,630 TADA INFO   test-user: narate
+2022-10-21 00:58:59,630 TADA INFO   commit-id: c6bbe5530e620865002d2995a48a3d2811fa26ac
+2022-10-21 00:58:59,631 __main__ INFO -- Get or create the cluster --
+2022-10-21 00:59:17,305 __main__ INFO -- Start daemons --
+2022-10-21 00:59:26,428 __main__ INFO ... wait a bit to make sure ldmsd's are up
+2022-10-21 00:59:31,433 __main__ INFO -- ldms_ls to agg-2 --
+2022-10-21 00:59:31,563 TADA INFO assertion 1, ldms_ls agg-2: dir result verified, passed
+2022-10-21 00:59:32,325 TADA INFO assertion 2, meminfo data verification: data verified, passed
+2022-10-21 00:59:32,325 __main__ INFO -- Terminating ldmsd on node-1 --
+2022-10-21 00:59:34,659 TADA INFO assertion 3, node-1 ldmsd terminated, sets removed from agg-11: list({'node-3/meminfo'}) == expect({'node-3/meminfo'}), passed
+2022-10-21 00:59:34,884 TADA INFO assertion 4, node-1 ldmsd terminated, sets removed from agg-2: list({'node-4/meminfo', 'node-2/meminfo', 'node-3/meminfo'}) == expect({'node-4/meminfo', 'node-2/meminfo', 'node-3/meminfo'}), passed
+2022-10-21 00:59:34,884 __main__ INFO -- Resurrecting ldmsd on node-1 --
+2022-10-21 00:59:40,581 TADA INFO assertion 5, node-1 ldmsd revived, sets added to agg-11: list({'node-1/meminfo', 'node-3/meminfo'}) == expect({'node-1/meminfo', 'node-3/meminfo'}), passed
+2022-10-21 00:59:40,692 TADA INFO assertion 6, node-1 ldmsd revived, sets added to agg-2: list({'node-4/meminfo', 'node-2/meminfo', 'node-3/meminfo', 'node-1/meminfo'}) == expect({'node-4/meminfo', 'node-1/meminfo', 'node-3/meminfo', 'node-2/meminfo'}), passed
+2022-10-21 00:59:40,692 __main__ INFO -- Terminating ldmsd on agg-11 --
+2022-10-21 00:59:43,037 TADA INFO assertion 7, agg-11 ldmsd terminated, sets removed from agg-2: list({'node-4/meminfo', 'node-2/meminfo'}) == expect({'node-4/meminfo', 'node-2/meminfo'}), passed
+2022-10-21 00:59:43,157 TADA INFO assertion 8, agg-11 ldmsd terminated, node-1 ldmsd is still running: list({'node-1/meminfo'}) == expect({'node-1/meminfo'}), passed
+2022-10-21 00:59:43,269 TADA INFO assertion 9, agg-11 ldmsd terminated, node-3 ldmsd is still running: list({'node-3/meminfo'}) == expect({'node-3/meminfo'}), passed
+2022-10-21 00:59:43,269 __main__ INFO -- Resurrecting ldmsd on agg-11 --
+2022-10-21 00:59:48,913 TADA INFO assertion 10, agg-11 ldmsd revived, sets added to agg-2: list({'node-4/meminfo', 'node-2/meminfo', 'node-3/meminfo', 'node-1/meminfo'}) == expect({'node-4/meminfo', 'node-1/meminfo', 'node-3/meminfo', 'node-2/meminfo'}), passed
+2022-10-21 00:59:48,913 TADA INFO test agg_test ended
+2022-10-21 01:00:04 INFO: ----------------------------------------------
+2022-10-21 01:00:05 INFO: ======== failover_test ========
+2022-10-21 01:00:05 INFO: CMD: python3 failover_test --prefix /home/narate/cron/ldms-test/ldms-containers/ovis --runtime docker --image ovishpc/ldms-dev --src /mnt/300G/data --data_root /mnt/300G/data/2022-10-21-003001/data/failover_test
+2022-10-21 01:00:06,278 TADA INFO starting test `failover_test`
+2022-10-21 01:00:06,278 TADA INFO   test-id: 824d6f7c7e70ddf78f3484b9531e0cb3c59273f486dc055ae7054645bd00ccb0
+2022-10-21 01:00:06,278 TADA INFO   test-suite: LDMSD
+2022-10-21 01:00:06,278 TADA INFO   test-name: failover_test
+2022-10-21 01:00:06,278 TADA INFO   test-user: narate
+2022-10-21 01:00:06,278 TADA INFO   commit-id: c6bbe5530e620865002d2995a48a3d2811fa26ac
+2022-10-21 01:00:06,279 __main__ INFO -- Get or create the cluster --
+2022-10-21 01:00:24,221 __main__ INFO -- Start daemons --
+2022-10-21 01:00:33,378 __main__ INFO ... wait a bit to make sure ldmsd's are up
+2022-10-21 01:00:48,394 __main__ INFO -- ldms_ls to agg-2 --
+2022-10-21 01:00:48,522 TADA INFO assertion 1, 
+ldms_ls agg-2: dir result verified, passed
+2022-10-21 01:00:49,287 TADA INFO assertion 2, 
+meminfo data verification: data verified, passed
+2022-10-21 01:00:49,287 __main__ INFO -- Terminating ldmsd on agg-11 --
+2022-10-21 01:00:54,639 TADA INFO assertion 3, 
+agg-11 ldmsd terminated, sets added to agg-12: list({'node-1/meminfo', 'node-3/meminfo', 'node-4/meminfo', 'node-2/meminfo'}) == expect({'node-4/meminfo', 'node-1/meminfo', 'node-3/meminfo', 'node-2/meminfo'}), passed
+2022-10-21 01:00:54,755 TADA INFO assertion 4, 
+agg-11 ldmsd terminated, all sets running on agg-2: list({'node-1/meminfo', 'node-3/meminfo', 'node-4/meminfo', 'node-2/meminfo'}) == expect({'node-4/meminfo', 'node-1/meminfo', 'node-3/meminfo', 'node-2/meminfo'}), passed
+2022-10-21 01:00:54,859 TADA INFO assertion 5, 
+agg-11 ldmsd terminated, node-1 ldmsd is still running: list({'node-1/meminfo'}) == expect({'node-1/meminfo'}), passed
+2022-10-21 01:00:54,977 TADA INFO assertion 6, 
+agg-11 ldmsd terminated, node-3 ldmsd is still running: list({'node-3/meminfo'}) == expect({'node-3/meminfo'}), passed
+2022-10-21 01:00:54,978 __main__ INFO -- Resurrecting ldmsd on agg-11 --
+2022-10-21 01:01:15,690 TADA INFO assertion 7, 
+agg-11 ldmsd revived, sets removed from agg-12: list({'node-4/meminfo', 'node-2/meminfo'}) == expect({'node-4/meminfo', 'node-2/meminfo'}), passed
+2022-10-21 01:01:15,798 TADA INFO assertion 8, 
+agg-11 ldmsd revived, all sets running on agg-2: list({'node-1/meminfo', 'node-3/meminfo', 'node-4/meminfo', 'node-2/meminfo'}) == expect({'node-4/meminfo', 'node-1/meminfo', 'node-3/meminfo', 'node-2/meminfo'}), passed
+2022-10-21 01:01:15,798 __main__ INFO -- Terminating ldmsd on agg-12 --
+2022-10-21 01:01:21,149 TADA INFO assertion 9, 
+agg-12 ldmsd terminated, sets added to agg-11: list({'node-1/meminfo', 'node-3/meminfo', 'node-4/meminfo', 'node-2/meminfo'}) == expect({'node-4/meminfo', 'node-1/meminfo', 'node-3/meminfo', 'node-2/meminfo'}), passed
+2022-10-21 01:01:21,268 TADA INFO assertion 10, 
+agg-12 ldmsd terminated, all sets running on agg-2: list({'node-1/meminfo', 'node-3/meminfo', 'node-4/meminfo', 'node-2/meminfo'}) == expect({'node-4/meminfo', 'node-1/meminfo', 'node-3/meminfo', 'node-2/meminfo'}), passed
+2022-10-21 01:01:21,373 TADA INFO assertion 11, 
+agg-12 ldmsd terminated, node-2 ldmsd is still running: list({'node-2/meminfo'}) == expect({'node-2/meminfo'}), passed
+2022-10-21 01:01:21,478 TADA INFO assertion 12, 
+agg-12 ldmsd terminated, node-4 ldmsd is still running: list({'node-4/meminfo'}) == expect({'node-4/meminfo'}), passed
+2022-10-21 01:01:21,479 __main__ INFO -- Resurrecting ldmsd on agg-12 --
+2022-10-21 01:01:42,157 TADA INFO assertion 13, 
+agg-12 ldmsd revived, sets removed from agg-11: list({'node-1/meminfo', 'node-3/meminfo'}) == expect({'node-1/meminfo', 'node-3/meminfo'}), passed
+2022-10-21 01:01:42,281 TADA INFO assertion 14, 
+agg-12 ldmsd revived, all sets running on agg-2: list({'node-1/meminfo', 'node-3/meminfo', 'node-4/meminfo', 'node-2/meminfo'}) == expect({'node-4/meminfo', 'node-1/meminfo', 'node-3/meminfo', 'node-2/meminfo'}), passed
+2022-10-21 01:01:42,282 TADA INFO test failover_test ended
+2022-10-21 01:01:57 INFO: ----------------------------------------------
+2022-10-21 01:01:58 INFO: ======== ldmsd_auth_ovis_test ========
+2022-10-21 01:01:58 INFO: CMD: python3 ldmsd_auth_ovis_test --prefix /home/narate/cron/ldms-test/ldms-containers/ovis --runtime docker --image ovishpc/ldms-dev --src /mnt/300G/data --data_root /mnt/300G/data/2022-10-21-003001/data/ldmsd_auth_ovis_test
+2022-10-21 01:01:59,077 TADA INFO starting test `ldmsd_auth_ovis_test`
+2022-10-21 01:01:59,078 TADA INFO   test-id: ae8cae08382c1ba29a60466a433f7845f2ca112aee84764ae4305f94ccfe4a74
+2022-10-21 01:01:59,078 TADA INFO   test-suite: LDMSD
+2022-10-21 01:01:59,078 TADA INFO   test-name: ldmsd_auth_ovis_test
+2022-10-21 01:01:59,078 TADA INFO   test-user: narate
+2022-10-21 01:01:59,078 TADA INFO   commit-id: c6bbe5530e620865002d2995a48a3d2811fa26ac
+2022-10-21 01:01:59,078 __main__ INFO -- Get or create the cluster --
+2022-10-21 01:02:04,332 __main__ INFO -- Start daemons --
+2022-10-21 01:02:06,250 __main__ INFO ... wait a bit to make sure ldmsd's are up
+2022-10-21 01:02:11,375 TADA INFO assertion 1, ldms_ls with auth none: verified, passed
+2022-10-21 01:02:11,487 TADA INFO assertion 2, ldms_ls with wrong secret: verified, passed
+2022-10-21 01:02:11,610 TADA INFO assertion 3, ldms_ls 'dir' with right secret: verified, passed
+2022-10-21 01:02:11,896 TADA INFO assertion 4, ldms_ls 'read' with right secret: verified, passed
+2022-10-21 01:02:11,896 TADA INFO test ldmsd_auth_ovis_test ended
+2022-10-21 01:02:23 INFO: ----------------------------------------------
+2022-10-21 01:02:24 INFO: ======== ldmsd_auth_test ========
+2022-10-21 01:02:24 INFO: CMD: python3 ldmsd_auth_test --prefix /home/narate/cron/ldms-test/ldms-containers/ovis --runtime docker --image ovishpc/ldms-dev --src /mnt/300G/data --data_root /mnt/300G/data/2022-10-21-003001/data/ldmsd_auth_test
+2022-10-21 01:02:24,943 TADA INFO starting test `ldmsd_auth_test`
+2022-10-21 01:02:24,943 TADA INFO   test-id: 915353fef8a41e5db87cce2f21a884a74e0f0beb483206b65e390caec3f7b0bb
+2022-10-21 01:02:24,943 TADA INFO   test-suite: LDMSD
+2022-10-21 01:02:24,943 TADA INFO   test-name: ldmsd_auth_test
+2022-10-21 01:02:24,944 TADA INFO   test-user: narate
+2022-10-21 01:02:24,944 TADA INFO   commit-id: c6bbe5530e620865002d2995a48a3d2811fa26ac
+2022-10-21 01:02:24,944 __main__ INFO -- Get or create the cluster --
+2022-10-21 01:02:42,634 __main__ INFO -- Start daemons --
+2022-10-21 01:03:01,472 __main__ INFO ... wait a bit to make sure ldmsd's are up
+2022-10-21 01:03:06,600 TADA INFO assertion 1, root@agg-2(dom3) ldms_ls to agg-2:10000: see all sets, passed
+2022-10-21 01:03:06,699 TADA INFO assertion 2, user@agg-2(dom3) ldms_ls to agg-2:10000: see only meminfo, passed
+2022-10-21 01:03:06,822 TADA INFO assertion 3, root@headnode(dom4) ldms_ls to agg-2:10001: see all sets, passed
+2022-10-21 01:03:06,934 TADA INFO assertion 4, user@headnode(dom4) ldms_ls to agg-2:10001: see only meminfo, passed
+2022-10-21 01:03:07,060 TADA INFO assertion 5, root@headnode(dom4) ldms_ls to agg-11:10000: connection rejected, passed
+2022-10-21 01:03:07,060 TADA INFO test ldmsd_auth_test ended
+2022-10-21 01:03:22 INFO: ----------------------------------------------
+2022-10-21 01:03:23 INFO: ======== ldmsd_ctrl_test ========
+2022-10-21 01:03:23 INFO: CMD: python3 ldmsd_ctrl_test --prefix /home/narate/cron/ldms-test/ldms-containers/ovis --runtime docker --image ovishpc/ldms-dev --src /mnt/300G/data --data_root /mnt/300G/data/2022-10-21-003001/data/ldmsd_ctrl_test
+2022-10-21 01:03:24,272 TADA INFO starting test `ldmsd_ctrl_test`
+2022-10-21 01:03:24,272 TADA INFO   test-id: f637f65dff6aae7db34adb2b167fa7f9ffcf07e1c12742cdf77c8a46c726cb16
+2022-10-21 01:03:24,272 TADA INFO   test-suite: LDMSD
+2022-10-21 01:03:24,272 TADA INFO   test-name: ldmsd_ctrl_test
+2022-10-21 01:03:24,272 TADA INFO   test-user: narate
+2022-10-21 01:03:24,272 TADA INFO   commit-id: c6bbe5530e620865002d2995a48a3d2811fa26ac
+2022-10-21 01:03:24,273 __main__ INFO -- Get or create the cluster --
+2022-10-21 01:03:33,734 __main__ INFO -- Start daemons --
+2022-10-21 01:03:38,088 __main__ INFO ... wait a bit to make sure ldmsd's are up
+2022-10-21 01:03:44,203 TADA INFO assertion 1, ldmsd_controller interactive session: connected, passed
+2022-10-21 01:03:45,319 TADA INFO assertion 2, ldmsctl interactive session: connected, passed
+2022-10-21 01:03:45,920 TADA INFO assertion 3, ldmsd_controller start bogus producer: expected output verified, passed
+2022-10-21 01:03:46,522 TADA INFO assertion 4, ldmsctl start bogus producer: expected output verified, passed
+2022-10-21 01:03:47,123 TADA INFO assertion 5, ldmsd_controller bogus command: expected output verified, passed
+2022-10-21 01:03:47,724 TADA INFO assertion 6, ldmsctl bogus command: expected output verified, passed
+2022-10-21 01:03:48,326 TADA INFO assertion 7, ldmsd_controller load bogus plugin: expected output verified, passed
+2022-10-21 01:03:48,927 TADA INFO assertion 8, ldmsctl load bogus plugin: expected output verified, passed
+2022-10-21 01:04:06,117 TADA INFO assertion 9, ldmsd_controller prdcr/updtr: verified, passed
+2022-10-21 01:04:23,309 TADA INFO assertion 10, ldmsctl prdcr/updtr: verified, passed
+2022-10-21 01:04:23,309 TADA INFO test ldmsd_ctrl_test ended
+2022-10-21 01:04:35 INFO: ----------------------------------------------
+2022-10-21 01:04:36 INFO: ======== ldmsd_stream_test ========
+2022-10-21 01:04:36 INFO: CMD: python3 ldmsd_stream_test --prefix /home/narate/cron/ldms-test/ldms-containers/ovis --runtime docker --image ovishpc/ldms-dev --src /mnt/300G/data --data_root /mnt/300G/data/2022-10-21-003001/data/ldmsd_stream_test
+2022-10-21 01:04:37,472 TADA INFO starting test `ldmsd_stream_test`
+2022-10-21 01:04:37,472 TADA INFO   test-id: bf830ed154f0372419c4cf33f98d77dda760dd857accb3922613487c5b522871
+2022-10-21 01:04:37,472 TADA INFO   test-suite: LDMSD
+2022-10-21 01:04:37,472 TADA INFO   test-name: ldmsd_stream_test
+2022-10-21 01:04:37,473 TADA INFO   test-user: narate
+2022-10-21 01:04:37,473 TADA INFO   commit-id: c6bbe5530e620865002d2995a48a3d2811fa26ac
+2022-10-21 01:04:48,583 __main__ INFO waiting for libraries to be available across all containers...
+2022-10-21 01:04:49,471 __main__ INFO _lib_avail: True
+2022-10-21 01:05:56,740 __main__ INFO test ldmsd_stream_subscribe with large json streams
+2022-10-21 01:06:02,871 __main__ INFO --- Sending stream to ldmsd_stream_subscriber
+2022-10-21 01:06:16,038 __main__ INFO --- Verifying the received streams
+2022-10-21 01:06:17,630 TADA INFO assertion 1, ldmsd_stream_subscribe receives large json streams: Verify all streams were received correctly, passed
+2022-10-21 01:06:17,844 __main__ INFO test LDMSD with large json streams
+2022-10-21 01:06:23,935 __main__ INFO --- Sending stream to samplerd
+2022-10-21 01:06:42,617 __main__ INFO --- Verifying the streams received by samplerd
+2022-10-21 01:06:45,020 TADA INFO assertion 2, samplerd receives large json streams: Verify all streams were received correctly, passed
+2022-10-21 01:06:45,020 __main__ INFO --- Verifying the streams received by samplerd
+2022-10-21 01:06:47,412 TADA INFO assertion 3, agg receives large json streams: Verify all streams were received correctly, passed
+2022-10-21 01:06:47,412 __main__ INFO test ldmsd_stream_subscribe with small json streams
+2022-10-21 01:06:53,521 __main__ INFO --- Sending stream to ldmsd_stream_subscriber
+2022-10-21 01:08:49,076 __main__ INFO --- Verifying the received streams
+2022-10-21 01:08:50,981 TADA INFO assertion 4, ldmsd_stream_subscribe receives small json streams: Verify all streams were received correctly, passed
+2022-10-21 01:08:51,197 __main__ INFO test LDMSD with small json streams
+2022-10-21 01:08:57,270 __main__ INFO --- Sending stream to samplerd
+2022-10-21 01:10:57,782 __main__ INFO --- Verifying the streams received by samplerd
+2022-10-21 01:11:00,605 TADA INFO assertion 5, samplerd receives small json streams: Verify all streams were received correctly, passed
+2022-10-21 01:11:00,605 __main__ INFO --- Verifying the streams received by samplerd
+2022-10-21 01:11:03,639 TADA INFO assertion 6, agg receives small json streams: Verify all streams were received correctly, passed
+2022-10-21 01:11:03,639 __main__ INFO test ldmsd_stream_subscribe with large string streams
+2022-10-21 01:11:09,741 __main__ INFO --- Sending stream to ldmsd_stream_subscriber
+2022-10-21 01:11:22,946 __main__ INFO --- Verifying the received streams
+2022-10-21 01:11:24,393 TADA INFO assertion 7, ldmsd_stream_subscribe receives large string streams: Verify all streams were received correctly, passed
+2022-10-21 01:11:24,626 __main__ INFO test LDMSD with large string streams
+2022-10-21 01:11:30,641 __main__ INFO --- Sending stream to samplerd
+2022-10-21 01:11:49,365 __main__ INFO --- Verifying the streams received by samplerd
+2022-10-21 01:11:50,540 TADA INFO assertion 8, samplerd receives large string streams: Verify all streams were received correctly, passed
+2022-10-21 01:11:50,541 __main__ INFO --- Verifying the streams received by samplerd
+2022-10-21 01:11:51,681 TADA INFO assertion 9, agg receives large string streams: Verify all streams were received correctly, passed
+2022-10-21 01:11:51,681 __main__ INFO test ldmsd_stream_subscribe with small string streams
+2022-10-21 01:11:57,815 __main__ INFO --- Sending stream to ldmsd_stream_subscriber
+2022-10-21 01:13:53,305 __main__ INFO --- Verifying the received streams
+2022-10-21 01:13:55,198 TADA INFO assertion 10, ldmsd_stream_subscribe receives small string streams: Verify all streams were received correctly, passed
+2022-10-21 01:13:55,421 __main__ INFO test LDMSD with small string streams
+2022-10-21 01:14:01,457 __main__ INFO --- Sending stream to samplerd
+2022-10-21 01:16:02,214 __main__ INFO --- Verifying the streams received by samplerd
+2022-10-21 01:16:03,436 TADA INFO assertion 11, samplerd receives small string streams: Verify all streams were received correctly, passed
+2022-10-21 01:16:03,436 __main__ INFO --- Verifying the streams received by samplerd
+2022-10-21 01:16:04,654 TADA INFO assertion 12, agg receives small string streams: Verify all streams were received correctly, passed
+2022-10-21 01:16:04,655 TADA INFO test ldmsd_stream_test ended
+2022-10-21 01:16:18 INFO: ----------------------------------------------
+2022-10-21 01:16:20 INFO: ======== maestro_cfg_test ========
+2022-10-21 01:16:20 INFO: CMD: python3 maestro_cfg_test --prefix /home/narate/cron/ldms-test/ldms-containers/ovis --runtime docker --image ovishpc/ldms-dev --src /mnt/300G/data --data_root /mnt/300G/data/2022-10-21-003001/data/maestro_cfg_test
+2022-10-21 01:16:20,751 TADA INFO starting test `maestro_cfg_test`
+2022-10-21 01:16:20,751 TADA INFO   test-id: f8428fea7a6142e38ae9e3e8d9d1bd4a6d82fc1839509c6aa23e3b949b1c805c
+2022-10-21 01:16:20,751 TADA INFO   test-suite: LDMSD
+2022-10-21 01:16:20,751 TADA INFO   test-name: maestro_cfg_test
+2022-10-21 01:16:20,752 TADA INFO   test-user: narate
+2022-10-21 01:16:20,752 TADA INFO   commit-id: c6bbe5530e620865002d2995a48a3d2811fa26ac
+2022-10-21 01:16:30,763 __main__ INFO -- Get or create cluster --
+2022-10-21 01:16:57,413 __main__ INFO -- Start daemons --
+2022-10-21 01:17:12,053 __main__ INFO ... make sure ldmsd's are up
+2022-10-21 01:17:19,735 TADA INFO assertion 1, load maestro etcd cluster: etcd cluster loaded successfully, passed
+2022-10-21 01:17:59,775 TADA INFO assertion 2, config ldmsd cluster with maestro: Maestro ldmsd configuration successful, passed
+2022-10-21 01:18:01,355 TADA INFO assertion 3, verify sampler daemons: OK, passed
+2022-10-21 01:18:01,955 TADA INFO assertion 4, verify L1 aggregator daemons: OK, passed
+2022-10-21 01:18:02,210 TADA INFO assertion 5, verify L2 aggregator daemon: OK, passed
+2022-10-21 01:18:02,488 TADA INFO assertion 6, verify data storage: OK, passed
+---Wait for config to write to file---
+2022-10-21 01:18:02,488 TADA INFO test maestro_cfg_test ended
+2022-10-21 01:18:20 INFO: ----------------------------------------------
+2022-10-21 01:18:21 INFO: ======== mt-slurm-test ========
+2022-10-21 01:18:21 INFO: CMD: python3 mt-slurm-test --prefix /home/narate/cron/ldms-test/ldms-containers/ovis --runtime docker --image ovishpc/ldms-dev --src /mnt/300G/data --data_root /mnt/300G/data/2022-10-21-003001/data/mt-slurm-test
+-- Get or create the cluster --
+-- Start daemons --
+... wait a bit to make sure ldmsd's are up
+Every job in input data represented in output: : Passed
+['# task_rank,timestamp', '0,1666333141.929021', '1,1666333141.929021', '2,1666333141.929021', '3,1666333141.929021', '4,1666333141.929021', '5,1666333141.929021', '6,1666333141.929021', '7,1666333141.929021', '8,1666333142.905836', '9,1666333143.900843', '10,1666333143.900843', '11,1666333143.900843', '12,1666333143.900843', '13,1666333143.900843', '14,1666333143.900843', '15,1666333144.981725', '16,1666333144.981725', '17,1666333144.981725', '18,1666333145.977727', '19,1666333145.977727', '20,1666333145.977727', '21,1666333145.977727', '22,1666333145.977727', '23,1666333146.965530', '24,1666333146.965530', '25,1666333146.965530', '26,1666333146.965530', '# Records 27/27.', '']
+Job 10000 has 27 rank: : Passed
+Job 10100 has 64 rank: : Passed
+For Job 10000 job_size in metric set matches database: job_size input match 27: Passed
+27
+27
+For Job 10000 job_id in metric set matches database: job_id match: Passed
+For Job 10000 task_rank in metric set matches database: task_rank match: Passed
+For Job 10000 job_pid in metric set matches database: task_pid match: Passed
+For Job 10000 job_id in metric set matches database: job_id match: Passed
+For Job 10000 task_rank in metric set matches database: task_rank match: Passed
+For Job 10000 job_pid in metric set matches database: task_pid match: Passed
+For Job 10000 job_id in metric set matches database: job_id match: Passed
+For Job 10000 task_rank in metric set matches database: task_rank match: Passed
+For Job 10000 job_pid in metric set matches database: task_pid match: Passed
+For Job 10000 job_id in metric set matches database: job_id match: Passed
+For Job 10000 task_rank in metric set matches database: task_rank match: Passed
+For Job 10000 job_pid in metric set matches database: task_pid match: Passed
+For Job 10000 job_id in metric set matches database: job_id match: Passed
+For Job 10000 task_rank in metric set matches database: task_rank match: Passed
+For Job 10000 job_pid in metric set matches database: task_pid match: Passed
+For Job 10000 job_id in metric set matches database: job_id match: Passed
+For Job 10000 task_rank in metric set matches database: task_rank match: Passed
+For Job 10000 job_pid in metric set matches database: task_pid match: Passed
+For Job 10000 job_id in metric set matches database: job_id match: Passed
+For Job 10000 task_rank in metric set matches database: task_rank match: Passed
+For Job 10000 job_pid in metric set matches database: task_pid match: Passed
+For Job 10000 job_id in metric set matches database: job_id match: Passed
+For Job 10000 task_rank in metric set matches database: task_rank match: Passed
+For Job 10000 job_pid in metric set matches database: task_pid match: Passed
+For Job 10000 job_id in metric set matches database: job_id match: Passed
+For Job 10000 task_rank in metric set matches database: task_rank match: Passed
+For Job 10000 job_pid in metric set matches database: task_pid match: Passed
+For Job 10000 job_size in metric set matches database: job_size input match 27: Passed
+27
+27
+For Job 10000 job_id in metric set matches database: job_id match: Passed
+For Job 10000 task_rank in metric set matches database: task_rank match: Passed
+For Job 10000 job_pid in metric set matches database: task_pid match: Passed
+For Job 10000 job_id in metric set matches database: job_id match: Passed
+For Job 10000 task_rank in metric set matches database: task_rank match: Passed
+For Job 10000 job_pid in metric set matches database: task_pid match: Passed
+For Job 10000 job_id in metric set matches database: job_id match: Passed
+For Job 10000 task_rank in metric set matches database: task_rank match: Passed
+For Job 10000 job_pid in metric set matches database: task_pid match: Passed
+For Job 10000 job_id in metric set matches database: job_id match: Passed
+For Job 10000 task_rank in metric set matches database: task_rank match: Passed
+For Job 10000 job_pid in metric set matches database: task_pid match: Passed
+For Job 10000 job_id in metric set matches database: job_id match: Passed
+For Job 10000 task_rank in metric set matches database: task_rank match: Passed
+For Job 10000 job_pid in metric set matches database: task_pid match: Passed
+For Job 10000 job_id in metric set matches database: job_id match: Passed
+For Job 10000 task_rank in metric set matches database: task_rank match: Passed
+For Job 10000 job_pid in metric set matches database: task_pid match: Passed
+For Job 10000 job_id in metric set matches database: job_id match: Passed
+For Job 10000 task_rank in metric set matches database: task_rank match: Passed
+For Job 10000 job_pid in metric set matches database: task_pid match: Passed
+For Job 10000 job_id in metric set matches database: job_id match: Passed
+For Job 10000 task_rank in metric set matches database: task_rank match: Passed
+For Job 10000 job_pid in metric set matches database: task_pid match: Passed
+For Job 10000 job_id in metric set matches database: job_id match: Passed
+For Job 10000 task_rank in metric set matches database: task_rank match: Passed
+For Job 10000 job_pid in metric set matches database: task_pid match: Passed
+For Job 10000 job_size in metric set matches database: job_size input match 27: Passed
+27
+27
+For Job 10000 job_id in metric set matches database: job_id match: Passed
+For Job 10000 task_rank in metric set matches database: task_rank match: Passed
+For Job 10000 job_pid in metric set matches database: task_pid match: Passed
+For Job 10000 job_id in metric set matches database: job_id match: Passed
+For Job 10000 task_rank in metric set matches database: task_rank match: Passed
+For Job 10000 job_pid in metric set matches database: task_pid match: Passed
+For Job 10000 job_id in metric set matches database: job_id match: Passed
+For Job 10000 task_rank in metric set matches database: task_rank match: Passed
+For Job 10000 job_pid in metric set matches database: task_pid match: Passed
+For Job 10000 job_id in metric set matches database: job_id match: Passed
+For Job 10000 task_rank in metric set matches database: task_rank match: Passed
+For Job 10000 job_pid in metric set matches database: task_pid match: Passed
+For Job 10000 job_id in metric set matches database: job_id match: Passed
+For Job 10000 task_rank in metric set matches database: task_rank match: Passed
+For Job 10000 job_pid in metric set matches database: task_pid match: Passed
+For Job 10000 job_id in metric set matches database: job_id match: Passed
+For Job 10000 task_rank in metric set matches database: task_rank match: Passed
+For Job 10000 job_pid in metric set matches database: task_pid match: Passed
+For Job 10000 job_id in metric set matches database: job_id match: Passed
+For Job 10000 task_rank in metric set matches database: task_rank match: Passed
+For Job 10000 job_pid in metric set matches database: task_pid match: Passed
+For Job 10000 job_id in metric set matches database: job_id match: Passed
+For Job 10000 task_rank in metric set matches database: task_rank match: Passed
+For Job 10000 job_pid in metric set matches database: task_pid match: Passed
+For Job 10000 job_id in metric set matches database: job_id match: Passed
+For Job 10000 task_rank in metric set matches database: task_rank match: Passed
+For Job 10000 job_pid in metric set matches database: task_pid match: Passed
+For Job 10100 job_size in metric set matches database: job_size input match 64: Passed
+64
+64
+For Job 10100 job_id in metric set matches database: job_id match: Passed
+For Job 10100 task_rank in metric set matches database: task_rank match: Passed
+For Job 10100 job_pid in metric set matches database: task_pid match: Passed
+For Job 10100 job_id in metric set matches database: job_id match: Passed
+For Job 10100 task_rank in metric set matches database: task_rank match: Passed
+For Job 10100 job_pid in metric set matches database: task_pid match: Passed
+For Job 10100 job_id in metric set matches database: job_id match: Passed
+For Job 10100 task_rank in metric set matches database: task_rank match: Passed
+For Job 10100 job_pid in metric set matches database: task_pid match: Passed
+For Job 10100 job_id in metric set matches database: job_id match: Passed
+For Job 10100 task_rank in metric set matches database: task_rank match: Passed
+For Job 10100 job_pid in metric set matches database: task_pid match: Passed
+For Job 10100 job_id in metric set matches database: job_id match: Passed
+For Job 10100 task_rank in metric set matches database: task_rank match: Passed
+For Job 10100 job_pid in metric set matches database: task_pid match: Passed
+For Job 10100 job_id in metric set matches database: job_id match: Passed
+For Job 10100 task_rank in metric set matches database: task_rank match: Passed
+For Job 10100 job_pid in metric set matches database: task_pid match: Passed
+For Job 10100 job_id in metric set matches database: job_id match: Passed
+For Job 10100 task_rank in metric set matches database: task_rank match: Passed
+For Job 10100 job_pid in metric set matches database: task_pid match: Passed
+For Job 10100 job_id in metric set matches database: job_id match: Passed
+For Job 10100 task_rank in metric set matches database: task_rank match: Passed
+For Job 10100 job_pid in metric set matches database: task_pid match: Passed
+For Job 10100 job_id in metric set matches database: job_id match: Passed
+For Job 10100 task_rank in metric set matches database: task_rank match: Passed
+For Job 10100 job_pid in metric set matches database: task_pid match: Passed
+For Job 10100 job_id in metric set matches database: job_id match: Passed
+For Job 10100 task_rank in metric set matches database: task_rank match: Passed
+For Job 10100 job_pid in metric set matches database: task_pid match: Passed
+For Job 10100 job_id in metric set matches database: job_id match: Passed
+For Job 10100 task_rank in metric set matches database: task_rank match: Passed
+For Job 10100 job_pid in metric set matches database: task_pid match: Passed
+For Job 10100 job_id in metric set matches database: job_id match: Passed
+For Job 10100 task_rank in metric set matches database: task_rank match: Passed
+For Job 10100 job_pid in metric set matches database: task_pid match: Passed
+For Job 10100 job_id in metric set matches database: job_id match: Passed
+For Job 10100 task_rank in metric set matches database: task_rank match: Passed
+For Job 10100 job_pid in metric set matches database: task_pid match: Passed
+For Job 10100 job_id in metric set matches database: job_id match: Passed
+For Job 10100 task_rank in metric set matches database: task_rank match: Passed
+For Job 10100 job_pid in metric set matches database: task_pid match: Passed
+For Job 10100 job_id in metric set matches database: job_id match: Passed
+For Job 10100 task_rank in metric set matches database: task_rank match: Passed
+For Job 10100 job_pid in metric set matches database: task_pid match: Passed
+For Job 10100 job_id in metric set matches database: job_id match: Passed
+For Job 10100 task_rank in metric set matches database: task_rank match: Passed
+For Job 10100 job_pid in metric set matches database: task_pid match: Passed
+For Job 10100 job_size in metric set matches database: job_size input match 64: Passed
+64
+64
+For Job 10100 job_id in metric set matches database: job_id match: Passed
+For Job 10100 task_rank in metric set matches database: task_rank match: Passed
+For Job 10100 job_pid in metric set matches database: task_pid match: Passed
+For Job 10100 job_id in metric set matches database: job_id match: Passed
+For Job 10100 task_rank in metric set matches database: task_rank match: Passed
+For Job 10100 job_pid in metric set matches database: task_pid match: Passed
+For Job 10100 job_id in metric set matches database: job_id match: Passed
+For Job 10100 task_rank in metric set matches database: task_rank match: Passed
+For Job 10100 job_pid in metric set matches database: task_pid match: Passed
+For Job 10100 job_id in metric set matches database: job_id match: Passed
+For Job 10100 task_rank in metric set matches database: task_rank match: Passed
+For Job 10100 job_pid in metric set matches database: task_pid match: Passed
+For Job 10100 job_id in metric set matches database: job_id match: Passed
+For Job 10100 task_rank in metric set matches database: task_rank match: Passed
+For Job 10100 job_pid in metric set matches database: task_pid match: Passed
+For Job 10100 job_id in metric set matches database: job_id match: Passed
+For Job 10100 task_rank in metric set matches database: task_rank match: Passed
+For Job 10100 job_pid in metric set matches database: task_pid match: Passed
+For Job 10100 job_id in metric set matches database: job_id match: Passed
+For Job 10100 task_rank in metric set matches database: task_rank match: Passed
+For Job 10100 job_pid in metric set matches database: task_pid match: Passed
+For Job 10100 job_id in metric set matches database: job_id match: Passed
+For Job 10100 task_rank in metric set matches database: task_rank match: Passed
+For Job 10100 job_pid in metric set matches database: task_pid match: Passed
+For Job 10100 job_id in metric set matches database: job_id match: Passed
+For Job 10100 task_rank in metric set matches database: task_rank match: Passed
+For Job 10100 job_pid in metric set matches database: task_pid match: Passed
+For Job 10100 job_id in metric set matches database: job_id match: Passed
+For Job 10100 task_rank in metric set matches database: task_rank match: Passed
+For Job 10100 job_pid in metric set matches database: task_pid match: Passed
+For Job 10100 job_id in metric set matches database: job_id match: Passed
+For Job 10100 task_rank in metric set matches database: task_rank match: Passed
+For Job 10100 job_pid in metric set matches database: task_pid match: Passed
+For Job 10100 job_id in metric set matches database: job_id match: Passed
+For Job 10100 task_rank in metric set matches database: task_rank match: Passed
+For Job 10100 job_pid in metric set matches database: task_pid match: Passed
+For Job 10100 job_id in metric set matches database: job_id match: Passed
+For Job 10100 task_rank in metric set matches database: task_rank match: Passed
+For Job 10100 job_pid in metric set matches database: task_pid match: Passed
+For Job 10100 job_id in metric set matches database: job_id match: Passed
+For Job 10100 task_rank in metric set matches database: task_rank match: Passed
+For Job 10100 job_pid in metric set matches database: task_pid match: Passed
+For Job 10100 job_id in metric set matches database: job_id match: Passed
+For Job 10100 task_rank in metric set matches database: task_rank match: Passed
+For Job 10100 job_pid in metric set matches database: task_pid match: Passed
+For Job 10100 job_id in metric set matches database: job_id match: Passed
+For Job 10100 task_rank in metric set matches database: task_rank match: Passed
+For Job 10100 job_pid in metric set matches database: task_pid match: Passed
+For Job 10100 job_size in metric set matches database: job_size input match 64: Passed
+64
+64
+For Job 10100 job_id in metric set matches database: job_id match: Passed
+For Job 10100 task_rank in metric set matches database: task_rank match: Passed
+For Job 10100 job_pid in metric set matches database: task_pid match: Passed
+For Job 10100 job_id in metric set matches database: job_id match: Passed
+For Job 10100 task_rank in metric set matches database: task_rank match: Passed
+For Job 10100 job_pid in metric set matches database: task_pid match: Passed
+For Job 10100 job_id in metric set matches database: job_id match: Passed
+For Job 10100 task_rank in metric set matches database: task_rank match: Passed
+For Job 10100 job_pid in metric set matches database: task_pid match: Passed
+For Job 10100 job_id in metric set matches database: job_id match: Passed
+For Job 10100 task_rank in metric set matches database: task_rank match: Passed
+For Job 10100 job_pid in metric set matches database: task_pid match: Passed
+For Job 10100 job_id in metric set matches database: job_id match: Passed
+For Job 10100 task_rank in metric set matches database: task_rank match: Passed
+For Job 10100 job_pid in metric set matches database: task_pid match: Passed
+For Job 10100 job_id in metric set matches database: job_id match: Passed
+For Job 10100 task_rank in metric set matches database: task_rank match: Passed
+For Job 10100 job_pid in metric set matches database: task_pid match: Passed
+For Job 10100 job_id in metric set matches database: job_id match: Passed
+For Job 10100 task_rank in metric set matches database: task_rank match: Passed
+For Job 10100 job_pid in metric set matches database: task_pid match: Passed
+For Job 10100 job_id in metric set matches database: job_id match: Passed
+For Job 10100 task_rank in metric set matches database: task_rank match: Passed
+For Job 10100 job_pid in metric set matches database: task_pid match: Passed
+For Job 10100 job_id in metric set matches database: job_id match: Passed
+For Job 10100 task_rank in metric set matches database: task_rank match: Passed
+For Job 10100 job_pid in metric set matches database: task_pid match: Passed
+For Job 10100 job_id in metric set matches database: job_id match: Passed
+For Job 10100 task_rank in metric set matches database: task_rank match: Passed
+For Job 10100 job_pid in metric set matches database: task_pid match: Passed
+For Job 10100 job_id in metric set matches database: job_id match: Passed
+For Job 10100 task_rank in metric set matches database: task_rank match: Passed
+For Job 10100 job_pid in metric set matches database: task_pid match: Passed
+For Job 10100 job_id in metric set matches database: job_id match: Passed
+For Job 10100 task_rank in metric set matches database: task_rank match: Passed
+For Job 10100 job_pid in metric set matches database: task_pid match: Passed
+For Job 10100 job_id in metric set matches database: job_id match: Passed
+For Job 10100 task_rank in metric set matches database: task_rank match: Passed
+For Job 10100 job_pid in metric set matches database: task_pid match: Passed
+For Job 10100 job_id in metric set matches database: job_id match: Passed
+For Job 10100 task_rank in metric set matches database: task_rank match: Passed
+For Job 10100 job_pid in metric set matches database: task_pid match: Passed
+For Job 10100 job_id in metric set matches database: job_id match: Passed
+For Job 10100 task_rank in metric set matches database: task_rank match: Passed
+For Job 10100 job_pid in metric set matches database: task_pid match: Passed
+For Job 10100 job_id in metric set matches database: job_id match: Passed
+For Job 10100 task_rank in metric set matches database: task_rank match: Passed
+For Job 10100 job_pid in metric set matches database: task_pid match: Passed
+For Job 10100 job_size in metric set matches database: job_size input match 64: Passed
+64
+64
+For Job 10100 job_id in metric set matches database: job_id match: Passed
+For Job 10100 task_rank in metric set matches database: task_rank match: Passed
+For Job 10100 job_pid in metric set matches database: task_pid match: Passed
+For Job 10100 job_id in metric set matches database: job_id match: Passed
+For Job 10100 task_rank in metric set matches database: task_rank match: Passed
+For Job 10100 job_pid in metric set matches database: task_pid match: Passed
+For Job 10100 job_id in metric set matches database: job_id match: Passed
+For Job 10100 task_rank in metric set matches database: task_rank match: Passed
+For Job 10100 job_pid in metric set matches database: task_pid match: Passed
+For Job 10100 job_id in metric set matches database: job_id match: Passed
+For Job 10100 task_rank in metric set matches database: task_rank match: Passed
+For Job 10100 job_pid in metric set matches database: task_pid match: Passed
+For Job 10100 job_id in metric set matches database: job_id match: Passed
+For Job 10100 task_rank in metric set matches database: task_rank match: Passed
+For Job 10100 job_pid in metric set matches database: task_pid match: Passed
+For Job 10100 job_id in metric set matches database: job_id match: Passed
+For Job 10100 task_rank in metric set matches database: task_rank match: Passed
+For Job 10100 job_pid in metric set matches database: task_pid match: Passed
+For Job 10100 job_id in metric set matches database: job_id match: Passed
+For Job 10100 task_rank in metric set matches database: task_rank match: Passed
+For Job 10100 job_pid in metric set matches database: task_pid match: Passed
+For Job 10100 job_id in metric set matches database: job_id match: Passed
+For Job 10100 task_rank in metric set matches database: task_rank match: Passed
+For Job 10100 job_pid in metric set matches database: task_pid match: Passed
+For Job 10100 job_id in metric set matches database: job_id match: Passed
+For Job 10100 task_rank in metric set matches database: task_rank match: Passed
+For Job 10100 job_pid in metric set matches database: task_pid match: Passed
+For Job 10100 job_id in metric set matches database: job_id match: Passed
+For Job 10100 task_rank in metric set matches database: task_rank match: Passed
+For Job 10100 job_pid in metric set matches database: task_pid match: Passed
+For Job 10100 job_id in metric set matches database: job_id match: Passed
+For Job 10100 task_rank in metric set matches database: task_rank match: Passed
+For Job 10100 job_pid in metric set matches database: task_pid match: Passed
+For Job 10100 job_id in metric set matches database: job_id match: Passed
+For Job 10100 task_rank in metric set matches database: task_rank match: Passed
+For Job 10100 job_pid in metric set matches database: task_pid match: Passed
+For Job 10100 job_id in metric set matches database: job_id match: Passed
+For Job 10100 task_rank in metric set matches database: task_rank match: Passed
+For Job 10100 job_pid in metric set matches database: task_pid match: Passed
+For Job 10100 job_id in metric set matches database: job_id match: Passed
+For Job 10100 task_rank in metric set matches database: task_rank match: Passed
+For Job 10100 job_pid in metric set matches database: task_pid match: Passed
+For Job 10100 job_id in metric set matches database: job_id match: Passed
+For Job 10100 task_rank in metric set matches database: task_rank match: Passed
+For Job 10100 job_pid in metric set matches database: task_pid match: Passed
+For Job 10100 job_id in metric set matches database: job_id match: Passed
+For Job 10100 task_rank in metric set matches database: task_rank match: Passed
+For Job 10100 job_pid in metric set matches database: task_pid match: Passed
+Job 10000 has 3 nodes: node count 3 correct: Passed
+Job 10100 has 4 nodes: node count 4 correct: Passed
+2022-10-21 01:19:39 INFO: ----------------------------------------------
+2022-10-21 01:19:40 INFO: ======== ovis_ev_test ========
+2022-10-21 01:19:40 INFO: CMD: python3 ovis_ev_test --prefix /home/narate/cron/ldms-test/ldms-containers/ovis --runtime docker --image ovishpc/ldms-dev --src /mnt/300G/data --data_root /mnt/300G/data/2022-10-21-003001/data/ovis_ev_test
+2022-10-21 01:19:41,462 __main__ INFO -- Create the cluster -- 
+2022-10-21 01:19:50,807 TADA INFO starting test `ovis_ev_test`
+2022-10-21 01:19:50,807 TADA INFO   test-id: 9964bab91cf6e3910148e5c623ed72fb48948e04be77350b5bb01041adbc54bc
+2022-10-21 01:19:50,807 TADA INFO   test-suite: test_ovis_ev
+2022-10-21 01:19:50,807 TADA INFO   test-name: ovis_ev_test
+2022-10-21 01:19:50,807 TADA INFO   test-user: narate
+2022-10-21 01:19:50,807 TADA INFO   commit-id: c6bbe5530e620865002d2995a48a3d2811fa26ac
+2022-10-21 01:19:50,808 TADA INFO assertion 1, Test posting an event without timeout: ovis_ev delivered the expected event., passed
+2022-10-21 01:19:50,808 TADA INFO assertion 2, Test posting an event with a current timeout: ovis_ev delivered the expected event., passed
+2022-10-21 01:19:50,808 TADA INFO assertion 3, Test posting an event with a future timeout: ovis_ev delivered the expected event., passed
+2022-10-21 01:19:50,808 TADA INFO assertion 4, Test reposting a posted event: ev_post returned EBUSY when posted an already posted event, passed
+2022-10-21 01:19:50,809 TADA INFO assertion 5, Test canceling a posted event: ovis_ev delivered the expected event., passed
+2022-10-21 01:19:50,809 TADA INFO assertion 6, Test rescheduling a posted event: ovis_ev delivered the expected event., passed
+2022-10-21 01:19:50,809 TADA INFO assertion 7, Test event deliver order: The event delivery order was correct., passed
+2022-10-21 01:19:50,809 TADA INFO assertion 8, Test flushing events: Expected status (1) == delivered status (1), passed
+2022-10-21 01:19:50,809 TADA INFO assertion 9, Test posting event on a flushed worker: Expected status (0) == delivered status (0), passed
+2022-10-21 01:19:50,809 TADA INFO assertion 10, Test the case that multiple threads post the same event: ev_post returned the expected return code., passed
+2022-10-21 01:19:50,809 TADA INFO test ovis_ev_test ended
+2022-10-21 01:20:01 INFO: ----------------------------------------------
+2022-10-21 01:20:02 INFO: ======== prdcr_subscribe_test ========
+2022-10-21 01:20:02 INFO: CMD: python3 prdcr_subscribe_test --prefix /home/narate/cron/ldms-test/ldms-containers/ovis --runtime docker --image ovishpc/ldms-dev --src /mnt/300G/data --data_root /mnt/300G/data/2022-10-21-003001/data/prdcr_subscribe_test
+2022-10-21 01:20:03,155 TADA INFO starting test `prdcr_subscribe_test`
+2022-10-21 01:20:03,156 TADA INFO   test-id: dc1cd1b3b491fd4d74903df4911ca4b775438ed826e1e9685823b74c5f0459e2
+2022-10-21 01:20:03,156 TADA INFO   test-suite: LDMSD
+2022-10-21 01:20:03,156 TADA INFO   test-name: prdcr_subscribe_test
+2022-10-21 01:20:03,156 TADA INFO   test-user: narate
+2022-10-21 01:20:03,156 TADA INFO   commit-id: c6bbe5530e620865002d2995a48a3d2811fa26ac
+2022-10-21 01:20:38,648 TADA INFO assertion 0, ldmsd_stream_publish of JSON data to stream-sampler-1 succeeds: verify JSON data, passed
+2022-10-21 01:20:38,648 TADA INFO assertion 1, ldmsd_stream_publish of STRING data to stream-sampler-1 succeeds: verify STRING data, passed
+2022-10-21 01:20:38,649 TADA INFO assertion 2, ldmsd_stream_publish to JSON data to stream-sampler-2 succeeds: verify JSON data, passed
+2022-10-21 01:20:38,649 TADA INFO assertion 3, ldmsd_stream_publish of STRING data to stream-sampler-2 succeeds: verify STRING data, passed
+2022-10-21 01:20:38,649 TADA INFO assertion 4, ldmsd_stream data check on agg-2: agg2 stream data verification, passed
+2022-10-21 01:20:39,004 TADA INFO assertion 5, Stopping the producers succeeds: , passed
+2022-10-21 01:20:39,358 TADA INFO assertion 6, Restarting the producers succeeds: , passed
+2022-10-21 01:20:47,355 TADA INFO assertion 7, JSON stream data resumes after producer restart on stream-sampler-1: verify JSON data, passed
+2022-10-21 01:20:47,355 TADA INFO assertion 8, STRING stream data resumes after producer rerestart on stream-sampler-1: verify STRING data, passed
+2022-10-21 01:20:47,355 TADA INFO assertion 9, JSON stream data resumes after producer restart on stream-sampler-2: verify JSON data, passed
+2022-10-21 01:20:47,356 TADA INFO assertion 10, STRING stream data resumes after producer rerestart on stream-sampler-2: verify STRING data, passed
+2022-10-21 01:20:47,356 TADA INFO assertion 11, ldmsd_stream data resume check on agg-2: agg2 stream data verification, passed
+2022-10-21 01:20:48,584 TADA INFO assertion 12, stream-sampler-1 is not running: (running == False), passed
+2022-10-21 01:20:50,130 TADA INFO assertion 13, stream-sampler-1 has restarted: (running == True), passed
+2022-10-21 01:20:57,685 TADA INFO assertion 14, JSON stream data resumes after stream-sampler-1 restart: verify JSON data, passed
+2022-10-21 01:20:57,685 TADA INFO assertion 15, STRING stream data resumes after stream-sampler-1 restart: verify STRING data, passed
+2022-10-21 01:20:57,686 TADA INFO assertion 16, ldmsd_stream data check on agg-2 after stream-sampler-1 restart: agg2 stream data verification, passed
+2022-10-21 01:20:58,034 TADA INFO assertion 17, agg-1 unsubscribes stream-sampler-1: , passed
+2022-10-21 01:21:01,372 TADA INFO assertion 18, agg-1 receives data only from stream-sampler-2: data verified, passed
+2022-10-21 01:21:07,137 TADA INFO assertion 19, stream-sampler-2 removes agg-1 stream client after disconnected: verified, passed
+2022-10-21 01:21:07,137 TADA INFO test prdcr_subscribe_test ended
+2022-10-21 01:21:19 INFO: ----------------------------------------------
+2022-10-21 01:21:20 INFO: ======== set_array_test ========
+2022-10-21 01:21:20 INFO: CMD: python3 set_array_test --prefix /home/narate/cron/ldms-test/ldms-containers/ovis --runtime docker --image ovishpc/ldms-dev --src /mnt/300G/data --data_root /mnt/300G/data/2022-10-21-003001/data/set_array_test
+2022-10-21 01:21:21,446 TADA INFO starting test `set_array_test`
+2022-10-21 01:21:21,446 TADA INFO   test-id: 693279404011c9c4f81f9cc4a37c85d90606dad07fe608d1b35ed4e9217b02c9
+2022-10-21 01:21:21,447 TADA INFO   test-suite: LDMSD
+2022-10-21 01:21:21,447 TADA INFO   test-name: set_array_test
+2022-10-21 01:21:21,447 TADA INFO   test-user: narate
+2022-10-21 01:21:21,447 TADA INFO   commit-id: c6bbe5530e620865002d2995a48a3d2811fa26ac
+2022-10-21 01:21:21,447 __main__ INFO -- Get or create the cluster --
+2022-10-21 01:21:26,917 __main__ INFO -- Start daemons --
+2022-10-21 01:21:28,852 __main__ INFO ... wait a bit to make sure ldmsd's are up
+2022-10-21 01:21:55,536 TADA INFO assertion 1, 1st update got some callbacks: verified hunk of 8 snapshots, passed
+2022-10-21 01:21:55,536 TADA INFO assertion 2, 2nd update got N callbacks: verified hunk of 5 snapshots, passed
+2022-10-21 01:21:55,536 TADA INFO assertion 3, 3nd update got N callbacks: verified hunk of 5 snapshots, passed
+2022-10-21 01:21:55,536 TADA INFO test set_array_test ended
+2022-10-21 01:22:06 INFO: ----------------------------------------------
+2022-10-21 01:22:07 INFO: ======== setgroup_test ========
+2022-10-21 01:22:07 INFO: CMD: python3 setgroup_test --prefix /home/narate/cron/ldms-test/ldms-containers/ovis --runtime docker --image ovishpc/ldms-dev --src /mnt/300G/data --data_root /mnt/300G/data/2022-10-21-003001/data/setgroup_test
+2022-10-21 01:22:08,483 TADA INFO starting test `setgroup_test`
+2022-10-21 01:22:08,483 TADA INFO   test-id: c0ac6ab215209be3e4159eba5f446623c133acb47e9dd911ba5d717977b66396
+2022-10-21 01:22:08,483 TADA INFO   test-suite: LDMSD
+2022-10-21 01:22:08,483 TADA INFO   test-name: setgroup_test
+2022-10-21 01:22:08,483 TADA INFO   test-user: narate
+2022-10-21 01:22:08,484 TADA INFO   commit-id: c6bbe5530e620865002d2995a48a3d2811fa26ac
+2022-10-21 01:22:08,485 __main__ INFO -- Get or create the cluster --
+2022-10-21 01:22:17,907 __main__ INFO -- Start daemons --
+2022-10-21 01:22:22,379 __main__ INFO ... wait a bit to make sure ldmsd's are up
+2022-10-21 01:22:27,384 __main__ INFO -- ldms_ls to agg-2 --
+2022-10-21 01:22:27,509 TADA INFO assertion 1, ldms_ls grp on agg-2: dir result verified, passed
+2022-10-21 01:22:29,746 TADA INFO assertion 2, members on agg-2 are being updated: data verified, passed
+2022-10-21 01:22:29,747 __main__ INFO -- Removing test_2 from grp --
+2022-10-21 01:22:30,238 TADA INFO assertion 3, test_2 is removed fom grp on sampler: expect {'node-1/grp', 'node-1/test_1'}, got {'node-1/grp', 'node-1/test_1'}, passed
+2022-10-21 01:22:34,378 TADA INFO assertion 4, test_2 is removed from grp on agg-1: expect {'node-1/grp', 'node-1/test_1'}, got {'node-1/grp', 'node-1/test_1'}, passed
+2022-10-21 01:22:38,501 TADA INFO assertion 5, test_2 is removed from grp on agg-2: expect {'node-1/grp', 'node-1/test_1'}, got {'node-1/grp', 'node-1/test_1'}, passed
+2022-10-21 01:22:42,506 __main__ INFO -- Adding test_2 back into grp --
+2022-10-21 01:22:42,978 TADA INFO assertion 6, test_2 is added back to grp on sampler: expect {'node-1/grp', 'node-1/test_2', 'node-1/test_1'}, got {'node-1/grp', 'node-1/test_2', 'node-1/test_1'}, passed
+2022-10-21 01:22:47,121 TADA INFO assertion 7, test_2 is added back to grp on agg-1: expect {'node-1/grp', 'node-1/test_2', 'node-1/test_1'}, got {'node-1/grp', 'node-1/test_2', 'node-1/test_1'}, passed
+2022-10-21 01:22:49,242 TADA INFO assertion 8, test_2 is added back to grp on agg-2: expect {'node-1/grp', 'node-1/test_2', 'node-1/test_1'}, got {'node-1/grp', 'node-1/test_2', 'node-1/test_1'}, passed
+2022-10-21 01:22:51,245 TADA INFO test setgroup_test ended
+2022-10-21 01:23:04 INFO: ----------------------------------------------
+2022-10-21 01:23:05 INFO: ======== slurm_stream_test ========
+2022-10-21 01:23:05 INFO: CMD: python3 slurm_stream_test --prefix /home/narate/cron/ldms-test/ldms-containers/ovis --runtime docker --image ovishpc/ldms-dev --src /mnt/300G/data --data_root /mnt/300G/data/2022-10-21-003001/data/slurm_stream_test
+2022-10-21 01:23:05,824 TADA INFO starting test `slurm_stream_test`
+2022-10-21 01:23:05,824 TADA INFO   test-id: 91b9c4f4d54c76b2dc6f490a8ae42c41df9daecfd87e921dbc3770f0cb7c3d46
+2022-10-21 01:23:05,824 TADA INFO   test-suite: LDMSD
+2022-10-21 01:23:05,824 TADA INFO   test-name: slurm_stream_test
+2022-10-21 01:23:05,824 TADA INFO   test-user: narate
+2022-10-21 01:23:05,824 TADA INFO   commit-id: c6bbe5530e620865002d2995a48a3d2811fa26ac
+2022-10-21 01:23:05,825 __main__ INFO -- Get or create the cluster --
+2022-10-21 01:23:12,714 __main__ INFO -- Start daemons --
+2022-10-21 01:23:15,441 __main__ INFO ... wait a bit to make sure ldmsd's are up
+2022-10-21 01:23:45,070 TADA INFO assertion 1, Job properly assigned to correct slot: correct job_id fills next slot, passed
+2022-10-21 01:23:45,070 __main__ INFO 12345
+2022-10-21 01:23:45,071 __main__ INFO 12345
+2022-10-21 01:23:45,071 TADA INFO assertion 2, job_start correctly represented in metric set: with mult jobs running for Job 12345, passed
+2022-10-21 01:23:45,071 TADA INFO assertion 3, job_end correctly represented in metric set: with mutl jobs running, for Job 12345, passed
+2022-10-21 01:23:45,071 TADA INFO assertion 4, task_pid correctly represented: with mult jobs running for Job 12345, passed
+2022-10-21 01:23:45,071 TADA INFO assertion 5, task_pid correctly represented: with mult jobs running for Job 12345, passed
+2022-10-21 01:23:45,071 TADA INFO assertion 6, task_pid correctly represented: with mult jobs running for Job 12345, passed
+2022-10-21 01:23:45,072 TADA INFO assertion 7, task_pid correctly represented: with mult jobs running for Job 12345, passed
+2022-10-21 01:23:45,175 TADA INFO assertion 8, Job properly assigned to correct slot: correct job_id fills next slot, passed
+2022-10-21 01:23:45,175 __main__ INFO 12345
+2022-10-21 01:23:45,175 __main__ INFO 12345
+2022-10-21 01:23:45,175 TADA INFO assertion 9, job_start correctly represented in metric set: with mult jobs running for Job 12345, passed
+2022-10-21 01:23:45,175 TADA INFO assertion 10, job_end correctly represented in metric set: with mutl jobs running, for Job 12345, passed
+2022-10-21 01:23:45,175 TADA INFO assertion 11, task_pid correctly represented: with mult jobs running for Job 12345, passed
+2022-10-21 01:23:45,176 TADA INFO assertion 12, task_pid correctly represented: with mult jobs running for Job 12345, passed
+2022-10-21 01:23:45,176 TADA INFO assertion 13, task_pid correctly represented: with mult jobs running for Job 12345, passed
+2022-10-21 01:23:45,176 TADA INFO assertion 14, task_pid correctly represented: with mult jobs running for Job 12345, passed
+2022-10-21 01:23:45,290 TADA INFO assertion 15, Job properly assigned to correct slot: correct job_id fills next slot, passed
+2022-10-21 01:23:45,290 __main__ INFO 12346
+2022-10-21 01:23:45,290 __main__ INFO 12346
+2022-10-21 01:23:45,291 TADA INFO assertion 16, job_start correctly represented in metric set: with mult jobs running for Job 12346, passed
+2022-10-21 01:23:45,291 TADA INFO assertion 17, job_end correctly represented in metric set: with mutl jobs running, for Job 12346, passed
+2022-10-21 01:23:45,291 TADA INFO assertion 18, task_pid correctly represented: with mult jobs running for Job 12346, passed
+2022-10-21 01:23:45,291 TADA INFO assertion 19, task_pid correctly represented: with mult jobs running for Job 12346, passed
+2022-10-21 01:23:45,291 TADA INFO assertion 20, task_pid correctly represented: with mult jobs running for Job 12346, passed
+2022-10-21 01:23:45,291 TADA INFO assertion 21, task_pid correctly represented: with mult jobs running for Job 12346, passed
+2022-10-21 01:23:45,407 TADA INFO assertion 22, Job properly assigned to correct slot: correct job_id fills next slot, passed
+2022-10-21 01:23:45,408 __main__ INFO 12346
+2022-10-21 01:23:45,408 __main__ INFO 12346
+2022-10-21 01:23:45,408 TADA INFO assertion 23, job_start correctly represented in metric set: with mult jobs running for Job 12346, passed
+2022-10-21 01:23:45,408 TADA INFO assertion 24, job_end correctly represented in metric set: with mutl jobs running, for Job 12346, passed
+2022-10-21 01:23:45,408 TADA INFO assertion 25, task_pid correctly represented: with mult jobs running for Job 12346, passed
+2022-10-21 01:23:45,408 TADA INFO assertion 26, task_pid correctly represented: with mult jobs running for Job 12346, passed
+2022-10-21 01:23:45,408 TADA INFO assertion 27, task_pid correctly represented: with mult jobs running for Job 12346, passed
+2022-10-21 01:23:45,409 TADA INFO assertion 28, task_pid correctly represented: with mult jobs running for Job 12346, passed
+2022-10-21 01:23:45,514 TADA INFO assertion 29, Job properly assigned to correct slot: correct job_id fills next slot, passed
+2022-10-21 01:23:45,515 __main__ INFO 12347
+2022-10-21 01:23:45,515 __main__ INFO 12347
+2022-10-21 01:23:45,515 TADA INFO assertion 30, job_start correctly represented in metric set: with mult jobs running for Job 12347, passed
+2022-10-21 01:23:45,515 TADA INFO assertion 31, job_end correctly represented in metric set: with mutl jobs running, for Job 12347, passed
+2022-10-21 01:23:45,515 TADA INFO assertion 32, task_pid correctly represented: with mult jobs running for Job 12347, passed
+2022-10-21 01:23:45,515 TADA INFO assertion 33, task_pid correctly represented: with mult jobs running for Job 12347, passed
+2022-10-21 01:23:45,515 TADA INFO assertion 34, task_pid correctly represented: with mult jobs running for Job 12347, passed
+2022-10-21 01:23:45,516 TADA INFO assertion 35, task_pid correctly represented: with mult jobs running for Job 12347, passed
+2022-10-21 01:23:45,633 TADA INFO assertion 36, Job properly assigned to correct slot: correct job_id fills next slot, passed
+2022-10-21 01:23:45,633 __main__ INFO 12347
+2022-10-21 01:23:45,633 __main__ INFO 12347
+2022-10-21 01:23:45,633 TADA INFO assertion 37, job_start correctly represented in metric set: with mult jobs running for Job 12347, passed
+2022-10-21 01:23:45,633 TADA INFO assertion 38, job_end correctly represented in metric set: with mutl jobs running, for Job 12347, passed
+2022-10-21 01:23:45,633 TADA INFO assertion 39, task_pid correctly represented: with mult jobs running for Job 12347, passed
+2022-10-21 01:23:45,634 TADA INFO assertion 40, task_pid correctly represented: with mult jobs running for Job 12347, passed
+2022-10-21 01:23:45,634 TADA INFO assertion 41, task_pid correctly represented: with mult jobs running for Job 12347, passed
+2022-10-21 01:23:45,634 TADA INFO assertion 42, task_pid correctly represented: with mult jobs running for Job 12347, passed
+2022-10-21 01:23:45,738 TADA INFO assertion 43, Job properly assigned to correct slot: correct job_id fills next slot, passed
+2022-10-21 01:23:45,738 __main__ INFO 12348
+2022-10-21 01:23:45,739 __main__ INFO 12348
+2022-10-21 01:23:45,739 TADA INFO assertion 44, job_start correctly represented in metric set: with mult jobs running for Job 12348, passed
+2022-10-21 01:23:45,739 TADA INFO assertion 45, job_end correctly represented in metric set: with mutl jobs running, for Job 12348, passed
+2022-10-21 01:23:45,739 TADA INFO assertion 46, task_pid correctly represented: with mult jobs running for Job 12348, passed
+2022-10-21 01:23:45,739 TADA INFO assertion 47, task_pid correctly represented: with mult jobs running for Job 12348, passed
+2022-10-21 01:23:45,739 TADA INFO assertion 48, task_pid correctly represented: with mult jobs running for Job 12348, passed
+2022-10-21 01:23:45,740 TADA INFO assertion 49, task_pid correctly represented: with mult jobs running for Job 12348, passed
+2022-10-21 01:23:45,853 TADA INFO assertion 50, Job properly assigned to correct slot: correct job_id fills next slot, passed
+2022-10-21 01:23:45,853 __main__ INFO 12348
+2022-10-21 01:23:45,853 __main__ INFO 12348
+2022-10-21 01:23:45,854 TADA INFO assertion 51, job_start correctly represented in metric set: with mult jobs running for Job 12348, passed
+2022-10-21 01:23:45,854 TADA INFO assertion 52, job_end correctly represented in metric set: with mutl jobs running, for Job 12348, passed
+2022-10-21 01:23:45,854 TADA INFO assertion 53, task_pid correctly represented: with mult jobs running for Job 12348, passed
+2022-10-21 01:23:45,854 TADA INFO assertion 54, task_pid correctly represented: with mult jobs running for Job 12348, passed
+2022-10-21 01:23:45,854 TADA INFO assertion 55, task_pid correctly represented: with mult jobs running for Job 12348, passed
+2022-10-21 01:23:45,854 TADA INFO assertion 56, task_pid correctly represented: with mult jobs running for Job 12348, passed
+2022-10-21 01:23:45,966 TADA INFO assertion 57, Job properly assigned to correct slot: correct job_id fills next slot, passed
+2022-10-21 01:23:45,966 __main__ INFO 12355
+2022-10-21 01:23:45,966 __main__ INFO 12355
+2022-10-21 01:23:45,966 TADA INFO assertion 58, job_start correctly represented in metric set: with mult jobs running for Job 12355, passed
+2022-10-21 01:23:45,966 TADA INFO assertion 59, job_end correctly represented in metric set: with mutl jobs running, for Job 12355, passed
+2022-10-21 01:23:45,967 TADA INFO assertion 60, task_pid correctly represented: with mult jobs running for Job 12355, passed
+2022-10-21 01:23:45,967 TADA INFO assertion 61, task_pid correctly represented: with mult jobs running for Job 12355, passed
+2022-10-21 01:23:45,967 TADA INFO assertion 62, task_pid correctly represented: with mult jobs running for Job 12355, passed
+2022-10-21 01:23:45,967 TADA INFO assertion 63, task_pid correctly represented: with mult jobs running for Job 12355, passed
+2022-10-21 01:23:45,967 TADA INFO assertion 64, task_pid correctly represented: with mult jobs running for Job 12355, passed
+2022-10-21 01:23:45,968 TADA INFO assertion 65, task_pid correctly represented: with mult jobs running for Job 12355, passed
+2022-10-21 01:23:45,968 TADA INFO assertion 66, task_pid correctly represented: with mult jobs running for Job 12355, passed
+2022-10-21 01:23:45,968 TADA INFO assertion 67, task_pid correctly represented: with mult jobs running for Job 12355, passed
+2022-10-21 01:23:46,085 TADA INFO assertion 68, Job properly assigned to correct slot: correct job_id fills next slot, passed
+2022-10-21 01:23:46,086 __main__ INFO 12355
+2022-10-21 01:23:46,086 __main__ INFO 12355
+2022-10-21 01:23:46,086 TADA INFO assertion 69, job_start correctly represented in metric set: with mult jobs running for Job 12355, passed
+2022-10-21 01:23:46,086 TADA INFO assertion 70, job_end correctly represented in metric set: with mutl jobs running, for Job 12355, passed
+2022-10-21 01:23:46,086 TADA INFO assertion 71, task_pid correctly represented: with mult jobs running for Job 12355, passed
+2022-10-21 01:23:46,086 TADA INFO assertion 72, task_pid correctly represented: with mult jobs running for Job 12355, passed
+2022-10-21 01:23:46,086 TADA INFO assertion 73, task_pid correctly represented: with mult jobs running for Job 12355, passed
+2022-10-21 01:23:46,087 TADA INFO assertion 74, task_pid correctly represented: with mult jobs running for Job 12355, passed
+2022-10-21 01:23:46,087 TADA INFO assertion 75, task_pid correctly represented: with mult jobs running for Job 12355, passed
+2022-10-21 01:23:46,087 TADA INFO assertion 76, task_pid correctly represented: with mult jobs running for Job 12355, passed
+2022-10-21 01:23:46,087 TADA INFO assertion 77, task_pid correctly represented: with mult jobs running for Job 12355, passed
+2022-10-21 01:23:46,087 TADA INFO assertion 78, task_pid correctly represented: with mult jobs running for Job 12355, passed
+2022-10-21 01:23:46,194 TADA INFO assertion 79, Job properly assigned to correct slot: correct job_id fills next slot, passed
+2022-10-21 01:23:46,195 __main__ INFO 12356
+2022-10-21 01:23:46,195 __main__ INFO 12356
+2022-10-21 01:23:46,195 TADA INFO assertion 80, job_start correctly represented in metric set: with mult jobs running for Job 12356, passed
+2022-10-21 01:23:46,195 TADA INFO assertion 81, job_end correctly represented in metric set: with mutl jobs running, for Job 12356, passed
+2022-10-21 01:23:46,195 TADA INFO assertion 82, task_pid correctly represented: with mult jobs running for Job 12356, passed
+2022-10-21 01:23:46,195 TADA INFO assertion 83, task_pid correctly represented: with mult jobs running for Job 12356, passed
+2022-10-21 01:23:46,195 TADA INFO assertion 84, task_pid correctly represented: with mult jobs running for Job 12356, passed
+2022-10-21 01:23:46,196 TADA INFO assertion 85, task_pid correctly represented: with mult jobs running for Job 12356, passed
+2022-10-21 01:23:46,196 TADA INFO assertion 86, task_pid correctly represented: with mult jobs running for Job 12356, passed
+2022-10-21 01:23:46,196 TADA INFO assertion 87, task_pid correctly represented: with mult jobs running for Job 12356, passed
+2022-10-21 01:23:46,196 TADA INFO assertion 88, task_pid correctly represented: with mult jobs running for Job 12356, passed
+2022-10-21 01:23:46,196 TADA INFO assertion 89, task_pid correctly represented: with mult jobs running for Job 12356, passed
+2022-10-21 01:23:46,304 TADA INFO assertion 90, Job properly assigned to correct slot: correct job_id fills next slot, passed
+2022-10-21 01:23:46,304 __main__ INFO 12356
+2022-10-21 01:23:46,304 __main__ INFO 12356
+2022-10-21 01:23:46,305 TADA INFO assertion 91, job_start correctly represented in metric set: with mult jobs running for Job 12356, passed
+2022-10-21 01:23:46,305 TADA INFO assertion 92, job_end correctly represented in metric set: with mutl jobs running, for Job 12356, passed
+2022-10-21 01:23:46,305 TADA INFO assertion 93, task_pid correctly represented: with mult jobs running for Job 12356, passed
+2022-10-21 01:23:46,305 TADA INFO assertion 94, task_pid correctly represented: with mult jobs running for Job 12356, passed
+2022-10-21 01:23:46,305 TADA INFO assertion 95, task_pid correctly represented: with mult jobs running for Job 12356, passed
+2022-10-21 01:23:46,305 TADA INFO assertion 96, task_pid correctly represented: with mult jobs running for Job 12356, passed
+2022-10-21 01:23:46,306 TADA INFO assertion 97, task_pid correctly represented: with mult jobs running for Job 12356, passed
+2022-10-21 01:23:46,306 TADA INFO assertion 98, task_pid correctly represented: with mult jobs running for Job 12356, passed
+2022-10-21 01:23:46,306 TADA INFO assertion 99, task_pid correctly represented: with mult jobs running for Job 12356, passed
+2022-10-21 01:23:46,306 TADA INFO assertion 100, task_pid correctly represented: with mult jobs running for Job 12356, passed
+2022-10-21 01:23:46,427 TADA INFO assertion 101, Job properly assigned to correct slot: correct job_id fills next slot, passed
+2022-10-21 01:23:46,427 __main__ INFO 12357
+2022-10-21 01:23:46,427 __main__ INFO 12357
+2022-10-21 01:23:46,427 TADA INFO assertion 102, job_start correctly represented in metric set: with mult jobs running for Job 12357, passed
+2022-10-21 01:23:46,428 TADA INFO assertion 103, job_end correctly represented in metric set: with mutl jobs running, for Job 12357, passed
+2022-10-21 01:23:46,428 TADA INFO assertion 104, task_pid correctly represented: with mult jobs running for Job 12357, passed
+2022-10-21 01:23:46,428 TADA INFO assertion 105, task_pid correctly represented: with mult jobs running for Job 12357, passed
+2022-10-21 01:23:46,428 TADA INFO assertion 106, task_pid correctly represented: with mult jobs running for Job 12357, passed
+2022-10-21 01:23:46,428 TADA INFO assertion 107, task_pid correctly represented: with mult jobs running for Job 12357, passed
+2022-10-21 01:23:46,428 TADA INFO assertion 108, task_pid correctly represented: with mult jobs running for Job 12357, passed
+2022-10-21 01:23:46,429 TADA INFO assertion 109, task_pid correctly represented: with mult jobs running for Job 12357, passed
+2022-10-21 01:23:46,429 TADA INFO assertion 110, task_pid correctly represented: with mult jobs running for Job 12357, passed
+2022-10-21 01:23:46,429 TADA INFO assertion 111, task_pid correctly represented: with mult jobs running for Job 12357, passed
+2022-10-21 01:23:46,536 TADA INFO assertion 112, Job properly assigned to correct slot: correct job_id fills next slot, passed
+2022-10-21 01:23:46,536 __main__ INFO 12357
+2022-10-21 01:23:46,536 __main__ INFO 12357
+2022-10-21 01:23:46,536 TADA INFO assertion 113, job_start correctly represented in metric set: with mult jobs running for Job 12357, passed
+2022-10-21 01:23:46,536 TADA INFO assertion 114, job_end correctly represented in metric set: with mutl jobs running, for Job 12357, passed
+2022-10-21 01:23:46,537 TADA INFO assertion 115, task_pid correctly represented: with mult jobs running for Job 12357, passed
+2022-10-21 01:23:46,537 TADA INFO assertion 116, task_pid correctly represented: with mult jobs running for Job 12357, passed
+2022-10-21 01:23:46,537 TADA INFO assertion 117, task_pid correctly represented: with mult jobs running for Job 12357, passed
+2022-10-21 01:23:46,537 TADA INFO assertion 118, task_pid correctly represented: with mult jobs running for Job 12357, passed
+2022-10-21 01:23:46,537 TADA INFO assertion 119, task_pid correctly represented: with mult jobs running for Job 12357, passed
+2022-10-21 01:23:46,538 TADA INFO assertion 120, task_pid correctly represented: with mult jobs running for Job 12357, passed
+2022-10-21 01:23:46,538 TADA INFO assertion 121, task_pid correctly represented: with mult jobs running for Job 12357, passed
+2022-10-21 01:23:46,538 TADA INFO assertion 122, task_pid correctly represented: with mult jobs running for Job 12357, passed
+2022-10-21 01:23:46,655 TADA INFO assertion 123, Job properly assigned to correct slot: correct job_id fills next slot, passed
+2022-10-21 01:23:46,655 __main__ INFO 12358
+2022-10-21 01:23:46,655 __main__ INFO 12358
+2022-10-21 01:23:46,656 TADA INFO assertion 124, job_start correctly represented in metric set: with mult jobs running for Job 12358, passed
+2022-10-21 01:23:46,656 TADA INFO assertion 125, job_end correctly represented in metric set: with mutl jobs running, for Job 12358, passed
+2022-10-21 01:23:46,656 TADA INFO assertion 126, task_pid correctly represented: with mult jobs running for Job 12358, passed
+2022-10-21 01:23:46,656 TADA INFO assertion 127, task_pid correctly represented: with mult jobs running for Job 12358, passed
+2022-10-21 01:23:46,656 TADA INFO assertion 128, task_pid correctly represented: with mult jobs running for Job 12358, passed
+2022-10-21 01:23:46,656 TADA INFO assertion 129, task_pid correctly represented: with mult jobs running for Job 12358, passed
+2022-10-21 01:23:46,657 TADA INFO assertion 130, task_pid correctly represented: with mult jobs running for Job 12358, passed
+2022-10-21 01:23:46,657 TADA INFO assertion 131, task_pid correctly represented: with mult jobs running for Job 12358, passed
+2022-10-21 01:23:46,657 TADA INFO assertion 132, task_pid correctly represented: with mult jobs running for Job 12358, passed
+2022-10-21 01:23:46,657 TADA INFO assertion 133, task_pid correctly represented: with mult jobs running for Job 12358, passed
+2022-10-21 01:23:46,773 TADA INFO assertion 134, Job properly assigned to correct slot: correct job_id fills next slot, passed
+2022-10-21 01:23:46,773 __main__ INFO 12358
+2022-10-21 01:23:46,773 __main__ INFO 12358
+2022-10-21 01:23:46,773 TADA INFO assertion 135, job_start correctly represented in metric set: with mult jobs running for Job 12358, passed
+2022-10-21 01:23:46,773 TADA INFO assertion 136, job_end correctly represented in metric set: with mutl jobs running, for Job 12358, passed
+2022-10-21 01:23:46,774 TADA INFO assertion 137, task_pid correctly represented: with mult jobs running for Job 12358, passed
+2022-10-21 01:23:46,774 TADA INFO assertion 138, task_pid correctly represented: with mult jobs running for Job 12358, passed
+2022-10-21 01:23:46,774 TADA INFO assertion 139, task_pid correctly represented: with mult jobs running for Job 12358, passed
+2022-10-21 01:23:46,774 TADA INFO assertion 140, task_pid correctly represented: with mult jobs running for Job 12358, passed
+2022-10-21 01:23:46,774 TADA INFO assertion 141, task_pid correctly represented: with mult jobs running for Job 12358, passed
+2022-10-21 01:23:46,774 TADA INFO assertion 142, task_pid correctly represented: with mult jobs running for Job 12358, passed
+2022-10-21 01:23:46,774 TADA INFO assertion 143, task_pid correctly represented: with mult jobs running for Job 12358, passed
+2022-10-21 01:23:46,775 TADA INFO assertion 144, task_pid correctly represented: with mult jobs running for Job 12358, passed
+2022-10-21 01:23:48,840 TADA INFO assertion 145, new job correctly replaces oldest slot: correct job_id fills next slot, passed
+2022-10-21 01:23:48,840 __main__ INFO 12353
+2022-10-21 01:23:48,840 __main__ INFO 12353
+2022-10-21 01:23:48,840 TADA INFO assertion 146, new job_start correctly represented in metric set: with mult jobs running for Job 12353, passed
+2022-10-21 01:23:48,841 TADA INFO assertion 147, new job_end correctly represented in metric set: with mutl jobs running, for Job 12353, passed
+2022-10-21 01:23:48,841 TADA INFO assertion 148, new job's task replaces oldest slot: with mult jobs running for Job 12353, passed
+2022-10-21 01:23:48,841 TADA INFO assertion 149, new job's task replaces oldest slot: with mult jobs running for Job 12353, passed
+2022-10-21 01:23:48,841 TADA INFO assertion 150, new job's task replaces oldest slot: with mult jobs running for Job 12353, passed
+2022-10-21 01:23:48,841 TADA INFO assertion 151, new job's task replaces oldest slot: with mult jobs running for Job 12353, passed
+2022-10-21 01:23:48,841 TADA INFO assertion 152, new job's task replaces oldest slot: with mult jobs running for Job 12353, passed
+2022-10-21 01:23:48,841 TADA INFO assertion 153, new job's task replaces oldest slot: with mult jobs running for Job 12353, passed
+2022-10-21 01:23:48,842 TADA INFO assertion 154, new job's task replaces oldest slot: with mult jobs running for Job 12353, passed
+2022-10-21 01:23:48,842 TADA INFO assertion 155, new job's task replaces oldest slot: with mult jobs running for Job 12353, passed
+2022-10-21 01:23:48,842 __main__ INFO -- Test Finished --
+Delivering events...
+Delivering events...
+Delivering events...
+Delivering events...
+Delivering events...
+Delivering events...
+Delivering events...
+Delivering events...
+Delivering events...
+2022-10-21 01:23:48,842 TADA INFO test slurm_stream_test ended
+2022-10-21 01:24:00 INFO: ----------------------------------------------
+2022-10-21 01:24:01 INFO: ======== spank_notifier_test ========
+2022-10-21 01:24:01 INFO: CMD: python3 spank_notifier_test --prefix /home/narate/cron/ldms-test/ldms-containers/ovis --runtime docker --image ovishpc/ldms-dev --src /mnt/300G/data --data_root /mnt/300G/data/2022-10-21-003001/data/spank_notifier_test
+2022-10-21 01:24:01,840 TADA INFO starting test `spank_notifier_test`
+2022-10-21 01:24:01,840 TADA INFO   test-id: 250f76ee6be517ba88419cfe4c332569a05675a19b4c51174c5b8683419e5ecc
+2022-10-21 01:24:01,840 TADA INFO   test-suite: Slurm_Plugins
+2022-10-21 01:24:01,841 TADA INFO   test-name: spank_notifier_test
+2022-10-21 01:24:01,841 TADA INFO   test-user: narate
+2022-10-21 01:24:01,841 TADA INFO   commit-id: c6bbe5530e620865002d2995a48a3d2811fa26ac
+2022-10-21 01:24:01,841 __main__ INFO -- Create the cluster --
+2022-10-21 01:24:27,464 __main__ INFO -- Cleanup output --
+2022-10-21 01:24:27,779 __main__ INFO -- Test bad plugstack config --
+2022-10-21 01:24:27,780 __main__ INFO Starting slurm ...
+2022-10-21 01:24:42,301 __main__ INFO Starting slurm ... OK
+2022-10-21 01:25:02,796 __main__ INFO -- Submitting job with num_tasks 4 --
+2022-10-21 01:25:02,942 __main__ INFO   jobid = 1
+2022-10-21 01:25:03,156 __main__ INFO -- Submitting job with num_tasks 4 --
+2022-10-21 01:25:03,277 __main__ INFO   jobid = 2
+2022-10-21 01:25:03,495 __main__ INFO -- Submitting job with num_tasks 4 --
+2022-10-21 01:25:03,607 __main__ INFO   jobid = 3
+2022-10-21 01:25:03,843 __main__ INFO -- Submitting job with num_tasks 4 --
+2022-10-21 01:25:03,953 __main__ INFO   jobid = 4
+2022-10-21 01:25:13,571 TADA INFO assertion 60, Bad config does not affect jobs: jobs verified, passed
+2022-10-21 01:25:13,571 __main__ INFO Killin slurm ...
+2022-10-21 01:25:16,448 __main__ INFO Killin slurm ... OK
+2022-10-21 01:25:36,449 __main__ INFO -- Start daemons --
+2022-10-21 01:25:47,207 __main__ INFO Starting slurm ... OK
+2022-10-21 01:26:07,472 __main__ INFO -- Submitting job with no stream listener --
+2022-10-21 01:26:07,686 __main__ INFO -- Submitting job with num_tasks 8 --
+2022-10-21 01:26:07,805 __main__ INFO   jobid = 5
+2022-10-21 01:26:23,779 TADA INFO assertion 0, Missing stream listener on node-1 does not affect job execution: job output file created, passed
+2022-10-21 01:26:23,779 TADA INFO assertion 1, Missing stream listener on node-2 does not affect job execution: job output file created, passed
+2022-10-21 01:26:29,613 __main__ INFO -- Submitting job with listener --
+2022-10-21 01:26:29,835 __main__ INFO -- Submitting job with num_tasks 1 --
+2022-10-21 01:26:29,964 __main__ INFO   jobid = 6
+2022-10-21 01:26:30,169 __main__ INFO -- Submitting job with num_tasks 2 --
+2022-10-21 01:26:30,299 __main__ INFO   jobid = 7
+2022-10-21 01:26:30,497 __main__ INFO -- Submitting job with num_tasks 4 --
+2022-10-21 01:26:30,603 __main__ INFO   jobid = 8
+2022-10-21 01:26:30,821 __main__ INFO -- Submitting job with num_tasks 8 --
+2022-10-21 01:26:30,944 __main__ INFO   jobid = 9
+2022-10-21 01:26:31,151 __main__ INFO -- Submitting job with num_tasks 27 --
+2022-10-21 01:26:31,278 __main__ INFO   jobid = 10
+2022-10-21 01:26:53,032 __main__ INFO -- Verifying Events --
+2022-10-21 01:26:53,032 TADA INFO assertion 2, 1-task job: first event is 'init': `init` verified, passed
+2022-10-21 01:26:53,033 TADA INFO assertion 3, 1-task job: 'step_init' event contains subscriber data: `init` subscriber_data verified, passed
+2022-10-21 01:26:53,033 TADA INFO assertion 4, 1-task job: second event is 'task_init_priv': `task_init_priv` verified, passed
+2022-10-21 01:26:53,033 TADA INFO assertion 5, 1-task job: third event is 'task_exit': `task_exit` verified, passed
+2022-10-21 01:26:53,033 TADA INFO assertion 6, 1-task job: fourth event is 'exit': `exit` verified, passed
+2022-10-21 01:26:53,033 TADA INFO assertion 7, 2-task job: first event is 'init': `init` verified, passed
+2022-10-21 01:26:53,034 TADA INFO assertion 8, 2-task job: 'step_init' event contains subscriber data: `init` subscriber_data verified, passed
+2022-10-21 01:26:53,034 TADA INFO assertion 9, 2-task job: second event is 'task_init_priv': `task_init_priv` verified, passed
+2022-10-21 01:26:53,034 TADA INFO assertion 10, 2-task job: third event is 'task_exit': `task_exit` verified, passed
+2022-10-21 01:26:53,034 TADA INFO assertion 11, 2-task job: fourth event is 'exit': `exit` verified, passed
+2022-10-21 01:26:53,034 TADA INFO assertion 12, 4-task job: first event is 'init': `init` verified, passed
+2022-10-21 01:26:53,035 TADA INFO assertion 13, 4-task job: 'step_init' event contains subscriber data: `init` subscriber_data verified, passed
+2022-10-21 01:26:53,035 TADA INFO assertion 14, 4-task job: second event is 'task_init_priv': `task_init_priv` verified, passed
+2022-10-21 01:26:53,035 TADA INFO assertion 15, 4-task job: third event is 'task_exit': `task_exit` verified, passed
+2022-10-21 01:26:53,035 TADA INFO assertion 16, 4-task job: fourth event is 'exit': `exit` verified, passed
+2022-10-21 01:26:53,035 TADA INFO assertion 17, 8-task job: first event is 'init': `init` verified, passed
+2022-10-21 01:26:53,036 TADA INFO assertion 18, 8-task job: 'step_init' event contains subscriber data: `init` subscriber_data verified, passed
+2022-10-21 01:26:53,036 TADA INFO assertion 19, 8-task job: second event is 'task_init_priv': `task_init_priv` verified, passed
+2022-10-21 01:26:53,036 TADA INFO assertion 20, 8-task job: third event is 'task_exit': `task_exit` verified, passed
+2022-10-21 01:26:53,036 TADA INFO assertion 21, 8-task job: fourth event is 'exit': `exit` verified, passed
+2022-10-21 01:26:53,036 TADA INFO assertion 22, 27-task job: first event is 'init': `init` verified, passed
+2022-10-21 01:26:53,037 TADA INFO assertion 23, 27-task job: 'step_init' event contains subscriber data: `init` subscriber_data verified, passed
+2022-10-21 01:26:53,037 TADA INFO assertion 24, 27-task job: second event is 'task_init_priv': `task_init_priv` verified, passed
+2022-10-21 01:26:53,037 TADA INFO assertion 25, 27-task job: third event is 'task_exit': `task_exit` verified, passed
+2022-10-21 01:26:53,037 TADA INFO assertion 26, 27-task job: fourth event is 'exit': `exit` verified, passed
+2022-10-21 01:26:53,037 __main__ INFO job 6 multi-tenant with dict_keys([7])
+2022-10-21 01:26:53,037 __main__ INFO job 10 multi-tenant with dict_keys([7, 6])
+2022-10-21 01:26:53,037 __main__ INFO job 10 multi-tenant with dict_keys([8])
+2022-10-21 01:26:53,038 __main__ INFO job 10 multi-tenant with dict_keys([9])
+2022-10-21 01:26:53,038 __main__ INFO job 10 multi-tenant with dict_keys([9])
+2022-10-21 01:26:53,038 TADA INFO assertion 50, Multi-tenant verification: Multi-tenant jobs found, passed
+2022-10-21 01:26:53,247 __main__ INFO -- Submitting job that crashes listener --
+2022-10-21 01:26:53,369 __main__ INFO   jobid = 11
+2022-10-21 01:27:03,612 TADA INFO assertion 51, Killing stream listener does not affect job execution on node-1: job output file created, passed
+2022-10-21 01:27:03,737 TADA INFO assertion 52, Killing stream listener does not affect job execution on node-2: job output file created, passed
+2022-10-21 01:27:03,738 TADA INFO test spank_notifier_test ended
+2022-10-21 01:27:20 INFO: ----------------------------------------------
+2022-10-21 01:27:21 INFO: ======== ldms_list_test ========
+2022-10-21 01:27:21 INFO: CMD: python3 ldms_list_test --prefix /home/narate/cron/ldms-test/ldms-containers/ovis --runtime docker --image ovishpc/ldms-dev --src /mnt/300G/data --data_root /mnt/300G/data/2022-10-21-003001/data/ldms_list_test
+2022-10-21 01:27:21,884 TADA INFO starting test `ldms_list_test`
+2022-10-21 01:27:21,884 TADA INFO   test-id: 6417f7ef6882c1d6a03c815a787f9eb5697ca8a3e0eab16e57a09e4f4f38e751
+2022-10-21 01:27:21,884 TADA INFO   test-suite: LDMSD
+2022-10-21 01:27:21,884 TADA INFO   test-name: ldms_list_test
+2022-10-21 01:27:21,884 TADA INFO   test-user: narate
+2022-10-21 01:27:21,884 TADA INFO   commit-id: c6bbe5530e620865002d2995a48a3d2811fa26ac
+2022-10-21 01:27:21,885 __main__ INFO -- Get or create the cluster --
+2022-10-21 01:27:24,966 __main__ INFO -- Start daemons --
+2022-10-21 01:27:31,231 __main__ INFO ... wait a bit to make sure ldmsd's are up
+2022-10-21 01:27:33,234 __main__ INFO start list_samp.py and list_agg.py interactive sessions
+2022-10-21 01:27:39,270 TADA INFO assertion 1, check list_sampler on list_agg.py: OK, passed
+2022-10-21 01:27:39,270 TADA INFO assertion 2, (1st update) check set1 on list_samp.py: OK, passed
+2022-10-21 01:27:39,271 TADA INFO assertion 3, (1st update) check set3_p on list_samp.py: OK, passed
+2022-10-21 01:27:39,271 TADA INFO assertion 4, (1st update)check set3_c on list_samp.py: OK, passed
+2022-10-21 01:27:39,271 TADA INFO assertion 5, (1st update)check set1 on list_agg.py: OK, passed
+2022-10-21 01:27:39,271 TADA INFO assertion 6, (1st update)check set3_p on list_agg.py: OK, passed
+2022-10-21 01:27:39,272 TADA INFO assertion 7, (1st update)check set3_c on list_agg.py: OK, passed
+2022-10-21 01:27:39,272 __main__ INFO 2nd sampling on the sampler...
+2022-10-21 01:27:46,481 TADA INFO assertion 8, (2nd update) check set1 on list_samp.py: OK, passed
+2022-10-21 01:27:46,482 TADA INFO assertion 9, (2nd update) check set3_p on list_samp.py: OK, passed
+2022-10-21 01:27:46,482 TADA INFO assertion 10, (2nd update) check set3_c on list_samp.py: OK, passed
+2022-10-21 01:27:46,482 __main__ INFO 2nd update on the aggregator...
+2022-10-21 01:27:53,691 TADA INFO assertion 11, (2nd update) check set1 on list_agg.py: OK, passed
+2022-10-21 01:27:53,692 TADA INFO assertion 12, (2nd update) check set3_p on list_agg.py: OK, passed
+2022-10-21 01:27:53,692 TADA INFO assertion 13, (2nd update) check set3_c on list_agg.py: OK, passed
+2022-10-21 01:27:53,692 __main__ INFO 3rd sampling on the sampler...
+2022-10-21 01:28:00,901 TADA INFO assertion 14, (3rd update) check set1 on list_samp.py: OK, passed
+2022-10-21 01:28:00,902 TADA INFO assertion 15, (3rd update) check set3_p on list_samp.py: OK, passed
+2022-10-21 01:28:00,902 TADA INFO assertion 16, (3rd update) check set3_c on list_samp.py: OK, passed
+2022-10-21 01:28:00,902 __main__ INFO 3rd update on the aggregator...
+2022-10-21 01:28:08,111 TADA INFO assertion 17, (3rd update) check set1 on list_agg.py: OK, passed
+2022-10-21 01:28:08,112 TADA INFO assertion 18, (3rd update) check set3_p on list_agg.py: OK, passed
+2022-10-21 01:28:08,112 TADA INFO assertion 19, (3rd update) check set3_c on list_agg.py: OK, passed
+2022-10-21 01:28:08,112 __main__ INFO 4th sampling on the sampler...
+2022-10-21 01:28:15,321 TADA INFO assertion 20, (4th update; list uncahnged) check set1 on list_samp.py: OK, passed
+2022-10-21 01:28:15,321 TADA INFO assertion 21, (4th update; list uncahnged) check set3_p on list_samp.py: OK, passed
+2022-10-21 01:28:15,322 TADA INFO assertion 22, (4th update; list uncahnged) check set3_c on list_samp.py: OK, passed
+2022-10-21 01:28:15,322 __main__ INFO 4th update on the aggregator...
+2022-10-21 01:28:22,531 TADA INFO assertion 23, (4th update; list uncahnged) check set1 on list_agg.py: OK, passed
+2022-10-21 01:28:22,531 TADA INFO assertion 24, (4th update; list uncahnged) check set3_p on list_agg.py: OK, passed
+2022-10-21 01:28:22,532 TADA INFO assertion 25, (4th update; list uncahnged) check set3_c on list_agg.py: OK, passed
+2022-10-21 01:28:22,532 __main__ INFO 5th sampling on the sampler...
+2022-10-21 01:28:29,741 TADA INFO assertion 26, (5th update; list del) check set1 on list_samp.py: OK, passed
+2022-10-21 01:28:29,742 TADA INFO assertion 27, (5th update; list del) check set3_p on list_samp.py: OK, passed
+2022-10-21 01:28:29,742 TADA INFO assertion 28, (5th update; list del) check set3_c on list_samp.py: OK, passed
+2022-10-21 01:28:29,742 __main__ INFO 5th update on the aggregator...
+2022-10-21 01:28:36,951 TADA INFO assertion 29, (5th update; list del) check set1 on list_agg.py: OK, passed
+2022-10-21 01:28:36,952 TADA INFO assertion 30, (5th update; list del) check set3_p on list_agg.py: OK, passed
+2022-10-21 01:28:36,952 TADA INFO assertion 31, (5th update; list del) check set3_c on list_agg.py: OK, passed
+2022-10-21 01:28:36,952 __main__ INFO 6th sampling on the sampler...
+2022-10-21 01:28:44,161 TADA INFO assertion 32, (6th update; list unchanged) check set1 on list_samp.py: OK, passed
+2022-10-21 01:28:44,162 TADA INFO assertion 33, (6th update; list unchanged) check set3_p on list_samp.py: OK, passed
+2022-10-21 01:28:44,162 TADA INFO assertion 34, (6th update; list unchanged) check set3_c on list_samp.py: OK, passed
+2022-10-21 01:28:44,162 __main__ INFO 6th update on the updator...
+2022-10-21 01:28:51,371 TADA INFO assertion 35, (6th update; list unchanged) check set1 on list_agg.py: OK, passed
+2022-10-21 01:28:51,372 TADA INFO assertion 36, (6th update; list unchanged) check set3_p on list_agg.py: OK, passed
+2022-10-21 01:28:51,372 TADA INFO assertion 37, (6th update; list unchanged) check set3_c on list_agg.py: OK, passed
+2022-10-21 01:28:51,373 TADA INFO test ldms_list_test ended
+2022-10-21 01:29:02 INFO: ----------------------------------------------
+2022-10-21 01:29:02 INFO: ======== quick_set_add_rm_test ========
+2022-10-21 01:29:02 INFO: CMD: python3 quick_set_add_rm_test --prefix /home/narate/cron/ldms-test/ldms-containers/ovis --runtime docker --image ovishpc/ldms-dev --src /mnt/300G/data --data_root /mnt/300G/data/2022-10-21-003001/data/quick_set_add_rm_test
+2022-10-21 01:29:03,627 TADA INFO starting test `quick_set_add_rm_test`
+2022-10-21 01:29:03,627 TADA INFO   test-id: d2f6ddb43418a7878ed8a50809b37300eafdc2b6bd06d439c24b5b72a80dbb0c
+2022-10-21 01:29:03,627 TADA INFO   test-suite: LDMSD
+2022-10-21 01:29:03,627 TADA INFO   test-name: quick_set_add_rm_test
+2022-10-21 01:29:03,627 TADA INFO   test-user: narate
+2022-10-21 01:29:03,627 TADA INFO   commit-id: c6bbe5530e620865002d2995a48a3d2811fa26ac
+2022-10-21 01:29:03,628 __main__ INFO -- Get or create the cluster --
+2022-10-21 01:29:10,833 __main__ INFO -- Start samp.py --
+2022-10-21 01:29:15,949 TADA INFO assertion 1, start samp.py: prompt checked, passed
+2022-10-21 01:29:15,949 __main__ INFO -- Start daemons --
+2022-10-21 01:29:23,625 __main__ INFO ... wait a bit to make sure ldmsd's are up
+2022-10-21 01:29:29,201 TADA INFO assertion 2, verify data: verified, passed
+2022-10-21 01:29:33,806 TADA INFO assertion 3, samp.py adds set1 / verify data: verified, passed
+2022-10-21 01:29:38,400 TADA INFO assertion 4, samp.py removes set1 / verify data: verified, passed
+2022-10-21 01:29:43,000 TADA INFO assertion 5, samp.py quickly adds and removes set2 / verify data: verified, passed
+2022-10-21 01:29:48,125 TADA INFO assertion 6, agg-1 log stays empty: verified, passed
+2022-10-21 01:29:48,125 TADA INFO test quick_set_add_rm_test ended
+2022-10-21 01:30:00 INFO: ----------------------------------------------
+2022-10-21 01:30:00 INFO: ======== set_array_hang_test ========
+2022-10-21 01:30:00 INFO: CMD: python3 set_array_hang_test --prefix /home/narate/cron/ldms-test/ldms-containers/ovis --runtime docker --image ovishpc/ldms-dev --src /mnt/300G/data --data_root /mnt/300G/data/2022-10-21-003001/data/set_array_hang_test
+2022-10-21 01:30:01,660 TADA INFO starting test `set_array_hang_test`
+2022-10-21 01:30:01,660 TADA INFO   test-id: fa5356020569d118ab72fafffdadbe8a2fcb504adab18093a9b663934394f450
+2022-10-21 01:30:01,660 TADA INFO   test-suite: LDMSD
+2022-10-21 01:30:01,660 TADA INFO   test-name: set_array_hang_test
+2022-10-21 01:30:01,660 TADA INFO   test-user: narate
+2022-10-21 01:30:01,660 TADA INFO   commit-id: c6bbe5530e620865002d2995a48a3d2811fa26ac
+2022-10-21 01:30:01,661 __main__ INFO -- Get or create the cluster --
+2022-10-21 01:30:04,989 __main__ INFO -- Start processes --
+2022-10-21 01:30:04,990 __main__ INFO starting interactive set_array_samp.py
+2022-10-21 01:30:08,003 TADA INFO assertion 1, start set_array_samp.py: data verified, passed
+2022-10-21 01:30:11,021 TADA INFO assertion 2, start set_array_agg.py: data verified, passed
+2022-10-21 01:30:18,230 TADA INFO assertion 3, agg update before the 1st sample: data verified, passed
+2022-10-21 01:30:25,440 TADA INFO assertion 4, sampling 2 times then agg update: data verified, passed
+2022-10-21 01:30:29,044 TADA INFO assertion 5, agg update w/o new sampling: data verified, passed
+2022-10-21 01:30:36,254 TADA INFO assertion 6, sampling 5 times then agg update: data verified, passed
+2022-10-21 01:30:36,254 TADA INFO test set_array_hang_test ended
+2022-10-21 01:30:46 INFO: ----------------------------------------------
+2022-10-21 01:30:47 INFO: ======== ldmsd_autointerval_test ========
+2022-10-21 01:30:47 INFO: CMD: python3 ldmsd_autointerval_test --prefix /home/narate/cron/ldms-test/ldms-containers/ovis --runtime docker --image ovishpc/ldms-dev --src /mnt/300G/data --data_root /mnt/300G/data/2022-10-21-003001/data/ldmsd_autointerval_test
+2022-10-21 01:30:48,561 TADA INFO starting test `ldmsd_autointerval_test`
+2022-10-21 01:30:48,561 TADA INFO   test-id: dc4e2c475aa859f1335f5a716d1ba897868decaa9c1b5f6c8142d6805d3f2df5
+2022-10-21 01:30:48,562 TADA INFO   test-suite: LDMSD
+2022-10-21 01:30:48,562 TADA INFO   test-name: ldmsd_autointerval_test
+2022-10-21 01:30:48,562 TADA INFO   test-user: narate
+2022-10-21 01:30:48,562 TADA INFO   commit-id: c6bbe5530e620865002d2995a48a3d2811fa26ac
+2022-10-21 01:30:48,562 __main__ INFO -- Get or create the cluster --
+2022-10-21 01:30:55,985 __main__ INFO -- Start daemons --
+2022-10-21 01:30:59,771 __main__ INFO ... wait a bit to make sure ldmsd's are up
+2022-10-21 01:31:06,292 TADA INFO assertion 1, start all daemons and interactive controller: OK, passed
+2022-10-21 01:31:08,542 TADA INFO assertion 2, verify sampling interval and update hints: verified, passed
+2022-10-21 01:31:08,542 __main__ INFO Let them run for a while to collect data ...
+2022-10-21 01:31:18,545 __main__ INFO Setting sample interval to 1000000 ...
+2022-10-21 01:31:26,795 TADA INFO assertion 3, set and verify 2nd sampling interval / update hints: verified, passed
+2022-10-21 01:31:26,795 __main__ INFO Let them run for a while to collect data ...
+2022-10-21 01:31:36,806 __main__ INFO Setting sample interval to 2000000 ...
+2022-10-21 01:31:45,047 TADA INFO assertion 4, set and verify 3rd sampling interval / update hints: verified, passed
+2022-10-21 01:31:45,047 __main__ INFO Let them run for a while to collect data ...
+2022-10-21 01:31:55,262 TADA INFO assertion 5, verify SOS data: timestamp differences in SOS show all 3 intervals, passed
+2022-10-21 01:31:55,372 TADA INFO assertion 6, verify 'oversampled' in the agg2 log: OK, passed
+2022-10-21 01:31:55,372 TADA INFO test ldmsd_autointerval_test ended
+2022-10-21 01:32:07 INFO: ----------------------------------------------
+2022-10-21 01:32:08 INFO: ======== ldms_record_test ========
+2022-10-21 01:32:08 INFO: CMD: python3 ldms_record_test --prefix /home/narate/cron/ldms-test/ldms-containers/ovis --runtime docker --image ovishpc/ldms-dev --src /mnt/300G/data --data_root /mnt/300G/data/2022-10-21-003001/data/ldms_record_test
+2022-10-21 01:32:09,078 TADA INFO starting test `ldms_record_test`
+2022-10-21 01:32:09,078 TADA INFO   test-id: b0e505d4ee5871639036579bca2aeada9b58ba0a0969da8996186b6cba1c49e2
+2022-10-21 01:32:09,078 TADA INFO   test-suite: LDMSD
+2022-10-21 01:32:09,078 TADA INFO   test-name: ldms_record_test
+2022-10-21 01:32:09,078 TADA INFO   test-user: narate
+2022-10-21 01:32:09,078 TADA INFO   commit-id: c6bbe5530e620865002d2995a48a3d2811fa26ac
+2022-10-21 01:32:09,079 __main__ INFO -- Get or create the cluster --
+2022-10-21 01:32:12,153 __main__ INFO -- Start daemons --
+2022-10-21 01:32:18,503 __main__ INFO ... wait a bit to make sure ldmsd's are up
+2022-10-21 01:32:20,505 __main__ INFO start record_samp.py and record_agg.py interactive sessions
+2022-10-21 01:32:26,538 TADA INFO assertion 1, check record_sampler on record_agg.py: OK, passed
+2022-10-21 01:32:26,539 TADA INFO assertion 2, (1st update) check set1 on record_samp.py: OK, passed
+2022-10-21 01:32:26,539 TADA INFO assertion 3, (1st update) check set3_p on record_samp.py: OK, passed
+2022-10-21 01:32:26,539 TADA INFO assertion 4, (1st update) check set3_c on record_samp.py: OK, passed
+2022-10-21 01:32:26,540 TADA INFO assertion 5, (1st update) check set1 on record_agg.py: OK, passed
+2022-10-21 01:32:26,540 TADA INFO assertion 6, (1st update) check set3_p on record_agg.py: OK, passed
+2022-10-21 01:32:26,540 TADA INFO assertion 7, (1st update) check set3_c on record_agg.py: OK, passed
+2022-10-21 01:32:26,540 __main__ INFO 2nd sampling on the sampler...
+2022-10-21 01:32:33,750 TADA INFO assertion 8, (2nd update) check set1 on record_samp.py: OK, passed
+2022-10-21 01:32:33,750 TADA INFO assertion 9, (2nd update) check set3_p on record_samp.py: OK, passed
+2022-10-21 01:32:33,750 TADA INFO assertion 10, (2nd update) check set3_c on record_samp.py: OK, passed
+2022-10-21 01:32:33,751 __main__ INFO 2nd update on the aggregator...
+2022-10-21 01:32:40,960 TADA INFO assertion 11, (2nd update) check set1 on record_agg.py: OK, passed
+2022-10-21 01:32:40,960 TADA INFO assertion 12, (2nd update) check set3_p on record_agg.py: OK, passed
+2022-10-21 01:32:40,960 TADA INFO assertion 13, (2nd update) check set3_c on record_agg.py: OK, passed
+2022-10-21 01:32:40,961 __main__ INFO 3rd sampling on the sampler...
+2022-10-21 01:32:48,170 TADA INFO assertion 14, (3rd update) check set1 on record_samp.py: OK, passed
+2022-10-21 01:32:48,170 TADA INFO assertion 15, (3rd update) check set3_p on record_samp.py: OK, passed
+2022-10-21 01:32:48,171 TADA INFO assertion 16, (3rd update) check set3_c on record_samp.py: OK, passed
+2022-10-21 01:32:48,171 __main__ INFO 3rd update on the aggregator...
+2022-10-21 01:32:55,380 TADA INFO assertion 17, (3rd update) check set1 on record_agg.py: OK, passed
+2022-10-21 01:32:55,380 TADA INFO assertion 18, (3rd update) check set3_p on record_agg.py: OK, passed
+2022-10-21 01:32:55,381 TADA INFO assertion 19, (3rd update) check set3_c on record_agg.py: OK, passed
+2022-10-21 01:32:55,381 __main__ INFO 4th sampling on the sampler...
+2022-10-21 01:33:02,590 TADA INFO assertion 20, (4th update; record uncahnged) check set1 on record_samp.py: OK, passed
+2022-10-21 01:33:02,590 TADA INFO assertion 21, (4th update; record uncahnged) check set3_p on record_samp.py: OK, passed
+2022-10-21 01:33:02,591 TADA INFO assertion 22, (4th update; record uncahnged) check set3_c on record_samp.py: OK, passed
+2022-10-21 01:33:02,591 __main__ INFO 4th update on the aggregator...
+2022-10-21 01:33:09,800 TADA INFO assertion 23, (4th update; record uncahnged) check set1 on record_agg.py: OK, passed
+2022-10-21 01:33:09,800 TADA INFO assertion 24, (4th update; record uncahnged) check set3_p on record_agg.py: OK, passed
+2022-10-21 01:33:09,801 TADA INFO assertion 25, (4th update; record uncahnged) check set3_c on record_agg.py: OK, passed
+2022-10-21 01:33:09,801 __main__ INFO 5th sampling on the sampler...
+2022-10-21 01:33:17,010 TADA INFO assertion 26, (5th update; record del) check set1 on record_samp.py: OK, passed
+2022-10-21 01:33:17,010 TADA INFO assertion 27, (5th update; record del) check set3_p on record_samp.py: OK, passed
+2022-10-21 01:33:17,011 TADA INFO assertion 28, (5th update; record del) check set3_c on record_samp.py: OK, passed
+2022-10-21 01:33:17,011 __main__ INFO 5th update on the aggregator...
+2022-10-21 01:33:24,220 TADA INFO assertion 29, (5th update; record del) check set1 on record_agg.py: OK, passed
+2022-10-21 01:33:24,220 TADA INFO assertion 30, (5th update; record del) check set3_p on record_agg.py: OK, passed
+2022-10-21 01:33:24,221 TADA INFO assertion 31, (5th update; record del) check set3_c on record_agg.py: OK, passed
+2022-10-21 01:33:24,221 __main__ INFO 6th sampling on the sampler...
+2022-10-21 01:33:31,430 TADA INFO assertion 32, (6th update; record unchanged) check set1 on record_samp.py: OK, passed
+2022-10-21 01:33:31,430 TADA INFO assertion 33, (6th update; record unchanged) check set3_p on record_samp.py: OK, passed
+2022-10-21 01:33:31,431 TADA INFO assertion 34, (6th update; record unchanged) check set3_c on record_samp.py: OK, passed
+2022-10-21 01:33:31,431 __main__ INFO 6th update on the updator...
+2022-10-21 01:33:38,640 TADA INFO assertion 35, (6th update; record unchanged) check set1 on record_agg.py: OK, passed
+2022-10-21 01:33:38,640 TADA INFO assertion 36, (6th update; record unchanged) check set3_p on record_agg.py: OK, passed
+2022-10-21 01:33:38,641 TADA INFO assertion 37, (6th update; record unchanged) check set3_c on record_agg.py: OK, passed
+2022-10-21 01:33:38,641 TADA INFO test ldms_record_test ended
+2022-10-21 01:33:49 INFO: ----------------------------------------------
+2022-10-21 01:33:50 INFO: ======== ldms_schema_digest_test ========
+2022-10-21 01:33:50 INFO: CMD: python3 ldms_schema_digest_test --prefix /home/narate/cron/ldms-test/ldms-containers/ovis --runtime docker --image ovishpc/ldms-dev --src /mnt/300G/data --data_root /mnt/300G/data/2022-10-21-003001/data/ldms_schema_digest_test
+2022-10-21 01:33:50,986 TADA INFO starting test `ldms_schema_digest_test`
+2022-10-21 01:33:50,986 TADA INFO   test-id: 28e04503fe4ca737e78f87d39d668da2a32205c4716677d8b5485db000b72565
+2022-10-21 01:33:50,986 TADA INFO   test-suite: LDMSD
+2022-10-21 01:33:50,986 TADA INFO   test-name: ldms_schema_digest_test
+2022-10-21 01:33:50,986 TADA INFO   test-user: narate
+2022-10-21 01:33:50,986 TADA INFO   commit-id: c6bbe5530e620865002d2995a48a3d2811fa26ac
+2022-10-21 01:33:50,987 __main__ INFO -- Get or create the cluster --
+2022-10-21 01:33:58,329 __main__ INFO -- Start daemons --
+2022-10-21 01:34:01,584 __main__ INFO ... wait a bit to make sure ldmsd's are up
+2022-10-21 01:34:06,699 TADA INFO assertion 1, No schema digest from ldms_ls -v sampler: verified, passed
+2022-10-21 01:34:06,809 TADA INFO assertion 2, Schema digest from ldms_ls -vv sampler is not empty: verified, passed
+2022-10-21 01:34:06,940 TADA INFO assertion 3, Schema digest from ldms_ls -vv agg-1 is not empty: verified, passed
+2022-10-21 01:34:07,116 TADA INFO assertion 4, Schema digest from Python ldms dir agg-1 is not empty: verified, passed
+2022-10-21 01:34:07,116 TADA INFO assertion 5, Schema digest from Python ldms lokoup agg-1 is not empty: verified, passed
+2022-10-21 01:34:07,116 TADA INFO assertion 6, All digests of the same set are the same: , passed
+2022-10-21 01:34:09,571 TADA INFO assertion 7, Sets of same schema yield the same digest: check, passed
+2022-10-21 01:34:09,572 TADA INFO assertion 8, Different schema (1-off metric) yield different digest: check, passed
+2022-10-21 01:34:09,572 TADA INFO test ldms_schema_digest_test ended
+2022-10-21 01:34:21 INFO: ----------------------------------------------
+2022-10-21 01:34:22 INFO: ======== ldmsd_decomp_test ========
+2022-10-21 01:34:22 INFO: CMD: python3 ldmsd_decomp_test --prefix /home/narate/cron/ldms-test/ldms-containers/ovis --runtime docker --image ovishpc/ldms-dev --src /mnt/300G/data --data_root /mnt/300G/data/2022-10-21-003001/data/ldmsd_decomp_test
+2022-10-21 01:34:23,532 TADA INFO starting test `ldmsd_decomp_test`
+2022-10-21 01:34:23,533 TADA INFO   test-id: 6d4588e1ca0015b7061a45f261b3e57a3cb3da5e38f94ec4c2a2ca2faecbd9c4
+2022-10-21 01:34:23,533 TADA INFO   test-suite: LDMSD
+2022-10-21 01:34:23,533 TADA INFO   test-name: ldmsd_decomp_test
+2022-10-21 01:34:23,533 TADA INFO   test-user: narate
+2022-10-21 01:34:23,533 TADA INFO   commit-id: c6bbe5530e620865002d2995a48a3d2811fa26ac
+2022-10-21 01:34:23,534 __main__ INFO -- Get or create the cluster --
+2022-10-21 01:34:39,111 __main__ INFO -- Start daemons --
+2022-10-21 01:34:49,428 __main__ INFO ... wait a bit to make sure ldmsd's are up
+2022-10-21 01:35:44,686 TADA INFO assertion 1, `as_is` decomposition, test_sampler_8d2b8bd sos schema check: OK, passed
+2022-10-21 01:35:44,687 TADA INFO assertion 2, `as_is` decomposition, test_sampler_95772b6 sos schema check: OK, passed
+2022-10-21 01:35:44,687 TADA INFO assertion 3, `as_is` decomposition, record_sampler_e1f021f sos schema check: OK, passed
+2022-10-21 01:35:44,687 TADA INFO assertion 4, `static` decomposition, fill sos schema check: OK, passed
+2022-10-21 01:35:44,687 TADA INFO assertion 5, `static` decomposition, filter sos schema check: OK, passed
+2022-10-21 01:35:44,687 TADA INFO assertion 6, `static` decomposition, record sos schema check: OK, passed
+2022-10-21 01:35:44,687 TADA INFO assertion 7, `as_is` decomposition, test_sampler_8d2b8bd csv schema check: OK, passed
+2022-10-21 01:35:44,688 TADA INFO assertion 8, `as_is` decomposition, test_sampler_95772b6 csv schema check: OK, passed
+2022-10-21 01:35:44,688 TADA INFO assertion 9, `as_is` decomposition, record_sampler_e1f021f csv schema check: OK, passed
+2022-10-21 01:35:44,688 TADA INFO assertion 10, `static` decomposition, fill csv schema check: OK, passed
+2022-10-21 01:35:44,688 TADA INFO assertion 11, `static` decomposition, filter csv schema check: OK, passed
+2022-10-21 01:35:44,688 TADA INFO assertion 12, `static` decomposition, record csv schema check: OK, passed
+2022-10-21 01:35:44,688 TADA INFO assertion 13, `as_is` decomposition, test_sampler_8d2b8bd kafka schema check: OK, passed
+2022-10-21 01:35:44,689 TADA INFO assertion 14, `as_is` decomposition, test_sampler_95772b6 kafka schema check: OK, passed
+2022-10-21 01:35:44,689 TADA INFO assertion 15, `as_is` decomposition, record_sampler_e1f021f kafka schema check: OK, passed
+2022-10-21 01:35:44,689 TADA INFO assertion 16, `static` decomposition, fill kafka schema check: OK, passed
+2022-10-21 01:35:44,689 TADA INFO assertion 17, `static` decomposition, filter kafka schema check: OK, passed
+2022-10-21 01:35:44,689 TADA INFO assertion 18, `static` decomposition, record kafka schema check: OK, passed
+2022-10-21 01:35:44,691 TADA INFO assertion 19, `as_is` decomposition, test_sampler_8d2b8bd sos data check: OK, passed
+2022-10-21 01:35:44,693 TADA INFO assertion 20, `as_is` decomposition, test_sampler_95772b6 sos data check: OK, passed
+2022-10-21 01:35:44,768 TADA INFO assertion 21, `as_is` decomposition, record_sampler_e1f021f sos data check: OK, passed
+2022-10-21 01:35:44,772 TADA INFO assertion 22, `static` decomposition, fill sos data check: OK, passed
+2022-10-21 01:35:44,775 TADA INFO assertion 23, `static` decomposition, filter sos data check: OK, passed
+2022-10-21 01:35:44,783 TADA INFO assertion 24, `static` decomposition, record sos data check: OK, passed
+2022-10-21 01:35:44,784 TADA INFO assertion 25, `as_is` decomposition, test_sampler_8d2b8bd csv data check: OK, passed
+2022-10-21 01:35:44,786 TADA INFO assertion 26, `as_is` decomposition, test_sampler_95772b6 csv data check: OK, passed
+2022-10-21 01:35:44,860 TADA INFO assertion 27, `as_is` decomposition, record_sampler_e1f021f csv data check: OK, passed
+2022-10-21 01:35:44,864 TADA INFO assertion 28, `static` decomposition, fill csv data check: OK, passed
+2022-10-21 01:35:44,867 TADA INFO assertion 29, `static` decomposition, filter csv data check: OK, passed
+2022-10-21 01:35:44,876 TADA INFO assertion 30, `static` decomposition, record csv data check: OK, passed
+2022-10-21 01:35:44,877 TADA INFO assertion 31, `as_is` decomposition, test_sampler_8d2b8bd kafka data check: OK, passed
+2022-10-21 01:35:44,877 TADA INFO assertion 32, `as_is` decomposition, test_sampler_95772b6 kafka data check: OK, passed
+2022-10-21 01:35:44,907 TADA INFO assertion 33, `as_is` decomposition, record_sampler_e1f021f kafka data check: OK, passed
+2022-10-21 01:35:44,908 TADA INFO assertion 34, `static` decomposition, fill kafka data check: OK, passed
+2022-10-21 01:35:44,910 TADA INFO assertion 35, `static` decomposition, filter kafka data check: OK, passed
+2022-10-21 01:35:44,915 TADA INFO assertion 36, `static` decomposition, record kafka data check: OK, passed
+2022-10-21 01:35:44,915 TADA INFO test ldmsd_decomp_test ended
+2022-10-21 01:35:44,916 TADA INFO test ldmsd_decomp_test ended
+2022-10-21 01:35:59 INFO: ----------------------------------------------
+2022-10-21 01:36:00 INFO: ======== ldmsd_stream_dir_test ========
+2022-10-21 01:36:00 INFO: CMD: python3 ldmsd_stream_dir_test --prefix /home/narate/cron/ldms-test/ldms-containers/ovis --runtime docker --image ovishpc/ldms-dev --src /mnt/300G/data --data_root /mnt/300G/data/2022-10-21-003001/data/ldmsd_stream_dir_test
+2022-10-21 01:36:01,530 __main__ INFO -- Get or create the cluster --
+2022-10-21 01:36:01,530 TADA INFO starting test `ldmsd_stream_dir`
+2022-10-21 01:36:01,530 TADA INFO   test-id: fe57f971fce7391d4096a2b7636ef6ae82398fdd82d82d95a81d56bd593336c5
+2022-10-21 01:36:01,530 TADA INFO   test-suite: LDMSD
+2022-10-21 01:36:01,530 TADA INFO   test-name: ldmsd_stream_dir
+2022-10-21 01:36:01,530 TADA INFO   test-user: narate
+2022-10-21 01:36:01,530 TADA INFO   commit-id: c6bbe5530e620865002d2995a48a3d2811fa26ac
+2022-10-21 01:36:10,018 __main__ INFO -- Start daemons --
+2022-10-21 01:36:13,715 __main__ INFO waiting ... for all LDMSDs to start
+2022-10-21 01:36:14,030 __main__ INFO All LDMSDs are up.
+2022-10-21 01:36:15,238 TADA INFO assertion 1, No Stream data: {} == {}, passed
+2022-10-21 01:36:16,590 TADA INFO assertion 2, stream_dir -- one stream message: {'foo': {'mode': 'not subscribed', 'info': {'first_ts': 1666334175, 'last_ts': 1666334175, 'count': 1, 'total_bytes': 6}, 'publishers': {}}, '_AGGREGATED_': {'info': {'first_ts': 1666334175, 'last_ts': 1666334175, 'count': 1, 'total_bytes': 6}}} == {'foo': {'mode': 'not subscribed', 'info': {'count': 1, 'total_bytes': 6, 'first_ts': 1666334175, 'last_ts': 1666334175}, 'publishers': {}}, '_AGGREGATED_': {'info': {'count': 1, 'total_bytes': 6, 'first_ts': 1666334175, 'last_ts': 1666334175}}}, passed
+2022-10-21 01:36:19,018 TADA INFO assertion 3, stream_dir --  multiple stream messages: {'foo': {'mode': 'not subscribed', 'info': {'first_ts': 1666334175, 'last_ts': 1666334177, 'count': 3, 'total_bytes': 18, 'msg/sec': 1.5, 'bytes/sec': 9.0}, 'publishers': {}}, '_AGGREGATED_': {'info': {'first_ts': 1666334175, 'last_ts': 1666334177, 'count': 3, 'total_bytes': 18, 'msg/sec': 1.5, 'bytes/sec': 9.0}}} == {'foo': {'mode': 'not subscribed', 'info': {'count': 3, 'total_bytes': 18, 'first_ts': 1666334175, 'last_ts': 1666334177, 'bytes/sec': 9.0, 'msg/sec': 1.5}, 'publishers': {}}, '_AGGREGATED_': {'info': {'count': 3, 'total_bytes': 18, 'first_ts': 1666334175, 'last_ts': 1666334177, 'bytes/sec': 9.0, 'msg/sec': 1.5}}}, passed
+2022-10-21 01:36:20,232 TADA INFO assertion 4, prdcr_stream_dir to agg -- one producer: {'foo': {'samplerd-1': {'mode': 'not subscribed', 'info': {'msg/sec': 1.5, 'total_bytes': 18, 'last_ts': 1666334177, 'first_ts': 1666334175, 'bytes/sec': 9.0, 'count': 3}}}, '_AGGREGATED_': {'samplerd-1': {'info': {'msg/sec': 1.5, 'total_bytes': 18, 'last_ts': 1666334177, 'first_ts': 1666334175, 'bytes/sec': 9.0, 'count': 3}}}} == {'foo': {'samplerd-1': {'mode': 'not subscribed', 'info': {'count': 3, 'total_bytes': 18, 'first_ts': 1666334175, 'last_ts': 1666334177, 'bytes/sec': 9.0, 'msg/sec': 1.5}}}, '_AGGREGATED_': {'samplerd-1': {'info': {'count': 3, 'total_bytes': 18, 'first_ts': 1666334175, 'last_ts': 1666334177, 'bytes/sec': 9.0, 'msg/sec': 1.5}}}}, passed
+2022-10-21 01:36:24,077 TADA INFO assertion 5, stream_dir -- mulitple streams: {'bar': {'mode': 'not subscribed', 'info': {'first_ts': 1666334181, 'last_ts': 1666334182, 'count': 3, 'total_bytes': 48, 'msg/sec': 3.0, 'bytes/sec': 48.0}, 'publishers': {}}, 'foo': {'mode': 'not subscribed', 'info': {'first_ts': 1666334180, 'last_ts': 1666334181, 'count': 2, 'total_bytes': 12, 'msg/sec': 2.0, 'bytes/sec': 12.0}, 'publishers': {}}, '_AGGREGATED_': {'info': {'first_ts': 1666334180, 'last_ts': 1666334182, 'count': 5, 'total_bytes': 60, 'msg/sec': 2.5, 'bytes/sec': 30.0}}} == {'foo': {'mode': 'not subscribed', 'info': {'count': 2, 'total_bytes': 12, 'first_ts': 1666334180, 'last_ts': 1666334181, 'bytes/sec': 12.0, 'msg/sec': 2.0}, 'publishers': {}}, 'bar': {'mode': 'not subscribed', 'info': {'count': 3, 'total_bytes': 48, 'first_ts': 1666334181, 'last_ts': 1666334182, 'bytes/sec': 48.0, 'msg/sec': 3.0}, 'publishers': {}}, '_AGGREGATED_': {'info': {'count': 5, 'total_bytes': 60, 'first_ts': 1666334180, 'last_ts': 1666334182, 'bytes/sec': 30.0, 'msg/sec': 2.5}}}, passed
+2022-10-21 01:36:25,305 TADA INFO assertion 6, prdcr_stream_dir to agg -- two producers: {'foo': {'samplerd-2': {'mode': 'not subscribed', 'info': {'msg/sec': 2.0, 'total_bytes': 12, 'last_ts': 1666334181, 'first_ts': 1666334180, 'bytes/sec': 12.0, 'count': 2}}, 'samplerd-1': {'mode': 'not subscribed', 'info': {'msg/sec': 1.5, 'total_bytes': 18, 'last_ts': 1666334177, 'first_ts': 1666334175, 'bytes/sec': 9.0, 'count': 3}}}, 'bar': {'samplerd-2': {'mode': 'not subscribed', 'info': {'msg/sec': 3.0, 'total_bytes': 48, 'last_ts': 1666334182, 'first_ts': 1666334181, 'bytes/sec': 48.0, 'count': 3}}}, '_AGGREGATED_': {'samplerd-2': {'info': {'msg/sec': 2.5, 'total_bytes': 60, 'last_ts': 1666334182, 'first_ts': 1666334180, 'bytes/sec': 30.0, 'count': 5}}, 'samplerd-1': {'info': {'msg/sec': 1.5, 'total_bytes': 18, 'last_ts': 1666334177, 'first_ts': 1666334175, 'bytes/sec': 9.0, 'count': 3}}}} == {'foo': {'samplerd-1': {'mode': 'not subscribed', 'info': {'count': 3, 'total_bytes': 18, 'first_ts': 1666334175, 'last_ts': 1666334177, 'bytes/sec': 9.0, 'msg/sec': 1.5}}, 'samplerd-2': {'mode': 'not subscribed', 'info': {'count': 2, 'total_bytes': 12, 'first_ts': 1666334180, 'last_ts': 1666334181, 'bytes/sec': 12.0, 'msg/sec': 2.0}}}, 'bar': {'samplerd-2': {'mode': 'not subscribed', 'info': {'count': 3, 'total_bytes': 48, 'first_ts': 1666334181, 'last_ts': 1666334182, 'bytes/sec': 48.0, 'msg/sec': 3.0}}}, '_AGGREGATED_': {'samplerd-1': {'info': {'count': 3, 'total_bytes': 18, 'first_ts': 1666334175, 'last_ts': 1666334177, 'bytes/sec': 9.0, 'msg/sec': 1.5}}, 'samplerd-2': {'info': {'count': 5, 'total_bytes': 60, 'first_ts': 1666334180, 'last_ts': 1666334182, 'bytes/sec': 30.0, 'msg/sec': 2.5}}}}, passed
+2022-10-21 01:36:28,967 TADA INFO assertion 7, stream_dir to agg after one producer republished stream: {'foo': {'mode': 'not subscribed', 'info': {'first_ts': 1666334186, 'last_ts': 1666334187, 'count': 2, 'total_bytes': 12, 'msg/sec': 2.0, 'bytes/sec': 12.0}, 'publishers': {'samplerd-1': {'info': {'first_ts': 1666334186, 'last_ts': 1666334187, 'count': 2, 'total_bytes': 12, 'msg/sec': 2.0, 'bytes/sec': 12.0}}}}, '_AGGREGATED_': {'info': {'first_ts': 1666334186, 'last_ts': 1666334187, 'count': 2, 'total_bytes': 12, 'msg/sec': 2.0, 'bytes/sec': 12.0}}} == {'foo': {'mode': 'not subscribed', 'info': {'count': 2, 'total_bytes': 12, 'first_ts': 1666334186, 'last_ts': 1666334187, 'bytes/sec': 12.0, 'msg/sec': 2.0}, 'publishers': {'samplerd-1': {'info': {'count': 2, 'total_bytes': 12, 'first_ts': 1666334186, 'last_ts': 1666334187, 'bytes/sec': 12.0, 'msg/sec': 2.0}}}}, '_AGGREGATED_': {'info': {'count': 2, 'total_bytes': 12, 'first_ts': 1666334186, 'last_ts': 1666334187, 'bytes/sec': 12.0, 'msg/sec': 2.0}}}, passed
+2022-10-21 01:36:30,510 TADA INFO assertion 8, stream_dir to agg after two producers republished stream: {'foo': {'mode': 'not subscribed', 'info': {'first_ts': 1666334186, 'last_ts': 1666334189, 'count': 5, 'total_bytes': 30, 'msg/sec': 1.666667, 'bytes/sec': 10.0}, 'publishers': {'samplerd-1': {'info': {'first_ts': 1666334186, 'last_ts': 1666334187, 'count': 2, 'total_bytes': 12, 'msg/sec': 2.0, 'bytes/sec': 12.0}}, 'samplerd-2': {'info': {'first_ts': 1666334189, 'last_ts': 1666334189, 'count': 3, 'total_bytes': 18}}}}, '_AGGREGATED_': {'info': {'first_ts': 1666334186, 'last_ts': 1666334189, 'count': 5, 'total_bytes': 30, 'msg/sec': 1.666667, 'bytes/sec': 10.0}}} == {'foo': {'mode': 'not subscribed', 'info': {'count': 5, 'total_bytes': 30, 'first_ts': 1666334186, 'last_ts': 1666334189, 'bytes/sec': 10.0, 'msg/sec': 1.666667}, 'publishers': {'samplerd-1': {'info': {'count': 2, 'total_bytes': 12, 'first_ts': 1666334186, 'last_ts': 1666334187, 'bytes/sec': 12.0, 'msg/sec': 2.0}}, 'samplerd-2': {'info': {'count': 3, 'total_bytes': 18, 'first_ts': 1666334189, 'last_ts': 1666334189}}}}, '_AGGREGATED_': {'info': {'count': 5, 'total_bytes': 30, 'first_ts': 1666334186, 'last_ts': 1666334189, 'bytes/sec': 10.0, 'msg/sec': 1.666667}}}, passed
+2022-10-21 01:36:30,510 TADA INFO test ldmsd_stream_dir ended
+2022-10-21 01:36:42 INFO: ----------------------------------------------
+2022-10-21 01:36:43 INFO: ======== store_list_record_test ========
+2022-10-21 01:36:43 INFO: CMD: python3 store_list_record_test --prefix /home/narate/cron/ldms-test/ldms-containers/ovis --runtime docker --image ovishpc/ldms-dev --src /mnt/300G/data --data_root /mnt/300G/data/2022-10-21-003001/data/store_list_record_test
+2022-10-21 01:36:44,173 __main__ INFO -- Get or create the cluster --
+2022-10-21 01:36:44,173 TADA INFO starting test `store_sos_lists_test`
+2022-10-21 01:36:44,174 TADA INFO   test-id: 691b62df52936f326795a4962f5eadb4bfc81ba46bfab90747b712a1436756ee
+2022-10-21 01:36:44,174 TADA INFO   test-suite: LDMSD
+2022-10-21 01:36:44,174 TADA INFO   test-name: store_sos_lists_test
+2022-10-21 01:36:44,174 TADA INFO   test-user: narate
+2022-10-21 01:36:44,174 TADA INFO   commit-id: c6bbe5530e620865002d2995a48a3d2811fa26ac
+2022-10-21 01:36:51,491 __main__ INFO Waiting ... for all LDMSDs to start
+2022-10-21 01:36:55,321 __main__ INFO All sampler daemons are up.
+2022-10-21 01:36:55,429 TADA INFO assertion 1, aggregator with store_sos has started properly.: agg_sos.check_ldmsd(), passed
+2022-10-21 01:36:55,548 TADA INFO assertion 2, aggregator with store_csv has started properly.: agg_csv.check_ldmsd(), passed
+2022-10-21 01:37:07,483 TADA INFO assertion 3, store_sos is storing data.: agg.file_exists(a) for a in db_paths, passed
+2022-10-21 01:37:10,781 TADA INFO assertion 4, store_sos stores data correctly.: verify_data(db) for db in all_db, passed
+2022-10-21 01:37:19,688 TADA INFO assertion 5, store_sos stores data after restarted correctly.: verify_data(db) for db in all_db, passed
+2022-10-21 01:37:21,112 TADA INFO assertion 6, store_csv is storing data.: agg.file_exists(a) for a in db_paths, passed
+2022-10-21 01:37:32,256 TADA INFO assertion 7, store_csv stores data correctly.: verify_data(db) for db in all_db, passed
+2022-10-21 01:37:41,818 TADA INFO assertion 8, store_csv stores data after restarted correctly.: verify_data(db) for db in all_db, passed
+2022-10-21 01:37:41,818 TADA INFO test store_sos_lists_test ended
+2022-10-21 01:37:55 INFO: ----------------------------------------------
+2022-10-21 01:37:56 INFO: ======== maestro_raft_test ========
+2022-10-21 01:37:56 INFO: CMD: python3 maestro_raft_test --prefix /home/narate/cron/ldms-test/ldms-containers/ovis --runtime docker --image ovishpc/ldms-dev --src /mnt/300G/data --data_root /mnt/300G/data/2022-10-21-003001/data/maestro_raft_test
+2022-10-21 01:37:57,172 TADA INFO starting test `maestro_raft_test`
+2022-10-21 01:37:57,172 TADA INFO   test-id: eda282cb5880ec265d3aef65a0e1f3c1a588465d7ad7cfbc04b2aa0f3f29c921
+2022-10-21 01:37:57,172 TADA INFO   test-suite: LDMSD
+2022-10-21 01:37:57,172 TADA INFO   test-name: maestro_raft_test
+2022-10-21 01:37:57,172 TADA INFO   test-user: narate
+2022-10-21 01:37:57,172 TADA INFO   commit-id: c6bbe5530e620865002d2995a48a3d2811fa26ac
+2022-10-21 01:38:07,184 __main__ INFO -- Get or create cluster --
+2022-10-21 01:38:41,740 __main__ INFO -- Start daemons --
+2022-10-21 01:39:52,651 __main__ INFO -- making known hosts (ssh) --
+2022-10-21 01:39:59,641 __main__ INFO ... make sure ldmsd's are up
+2022-10-21 01:40:15,282 TADA INFO assertion 1, Statuses of maestros, 1 leader + 2 followers: [('FOLLOWER', 2), ('LEADER', 1)], passed
+2022-10-21 01:40:27,624 TADA INFO assertion 2, All ldmsds are up and configured: sets verified, passed
+2022-10-21 01:40:27,909 TADA INFO assertion 3, Data are being stored: data check, passed
+2022-10-21 01:40:32,785 TADA INFO assertion 4, New leader elected: checked, passed
+2022-10-21 01:40:44,595 TADA INFO assertion 5, Restarted ldmsd is configured: sets verified, passed
+2022-10-21 01:40:44,892 TADA INFO assertion 6, New data are presented in the store: data check, passed
+2022-10-21 01:40:55,855 TADA INFO assertion 7, The restarted maestro becomes a follower: checked, passed
+---Wait for config to write to file---
+2022-10-21 01:40:55,855 TADA INFO test maestro_raft_test ended
+2022-10-21 01:41:16 INFO: ----------------------------------------------
+2022-10-21 01:41:17 INFO: ======== ovis_json_test ========
+2022-10-21 01:41:17 INFO: CMD: python3 ovis_json_test --prefix /home/narate/cron/ldms-test/ldms-containers/ovis --runtime docker --image ovishpc/ldms-dev --src /mnt/300G/data --data_root /mnt/300G/data/2022-10-21-003001/data/ovis_json_test
+2022-10-21 01:41:18,134 __main__ INFO -- Create the cluster -- 
+2022-10-21 01:41:23,803 TADA INFO starting test `ovis_json_test`
+2022-10-21 01:41:23,803 TADA INFO   test-id: 919ec236fe510ed8f3b8bb04a98bbbed7c30cb3b9162a1419a867eadde9880cc
+2022-10-21 01:41:23,803 TADA INFO   test-suite: OVIS-LIB
+2022-10-21 01:41:23,803 TADA INFO   test-name: ovis_json_test
+2022-10-21 01:41:23,803 TADA INFO   test-user: narate
+2022-10-21 01:41:23,804 TADA INFO   commit-id: c6bbe5530e620865002d2995a48a3d2811fa26ac
+2022-10-21 01:41:23,804 TADA INFO assertion 1, Test creating a JSON integer entity: (type is JSON_INT_VALUE) && (1 == e->value.int_), passed
+2022-10-21 01:41:23,804 TADA INFO assertion 2, Test creating a JSON boolean entity: (type is JSON_BOOL_VALUE) && (1 == e->value.bool_), passed
+2022-10-21 01:41:23,805 TADA INFO assertion 3, Test creating a JSON float entity: (type is JSON_FLOAT_VALUE) && (1.1 == e->value.double_), passed
+2022-10-21 01:41:23,805 TADA INFO assertion 4, Test creating a JSON string entity: (type is JSON_STRING_VALUE) && (foo == e->value.str_->str), passed
+2022-10-21 01:41:23,805 TADA INFO assertion 5, Test creating a JSON attribute entity: (type is JSON_ATTR_VALUE) && (name == <attr name>) && (value == <attr value>), passed
+2022-10-21 01:41:23,805 TADA INFO assertion 6, Test creating a JSON list entity: (type is JSON_LIST_VALUE) && (0 == Number of elements) && (list is empty), passed
+2022-10-21 01:41:23,805 TADA INFO assertion 7, Test creating a JSON dictionary entity: (type is JSON_DICT_VALUE) && (dict table is empty), passed
+2022-10-21 01:41:23,805 TADA INFO assertion 8, Test creating a JSON null entity: (type is JSON_NULL_VALUE) && (0 == e->value.int_), passed
+2022-10-21 01:41:23,806 TADA INFO assertion 9, Test parsing a JSON integer string: (0 == json_parse_buffer()) && is_same_entity(expected, o), passed
+2022-10-21 01:41:23,806 TADA INFO assertion 10, Test parsing a JSON false boolean string: (0 == json_parse_buffer()) && is_same_entity(expected, o), passed
+2022-10-21 01:41:23,806 TADA INFO assertion 11, Test parsing a JSON true boolean string: (0 == json_parse_buffer()) && is_same_entity(expected, o), passed
+2022-10-21 01:41:23,806 TADA INFO assertion 12, Test parsing a JSON float string: (0 == json_parse_buffer()) && is_same_entity(expected, o), passed
+2022-10-21 01:41:23,806 TADA INFO assertion 13, Test parsing a JSON string: (0 == json_parse_buffer()) && is_same_entity(expected, o), passed
+2022-10-21 01:41:23,806 TADA INFO assertion 15, Test parsing a JSON dict string: (0 == json_parse_buffer()) && is_same_entity(expected, o), passed
+2022-10-21 01:41:23,806 TADA INFO assertion 16, Test parsing a JSON null string: (0 == json_parse_buffer()) && is_same_entity(expected, o), passed
+2022-10-21 01:41:23,807 TADA INFO assertion 17, Test parsing an invalid string: (0 == json_parse_buffer()) && is_same_entity(expected, o), passed
+2022-10-21 01:41:23,807 TADA INFO assertion 17, Test parsing an invalid string: 0 != json_parse_buffer(), passed
+2022-10-21 01:41:23,807 TADA INFO assertion 18, Test dumping a JSON integer entity: 1 == 1, passed
+2022-10-21 01:41:23,807 TADA INFO assertion 19, Test dumping a JSON false boolean entity: false == false, passed
+2022-10-21 01:41:23,807 TADA INFO assertion 20, Test dumping a JSON true boolean entity: true == true, passed
+2022-10-21 01:41:23,807 TADA INFO assertion 21, Test dumping a JSON float entity: 1.100000 == 1.100000, passed
+2022-10-21 01:41:23,808 TADA INFO assertion 22, Test dumping a JSON string entity: "foo" == "foo", passed
+2022-10-21 01:41:23,808 TADA INFO assertion 23, Test dumping a JSON attr entity: "name":"foo" == jb->buf, passed
+2022-10-21 01:41:23,808 TADA INFO assertion 24, Test dumping a JSON list entity: [1,false,1.100000,"foo",[],{},null] == [1,false,1.100000,"foo",[],{},null], passed
+2022-10-21 01:41:23,808 TADA INFO assertion 25, Test dumping a JSON dict entity: {"int":1,"bool":true,"float":1.100000,"string":"foo","list":[1,false,1.100000,"foo",[],{},null],"dict":{"attr_1":"value_1"},"null":null} == {"null":null,"list":[1,false,1.100000,"foo",[],{},null],"string":"foo","float":1.100000,"bool":true,"dict":{"attr_1":"value_1"},"int":1}, passed
+2022-10-21 01:41:23,808 TADA INFO assertion 26, Test dumping a JSON null entity: null == null, passed
+2022-10-21 01:41:23,808 TADA INFO assertion 27, Test dumping a JSON entity to a non-empty jbuf: This is a book."FOO" == This is a book."FOO", passed
+2022-10-21 01:41:23,808 TADA INFO assertion 28, Test copying a JSON integer entity: is_same_entity(expected, json_entity_copy(expected), passed
+2022-10-21 01:41:23,809 TADA INFO assertion 29, Test copying a JSON false boolean entity: is_same_entity(expected, json_entity_copy(expected), passed
+2022-10-21 01:41:23,809 TADA INFO assertion 30, Test copying a JSON true boolean entity: is_same_entity(expected, json_entity_copy(expected), passed
+2022-10-21 01:41:23,809 TADA INFO assertion 31, Test copying a JSON float entity: is_same_entity(expected, json_entity_copy(expected), passed
+2022-10-21 01:41:23,809 TADA INFO assertion 32, Test copying a JSON string entity: is_same_entity(expected, json_entity_copy(expected), passed
+2022-10-21 01:41:23,809 TADA INFO assertion 33, Test copying a JSON attribute entity: is_same_entity(expected, json_entity_copy(expected), passed
+2022-10-21 01:41:23,810 TADA INFO assertion 34, Test copying a JSON list entity: is_same_entity(expected, json_entity_copy(expected), passed
+2022-10-21 01:41:23,810 TADA INFO assertion 35, Test copying a JSON dict entity: is_same_entity(expected, json_entity_copy(expected), passed
+2022-10-21 01:41:23,810 TADA INFO assertion 36, Test copying a JSON null entity: is_same_entity(expected, json_entity_copy(expected), passed
+2022-10-21 01:41:23,810 TADA INFO assertion 37, Test obtaining the number of attributes: 7 == json_attr_count(dict), passed
+2022-10-21 01:41:23,810 TADA INFO assertion 38, Test finding an existing attribute: 0 != json_attr_find(), passed
+2022-10-21 01:41:23,810 TADA INFO assertion 39, Test finding a non-existng attribute: 0 == json_attr_find(), passed
+2022-10-21 01:41:23,810 TADA INFO assertion 40, Test finding the value of an existing attribute: 0 != json_value_find(), passed
+2022-10-21 01:41:23,811 TADA INFO assertion 41, Test finding the value of a non-existing attribute: 0 == json_value_find(), passed
+2022-10-21 01:41:23,811 TADA INFO assertion 42, Test adding a new attribute to a dictionary: (0 == json_attr_add() && (0 != json_attr_find()), passed
+2022-10-21 01:41:23,811 TADA INFO assertion 43, Test replacing the value of an existing attribute: (0 == json_attr_add()) && (0 != json_value_find()) && (is_same_entity(old_v, new_v)), passed
+2022-10-21 01:41:23,811 TADA INFO assertion 44, Test removing an existing attribute: (0 = json_attr_rem()) && (0 == json_attr_find()), passed
+2022-10-21 01:41:23,811 TADA INFO assertion 45, Test removing a non-existing attribute: (ENOENT == json_attr_rem()), passed
+2022-10-21 01:41:23,811 TADA INFO assertion 46, Test creating a dictionary by json_dict_build: expected == json_dict_build(...), passed
+2022-10-21 01:41:23,812 TADA INFO assertion 47, Test adding attributes and replacing attribute values by json_dict_build: expected == json_dict_build(d, ...), passed
+2022-10-21 01:41:23,812 TADA INFO assertion 48, Test json_dict_merge(): The merged dictionary is correct., passed
+2022-10-21 01:41:23,812 TADA INFO assertion 49, Test json_list_len(): 7 == json_list_len(), passed
+2022-10-21 01:41:23,812 TADA INFO assertion 50, Test adding items to a list: 0 == strcmp(exp_str, json_entity_dump(l)->buf, passed
+2022-10-21 01:41:23,812 TADA INFO assertion 51, Test removing an existing item by json_item_rem(): 0 == json_item_rem(), passed
+2022-10-21 01:41:23,812 TADA INFO assertion 52, Test removing a non-existing item by json_item_rem(): ENOENT == json_item_rem(), passed
+2022-10-21 01:41:23,812 TADA INFO assertion 53, Test popping an existing item from a list by json_item_pop(): NULL == json_item_pop(len + 3), passed
+2022-10-21 01:41:23,813 TADA INFO assertion 54, Test popping a non-existing item from a list by json_item_pop(): NULL != json_item_pop(len - 1), passed
+2022-10-21 01:41:23,813 TADA INFO test ovis_json_test ended
+2022-10-21 01:41:34 INFO: ----------------------------------------------
+2022-10-21 01:41:35 INFO: ======== updtr_add_test ========
+2022-10-21 01:41:35 INFO: CMD: python3 updtr_add_test --prefix /home/narate/cron/ldms-test/ldms-containers/ovis --runtime docker --image ovishpc/ldms-dev --src /mnt/300G/data --data_root /mnt/300G/data/2022-10-21-003001/data/updtr_add_test
+2022-10-21 01:41:36,109 __main__ INFO -- Get or create the cluster --
+2022-10-21 01:41:36,109 TADA INFO starting test `updtr_add test`
+2022-10-21 01:41:36,109 TADA INFO   test-id: f4f17c4e6778453e1d1f6a50d2d970ab92c9b41eeda91cd4338cfa8f7d030abf
+2022-10-21 01:41:36,109 TADA INFO   test-suite: LDMSD
+2022-10-21 01:41:36,109 TADA INFO   test-name: updtr_add test
+2022-10-21 01:41:36,109 TADA INFO   test-user: narate
+2022-10-21 01:41:36,109 TADA INFO   commit-id: c6bbe5530e620865002d2995a48a3d2811fa26ac
+2022-10-21 01:41:43,797 __main__ INFO -- Start daemons --
+2022-10-21 01:41:47,391 __main__ INFO Waiting ... for all LDMSDs to start
+2022-10-21 01:41:47,710 __main__ INFO All LDMSDs are up.
+2022-10-21 01:41:48,925 TADA INFO assertion 1, Add an updater with a negative interval: report(rc = 22) == expect(rc = 22), passed
+2022-10-21 01:41:50,138 TADA INFO assertion 2, Add an updater with a zero interval: report(rc = 22) == expect(rc = 22), passed
+2022-10-21 01:41:51,349 TADA INFO assertion 3, Add an updater with an alphabet interval: report(rc = 22) == expect(rc = 22), passed
+2022-10-21 01:41:52,573 TADA INFO assertion 4, Add an updater with a negative offset: report(rc = 0) == expect(rc = 0), passed
+2022-10-21 01:41:53,801 TADA INFO assertion 5, Add an updater with an alphabet offset: report(rc = 22) == expect(rc = 22), passed
+2022-10-21 01:41:56,236 TADA INFO assertion 6, Add an updater without an offset: report(rc = 0, status = [{'name': 'without_offset', 'interval': '1000000', 'offset': '0', 'sync': 'true', 'mode': 'Pull', 'auto': 'false', 'state': 'STOPPED', 'producers': []}]) == expect(rc = 0, status = [{'name': 'without_offset', 'interval': '1000000', 'offset': '0', 'sync': 'true', 'mode': 'Pull', 'auto': 'false', 'state': 'STOPPED', 'producers': []}]), passed
+2022-10-21 01:41:58,657 TADA INFO assertion 7, Add an updater with a valid offset: report(rc = 0, status = [{'name': 'with_offset', 'interval': '1000000', 'offset': '100000', 'sync': 'true', 'mode': 'Pull', 'auto': 'false', 'state': 'STOPPED', 'producers': []}]) == expect(rc = 0, status = [{'name': 'with_offset', 'interval': '1000000', 'offset': '100000', 'sync': 'true', 'mode': 'Pull', 'auto': 'false', 'state': 'STOPPED', 'producers': []}]), passed
+2022-10-21 01:41:59,874 TADA INFO assertion 8, Add an updater with an existing name: report(rc = 17) == expect(rc = 17), passed
+2022-10-21 01:41:59,874 __main__ INFO --- done ---
+2022-10-21 01:41:59,875 TADA INFO test updtr_add test ended
+2022-10-21 01:42:12 INFO: ----------------------------------------------
+2022-10-21 01:42:12 INFO: ======== updtr_del_test ========
+2022-10-21 01:42:12 INFO: CMD: python3 updtr_del_test --prefix /home/narate/cron/ldms-test/ldms-containers/ovis --runtime docker --image ovishpc/ldms-dev --src /mnt/300G/data --data_root /mnt/300G/data/2022-10-21-003001/data/updtr_del_test
+2022-10-21 01:42:13,566 __main__ INFO -- Get or create the cluster --
+2022-10-21 01:42:13,566 TADA INFO starting test `updtr_add test`
+2022-10-21 01:42:13,566 TADA INFO   test-id: 18fe4d52003eb4cf13117278f0003db81dd1a2293833f0abafe93fe1d25be4ec
+2022-10-21 01:42:13,566 TADA INFO   test-suite: LDMSD
+2022-10-21 01:42:13,566 TADA INFO   test-name: updtr_add test
+2022-10-21 01:42:13,566 TADA INFO   test-user: narate
+2022-10-21 01:42:13,566 TADA INFO   commit-id: c6bbe5530e620865002d2995a48a3d2811fa26ac
+2022-10-21 01:42:21,369 __main__ INFO -- Start daemons --
+2022-10-21 01:42:25,056 __main__ INFO Waiting ... for all LDMSDs to start
+2022-10-21 01:42:25,371 __main__ INFO All LDMSDs are up.
+2022-10-21 01:42:26,597 TADA INFO assertion 1, updtr_del a non-existing updater: report(rc = 2) == expect(rc = 2), passed
+2022-10-21 01:42:27,818 TADA INFO assertion 2, updtr_del a running updater: report(rc = 16) == expect(rc = 16), passed
+2022-10-21 01:42:29,038 TADA INFO assertion 3, updtr_del a stopped updater: report(rc = 0) == expect(rc = 0), passed
+2022-10-21 01:42:30,257 TADA INFO assertion 4, updtr_del a just-added updater: report(rc = 0) == expect(rc = 0), passed
+2022-10-21 01:42:30,258 __main__ INFO --- done ---
+2022-10-21 01:42:30,258 TADA INFO test updtr_add test ended
+2022-10-21 01:42:42 INFO: ----------------------------------------------
+2022-10-21 01:42:43 INFO: ======== updtr_match_add_test ========
+2022-10-21 01:42:43 INFO: CMD: python3 updtr_match_add_test --prefix /home/narate/cron/ldms-test/ldms-containers/ovis --runtime docker --image ovishpc/ldms-dev --src /mnt/300G/data --data_root /mnt/300G/data/2022-10-21-003001/data/updtr_match_add_test
+2022-10-21 01:42:43,936 __main__ INFO -- Get or create the cluster --
+2022-10-21 01:42:43,936 TADA INFO starting test `updtr_add test`
+2022-10-21 01:42:43,936 TADA INFO   test-id: 46c9db1b9f59d8ab6db3368aa7dc6695d0b5339b7bcead9ed6111bf9812c2b9a
+2022-10-21 01:42:43,936 TADA INFO   test-suite: LDMSD
+2022-10-21 01:42:43,936 TADA INFO   test-name: updtr_add test
+2022-10-21 01:42:43,936 TADA INFO   test-user: narate
+2022-10-21 01:42:43,936 TADA INFO   commit-id: c6bbe5530e620865002d2995a48a3d2811fa26ac
+2022-10-21 01:42:51,735 __main__ INFO -- Start daemons --
+2022-10-21 01:42:55,424 __main__ INFO Waiting ... for all LDMSDs to start
+2022-10-21 01:42:55,728 __main__ INFO All LDMSDs are up.
+2022-10-21 01:42:56,951 TADA INFO assertion 1, updtr_match_add with an invalid regex: report(rc = 22) == expect(rc = 22), passed
+2022-10-21 01:42:58,163 TADA INFO assertion 2, updtr_match_add with an invalid match: report(rc = 22) == expect(rc = 22), passed
+2022-10-21 01:42:59,367 TADA INFO assertion 3, updtr_match_add of a non-existing updater: report(rc = 2) == expect(rc = 2), passed
+2022-10-21 01:43:00,594 TADA INFO assertion 4, A success updtr_match_add: report(rc = 0) == expect(rc = 0), passed
+2022-10-21 01:43:01,811 TADA INFO assertion 5, updtr_match_add of a running updater: report(rc = 16) == expect(rc = 16), passed
+2022-10-21 01:43:01,811 __main__ INFO --- done ---
+2022-10-21 01:43:01,811 TADA INFO test updtr_add test ended
+2022-10-21 01:43:14 INFO: ----------------------------------------------
+2022-10-21 01:43:14 INFO: ======== updtr_match_del_test ========
+2022-10-21 01:43:14 INFO: CMD: python3 updtr_match_del_test --prefix /home/narate/cron/ldms-test/ldms-containers/ovis --runtime docker --image ovishpc/ldms-dev --src /mnt/300G/data --data_root /mnt/300G/data/2022-10-21-003001/data/updtr_match_del_test
+2022-10-21 01:43:15,634 __main__ INFO -- Get or create the cluster --
+2022-10-21 01:43:15,634 TADA INFO starting test `updtr_add test`
+2022-10-21 01:43:15,634 TADA INFO   test-id: 2d10c85ab082c9db425379e31c475b77fbbc3c3bae34f8f6911269d5fffb7fe9
+2022-10-21 01:43:15,634 TADA INFO   test-suite: LDMSD
+2022-10-21 01:43:15,634 TADA INFO   test-name: updtr_add test
+2022-10-21 01:43:15,634 TADA INFO   test-user: narate
+2022-10-21 01:43:15,634 TADA INFO   commit-id: c6bbe5530e620865002d2995a48a3d2811fa26ac
+2022-10-21 01:43:23,627 __main__ INFO -- Start daemons --
+2022-10-21 01:43:27,255 __main__ INFO Waiting ... for all LDMSDs to start
+2022-10-21 01:43:27,548 __main__ INFO All LDMSDs are up.
+2022-10-21 01:43:28,756 TADA INFO assertion 1, Send updtr_match_del with an invalid regex: report(rc = 2) == expect(rc = 22), passed
+2022-10-21 01:43:29,979 TADA INFO assertion 2, Send updtr_match_del to a non-existing updater: report(rc = 2) == expect(rc = 2), passed
+2022-10-21 01:43:31,197 TADA INFO assertion 3, Send updtr_match_del with a non-existing inst match: report(rc = 2) == expect(rc = 2), passed
+2022-10-21 01:43:32,414 TADA INFO assertion 4, Send updtr_match_del with a non-existing schema match: report(rc = 2) == expect(rc = 2), passed
+2022-10-21 01:43:33,629 TADA INFO assertion 5, Send updater_match_del with an invalid match type: report(rc = 22) == expect(rc = 22), passed
+2022-10-21 01:43:34,828 TADA INFO assertion 6, Send updater_match_del with a valid regex of the inst type: report(rc = 0) == expect(rc = 0), passed
+2022-10-21 01:43:36,050 TADA INFO assertion 7, Send updater_match_del with a valid regex of the schema type: report(rc = 0) == expect(rc = 0), passed
+2022-10-21 01:43:36,051 __main__ INFO --- done ---
+2022-10-21 01:43:36,051 TADA INFO test updtr_add test ended
+2022-10-21 01:43:48 INFO: ----------------------------------------------
+2022-10-21 01:43:48 INFO: ======== updtr_prdcr_add_test ========
+2022-10-21 01:43:48 INFO: CMD: python3 updtr_prdcr_add_test --prefix /home/narate/cron/ldms-test/ldms-containers/ovis --runtime docker --image ovishpc/ldms-dev --src /mnt/300G/data --data_root /mnt/300G/data/2022-10-21-003001/data/updtr_prdcr_add_test
+2022-10-21 01:43:49,648 __main__ INFO -- Get or create the cluster --
+2022-10-21 01:43:49,648 TADA INFO starting test `updtr_add test`
+2022-10-21 01:43:49,648 TADA INFO   test-id: 2b9a5ac53c5be487029b0ac180dedac753957569e917c8200932f364200d5c60
+2022-10-21 01:43:49,648 TADA INFO   test-suite: LDMSD
+2022-10-21 01:43:49,648 TADA INFO   test-name: updtr_add test
+2022-10-21 01:43:49,648 TADA INFO   test-user: narate
+2022-10-21 01:43:49,648 TADA INFO   commit-id: c6bbe5530e620865002d2995a48a3d2811fa26ac
+2022-10-21 01:43:57,646 __main__ INFO -- Start daemons --
+2022-10-21 01:44:01,295 __main__ INFO Waiting ... for all LDMSDs to start
+2022-10-21 01:44:01,599 __main__ INFO All LDMSDs are up.
+2022-10-21 01:44:02,806 TADA INFO assertion 1, Send updtr_prdcr_add with an invalid regex: report(rc = 22) == expect(rc = 22), passed
+2022-10-21 01:44:05,249 TADA INFO assertion 2, Send updtr_prdcr_add with a regex matching no prdcrs: report(rc = 0, status = [{'name': 'all', 'interval': '1000000', 'offset': '100000', 'sync': 'true', 'mode': 'Pull', 'auto': 'false', 'state': 'STOPPED', 'producers': []}]) == expect(rc = 0, status = [{'name': 'all', 'interval': '1000000', 'offset': '100000', 'sync': 'true', 'mode': 'Pull', 'auto': 'false', 'state': 'STOPPED', 'producers': []}]), passed
+2022-10-21 01:44:07,676 TADA INFO assertion 3, Send updtr_prdcdr_add with a regex matching some prdcrs: report(rc = 0, status = [{'name': 'all', 'interval': '1000000', 'offset': '100000', 'sync': 'true', 'mode': 'Pull', 'auto': 'false', 'state': 'STOPPED', 'producers': [{'name': 'sampler-1', 'host': 'sampler-1', 'port': 10000, 'transport': 'sock', 'state': 'CONNECTED'}]}]) == expect(rc = 0, status = [{'name': 'all', 'interval': '1000000', 'offset': '100000', 'sync': 'true', 'mode': 'Pull', 'auto': 'false', 'state': 'STOPPED', 'producers': [{'name': 'sampler-1', 'host': 'sampler-1', 'port': 10000, 'transport': 'sock', 'state': 'CONNECTED'}]}]), passed
+2022-10-21 01:44:08,909 TADA INFO assertion 4, Send updtr_prdcdr_add to a running updtr: report(rc = 16) == expect(rc = 16), passed
+2022-10-21 01:44:10,130 TADA INFO assertion 5, Send updtr_prdcr_add to a not-existing updtr: report(rc = 2) == expect(rc = 2), passed
+2022-10-21 01:44:10,130 __main__ INFO --- done ---
+2022-10-21 01:44:10,130 TADA INFO test updtr_add test ended
+2022-10-21 01:44:22 INFO: ----------------------------------------------
+2022-10-21 01:44:22 INFO: ======== updtr_prdcr_del_test ========
+2022-10-21 01:44:22 INFO: CMD: python3 updtr_prdcr_del_test --prefix /home/narate/cron/ldms-test/ldms-containers/ovis --runtime docker --image ovishpc/ldms-dev --src /mnt/300G/data --data_root /mnt/300G/data/2022-10-21-003001/data/updtr_prdcr_del_test
+2022-10-21 01:44:23,682 __main__ INFO -- Get or create the cluster --
+2022-10-21 01:44:23,682 TADA INFO starting test `updtr_add test`
+2022-10-21 01:44:23,682 TADA INFO   test-id: c54156da5664e33b7e36ac46e003459eb4061f5a0702491ac5652fae55326679
+2022-10-21 01:44:23,682 TADA INFO   test-suite: LDMSD
+2022-10-21 01:44:23,682 TADA INFO   test-name: updtr_add test
+2022-10-21 01:44:23,683 TADA INFO   test-user: narate
+2022-10-21 01:44:23,683 TADA INFO   commit-id: c6bbe5530e620865002d2995a48a3d2811fa26ac
+2022-10-21 01:44:31,806 __main__ INFO -- Start daemons --
+2022-10-21 01:44:35,421 __main__ INFO Waiting ... for all LDMSDs to start
+2022-10-21 01:44:35,729 __main__ INFO All LDMSDs are up.
+2022-10-21 01:44:36,949 TADA INFO assertion 1, Send updtr_prdcr_del with an invalid regex: report(rc = 22) == expect(rc = 22), passed
+2022-10-21 01:44:38,164 TADA INFO assertion 2, Send updtr_prdcr_del to a running updater: report(rc = 16) == expect(rc = 16), passed
+2022-10-21 01:44:39,385 TADA INFO assertion 3, Send updtr_prdcr_del to a non-existing updater: report(rc = 2) == expect(rc = 2), passed
+2022-10-21 01:44:41,817 TADA INFO assertion 4, Send updtr_prdcr_del successfully: report(rc = 0, status = [{'name': 'all', 'interval': '1000000', 'offset': '100000', 'sync': 'true', 'mode': 'Pull', 'auto': 'false', 'state': 'STOPPED', 'producers': [{'name': 'sampler-2', 'host': 'sampler-2', 'port': 10000, 'transport': 'sock', 'state': 'CONNECTED'}]}]) == expect(rc = 0, status = [{'name': 'all', 'interval': '1000000', 'offset': '100000', 'sync': 'true', 'mode': 'Pull', 'auto': 'false', 'state': 'STOPPED', 'producers': [{'name': 'sampler-2', 'host': 'sampler-2', 'port': 10000, 'transport': 'sock', 'state': 'CONNECTED'}]}], passed
+2022-10-21 01:44:41,817 __main__ INFO --- done ---
+2022-10-21 01:44:41,818 TADA INFO test updtr_add test ended
+2022-10-21 01:44:53 INFO: ----------------------------------------------
+2022-10-21 01:44:54 INFO: ======== updtr_start_test ========
+2022-10-21 01:44:54 INFO: CMD: python3 updtr_start_test --prefix /home/narate/cron/ldms-test/ldms-containers/ovis --runtime docker --image ovishpc/ldms-dev --src /mnt/300G/data --data_root /mnt/300G/data/2022-10-21-003001/data/updtr_start_test
+2022-10-21 01:44:55,511 __main__ INFO -- Get or create the cluster --
+2022-10-21 01:44:55,512 TADA INFO starting test `updtr_add test`
+2022-10-21 01:44:55,512 TADA INFO   test-id: 0345a9bc0f77cb7760f937e434fa404ee27d9b0c65c3798861c8dcfe8f4fd784
+2022-10-21 01:44:55,512 TADA INFO   test-suite: LDMSD
+2022-10-21 01:44:55,512 TADA INFO   test-name: updtr_add test
+2022-10-21 01:44:55,512 TADA INFO   test-user: narate
+2022-10-21 01:44:55,512 TADA INFO   commit-id: c6bbe5530e620865002d2995a48a3d2811fa26ac
+2022-10-21 01:45:03,254 __main__ INFO -- Start daemons --
+2022-10-21 01:45:06,833 __main__ INFO Waiting ... for all LDMSDs to start
+2022-10-21 01:45:07,163 __main__ INFO All LDMSDs are up.
+2022-10-21 01:45:08,378 TADA INFO assertion 1, updtr_start with a negative interval: report(rc = 22) == expect(rc = 22), passed
+2022-10-21 01:45:09,593 TADA INFO assertion 2, updtr_start with an alphabet interval: report(rc = 22) == expect(rc = 22), passed
+2022-10-21 01:45:10,807 TADA INFO assertion 3, updtr_start with a negative offset: report(rc = 0) == expect(rc = 0), passed
+2022-10-21 01:45:12,014 TADA INFO assertion 4, updtr_start with an alphabet offset: report(rc = 22) == expect(rc = 22), passed
+2022-10-21 01:45:13,238 TADA INFO assertion 5, updtr_start without an offset larger than interval: report(rc = 22) == expect(rc = 22), passed
+2022-10-21 01:45:15,667 TADA INFO assertion 6, updtr_start that changes offset to no offset: report(rc = 0, status = [{'name': 'offset2none', 'interval': '1000000', 'offset': '0', 'sync': 'false', 'mode': 'Pull', 'auto': 'false', 'state': 'RUNNING', 'producers': []}]) == expect(rc = 0, status = [{'name': 'offset2none', 'interval': '1000000', 'offset': '0', 'sync': 'false', 'mode': 'Pull', 'auto': 'false', 'state': 'RUNNING', 'producers': []}], passed
+2022-10-21 01:45:16,886 TADA INFO assertion 7, updtr_start of a non-existing updater: report(rc = 2) == expect(rc = 2), passed
+2022-10-21 01:45:19,294 TADA INFO assertion 8, updtr_start with a valid interval: report(rc = 0, status = [{'name': 'valid_int', 'interval': '2000000', 'offset': '100000', 'sync': 'true', 'mode': 'Pull', 'auto': 'false', 'state': 'RUNNING', 'producers': []}]) == expect(rc = 0, status = [{'name': 'valid_int', 'interval': '2000000', 'offset': '100000', 'sync': 'true', 'mode': 'Pull', 'auto': 'false', 'state': 'RUNNING', 'producers': []}], passed
+2022-10-21 01:45:21,726 TADA INFO assertion 9, updtr_start with a valid offset: report(rc = 0, status = [{'name': 'valid_offset', 'interval': '1000000', 'offset': '200000', 'sync': 'true', 'mode': 'Pull', 'auto': 'false', 'state': 'RUNNING', 'producers': []}]) == expect(rc = 0, status = [{'name': 'valid_offset', 'interval': '1000000', 'offset': '200000', 'sync': 'true', 'mode': 'Pull', 'auto': 'false', 'state': 'RUNNING', 'producers': []}], passed
+2022-10-21 01:45:24,183 TADA INFO assertion 10, updtr_start without giving interval and offset: report(rc = 0, status = [{'name': 'all', 'interval': '1000000', 'offset': '100000', 'sync': 'true', 'mode': 'Pull', 'auto': 'false', 'state': 'RUNNING', 'producers': []}]) == expect(rc = 0, status = [{'name': 'all', 'interval': '1000000', 'offset': '100000', 'sync': 'true', 'mode': 'Pull', 'auto': 'false', 'state': 'RUNNING', 'producers': []}], passed
+2022-10-21 01:45:25,392 TADA INFO assertion 11, updtr_start a running updater: report(rc = 16) == expect(rc = 16), passed
+2022-10-21 01:45:25,393 __main__ INFO --- done ---
+2022-10-21 01:45:25,393 TADA INFO test updtr_add test ended
+2022-10-21 01:45:37 INFO: ----------------------------------------------
+2022-10-21 01:45:38 INFO: ======== updtr_status_test ========
+2022-10-21 01:45:38 INFO: CMD: python3 updtr_status_test --prefix /home/narate/cron/ldms-test/ldms-containers/ovis --runtime docker --image ovishpc/ldms-dev --src /mnt/300G/data --data_root /mnt/300G/data/2022-10-21-003001/data/updtr_status_test
+2022-10-21 01:45:39,226 __main__ INFO -- Get or create the cluster --
+2022-10-21 01:45:39,227 TADA INFO starting test `updtr_status test`
+2022-10-21 01:45:39,227 TADA INFO   test-id: d249155dbe4a4c9af170b94db30b4962662d7fd46d13bbecb248b32a27de318e
+2022-10-21 01:45:39,227 TADA INFO   test-suite: LDMSD
+2022-10-21 01:45:39,227 TADA INFO   test-name: updtr_status test
+2022-10-21 01:45:39,227 TADA INFO   test-user: narate
+2022-10-21 01:45:39,227 TADA INFO   commit-id: c6bbe5530e620865002d2995a48a3d2811fa26ac
+2022-10-21 01:45:49,414 __main__ INFO -- Start daemons --
+2022-10-21 01:45:54,250 __main__ INFO Waiting ... for all LDMSDs to start
+2022-10-21 01:45:54,694 __main__ INFO All LDMSDs are up.
+2022-10-21 01:45:55,919 TADA INFO assertion 1, Send 'updtr_status' to an LDMSD without any Updaters: [], passed
+2022-10-21 01:45:57,123 TADA INFO assertion 2, Send 'updtr_status name=foo', where updtr 'foo' doesn't exist.: report(updtr 'foo' doesn't exist.) == expect(updtr 'foo' doesn't exist.), passed
+2022-10-21 01:45:58,348 TADA INFO assertion 3, Send 'updtr_status name=all', where 'all' exists.: report([{'name': 'meminfo', 'interval': '1000000', 'offset': '100000', 'sync': 'true', 'mode': 'Pull', 'auto': 'false', 'state': 'RUNNING', 'producers': [{'name': 'sampler-1', 'host': 'sampler-1', 'port': 10000, 'transport': 'sock', 'state': 'CONNECTED'}, {'name': 'sampler-2', 'host': 'sampler-2', 'port': 10000, 'transport': 'sock', 'state': 'CONNECTED'}]}]) == expect([{'name': 'meminfo', 'interval': '1000000', 'offset': '100000', 'sync': 'true', 'mode': 'Pull', 'auto': 'false', 'state': 'RUNNING', 'producers': [{'name': 'sampler-1', 'host': 'sampler-1', 'port': 10000, 'transport': 'sock', 'state': 'CONNECTED'}, {'name': 'sampler-2', 'host': 'sampler-2', 'port': 10000, 'transport': 'sock', 'state': 'CONNECTED'}]}]), passed
+2022-10-21 01:45:59,573 TADA INFO assertion 4, Send 'updtr_status' to an LDMSD with a single Updater: report([{'name': 'agg11', 'interval': '1000000', 'offset': '200000', 'sync': 'true', 'mode': 'Pull', 'auto': 'false', 'state': 'RUNNING', 'producers': [{'name': 'agg11', 'host': 'L1', 'port': 10000, 'transport': 'sock', 'state': 'CONNECTED'}]}]) == expect([{'name': 'agg11', 'interval': '1000000', 'offset': '200000', 'sync': 'true', 'mode': 'Pull', 'auto': 'false', 'state': 'RUNNING', 'producers': [{'name': 'agg11', 'host': 'L1', 'port': 10000, 'transport': 'sock', 'state': 'CONNECTED'}]}]), passed
+2022-10-21 01:46:00,793 TADA INFO assertion 5, Send 'updtr_status' to an LDMSD with 2 updaters: report([{'name': 'meminfo', 'interval': '1000000', 'offset': '100000', 'sync': 'true', 'mode': 'Pull', 'auto': 'false', 'state': 'RUNNING', 'producers': [{'name': 'sampler-1', 'host': 'sampler-1', 'port': 10000, 'transport': 'sock', 'state': 'CONNECTED'}, {'name': 'sampler-2', 'host': 'sampler-2', 'port': 10000, 'transport': 'sock', 'state': 'CONNECTED'}]}, {'name': 'sampler-2', 'interval': '1000000', 'offset': '100000', 'sync': 'true', 'mode': 'Pull', 'auto': 'false', 'state': 'STOPPED', 'producers': [{'name': 'sampler-2', 'host': 'sampler-2', 'port': 10000, 'transport': 'sock', 'state': 'CONNECTED'}]}]) == expect([{'name': 'meminfo', 'interval': '1000000', 'offset': '100000', 'sync': 'true', 'mode': 'Pull', 'auto': 'false', 'state': 'RUNNING', 'producers': [{'name': 'sampler-1', 'host': 'sampler-1', 'port': 10000, 'transport': 'sock', 'state': 'CONNECTED'}, {'name': 'sampler-2', 'host': 'sampler-2', 'port': 10000, 'transport': 'sock', 'state': 'CONNECTED'}]}, {'name': 'sampler-2', 'interval': '1000000', 'offset': '100000', 'sync': 'true', 'mode': 'Pull', 'auto': 'false', 'state': 'STOPPED', 'producers': [{'name': 'sampler-2', 'host': 'sampler-2', 'port': 10000, 'transport': 'sock', 'state': 'CONNECTED'}]}]), passed
+2022-10-21 01:46:00,793 __main__ INFO --- done ---
+2022-10-21 01:46:00,794 TADA INFO test updtr_status test ended
+2022-10-21 01:46:13 INFO: ----------------------------------------------
+2022-10-21 01:46:14 INFO: ======== ldmsd_flex_decomp_test ========
+2022-10-21 01:46:14 INFO: CMD: python3 ldmsd_flex_decomp_test --prefix /home/narate/cron/ldms-test/ldms-containers/ovis --runtime docker --image ovishpc/ldms-dev --src /mnt/300G/data --data_root /mnt/300G/data/2022-10-21-003001/data/ldmsd_flex_decomp_test
+2022-10-21 01:46:15,135 TADA INFO starting test `ldmsd_flex_decomp_test`
+2022-10-21 01:46:15,135 TADA INFO   test-id: cc0f36bda45be7643a8a38be814eed8a4bbad67fa5e0c2e9c3ec9b946c2dff22
+2022-10-21 01:46:15,135 TADA INFO   test-suite: LDMSD
+2022-10-21 01:46:15,136 TADA INFO   test-name: ldmsd_flex_decomp_test
+2022-10-21 01:46:15,136 TADA INFO   test-user: narate
+2022-10-21 01:46:15,136 TADA INFO   commit-id: c6bbe5530e620865002d2995a48a3d2811fa26ac
+2022-10-21 01:46:15,136 __main__ INFO -- Get or create the cluster --
+2022-10-21 01:46:30,614 __main__ INFO -- Start daemons --
+2022-10-21 01:46:40,834 __main__ INFO ... wait a bit to make sure ldmsd's are up
+2022-10-21 01:47:29,954 TADA INFO assertion 1, test_sampler_95772b6 sos schema check: OK, passed
+2022-10-21 01:47:29,955 TADA INFO assertion 2, record_sampler_e1f021f sos schema check: OK, passed
+2022-10-21 01:47:29,955 TADA INFO assertion 3, fill sos schema check: OK, passed
+2022-10-21 01:47:29,955 TADA INFO assertion 4, filter sos schema check: OK, passed
+2022-10-21 01:47:29,955 TADA INFO assertion 5, record sos schema check: OK, passed
+2022-10-21 01:47:29,955 TADA INFO assertion 6, test_sampler_95772b6 csv schema check: OK, passed
+2022-10-21 01:47:29,955 TADA INFO assertion 7, record_sampler_e1f021f csv schema check: OK, passed
+2022-10-21 01:47:29,956 TADA INFO assertion 8, fill csv schema check: OK, passed
+2022-10-21 01:47:29,956 TADA INFO assertion 9, filter csv schema check: OK, passed
+2022-10-21 01:47:29,956 TADA INFO assertion 10, record csv schema check: OK, passed
+2022-10-21 01:47:29,956 TADA INFO assertion 11, test_sampler_95772b6 kafka schema check: OK, passed
+2022-10-21 01:47:29,956 TADA INFO assertion 12, record_sampler_e1f021f kafka schema check: OK, passed
+2022-10-21 01:47:29,956 TADA INFO assertion 13, fill kafka schema check: OK, passed
+2022-10-21 01:47:29,957 TADA INFO assertion 14, filter kafka schema check: OK, passed
+2022-10-21 01:47:29,957 TADA INFO assertion 15, record kafka schema check: OK, passed
+2022-10-21 01:47:29,958 TADA INFO assertion 16, test_sampler_95772b6 sos data check: OK, passed
+2022-10-21 01:47:30,026 TADA INFO assertion 17, record_sampler_e1f021f sos data check: OK, passed
+2022-10-21 01:47:30,029 TADA INFO assertion 18, fill sos data check: OK, passed
+2022-10-21 01:47:30,030 TADA INFO assertion 19, filter sos data check: OK, passed
+2022-10-21 01:47:30,039 TADA INFO assertion 20, record sos data check: OK, passed
+2022-10-21 01:47:30,040 TADA INFO assertion 21, test_sampler_95772b6 csv data check: OK, passed
+2022-10-21 01:47:30,104 TADA INFO assertion 22, record_sampler_e1f021f csv data check: OK, passed
+2022-10-21 01:47:30,106 TADA INFO assertion 23, fill csv data check: OK, passed
+2022-10-21 01:47:30,108 TADA INFO assertion 24, filter csv data check: OK, passed
+2022-10-21 01:47:30,116 TADA INFO assertion 25, record csv data check: OK, passed
+2022-10-21 01:47:30,117 TADA INFO assertion 26, test_sampler_95772b6 kafka data check: OK, passed
+2022-10-21 01:47:30,141 TADA INFO assertion 27, record_sampler_e1f021f kafka data check: OK, passed
+2022-10-21 01:47:30,142 TADA INFO assertion 28, fill kafka data check: OK, passed
+2022-10-21 01:47:30,143 TADA INFO assertion 29, filter kafka data check: OK, passed
+2022-10-21 01:47:30,147 TADA INFO assertion 30, record kafka data check: OK, passed
+2022-10-21 01:47:30,147 TADA INFO test ldmsd_flex_decomp_test ended
+2022-10-21 01:47:30,147 TADA INFO test ldmsd_flex_decomp_test ended
+2022-10-21 01:47:45 INFO: ----------------------------------------------
+2022-10-21 01:47:46 INFO: ======== ldms_set_info_test ========
+2022-10-21 01:47:46 INFO: CMD: python3 ldms_set_info_test --prefix /home/narate/cron/ldms-test/ldms-containers/ovis --runtime docker --image ovishpc/ldms-dev --src /mnt/300G/data --data_root /mnt/300G/data/2022-10-21-003001/data/ldms_set_info_test
+2022-10-21 01:47:56,730 TADA INFO starting test `ldms_set_info_test`
+2022-10-21 01:47:56,730 TADA INFO   test-id: f3cffa54567cdb792032362efc2972f25901ec49f4c448d1d67b10ddd0e29bf9
+2022-10-21 01:47:56,730 TADA INFO   test-suite: LDMSD
+2022-10-21 01:47:56,730 TADA INFO   test-name: ldms_set_info_test
+2022-10-21 01:47:56,731 TADA INFO   test-user: narate
+2022-10-21 01:47:56,731 TADA INFO   commit-id: c6bbe5530e620865002d2995a48a3d2811fa26ac
+2022-10-21 01:47:56,732 TADA INFO assertion 1, Adding set info key value pairs : -, passed
+2022-10-21 01:47:56,732 TADA INFO assertion 2, Reset value of an existing pair : -, passed
+2022-10-21 01:47:56,732 TADA INFO assertion 3, Get a value : -, passed
+2022-10-21 01:47:56,732 TADA INFO assertion 4, Unset a pair : -, passed
+2022-10-21 01:47:56,732 TADA INFO assertion 5, Traverse the local set info : -, passed
+2022-10-21 01:47:56,732 TADA INFO assertion 6, Verifying the set info at the 1st level : -, passed
+2022-10-21 01:47:56,733 TADA INFO assertion 7, Server resetting a key : -, passed
+2022-10-21 01:47:56,733 TADA INFO assertion 8, Server unset a key : -, passed
+2022-10-21 01:47:56,733 TADA INFO assertion 9, Server add a key : -, passed
+2022-10-21 01:47:56,733 TADA INFO assertion 10, Adding a key : -, passed
+2022-10-21 01:47:56,733 TADA INFO assertion 11, Add a key that is already in the remote list : -, passed
+2022-10-21 01:47:56,733 TADA INFO assertion 12, Unset a key that appears in both local and remote list : -, passed
+2022-10-21 01:47:56,734 TADA INFO assertion 13, Verifying the set_info at the 2nd level : -, passed
+2022-10-21 01:47:56,734 TADA INFO assertion 14, Test set info propagation: resetting a key on the set origin : -, passed
+2022-10-21 01:47:56,734 TADA INFO assertion 15, Test set info propagation: unsetting a key on the set origin : -, passed
+2022-10-21 01:47:56,734 TADA INFO assertion 16, Test set info propagation: adding a key on the set origin : -, passed
+2022-10-21 01:47:56,734 TADA INFO test ldms_set_info_test ended
+2022-10-21 01:48:07 INFO: ----------------------------------------------
+2022-10-21 01:48:08 INFO: ======== slurm_sampler2_test ========
+2022-10-21 01:48:08 INFO: CMD: python3 slurm_sampler2_test --prefix /home/narate/cron/ldms-test/ldms-containers/ovis --runtime docker --image ovishpc/ldms-dev --src /mnt/300G/data --data_root /mnt/300G/data/2022-10-21-003001/data/slurm_sampler2_test
+2022-10-21 01:48:09,021 TADA INFO starting test `slurm_sampler2_test`
+2022-10-21 01:48:09,021 TADA INFO   test-id: e432ba158842f63a81abff13c94dd104ac6120e179ddf46e6ead6ecf35c2624a
+2022-10-21 01:48:09,021 TADA INFO   test-suite: LDMSD
+2022-10-21 01:48:09,022 TADA INFO   test-name: slurm_sampler2_test
+2022-10-21 01:48:09,022 TADA INFO   test-user: narate
+2022-10-21 01:48:09,022 TADA INFO   commit-id: c6bbe5530e620865002d2995a48a3d2811fa26ac
+2022-10-21 01:48:09,022 __main__ INFO -- Get or create the cluster --
+2022-10-21 01:48:22,506 __main__ INFO -- Add users --
+2022-10-21 01:48:27,771 __main__ INFO -- Preparing job script & programs --
+2022-10-21 01:48:28,458 __main__ INFO -- Start daemons --
+2022-10-21 01:48:48,384 TADA INFO assertion 1, Correctly collect the data of a job running on multiple nodes: The collected job data is correct., passed
+2022-10-21 01:48:48,384 TADA INFO assertion 2, Correctly collect the data of a job running on N tasks of multiple nodes: skipped
+2022-10-21 01:48:48,384 TADA INFO assertion 3, Correctly fill the metric values after expanding the set heap: skipped
+2022-10-21 01:48:48,385 TADA INFO assertion 4, Correctly collect the data of a job submitted as a user: skipped
+2022-10-21 01:48:48,385 TADA INFO assertion 5, Correctly collect the data in the multi-tenant case: skipped
+2022-10-21 01:48:48,385 TADA INFO test slurm_sampler2_test ended
+2022-10-21 01:49:02 INFO: ----------------------------------------------
+2022-10-21 01:49:03 INFO: ======== test-ldms ========
+2022-10-21 01:49:03 INFO: CMD: /home/narate/cron/ldms-test/ldms-containers/test/test-ldms/test.sh
+2022-10-21T01:49:03-05:00 INFO: starting test-samp-1
+ca0dcf6e934978c30414dda9bfc41dcc39c6bb731da3435cc8a6bc5ad5f4280b
+2022-10-21T01:49:06-05:00 INFO: starting test-samp-2
+8cb97df74adc4d4e1e2138426e2d12aad8480b6e591a0c42548d2a413f44cc0d
+2022-10-21T01:49:07-05:00 INFO: starting test-samp-3
+ca9198332e5840bbd30e6d9b6ca0beb14cd62eb4ee34fb656fbc0b6626993165
+2022-10-21T01:49:09-05:00 INFO: starting test-samp-4
+787e0ed6be4d56ea6ae40ffbf4394235698114104fd2153178475fa64e33791a
+2022-10-21T01:49:11-05:00 INFO: test-samp-1 is running
+2022-10-21T01:49:11-05:00 INFO: test-samp-2 is running
+2022-10-21T01:49:11-05:00 INFO: test-samp-3 is running
+2022-10-21T01:49:11-05:00 INFO: test-samp-4 is running
+2022-10-21T01:49:11-05:00 INFO: starting test-agg-11
+334ac69a4ccac5ceafc9618617f762f5ae6e42fdd38e7bd231fb8fd6eecc1398
+2022-10-21T01:49:13-05:00 INFO: starting test-agg-12
+e08b209e937146e351b74a59ab43f5dc8def0f0b33c31665cd66543d02923d90
+2022-10-21T01:49:15-05:00 INFO: test-agg-11 is running
+2022-10-21T01:49:15-05:00 INFO: test-agg-12 is running
+2022-10-21T01:49:15-05:00 INFO: starting test-agg-2
+cceff184b2754d0c3c20b44016179bcb9d84757f5cafde3d16679d6b0f3de6e2
+2022-10-21T01:49:17-05:00 INFO: test-agg-2 is running
+2022-10-21T01:49:17-05:00 INFO: Collecting data (into SOS)
+2022-10-21T01:49:27-05:00 INFO: Checking SOS data
+Component IDs: {1, 2, 3, 4}
+2022-10-21T01:49:29-05:00 INFO: check rc: 0
+2022-10-21T01:49:29-05:00 INFO: Cleaning up ...
+test-samp-1
+test-samp-2
+test-samp-3
+test-samp-4
+test-agg-11
+test-agg-12
+test-agg-2
+2022-10-21T01:49:34-05:00 INFO: DONE
+2022-10-21 01:49:44 INFO: ----------------------------------------------
+2022-10-21 01:49:44 INFO: ======== test-maestro ========
+2022-10-21 01:49:44 INFO: CMD: /home/narate/cron/ldms-test/ldms-containers/test/test-maestro/test.sh
+2022-10-21T01:49:44-05:00 INFO: starting mtest-maestro
+07e062276c87aae071b744548d24aca5646de0386c8b87300e5de863090e90c8
+2022-10-21T01:49:46-05:00 INFO: starting mtest-samp-1
+c35989fa3e474fb52982ff4ec3bd516d6f20ba99f7229d8d54036ac5c2f7b7db
+2022-10-21T01:49:48-05:00 INFO: starting mtest-samp-2
+51bfa539c99d13ff5b3518deaaa9bbc5a1d2aa0c6edc70b45444bb635de5c6c3
+2022-10-21T01:49:49-05:00 INFO: starting mtest-samp-3
+de5ea36ec42cf87c1203e942844f20183284a3306cb1a1c67d2c459fe4598a37
+2022-10-21T01:49:51-05:00 INFO: starting mtest-samp-4
+23503e2e7e20f8fe56fb563ba1b429529827b3baee2ba964820d4a0df72accd2
+2022-10-21T01:49:53-05:00 INFO: mtest-samp-1 is running
+2022-10-21T01:49:53-05:00 INFO: mtest-samp-2 is running
+2022-10-21T01:49:53-05:00 INFO: mtest-samp-3 is running
+2022-10-21T01:49:53-05:00 INFO: mtest-samp-4 is running
+2022-10-21T01:49:53-05:00 INFO: starting mtest-agg-11
+db619b155883942c01f1aaf828ac6469d9c396f2eeaf46cfa6db76a0a22c2ab9
+2022-10-21T01:49:54-05:00 INFO: starting mtest-agg-12
+cd9d7fc7c42368251491fdfac05f976cfa49121223a1f890d0a6560c5689eb86
+2022-10-21T01:49:56-05:00 INFO: mtest-agg-11 is running
+2022-10-21T01:49:56-05:00 INFO: mtest-agg-12 is running
+2022-10-21T01:49:56-05:00 INFO: starting mtest-agg-2
+13038024b019377bc29f4dbdde5912653fa695512789c12561a8046f1c8042f0
+2022-10-21T01:49:58-05:00 INFO: mtest-agg-2 is running
+2022-10-21T01:49:58-05:00 INFO: Collecting data (into SOS)
+mtest-agg-11
+mtest-agg-12
+2022-10-21T01:50:09-05:00 INFO: Checking SOS data
+Component IDs: {1, 2, 3, 4}
+2022-10-21T01:50:11-05:00 INFO: sos check rc: 0
+2022-10-21T01:50:12-05:00 INFO: starting mtest-ui
+949dee847b1345a8ea7f6a5c445cb0ef08ab392a695183a77cac28597fab6810
+2022-10-21T01:50:19-05:00 INFO: Checking query from mtest-ui: http://mtest-ui/grafana/query
+query results: b'[{"target": "Active", "datapoints": [[5884896, 1666335000001.262], [5885268, 1666335001001.352], [5885268, 1666335001001.459], [5885268, 1666335002001.2988], [5885268, 1666335002001.307], [5885268, 1666335002001.407], [5885268, 1666335002001.476], [5885268, 1666335003000.8162], [5885268, 1666335003001.426], [5885268, 1666335003001.459], [5885268, 1666335003001.462], [5885268, 1666335004000.887], [5885268, 1666335004001.601], [5885268, 1666335004001.603], [5885268, 1666335004001.957], [5885268, 1666335005001.304], [5885268, 1666335005001.3088], [5885268, 1666335005001.7222], [5885268, 1666335005001.737], [5885268, 1666335006001.3362], [5885268, 1666335006001.439], [5885268, 1666335006001.441], [5885268, 1666335006001.56], [5885268, 1666335007001.4878], [5885268, 1666335007001.562], [5885268, 1666335007001.569], [5885268, 1666335007001.571]]}, {"target": "component_id", "datapoints": [[1, 1666335000001.262], [1, 1666335001001.352], [3, 1666335001001.459], [2, 1666335002001.2988], [1, 1666335002001.307], [3, 1666335002001.407], [4, 1666335002001.476], [4, 1666335003000.8162], [2, 1666335003001.426], [1, 1666335003001.459], [3, 1666335003001.462], [2, 1666335004000.887], [3, 1666335004001.601], [1, 1666335004001.603], [4, 1666335004001.957], [2, 1666335005001.304], [4, 1666335005001.3088], [1, 1666335005001.7222], [3, 1666335005001.737], [4, 1666335006001.3362], [1, 1666335006001.439], [2, 1666335006001.441], [3, 1666335006001.56], [4, 1666335007001.4878], [1, 1666335007001.562], [3, 1666335007001.569], [2, 1666335007001.571]]}, {"target": "job_id", "datapoints": [[0, 1666335000001.262], [0, 1666335001001.352], [0, 1666335001001.459], [0, 1666335002001.2988], [0, 1666335002001.307], [0, 1666335002001.407], [0, 1666335002001.476], [0, 1666335003000.8162], [0, 1666335003001.426], [0, 1666335003001.459], [0, 1666335003001.462], [0, 1666335004000.887], [0, 1666335004001.601], [0, 1666335004001.603], [0, 1666335004001.957], [0, 1666335005001.304], [0, 1666335005001.3088], [0, 1666335005001.7222], [0, 1666335005001.737], [0, 1666335006001.3362], [0, 1666335006001.439], [0, 1666335006001.441], [0, 1666335006001.56], [0, 1666335007001.4878], [0, 1666335007001.562], [0, 1666335007001.569], [0, 1666335007001.571]]}]'
+comp_ids:{1, 2, 3, 4}
+2022-10-21T01:50:21-05:00 INFO: query check RC: 0
+c55a2789137e41a18bef7d43b739cfc526a97f82bf0144b7c51fc8ce9a623af4
+2022-10-21T01:50:52-05:00 INFO: Adding DSOS data source in Grafana
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100   479  100   366  100   113   2454    757 --:--:-- --:--:-- --:--:--  3236
+{"datasource":{"id":1,"uid":"QRhVt6S4z","orgId":1,"name":"SOS-2","type":"dsosds","typeLogoUrl":"","access":"proxy","url":"http://mtest-ui/grafana","user":"","database":"","basicAuth":false,"basicAuthUser":"","withCredentials":false,"isDefault":true,"jsonData":{},"secureJsonFields":{},"version":1,"readOnly":false},"id":1,"message":"Datasource added","name":"SOS-2"}
+2022-10-21T01:50:53-05:00 INFO: Checking grafana data
+2022-10-21T01:50:54-05:00 INFO: Grafana data check, rc: 0
+2022-10-21T01:50:54-05:00 INFO: Cleaning up ...
+mtest-samp-1
+mtest-samp-2
+mtest-samp-3
+mtest-samp-4
+mtest-agg-11
+mtest-agg-12
+mtest-agg-2
+mtest-maestro
+mtest-ui
+mtest-grafana
+2022-10-21T01:50:59-05:00 INFO: DONE
+2022-10-21 01:51:09 INFO: ----------------------------------------------
+2022-10-21 01:51:09 INFO: ======== test-maestro-hostmunge ========
+2022-10-21 01:51:09 INFO: CMD: /home/narate/cron/ldms-test/ldms-containers/test/test-maestro-hostmunge/test.sh
+2022-10-21T01:51:09-05:00 INFO: Checking munge on localhost
+2022-10-21T01:51:09-05:00 INFO: munge encode/decode successfully
+2022-10-21T01:51:09-05:00 INFO: starting mtest-maestro
+815fd739254dc86fee9913cc3fa44142224eccfc0061fed66e2de868c6a2189e
+2022-10-21T01:51:11-05:00 INFO: starting mtest-samp-1
+a970cc2bb6f409643dfbe4dc96b71b3936bc76296366000b5dc58c52e5dbfc6b
+2022-10-21T01:51:13-05:00 INFO: starting mtest-samp-2
+6699222834f0e9d27fcd81f28c3d657f52ffe06c56e8bbcb2190d948fa943507
+2022-10-21T01:51:15-05:00 INFO: starting mtest-samp-3
+9f4ac3833f29b72499e0aa752366f29d1cb2aa1650a01cb630cc891125858a0e
+2022-10-21T01:51:16-05:00 INFO: starting mtest-samp-4
+bd30e894ebde2a3bab74723bade71e23dc9c2da38441789326ba6c170999f758
+2022-10-21T01:51:18-05:00 INFO: mtest-samp-1 is running
+2022-10-21T01:51:18-05:00 INFO: mtest-samp-2 is running
+2022-10-21T01:51:18-05:00 INFO: mtest-samp-3 is running
+2022-10-21T01:51:18-05:00 INFO: mtest-samp-4 is running
+2022-10-21T01:51:18-05:00 INFO: starting mtest-agg-11
+fcb62c70092d2bcc329b20c98695faa1d5d546d3bf41fbdee64845afa96dfdb2
+2022-10-21T01:51:19-05:00 INFO: starting mtest-agg-12
+4a68ca0e333e8963be8fe442437a3856e7fa6a85d3ad66b68ecaaa7682a370b0
+2022-10-21T01:51:21-05:00 INFO: mtest-agg-11 is running
+2022-10-21T01:51:21-05:00 INFO: mtest-agg-12 is running
+2022-10-21T01:51:21-05:00 INFO: starting mtest-agg-2
+7e1051d29fef45defbf80656bd01db3d4c6b04bc037ad673408b76aeb8f59454
+2022-10-21T01:51:22-05:00 INFO: mtest-agg-2 is running
+2022-10-21T01:51:22-05:00 INFO: Collecting data (into SOS)
+mtest-agg-11
+mtest-agg-12
+2022-10-21T01:51:33-05:00 INFO: Checking SOS data
+Component IDs: {1, 2, 3, 4}
+2022-10-21T01:51:36-05:00 INFO: sos check rc: 0
+2022-10-21T01:51:37-05:00 INFO: starting mtest-ui
+87535a2cd798bc585e1e9ef72fc9234f0b22070da82a7a79cf63df39786e1f0c
+2022-10-21T01:51:39-05:00 INFO: Checking query from mtest-ui: http://mtest-ui/grafana/query
+query results: b'[{"target": "Active", "datapoints": [[5891320, 1666335086001.296], [5891320, 1666335086001.903], [5891592, 1666335087001.139], [5891592, 1666335087001.243], [5891592, 1666335087001.275], [5891592, 1666335087001.7112], [5891696, 1666335088001.3], [5891696, 1666335088001.301], [5891696, 1666335088001.4238], [5891696, 1666335088001.427], [5891696, 1666335089001.293], [5891696, 1666335089001.4028], [5891696, 1666335089001.548], [5891696, 1666335089001.553], [5891696, 1666335090001.331], [5891696, 1666335090001.3389], [5891696, 1666335090001.664], [5891696, 1666335090001.686], [5891696, 1666335091001.477], [5891696, 1666335091001.486], [5891696, 1666335091001.491], [5891696, 1666335091001.7979], [5891696, 1666335092001.314], [5891696, 1666335092001.325], [5891696, 1666335092001.615], [5891696, 1666335092001.6199]]}, {"target": "component_id", "datapoints": [[3, 1666335086001.296], [1, 1666335086001.903], [2, 1666335087001.139], [3, 1666335087001.243], [4, 1666335087001.275], [1, 1666335087001.7112], [3, 1666335088001.3], [2, 1666335088001.301], [1, 1666335088001.4238], [4, 1666335088001.427], [3, 1666335089001.293], [2, 1666335089001.4028], [4, 1666335089001.548], [1, 1666335089001.553], [3, 1666335090001.331], [2, 1666335090001.3389], [1, 1666335090001.664], [4, 1666335090001.686], [3, 1666335091001.477], [1, 1666335091001.486], [2, 1666335091001.491], [4, 1666335091001.7979], [4, 1666335092001.314], [1, 1666335092001.325], [2, 1666335092001.615], [3, 1666335092001.6199]]}, {"target": "job_id", "datapoints": [[0, 1666335086001.296], [0, 1666335086001.903], [0, 1666335087001.139], [0, 1666335087001.243], [0, 1666335087001.275], [0, 1666335087001.7112], [0, 1666335088001.3], [0, 1666335088001.301], [0, 1666335088001.4238], [0, 1666335088001.427], [0, 1666335089001.293], [0, 1666335089001.4028], [0, 1666335089001.548], [0, 1666335089001.553], [0, 1666335090001.331], [0, 1666335090001.3389], [0, 1666335090001.664], [0, 1666335090001.686], [0, 1666335091001.477], [0, 1666335091001.486], [0, 1666335091001.491], [0, 1666335091001.7979], [0, 1666335092001.314], [0, 1666335092001.325], [0, 1666335092001.615], [0, 1666335092001.6199]]}]'
+comp_ids:{1, 2, 3, 4}
+2022-10-21T01:51:41-05:00 INFO: query check RC: 0
+573f4c7388e46817da1154cca9d61cde8bd89b3e8154aae8a2e3bb4c4e6dc50b
+2022-10-21T01:52:12-05:00 INFO: Adding DSOS data source in Grafana
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100   479  100   366  100   113   2585    798 --:--:-- --:--:-- --:--:--  3397
+{"datasource":{"id":1,"uid":"FvrNpeS4k","orgId":1,"name":"SOS-2","type":"dsosds","typeLogoUrl":"","access":"proxy","url":"http://mtest-ui/grafana","user":"","database":"","basicAuth":false,"basicAuthUser":"","withCredentials":false,"isDefault":true,"jsonData":{},"secureJsonFields":{},"version":1,"readOnly":false},"id":1,"message":"Datasource added","name":"SOS-2"}
+2022-10-21T01:52:14-05:00 INFO: Checking grafana data
+2022-10-21T01:52:14-05:00 INFO: Grafana data check, rc: 0
+2022-10-21T01:52:14-05:00 INFO: Cleaning up ...
+mtest-samp-1
+mtest-samp-2
+mtest-samp-3
+mtest-samp-4
+mtest-agg-11
+mtest-agg-12
+mtest-agg-2
+mtest-maestro
+mtest-ui
+mtest-grafana
+2022-10-21T01:52:19-05:00 INFO: DONE
+2022-10-21 01:52:29 INFO: ----------------------------------------------
+2022-10-21 01:52:29 INFO: ======== test-maestro-munge ========
+2022-10-21 01:52:29 INFO: CMD: /home/narate/cron/ldms-test/ldms-containers/test/test-maestro-munge/test.sh
+1+0 records in
+1+0 records out
+4096 bytes (4.1 kB, 4.0 KiB) copied, 0.000230136 s, 17.8 MB/s
+2022-10-21T01:52:30-05:00 INFO: starting mtest-maestro
+542b7318aa631274cc6fd9e5059fd187b3e8f442ceaef67b3ec24738118fa576
+2022-10-21T01:52:32-05:00 INFO: starting mtest-samp-1
+dd10e6d1e135bf799840fa843fa66f2f85b82f2fc55be8e74a046b0400bc492f
+2022-10-21T01:52:34-05:00 INFO: starting mtest-samp-2
+aed20ba24e6ac3b46d2778d7a31cd3a337dc7a6afb848cb2b74b1ecefa8c0038
+2022-10-21T01:52:36-05:00 INFO: starting mtest-samp-3
+4e70ab2dffe3bca564e612b52a71af8b3a072397bd324d6866ec645d2aac8c85
+2022-10-21T01:52:38-05:00 INFO: starting mtest-samp-4
+400b279458deba816c61d2cd50af61d181f0e28ac0fafb0fdca36957b2870068
+2022-10-21T01:52:39-05:00 INFO: mtest-samp-1 is running
+2022-10-21T01:52:40-05:00 INFO: mtest-samp-2 is running
+2022-10-21T01:52:40-05:00 INFO: mtest-samp-3 is running
+2022-10-21T01:52:40-05:00 INFO: mtest-samp-4 is running
+2022-10-21T01:52:40-05:00 INFO: starting mtest-agg-11
+f1aa5855dc342ef3396b63c497d355334701ae62d176e96f93674ba7f5716ba7
+2022-10-21T01:52:41-05:00 INFO: starting mtest-agg-12
+ac7324fb9a10a005a204aa675d000650f6c3f9395b385c1981260879acc7f710
+2022-10-21T01:52:42-05:00 INFO: mtest-agg-11 is running
+2022-10-21T01:52:43-05:00 INFO: mtest-agg-12 is running
+2022-10-21T01:52:43-05:00 INFO: starting mtest-agg-2
+313149bfd4849dc6ed9caf5e4617c4e00a303f0ecadff0e5e9db39fdf764443a
+2022-10-21T01:52:44-05:00 INFO: mtest-agg-2 is running
+2022-10-21T01:52:44-05:00 INFO: Collecting data (into SOS)
+mtest-agg-11
+mtest-agg-12
+2022-10-21T01:52:55-05:00 INFO: Checking SOS data
+Component IDs: {1, 2, 3, 4}
+2022-10-21T01:52:57-05:00 INFO: sos check rc: 0
+2022-10-21T01:52:59-05:00 INFO: starting mtest-ui
+9f7dcdbef7a10954c5ebc76358102d0e498d216d0011072215aba1c2f630448d
+2022-10-21T01:53:00-05:00 INFO: Checking query from mtest-ui: http://mtest-ui/grafana/query
+query results: b'[{"target": "Active", "datapoints": [[5893952, 1666335170001.801], [5893952, 1666335170002.051], [5894276, 1666335171000.4312], [5894276, 1666335171001.935], [5894276, 1666335171001.962], [5894276, 1666335171001.963], [5894276, 1666335172001.578], [5894276, 1666335172001.582], [5894276, 1666335172002.08], [5894276, 1666335172002.105], [5894276, 1666335173001.115], [5894276, 1666335173001.24], [5894276, 1666335173001.258], [5894276, 1666335173001.699], [5894276, 1666335174000.436], [5894276, 1666335174001.2952], [5894276, 1666335174001.296], [5894276, 1666335174001.349]]}, {"target": "component_id", "datapoints": [[1, 1666335170001.801], [3, 1666335170002.051], [3, 1666335171000.4312], [1, 1666335171001.935], [4, 1666335171001.962], [2, 1666335171001.963], [3, 1666335172001.578], [1, 1666335172001.582], [4, 1666335172002.08], [2, 1666335172002.105], [2, 1666335173001.115], [4, 1666335173001.24], [1, 1666335173001.258], [3, 1666335173001.699], [1, 1666335174000.436], [2, 1666335174001.2952], [3, 1666335174001.296], [4, 1666335174001.349]]}, {"target": "job_id", "datapoints": [[0, 1666335170001.801], [0, 1666335170002.051], [0, 1666335171000.4312], [0, 1666335171001.935], [0, 1666335171001.962], [0, 1666335171001.963], [0, 1666335172001.578], [0, 1666335172001.582], [0, 1666335172002.08], [0, 1666335172002.105], [0, 1666335173001.115], [0, 1666335173001.24], [0, 1666335173001.258], [0, 1666335173001.699], [0, 1666335174000.436], [0, 1666335174001.2952], [0, 1666335174001.296], [0, 1666335174001.349]]}]'
+comp_ids:{1, 2, 3, 4}
+2022-10-21T01:53:02-05:00 INFO: query check RC: 0
+8e5032727d16f29a15ecbef341e5b5f2c823b1c5c8fa56ac30e86aaea865cad3
+2022-10-21T01:53:34-05:00 INFO: Adding DSOS data source in Grafana
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100   479  100   366  100   113   2462    760 --:--:-- --:--:-- --:--:--  3236
+{"datasource":{"id":1,"uid":"0sFKp6I4k","orgId":1,"name":"SOS-2","type":"dsosds","typeLogoUrl":"","access":"proxy","url":"http://mtest-ui/grafana","user":"","database":"","basicAuth":false,"basicAuthUser":"","withCredentials":false,"isDefault":true,"jsonData":{},"secureJsonFields":{},"version":1,"readOnly":false},"id":1,"message":"Datasource added","name":"SOS-2"}
+2022-10-21T01:53:35-05:00 INFO: Checking grafana data
+2022-10-21T01:53:35-05:00 INFO: Grafana data check, rc: 0
+2022-10-21T01:53:35-05:00 INFO: Cleaning up ...
+mtest-samp-1
+mtest-samp-2
+mtest-samp-3
+mtest-samp-4
+mtest-agg-11
+mtest-agg-12
+mtest-agg-2
+mtest-maestro
+mtest-ui
+mtest-grafana
+2022-10-21T01:53:40-05:00 INFO: DONE
+2022-10-21 01:53:50 INFO: ----------------------------------------------
+2022-10-21 01:53:50 INFO: ==== Summary ====
+ldmsd_ctrl_test: [01;32mPASSED[0m
+papi_store_test: [01;32mPASSED[0m
+updtr_status_test: [01;32mPASSED[0m
+ldmsd_auth_ovis_test: [01;32mPASSED[0m
+store_app_test: [01;32mPASSED[0m
+store_list_record_test: [01;32mPASSED[0m
+set_array_test: [01;32mPASSED[0m
+ovis_ev_test: [01;32mPASSED[0m
+setgroup_test: [01;32mPASSED[0m
+ldms_list_test: [01;32mPASSED[0m
+slurm_stream_test: [01;32mPASSED[0m
+maestro_cfg_test: [01;32mPASSED[0m
+ldms_set_info_test: [01;32mPASSED[0m
+spank_notifier_test: [01;32mPASSED[0m
+agg_slurm_test: [01;31mFAILED[0m
+updtr_match_add_test: [01;32mPASSED[0m
+updtr_match_del_test: [01;32mPASSED[0m
+ldmsd_stream_dir_test: [01;32mPASSED[0m
+direct_prdcr_subscribe_test: [01;32mPASSED[0m
+ldmsd_auth_test: [01;32mPASSED[0m
+cont-test-maestro-munge: [01;32mPASSED[0m
+cont-test-ldms: [01;32mPASSED[0m
+prdcr_subscribe_test: [01;32mPASSED[0m
+cont-test-maestro-hostmunge: [01;32mPASSED[0m
+maestro_raft_test: [01;32mPASSED[0m
+updtr_start_test: [01;32mPASSED[0m
+failover_test: [01;32mPASSED[0m
+ldms_record_test: [01;32mPASSED[0m
+cont-test-maestro: [01;32mPASSED[0m
+ldmsd_decomp_test: [01;32mPASSED[0m
+ldmsd_flex_decomp_test: [01;32mPASSED[0m
+quick_set_add_rm_test: [01;32mPASSED[0m
+updtr_prdcr_del_test: [01;32mPASSED[0m
+updtr_prdcr_add_test: [01;32mPASSED[0m
+mt-slurm-test: [01;32mPASSED[0m
+ovis_json_test: [01;32mPASSED[0m
+papi_sampler_test: [01;32mPASSED[0m
+syspapi_test: [01;32mPASSED[0m
+updtr_del_test: [01;32mPASSED[0m
+ldmsd_autointerval_test: [01;32mPASSED[0m
+updtr_add_test: [01;32mPASSED[0m
+ldmsd_stream_test: [01;32mPASSED[0m
+direct_ldms_ls_conn_test: [01;32mPASSED[0m
+set_array_hang_test: [01;32mPASSED[0m
+slurm_sampler2_test: [01;32mPASSED[0m
+ldms_schema_digest_test: [01;32mPASSED[0m
+agg_test: [01;32mPASSED[0m
+------------------------------------------
+Total tests passed: 46/47
+------------------------------------------
