@@ -1,31 +1,25 @@
-2022-10-21 00:49:53,248 TADA INFO starting test `agg_slurm_test`
-2022-10-21 00:49:53,248 TADA INFO   test-id: abbcc9c583cf586e887cfaa99e4304572284ca3a42c9d6bc97d8975c4a163281
-2022-10-21 00:49:53,248 TADA INFO   test-suite: LDMSD
-2022-10-21 00:49:53,248 TADA INFO   test-name: agg_slurm_test
-2022-10-21 00:49:53,248 TADA INFO   test-user: narate
-2022-10-21 00:49:53,249 TADA INFO   commit-id: c6bbe5530e620865002d2995a48a3d2811fa26ac
-2022-10-21 00:49:53,249 __main__ INFO -- Get or create the cluster --
-2022-10-21 00:50:07,238 __main__ INFO -- Preparing syspapi JSON file --
-2022-10-21 00:50:07,337 __main__ INFO -- Preparing jobpapi JSON file --
-2022-10-21 00:50:07,456 __main__ INFO -- Preparing job script & programs --
-2022-10-21 00:50:08,912 __main__ INFO -- Start daemons --
-2022-10-21 00:50:21,185 __main__ INFO ... wait a bit to make sure ldmsd's are up
-2022-10-21 00:50:26,190 __main__ INFO -- ldms_ls to agg-2 --
-2022-10-21 00:50:26,308 TADA INFO assertion 1, ldms_ls agg-2: dir result verified, passed
-2022-10-21 00:50:26,445 __main__ INFO -- Give syspapi some time to work before submitting job --
-2022-10-21 00:50:31,450 __main__ INFO -- Submitting jobs --
-2022-10-21 00:50:31,579 __main__ INFO job_one: 1
-2022-10-21 00:50:31,686 __main__ INFO job_two: 2
-2022-10-21 00:50:41,696 __main__ INFO -- Cancelling jobs --
-2022-10-21 00:50:41,697 __main__ INFO job_one: 1
-2022-10-21 00:50:41,855 __main__ INFO job_two: 2
-2022-10-21 00:51:48,913 TADA INFO assertion 2, slurm data verification: get expected data from store, passed
-2022-10-21 00:51:48,914 TADA INFO assertion 3, meminfo data verification: No data missing, failed
-Traceback (most recent call last):
-  File "agg_slurm_test", line 590, in <module>
-    test.assert_test(3, len(meminfo) > 5 and missing_counts == 0, "No data missing")
-  File "/home/narate/cron/ldms-test/TADA.py", line 157, in assert_test
-    raise AssertionException(self.test_desc + ", " + cond_str + ": FAILED")
-TADA.AssertionException: LDMSD 2-level agg with slurm, No data missing: FAILED
-2022-10-21 00:51:48,915 TADA INFO assertion 4, (SYS/JOB) PAPI data verification: skipped
-2022-10-21 00:51:48,915 TADA INFO test agg_slurm_test ended
+2022-10-24 15:29:14,586 TADA INFO starting test `agg_slurm_test`
+2022-10-24 15:29:14,587 TADA INFO   test-id: 083afd1193e3ccefbd8d375f7a6d28719ca992f835803e1ed9cde28cece817b6
+2022-10-24 15:29:14,587 TADA INFO   test-suite: LDMSD
+2022-10-24 15:29:14,587 TADA INFO   test-name: agg_slurm_test
+2022-10-24 15:29:14,587 TADA INFO   test-user: narate
+2022-10-24 15:29:14,587 TADA INFO   commit-id: 6dc460cedd5072214851211b7331cdcbd680e9ad
+2022-10-24 15:29:14,588 __main__ INFO -- Get or create the cluster --
+2022-10-24 15:29:28,477 __main__ INFO -- Preparing syspapi JSON file --
+2022-10-24 15:29:28,577 __main__ INFO -- Preparing jobpapi JSON file --
+2022-10-24 15:29:28,681 __main__ INFO -- Preparing job script & programs --
+2022-10-24 15:29:30,275 __main__ INFO -- Start daemons --
+2022-10-24 15:29:42,438 __main__ INFO ... wait a bit to make sure ldmsd's are up
+2022-10-24 15:29:47,442 __main__ INFO -- ldms_ls to agg-2 --
+2022-10-24 15:29:47,568 TADA INFO assertion 1, ldms_ls agg-2: dir result verified, passed
+2022-10-24 15:29:47,703 __main__ INFO -- Give syspapi some time to work before submitting job --
+2022-10-24 15:29:52,706 __main__ INFO -- Submitting jobs --
+2022-10-24 15:29:52,864 __main__ INFO job_one: 1
+2022-10-24 15:29:52,975 __main__ INFO job_two: 2
+2022-10-24 15:30:02,985 __main__ INFO -- Cancelling jobs --
+2022-10-24 15:30:02,985 __main__ INFO job_one: 1
+2022-10-24 15:30:03,193 __main__ INFO job_two: 2
+2022-10-24 15:31:10,223 TADA INFO assertion 2, slurm data verification: get expected data from store, passed
+2022-10-24 15:31:10,223 TADA INFO assertion 3, meminfo data verification: No data missing, passed
+2022-10-24 15:31:10,224 TADA INFO assertion 4, (SYS/JOB) PAPI data verification: No data missing, passed
+2022-10-24 15:31:10,225 TADA INFO test agg_slurm_test ended

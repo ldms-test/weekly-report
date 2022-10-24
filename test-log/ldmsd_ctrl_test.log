@@ -1,20 +1,26 @@
-2022-10-21 01:03:24,272 TADA INFO starting test `ldmsd_ctrl_test`
-2022-10-21 01:03:24,272 TADA INFO   test-id: f637f65dff6aae7db34adb2b167fa7f9ffcf07e1c12742cdf77c8a46c726cb16
-2022-10-21 01:03:24,272 TADA INFO   test-suite: LDMSD
-2022-10-21 01:03:24,272 TADA INFO   test-name: ldmsd_ctrl_test
-2022-10-21 01:03:24,272 TADA INFO   test-user: narate
-2022-10-21 01:03:24,272 TADA INFO   commit-id: c6bbe5530e620865002d2995a48a3d2811fa26ac
-2022-10-21 01:03:24,273 __main__ INFO -- Get or create the cluster --
-2022-10-21 01:03:33,734 __main__ INFO -- Start daemons --
-2022-10-21 01:03:38,088 __main__ INFO ... wait a bit to make sure ldmsd's are up
-2022-10-21 01:03:44,203 TADA INFO assertion 1, ldmsd_controller interactive session: connected, passed
-2022-10-21 01:03:45,319 TADA INFO assertion 2, ldmsctl interactive session: connected, passed
-2022-10-21 01:03:45,920 TADA INFO assertion 3, ldmsd_controller start bogus producer: expected output verified, passed
-2022-10-21 01:03:46,522 TADA INFO assertion 4, ldmsctl start bogus producer: expected output verified, passed
-2022-10-21 01:03:47,123 TADA INFO assertion 5, ldmsd_controller bogus command: expected output verified, passed
-2022-10-21 01:03:47,724 TADA INFO assertion 6, ldmsctl bogus command: expected output verified, passed
-2022-10-21 01:03:48,326 TADA INFO assertion 7, ldmsd_controller load bogus plugin: expected output verified, passed
-2022-10-21 01:03:48,927 TADA INFO assertion 8, ldmsctl load bogus plugin: expected output verified, passed
-2022-10-21 01:04:06,117 TADA INFO assertion 9, ldmsd_controller prdcr/updtr: verified, passed
-2022-10-21 01:04:23,309 TADA INFO assertion 10, ldmsctl prdcr/updtr: verified, passed
-2022-10-21 01:04:23,309 TADA INFO test ldmsd_ctrl_test ended
+2022-10-24 15:42:45,477 TADA INFO starting test `ldmsd_ctrl_test`
+2022-10-24 15:42:45,477 TADA INFO   test-id: 2c582ffffdd1d33c67ec51e255c6f440cf2441811378d37c66e81967ffae32a5
+2022-10-24 15:42:45,477 TADA INFO   test-suite: LDMSD
+2022-10-24 15:42:45,477 TADA INFO   test-name: ldmsd_ctrl_test
+2022-10-24 15:42:45,477 TADA INFO   test-user: narate
+2022-10-24 15:42:45,477 TADA INFO   commit-id: 6dc460cedd5072214851211b7331cdcbd680e9ad
+2022-10-24 15:42:45,478 __main__ INFO -- Get or create the cluster --
+2022-10-24 15:42:55,176 __main__ INFO -- Start daemons --
+2022-10-24 15:42:59,587 __main__ INFO ... wait a bit to make sure ldmsd's are up
+2022-10-24 15:43:05,708 TADA INFO assertion 1, ldmsd_controller interactive session: connected, passed
+2022-10-24 15:43:06,823 TADA INFO assertion 2, ldmsctl interactive session: connected, passed
+2022-10-24 15:43:07,424 TADA INFO assertion 3, ldmsd_controller start bogus producer: expected output verified, passed
+2022-10-24 15:43:08,026 TADA INFO assertion 4, ldmsctl start bogus producer: expected output verified, passed
+2022-10-24 15:43:08,627 TADA INFO assertion 5, ldmsd_controller bogus command: expected output verified, passed
+2022-10-24 15:43:09,229 TADA INFO assertion 6, ldmsctl bogus command: expected output verified, passed
+2022-10-24 15:43:09,831 TADA INFO assertion 7, ldmsd_controller load bogus plugin: expected output verified, passed
+2022-10-24 15:43:10,432 TADA INFO assertion 8, ldmsctl load bogus plugin: expected output verified, passed
+2022-10-24 15:43:27,630 TADA INFO assertion 9, ldmsd_controller prdcr/updtr: verified, passed
+Traceback (most recent call last):
+  File "ldmsd_ctrl_test", line 397, in <module>
+    prdcr_updtr_routine(10, "agg-12", ldmsctl, "ldmsctl> ")
+  File "ldmsd_ctrl_test", line 367, in prdcr_updtr_routine
+    if not re.match(".*\sCONNECTED.*", out[3]) \
+IndexError: list index out of range
+2022-10-24 15:43:41,648 TADA INFO assertion 10, ldmsctl prdcr/updtr: skipped
+2022-10-24 15:43:41,648 TADA INFO test ldmsd_ctrl_test ended
