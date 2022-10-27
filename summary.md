@@ -2,7 +2,7 @@ Test Summary
 ============
 * [direct_ldms_ls_conn_test](test-log/direct_ldms_ls_conn_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
 * [direct_prdcr_subscribe_test](test-log/direct_prdcr_subscribe_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
-* [agg_slurm_test](test-log/agg_slurm_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
+* [agg_slurm_test](test-log/agg_slurm_test.log): $\textcolor{red}{\text{FAILED}}$
 * [papi_sampler_test](test-log/papi_sampler_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
 * [papi_store_test](test-log/papi_store_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
 * [store_app_test](test-log/store_app_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
@@ -11,7 +11,7 @@ Test Summary
 * [failover_test](test-log/failover_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
 * [ldmsd_auth_ovis_test](test-log/ldmsd_auth_ovis_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
 * [ldmsd_auth_test](test-log/ldmsd_auth_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
-* [ldmsd_ctrl_test](test-log/ldmsd_ctrl_test.log): $\textcolor{red}{\text{FAILED}}$
+* [ldmsd_ctrl_test](test-log/ldmsd_ctrl_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
 * [ldmsd_stream_test](test-log/ldmsd_stream_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
 * [maestro_cfg_test](test-log/maestro_cfg_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
 * [mt-slurm-test](test-log/mt-slurm-test.log): $\textcolor{lightgreen}{\text{PASSED}}$
