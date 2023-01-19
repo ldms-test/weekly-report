@@ -1,17 +1,22 @@
-2022-11-16 01:46:01,206 __main__ INFO -- Get or create the cluster --
-2022-11-16 01:46:01,206 TADA INFO starting test `updtr_status test`
-2022-11-16 01:46:01,206 TADA INFO   test-id: 0b7d423a8f97c18328783f651f7c4bd1337f9b22621ab38d79ed1779688ed827
-2022-11-16 01:46:01,206 TADA INFO   test-suite: LDMSD
-2022-11-16 01:46:01,206 TADA INFO   test-name: updtr_status test
-2022-11-16 01:46:01,206 TADA INFO   test-user: narate
-2022-11-16 01:46:01,206 TADA INFO   commit-id: cdc77fc08da6ad07c256d541a7533a31c69158bd
-2022-11-16 01:46:11,314 __main__ INFO -- Start daemons --
-2022-11-16 01:46:16,219 __main__ INFO Waiting ... for all LDMSDs to start
-2022-11-16 01:46:16,653 __main__ INFO All LDMSDs are up.
-2022-11-16 01:46:17,875 TADA INFO assertion 1, Send 'updtr_status' to an LDMSD without any Updaters: [], passed
-2022-11-16 01:46:19,090 TADA INFO assertion 2, Send 'updtr_status name=foo', where updtr 'foo' doesn't exist.: report(updtr 'foo' doesn't exist.) == expect(updtr 'foo' doesn't exist.), passed
-2022-11-16 01:46:20,311 TADA INFO assertion 3, Send 'updtr_status name=all', where 'all' exists.: report([{'name': 'meminfo', 'interval': '1000000', 'offset': '100000', 'sync': 'true', 'mode': 'Pull', 'auto': 'false', 'state': 'RUNNING', 'producers': [{'name': 'sampler-1', 'host': 'sampler-1', 'port': 10000, 'transport': 'sock', 'state': 'CONNECTED'}, {'name': 'sampler-2', 'host': 'sampler-2', 'port': 10000, 'transport': 'sock', 'state': 'CONNECTED'}]}]) == expect([{'name': 'meminfo', 'interval': '1000000', 'offset': '100000', 'sync': 'true', 'mode': 'Pull', 'auto': 'false', 'state': 'RUNNING', 'producers': [{'name': 'sampler-1', 'host': 'sampler-1', 'port': 10000, 'transport': 'sock', 'state': 'CONNECTED'}, {'name': 'sampler-2', 'host': 'sampler-2', 'port': 10000, 'transport': 'sock', 'state': 'CONNECTED'}]}]), passed
-2022-11-16 01:46:21,529 TADA INFO assertion 4, Send 'updtr_status' to an LDMSD with a single Updater: report([{'name': 'agg11', 'interval': '1000000', 'offset': '200000', 'sync': 'true', 'mode': 'Pull', 'auto': 'false', 'state': 'RUNNING', 'producers': [{'name': 'agg11', 'host': 'L1', 'port': 10000, 'transport': 'sock', 'state': 'CONNECTED'}]}]) == expect([{'name': 'agg11', 'interval': '1000000', 'offset': '200000', 'sync': 'true', 'mode': 'Pull', 'auto': 'false', 'state': 'RUNNING', 'producers': [{'name': 'agg11', 'host': 'L1', 'port': 10000, 'transport': 'sock', 'state': 'CONNECTED'}]}]), passed
-2022-11-16 01:46:22,752 TADA INFO assertion 5, Send 'updtr_status' to an LDMSD with 2 updaters: report([{'name': 'meminfo', 'interval': '1000000', 'offset': '100000', 'sync': 'true', 'mode': 'Pull', 'auto': 'false', 'state': 'RUNNING', 'producers': [{'name': 'sampler-1', 'host': 'sampler-1', 'port': 10000, 'transport': 'sock', 'state': 'CONNECTED'}, {'name': 'sampler-2', 'host': 'sampler-2', 'port': 10000, 'transport': 'sock', 'state': 'CONNECTED'}]}, {'name': 'sampler-2', 'interval': '1000000', 'offset': '100000', 'sync': 'true', 'mode': 'Pull', 'auto': 'false', 'state': 'STOPPED', 'producers': [{'name': 'sampler-2', 'host': 'sampler-2', 'port': 10000, 'transport': 'sock', 'state': 'CONNECTED'}]}]) == expect([{'name': 'meminfo', 'interval': '1000000', 'offset': '100000', 'sync': 'true', 'mode': 'Pull', 'auto': 'false', 'state': 'RUNNING', 'producers': [{'name': 'sampler-1', 'host': 'sampler-1', 'port': 10000, 'transport': 'sock', 'state': 'CONNECTED'}, {'name': 'sampler-2', 'host': 'sampler-2', 'port': 10000, 'transport': 'sock', 'state': 'CONNECTED'}]}, {'name': 'sampler-2', 'interval': '1000000', 'offset': '100000', 'sync': 'true', 'mode': 'Pull', 'auto': 'false', 'state': 'STOPPED', 'producers': [{'name': 'sampler-2', 'host': 'sampler-2', 'port': 10000, 'transport': 'sock', 'state': 'CONNECTED'}]}]), passed
-2022-11-16 01:46:22,753 __main__ INFO --- done ---
-2022-11-16 01:46:22,753 TADA INFO test updtr_status test ended
+2023-01-19 01:55:24,672 __main__ INFO -- Get or create the cluster --
+2023-01-19 01:55:24,672 TADA INFO starting test `updtr_status test`
+2023-01-19 01:55:24,672 TADA INFO   test-id: c5fd9211c76a6d59e092eacf2559b0011165dfed1219335550b489ae17d6c73d
+2023-01-19 01:55:24,672 TADA INFO   test-suite: LDMSD
+2023-01-19 01:55:24,672 TADA INFO   test-name: updtr_status test
+2023-01-19 01:55:24,672 TADA INFO   test-user: narate
+2023-01-19 01:55:24,672 TADA INFO   commit-id: 67b8b3ec2ccb459a041d0536270405d0346c8f18
+2023-01-19 01:55:34,638 __main__ INFO -- Start daemons --
+2023-01-19 01:55:39,543 __main__ INFO Waiting ... for all LDMSDs to start
+2023-01-19 01:55:39,979 __main__ INFO All LDMSDs are up.
+2023-01-19 01:55:41,200 TADA INFO assertion 1, Send 'updtr_status' to an LDMSD without any Updaters: [], passed
+2023-01-19 01:55:42,402 TADA INFO assertion 2, Send 'updtr_status name=foo', where updtr 'foo' doesn't exist.: report(updtr 'foo' doesn't exist.) == expect(updtr 'foo' doesn't exist.), passed
+2023-01-19 01:55:43,614 TADA INFO assertion 3, Send 'updtr_status name=all', where 'all' exists.: report([{'name': 'meminfo', 'interval': '1000000', 'offset': '100000', 'sync': 'true', 'mode': 'Pull', 'auto': 'false', 'state': 'RUNNING', 'producers': [{'name': 'sampler-1', 'host': 'sampler-1', 'port': 10000, 'transport': 'sock', 'state': 'CONNECTED'}, {'name': 'sampler-2', 'host': 'sampler-2', 'port': 10000, 'transport': 'sock', 'state': 'CONNECTED'}], 'outstanding count': 0, 'oversampled count': 0}]) == expect([{'name': 'meminfo', 'interval': '1000000', 'offset': '100000', 'sync': 'true', 'mode': 'Pull', 'auto': 'false', 'state': 'RUNNING', 'producers': [{'name': 'sampler-1', 'host': 'sampler-1', 'port': 10000, 'transport': 'sock', 'state': 'CONNECTED'}, {'name': 'sampler-2', 'host': 'sampler-2', 'port': 10000, 'transport': 'sock', 'state': 'CONNECTED'}]}]), failed
+Traceback (most recent call last):
+  File "updtr_status_test", line 331, in <module>
+    .format(updtr, exp_updtr))
+  File "/home/narate/cron/ldms-test/TADA.py", line 157, in assert_test
+    raise AssertionException(self.test_desc + ", " + cond_str + ": FAILED")
+TADA.AssertionException: Test updtr_status, report([{'name': 'meminfo', 'interval': '1000000', 'offset': '100000', 'sync': 'true', 'mode': 'Pull', 'auto': 'false', 'state': 'RUNNING', 'producers': [{'name': 'sampler-1', 'host': 'sampler-1', 'port': 10000, 'transport': 'sock', 'state': 'CONNECTED'}, {'name': 'sampler-2', 'host': 'sampler-2', 'port': 10000, 'transport': 'sock', 'state': 'CONNECTED'}], 'outstanding count': 0, 'oversampled count': 0}]) == expect([{'name': 'meminfo', 'interval': '1000000', 'offset': '100000', 'sync': 'true', 'mode': 'Pull', 'auto': 'false', 'state': 'RUNNING', 'producers': [{'name': 'sampler-1', 'host': 'sampler-1', 'port': 10000, 'transport': 'sock', 'state': 'CONNECTED'}, {'name': 'sampler-2', 'host': 'sampler-2', 'port': 10000, 'transport': 'sock', 'state': 'CONNECTED'}]}]): FAILED
+2023-01-19 01:55:43,615 TADA INFO assertion 4, Send 'updtr_status' to an LDMSD with a single Updater: skipped
+2023-01-19 01:55:43,615 TADA INFO assertion 5, Send 'updtr_status' to an LDMSD with 2 updaters: skipped
+2023-01-19 01:55:43,615 TADA INFO test updtr_status test ended
