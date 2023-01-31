@@ -1,18 +1,24 @@
-2023-01-23 09:35:55,403 __main__ INFO -- Get or create the cluster --
-2023-01-23 09:35:55,403 TADA INFO starting test `store_sos_lists_test`
-2023-01-23 09:35:55,403 TADA INFO   test-id: 980313bcfae26af14ed010ce0bd6a2c577b537d3c46785587cdd26c38ebbfeb8
-2023-01-23 09:35:55,403 TADA INFO   test-suite: LDMSD
-2023-01-23 09:35:55,403 TADA INFO   test-name: store_sos_lists_test
-2023-01-23 09:35:55,403 TADA INFO   test-user: narate
-2023-01-23 09:35:55,403 TADA INFO   commit-id: 46ab92012b8fee43dff0d2328b19c157ef49baa2
-2023-01-23 09:36:02,792 __main__ INFO Waiting ... for all LDMSDs to start
-2023-01-23 09:36:06,657 __main__ INFO All sampler daemons are up.
-2023-01-23 09:36:06,773 TADA INFO assertion 1, aggregator with store_sos has started properly.: agg_sos.check_ldmsd(), passed
-2023-01-23 09:36:06,888 TADA INFO assertion 2, aggregator with store_csv has started properly.: agg_csv.check_ldmsd(), passed
-2023-01-23 09:36:19,516 TADA INFO assertion 3, store_sos is storing data.: agg.file_exists(a) for a in db_paths, passed
-2023-01-23 09:36:22,796 TADA INFO assertion 4, store_sos stores data correctly.: verify_data(db) for db in all_db, passed
-2023-01-23 09:36:31,755 TADA INFO assertion 5, store_sos stores data after restarted correctly.: verify_data(db) for db in all_db, passed
-2023-01-23 09:36:33,149 TADA INFO assertion 6, store_csv is storing data.: agg.file_exists(a) for a in db_paths, passed
-2023-01-23 09:36:44,286 TADA INFO assertion 7, store_csv stores data correctly.: verify_data(db) for db in all_db, passed
-2023-01-23 09:36:53,942 TADA INFO assertion 8, store_csv stores data after restarted correctly.: verify_data(db) for db in all_db, passed
-2023-01-23 09:36:53,943 TADA INFO test store_sos_lists_test ended
+2023-01-31 01:35:13,059 __main__ INFO -- Get or create the cluster --
+2023-01-31 01:35:13,059 TADA INFO starting test `store_sos_lists_test`
+2023-01-31 01:35:13,059 TADA INFO   test-id: 0b68034e377b7e2a5d877e7a81c008293d4f4500b25183b7deacbd7114b386a3
+2023-01-31 01:35:13,059 TADA INFO   test-suite: LDMSD
+2023-01-31 01:35:13,059 TADA INFO   test-name: store_sos_lists_test
+2023-01-31 01:35:13,059 TADA INFO   test-user: narate
+2023-01-31 01:35:13,059 TADA INFO   commit-id: e5d0dd768446521f20218746bc9ab470c581ce63
+2023-01-31 01:35:20,463 __main__ INFO Waiting ... for all LDMSDs to start
+2023-01-31 01:35:24,306 __main__ INFO All sampler daemons are up.
+2023-01-31 01:35:24,421 TADA INFO assertion 1, aggregator with store_sos has started properly.: agg_sos.check_ldmsd(), passed
+2023-01-31 01:35:24,515 TADA INFO assertion 2, aggregator with store_csv has started properly.: agg_csv.check_ldmsd(), passed
+2023-01-31 01:35:35,656 TADA INFO assertion 3, store_sos is storing data.: agg.file_exists/store/sos/record_record_record, failed
+Traceback (most recent call last):
+  File "store_list_record_test", line 427, in <module>
+    test.assert_test(SOS_DATABASE_CREATED, result, reason)
+  File "/home/narate/cron/ldms-test/TADA.py", line 157, in assert_test
+    raise AssertionException(self.test_desc + ", " + cond_str + ": FAILED")
+TADA.AssertionException: Test store_sos storing lists, agg.file_exists/store/sos/record_record_record: FAILED
+2023-01-31 01:35:35,658 TADA INFO assertion 4, store_sos stores data correctly.: skipped
+2023-01-31 01:35:35,658 TADA INFO assertion 5, store_sos stores data after restarted correctly.: skipped
+2023-01-31 01:35:35,659 TADA INFO assertion 6, store_csv is storing data.: skipped
+2023-01-31 01:35:35,659 TADA INFO assertion 7, store_csv stores data correctly.: skipped
+2023-01-31 01:35:35,659 TADA INFO assertion 8, store_csv stores data after restarted correctly.: skipped
+2023-01-31 01:35:35,660 TADA INFO test store_sos_lists_test ended
