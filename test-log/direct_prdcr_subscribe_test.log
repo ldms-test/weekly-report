@@ -1,51 +1,51 @@
-2023-02-03 00:49:02,620 TADA INFO starting test `direct_prdcr_subscribe_test`
-2023-02-03 00:49:02,620 TADA INFO   test-id: 762695fe77df25a71a3b547d06d0eb131f335d8595b766a56e35e3713f4d0104
-2023-02-03 00:49:02,620 TADA INFO   test-suite: LDMSD
-2023-02-03 00:49:02,621 TADA INFO   test-name: direct_prdcr_subscribe_test
-2023-02-03 00:49:02,621 TADA INFO   test-user: narate
-2023-02-03 00:49:02,621 TADA INFO   commit-id: 7d1ff1aeef7696d3ecea60a637cb59a0c07a7a00
-2023-02-03 00:49:04,541 __main__ INFO starting munged on cygnus-01-iw
-2023-02-03 00:49:05,308 __main__ INFO starting munged on cygnus-02-iw
-2023-02-03 00:49:06,703 __main__ INFO starting munged on cygnus-03-iw
-2023-02-03 00:49:07,483 __main__ INFO starting munged on cygnus-04-iw
-2023-02-03 00:49:07,787 __main__ INFO starting munged on localhost
-2023-02-03 00:49:08,020 __main__ INFO starting ldmsd on cygnus-01-iw
-2023-02-03 00:49:08,514 __main__ INFO starting ldmsd on cygnus-02-iw
-2023-02-03 00:49:09,045 __main__ INFO starting ldmsd on cygnus-03-iw
-2023-02-03 00:49:09,581 __main__ INFO starting ldmsd on cygnus-04-iw
-2023-02-03 00:49:16,495 TADA INFO assertion 0, ldmsd_stream_publish of JSON data to stream-sampler-1 succeeds: verify JSON data, passed
-2023-02-03 00:49:16,496 TADA INFO assertion 1, ldmsd_stream_publish of STRING data to stream-sampler-1 succeeds: verify STRING data, passed
-2023-02-03 00:49:16,497 TADA INFO assertion 2, ldmsd_stream_publish to JSON data to stream-sampler-2 succeeds: verify JSON data, passed
-2023-02-03 00:49:16,497 TADA INFO assertion 3, ldmsd_stream_publish of STRING data to stream-sampler-2 succeeds: verify STRING data, passed
-2023-02-03 00:49:16,498 TADA INFO assertion 4, ldmsd_stream data check on agg-2: agg2 stream data verified, passed
+2023-02-07 00:48:57,608 TADA INFO starting test `direct_prdcr_subscribe_test`
+2023-02-07 00:48:57,608 TADA INFO   test-id: 18061a52c1bf7edce70470a80298996a25c1065b772e31ccc3c67ee898c0997b
+2023-02-07 00:48:57,608 TADA INFO   test-suite: LDMSD
+2023-02-07 00:48:57,608 TADA INFO   test-name: direct_prdcr_subscribe_test
+2023-02-07 00:48:57,608 TADA INFO   test-user: narate
+2023-02-07 00:48:57,608 TADA INFO   commit-id: cd47aa7bdd55c7ac3a3691ac7fd05f429e71a1a5
+2023-02-07 00:48:59,518 __main__ INFO starting munged on cygnus-01-iw
+2023-02-07 00:49:00,286 __main__ INFO starting munged on cygnus-02-iw
+2023-02-07 00:49:01,038 __main__ INFO starting munged on cygnus-03-iw
+2023-02-07 00:49:01,810 __main__ INFO starting munged on cygnus-04-iw
+2023-02-07 00:49:02,135 __main__ INFO starting munged on localhost
+2023-02-07 00:49:02,365 __main__ INFO starting ldmsd on cygnus-01-iw
+2023-02-07 00:49:02,874 __main__ INFO starting ldmsd on cygnus-02-iw
+2023-02-07 00:49:03,401 __main__ INFO starting ldmsd on cygnus-03-iw
+2023-02-07 00:49:03,942 __main__ INFO starting ldmsd on cygnus-04-iw
+2023-02-07 00:49:10,868 TADA INFO assertion 0, ldmsd_stream_publish of JSON data to stream-sampler-1 succeeds: verify JSON data, passed
+2023-02-07 00:49:10,868 TADA INFO assertion 1, ldmsd_stream_publish of STRING data to stream-sampler-1 succeeds: verify STRING data, passed
+2023-02-07 00:49:10,869 TADA INFO assertion 2, ldmsd_stream_publish to JSON data to stream-sampler-2 succeeds: verify JSON data, passed
+2023-02-07 00:49:10,870 TADA INFO assertion 3, ldmsd_stream_publish of STRING data to stream-sampler-2 succeeds: verify STRING data, passed
+2023-02-07 00:49:10,870 TADA INFO assertion 4, ldmsd_stream data check on agg-2: agg2 stream data verified, passed
 Traceback (most recent call last):
   File "direct_prdcr_subscribe_test", line 524, in <module>
     ret = agg1.req("prdcr_stop_regex regex=.*")
   File "/home/narate/cron/ldms-test/LDMS_Test.py", line 2457, in req
     from ldmsd.ldmsd_request import LDMSD_Request, LDMSD_Req_Attr
 ModuleNotFoundError: No module named 'ldmsd.ldmsd_request'
-2023-02-03 00:49:16,535 TADA INFO assertion 5, Stopping the producers succeeds: skipped
-2023-02-03 00:49:16,535 TADA INFO assertion 6, Restarting the producers succeeds: skipped
-2023-02-03 00:49:16,536 TADA INFO assertion 7, JSON stream data resumes after producer restart on stream-sampler-1: skipped
-2023-02-03 00:49:16,536 TADA INFO assertion 8, STRING stream data resumes after producer rerestart on stream-sampler-1: skipped
-2023-02-03 00:49:16,536 TADA INFO assertion 9, JSON stream data resumes after producer restart on stream-sampler-2: skipped
-2023-02-03 00:49:16,537 TADA INFO assertion 10, STRING stream data resumes after producer rerestart on stream-sampler-2: skipped
-2023-02-03 00:49:16,537 TADA INFO assertion 11, ldmsd_stream data resume check on agg-2: skipped
-2023-02-03 00:49:16,537 TADA INFO assertion 12, stream-sampler-1 is not running: skipped
-2023-02-03 00:49:16,537 TADA INFO assertion 13, stream-sampler-1 has restarted: skipped
-2023-02-03 00:49:16,538 TADA INFO assertion 14, JSON stream data resumes after stream-sampler-1 restart: skipped
-2023-02-03 00:49:16,538 TADA INFO assertion 15, STRING stream data resumes after stream-sampler-1 restart: skipped
-2023-02-03 00:49:16,538 TADA INFO assertion 16, ldmsd_stream data check on agg-2 after stream-sampler-1 restart: skipped
-2023-02-03 00:49:16,538 TADA INFO assertion 17, agg-1 unsubscribes stream-sampler-1: skipped
-2023-02-03 00:49:16,538 TADA INFO assertion 18, agg-1 receives data only from stream-sampler-2: skipped
-2023-02-03 00:49:16,538 TADA INFO assertion 19, stream-sampler-2 removes agg-1 stream client after disconnected: skipped
-2023-02-03 00:49:16,538 TADA INFO test direct_prdcr_subscribe_test ended
-2023-02-03 00:49:16,755 __main__ INFO stopping munged on cygnus-01-iw
-2023-02-03 00:49:17,174 __main__ INFO stopping ldmsd on cygnus-01-iw
-2023-02-03 00:49:17,591 __main__ INFO stopping munged on cygnus-02-iw
-2023-02-03 00:49:18,011 __main__ INFO stopping ldmsd on cygnus-02-iw
-2023-02-03 00:49:18,435 __main__ INFO stopping munged on cygnus-03-iw
-2023-02-03 00:49:18,863 __main__ INFO stopping ldmsd on cygnus-03-iw
-2023-02-03 00:49:19,295 __main__ INFO stopping munged on cygnus-04-iw
-2023-02-03 00:49:19,775 __main__ INFO stopping ldmsd on cygnus-04-iw
-2023-02-03 00:49:19,988 __main__ INFO stopping munged on localhost
+2023-02-07 00:49:10,911 TADA INFO assertion 5, Stopping the producers succeeds: skipped
+2023-02-07 00:49:10,912 TADA INFO assertion 6, Restarting the producers succeeds: skipped
+2023-02-07 00:49:10,912 TADA INFO assertion 7, JSON stream data resumes after producer restart on stream-sampler-1: skipped
+2023-02-07 00:49:10,912 TADA INFO assertion 8, STRING stream data resumes after producer rerestart on stream-sampler-1: skipped
+2023-02-07 00:49:10,913 TADA INFO assertion 9, JSON stream data resumes after producer restart on stream-sampler-2: skipped
+2023-02-07 00:49:10,913 TADA INFO assertion 10, STRING stream data resumes after producer rerestart on stream-sampler-2: skipped
+2023-02-07 00:49:10,913 TADA INFO assertion 11, ldmsd_stream data resume check on agg-2: skipped
+2023-02-07 00:49:10,913 TADA INFO assertion 12, stream-sampler-1 is not running: skipped
+2023-02-07 00:49:10,914 TADA INFO assertion 13, stream-sampler-1 has restarted: skipped
+2023-02-07 00:49:10,914 TADA INFO assertion 14, JSON stream data resumes after stream-sampler-1 restart: skipped
+2023-02-07 00:49:10,914 TADA INFO assertion 15, STRING stream data resumes after stream-sampler-1 restart: skipped
+2023-02-07 00:49:10,914 TADA INFO assertion 16, ldmsd_stream data check on agg-2 after stream-sampler-1 restart: skipped
+2023-02-07 00:49:10,914 TADA INFO assertion 17, agg-1 unsubscribes stream-sampler-1: skipped
+2023-02-07 00:49:10,914 TADA INFO assertion 18, agg-1 receives data only from stream-sampler-2: skipped
+2023-02-07 00:49:10,914 TADA INFO assertion 19, stream-sampler-2 removes agg-1 stream client after disconnected: skipped
+2023-02-07 00:49:10,915 TADA INFO test direct_prdcr_subscribe_test ended
+2023-02-07 00:49:11,119 __main__ INFO stopping munged on cygnus-01-iw
+2023-02-07 00:49:11,526 __main__ INFO stopping ldmsd on cygnus-01-iw
+2023-02-07 00:49:11,935 __main__ INFO stopping munged on cygnus-02-iw
+2023-02-07 00:49:12,386 __main__ INFO stopping ldmsd on cygnus-02-iw
+2023-02-07 00:49:12,807 __main__ INFO stopping munged on cygnus-03-iw
+2023-02-07 00:49:13,271 __main__ INFO stopping ldmsd on cygnus-03-iw
+2023-02-07 00:49:13,692 __main__ INFO stopping munged on cygnus-04-iw
+2023-02-07 00:49:14,114 __main__ INFO stopping ldmsd on cygnus-04-iw
+2023-02-07 00:49:14,328 __main__ INFO stopping munged on localhost
