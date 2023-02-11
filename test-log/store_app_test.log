@@ -1,16 +1,22 @@
-2023-02-07 00:54:18,744 TADA INFO starting test `store_app_test`
-2023-02-07 00:54:18,744 TADA INFO   test-id: 4047626bf142a35f9d7142ddd165c2a4d9a29f83c4ad16da70bd6645ce060bb2
-2023-02-07 00:54:18,744 TADA INFO   test-suite: LDMSD
-2023-02-07 00:54:18,744 TADA INFO   test-name: store_app_test
-2023-02-07 00:54:18,744 TADA INFO   test-user: narate
-2023-02-07 00:54:18,744 TADA INFO   commit-id: cd47aa7bdd55c7ac3a3691ac7fd05f429e71a1a5
-2023-02-07 00:54:18,745 __main__ INFO -- Get or create the cluster --
-2023-02-07 00:54:33,093 __main__ INFO -- Preparing job script & programs --
-2023-02-07 00:54:33,495 __main__ INFO -- Start daemons --
-2023-02-07 00:54:45,771 __main__ INFO ... wait a bit to make sure ldmsd's are up
-2023-02-07 00:54:50,778 __main__ INFO -- Submitting jobs --
-2023-02-07 00:54:51,016 __main__ INFO job_one: 1
-2023-02-07 00:54:56,329 __main__ INFO job_two: 2
-2023-02-07 00:55:05,631 __main__ INFO Verifying data ...
-2023-02-07 00:57:10,305 TADA INFO assertion 1, Verify data: sos data is not empty and sos data < ldms_ls data, passed
-2023-02-07 00:57:10,305 TADA INFO test store_app_test ended
+2023-02-11 00:54:27,948 TADA INFO starting test `store_app_test`
+2023-02-11 00:54:27,949 TADA INFO   test-id: 5f6dc9356ac80969c64ea14890bc03b53ab6129e88b4ae554aefec79a5fa8518
+2023-02-11 00:54:27,949 TADA INFO   test-suite: LDMSD
+2023-02-11 00:54:27,949 TADA INFO   test-name: store_app_test
+2023-02-11 00:54:27,949 TADA INFO   test-user: narate
+2023-02-11 00:54:27,949 TADA INFO   commit-id: dbeeb003496e1e9070a6dd36af5a8bb1cfe3ba9d
+2023-02-11 00:54:27,950 __main__ INFO -- Get or create the cluster --
+2023-02-11 00:54:42,610 __main__ INFO -- Preparing job script & programs --
+2023-02-11 00:54:43,011 __main__ INFO -- Start daemons --
+2023-02-11 00:54:55,412 __main__ INFO ... wait a bit to make sure ldmsd's are up
+2023-02-11 00:55:00,419 __main__ INFO -- Submitting jobs --
+2023-02-11 00:55:00,638 __main__ INFO job_one: 1
+2023-02-11 00:55:05,851 __main__ INFO job_two: 2
+2023-02-11 00:55:15,095 __main__ INFO Verifying data ...
+2023-02-11 00:55:16,060 TADA INFO assertion 1, Verify data: store data empty for 'stat_cstime', failed
+Traceback (most recent call last):
+  File "store_app_test", line 469, in <module>
+    test.assert_test(1, False, "store data empty for '{}'".format(mname))
+  File "/home/narate/cron/ldms-test/TADA.py", line 157, in assert_test
+    raise AssertionException(self.test_desc + ", " + cond_str + ": FAILED")
+TADA.AssertionException: store_app plugin test in a virtual SLURM cluster, store data empty for 'stat_cstime': FAILED
+2023-02-11 00:55:16,061 TADA INFO test store_app_test ended

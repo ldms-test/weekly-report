@@ -1,21 +1,27 @@
-2023-02-07 01:29:22,271 TADA INFO starting test `ldmsd_autointerval_test`
-2023-02-07 01:29:22,271 TADA INFO   test-id: f255b327054fbfe482c44f86361c779c914f388d94555ca639f72f6b3ad9610f
-2023-02-07 01:29:22,271 TADA INFO   test-suite: LDMSD
-2023-02-07 01:29:22,271 TADA INFO   test-name: ldmsd_autointerval_test
-2023-02-07 01:29:22,271 TADA INFO   test-user: narate
-2023-02-07 01:29:22,271 TADA INFO   commit-id: cd47aa7bdd55c7ac3a3691ac7fd05f429e71a1a5
-2023-02-07 01:29:22,272 __main__ INFO -- Get or create the cluster --
-2023-02-07 01:29:29,698 __main__ INFO -- Start daemons --
-2023-02-07 01:29:33,460 __main__ INFO ... wait a bit to make sure ldmsd's are up
-2023-02-07 01:29:39,983 TADA INFO assertion 1, start all daemons and interactive controller: OK, passed
-2023-02-07 01:29:42,213 TADA INFO assertion 2, verify sampling interval and update hints: verified, passed
-2023-02-07 01:29:42,213 __main__ INFO Let them run for a while to collect data ...
-2023-02-07 01:29:52,223 __main__ INFO Setting sample interval to 1000000 ...
-2023-02-07 01:30:00,478 TADA INFO assertion 3, set and verify 2nd sampling interval / update hints: verified, passed
-2023-02-07 01:30:00,478 __main__ INFO Let them run for a while to collect data ...
-2023-02-07 01:30:10,489 __main__ INFO Setting sample interval to 2000000 ...
-2023-02-07 01:30:18,742 TADA INFO assertion 4, set and verify 3rd sampling interval / update hints: verified, passed
-2023-02-07 01:30:18,742 __main__ INFO Let them run for a while to collect data ...
-2023-02-07 01:30:28,972 TADA INFO assertion 5, verify SOS data: timestamp differences in SOS show all 3 intervals, passed
-2023-02-07 01:30:29,085 TADA INFO assertion 6, verify 'oversampled' in the agg2 log: OK, passed
-2023-02-07 01:30:29,085 TADA INFO test ldmsd_autointerval_test ended
+2023-02-11 01:27:22,197 TADA INFO starting test `ldmsd_autointerval_test`
+2023-02-11 01:27:22,197 TADA INFO   test-id: 01635c5771736ddc0c3de8c7fef5802f7a081c9343c2344e62fcaf45575c3cea
+2023-02-11 01:27:22,197 TADA INFO   test-suite: LDMSD
+2023-02-11 01:27:22,197 TADA INFO   test-name: ldmsd_autointerval_test
+2023-02-11 01:27:22,197 TADA INFO   test-user: narate
+2023-02-11 01:27:22,197 TADA INFO   commit-id: dbeeb003496e1e9070a6dd36af5a8bb1cfe3ba9d
+2023-02-11 01:27:22,198 __main__ INFO -- Get or create the cluster --
+2023-02-11 01:27:29,512 __main__ INFO -- Start daemons --
+2023-02-11 01:27:33,231 __main__ INFO ... wait a bit to make sure ldmsd's are up
+2023-02-11 01:27:39,753 TADA INFO assertion 1, start all daemons and interactive controller: OK, passed
+2023-02-11 01:27:41,984 TADA INFO assertion 2, verify sampling interval and update hints: verified, passed
+2023-02-11 01:27:41,984 __main__ INFO Let them run for a while to collect data ...
+2023-02-11 01:27:51,987 __main__ INFO Setting sample interval to 1000000 ...
+2023-02-11 01:28:00,236 TADA INFO assertion 3, set and verify 2nd sampling interval / update hints: verified, passed
+2023-02-11 01:28:00,236 __main__ INFO Let them run for a while to collect data ...
+2023-02-11 01:28:10,241 __main__ INFO Setting sample interval to 2000000 ...
+2023-02-11 01:28:18,468 TADA INFO assertion 4, set and verify 3rd sampling interval / update hints: verified, passed
+2023-02-11 01:28:18,468 __main__ INFO Let them run for a while to collect data ...
+2023-02-11 01:28:28,758 TADA INFO assertion 5, verify SOS data: Expecting {1, 2, 3} but got {1, 3}, failed
+Traceback (most recent call last):
+  File "ldmsd_autointerval_test", line 391, in <module>
+    test.assert_test(5, False, "Expecting {expected} but got {srdt}".format(**vars()))
+  File "/home/narate/cron/ldms-test/TADA.py", line 157, in assert_test
+    raise AssertionException(self.test_desc + ", " + cond_str + ": FAILED")
+TADA.AssertionException: ldmsd autointerval test, Expecting {1, 2, 3} but got {1, 3}: FAILED
+2023-02-11 01:28:28,759 TADA INFO assertion 6, verify 'oversampled' in the agg2 log: skipped
+2023-02-11 01:28:28,759 TADA INFO test ldmsd_autointerval_test ended
