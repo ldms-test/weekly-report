@@ -1,27 +1,19 @@
-2023-02-11 01:33:54,204 TADA INFO starting test `maestro_raft_test`
-2023-02-11 01:33:54,204 TADA INFO   test-id: c6e09942f8732749d8dacc6ca26498295e1d46941ea71c903b70086e848197be
-2023-02-11 01:33:54,204 TADA INFO   test-suite: LDMSD
-2023-02-11 01:33:54,204 TADA INFO   test-name: maestro_raft_test
-2023-02-11 01:33:54,204 TADA INFO   test-user: narate
-2023-02-11 01:33:54,204 TADA INFO   commit-id: dbeeb003496e1e9070a6dd36af5a8bb1cfe3ba9d
-2023-02-11 01:34:04,216 __main__ INFO -- Get or create cluster --
-2023-02-11 01:34:39,011 __main__ INFO -- Start daemons --
-2023-02-11 01:35:50,344 __main__ INFO -- making known hosts (ssh) --
-2023-02-11 01:35:57,378 __main__ INFO ... make sure ldmsd's are up
-2023-02-11 01:36:12,980 TADA INFO assertion 1, Statuses of maestros, 1 leader + 2 followers: [('FOLLOWER', 2), ('LEADER', 1)], passed
-2023-02-11 01:36:25,415 TADA INFO assertion 2, All ldmsds are up and configured: sets verified, passed
-2023-02-11 01:36:25,576 TADA INFO assertion 3, Data are being stored: data check, failed
+2023-02-17 01:35:55,574 TADA INFO starting test `maestro_raft_test`
+2023-02-17 01:35:55,574 TADA INFO   test-id: 9351286fd47fed2c52834ffb9baf576492808339dc1776b238bed25eced59404
+2023-02-17 01:35:55,574 TADA INFO   test-suite: LDMSD
+2023-02-17 01:35:55,574 TADA INFO   test-name: maestro_raft_test
+2023-02-17 01:35:55,575 TADA INFO   test-user: narate
+2023-02-17 01:35:55,575 TADA INFO   commit-id: 3ea87bbe3102fda6ceede54fa17b6fd8072fced4
+2023-02-17 01:36:05,586 __main__ INFO -- Get or create cluster --
+2023-02-17 01:36:40,242 __main__ INFO -- Start daemons --
+2023-02-17 01:37:51,291 __main__ INFO -- making known hosts (ssh) --
+2023-02-17 01:37:58,185 __main__ INFO ... make sure ldmsd's are up
+2023-02-17 01:38:13,735 TADA INFO assertion 1, Statuses of maestros, 1 leader + 2 followers: [('FOLLOWER', 2), ('LEADER', 1)], passed
+2023-02-17 01:38:26,133 TADA INFO assertion 2, All ldmsds are up and configured: sets verified, passed
+2023-02-17 01:38:26,397 TADA INFO assertion 3, Data are being stored: data check, passed
+2023-02-17 01:38:31,248 TADA INFO assertion 4, New leader elected: checked, passed
+2023-02-17 01:38:43,133 TADA INFO assertion 5, Restarted ldmsd is configured: sets verified, passed
+2023-02-17 01:38:43,416 TADA INFO assertion 6, New data are presented in the store: data check, passed
+2023-02-17 01:38:54,427 TADA INFO assertion 7, The restarted maestro becomes a follower: checked, passed
 ---Wait for config to write to file---
-Traceback (most recent call last):
-  File "maestro_raft_test", line 479, in <module>
-    sos_check(3, t0)
-  File "maestro_raft_test", line 476, in sos_check
-    test.assert_test(assert_id, compids == expected_compids, f"data check")
-  File "/home/narate/cron/ldms-test/TADA.py", line 157, in assert_test
-    raise AssertionException(self.test_desc + ", " + cond_str + ": FAILED")
-TADA.AssertionException: Test maestros on RAFT, data check: FAILED
-2023-02-11 01:36:25,578 TADA INFO assertion 4, New leader elected: skipped
-2023-02-11 01:36:25,578 TADA INFO assertion 5, Restarted ldmsd is configured: skipped
-2023-02-11 01:36:25,578 TADA INFO assertion 6, New data are presented in the store: skipped
-2023-02-11 01:36:25,578 TADA INFO assertion 7, The restarted maestro becomes a follower: skipped
-2023-02-11 01:36:25,578 TADA INFO test maestro_raft_test ended
+2023-02-17 01:38:54,427 TADA INFO test maestro_raft_test ended
