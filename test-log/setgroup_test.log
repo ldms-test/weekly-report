@@ -1,26 +1,26 @@
-2023-02-23 01:21:18,541 TADA INFO starting test `setgroup_test`
-2023-02-23 01:21:18,542 TADA INFO   test-id: 61da8dc65de16fbf574a65101eece11fa994457f51bbc0ecb69396ca8ed915ed
-2023-02-23 01:21:18,542 TADA INFO   test-suite: LDMSD
-2023-02-23 01:21:18,542 TADA INFO   test-name: setgroup_test
-2023-02-23 01:21:18,542 TADA INFO   test-user: narate
-2023-02-23 01:21:18,542 TADA INFO   commit-id: c2b10355ad1c0391863187dc3e9b07747285a108
-2023-02-23 01:21:18,543 __main__ INFO -- Get or create the cluster --
-2023-02-23 01:21:28,138 __main__ INFO -- Start daemons --
-2023-02-23 01:21:32,574 __main__ INFO ... wait a bit to make sure ldmsd's are up
-2023-02-23 01:21:37,579 __main__ INFO -- ldms_ls to agg-2 --
-2023-02-23 01:21:37,699 TADA INFO assertion 1, ldms_ls grp on agg-2: dir result verified, passed
-2023-02-23 01:21:39,948 TADA INFO assertion 2, members on agg-2 are being updated: data verified, passed
-2023-02-23 01:21:39,948 __main__ INFO -- Removing test_2 from grp --
-2023-02-23 01:21:40,405 TADA INFO assertion 3, test_2 is removed fom grp on sampler: expect {'node-1/grp', 'node-1/test_1'}, got {'node-1/grp', 'node-1/test_1', 'node-1/test_2'}, failed
+2023-02-26 01:21:38,555 TADA INFO starting test `setgroup_test`
+2023-02-26 01:21:38,556 TADA INFO   test-id: 85f5d33b1f73aca9336fd84d68cae16277eadb60acd4f8d01d94dbbf402cd72c
+2023-02-26 01:21:38,556 TADA INFO   test-suite: LDMSD
+2023-02-26 01:21:38,556 TADA INFO   test-name: setgroup_test
+2023-02-26 01:21:38,556 TADA INFO   test-user: narate
+2023-02-26 01:21:38,556 TADA INFO   commit-id: bc0f8f74668d24081f4afa51c257ea89904705bc
+2023-02-26 01:21:38,557 __main__ INFO -- Get or create the cluster --
+2023-02-26 01:21:47,994 __main__ INFO -- Start daemons --
+2023-02-26 01:21:52,461 __main__ INFO ... wait a bit to make sure ldmsd's are up
+2023-02-26 01:21:57,463 __main__ INFO -- ldms_ls to agg-2 --
+2023-02-26 01:21:57,583 TADA INFO assertion 1, ldms_ls grp on agg-2: dir result verified, passed
+2023-02-26 01:21:59,831 TADA INFO assertion 2, members on agg-2 are being updated: data verified, passed
+2023-02-26 01:21:59,831 __main__ INFO -- Removing test_2 from grp --
+2023-02-26 01:22:00,290 TADA INFO assertion 3, test_2 is removed fom grp on sampler: expect {'node-1/test_1', 'node-1/grp'}, got {'node-1/test_1', 'node-1/grp', 'node-1/test_2'}, failed
 Traceback (most recent call last):
   File "setgroup_test", line 357, in <module>
     test.assert_test(3, False, "expect {}, got {}".format(expect, sets))
   File "/home/narate/cron/ldms-test/TADA.py", line 157, in assert_test
     raise AssertionException(self.test_desc + ", " + cond_str + ": FAILED")
-TADA.AssertionException: LDMSD setgroup 2-level aggregation test, expect {'node-1/grp', 'node-1/test_1'}, got {'node-1/grp', 'node-1/test_1', 'node-1/test_2'}: FAILED
-2023-02-23 01:21:40,406 TADA INFO assertion 4, test_2 is removed from grp on agg-1: skipped
-2023-02-23 01:21:40,407 TADA INFO assertion 5, test_2 is removed from grp on agg-2: skipped
-2023-02-23 01:21:40,407 TADA INFO assertion 6, test_2 is added back to grp on sampler: skipped
-2023-02-23 01:21:40,407 TADA INFO assertion 7, test_2 is added back to grp on agg-1: skipped
-2023-02-23 01:21:40,407 TADA INFO assertion 8, test_2 is added back to grp on agg-2: skipped
-2023-02-23 01:21:40,407 TADA INFO test setgroup_test ended
+TADA.AssertionException: LDMSD setgroup 2-level aggregation test, expect {'node-1/test_1', 'node-1/grp'}, got {'node-1/test_1', 'node-1/grp', 'node-1/test_2'}: FAILED
+2023-02-26 01:22:00,291 TADA INFO assertion 4, test_2 is removed from grp on agg-1: skipped
+2023-02-26 01:22:00,292 TADA INFO assertion 5, test_2 is removed from grp on agg-2: skipped
+2023-02-26 01:22:00,292 TADA INFO assertion 6, test_2 is added back to grp on sampler: skipped
+2023-02-26 01:22:00,292 TADA INFO assertion 7, test_2 is added back to grp on agg-1: skipped
+2023-02-26 01:22:00,292 TADA INFO assertion 8, test_2 is added back to grp on agg-2: skipped
+2023-02-26 01:22:00,292 TADA INFO test setgroup_test ended

@@ -20,7 +20,7 @@ Test Summary
 * [set_array_test](test-log/set_array_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
 * [setgroup_test](test-log/setgroup_test.log): $\textcolor{red}{\text{FAILED}}$
 * [slurm_stream_test](test-log/slurm_stream_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
-* [spank_notifier_test](test-log/spank_notifier_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
+* [spank_notifier_test](test-log/spank_notifier_test.log): $\textcolor{red}{\text{FAILED}}$
 * [ldms_list_test](test-log/ldms_list_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
 * [quick_set_add_rm_test](test-log/quick_set_add_rm_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
 * [set_array_hang_test](test-log/set_array_hang_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
