@@ -1,0 +1,47 @@
+2023-03-07 21:58:17,248 inside_cont_test INFO ===========================================================
+2023-03-07 21:58:17,249 inside_cont_test INFO plugin_config_cmd: Start testing plugin_config_cmd
+2023-03-07 21:58:17,250 TADA INFO starting test `plugin_config_cmd`
+2023-03-07 21:58:17,250 TADA INFO   test-id: 404409890ff383d54b8c52ea14c0d779c5b5b54d31e8b096c4a6841f7ae7c5ab
+2023-03-07 21:58:17,251 TADA INFO   test-suite: LDMSD
+2023-03-07 21:58:17,251 TADA INFO   test-name: plugin_config_cmd
+2023-03-07 21:58:17,251 TADA INFO   test-user: narate
+2023-03-07 21:58:17,251 TADA INFO   commit-id: 661e35a010a7de2ebce0e7918406804bd1fbd726
+2023-03-07 21:58:17,251 inside_cont_test INFO plugin_config_cmd: Preparing the containers
+ready ...2023-03-07 22:55:05,868 inside_cont_test INFO plugin_config_cmd: Running the test script
+2023-03-07 22:55:09,334 TADA INFO assertion status-1, Get the plugin statuses: status is as expected, passed
+2023-03-07 22:55:09,334 TADA INFO assertion load-1, Load a non-existing plugin: resp['errcode'] (4294967295) != 0, passed
+2023-03-07 22:55:09,334 TADA INFO assertion load-2, load a plugin: resp['errcode'] (0) == 0, passed
+2023-03-07 22:55:09,335 TADA INFO assertion load-3, load a loadded plugin: resp['errcode'] (17) == 17, passed
+2023-03-07 22:55:09,335 TADA INFO assertion config-1, Configure a plugin that hasn't been loaded: resp['errcode'] (2) == 2, passed
+2023-03-07 22:55:09,335 TADA INFO assertion config-2, Misconfigure a loadded plugin: resp['errcode'] (22) != 0, passed
+2023-03-07 22:55:09,335 TADA INFO assertion config-3, Correctly configure a loaded plugin: resp['errcode'] (0) == 0, passed
+2023-03-07 22:55:09,335 TADA INFO assertion start-1, Start a plugin that hasn't been loaded: resp['errcode'] (2) == 2, passed
+2023-03-07 22:55:09,335 TADA INFO assertion start-2, Start a store plugin: resp['errcode'] (22) == 22, passed
+2023-03-07 22:55:09,335 TADA INFO assertion start-4, Start a sampler plugin using a negative interval: resp['errcode'] (22) == 22, passed
+2023-03-07 22:55:09,336 TADA INFO assertion start-5, Start a sampler plugin without an offset: resp['errcode'] (0) == 0, passed
+2023-03-07 22:55:09,336 TADA INFO assertion start-3, Start a running sampler plugin: resp['errcode'] (16) == 16, passed
+2023-03-07 22:55:09,336 TADA INFO assertion start-6, Start a sampler plugin with an offset larger than half of interval: resp['errcode'] (0) == 0, passed
+2023-03-07 22:55:09,336 TADA INFO assertion start-7, Start a sampler plugin: resp['errcode'] (0) == 0, passed
+2023-03-07 22:55:09,336 TADA INFO assertion start-8, Check the status of the plugins: status is as expected, passed
+2023-03-07 22:55:09,336 TADA INFO assertion stop-1, Stop a p lugin that hasn't been loaded: resp['errcode'] (2) == 2, passed
+2023-03-07 22:55:09,337 TADA INFO assertion stop-2, Stop a sampler plugin that is not running: resp['errcode'] (22) != 0, passed
+2023-03-07 22:55:09,337 TADA INFO assertion stop-3, Stop a running sampler plugin: resp['errcode'] (0) == 0, passed
+2023-03-07 22:55:09,337 TADA INFO assertion stop-4, Check the status of the plugins: status is as expected, passed
+2023-03-07 22:55:09,337 TADA INFO assertion term-1, Terminate a plugin that hasn't been loaded: resp['errcode'] (2) == 2, passed
+2023-03-07 22:55:09,337 TADA INFO assertion term-2, Terminate a running sampler plugin: resp['errcode'] (22) == 22, passed
+2023-03-07 22:55:09,337 TADA INFO assertion term-3, Terminate an in-used store plugin: resp['errcode'] (22) == 22, passed
+2023-03-07 22:55:09,338 TADA INFO assertion term-4, Terminate a sampler plugin: resp['errcode'] (0) == 0, passed
+2023-03-07 22:55:09,338 TADA INFO assertion term-5, Terminate a store plugin: resp['errcode'] (0) == 0, passed
+2023-03-07 22:55:09,338 TADA INFO assertion term-6, Check the status of the plugins: status is as expected, passed
+2023-03-07 22:55:09,338 TADA INFO test plugin_config_cmd ended
+Remove containers? ...2023-03-07 22:55:14,393 inside_cont_test INFO plugin_config_cmd: done
+2023-03-07 22:55:15,221 inside_cont_test INFO ===========================================================
+2023-03-07 22:55:15,221 inside_cont_test INFO prdcr_config_cmd: Start testing prdcr_config_cmd
+2023-03-07 22:55:15,223 TADA INFO starting test `prdcr_config_cmd`
+2023-03-07 22:55:15,223 TADA INFO   test-id: b23d922fb977f9af0b718b5fc7c03855a66f6f0e567d236f34ea8fe81a37ee9c
+2023-03-07 22:55:15,223 TADA INFO   test-suite: LDMSD
+2023-03-07 22:55:15,223 TADA INFO   test-name: prdcr_config_cmd
+2023-03-07 22:55:15,223 TADA INFO   test-user: narate
+2023-03-07 22:55:15,223 TADA INFO   commit-id: 661e35a010a7de2ebce0e7918406804bd1fbd726
+2023-03-07 22:55:15,223 inside_cont_test INFO prdcr_config_cmd: Preparing the containers
+ready ...
