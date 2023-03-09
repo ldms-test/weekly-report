@@ -1,15 +1,15 @@
-2023-03-08 22:13:53,972 __main__ INFO -- Get or create the cluster --
-2023-03-08 22:13:53,972 TADA INFO starting test `store_sos_lists_test`
-2023-03-08 22:13:53,972 TADA INFO   test-id: 4769fcf32380cdc9a5f22be45f4c2728dcf6c6abf2bb5efd0b24dd3ce78b2a22
-2023-03-08 22:13:53,972 TADA INFO   test-suite: LDMSD
-2023-03-08 22:13:53,972 TADA INFO   test-name: store_sos_lists_test
-2023-03-08 22:13:53,972 TADA INFO   test-user: narate
-2023-03-08 22:13:53,972 TADA INFO   commit-id: 661e35a010a7de2ebce0e7918406804bd1fbd726
-2023-03-08 22:14:01,595 __main__ INFO Waiting ... for all LDMSDs to start
-2023-03-08 22:14:05,397 __main__ INFO All sampler daemons are up.
-2023-03-08 22:14:05,501 TADA INFO assertion 1, aggregator with store_sos has started properly.: agg_sos.check_ldmsd(), passed
-2023-03-08 22:14:05,603 TADA INFO assertion 2, aggregator with store_csv has started properly.: agg_csv.check_ldmsd(), passed
-2023-03-08 22:14:16,759 TADA INFO assertion 3, store_sos is storing data.: agg.file_exists/store/sos/record_record_record, failed
+2023-03-09 15:10:28,676 __main__ INFO -- Get or create the cluster --
+2023-03-09 15:10:28,676 TADA INFO starting test `store_sos_lists_test`
+2023-03-09 15:10:28,676 TADA INFO   test-id: 317532e12169bf17e6538d4bd27108171f3e0d81f412b91848bab26c35572754
+2023-03-09 15:10:28,676 TADA INFO   test-suite: LDMSD
+2023-03-09 15:10:28,676 TADA INFO   test-name: store_sos_lists_test
+2023-03-09 15:10:28,676 TADA INFO   test-user: narate
+2023-03-09 15:10:28,677 TADA INFO   commit-id: 661e35a010a7de2ebce0e7918406804bd1fbd726
+2023-03-09 15:10:36,186 __main__ INFO Waiting ... for all LDMSDs to start
+2023-03-09 15:10:40,051 __main__ INFO All sampler daemons are up.
+2023-03-09 15:10:40,168 TADA INFO assertion 1, aggregator with store_sos has started properly.: agg_sos.check_ldmsd(), passed
+2023-03-09 15:10:40,276 TADA INFO assertion 2, aggregator with store_csv has started properly.: agg_csv.check_ldmsd(), passed
+2023-03-09 15:10:51,289 TADA INFO assertion 3, store_sos is storing data.: agg.file_exists/store/sos/record_record_record, failed
 Traceback (most recent call last):
   File "store_list_record_test", line 433, in <module>
     data = sos_query(agg_sos, store_sos_db_get(schema), schema, "time_job_comp")
@@ -17,9 +17,9 @@ Traceback (most recent call last):
     raise RuntimeError("sos_cmd error {}, out: {}".format(rc, out))
 RuntimeError: sos_cmd error 1, out: Error 2 opening the container /store/sos/record_record_record.
 
-2023-03-08 22:14:16,879 TADA INFO assertion 4, store_sos stores data correctly.: skipped
-2023-03-08 22:14:16,879 TADA INFO assertion 5, store_sos stores data after restarted correctly.: skipped
-2023-03-08 22:14:16,879 TADA INFO assertion 6, store_csv is storing data.: skipped
-2023-03-08 22:14:16,879 TADA INFO assertion 7, store_csv stores data correctly.: skipped
-2023-03-08 22:14:16,879 TADA INFO assertion 8, store_csv stores data after restarted correctly.: skipped
-2023-03-08 22:14:16,879 TADA INFO test store_sos_lists_test ended
+2023-03-09 15:10:51,399 TADA INFO assertion 4, store_sos stores data correctly.: skipped
+2023-03-09 15:10:51,399 TADA INFO assertion 5, store_sos stores data after restarted correctly.: skipped
+2023-03-09 15:10:51,399 TADA INFO assertion 6, store_csv is storing data.: skipped
+2023-03-09 15:10:51,399 TADA INFO assertion 7, store_csv stores data correctly.: skipped
+2023-03-09 15:10:51,399 TADA INFO assertion 8, store_csv stores data after restarted correctly.: skipped
+2023-03-09 15:10:51,399 TADA INFO test store_sos_lists_test ended
