@@ -1,56 +1,81 @@
-2023-03-07 21:24:11,961 TADA INFO starting test `ldmsd_stream_test`
-2023-03-07 21:24:11,961 TADA INFO   test-id: 33d8b4d7a2c19959ac788c5f9ffc5dd1a2ba5392b4e92c88ba224e08cec36bea
-2023-03-07 21:24:11,961 TADA INFO   test-suite: LDMSD
-2023-03-07 21:24:11,961 TADA INFO   test-name: ldmsd_stream_test
-2023-03-07 21:24:11,961 TADA INFO   test-user: narate
-2023-03-07 21:24:11,961 TADA INFO   commit-id: 661e35a010a7de2ebce0e7918406804bd1fbd726
-2023-03-07 21:24:23,130 __main__ INFO waiting for libraries to be available across all containers...
-2023-03-07 21:24:24,030 __main__ INFO _lib_avail: True
-2023-03-07 21:25:31,301 __main__ INFO test ldmsd_stream_subscribe with large json streams
-2023-03-07 21:25:37,426 __main__ INFO --- Sending stream to ldmsd_stream_subscriber
-2023-03-07 21:25:50,652 __main__ INFO --- Verifying the received streams
-2023-03-07 21:25:52,268 TADA INFO assertion 1, ldmsd_stream_subscribe receives large json streams: Verify all streams were received correctly, passed
-2023-03-07 21:25:52,493 __main__ INFO test LDMSD with large json streams
-2023-03-07 21:25:58,575 __main__ INFO --- Sending stream to samplerd
-2023-03-07 21:26:17,283 __main__ INFO --- Verifying the streams received by samplerd
-2023-03-07 21:26:17,471 TADA INFO assertion 2, samplerd receives large json streams: Traceback (most recent call last):
+2023-03-08 21:42:34,832 TADA INFO starting test `ldmsd_stream_test`
+2023-03-08 21:42:34,833 TADA INFO   test-id: 4a10db87ba88b707a40f803a8e877314caa9f012d81ab9a10a6fee272ea5ea2b
+2023-03-08 21:42:34,833 TADA INFO   test-suite: LDMSD
+2023-03-08 21:42:34,833 TADA INFO   test-name: ldmsd_stream_test
+2023-03-08 21:42:34,833 TADA INFO   test-user: narate
+2023-03-08 21:42:34,833 TADA INFO   commit-id: 661e35a010a7de2ebce0e7918406804bd1fbd726
+2023-03-08 21:42:46,072 __main__ INFO waiting for libraries to be available across all containers...
+2023-03-08 21:42:46,993 __main__ INFO _lib_avail: True
+2023-03-08 21:43:54,361 __main__ INFO test ldmsd_stream_subscribe with large json streams
+2023-03-08 21:44:00,493 __main__ INFO --- Sending stream to ldmsd_stream_subscriber
+2023-03-08 21:44:13,820 __main__ INFO --- Verifying the received streams
+2023-03-08 21:44:15,349 TADA INFO assertion 1, ldmsd_stream_subscribe receives large json streams: Verify all streams were received correctly, passed
+2023-03-08 21:44:15,570 __main__ INFO test LDMSD with large json streams
+2023-03-08 21:44:21,683 __main__ INFO --- Sending stream to samplerd
+2023-03-08 21:44:40,246 __main__ INFO --- Verifying the streams received by samplerd
+2023-03-08 21:44:40,466 TADA INFO assertion 2, samplerd receives large json streams: Traceback (most recent call last):
   File "/tada-src/python/stream_check.py", line 46, in <module>
     fo = open(fout)
 FileNotFoundError: [Errno 2] No such file or directory: '/data/samplerd-large-json.out'
 , failed
-Traceback (most recent call last):
-  File "ldmsd_stream_test", line 433, in ldmsd_case
-    result = test_stream_sampler_check(samplerd_cont, cont_fin, cont_samplerd_fout, SAMPLE_SIZES[data_sz])
-  File "ldmsd_stream_test", line 273, in test_stream_sampler_check
-    raise LDMSDStreamTestFail(out)
-__main__.LDMSDStreamTestFail: Traceback (most recent call last):
+2023-03-08 21:44:40,466 __main__ INFO --- Verifying the streams received by samplerd
+2023-03-08 21:44:40,664 TADA INFO assertion 3, agg receives large json streams: Traceback (most recent call last):
   File "/tada-src/python/stream_check.py", line 46, in <module>
     fo = open(fout)
-FileNotFoundError: [Errno 2] No such file or directory: '/data/samplerd-large-json.out'
-
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "ldmsd_stream_test", line 482, in <module>
-    ldmsd_case(pub_cont, samplerd_cont, agg_cont, t, sz)
-  File "ldmsd_stream_test", line 435, in ldmsd_case
-    test.assert_test(ASSERTIONS[_assert_name], False, "{}".format(e))
-  File "/home/narate/cron/ldms-test/TADA.py", line 157, in assert_test
-    raise AssertionException(self.test_desc + ", " + cond_str + ": FAILED")
-TADA.AssertionException: ldmsd_stream ..., Traceback (most recent call last):
+FileNotFoundError: [Errno 2] No such file or directory: '/data/agg-large-json.out'
+, failed
+2023-03-08 21:44:40,664 __main__ INFO test ldmsd_stream_subscribe with small json streams
+2023-03-08 21:44:46,796 __main__ INFO --- Sending stream to ldmsd_stream_subscriber
+2023-03-08 21:46:43,135 __main__ INFO --- Verifying the received streams
+2023-03-08 21:46:45,069 TADA INFO assertion 4, ldmsd_stream_subscribe receives small json streams: Verify all streams were received correctly, passed
+2023-03-08 21:46:45,308 __main__ INFO test LDMSD with small json streams
+2023-03-08 21:46:51,353 __main__ INFO --- Sending stream to samplerd
+2023-03-08 21:48:53,577 __main__ INFO --- Verifying the streams received by samplerd
+2023-03-08 21:48:53,774 TADA INFO assertion 5, samplerd receives small json streams: Traceback (most recent call last):
   File "/tada-src/python/stream_check.py", line 46, in <module>
     fo = open(fout)
-FileNotFoundError: [Errno 2] No such file or directory: '/data/samplerd-large-json.out'
-: FAILED
-2023-03-07 21:26:17,473 TADA INFO assertion 3, agg receives large json streams: skipped
-2023-03-07 21:26:17,473 TADA INFO assertion 4, ldmsd_stream_subscribe receives small json streams: skipped
-2023-03-07 21:26:17,473 TADA INFO assertion 5, samplerd receives small json streams: skipped
-2023-03-07 21:26:17,473 TADA INFO assertion 6, agg receives small json streams: skipped
-2023-03-07 21:26:17,473 TADA INFO assertion 7, ldmsd_stream_subscribe receives large string streams: skipped
-2023-03-07 21:26:17,473 TADA INFO assertion 8, samplerd receives large string streams: skipped
-2023-03-07 21:26:17,474 TADA INFO assertion 9, agg receives large string streams: skipped
-2023-03-07 21:26:17,474 TADA INFO assertion 10, ldmsd_stream_subscribe receives small string streams: skipped
-2023-03-07 21:26:17,474 TADA INFO assertion 11, samplerd receives small string streams: skipped
-2023-03-07 21:26:17,474 TADA INFO assertion 12, agg receives small string streams: skipped
-2023-03-07 21:26:17,474 TADA INFO test ldmsd_stream_test ended
+FileNotFoundError: [Errno 2] No such file or directory: '/data/samplerd-small-json.out'
+, failed
+2023-03-08 21:48:53,775 __main__ INFO --- Verifying the streams received by samplerd
+2023-03-08 21:48:53,966 TADA INFO assertion 6, agg receives small json streams: Traceback (most recent call last):
+  File "/tada-src/python/stream_check.py", line 46, in <module>
+    fo = open(fout)
+FileNotFoundError: [Errno 2] No such file or directory: '/data/agg-small-json.out'
+, failed
+2023-03-08 21:48:53,966 __main__ INFO test ldmsd_stream_subscribe with large string streams
+2023-03-08 21:49:00,137 __main__ INFO --- Sending stream to ldmsd_stream_subscriber
+2023-03-08 21:49:13,548 __main__ INFO --- Verifying the received streams
+2023-03-08 21:49:15,167 TADA INFO assertion 7, ldmsd_stream_subscribe receives large string streams: Verify all streams were received correctly, passed
+2023-03-08 21:49:15,387 __main__ INFO test LDMSD with large string streams
+2023-03-08 21:49:21,453 __main__ INFO --- Sending stream to samplerd
+2023-03-08 21:49:40,020 __main__ INFO --- Verifying the streams received by samplerd
+2023-03-08 21:49:40,232 TADA INFO assertion 8, samplerd receives large string streams: Traceback (most recent call last):
+  File "/tada-src/python/stream_check.py", line 46, in <module>
+    fo = open(fout)
+FileNotFoundError: [Errno 2] No such file or directory: '/data/samplerd-large-string.out'
+, failed
+2023-03-08 21:49:40,232 __main__ INFO --- Verifying the streams received by samplerd
+2023-03-08 21:49:40,419 TADA INFO assertion 9, agg receives large string streams: Traceback (most recent call last):
+  File "/tada-src/python/stream_check.py", line 46, in <module>
+    fo = open(fout)
+FileNotFoundError: [Errno 2] No such file or directory: '/data/agg-large-string.out'
+, failed
+2023-03-08 21:49:40,420 __main__ INFO test ldmsd_stream_subscribe with small string streams
+2023-03-08 21:49:46,542 __main__ INFO --- Sending stream to ldmsd_stream_subscriber
+2023-03-08 21:51:43,237 __main__ INFO --- Verifying the received streams
+2023-03-08 21:51:45,167 TADA INFO assertion 10, ldmsd_stream_subscribe receives small string streams: Verify all streams were received correctly, passed
+2023-03-08 21:51:45,398 __main__ INFO test LDMSD with small string streams
+2023-03-08 21:51:51,500 __main__ INFO --- Sending stream to samplerd
+2023-03-08 21:53:53,538 __main__ INFO --- Verifying the streams received by samplerd
+2023-03-08 21:53:53,759 TADA INFO assertion 11, samplerd receives small string streams: Traceback (most recent call last):
+  File "/tada-src/python/stream_check.py", line 46, in <module>
+    fo = open(fout)
+FileNotFoundError: [Errno 2] No such file or directory: '/data/samplerd-small-string.out'
+, failed
+2023-03-08 21:53:53,759 __main__ INFO --- Verifying the streams received by samplerd
+2023-03-08 21:53:53,951 TADA INFO assertion 12, agg receives small string streams: Traceback (most recent call last):
+  File "/tada-src/python/stream_check.py", line 46, in <module>
+    fo = open(fout)
+FileNotFoundError: [Errno 2] No such file or directory: '/data/agg-small-string.out'
+, failed
+2023-03-08 21:53:53,951 TADA INFO test ldmsd_stream_test ended
