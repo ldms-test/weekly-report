@@ -12,11 +12,11 @@ Test Summary
 * [ldmsd_auth_ovis_test](test-log/ldmsd_auth_ovis_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
 * [ldmsd_auth_test](test-log/ldmsd_auth_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
 * [ldmsd_ctrl_test](test-log/ldmsd_ctrl_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
-* [ldmsd_stream_test](test-log/ldmsd_stream_test.log): $\textcolor{red}{\text{FAILED}}$
+* [ldmsd_stream_test](test-log/ldmsd_stream_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
 * [maestro_cfg_test](test-log/maestro_cfg_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
 * [mt-slurm-test](test-log/mt-slurm-test.log): $\textcolor{lightgreen}{\text{PASSED}}$
 * [ovis_ev_test](test-log/ovis_ev_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
-* [prdcr_subscribe_test](test-log/prdcr_subscribe_test.log): $\textcolor{red}{\text{FAILED}}$
+* [prdcr_subscribe_test](test-log/prdcr_subscribe_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
 * [set_array_test](test-log/set_array_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
 * [setgroup_test](test-log/setgroup_test.log): $\textcolor{red}{\text{FAILED}}$
 * [slurm_stream_test](test-log/slurm_stream_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
@@ -29,7 +29,7 @@ Test Summary
 * [ldms_schema_digest_test](test-log/ldms_schema_digest_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
 * [ldmsd_decomp_test](test-log/ldmsd_decomp_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
 * [ldmsd_stream_status_test](test-log/ldmsd_stream_status_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
-* [store_list_record_test](test-log/store_list_record_test.log): $\textcolor{red}{\text{FAILED}}$
+* [store_list_record_test](test-log/store_list_record_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
 * [maestro_raft_test](test-log/maestro_raft_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
 * [ovis_json_test](test-log/ovis_json_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
 * [updtr_add_test](test-log/updtr_add_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
@@ -45,6 +45,7 @@ Test Summary
 * [slurm_sampler2_test](test-log/slurm_sampler2_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
 * [run_inside_cont_test.py](test-log/run_inside_cont_test.py.log): $\textcolor{lightgreen}{\text{PASSED}}$
 * [libovis_log_test](test-log/libovis_log_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
+* [ldmsd_long_config_line_test](test-log/ldmsd_long_config_line_test.log): $\textcolor{red}{\text{FAILED}}$
 * [cont-test-ldms](test-log/cont-test-ldms.log): $\textcolor{lightgreen}{\text{PASSED}}$
 * [cont-test-maestro](test-log/cont-test-maestro.log): $\textcolor{lightgreen}{\text{PASSED}}$
 * [cont-test-maestro-hostmunge](test-log/cont-test-maestro-hostmunge.log): $\textcolor{lightgreen}{\text{PASSED}}$
