@@ -29,7 +29,7 @@ Test Summary
 * [ldms_schema_digest_test](test-log/ldms_schema_digest_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
 * [ldmsd_decomp_test](test-log/ldmsd_decomp_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
 * [ldmsd_stream_status_test](test-log/ldmsd_stream_status_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
-* [store_list_record_test](test-log/store_list_record_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
+* [store_list_record_test](test-log/store_list_record_test.log): $\textcolor{red}{\text{FAILED}}$
 * [maestro_raft_test](test-log/maestro_raft_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
 * [ovis_json_test](test-log/ovis_json_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
 * [updtr_add_test](test-log/updtr_add_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
@@ -44,7 +44,7 @@ Test Summary
 * [ldms_set_info_test](test-log/ldms_set_info_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
 * [slurm_sampler2_test](test-log/slurm_sampler2_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
 * [run_inside_cont_test.py](test-log/run_inside_cont_test.py.log): $\textcolor{lightgreen}{\text{PASSED}}$
-* [libovis_log_test](test-log/libovis_log_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
+* [libovis_log_test](test-log/libovis_log_test.log): $\textcolor{red}{\text{FAILED}}$
 * [ldmsd_long_config_test](test-log/ldmsd_long_config_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
 * [cont-test-ldms](test-log/cont-test-ldms.log): $\textcolor{lightgreen}{\text{PASSED}}$
 * [cont-test-maestro](test-log/cont-test-maestro.log): $\textcolor{lightgreen}{\text{PASSED}}$
