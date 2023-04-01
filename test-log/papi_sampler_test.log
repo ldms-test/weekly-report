@@ -1,32 +1,32 @@
-2023-03-31 00:52:09,029 TADA INFO starting test `papi_sampler_test`
-2023-03-31 00:52:09,029 TADA INFO   test-id: 07285b3946b5acc1d2c34496776bfce52fdb147837f08c06658476d9c7739090
-2023-03-31 00:52:09,029 TADA INFO   test-suite: LDMSD
-2023-03-31 00:52:09,029 TADA INFO   test-name: papi_sampler_test
-2023-03-31 00:52:09,029 TADA INFO   test-user: narate
-2023-03-31 00:52:09,029 TADA INFO   commit-id: 21baf08f6cc91323a5fd20bf2a1498a48cd12731
-2023-03-31 00:52:09,030 __main__ INFO -- Get or create the cluster --
-2023-03-31 00:52:14,264 __main__ INFO -- Start daemons --
-2023-03-31 00:52:24,252 TADA INFO assertion 0, ldmsd has started: verified, passed
-2023-03-31 00:52:24,474 TADA INFO assertion 1.1, Non-papi job is submitted: jobid(1) > 0, passed
-2023-03-31 00:52:29,595 TADA INFO assertion 1.2, Non-papi job is running before ldms_ls: STATE = RUNNING, passed
-2023-03-31 00:52:29,759 TADA INFO assertion 1.3, Non-papi job is running after ldms_ls: STATE = RUNNING, passed
-2023-03-31 00:52:29,760 TADA INFO assertion 1, Non-papi job does not create set: verified, passed
-2023-03-31 00:52:43,574 TADA INFO assertion 2, papi job creates set: PAPI set created, passed
-2023-03-31 00:52:43,574 TADA INFO assertion 2.2, Schema name is set accordingly: schema name == papi0, passed
-2023-03-31 00:52:43,574 TADA INFO assertion 2.1, Events in papi job set created according to config file: {'PAPI_TOT_INS'} == {'PAPI_TOT_INS'}, passed
-2023-03-31 00:52:43,575 TADA INFO assertion 2.3, PAPI set has correct job_id: 2 == 2, passed
-2023-03-31 00:52:43,812 TADA INFO assertion 2.4, PAPI set has correct task_pids: jobid/ranks/pids verified, passed
-2023-03-31 00:52:49,644 TADA INFO assertion 3, papi job creates set: PAPI set created, passed
-2023-03-31 00:52:49,645 TADA INFO assertion 3.2, Schema name is set accordingly: schema name == papi1, passed
-2023-03-31 00:52:49,645 TADA INFO assertion 3.1, Events in papi job set created according to config file: {'PAPI_TOT_INS', 'PAPI_BR_MSP'} == {'PAPI_TOT_INS', 'PAPI_BR_MSP'}, passed
-2023-03-31 00:52:49,645 TADA INFO assertion 3.3, PAPI set has correct job_id: 3 == 3, passed
-2023-03-31 00:52:49,885 TADA INFO assertion 3.4, PAPI set has correct task_pids: jobid/ranks/pids verified, passed
-2023-03-31 00:52:49,885 TADA INFO assertion 4, Multiple, concurrent jobs results in concurrent, multiple sets: LDMS sets ({'node-1/papi1/3.0', 'node-1/meminfo', 'node-1/papi0/2.0'}), passed
-2023-03-31 00:53:00,417 TADA INFO assertion 6, PAPI set persists within `job_expiry` after job exited: verified, passed
-2023-03-31 00:53:40,723 TADA INFO assertion 7, PAPI set is deleted after `2.2 x job_expiry` since job exited: node-1/meminfo deleted, passed
-2023-03-31 00:53:43,055 TADA INFO assertion 8, Missing config file attribute is logged: : papi_sampler[519]: papi_config object must contain either the 'file' or 'config' attribute., passed
-2023-03-31 00:53:48,506 TADA INFO assertion 9, Bad config file is logged: : papi_sampler: configuration file syntax error., passed
-2023-03-31 00:53:48,506 __main__ INFO -- Finishing Test --
-2023-03-31 00:53:48,507 TADA INFO test papi_sampler_test ended
-2023-03-31 00:53:48,507 __main__ INFO -- Cleaning up files --
-2023-03-31 00:53:48,507 __main__ INFO -- Removing the virtual cluster --
+2023-04-01 00:52:16,725 TADA INFO starting test `papi_sampler_test`
+2023-04-01 00:52:16,725 TADA INFO   test-id: 6e5325f555b3d7cac13936e64655e148f51f59b47ca1bb53a23bbea33ac34c90
+2023-04-01 00:52:16,725 TADA INFO   test-suite: LDMSD
+2023-04-01 00:52:16,725 TADA INFO   test-name: papi_sampler_test
+2023-04-01 00:52:16,725 TADA INFO   test-user: narate
+2023-04-01 00:52:16,725 TADA INFO   commit-id: 21baf08f6cc91323a5fd20bf2a1498a48cd12731
+2023-04-01 00:52:16,726 __main__ INFO -- Get or create the cluster --
+2023-04-01 00:52:22,126 __main__ INFO -- Start daemons --
+2023-04-01 00:52:32,149 TADA INFO assertion 0, ldmsd has started: verified, passed
+2023-04-01 00:52:32,391 TADA INFO assertion 1.1, Non-papi job is submitted: jobid(1) > 0, passed
+2023-04-01 00:52:37,526 TADA INFO assertion 1.2, Non-papi job is running before ldms_ls: STATE = RUNNING, passed
+2023-04-01 00:52:37,683 TADA INFO assertion 1.3, Non-papi job is running after ldms_ls: STATE = RUNNING, passed
+2023-04-01 00:52:37,683 TADA INFO assertion 1, Non-papi job does not create set: verified, passed
+2023-04-01 00:52:51,526 TADA INFO assertion 2, papi job creates set: PAPI set created, passed
+2023-04-01 00:52:51,527 TADA INFO assertion 2.2, Schema name is set accordingly: schema name == papi0, passed
+2023-04-01 00:52:51,527 TADA INFO assertion 2.1, Events in papi job set created according to config file: {'PAPI_TOT_INS'} == {'PAPI_TOT_INS'}, passed
+2023-04-01 00:52:51,527 TADA INFO assertion 2.3, PAPI set has correct job_id: 2 == 2, passed
+2023-04-01 00:52:51,740 TADA INFO assertion 2.4, PAPI set has correct task_pids: jobid/ranks/pids verified, passed
+2023-04-01 00:52:57,575 TADA INFO assertion 3, papi job creates set: PAPI set created, passed
+2023-04-01 00:52:57,575 TADA INFO assertion 3.2, Schema name is set accordingly: schema name == papi1, passed
+2023-04-01 00:52:57,576 TADA INFO assertion 3.1, Events in papi job set created according to config file: {'PAPI_TOT_INS', 'PAPI_BR_MSP'} == {'PAPI_TOT_INS', 'PAPI_BR_MSP'}, passed
+2023-04-01 00:52:57,576 TADA INFO assertion 3.3, PAPI set has correct job_id: 3 == 3, passed
+2023-04-01 00:52:57,789 TADA INFO assertion 3.4, PAPI set has correct task_pids: jobid/ranks/pids verified, passed
+2023-04-01 00:52:57,790 TADA INFO assertion 4, Multiple, concurrent jobs results in concurrent, multiple sets: LDMS sets ({'node-1/papi1/3.0', 'node-1/meminfo', 'node-1/papi0/2.0'}), passed
+2023-04-01 00:53:08,370 TADA INFO assertion 6, PAPI set persists within `job_expiry` after job exited: verified, passed
+2023-04-01 00:53:48,713 TADA INFO assertion 7, PAPI set is deleted after `2.2 x job_expiry` since job exited: node-1/meminfo deleted, passed
+2023-04-01 00:53:51,049 TADA INFO assertion 8, Missing config file attribute is logged: : papi_sampler[519]: papi_config object must contain either the 'file' or 'config' attribute., passed
+2023-04-01 00:53:56,508 TADA INFO assertion 9, Bad config file is logged: : papi_sampler: configuration file syntax error., passed
+2023-04-01 00:53:56,508 __main__ INFO -- Finishing Test --
+2023-04-01 00:53:56,509 TADA INFO test papi_sampler_test ended
+2023-04-01 00:53:56,509 __main__ INFO -- Cleaning up files --
+2023-04-01 00:53:56,509 __main__ INFO -- Removing the virtual cluster --
