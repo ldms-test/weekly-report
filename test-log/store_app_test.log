@@ -1,16 +1,28 @@
-2023-04-15 00:55:06,049 TADA INFO starting test `store_app_test`
-2023-04-15 00:55:06,050 TADA INFO   test-id: c4a1311cbe4e61444d4d196e9b6feab94cf61e659c359e0f9c9309d1bafd5e51
-2023-04-15 00:55:06,050 TADA INFO   test-suite: LDMSD
-2023-04-15 00:55:06,050 TADA INFO   test-name: store_app_test
-2023-04-15 00:55:06,050 TADA INFO   test-user: narate
-2023-04-15 00:55:06,050 TADA INFO   commit-id: 68e667bc44eaab858e3e6780ff486ecea127db3a
-2023-04-15 00:55:06,051 __main__ INFO -- Get or create the cluster --
-2023-04-15 00:55:20,997 __main__ INFO -- Preparing job script & programs --
-2023-04-15 00:55:21,386 __main__ INFO -- Start daemons --
-2023-04-15 00:55:33,607 __main__ INFO ... wait a bit to make sure ldmsd's are up
-2023-04-15 00:55:38,614 __main__ INFO -- Submitting jobs --
-2023-04-15 00:55:38,844 __main__ INFO job_one: 1
-2023-04-15 00:55:43,972 __main__ INFO job_two: 2
-2023-04-15 00:56:46,634 __main__ INFO Verifying data ...
-2023-04-15 00:58:51,741 TADA INFO assertion 1, Verify data: sos data is not empty and sos data < ldms_ls data, passed
-2023-04-15 00:58:51,742 TADA INFO test store_app_test ended
+2023-04-16 00:55:17,978 TADA INFO starting test `store_app_test`
+2023-04-16 00:55:17,979 TADA INFO   test-id: 858d79c79ddddf8d0d168d24bc5b44a58f6f069f1a62c3528542178232258f21
+2023-04-16 00:55:17,979 TADA INFO   test-suite: LDMSD
+2023-04-16 00:55:17,979 TADA INFO   test-name: store_app_test
+2023-04-16 00:55:17,979 TADA INFO   test-user: narate
+2023-04-16 00:55:17,979 TADA INFO   commit-id: b36fe782e0bfd073a535d0c799fb7583402519e3
+2023-04-16 00:55:17,980 __main__ INFO -- Get or create the cluster --
+2023-04-16 00:55:32,495 __main__ INFO -- Preparing job script & programs --
+2023-04-16 00:55:32,911 __main__ INFO -- Start daemons --
+2023-04-16 00:55:45,257 __main__ INFO ... wait a bit to make sure ldmsd's are up
+2023-04-16 00:55:50,264 __main__ INFO -- Submitting jobs --
+2023-04-16 00:55:50,460 __main__ INFO job_one: 1
+2023-04-16 00:55:55,586 __main__ INFO job_two: 2
+Exception in thread ldms_ls_thread:
+Traceback (most recent call last):
+  File "/usr/lib64/python3.6/threading.py", line 916, in _bootstrap_inner
+    self.run()
+  File "store_app_test", line 402, in run
+    result = ldms_ls("agg-2", 10000)
+  File "store_app_test", line 314, in ldms_ls
+    return parse_ldms_ls(out)
+  File "/home/narate/cron/ldms-test/LDMS_Test.py", line 176, in parse_ldms_ls
+    raise RuntimeError("Bad line format: {}".format(l))
+RuntimeError: Bad line format: ldms_ls: Error 2 looking up metric set.
+
+2023-04-16 00:57:00,091 __main__ INFO Verifying data ...
+2023-04-16 00:59:05,089 TADA INFO assertion 1, Verify data: sos data is not empty and sos data < ldms_ls data, passed
+2023-04-16 00:59:05,089 TADA INFO test store_app_test ended
