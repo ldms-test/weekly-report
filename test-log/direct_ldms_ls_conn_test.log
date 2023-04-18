@@ -1,18 +1,24 @@
-2023-04-17 00:48:57,650 TADA INFO starting test `direct_ldms_ls_conn_test`
-2023-04-17 00:48:57,650 TADA INFO   test-id: 1e8ad5f059e1165aae01f0e9c346bc1ecae59ac203b271a67989419934aa6728
-2023-04-17 00:48:57,650 TADA INFO   test-suite: LDMSD
-2023-04-17 00:48:57,651 TADA INFO   test-name: direct_ldms_ls_conn_test
-2023-04-17 00:48:57,651 TADA INFO   test-user: narate
-2023-04-17 00:48:57,651 TADA INFO   commit-id: b36fe782e0bfd073a535d0c799fb7583402519e3
-2023-04-17 00:48:57,886 __main__ INFO starting munged on cygnus-01-iw
-2023-04-17 00:48:58,200 __main__ INFO starting munged on localhost
-2023-04-17 00:48:58,433 __main__ INFO starting ldmsd on cygnus-01-iw
-2023-04-17 00:48:58,765 TADA INFO assertion 0, Start ldmsd sampler and munged: OK, passed
-2023-04-17 00:49:03,968 TADA INFO assertion 1, ldms_ls to the sampler: OK, passed
-2023-04-17 00:49:03,969 __main__ INFO Stopping sampler daemon ...
-2023-04-17 00:49:09,397 TADA INFO assertion 2, Kill the sampler: OK, passed
-2023-04-17 00:49:09,443 TADA INFO assertion 3, ldms_ls to the dead sampler: got expected output, passed
-2023-04-17 00:49:09,485 TADA INFO assertion 4, ldms_ls to a dead host: got expected output, passed
-2023-04-17 00:49:09,486 TADA INFO test direct_ldms_ls_conn_test ended
-2023-04-17 00:49:09,699 __main__ INFO stopping munged on cygnus-01-iw
-2023-04-17 00:49:10,109 __main__ INFO stopping munged on localhost
+2023-04-18 00:48:57,106 TADA INFO starting test `direct_ldms_ls_conn_test`
+2023-04-18 00:48:57,106 TADA INFO   test-id: b988cf4f1c6ba01128138668d9f8ac784aecdb6d0defadd57619591379416738
+2023-04-18 00:48:57,107 TADA INFO   test-suite: LDMSD
+2023-04-18 00:48:57,107 TADA INFO   test-name: direct_ldms_ls_conn_test
+2023-04-18 00:48:57,107 TADA INFO   test-user: narate
+2023-04-18 00:48:57,107 TADA INFO   commit-id: b36fe782e0bfd073a535d0c799fb7583402519e3
+2023-04-18 00:48:57,333 __main__ INFO starting munged on cygnus-01-iw
+2023-04-18 00:48:57,629 __main__ INFO starting munged on localhost
+2023-04-18 00:48:57,873 __main__ INFO starting ldmsd on cygnus-01-iw
+2023-04-18 00:48:58,212 TADA INFO assertion 0, Start ldmsd sampler and munged: OK, passed
+2023-04-18 00:49:03,320 TADA INFO assertion 1, ldms_ls to the sampler: ldms_ls failed, output:
+Tue Apr 18 00:49:03 2023:    ERROR: auth_munge: munge_decode() failed. Invalid credential
+Connection failed/rejected.
+, failed
+Traceback (most recent call last):
+  File "direct_ldms_ls_conn_test", line 281, in <module>
+    raise RuntimeError("ldms_ls rc: {}".format(rc))
+RuntimeError: ldms_ls rc: 1
+2023-04-18 00:49:03,321 TADA INFO assertion 2, Kill the sampler: skipped
+2023-04-18 00:49:03,322 TADA INFO assertion 3, ldms_ls to the dead sampler: skipped
+2023-04-18 00:49:03,322 TADA INFO assertion 4, ldms_ls to a dead host: skipped
+2023-04-18 00:49:03,322 TADA INFO test direct_ldms_ls_conn_test ended
+2023-04-18 00:49:03,527 __main__ INFO stopping munged on cygnus-01-iw
+2023-04-18 00:49:03,946 __main__ INFO stopping munged on localhost
