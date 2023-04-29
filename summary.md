@@ -1,7 +1,7 @@
 Test Summary
 ============
-* [direct_ldms_ls_conn_test](test-log/direct_ldms_ls_conn_test.log): $\textcolor{red}{\text{FAILED}}$
-* [direct_prdcr_subscribe_test](test-log/direct_prdcr_subscribe_test.log): $\textcolor{red}{\text{FAILED}}$
+* [direct_ldms_ls_conn_test](test-log/direct_ldms_ls_conn_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
+* [direct_prdcr_subscribe_test](test-log/direct_prdcr_subscribe_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
 * [agg_slurm_test](test-log/agg_slurm_test.log): $\textcolor{red}{\text{FAILED}}$
 * [papi_sampler_test](test-log/papi_sampler_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
 * [papi_store_test](test-log/papi_store_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
@@ -42,7 +42,7 @@ Test Summary
 * [updtr_status_test](test-log/updtr_status_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
 * [ldmsd_flex_decomp_test](test-log/ldmsd_flex_decomp_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
 * [ldms_set_info_test](test-log/ldms_set_info_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
-* [slurm_sampler2_test](test-log/slurm_sampler2_test.log): $\textcolor{red}{\text{FAILED}}$
+* [slurm_sampler2_test](test-log/slurm_sampler2_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
 * [run_inside_cont_test.py](test-log/run_inside_cont_test.py.log): $\textcolor{lightgreen}{\text{PASSED}}$
 * [libovis_log_test](test-log/libovis_log_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
 * [ldmsd_long_config_test](test-log/ldmsd_long_config_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
