@@ -1,20 +1,44 @@
-2023-05-06 01:08:21,491 TADA INFO starting test `ldmsd_ctrl_test`
-2023-05-06 01:08:21,491 TADA INFO   test-id: cf9cf5eeeeb8f1f9d4a73bc877b99a4ebd27deeee9553478923ce1e2cc205709
-2023-05-06 01:08:21,492 TADA INFO   test-suite: LDMSD
-2023-05-06 01:08:21,492 TADA INFO   test-name: ldmsd_ctrl_test
-2023-05-06 01:08:21,492 TADA INFO   test-user: narate
-2023-05-06 01:08:21,492 TADA INFO   commit-id: c7f935ea14b1559e0062b36bbaf3358d515ce391
-2023-05-06 01:08:21,492 __main__ INFO -- Get or create the cluster --
-2023-05-06 01:08:30,783 __main__ INFO -- Start daemons --
-2023-05-06 01:08:35,198 __main__ INFO ... wait a bit to make sure ldmsd's are up
-2023-05-06 01:08:41,320 TADA INFO assertion 1, ldmsd_controller interactive session: connected, passed
-2023-05-06 01:08:42,436 TADA INFO assertion 2, ldmsctl interactive session: connected, passed
-2023-05-06 01:08:43,037 TADA INFO assertion 3, ldmsd_controller start bogus producer: expected output verified, passed
-2023-05-06 01:08:43,639 TADA INFO assertion 4, ldmsctl start bogus producer: expected output verified, passed
-2023-05-06 01:08:44,240 TADA INFO assertion 5, ldmsd_controller bogus command: expected output verified, passed
-2023-05-06 01:08:44,842 TADA INFO assertion 6, ldmsctl bogus command: expected output verified, passed
-2023-05-06 01:08:45,443 TADA INFO assertion 7, ldmsd_controller load bogus plugin: expected output verified, passed
-2023-05-06 01:08:46,045 TADA INFO assertion 8, ldmsctl load bogus plugin: expected output verified, passed
-2023-05-06 01:09:03,247 TADA INFO assertion 9, ldmsd_controller prdcr/updtr: verified, passed
-2023-05-06 01:09:20,455 TADA INFO assertion 10, ldmsctl prdcr/updtr: verified, passed
-2023-05-06 01:09:20,456 TADA INFO test ldmsd_ctrl_test ended
+2023-05-07 01:19:06,078 TADA INFO starting test `ldmsd_ctrl_test`
+2023-05-07 01:19:06,078 TADA INFO   test-id: b6c9a51fcba5c271fb21c3ccd4f5f1b23d80483b6638415f1a898d1dd9e409ea
+2023-05-07 01:19:06,078 TADA INFO   test-suite: LDMSD
+2023-05-07 01:19:06,078 TADA INFO   test-name: ldmsd_ctrl_test
+2023-05-07 01:19:06,078 TADA INFO   test-user: narate
+2023-05-07 01:19:06,078 TADA INFO   commit-id: c7f935ea14b1559e0062b36bbaf3358d515ce391
+2023-05-07 01:19:06,079 __main__ INFO -- Get or create the cluster --
+2023-05-07 01:21:59,915 __main__ INFO -- Start daemons --
+2023-05-07 01:22:04,344 __main__ INFO ... wait a bit to make sure ldmsd's are up
+2023-05-07 01:22:10,467 TADA INFO assertion 1, ldmsd_controller interactive session: Unexpected welcome message: , failed
+2023-05-07 01:22:11,583 TADA INFO assertion 2, ldmsctl interactive session: Unexpected welcome message: , failed
+2023-05-07 01:22:12,185 TADA INFO assertion 3, ldmsd_controller start bogus producer: Unexpected output: prdcr_start name=bogus
+, failed
+2023-05-07 01:22:12,786 TADA INFO assertion 4, ldmsctl start bogus producer: Unexpected output: prdcr_start name=bogus
+, failed
+2023-05-07 01:22:13,388 TADA INFO assertion 5, ldmsd_controller bogus command: Unexpected output: bogus
+, failed
+2023-05-07 01:22:13,989 TADA INFO assertion 6, ldmsctl bogus command: Unexpected output: bogus
+, failed
+2023-05-07 01:22:14,591 TADA INFO assertion 7, ldmsd_controller load bogus plugin: Unexpected output: load name=bogus
+, failed
+2023-05-07 01:22:15,192 TADA INFO assertion 8, ldmsctl load bogus plugin: Unexpected output: load name=bogus
+, failed
+2023-05-07 01:22:18,196 TADA INFO assertion 9, ldmsd_controller prdcr/updtr: Unexpected output: prdcr_add name=prdcr host=node-1 xprt=sock port=10000 type=active interval=1000000
+prdcr_start name=prdcr
+updtr_add name=updtr interval=1000000 offset=500000
+updtr_prdcr_add name=updtr regex=prdcr
+updtr_start name=updtr
+, failed
+2023-05-07 01:22:21,201 TADA INFO assertion 10, ldmsctl prdcr/updtr: Unexpected output: prdcr_add name=prdcr host=node-1 xprt=sock port=10000 type=active interval=1000000
+prdcr_start name=prdcr
+ldmsctl> prdcr_start name=bogus
+The producer specified does not exist.
+ldmsctl> bogus
+Unrecognized command 'bogus'
+ldmsctl> load name=bogus
+Failed to load the plugin 'bogus'. dlerror /opt/ovis/lib64/ovis-ldms/libbogus.so: cannot open shared object file: No such file or directory
+ldmsctl> prdcr_add name=prdcr host=node-1 xprt=sock port=10000 type=active interval=1000000
+ldmsctl> prdcr_start name=prdcr
+ldmsctl> updtr_add name=updtr interval=1000000 offset=500000
+ldmsctl> updtr_prdcr_add name=updtr regex=prdcr
+ldmsctl> updtr_start name=updtr
+ldmsctl> , failed
+2023-05-07 01:22:21,202 TADA INFO test ldmsd_ctrl_test ended
