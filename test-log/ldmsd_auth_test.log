@@ -1,81 +1,15 @@
-2023-05-07 01:18:01,100 TADA INFO starting test `ldmsd_auth_test`
-2023-05-07 01:18:01,101 TADA INFO   test-id: 489b64c186c46c711bbdb1499e46747e15dbff7e6fccd9a83c743f7ac4cf8e91
-2023-05-07 01:18:01,101 TADA INFO   test-suite: LDMSD
-2023-05-07 01:18:01,101 TADA INFO   test-name: ldmsd_auth_test
-2023-05-07 01:18:01,101 TADA INFO   test-user: narate
-2023-05-07 01:18:01,101 TADA INFO   commit-id: c7f935ea14b1559e0062b36bbaf3358d515ce391
-2023-05-07 01:18:01,101 __main__ INFO -- Get or create the cluster --
-Traceback (most recent call last):
-  File "/usr/lib/python3.6/site-packages/docker/api/client.py", line 261, in _raise_for_status
-    response.raise_for_status()
-  File "/usr/lib/python3.6/site-packages/requests/models.py", line 941, in raise_for_status
-    raise HTTPError(http_error_msg, response=self)
-requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http+docker://localhost/v1.35/networks/narate-ldmsd_auth_test-c7f935e
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/home/narate/cron/ldms-test/runtime/docker.py", line 685, in _get
-    net = dc.networks.get(name)
-  File "/usr/lib/python3.6/site-packages/docker/models/networks.py", line 180, in get
-    self.client.api.inspect_network(network_id, *args, **kwargs)
-  File "/usr/lib/python3.6/site-packages/docker/utils/decorators.py", line 19, in wrapped
-    return f(self, resource_id, *args, **kwargs)
-  File "/usr/lib/python3.6/site-packages/docker/api/network.py", line 213, in inspect_network
-    return self._result(res, json=True)
-  File "/usr/lib/python3.6/site-packages/docker/api/client.py", line 267, in _result
-    self._raise_for_status(response)
-  File "/usr/lib/python3.6/site-packages/docker/api/client.py", line 263, in _raise_for_status
-    raise create_api_error_from_http_exception(e)
-  File "/usr/lib/python3.6/site-packages/docker/errors.py", line 31, in create_api_error_from_http_exception
-    raise cls(e, response=response, explanation=explanation)
-docker.errors.NotFound: 404 Client Error: Not Found ("network narate-ldmsd_auth_test-c7f935e not found")
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/home/narate/cron/ldms-test/LDMS_Test.py", line 1619, in get
-    cluster = _cls._get(name)
-  File "/home/narate/cron/ldms-test/runtime/docker.py", line 688, in _get
-    raise LookupError()
-LookupError
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/usr/lib/python3.6/site-packages/docker/api/client.py", line 261, in _raise_for_status
-    response.raise_for_status()
-  File "/usr/lib/python3.6/site-packages/requests/models.py", line 941, in raise_for_status
-    raise HTTPError(http_error_msg, response=self)
-requests.exceptions.HTTPError: 500 Server Error: Internal Server Error for url: http+docker://localhost/v1.35/containers/cb10b2757190432c77eb140f3bee757b098711bb299c88440c9b90795d09b0e4/start
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "ldmsd_auth_test", line 352, in <module>
-    cluster = LDMSDCluster.get(spec["name"], create = True, spec = spec)
-  File "/home/narate/cron/ldms-test/LDMS_Test.py", line 1626, in get
-    return _cls.create(spec)
-  File "/home/narate/cron/ldms-test/LDMS_Test.py", line 1597, in create
-    cluster = _cls._create(spec)
-  File "/home/narate/cron/ldms-test/runtime/docker.py", line 419, in _create
-    return cls.__create(spec=sp, **kwargs)
-  File "/home/narate/cron/ldms-test/runtime/docker.py", line 597, in __create
-    cont.start()
-  File "/usr/lib/python3.6/site-packages/docker/models/containers.py", line 400, in start
-    return self.client.api.start(self.id, **kwargs)
-  File "/usr/lib/python3.6/site-packages/docker/utils/decorators.py", line 19, in wrapped
-    return f(self, resource_id, *args, **kwargs)
-  File "/usr/lib/python3.6/site-packages/docker/api/container.py", line 1095, in start
-    self._raise_for_status(res)
-  File "/usr/lib/python3.6/site-packages/docker/api/client.py", line 263, in _raise_for_status
-    raise create_api_error_from_http_exception(e)
-  File "/usr/lib/python3.6/site-packages/docker/errors.py", line 31, in create_api_error_from_http_exception
-    raise cls(e, response=response, explanation=explanation)
-docker.errors.APIError: 500 Server Error: Internal Server Error ("attaching to network failed, make sure your network options are correct and check manager logs: context deadline exceeded")
-2023-05-07 01:18:53,888 TADA INFO assertion 1, root@agg-2(dom3) ldms_ls to agg-2:10000: skipped
-2023-05-07 01:18:53,888 TADA INFO assertion 2, user@agg-2(dom3) ldms_ls to agg-2:10000: skipped
-2023-05-07 01:18:53,888 TADA INFO assertion 3, root@headnode(dom4) ldms_ls to agg-2:10001: skipped
-2023-05-07 01:18:53,888 TADA INFO assertion 4, user@headnode(dom4) ldms_ls to agg-2:10001: skipped
-2023-05-07 01:18:53,889 TADA INFO assertion 5, root@headnode(dom4) ldms_ls to agg-11:10000: skipped
-2023-05-07 01:18:53,889 TADA INFO test ldmsd_auth_test ended
+2023-05-08 01:06:10,797 TADA INFO starting test `ldmsd_auth_test`
+2023-05-08 01:06:10,798 TADA INFO   test-id: e62e07f0f40e6c0b6da349f6aadb3d1d443f36850966c438b2291703cb57bda1
+2023-05-08 01:06:10,798 TADA INFO   test-suite: LDMSD
+2023-05-08 01:06:10,798 TADA INFO   test-name: ldmsd_auth_test
+2023-05-08 01:06:10,798 TADA INFO   test-user: narate
+2023-05-08 01:06:10,798 TADA INFO   commit-id: b160bd2466cb9da31df328bd27e4d2aff048d5e1
+2023-05-08 01:06:10,799 __main__ INFO -- Get or create the cluster --
+2023-05-08 01:06:28,848 __main__ INFO -- Start daemons --
+2023-05-08 01:06:47,873 __main__ INFO ... wait a bit to make sure ldmsd's are up
+2023-05-08 01:06:52,989 TADA INFO assertion 1, root@agg-2(dom3) ldms_ls to agg-2:10000: see all sets, passed
+2023-05-08 01:06:53,124 TADA INFO assertion 2, user@agg-2(dom3) ldms_ls to agg-2:10000: see only meminfo, passed
+2023-05-08 01:06:53,244 TADA INFO assertion 3, root@headnode(dom4) ldms_ls to agg-2:10001: see all sets, passed
+2023-05-08 01:06:53,356 TADA INFO assertion 4, user@headnode(dom4) ldms_ls to agg-2:10001: see only meminfo, passed
+2023-05-08 01:06:53,472 TADA INFO assertion 5, root@headnode(dom4) ldms_ls to agg-11:10000: unexpected result: ['Mon May 08 01:06:53 2023:    ERROR: auth_munge: munge_decode() failed. Invalid credential', 'Connection failed/rejected.'], failed
+2023-05-08 01:06:53,472 TADA INFO test ldmsd_auth_test ended
