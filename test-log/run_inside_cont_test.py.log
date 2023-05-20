@@ -1,149 +1,149 @@
-2023-05-19 01:54:37,630 inside_cont_test INFO ===========================================================
-2023-05-19 01:54:37,630 inside_cont_test INFO plugin_config_cmd: Start testing plugin_config_cmd
-2023-05-19 01:54:37,632 TADA INFO starting test `plugin_config_cmd`
-2023-05-19 01:54:37,632 TADA INFO   test-id: 7c67d9c7993c052cb8f6d568e70f0ee8d6c113e42bd42c6495a17cd5421e7889
-2023-05-19 01:54:37,632 TADA INFO   test-suite: LDMSD
-2023-05-19 01:54:37,633 TADA INFO   test-name: plugin_config_cmd
-2023-05-19 01:54:37,633 TADA INFO   test-user: narate
-2023-05-19 01:54:37,633 TADA INFO   commit-id: d403a90da67ae0dc1d9ef66d720f6227e28c1ace
-2023-05-19 01:54:37,633 inside_cont_test INFO plugin_config_cmd: Preparing the containers
-2023-05-19 01:54:43,289 inside_cont_test INFO plugin_config_cmd: Running the test script
-2023-05-19 01:54:46,816 TADA INFO assertion status-1, Get the plugin statuses: status is as expected, passed
-2023-05-19 01:54:46,817 TADA INFO assertion load-1, Load a non-existing plugin: resp['errcode'] (4294967295) != 0, passed
-2023-05-19 01:54:46,817 TADA INFO assertion load-2, load a plugin: resp['errcode'] (0) == 0, passed
-2023-05-19 01:54:46,817 TADA INFO assertion load-3, load a loadded plugin: resp['errcode'] (17) == 17, passed
-2023-05-19 01:54:46,817 TADA INFO assertion config-1, Configure a plugin that hasn't been loaded: resp['errcode'] (2) == 2, passed
-2023-05-19 01:54:46,817 TADA INFO assertion config-2, Misconfigure a loadded plugin: resp['errcode'] (22) != 0, passed
-2023-05-19 01:54:46,817 TADA INFO assertion config-3, Correctly configure a loaded plugin: resp['errcode'] (0) == 0, passed
-2023-05-19 01:54:46,818 TADA INFO assertion start-1, Start a plugin that hasn't been loaded: resp['errcode'] (2) == 2, passed
-2023-05-19 01:54:46,818 TADA INFO assertion start-2, Start a store plugin: resp['errcode'] (22) == 22, passed
-2023-05-19 01:54:46,818 TADA INFO assertion start-4, Start a sampler plugin using a negative interval: resp['errcode'] (22) == 22, passed
-2023-05-19 01:54:46,818 TADA INFO assertion start-5, Start a sampler plugin without an offset: resp['errcode'] (0) == 0, passed
-2023-05-19 01:54:46,818 TADA INFO assertion start-3, Start a running sampler plugin: resp['errcode'] (16) == 16, passed
-2023-05-19 01:54:46,819 TADA INFO assertion start-6, Start a sampler plugin with an offset larger than half of interval: resp['errcode'] (0) == 0, passed
-2023-05-19 01:54:46,819 TADA INFO assertion start-7, Start a sampler plugin: resp['errcode'] (0) == 0, passed
-2023-05-19 01:54:46,819 TADA INFO assertion start-8, Check the status of the plugins: status is as expected, passed
-2023-05-19 01:54:46,819 TADA INFO assertion stop-1, Stop a p lugin that hasn't been loaded: resp['errcode'] (2) == 2, passed
-2023-05-19 01:54:46,819 TADA INFO assertion stop-2, Stop a sampler plugin that is not running: resp['errcode'] (22) != 0, passed
-2023-05-19 01:54:46,819 TADA INFO assertion stop-3, Stop a running sampler plugin: resp['errcode'] (0) == 0, passed
-2023-05-19 01:54:46,819 TADA INFO assertion stop-4, Check the status of the plugins: status is as expected, passed
-2023-05-19 01:54:46,820 TADA INFO assertion term-1, Terminate a plugin that hasn't been loaded: resp['errcode'] (2) == 2, passed
-2023-05-19 01:54:46,820 TADA INFO assertion term-2, Terminate a running sampler plugin: resp['errcode'] (22) == 22, passed
-2023-05-19 01:54:46,820 TADA INFO assertion term-3, Terminate an in-used store plugin: resp['errcode'] (22) == 22, passed
-2023-05-19 01:54:46,820 TADA INFO assertion term-4, Terminate a sampler plugin: resp['errcode'] (0) == 0, passed
-2023-05-19 01:54:46,820 TADA INFO assertion term-5, Terminate a store plugin: resp['errcode'] (0) == 0, passed
-2023-05-19 01:54:46,820 TADA INFO assertion term-6, Check the status of the plugins: status is as expected, passed
-2023-05-19 01:54:46,821 TADA INFO test plugin_config_cmd ended
-2023-05-19 01:54:46,821 inside_cont_test INFO plugin_config_cmd: done
-2023-05-19 01:54:47,638 inside_cont_test INFO ===========================================================
-2023-05-19 01:54:47,639 inside_cont_test INFO prdcr_config_cmd: Start testing prdcr_config_cmd
-2023-05-19 01:54:47,640 TADA INFO starting test `prdcr_config_cmd`
-2023-05-19 01:54:47,641 TADA INFO   test-id: e773ae35129632aacee156bfa73f5ad15a3235767c7b9adbb5be075f9d081860
-2023-05-19 01:54:47,641 TADA INFO   test-suite: LDMSD
-2023-05-19 01:54:47,641 TADA INFO   test-name: prdcr_config_cmd
-2023-05-19 01:54:47,641 TADA INFO   test-user: narate
-2023-05-19 01:54:47,641 TADA INFO   commit-id: d403a90da67ae0dc1d9ef66d720f6227e28c1ace
-2023-05-19 01:54:47,641 inside_cont_test INFO prdcr_config_cmd: Preparing the containers
-2023-05-19 01:55:19,575 inside_cont_test INFO prdcr_config_cmd: Running the test script
-2023-05-19 01:55:28,125 TADA INFO assertion status-1, LDMSD has no producers.: len(status) == 0, passed
-2023-05-19 01:55:28,125 TADA INFO assertion status-2, Get prdcr_status of a non-existing producer.: resp['errcode'] (2) == 2, passed
-2023-05-19 01:55:28,125 TADA INFO assertion status-3, Get the result of a single producer: status is as expected, passed
-2023-05-19 01:55:28,126 TADA INFO assertion status-4, Get the result of a single producer with sets: status is as expected, passed
-2023-05-19 01:55:28,126 TADA INFO assertion status-5, Get the result of a passive producer: status is as expected, passed
-2023-05-19 01:55:28,126 TADA INFO assertion status-6, Get the results of two producers: status is as expected, passed
-2023-05-19 01:55:28,126 TADA INFO assertion add-1, prdcr_add an active producer: resp['errcode'] (0) == 0, passed
-2023-05-19 01:55:28,126 TADA INFO assertion add-2, prdcr_add a passive producer: resp['errcode'] (0) == 0, passed
-2023-05-19 01:55:28,126 TADA INFO assertion add-3, prdcr_add with a string interval: resp['errcode'] (22) == 22, passed
-2023-05-19 01:55:28,127 TADA INFO assertion add-4, prdcr_add with a negative interval: resp['errcode'] (22) == 22, passed
-2023-05-19 01:55:28,127 TADA INFO assertion add-5, prdcr_add with zero interval: resp['errcode'] (22) == 22, passed
-2023-05-19 01:55:28,127 TADA INFO assertion add-6, prdcr_add with an invalid type: resp['errcode'] (22) == 22, passed
-2023-05-19 01:55:28,127 TADA INFO assertion add-7, prdcr_add with a negative port: resp['errcode'] (22) == 22, passed
-2023-05-19 01:55:28,127 TADA INFO assertion add-8, prdcr_add with a non-existing host: resp['errcode'] (97) == 97, passed
-2023-05-19 01:55:28,127 TADA INFO assertion add-9, prdcr_add an existing producer: resp['errcode'] (17) == 17, passed
-2023-05-19 01:55:28,128 TADA INFO assertion start-1, prdcr_start a non-existing producer: resp['errcode'] (2) == 2, passed
-2023-05-19 01:55:28,128 TADA INFO assertion start-2.1, prdcr_start a stopped producer -- checking the errcode: resp['errcode'] (0) == 0, passed
-2023-05-19 01:55:28,128 TADA INFO assertion start-2.2, prdcdr_start a stopped producer -- checking the status: status is as expected, passed
-2023-05-19 01:55:28,128 TADA INFO assertion start-3.1, prdcr_start a running producer -- checking the errcode: resp['errcode'] (16) == 16, passed
-2023-05-19 01:55:28,128 TADA INFO assertion start-3.2, prdcr_start a running producer -- checking the status: status is as expected, passed
-2023-05-19 01:55:28,128 TADA INFO assertion start_regex-1, prdcr_start_regex using an invalid regex: resp['errcode'] (2) != 0, passed
-2023-05-19 01:55:28,129 TADA INFO assertion start_regex-2.1, prdcr_start_regex matching no producers -- checking the errcode: resp['errcode'] (0) == 0, passed
-2023-05-19 01:55:28,129 TADA INFO assertion start_regex-2.2, prdcr_start_regex matching no producers -- checking the statuses: status is as expected, passed
-2023-05-19 01:55:28,129 TADA INFO assertion start_regex-3.1, prdcr_start_regex matching running producers -- checking the errcode: resp['errcode'] (0) == 0, passed
-2023-05-19 01:55:28,129 TADA INFO assertion start_regex-3.2, prdcr_start_regex matching running producers -- checking the statuses: status is as expected, passed
-2023-05-19 01:55:28,129 TADA INFO assertion stop-1, prdcr_stop a non-existing producer: resp['errcode'] (2) == 2, passed
-2023-05-19 01:55:28,130 TADA INFO assertion stop-2, prdcr_stop a never-started producer: resp['errcode'] (0) == 0, passed
-2023-05-19 01:55:28,130 TADA INFO assertion stop-3.1, prdcr_stop a connected producer -- checking the errcode: resp['errcode'] (0) == 0, passed
-2023-05-19 01:55:28,130 TADA INFO assertion stop-3.2, prdcr_stop a connected producer -- checking the status: status is as expected, passed
-2023-05-19 01:55:28,130 TADA INFO assertion stop-4, prdcr_stop a stopped producer: resp['errcode'] (0) == 0, passed
-2023-05-19 01:55:28,130 TADA INFO assertion stop_regex-1, prdcr_stop_regex using an invalid regex: resp['errcode'] (2) != 0, passed
-2023-05-19 01:55:28,130 TADA INFO assertion stop_regex-2.1, prdcr_stop_regex matching no producers -- checking the errcode: resp['errcode'] (0) == 0, passed
-2023-05-19 01:55:28,131 TADA INFO assertion stop_regex-2.2, prdcr_stop_regex matching no producers -- checking the status: status is as expected, passed
-2023-05-19 01:55:28,131 TADA INFO assertion stop_regex-3.1, prdcr_stop_regex matching a running producer -- checking the errcode: resp['errcode'] (0) == 0, passed
-2023-05-19 01:55:28,131 TADA INFO assertion stop_regex-3.2, prdcr_stop_regex matching a running producer -- checking the status: status is as expected, passed
-2023-05-19 01:55:28,131 TADA INFO assertion del-1, prdcr_del a non-existing producer: resp['errcode'] (2) == 2, passed
-2023-05-19 01:55:28,131 TADA INFO assertion del-2.1, prdcr_del a stopped producer -- checking the errcode: resp['errcode'] (0) == 0, passed
-2023-05-19 01:55:28,132 TADA INFO assertion del-2.2, prdcr_del a stopped producer -- checking the status: status is as expected, passed
-2023-05-19 01:55:28,132 TADA INFO assertion del-3.1, prdcr_del a running producer -- checking the errcode: resp['errcode'] (16) == 16, passed
-2023-05-19 01:55:28,132 TADA INFO assertion del-3.2, prdcr_del a running producer -- checking the status: status is as expected, passed
-2023-05-19 01:55:28,132 TADA INFO assertion start-4.1, prdcr_start a passive producer -- checking the errcode: skipped
-2023-05-19 01:55:28,132 TADA INFO assertion start-4.2, prdcr_start a passive producer -- checking the status: skipped
-2023-05-19 01:55:28,132 TADA INFO test prdcr_config_cmd ended
-2023-05-19 01:55:28,133 inside_cont_test INFO prdcr_config_cmd: done
-2023-05-19 01:55:34,531 inside_cont_test INFO ===========================================================
-2023-05-19 01:55:34,531 inside_cont_test INFO strgp_config_cmd: Start testing strgp_config_cmd
-2023-05-19 01:55:34,534 TADA INFO starting test `strgp_config_cmd`
-2023-05-19 01:55:34,534 TADA INFO   test-id: 9cf615ae8dcf8672da95828ba3a210749d9bb73683f93a249fd00f0141c2c6d7
-2023-05-19 01:55:34,534 TADA INFO   test-suite: LDMSD
-2023-05-19 01:55:34,534 TADA INFO   test-name: strgp_config_cmd
-2023-05-19 01:55:34,534 TADA INFO   test-user: narate
-2023-05-19 01:55:34,534 TADA INFO   commit-id: d403a90da67ae0dc1d9ef66d720f6227e28c1ace
-2023-05-19 01:55:34,535 inside_cont_test INFO strgp_config_cmd: Preparing the containers
-2023-05-19 01:56:13,319 inside_cont_test INFO strgp_config_cmd: Running the test script
-2023-05-19 01:56:16,807 TADA INFO assertion status-1, LDMSD has no storage policies: len(status) == 0, passed
-2023-05-19 01:56:16,807 TADA INFO assertion status-2, Get the status of a non-existing storage policy: resp['errcode'] (2) == 2, passed
-2023-05-19 01:56:16,808 TADA INFO assertion status-3, Get the status of a storage policy with a single producer: status is as expected, passed
-2023-05-19 01:56:16,808 TADA INFO assertion status-4, Get the status of a storage policy with a single metric: status is as expected, passed
-2023-05-19 01:56:16,808 TADA INFO assertion status-5, Sending strgp_status with no attributes: status is as expected, passed
-2023-05-19 01:56:16,808 TADA INFO assertion status-6, Get the status of a stopped storage policy: status is as expected, passed
-2023-05-19 01:56:16,808 TADA INFO assertion add-1.1, Add a new strgp -- checking the error code: resp['errcode'] (0) == 0, passed
-2023-05-19 01:56:16,809 TADA INFO assertion add-1.2, Add a new strgp -- checking the status: status is as expected, passed
-2023-05-19 01:56:16,809 TADA INFO assertion add-2, Add an existing strgp: resp['errcode'] (17) == 17, passed
-2023-05-19 01:56:16,809 TADA INFO assertion prdcr_add-1, strgp_prdcr_add with an invalid regex: resp['errcode'] (2) != 0, passed
-2023-05-19 01:56:16,809 TADA INFO assertion prdcr_add-2, strgp_prdcr_add to a non-existing strgp: resp['errcode'] (2) == 2, passed
-2023-05-19 01:56:16,809 TADA INFO assertion prdcr_add-3, strgp_prdcr_add to a running strgp: resp['errcode'] (16) == 16, passed
-2023-05-19 01:56:16,809 TADA INFO assertion prdcr_add-4.1, strgp_prdcr_add to a strgp -- checking the error code: resp['errcode'] (0) == 0, passed
-2023-05-19 01:56:16,810 TADA INFO assertion prdcr_add-4.2, strgp_prdcr_add to a strgp -- checking the status: status is as expected, passed
-2023-05-19 01:56:16,810 TADA INFO assertion metric_add-1, strgp_metric_add to a non existing strgp: resp['errcode'] (2) == 2, passed
-2023-05-19 01:56:16,810 TADA INFO assertion metric_add-2, strgp_metric_add to a running strgp: resp['errcode'] (16) == 16, passed
-2023-05-19 01:56:16,810 TADA INFO assertion metric_add-3.1, strgp_metric_add to a stopped strgp -- checking the errcode: resp['errcode'] (0) == 0, passed
-2023-05-19 01:56:16,810 TADA INFO assertion metric_add-3.2, strgp_metric_add to a stopped strgp -- checking the status: status is as expected, passed
-2023-05-19 01:56:16,811 TADA INFO assertion start-1, strgp_start a non existing strgp: resp['errcode'] (2) == 2, passed
-2023-05-19 01:56:16,811 TADA INFO assertion start-2, strgp_start a running strgp: resp['errcode'] (16) == 16, passed
-2023-05-19 01:56:16,811 TADA INFO assertion start-3, strgp_start a strgp with a non-configured plugin: resp['errcode'] (0) == 0, passed
-2023-05-19 01:56:16,811 TADA INFO assertion start-4.1, strgp_start a strgp with a producer filter -- checking the errcode: resp['errcode'] (0) == 0, passed
-2023-05-19 01:56:16,811 TADA INFO assertion start-4.2, strgp_start a strgp with a producer filter -- checking the status: status is as expected, passed
-2023-05-19 01:56:16,811 TADA INFO assertion start-5.1, strgp_start a strgp with a metric filter -- checking the errcode: resp['errcode'] (0) == 0, passed
-2023-05-19 01:56:16,812 TADA INFO assertion start-5.2, strgp_start a strgp with a metric filter -- checking the status: status is as expected, passed
-2023-05-19 01:56:16,812 TADA INFO assertion start-6.1, strgp_start a stopped strgp -- checking the errcode: resp['errcode'] (0) == 0, passed
-2023-05-19 01:56:16,812 TADA INFO assertion start-6.2, strgp_start a stopped strgp -- checking the status: status is as expected, passed
-2023-05-19 01:56:16,812 TADA INFO assertion start-6.3, strgp_start a stopped strgp -- checking the database: Database is not empty., passed
-2023-05-19 01:56:16,812 TADA INFO assertion prdcr_del-1, strgp_prdcr_del a non existing strgp: resp['errcode'] (2) == 2, passed
-2023-05-19 01:56:16,813 TADA INFO assertion prdcr_del-2, strgp_prdcr_del a running strgp: resp['errcode'] (16) == 16, passed
-2023-05-19 01:56:16,813 TADA INFO assertion prdcr_del-3, strgp_prdcr_del a strgp that doesn't have the prdcr regex: resp['errcode'] (2) == 2, passed
-2023-05-19 01:56:16,813 TADA INFO assertion prdcr_del-4.1, strgp_prdcr_del a strgp with a producer filter -- checking the errcode: resp['errcode'] (0) == 0, passed
-2023-05-19 01:56:16,813 TADA INFO assertion prdcr_del-4.2, strgp_prdcr_del a strgp with a producer filter -- checking the status: status is as expected, passed
-2023-05-19 01:56:16,813 TADA INFO assertion metric_del-1, strgp_metric_del a non-existing strgp: resp['errcode'] (2) == 2, passed
-2023-05-19 01:56:16,813 TADA INFO assertion metric_del-2, strgp_metric_del a running strgp: resp['errcode'] (16) == 16, passed
-2023-05-19 01:56:16,814 TADA INFO assertion metric_del-3, strgp_metric_del a strgp that doesn't contain the metric name: resp['errcode'] (2) == 2, passed
-2023-05-19 01:56:16,814 TADA INFO assertion metric_del-4.1, strgp_metric_del from a strgp -- checking the errcode: resp['errcode'] (0) == 0, passed
-2023-05-19 01:56:16,814 TADA INFO assertion metric_del-4.2, strgp_metric_del from a strgp -- checking the status: status is as expected, passed
-2023-05-19 01:56:16,814 TADA INFO assertion stop-1, strgp_stop a non existing strgp: resp['errcode'] (2) == 2, passed
-2023-05-19 01:56:16,814 TADA INFO assertion stop-2, strgp_stop a stopped strgp: resp['errcode'] (16) == 16, passed
-2023-05-19 01:56:16,815 TADA INFO assertion stop-3.1, strgp_stop a running strgp -- checking the errcode: resp['errcode'] (0) == 0, passed
-2023-05-19 01:56:16,815 TADA INFO assertion stop-3.2, strgp_stop a running strgp -- checking the status: status is as expected, passed
-2023-05-19 01:56:16,815 TADA INFO assertion del-1, Delete a non-existing strgp: resp['errcode'] (2) == 2, passed
-2023-05-19 01:56:16,815 TADA INFO assertion del-2, Delete a running strgp: resp['errcode'] (16) == 16, passed
-2023-05-19 01:56:16,815 TADA INFO assertion del-3.1, Delete a stopped strgp -- checking the errcode: resp['errcode'] (0) == 0, passed
-2023-05-19 01:56:16,815 TADA INFO assertion del-3.2, Delete a stopped strgp -- checking the status: status is as expected, passed
-2023-05-19 01:56:16,816 TADA INFO test strgp_config_cmd ended
-2023-05-19 01:56:16,816 inside_cont_test INFO strgp_config_cmd: done
+2023-05-20 01:55:15,261 inside_cont_test INFO ===========================================================
+2023-05-20 01:55:15,261 inside_cont_test INFO plugin_config_cmd: Start testing plugin_config_cmd
+2023-05-20 01:55:15,264 TADA INFO starting test `plugin_config_cmd`
+2023-05-20 01:55:15,264 TADA INFO   test-id: 1a876ea9c7e7c2a70983ea341e2c3c1d588cc93de19d551ab6f27c8a22013d53
+2023-05-20 01:55:15,264 TADA INFO   test-suite: LDMSD
+2023-05-20 01:55:15,264 TADA INFO   test-name: plugin_config_cmd
+2023-05-20 01:55:15,264 TADA INFO   test-user: narate
+2023-05-20 01:55:15,264 TADA INFO   commit-id: d403a90da67ae0dc1d9ef66d720f6227e28c1ace
+2023-05-20 01:55:15,265 inside_cont_test INFO plugin_config_cmd: Preparing the containers
+2023-05-20 01:55:21,060 inside_cont_test INFO plugin_config_cmd: Running the test script
+2023-05-20 01:55:24,545 TADA INFO assertion status-1, Get the plugin statuses: status is as expected, passed
+2023-05-20 01:55:24,545 TADA INFO assertion load-1, Load a non-existing plugin: resp['errcode'] (4294967295) != 0, passed
+2023-05-20 01:55:24,545 TADA INFO assertion load-2, load a plugin: resp['errcode'] (0) == 0, passed
+2023-05-20 01:55:24,545 TADA INFO assertion load-3, load a loadded plugin: resp['errcode'] (17) == 17, passed
+2023-05-20 01:55:24,546 TADA INFO assertion config-1, Configure a plugin that hasn't been loaded: resp['errcode'] (2) == 2, passed
+2023-05-20 01:55:24,546 TADA INFO assertion config-2, Misconfigure a loadded plugin: resp['errcode'] (22) != 0, passed
+2023-05-20 01:55:24,546 TADA INFO assertion config-3, Correctly configure a loaded plugin: resp['errcode'] (0) == 0, passed
+2023-05-20 01:55:24,546 TADA INFO assertion start-1, Start a plugin that hasn't been loaded: resp['errcode'] (2) == 2, passed
+2023-05-20 01:55:24,546 TADA INFO assertion start-2, Start a store plugin: resp['errcode'] (22) == 22, passed
+2023-05-20 01:55:24,546 TADA INFO assertion start-4, Start a sampler plugin using a negative interval: resp['errcode'] (22) == 22, passed
+2023-05-20 01:55:24,546 TADA INFO assertion start-5, Start a sampler plugin without an offset: resp['errcode'] (0) == 0, passed
+2023-05-20 01:55:24,547 TADA INFO assertion start-3, Start a running sampler plugin: resp['errcode'] (16) == 16, passed
+2023-05-20 01:55:24,547 TADA INFO assertion start-6, Start a sampler plugin with an offset larger than half of interval: resp['errcode'] (0) == 0, passed
+2023-05-20 01:55:24,547 TADA INFO assertion start-7, Start a sampler plugin: resp['errcode'] (0) == 0, passed
+2023-05-20 01:55:24,547 TADA INFO assertion start-8, Check the status of the plugins: status is as expected, passed
+2023-05-20 01:55:24,547 TADA INFO assertion stop-1, Stop a p lugin that hasn't been loaded: resp['errcode'] (2) == 2, passed
+2023-05-20 01:55:24,547 TADA INFO assertion stop-2, Stop a sampler plugin that is not running: resp['errcode'] (22) != 0, passed
+2023-05-20 01:55:24,548 TADA INFO assertion stop-3, Stop a running sampler plugin: resp['errcode'] (0) == 0, passed
+2023-05-20 01:55:24,548 TADA INFO assertion stop-4, Check the status of the plugins: status is as expected, passed
+2023-05-20 01:55:24,548 TADA INFO assertion term-1, Terminate a plugin that hasn't been loaded: resp['errcode'] (2) == 2, passed
+2023-05-20 01:55:24,548 TADA INFO assertion term-2, Terminate a running sampler plugin: resp['errcode'] (22) == 22, passed
+2023-05-20 01:55:24,548 TADA INFO assertion term-3, Terminate an in-used store plugin: resp['errcode'] (22) == 22, passed
+2023-05-20 01:55:24,548 TADA INFO assertion term-4, Terminate a sampler plugin: resp['errcode'] (0) == 0, passed
+2023-05-20 01:55:24,549 TADA INFO assertion term-5, Terminate a store plugin: resp['errcode'] (0) == 0, passed
+2023-05-20 01:55:24,549 TADA INFO assertion term-6, Check the status of the plugins: status is as expected, passed
+2023-05-20 01:55:24,549 TADA INFO test plugin_config_cmd ended
+2023-05-20 01:55:24,549 inside_cont_test INFO plugin_config_cmd: done
+2023-05-20 01:55:25,459 inside_cont_test INFO ===========================================================
+2023-05-20 01:55:25,459 inside_cont_test INFO prdcr_config_cmd: Start testing prdcr_config_cmd
+2023-05-20 01:55:25,462 TADA INFO starting test `prdcr_config_cmd`
+2023-05-20 01:55:25,462 TADA INFO   test-id: cf280d10e972dda512983fe3cdf0301f6921a768eba246a5fbf7a34d2ae093be
+2023-05-20 01:55:25,462 TADA INFO   test-suite: LDMSD
+2023-05-20 01:55:25,462 TADA INFO   test-name: prdcr_config_cmd
+2023-05-20 01:55:25,463 TADA INFO   test-user: narate
+2023-05-20 01:55:25,463 TADA INFO   commit-id: d403a90da67ae0dc1d9ef66d720f6227e28c1ace
+2023-05-20 01:55:25,463 inside_cont_test INFO prdcr_config_cmd: Preparing the containers
+2023-05-20 01:55:57,740 inside_cont_test INFO prdcr_config_cmd: Running the test script
+2023-05-20 01:56:06,283 TADA INFO assertion status-1, LDMSD has no producers.: len(status) == 0, passed
+2023-05-20 01:56:06,283 TADA INFO assertion status-2, Get prdcr_status of a non-existing producer.: resp['errcode'] (2) == 2, passed
+2023-05-20 01:56:06,283 TADA INFO assertion status-3, Get the result of a single producer: status is as expected, passed
+2023-05-20 01:56:06,283 TADA INFO assertion status-4, Get the result of a single producer with sets: status is as expected, passed
+2023-05-20 01:56:06,283 TADA INFO assertion status-5, Get the result of a passive producer: status is as expected, passed
+2023-05-20 01:56:06,284 TADA INFO assertion status-6, Get the results of two producers: status is as expected, passed
+2023-05-20 01:56:06,284 TADA INFO assertion add-1, prdcr_add an active producer: resp['errcode'] (0) == 0, passed
+2023-05-20 01:56:06,284 TADA INFO assertion add-2, prdcr_add a passive producer: resp['errcode'] (0) == 0, passed
+2023-05-20 01:56:06,284 TADA INFO assertion add-3, prdcr_add with a string interval: resp['errcode'] (22) == 22, passed
+2023-05-20 01:56:06,284 TADA INFO assertion add-4, prdcr_add with a negative interval: resp['errcode'] (22) == 22, passed
+2023-05-20 01:56:06,285 TADA INFO assertion add-5, prdcr_add with zero interval: resp['errcode'] (22) == 22, passed
+2023-05-20 01:56:06,285 TADA INFO assertion add-6, prdcr_add with an invalid type: resp['errcode'] (22) == 22, passed
+2023-05-20 01:56:06,285 TADA INFO assertion add-7, prdcr_add with a negative port: resp['errcode'] (22) == 22, passed
+2023-05-20 01:56:06,285 TADA INFO assertion add-8, prdcr_add with a non-existing host: resp['errcode'] (97) == 97, passed
+2023-05-20 01:56:06,285 TADA INFO assertion add-9, prdcr_add an existing producer: resp['errcode'] (17) == 17, passed
+2023-05-20 01:56:06,285 TADA INFO assertion start-1, prdcr_start a non-existing producer: resp['errcode'] (2) == 2, passed
+2023-05-20 01:56:06,286 TADA INFO assertion start-2.1, prdcr_start a stopped producer -- checking the errcode: resp['errcode'] (0) == 0, passed
+2023-05-20 01:56:06,286 TADA INFO assertion start-2.2, prdcdr_start a stopped producer -- checking the status: status is as expected, passed
+2023-05-20 01:56:06,286 TADA INFO assertion start-3.1, prdcr_start a running producer -- checking the errcode: resp['errcode'] (16) == 16, passed
+2023-05-20 01:56:06,286 TADA INFO assertion start-3.2, prdcr_start a running producer -- checking the status: status is as expected, passed
+2023-05-20 01:56:06,286 TADA INFO assertion start_regex-1, prdcr_start_regex using an invalid regex: resp['errcode'] (2) != 0, passed
+2023-05-20 01:56:06,287 TADA INFO assertion start_regex-2.1, prdcr_start_regex matching no producers -- checking the errcode: resp['errcode'] (0) == 0, passed
+2023-05-20 01:56:06,287 TADA INFO assertion start_regex-2.2, prdcr_start_regex matching no producers -- checking the statuses: status is as expected, passed
+2023-05-20 01:56:06,287 TADA INFO assertion start_regex-3.1, prdcr_start_regex matching running producers -- checking the errcode: resp['errcode'] (0) == 0, passed
+2023-05-20 01:56:06,287 TADA INFO assertion start_regex-3.2, prdcr_start_regex matching running producers -- checking the statuses: status is as expected, passed
+2023-05-20 01:56:06,287 TADA INFO assertion stop-1, prdcr_stop a non-existing producer: resp['errcode'] (2) == 2, passed
+2023-05-20 01:56:06,287 TADA INFO assertion stop-2, prdcr_stop a never-started producer: resp['errcode'] (0) == 0, passed
+2023-05-20 01:56:06,288 TADA INFO assertion stop-3.1, prdcr_stop a connected producer -- checking the errcode: resp['errcode'] (0) == 0, passed
+2023-05-20 01:56:06,288 TADA INFO assertion stop-3.2, prdcr_stop a connected producer -- checking the status: status is as expected, passed
+2023-05-20 01:56:06,288 TADA INFO assertion stop-4, prdcr_stop a stopped producer: resp['errcode'] (0) == 0, passed
+2023-05-20 01:56:06,288 TADA INFO assertion stop_regex-1, prdcr_stop_regex using an invalid regex: resp['errcode'] (2) != 0, passed
+2023-05-20 01:56:06,288 TADA INFO assertion stop_regex-2.1, prdcr_stop_regex matching no producers -- checking the errcode: resp['errcode'] (0) == 0, passed
+2023-05-20 01:56:06,288 TADA INFO assertion stop_regex-2.2, prdcr_stop_regex matching no producers -- checking the status: status is as expected, passed
+2023-05-20 01:56:06,289 TADA INFO assertion stop_regex-3.1, prdcr_stop_regex matching a running producer -- checking the errcode: resp['errcode'] (0) == 0, passed
+2023-05-20 01:56:06,289 TADA INFO assertion stop_regex-3.2, prdcr_stop_regex matching a running producer -- checking the status: status is as expected, passed
+2023-05-20 01:56:06,289 TADA INFO assertion del-1, prdcr_del a non-existing producer: resp['errcode'] (2) == 2, passed
+2023-05-20 01:56:06,289 TADA INFO assertion del-2.1, prdcr_del a stopped producer -- checking the errcode: resp['errcode'] (0) == 0, passed
+2023-05-20 01:56:06,289 TADA INFO assertion del-2.2, prdcr_del a stopped producer -- checking the status: status is as expected, passed
+2023-05-20 01:56:06,290 TADA INFO assertion del-3.1, prdcr_del a running producer -- checking the errcode: resp['errcode'] (16) == 16, passed
+2023-05-20 01:56:06,290 TADA INFO assertion del-3.2, prdcr_del a running producer -- checking the status: status is as expected, passed
+2023-05-20 01:56:06,290 TADA INFO assertion start-4.1, prdcr_start a passive producer -- checking the errcode: skipped
+2023-05-20 01:56:06,290 TADA INFO assertion start-4.2, prdcr_start a passive producer -- checking the status: skipped
+2023-05-20 01:56:06,290 TADA INFO test prdcr_config_cmd ended
+2023-05-20 01:56:06,290 inside_cont_test INFO prdcr_config_cmd: done
+2023-05-20 01:56:12,576 inside_cont_test INFO ===========================================================
+2023-05-20 01:56:12,576 inside_cont_test INFO strgp_config_cmd: Start testing strgp_config_cmd
+2023-05-20 01:56:12,578 TADA INFO starting test `strgp_config_cmd`
+2023-05-20 01:56:12,579 TADA INFO   test-id: 3ddd65b578a10b707df772ce07fd93fbcb1fda931181b4a4aad7470db8fe6a84
+2023-05-20 01:56:12,579 TADA INFO   test-suite: LDMSD
+2023-05-20 01:56:12,579 TADA INFO   test-name: strgp_config_cmd
+2023-05-20 01:56:12,579 TADA INFO   test-user: narate
+2023-05-20 01:56:12,579 TADA INFO   commit-id: d403a90da67ae0dc1d9ef66d720f6227e28c1ace
+2023-05-20 01:56:12,579 inside_cont_test INFO strgp_config_cmd: Preparing the containers
+2023-05-20 01:56:51,782 inside_cont_test INFO strgp_config_cmd: Running the test script
+2023-05-20 01:56:55,246 TADA INFO assertion status-1, LDMSD has no storage policies: len(status) == 0, passed
+2023-05-20 01:56:55,247 TADA INFO assertion status-2, Get the status of a non-existing storage policy: resp['errcode'] (2) == 2, passed
+2023-05-20 01:56:55,247 TADA INFO assertion status-3, Get the status of a storage policy with a single producer: status is as expected, passed
+2023-05-20 01:56:55,247 TADA INFO assertion status-4, Get the status of a storage policy with a single metric: status is as expected, passed
+2023-05-20 01:56:55,247 TADA INFO assertion status-5, Sending strgp_status with no attributes: status is as expected, passed
+2023-05-20 01:56:55,248 TADA INFO assertion status-6, Get the status of a stopped storage policy: status is as expected, passed
+2023-05-20 01:56:55,248 TADA INFO assertion add-1.1, Add a new strgp -- checking the error code: resp['errcode'] (0) == 0, passed
+2023-05-20 01:56:55,248 TADA INFO assertion add-1.2, Add a new strgp -- checking the status: status is as expected, passed
+2023-05-20 01:56:55,249 TADA INFO assertion add-2, Add an existing strgp: resp['errcode'] (17) == 17, passed
+2023-05-20 01:56:55,249 TADA INFO assertion prdcr_add-1, strgp_prdcr_add with an invalid regex: resp['errcode'] (2) != 0, passed
+2023-05-20 01:56:55,249 TADA INFO assertion prdcr_add-2, strgp_prdcr_add to a non-existing strgp: resp['errcode'] (2) == 2, passed
+2023-05-20 01:56:55,249 TADA INFO assertion prdcr_add-3, strgp_prdcr_add to a running strgp: resp['errcode'] (16) == 16, passed
+2023-05-20 01:56:55,249 TADA INFO assertion prdcr_add-4.1, strgp_prdcr_add to a strgp -- checking the error code: resp['errcode'] (0) == 0, passed
+2023-05-20 01:56:55,250 TADA INFO assertion prdcr_add-4.2, strgp_prdcr_add to a strgp -- checking the status: status is as expected, passed
+2023-05-20 01:56:55,250 TADA INFO assertion metric_add-1, strgp_metric_add to a non existing strgp: resp['errcode'] (2) == 2, passed
+2023-05-20 01:56:55,250 TADA INFO assertion metric_add-2, strgp_metric_add to a running strgp: resp['errcode'] (16) == 16, passed
+2023-05-20 01:56:55,250 TADA INFO assertion metric_add-3.1, strgp_metric_add to a stopped strgp -- checking the errcode: resp['errcode'] (0) == 0, passed
+2023-05-20 01:56:55,250 TADA INFO assertion metric_add-3.2, strgp_metric_add to a stopped strgp -- checking the status: status is as expected, passed
+2023-05-20 01:56:55,250 TADA INFO assertion start-1, strgp_start a non existing strgp: resp['errcode'] (2) == 2, passed
+2023-05-20 01:56:55,251 TADA INFO assertion start-2, strgp_start a running strgp: resp['errcode'] (16) == 16, passed
+2023-05-20 01:56:55,251 TADA INFO assertion start-3, strgp_start a strgp with a non-configured plugin: resp['errcode'] (0) == 0, passed
+2023-05-20 01:56:55,251 TADA INFO assertion start-4.1, strgp_start a strgp with a producer filter -- checking the errcode: resp['errcode'] (0) == 0, passed
+2023-05-20 01:56:55,251 TADA INFO assertion start-4.2, strgp_start a strgp with a producer filter -- checking the status: status is as expected, passed
+2023-05-20 01:56:55,251 TADA INFO assertion start-5.1, strgp_start a strgp with a metric filter -- checking the errcode: resp['errcode'] (0) == 0, passed
+2023-05-20 01:56:55,252 TADA INFO assertion start-5.2, strgp_start a strgp with a metric filter -- checking the status: status is as expected, passed
+2023-05-20 01:56:55,252 TADA INFO assertion start-6.1, strgp_start a stopped strgp -- checking the errcode: resp['errcode'] (0) == 0, passed
+2023-05-20 01:56:55,252 TADA INFO assertion start-6.2, strgp_start a stopped strgp -- checking the status: status is as expected, passed
+2023-05-20 01:56:55,252 TADA INFO assertion start-6.3, strgp_start a stopped strgp -- checking the database: Database is not empty., passed
+2023-05-20 01:56:55,252 TADA INFO assertion prdcr_del-1, strgp_prdcr_del a non existing strgp: resp['errcode'] (2) == 2, passed
+2023-05-20 01:56:55,252 TADA INFO assertion prdcr_del-2, strgp_prdcr_del a running strgp: resp['errcode'] (16) == 16, passed
+2023-05-20 01:56:55,253 TADA INFO assertion prdcr_del-3, strgp_prdcr_del a strgp that doesn't have the prdcr regex: resp['errcode'] (2) == 2, passed
+2023-05-20 01:56:55,253 TADA INFO assertion prdcr_del-4.1, strgp_prdcr_del a strgp with a producer filter -- checking the errcode: resp['errcode'] (0) == 0, passed
+2023-05-20 01:56:55,253 TADA INFO assertion prdcr_del-4.2, strgp_prdcr_del a strgp with a producer filter -- checking the status: status is as expected, passed
+2023-05-20 01:56:55,253 TADA INFO assertion metric_del-1, strgp_metric_del a non-existing strgp: resp['errcode'] (2) == 2, passed
+2023-05-20 01:56:55,253 TADA INFO assertion metric_del-2, strgp_metric_del a running strgp: resp['errcode'] (16) == 16, passed
+2023-05-20 01:56:55,254 TADA INFO assertion metric_del-3, strgp_metric_del a strgp that doesn't contain the metric name: resp['errcode'] (2) == 2, passed
+2023-05-20 01:56:55,254 TADA INFO assertion metric_del-4.1, strgp_metric_del from a strgp -- checking the errcode: resp['errcode'] (0) == 0, passed
+2023-05-20 01:56:55,254 TADA INFO assertion metric_del-4.2, strgp_metric_del from a strgp -- checking the status: status is as expected, passed
+2023-05-20 01:56:55,254 TADA INFO assertion stop-1, strgp_stop a non existing strgp: resp['errcode'] (2) == 2, passed
+2023-05-20 01:56:55,254 TADA INFO assertion stop-2, strgp_stop a stopped strgp: resp['errcode'] (16) == 16, passed
+2023-05-20 01:56:55,254 TADA INFO assertion stop-3.1, strgp_stop a running strgp -- checking the errcode: resp['errcode'] (0) == 0, passed
+2023-05-20 01:56:55,255 TADA INFO assertion stop-3.2, strgp_stop a running strgp -- checking the status: status is as expected, passed
+2023-05-20 01:56:55,255 TADA INFO assertion del-1, Delete a non-existing strgp: resp['errcode'] (2) == 2, passed
+2023-05-20 01:56:55,255 TADA INFO assertion del-2, Delete a running strgp: resp['errcode'] (16) == 16, passed
+2023-05-20 01:56:55,255 TADA INFO assertion del-3.1, Delete a stopped strgp -- checking the errcode: resp['errcode'] (0) == 0, passed
+2023-05-20 01:56:55,255 TADA INFO assertion del-3.2, Delete a stopped strgp -- checking the status: status is as expected, passed
+2023-05-20 01:56:55,256 TADA INFO test strgp_config_cmd ended
+2023-05-20 01:56:55,256 inside_cont_test INFO strgp_config_cmd: done
