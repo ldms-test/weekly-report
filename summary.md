@@ -4,7 +4,7 @@ Test Summary
 * [direct_prdcr_subscribe_test](test-log/direct_prdcr_subscribe_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
 * [agg_slurm_test](test-log/agg_slurm_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
 * [papi_sampler_test](test-log/papi_sampler_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
-* [papi_store_test](test-log/papi_store_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
+* [papi_store_test](test-log/papi_store_test.log): $\textcolor{red}{\text{FAILED}}$
 * [store_app_test](test-log/store_app_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
 * [syspapi_test](test-log/syspapi_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
 * [agg_test](test-log/agg_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
