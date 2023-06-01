@@ -2,7 +2,7 @@ Test Summary
 ============
 * [direct_ldms_ls_conn_test](test-log/direct_ldms_ls_conn_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
 * [direct_prdcr_subscribe_test](test-log/direct_prdcr_subscribe_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
-* [agg_slurm_test](test-log/agg_slurm_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
+* [agg_slurm_test](test-log/agg_slurm_test.log): $\textcolor{red}{\text{FAILED}}$
 * [papi_sampler_test](test-log/papi_sampler_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
 * [papi_store_test](test-log/papi_store_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
 * [store_app_test](test-log/store_app_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
@@ -20,7 +20,7 @@ Test Summary
 * [set_array_test](test-log/set_array_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
 * [setgroup_test](test-log/setgroup_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
 * [slurm_stream_test](test-log/slurm_stream_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
-* [spank_notifier_test](test-log/spank_notifier_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
+* [spank_notifier_test](test-log/spank_notifier_test.log): $\textcolor{red}{\text{FAILED}}$
 * [ldms_list_test](test-log/ldms_list_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
 * [quick_set_add_rm_test](test-log/quick_set_add_rm_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
 * [set_array_hang_test](test-log/set_array_hang_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
