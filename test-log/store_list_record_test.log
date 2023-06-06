@@ -1,22 +1,53 @@
-2023-06-04 01:42:16,854 __main__ INFO -- Get or create the cluster --
-2023-06-04 01:42:16,854 TADA INFO starting test `store_sos_lists_test`
-2023-06-04 01:42:16,854 TADA INFO   test-id: 62eb8c16af365b0583fb549b7193ac1dafaf46bd562da3a4cd2042a80542ce1d
-2023-06-04 01:42:16,854 TADA INFO   test-suite: LDMSD
-2023-06-04 01:42:16,854 TADA INFO   test-name: store_sos_lists_test
-2023-06-04 01:42:16,854 TADA INFO   test-user: narate
-2023-06-04 01:42:16,854 TADA INFO   commit-id: d403a90da67ae0dc1d9ef66d720f6227e28c1ace
-2023-06-04 01:42:24,765 __main__ INFO Waiting ... for all LDMSDs to start
-2023-06-04 01:42:28,625 __main__ INFO All sampler daemons are up.
-2023-06-04 01:42:28,736 TADA INFO assertion 1, aggregator with store_sos has started properly.: agg_sos.check_ldmsd(), passed
-2023-06-04 01:42:28,847 TADA INFO assertion 2, aggregator with store_csv has started properly.: agg_csv.check_ldmsd(), passed
-2023-06-04 01:42:35,527 TADA INFO assertion 3, store_sos is storing data.: file_exists(a) for a in supported_schema, passed
-2023-06-04 01:42:36,531 TADA INFO assertion 4, store_sos stores data correctly.: verify_data(db) for db in all_db, passed
-2023-06-04 01:42:45,398 TADA INFO assertion 5, store_sos stores data after restarted correctly.: verify_data(db) for db in all_db, passed
-2023-06-04 01:42:46,065 TADA INFO assertion 6, store_sos reports multiple list errror messages resulted by the config file.: store_sos reported the multiple list error messages., passed
-2023-06-04 01:42:50,829 TADA INFO assertion 7, store_sos reports multiple list errror messages resulted by ldmsd_controller.: store_sos reported the multiple list error messages., passed
-2023-06-04 01:42:51,156 TADA INFO assertion 8, store_csv is storing data.: file_exists(a) for a in supported_schema, passed
-2023-06-04 01:42:57,604 TADA INFO assertion 9, store_csv stores data correctly.: verify_data(db) for db in all_db, passed
-2023-06-04 01:43:07,293 TADA INFO assertion 10, store_csv stores data after restarted correctly.: verify_data(db) for db in all_db, passed
-2023-06-04 01:43:07,963 TADA INFO assertion 11, store_csv reports multiple list errror messages resulted by the config file.: store_csv reported the multiple list error messages., passed
-2023-06-04 01:43:12,808 TADA INFO assertion 12, store_csv reports multiple list errror messages resulted by ldmsd_controller.: store_csv reported the multiple list error messages., passed
-2023-06-04 01:43:12,808 TADA INFO test store_sos_lists_test ended
+2023-06-05 01:41:00,010 __main__ INFO -- Get or create the cluster --
+2023-06-05 01:41:00,010 TADA INFO starting test `store_sos_lists_test`
+2023-06-05 01:41:00,011 TADA INFO   test-id: 2646b4c7af8c5119b38c2d04d614b0b2e22db6e7b66cf5b1623d3458019388b1
+2023-06-05 01:41:00,011 TADA INFO   test-suite: LDMSD
+2023-06-05 01:41:00,011 TADA INFO   test-name: store_sos_lists_test
+2023-06-05 01:41:00,011 TADA INFO   test-user: narate
+2023-06-05 01:41:00,011 TADA INFO   commit-id: d403a90da67ae0dc1d9ef66d720f6227e28c1ace
+2023-06-05 01:41:07,452 __main__ INFO Waiting ... for all LDMSDs to start
+2023-06-05 01:41:11,323 __main__ INFO All sampler daemons are up.
+2023-06-05 01:41:11,431 TADA INFO assertion 1, aggregator with store_sos has started properly.: agg_sos.check_ldmsd(), passed
+2023-06-05 01:41:11,542 TADA INFO assertion 2, aggregator with store_csv has started properly.: agg_csv.check_ldmsd(), passed
+2023-06-05 01:41:18,343 TADA INFO assertion 3, store_sos is storing data.: file_exists(a) for a in supported_schema, passed
+2023-06-05 01:41:19,311 TADA INFO assertion 4, store_sos stores data correctly.: verify_data(db) for db in all_db, passed
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/site-packages/docker/api/client.py", line 261, in _raise_for_status
+    response.raise_for_status()
+  File "/usr/lib/python3.6/site-packages/requests/models.py", line 941, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http+docker://localhost/v1.35/containers/bfe44f83c4b09819a3f6a0205d3f1881a2ee9d9f843b8e9988137a0fd164bf82/exec
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "store_list_record_test", line 504, in <module>
+    data = sos_query(agg_sos, store_sos_db_get(schema), schema, "time_job_comp", cond = ["timestamp:gt:{}".format(agg_time)])
+  File "store_list_record_test", line 289, in sos_query
+    rc, out = dcont.exec_run(cmd)
+  File "/home/narate/cron/ldms-test/runtime/docker.py", line 144, in exec_run
+    return self._exec_run(cmd, environment=env, user=user)
+  File "/home/narate/cron/ldms-test/runtime/docker.py", line 148, in _exec_run
+    (rc, out) = self.obj.exec_run(*args, **kwargs)
+  File "/usr/lib/python3.6/site-packages/docker/models/containers.py", line 196, in exec_run
+    workdir=workdir,
+  File "/usr/lib/python3.6/site-packages/docker/utils/decorators.py", line 19, in wrapped
+    return f(self, resource_id, *args, **kwargs)
+  File "/usr/lib/python3.6/site-packages/docker/api/exec_api.py", line 80, in exec_create
+    return self._result(res, True)
+  File "/usr/lib/python3.6/site-packages/docker/api/client.py", line 267, in _result
+    self._raise_for_status(response)
+  File "/usr/lib/python3.6/site-packages/docker/api/client.py", line 263, in _raise_for_status
+    raise create_api_error_from_http_exception(e)
+  File "/usr/lib/python3.6/site-packages/docker/errors.py", line 31, in create_api_error_from_http_exception
+    raise cls(e, response=response, explanation=explanation)
+docker.errors.NotFound: 404 Client Error: Not Found ("No such container: bfe44f83c4b09819a3f6a0205d3f1881a2ee9d9f843b8e9988137a0fd164bf82")
+2023-06-06 00:30:05,775 TADA INFO assertion 5, store_sos stores data after restarted correctly.: skipped
+2023-06-06 00:30:05,775 TADA INFO assertion 6, store_sos reports multiple list errror messages resulted by the config file.: skipped
+2023-06-06 00:30:05,775 TADA INFO assertion 7, store_sos reports multiple list errror messages resulted by ldmsd_controller.: skipped
+2023-06-06 00:30:05,775 TADA INFO assertion 8, store_csv is storing data.: skipped
+2023-06-06 00:30:05,775 TADA INFO assertion 9, store_csv stores data correctly.: skipped
+2023-06-06 00:30:05,775 TADA INFO assertion 10, store_csv stores data after restarted correctly.: skipped
+2023-06-06 00:30:05,776 TADA INFO assertion 11, store_csv reports multiple list errror messages resulted by the config file.: skipped
+2023-06-06 00:30:05,776 TADA INFO assertion 12, store_csv reports multiple list errror messages resulted by ldmsd_controller.: skipped
+2023-06-06 00:30:05,776 TADA INFO test store_sos_lists_test ended
