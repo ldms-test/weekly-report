@@ -1,19 +1,36 @@
-2023-06-07 01:43:25,402 TADA INFO starting test `maestro_raft_test`
-2023-06-07 01:43:25,402 TADA INFO   test-id: 9a29a40b928d2a751dd57637013a85dd3b0b406f2429dc42fee24d254a17c325
-2023-06-07 01:43:25,402 TADA INFO   test-suite: LDMSD
-2023-06-07 01:43:25,402 TADA INFO   test-name: maestro_raft_test
-2023-06-07 01:43:25,402 TADA INFO   test-user: narate
-2023-06-07 01:43:25,402 TADA INFO   commit-id: d383cb25cca1600a39c379002728a15a57bfe513
-2023-06-07 01:43:35,413 __main__ INFO -- Get or create cluster --
-2023-06-07 01:44:10,830 __main__ INFO -- Start daemons --
-2023-06-07 01:45:22,304 __main__ INFO -- making known hosts (ssh) --
-2023-06-07 01:45:29,307 __main__ INFO ... make sure ldmsd's are up
-2023-06-07 01:45:46,119 TADA INFO assertion 1, Statuses of maestros, 1 leader + 2 followers: [('FOLLOWER', 2), ('LEADER', 1)], passed
-2023-06-07 01:45:58,515 TADA INFO assertion 2, All ldmsds are up and configured: sets verified, passed
-2023-06-07 01:45:58,791 TADA INFO assertion 3, Data are being stored: data check, passed
-2023-06-07 01:46:03,668 TADA INFO assertion 4, New leader elected: checked, passed
-2023-06-07 01:46:15,568 TADA INFO assertion 5, Restarted ldmsd is configured: sets verified, passed
-2023-06-07 01:46:15,892 TADA INFO assertion 6, New data are presented in the store: data check, passed
-2023-06-07 01:46:26,896 TADA INFO assertion 7, The restarted maestro becomes a follower: checked, passed
+2023-06-08 01:43:52,288 TADA INFO starting test `maestro_raft_test`
+2023-06-08 01:43:52,288 TADA INFO   test-id: 4915daca91b66dfcbcfb885e00e09fc0928d1fae4f91d395f7d75a3e43083199
+2023-06-08 01:43:52,288 TADA INFO   test-suite: LDMSD
+2023-06-08 01:43:52,288 TADA INFO   test-name: maestro_raft_test
+2023-06-08 01:43:52,288 TADA INFO   test-user: narate
+2023-06-08 01:43:52,289 TADA INFO   commit-id: d383cb25cca1600a39c379002728a15a57bfe513
+2023-06-08 01:44:02,300 __main__ INFO -- Get or create cluster --
+2023-06-08 01:44:37,560 __main__ INFO -- Start daemons --
+2023-06-08 01:45:48,445 __main__ INFO -- making known hosts (ssh) --
+2023-06-08 01:45:55,448 __main__ INFO ... make sure ldmsd's are up
+2023-06-08 01:46:12,341 TADA INFO assertion 1, Statuses of maestros, 1 leader + 2 followers: [('FOLLOWER', 2), ('LEADER', 1)], passed
+2023-06-08 01:46:24,724 TADA INFO assertion 2, All ldmsds are up and configured: sets verified, passed
+2023-06-08 01:46:25,008 TADA INFO assertion 3, Data are being stored: data check, passed
+2023-06-08 01:46:29,913 TADA INFO assertion 4, New leader elected: checked, passed
 ---Wait for config to write to file---
-2023-06-07 01:46:26,896 TADA INFO test maestro_raft_test ended
+Traceback (most recent call last):
+  File "maestro_raft_test", line 512, in <module>
+    verify_ldmsds(5)
+  File "maestro_raft_test", line 431, in verify_ldmsds
+    objs = ldms_ls(f"agg{i}")
+  File "maestro_raft_test", line 282, in ldms_ls
+    raise RuntimeError(f"ldms_ls error {rc}, out: {out}")
+RuntimeError: ldms_ls error 137, out: Traceback (most recent call last):
+  File "/tada-src/python/ldms_ls.py", line 107, in lookup_cb
+    lset.update(cb = update_cb)
+AttributeError: 'NoneType' object has no attribute 'update'
+Exception ignored in: 'python.ldms.lookup_cb'
+Traceback (most recent call last):
+  File "/tada-src/python/ldms_ls.py", line 107, in lookup_cb
+    lset.update(cb = update_cb)
+AttributeError: 'NoneType' object has no attribute 'update'
+
+2023-06-09 00:30:08,645 TADA INFO assertion 5, Restarted ldmsd is configured: skipped
+2023-06-09 00:30:08,646 TADA INFO assertion 6, New data are presented in the store: skipped
+2023-06-09 00:30:08,646 TADA INFO assertion 7, The restarted maestro becomes a follower: skipped
+2023-06-09 00:30:08,646 TADA INFO test maestro_raft_test ended
