@@ -1,18 +1,27 @@
-2023-06-12 00:53:46,262 TADA INFO starting test `direct_ldms_ls_conn_test`
-2023-06-12 00:53:46,263 TADA INFO   test-id: 994daa0971635eb6e6832d5dbc35cb617c9cb0d5c3de7813a3d864af257692de
-2023-06-12 00:53:46,263 TADA INFO   test-suite: LDMSD
-2023-06-12 00:53:46,263 TADA INFO   test-name: direct_ldms_ls_conn_test
-2023-06-12 00:53:46,263 TADA INFO   test-user: narate
-2023-06-12 00:53:46,263 TADA INFO   commit-id: d383cb25cca1600a39c379002728a15a57bfe513
-2023-06-12 00:53:46,491 __main__ INFO starting munged on cygnus-01-iw
-2023-06-12 00:53:46,810 __main__ INFO starting munged on localhost
-2023-06-12 00:53:47,038 __main__ INFO starting ldmsd on cygnus-01-iw
-2023-06-12 00:53:47,393 TADA INFO assertion 0, Start ldmsd sampler and munged: OK, passed
-2023-06-12 00:53:52,611 TADA INFO assertion 1, ldms_ls to the sampler: OK, passed
-2023-06-12 00:53:52,612 __main__ INFO Stopping sampler daemon ...
-2023-06-12 00:53:58,042 TADA INFO assertion 2, Kill the sampler: OK, passed
-2023-06-12 00:53:58,083 TADA INFO assertion 3, ldms_ls to the dead sampler: got expected output, passed
-2023-06-12 00:53:58,117 TADA INFO assertion 4, ldms_ls to a dead host: got expected output, passed
-2023-06-12 00:53:58,118 TADA INFO test direct_ldms_ls_conn_test ended
-2023-06-12 00:53:58,327 __main__ INFO stopping munged on cygnus-01-iw
-2023-06-12 00:53:58,738 __main__ INFO stopping munged on localhost
+2023-06-18 00:54:02,022 TADA INFO starting test `direct_ldms_ls_conn_test`
+2023-06-18 00:54:02,022 TADA INFO   test-id: 3dfa537dbd010a45966aaa62930c91e5d8ac63a716478a754e936be629d8cea7
+2023-06-18 00:54:02,023 TADA INFO   test-suite: LDMSD
+2023-06-18 00:54:02,023 TADA INFO   test-name: direct_ldms_ls_conn_test
+2023-06-18 00:54:02,023 TADA INFO   test-user: narate
+2023-06-18 00:54:02,023 TADA INFO   commit-id: 5293d02ad95fae3ef5f714104f65ec8c3576fa59
+2023-06-18 00:54:02,261 __main__ INFO starting munged on cygnus-01-iw
+2023-06-18 00:54:02,567 __main__ INFO starting munged on localhost
+2023-06-18 00:54:02,850 __main__ INFO starting ldmsd on cygnus-01-iw
+2023-06-18 00:54:03,311 TADA INFO assertion 0, Start ldmsd sampler and munged: OK, passed
+2023-06-18 00:54:08,509 TADA INFO assertion 1, ldms_ls to the sampler: OK, passed
+2023-06-18 00:54:08,510 __main__ INFO Stopping sampler daemon ...
+Traceback (most recent call last):
+  File "direct_ldms_ls_conn_test", line 296, in <module>
+    samp.stop()
+  File "/home/narate/cron/ldms-test/LDMS_Test.py", line 2242, in stop
+    return self._remote_stop()
+  File "/home/narate/cron/ldms-test/LDMS_Test.py", line 2238, in _remote_stop
+    raise RuntimeError("remote stop error: {}, msg: {}".format(rc, out))
+RuntimeError: remote stop error: 255, msg: pid file not found /mnt/300G/data/2023-06-18-003001/data/direct_ldms_ls_conn_test/pid/cygnus-01-iw/cygnus-01-iw-10001.pid
+
+2023-06-18 00:54:08,724 TADA INFO assertion 2, Kill the sampler: skipped
+2023-06-18 00:54:08,724 TADA INFO assertion 3, ldms_ls to the dead sampler: skipped
+2023-06-18 00:54:08,725 TADA INFO assertion 4, ldms_ls to a dead host: skipped
+2023-06-18 00:54:08,725 TADA INFO test direct_ldms_ls_conn_test ended
+2023-06-18 00:54:08,932 __main__ INFO stopping munged on cygnus-01-iw
+2023-06-18 00:54:09,358 __main__ INFO stopping munged on localhost
