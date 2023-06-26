@@ -1,17 +1,17 @@
-2023-06-23 01:49:34,466 TADA INFO starting test `maestro_raft_test`
-2023-06-23 01:49:34,467 TADA INFO   test-id: 8ed826a0b9cfc6f459c0fbd9f4a360e65aaafe399dac2af3b20794fb5792517b
-2023-06-23 01:49:34,467 TADA INFO   test-suite: LDMSD
-2023-06-23 01:49:34,467 TADA INFO   test-name: maestro_raft_test
-2023-06-23 01:49:34,467 TADA INFO   test-user: narate
-2023-06-23 01:49:34,467 TADA INFO   commit-id: 564784aadef90522c9e94e7797b394d462daa25d
-2023-06-23 01:49:44,479 __main__ INFO -- Get or create cluster --
-2023-06-23 01:50:20,112 __main__ INFO -- Start daemons --
-2023-06-23 01:51:55,361 __main__ INFO -- making known hosts (ssh) --
-2023-06-23 01:52:02,290 __main__ INFO ... make sure ldmsd's are up
-2023-06-23 01:52:18,478 TADA INFO assertion 1, Statuses of maestros, 1 leader + 2 followers: [('FOLLOWER', 2), ('LEADER', 1)], passed
-2023-06-23 01:52:30,849 TADA INFO assertion 2, All ldmsds are up and configured: sets verified, passed
-2023-06-23 01:52:31,119 TADA INFO assertion 3, Data are being stored: data check, passed
-2023-06-23 01:52:36,051 TADA INFO assertion 4, New leader elected: checked, passed
+2023-06-25 01:49:04,257 TADA INFO starting test `maestro_raft_test`
+2023-06-25 01:49:04,257 TADA INFO   test-id: faca79675f6cb2e16458e5ca48bcf8aba993af834c83a29fe205d1880503c48d
+2023-06-25 01:49:04,257 TADA INFO   test-suite: LDMSD
+2023-06-25 01:49:04,257 TADA INFO   test-name: maestro_raft_test
+2023-06-25 01:49:04,257 TADA INFO   test-user: narate
+2023-06-25 01:49:04,257 TADA INFO   commit-id: 564784aadef90522c9e94e7797b394d462daa25d
+2023-06-25 01:49:14,269 __main__ INFO -- Get or create cluster --
+2023-06-25 01:49:49,515 __main__ INFO -- Start daemons --
+2023-06-25 01:51:24,793 __main__ INFO -- making known hosts (ssh) --
+2023-06-25 01:51:31,913 __main__ INFO ... make sure ldmsd's are up
+2023-06-25 01:51:48,782 TADA INFO assertion 1, Statuses of maestros, 1 leader + 2 followers: [('FOLLOWER', 2), ('LEADER', 1)], passed
+2023-06-25 01:52:01,179 TADA INFO assertion 2, All ldmsds are up and configured: sets verified, passed
+2023-06-25 01:52:01,503 TADA INFO assertion 3, Data are being stored: data check, passed
+2023-06-25 01:52:06,394 TADA INFO assertion 4, New leader elected: checked, passed
 ---Wait for config to write to file---
 Traceback (most recent call last):
   File "maestro_raft_test", line 512, in <module>
@@ -30,7 +30,23 @@ Traceback (most recent call last):
     lset.update(cb = update_cb)
 AttributeError: 'NoneType' object has no attribute 'update'
 
-2023-06-24 00:30:08,920 TADA INFO assertion 5, Restarted ldmsd is configured: skipped
-2023-06-24 00:30:08,920 TADA INFO assertion 6, New data are presented in the store: skipped
-2023-06-24 00:30:08,920 TADA INFO assertion 7, The restarted maestro becomes a follower: skipped
-2023-06-24 00:30:08,920 TADA INFO test maestro_raft_test ended
+2023-06-26 00:30:09,460 TADA INFO assertion 5, Restarted ldmsd is configured: skipped
+2023-06-26 00:30:09,461 TADA INFO assertion 6, New data are presented in the store: skipped
+2023-06-26 00:30:09,461 TADA INFO assertion 7, The restarted maestro becomes a follower: skipped
+2023-06-26 00:30:09,461 TADA INFO test maestro_raft_test ended
+Error in atexit._run_exitfuncs:
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/site-packages/docker/api/client.py", line 261, in _raise_for_status
+    response.raise_for_status()
+  File "/usr/lib/python3.6/site-packages/requests/models.py", line 941, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 500 Server Error: Internal Server Error for url: http+docker://localhost/v1.35/networks/lreenfol9y3lwmxr6azfahj2s
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/site-packages/docker/api/client.py", line 263, in _raise_for_status
+    raise create_api_error_from_http_exception(e)
+  File "/usr/lib/python3.6/site-packages/docker/errors.py", line 31, in create_api_error_from_http_exception
+    raise cls(e, response=response, explanation=explanation)
+docker.errors.APIError: 500 Server Error: Internal Server Error ("network lreenfol9y3lwmxr6azfahj2s not found")
