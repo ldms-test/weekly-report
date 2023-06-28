@@ -2,7 +2,7 @@ Test Summary
 ============
 * [direct_ldms_ls_conn_test](test-log/direct_ldms_ls_conn_test.log): $\textcolor{red}{\text{FAILED}}$
 * [direct_prdcr_subscribe_test](test-log/direct_prdcr_subscribe_test.log): $\textcolor{red}{\text{FAILED}}$
-* [agg_slurm_test](test-log/agg_slurm_test.log): $\textcolor{red}{\text{FAILED}}$
+* [agg_slurm_test](test-log/agg_slurm_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
 * [papi_sampler_test](test-log/papi_sampler_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
 * [papi_store_test](test-log/papi_store_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
 * [store_app_test](test-log/store_app_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
@@ -47,6 +47,6 @@ Test Summary
 * [libovis_log_test](test-log/libovis_log_test.log): $\textcolor{red}{\text{FAILED}}$
 * [ldmsd_long_config_test](test-log/ldmsd_long_config_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
 * [cont-test-ldms](test-log/cont-test-ldms.log): $\textcolor{lightgreen}{\text{PASSED}}$
-* [cont-test-maestro](test-log/cont-test-maestro.log): $\textcolor{red}{\text{FAILED}}$
+* [cont-test-maestro](test-log/cont-test-maestro.log): $\textcolor{lightgreen}{\text{PASSED}}$
 * [cont-test-maestro-hostmunge](test-log/cont-test-maestro-hostmunge.log): $\textcolor{red}{\text{FAILED}}$
 * [cont-test-maestro-munge](test-log/cont-test-maestro-munge.log): $\textcolor{red}{\text{FAILED}}$
