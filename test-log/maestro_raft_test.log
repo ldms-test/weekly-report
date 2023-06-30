@@ -1,17 +1,17 @@
-2023-06-27 01:48:58,801 TADA INFO starting test `maestro_raft_test`
-2023-06-27 01:48:58,801 TADA INFO   test-id: de17f6c74bc34406bf7ca930466257850385c35ae98c8f04cd575c13d889908e
-2023-06-27 01:48:58,801 TADA INFO   test-suite: LDMSD
-2023-06-27 01:48:58,801 TADA INFO   test-name: maestro_raft_test
-2023-06-27 01:48:58,801 TADA INFO   test-user: narate
-2023-06-27 01:48:58,801 TADA INFO   commit-id: 564784aadef90522c9e94e7797b394d462daa25d
-2023-06-27 01:49:08,813 __main__ INFO -- Get or create cluster --
-2023-06-27 01:49:43,956 __main__ INFO -- Start daemons --
-2023-06-27 01:51:19,422 __main__ INFO -- making known hosts (ssh) --
-2023-06-27 01:51:26,541 __main__ INFO ... make sure ldmsd's are up
-2023-06-27 01:51:41,591 TADA INFO assertion 1, Statuses of maestros, 1 leader + 2 followers: [('FOLLOWER', 2), ('LEADER', 1)], passed
-2023-06-27 01:51:53,955 TADA INFO assertion 2, All ldmsds are up and configured: sets verified, passed
-2023-06-27 01:51:54,215 TADA INFO assertion 3, Data are being stored: data check, passed
-2023-06-27 01:51:59,111 TADA INFO assertion 4, New leader elected: checked, passed
+2023-06-29 01:48:54,371 TADA INFO starting test `maestro_raft_test`
+2023-06-29 01:48:54,371 TADA INFO   test-id: 2f9ff1777a7d6f5478a1445ab08e63fb8295b6d46996b128fe20b79555b9d502
+2023-06-29 01:48:54,371 TADA INFO   test-suite: LDMSD
+2023-06-29 01:48:54,371 TADA INFO   test-name: maestro_raft_test
+2023-06-29 01:48:54,371 TADA INFO   test-user: narate
+2023-06-29 01:48:54,371 TADA INFO   commit-id: 26f8c63d31947afe7b20b74b1c158c9fdd735a13
+2023-06-29 01:49:04,383 __main__ INFO -- Get or create cluster --
+2023-06-29 01:49:39,805 __main__ INFO -- Start daemons --
+2023-06-29 01:51:15,137 __main__ INFO -- making known hosts (ssh) --
+2023-06-29 01:51:21,993 __main__ INFO ... make sure ldmsd's are up
+2023-06-29 01:51:37,640 TADA INFO assertion 1, Statuses of maestros, 1 leader + 2 followers: [('FOLLOWER', 2), ('LEADER', 1)], passed
+2023-06-29 01:51:50,023 TADA INFO assertion 2, All ldmsds are up and configured: sets verified, passed
+2023-06-29 01:51:50,278 TADA INFO assertion 3, Data are being stored: data check, passed
+2023-06-29 01:51:55,183 TADA INFO assertion 4, New leader elected: checked, passed
 ---Wait for config to write to file---
 Traceback (most recent call last):
   File "maestro_raft_test", line 512, in <module>
@@ -30,7 +30,23 @@ Traceback (most recent call last):
     lset.update(cb = update_cb)
 AttributeError: 'NoneType' object has no attribute 'update'
 
-2023-06-28 00:30:08,925 TADA INFO assertion 5, Restarted ldmsd is configured: skipped
-2023-06-28 00:30:08,925 TADA INFO assertion 6, New data are presented in the store: skipped
-2023-06-28 00:30:08,926 TADA INFO assertion 7, The restarted maestro becomes a follower: skipped
-2023-06-28 00:30:08,926 TADA INFO test maestro_raft_test ended
+2023-06-30 00:30:09,042 TADA INFO assertion 5, Restarted ldmsd is configured: skipped
+2023-06-30 00:30:09,042 TADA INFO assertion 6, New data are presented in the store: skipped
+2023-06-30 00:30:09,043 TADA INFO assertion 7, The restarted maestro becomes a follower: skipped
+2023-06-30 00:30:09,043 TADA INFO test maestro_raft_test ended
+Error in atexit._run_exitfuncs:
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/site-packages/docker/api/client.py", line 261, in _raise_for_status
+    response.raise_for_status()
+  File "/usr/lib/python3.6/site-packages/requests/models.py", line 941, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http+docker://localhost/v1.35/networks/k04oblg0h8t8hidbu8f5dfvok
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/site-packages/docker/api/client.py", line 263, in _raise_for_status
+    raise create_api_error_from_http_exception(e)
+  File "/usr/lib/python3.6/site-packages/docker/errors.py", line 31, in create_api_error_from_http_exception
+    raise cls(e, response=response, explanation=explanation)
+docker.errors.NotFound: 404 Client Error: Not Found ("rpc error: code = NotFound desc = network k04oblg0h8t8hidbu8f5dfvok not found")
