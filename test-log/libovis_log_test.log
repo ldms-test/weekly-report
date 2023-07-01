@@ -1,215 +1,216 @@
-2023-06-30 00:45:17,658 TADA INFO starting test `libovis_log_test`
-2023-06-30 00:45:17,658 TADA INFO   test-id: 32866de706aeee92d2ee5ab805b57e2971f4afa4a63c456befe803647eba4d99
-2023-06-30 00:45:17,658 TADA INFO   test-suite: LDMSD
-2023-06-30 00:45:17,658 TADA INFO   test-name: libovis_log_test
-2023-06-30 00:45:17,658 TADA INFO   test-user: narate
-2023-06-30 00:45:17,658 TADA INFO   commit-id: 26f8c63d31947afe7b20b74b1c158c9fdd735a13
-2023-06-30 00:45:17,659 __main__ INFO -- Create the cluster -- 
-2023-06-30 00:45:22,842 __main__ INFO -- Start daemons --
-2023-06-30 00:45:25,080 TADA INFO assertion 1, Call ovis_log_init() with valid arguments: 'return_code=0' and 'liovis_log_test' in 'Fri Jun 30 00:45:24 2023:         : libovis_log_test: return_code=0
+2023-07-01 00:45:13,978 TADA INFO starting test `libovis_log_test`
+2023-07-01 00:45:13,978 TADA INFO   test-id: 424f04f1a56b3350d08b2edef3ffc9ced11911de0a6c66f428a77aec7a8ce91f
+2023-07-01 00:45:13,978 TADA INFO   test-suite: LDMSD
+2023-07-01 00:45:13,978 TADA INFO   test-name: libovis_log_test
+2023-07-01 00:45:13,978 TADA INFO   test-user: narate
+2023-07-01 00:45:13,978 TADA INFO   commit-id: 26f8c63d31947afe7b20b74b1c158c9fdd735a13
+2023-07-01 00:45:13,979 __main__ INFO -- Create the cluster -- 
+2023-07-01 00:45:19,403 __main__ INFO -- Start daemons --
+2023-07-01 00:45:21,637 TADA INFO assertion 1, Call ovis_log_init() with valid arguments: 'return_code=0' and 'liovis_log_test' in 'Sat Jul 01 00:45:20 2023:         : libovis_log_test: return_code=0
 ', passed
-2023-06-30 00:45:26,200 TADA INFO assertion 2, Call ovis_log_init() with name = NULL: ('return_code=0' and ': :') in 'Fri Jun 30 00:45:25 2023:         : : return_code=0
+2023-07-01 00:45:22,760 TADA INFO assertion 2, Call ovis_log_init() with name = NULL: ('return_code=0' and ': :') in 'Sat Jul 01 00:45:21 2023:         : : return_code=0
 ', passed
-2023-06-30 00:45:27,312 TADA INFO assertion 3, Call ovis_log_init() with an invalid level: 'return_code=22' in 'Fri Jun 30 00:45:26 2023:         : : return_code=22
+2023-07-01 00:45:23,885 TADA INFO assertion 3, Call ovis_log_init() with an invalid level: 'return_code=22' in 'Sat Jul 01 00:45:22 2023:         : : return_code=22
 ', passed
-2023-06-30 00:45:28,435 TADA INFO assertion 4, Call ovis_log_init() with an invalid mode: 'return_code=22' in 'Fri Jun 30 00:45:27 2023:         : : return_code=22
+2023-07-01 00:45:25,014 TADA INFO assertion 4, Call ovis_log_init() with an invalid mode: 'return_code=22' in 'Sat Jul 01 00:45:23 2023:         : : return_code=22
 ', passed
-2023-06-30 00:45:29,074 TADA INFO assertion 6, Log messages to a file: 0 == ovis_log_open(/var/log/6.log) # (0), passed
-2023-06-30 00:45:30,177 TADA INFO assertion 5, Log messages to stdout: 'return_code=0' in 'Fri Jun 30 00:45:29 2023:         : : return_code=0
+2023-07-01 00:45:25,662 TADA INFO assertion 6, Log messages to a file: 0 == ovis_log_open(/var/log/6.log) # (0), passed
+2023-07-01 00:45:26,767 TADA INFO assertion 5, Log messages to stdout: 'return_code=0' in 'Sat Jul 01 00:45:25 2023:         : : return_code=0
 ', passed
-2023-06-30 00:45:30,290 TADA INFO assertion 7, Open the log file at a non-existing path: 'Could not open the log file' in 'Fri Jun 30 00:45:30 2023:         : test: result=0
-Fri Jun 30 00:45:30 2023:    ERROR: test: Could not open the log file named '/data/log/foo/7.log'
-Fri Jun 30 00:45:30 2023:    ERROR: test: Failed to open the log file at /data/log/foo/7.log. Error 22
+2023-07-01 00:45:26,887 TADA INFO assertion 7, Open the log file at a non-existing path: 'Could not open the log file' in 'Sat Jul 01 00:45:26 2023:         : test: result=0
+Sat Jul 01 00:45:26 2023:    ERROR: test: Could not open the log file named '/data/log/foo/7.log'
+Sat Jul 01 00:45:26 2023:    ERROR: test: Failed to open the log file at /data/log/foo/7.log. Error 22
 ', passed
-2023-06-30 00:45:30,872 TADA INFO assertion 8, Reopen the log file at another path: ovis_log_open() closes and opens the second path successfully, passed
-2023-06-30 00:45:31,271 TADA INFO assertion 9, Convert 'DEBUG,INFO' integer to a string: DEBUG,INFO == DEBUG,INFO (expected), passed
-2023-06-30 00:45:31,386 TADA INFO assertion 10, Convert 'DEBUG,WARNING' integer to a string: DEBUG,WARNING == DEBUG,WARNING (expected), passed
-2023-06-30 00:45:31,496 TADA INFO assertion 11, Convert 'DEBUG,ERROR' integer to a string: DEBUG,ERROR == DEBUG,ERROR (expected), passed
-2023-06-30 00:45:31,611 TADA INFO assertion 12, Convert 'DEBUG,CRITICAL' integer to a string: DEBUG,CRITICAL == DEBUG,CRITICAL (expected), passed
-2023-06-30 00:45:31,733 TADA INFO assertion 13, Convert 'INFO,WARNING' integer to a string: INFO,WARNING == INFO,WARNING (expected), passed
-2023-06-30 00:45:31,826 TADA INFO assertion 14, Convert 'INFO,ERROR' integer to a string: INFO,ERROR == INFO,ERROR (expected), passed
-2023-06-30 00:45:31,930 TADA INFO assertion 15, Convert 'INFO,CRITICAL' integer to a string: INFO,CRITICAL == INFO,CRITICAL (expected), passed
-2023-06-30 00:45:32,043 TADA INFO assertion 16, Convert 'WARNING,ERROR' integer to a string: WARNING,ERROR == WARNING,ERROR (expected), passed
-2023-06-30 00:45:32,146 TADA INFO assertion 17, Convert 'WARNING,CRITICAL' integer to a string: WARNING,CRITICAL == WARNING,CRITICAL (expected), passed
-2023-06-30 00:45:32,255 TADA INFO assertion 18, Convert 'ERROR,CRITICAL' integer to a string: ERROR,CRITICAL == ERROR,CRITICAL (expected), passed
-2023-06-30 00:45:32,367 TADA INFO assertion 19, Convert 'DEBUG,INFO,WARNING' integer to a string: DEBUG,INFO,WARNING == DEBUG,INFO,WARNING (expected), passed
-2023-06-30 00:45:32,484 TADA INFO assertion 20, Convert 'DEBUG,INFO,ERROR' integer to a string: DEBUG,INFO,ERROR == DEBUG,INFO,ERROR (expected), passed
-2023-06-30 00:45:32,604 TADA INFO assertion 21, Convert 'DEBUG,INFO,CRITICAL' integer to a string: DEBUG,INFO,CRITICAL == DEBUG,INFO,CRITICAL (expected), passed
-2023-06-30 00:45:32,717 TADA INFO assertion 22, Convert 'DEBUG,WARNING,ERROR' integer to a string: DEBUG,WARNING,ERROR == DEBUG,WARNING,ERROR (expected), passed
-2023-06-30 00:45:32,840 TADA INFO assertion 23, Convert 'DEBUG,WARNING,CRITICAL' integer to a string: DEBUG,WARNING,CRITICAL == DEBUG,WARNING,CRITICAL (expected), passed
-2023-06-30 00:45:32,990 TADA INFO assertion 24, Convert 'DEBUG,ERROR,CRITICAL' integer to a string: DEBUG,ERROR,CRITICAL == DEBUG,ERROR,CRITICAL (expected), passed
-2023-06-30 00:45:33,101 TADA INFO assertion 25, Convert 'INFO,WARNING,ERROR' integer to a string: INFO,WARNING,ERROR == INFO,WARNING,ERROR (expected), passed
-2023-06-30 00:45:33,220 TADA INFO assertion 26, Convert 'INFO,WARNING,CRITICAL' integer to a string: INFO,WARNING,CRITICAL == INFO,WARNING,CRITICAL (expected), passed
-2023-06-30 00:45:33,324 TADA INFO assertion 27, Convert 'INFO,ERROR,CRITICAL' integer to a string: INFO,ERROR,CRITICAL == INFO,ERROR,CRITICAL (expected), passed
-2023-06-30 00:45:33,431 TADA INFO assertion 28, Convert 'WARNING,ERROR,CRITICAL' integer to a string: WARNING,ERROR,CRITICAL == WARNING,ERROR,CRITICAL (expected), passed
-2023-06-30 00:45:33,541 TADA INFO assertion 29, Convert 'DEBUG,INFO,WARNING,ERROR' integer to a string: DEBUG,INFO,WARNING,ERROR == DEBUG,INFO,WARNING,ERROR (expected), passed
-2023-06-30 00:45:33,652 TADA INFO assertion 30, Convert 'DEBUG,INFO,WARNING,CRITICAL' integer to a string: DEBUG,INFO,WARNING,CRITICAL == DEBUG,INFO,WARNING,CRITICAL (expected), passed
-2023-06-30 00:45:33,767 TADA INFO assertion 31, Convert 'DEBUG,INFO,ERROR,CRITICAL' integer to a string: DEBUG,INFO,ERROR,CRITICAL == DEBUG,INFO,ERROR,CRITICAL (expected), passed
-2023-06-30 00:45:33,869 TADA INFO assertion 32, Convert 'DEBUG,WARNING,ERROR,CRITICAL' integer to a string: DEBUG,WARNING,ERROR,CRITICAL == DEBUG,WARNING,ERROR,CRITICAL (expected), passed
-2023-06-30 00:45:33,992 TADA INFO assertion 33, Convert 'INFO,WARNING,ERROR,CRITICAL' integer to a string: INFO,WARNING,ERROR,CRITICAL == INFO,WARNING,ERROR,CRITICAL (expected), passed
-2023-06-30 00:45:34,091 TADA INFO assertion 34, Convert 'DEBUG,INFO,WARNING,ERROR,CRITICAL' integer to a string: DEBUG,INFO,WARNING,ERROR,CRITICAL == DEBUG,INFO,WARNING,ERROR,CRITICAL (expected), passed
-2023-06-30 00:45:34,200 TADA INFO assertion 35, Convert 'DEBUG,' integer to a string: DEBUG, == DEBUG, (expected), passed
-2023-06-30 00:45:34,301 TADA INFO assertion 36, Convert 'INFO,' integer to a string: INFO, == INFO, (expected), passed
-2023-06-30 00:45:34,395 TADA INFO assertion 37, Convert 'WARNING,' integer to a string: WARNING, == WARNING, (expected), passed
-2023-06-30 00:45:34,493 TADA INFO assertion 38, Convert 'ERROR,' integer to a string: ERROR, == ERROR, (expected), passed
-2023-06-30 00:45:34,615 TADA INFO assertion 39, Convert 'CRITICAL,' integer to a string: CRITICAL, == CRITICAL, (expected), passed
-2023-06-30 00:45:34,733 TADA INFO assertion 40, Convert an invalid integer to a level string: (null) == (null) (expected), passed
-2023-06-30 00:45:34,838 TADA INFO assertion 41, Convert the 'DEBUG,INFO' to an integer: 3 == 3 (expected), passed
-2023-06-30 00:45:34,947 TADA INFO assertion 42, Convert the 'DEBUG,WARNING' to an integer: 5 == 5 (expected), passed
-2023-06-30 00:45:35,048 TADA INFO assertion 43, Convert the 'DEBUG,ERROR' to an integer: 9 == 9 (expected), passed
-2023-06-30 00:45:35,149 TADA INFO assertion 44, Convert the 'DEBUG,CRITICAL' to an integer: 17 == 17 (expected), passed
-2023-06-30 00:45:35,254 TADA INFO assertion 45, Convert the 'INFO,WARNING' to an integer: 6 == 6 (expected), passed
-2023-06-30 00:45:35,356 TADA INFO assertion 46, Convert the 'INFO,ERROR' to an integer: 10 == 10 (expected), passed
-2023-06-30 00:45:35,460 TADA INFO assertion 47, Convert the 'INFO,CRITICAL' to an integer: 18 == 18 (expected), passed
-2023-06-30 00:45:35,545 TADA INFO assertion 48, Convert the 'WARNING,ERROR' to an integer: 12 == 12 (expected), passed
-2023-06-30 00:45:35,641 TADA INFO assertion 49, Convert the 'WARNING,CRITICAL' to an integer: 20 == 20 (expected), passed
-2023-06-30 00:45:35,743 TADA INFO assertion 50, Convert the 'ERROR,CRITICAL' to an integer: 24 == 24 (expected), passed
-2023-06-30 00:45:35,842 TADA INFO assertion 51, Convert the 'DEBUG,INFO,WARNING' to an integer: 7 == 7 (expected), passed
-2023-06-30 00:45:35,950 TADA INFO assertion 52, Convert the 'DEBUG,INFO,ERROR' to an integer: 11 == 11 (expected), passed
-2023-06-30 00:45:36,057 TADA INFO assertion 53, Convert the 'DEBUG,INFO,CRITICAL' to an integer: 19 == 19 (expected), passed
-2023-06-30 00:45:36,169 TADA INFO assertion 54, Convert the 'DEBUG,WARNING,ERROR' to an integer: 13 == 13 (expected), passed
-2023-06-30 00:45:36,270 TADA INFO assertion 55, Convert the 'DEBUG,WARNING,CRITICAL' to an integer: 21 == 21 (expected), passed
-2023-06-30 00:45:36,367 TADA INFO assertion 56, Convert the 'DEBUG,ERROR,CRITICAL' to an integer: 25 == 25 (expected), passed
-2023-06-30 00:45:36,467 TADA INFO assertion 57, Convert the 'INFO,WARNING,ERROR' to an integer: 14 == 14 (expected), passed
-2023-06-30 00:45:36,581 TADA INFO assertion 58, Convert the 'INFO,WARNING,CRITICAL' to an integer: 22 == 22 (expected), passed
-2023-06-30 00:45:36,674 TADA INFO assertion 59, Convert the 'INFO,ERROR,CRITICAL' to an integer: 26 == 26 (expected), passed
-2023-06-30 00:45:36,774 TADA INFO assertion 60, Convert the 'WARNING,ERROR,CRITICAL' to an integer: 28 == 28 (expected), passed
-2023-06-30 00:45:36,875 TADA INFO assertion 61, Convert the 'DEBUG,INFO,WARNING,ERROR' to an integer: 15 == 15 (expected), passed
-2023-06-30 00:45:36,971 TADA INFO assertion 62, Convert the 'DEBUG,INFO,WARNING,CRITICAL' to an integer: 23 == 23 (expected), passed
-2023-06-30 00:45:37,067 TADA INFO assertion 63, Convert the 'DEBUG,INFO,ERROR,CRITICAL' to an integer: 27 == 27 (expected), passed
-2023-06-30 00:45:37,159 TADA INFO assertion 64, Convert the 'DEBUG,WARNING,ERROR,CRITICAL' to an integer: 29 == 29 (expected), passed
-2023-06-30 00:45:37,282 TADA INFO assertion 65, Convert the 'INFO,WARNING,ERROR,CRITICAL' to an integer: 30 == 30 (expected), passed
-2023-06-30 00:45:37,394 TADA INFO assertion 66, Convert the 'DEBUG,INFO,WARNING,ERROR,CRITICAL' to an integer: 31 == 31 (expected), passed
-2023-06-30 00:45:37,498 TADA INFO assertion 67, Convert the 'DEBUG,' to an integer: 1 == 1 (expected), passed
-2023-06-30 00:45:37,609 TADA INFO assertion 68, Convert the 'INFO,' to an integer: 2 == 2 (expected), passed
-2023-06-30 00:45:37,736 TADA INFO assertion 69, Convert the 'WARNING,' to an integer: 4 == 4 (expected), passed
-2023-06-30 00:45:37,840 TADA INFO assertion 70, Convert the 'ERROR,' to an integer: 8 == 8 (expected), passed
-2023-06-30 00:45:37,941 TADA INFO assertion 71, Convert the 'CRITICAL,' to an integer: 16 == 16 (expected), passed
-2023-06-30 00:45:38,048 TADA INFO assertion 72, Convert the 'DEBUG' to an integer: 31 == 31 (expected), passed
-2023-06-30 00:45:38,155 TADA INFO assertion 73, Convert the 'INFO' to an integer: 30 == 30 (expected), passed
-2023-06-30 00:45:38,261 TADA INFO assertion 74, Convert the 'WARNING' to an integer: 28 == 28 (expected), passed
-2023-06-30 00:45:38,363 TADA INFO assertion 75, Convert the 'ERROR' to an integer: 24 == 24 (expected), passed
-2023-06-30 00:45:38,456 TADA INFO assertion 76, Convert the 'CRITICAL' to an integer: 16 == 16 (expected), passed
-2023-06-30 00:45:38,576 TADA INFO assertion 77, Convert an invalid level string to an integer: -22 == -22 (expected), passed
-2023-06-30 00:45:39,185 TADA INFO assertion 78, Verify that no messages were printed when the level is QUIET.: No messages were printed., passed
-2023-06-30 00:45:39,501 TADA INFO assertion 79, Verify that messages of DEBUG,INFO were reported.: Only the messages with the level not less than 'ERROR' were logged., passed
-2023-06-30 00:45:39,814 TADA INFO assertion 80, Verify that messages of DEBUG,WARNING were reported.: Only the messages with the level not less than 'ERROR' were logged., passed
-2023-06-30 00:45:40,123 TADA INFO assertion 81, Verify that messages of DEBUG,ERROR were reported.: Only the messages with the level not less than 'ERROR' were logged., passed
-2023-06-30 00:45:40,416 TADA INFO assertion 82, Verify that messages of DEBUG,CRITICAL were reported.: Only the messages with the level not less than 'ERROR' were logged., passed
-2023-06-30 00:45:40,738 TADA INFO assertion 83, Verify that messages of INFO,WARNING were reported.: Only the messages with the level not less than 'ERROR' were logged., passed
-2023-06-30 00:45:41,043 TADA INFO assertion 84, Verify that messages of INFO,ERROR were reported.: Only the messages with the level not less than 'ERROR' were logged., passed
-2023-06-30 00:45:41,355 TADA INFO assertion 85, Verify that messages of INFO,CRITICAL were reported.: Only the messages with the level not less than 'ERROR' were logged., passed
-2023-06-30 00:45:41,640 TADA INFO assertion 86, Verify that messages of WARNING,ERROR were reported.: Only the messages with the level not less than 'ERROR' were logged., passed
-2023-06-30 00:45:41,945 TADA INFO assertion 87, Verify that messages of WARNING,CRITICAL were reported.: Only the messages with the level not less than 'ERROR' were logged., passed
-2023-06-30 00:45:42,259 TADA INFO assertion 88, Verify that messages of ERROR,CRITICAL were reported.: Only the messages with the level not less than 'ERROR' were logged., passed
-2023-06-30 00:45:42,561 TADA INFO assertion 89, Verify that messages of DEBUG,INFO,WARNING were reported.: Only the messages with the level not less than 'ERROR' were logged., passed
-2023-06-30 00:45:42,879 TADA INFO assertion 90, Verify that messages of DEBUG,INFO,ERROR were reported.: Only the messages with the level not less than 'ERROR' were logged., passed
-2023-06-30 00:45:43,204 TADA INFO assertion 91, Verify that messages of DEBUG,INFO,CRITICAL were reported.: Only the messages with the level not less than 'ERROR' were logged., passed
-2023-06-30 00:45:43,512 TADA INFO assertion 92, Verify that messages of DEBUG,WARNING,ERROR were reported.: Only the messages with the level not less than 'ERROR' were logged., passed
-2023-06-30 00:45:43,861 TADA INFO assertion 93, Verify that messages of DEBUG,WARNING,CRITICAL were reported.: Only the messages with the level not less than 'ERROR' were logged., passed
-2023-06-30 00:45:44,169 TADA INFO assertion 94, Verify that messages of DEBUG,ERROR,CRITICAL were reported.: Only the messages with the level not less than 'ERROR' were logged., passed
-2023-06-30 00:45:44,493 TADA INFO assertion 95, Verify that messages of INFO,WARNING,ERROR were reported.: Only the messages with the level not less than 'ERROR' were logged., passed
-2023-06-30 00:45:44,816 TADA INFO assertion 96, Verify that messages of INFO,WARNING,CRITICAL were reported.: Only the messages with the level not less than 'ERROR' were logged., passed
-2023-06-30 00:45:45,109 TADA INFO assertion 97, Verify that messages of INFO,ERROR,CRITICAL were reported.: Only the messages with the level not less than 'ERROR' were logged., passed
-2023-06-30 00:45:45,430 TADA INFO assertion 98, Verify that messages of WARNING,ERROR,CRITICAL were reported.: Only the messages with the level not less than 'ERROR' were logged., passed
-2023-06-30 00:45:45,747 TADA INFO assertion 99, Verify that messages of DEBUG,INFO,WARNING,ERROR were reported.: Only the messages with the level not less than 'ERROR' were logged., passed
-2023-06-30 00:45:46,051 TADA INFO assertion 100, Verify that messages of DEBUG,INFO,WARNING,CRITICAL were reported.: Only the messages with the level not less than 'ERROR' were logged., passed
-2023-06-30 00:45:46,353 TADA INFO assertion 101, Verify that messages of DEBUG,INFO,ERROR,CRITICAL were reported.: Only the messages with the level not less than 'ERROR' were logged., passed
-2023-06-30 00:45:46,674 TADA INFO assertion 102, Verify that messages of DEBUG,WARNING,ERROR,CRITICAL were reported.: Only the messages with the level not less than 'ERROR' were logged., passed
-2023-06-30 00:45:46,986 TADA INFO assertion 103, Verify that messages of INFO,WARNING,ERROR,CRITICAL were reported.: Only the messages with the level not less than 'ERROR' were logged., passed
-2023-06-30 00:45:47,299 TADA INFO assertion 104, Verify that messages of DEBUG,INFO,WARNING,ERROR,CRITICAL were reported.: Only the messages with the level not less than 'ERROR' were logged., passed
-2023-06-30 00:45:47,589 TADA INFO assertion 105, Verify that messages of DEBUG, were reported.: Only the messages with the level not less than 'ERROR' were logged., passed
-2023-06-30 00:45:47,910 TADA INFO assertion 106, Verify that messages of INFO, were reported.: Only the messages with the level not less than 'ERROR' were logged., passed
-2023-06-30 00:45:48,212 TADA INFO assertion 107, Verify that messages of WARNING, were reported.: Only the messages with the level not less than 'ERROR' were logged., passed
-2023-06-30 00:45:48,524 TADA INFO assertion 108, Verify that messages of ERROR, were reported.: Only the messages with the level not less than 'ERROR' were logged., passed
-2023-06-30 00:45:48,850 TADA INFO assertion 109, Verify that messages of CRITICAL, were reported.: Only the messages with the level not less than 'ERROR' were logged., passed
-2023-06-30 00:45:49,173 TADA INFO assertion 110, Verify that messages of DEBUG were reported.: Only the messages with the level not less than 'ERROR' were logged., passed
-2023-06-30 00:45:49,494 TADA INFO assertion 111, Verify that messages of INFO were reported.: Only the messages with the level not less than 'ERROR' were logged., passed
-2023-06-30 00:45:49,850 TADA INFO assertion 112, Verify that messages of WARNING were reported.: Only the messages with the level not less than 'ERROR' were logged., passed
-2023-06-30 00:45:50,147 TADA INFO assertion 113, Verify that messages of ERROR were reported.: Only the messages with the level not less than 'ERROR' were logged., passed
-2023-06-30 00:45:50,521 TADA INFO assertion 114, Verify that messages of CRITICAL were reported.: Only the messages with the level not less than 'ERROR' were logged., passed
-2023-06-30 00:45:51,158 TADA INFO assertion 116, Verify that ovis_log_close() works properly: ovis_log_close() works properly., passed
-2023-06-30 00:45:53,015 TADA INFO assertion 115, Verify that applications can open, rename, and reopen log files to perform log rotation.: ovis_log supports open, rename (external), and reopen., passed
-2023-06-30 00:45:53,435 TADA INFO assertion 117, Test a ovis_log_register() call with valid arguments: [{'idx': 0, 'return_code': 0, 'name': 'my_subsys', 'desc': 'my_subsys_desc', 'level': -1}] == [{'idx': 0, 'return_code': 0, 'name': 'my_subsys', 'desc': 'my_subsys_desc', 'level': -1}], passed
-2023-06-30 00:45:53,538 TADA INFO assertion 118, Test a ovis_log_register() call with NULL name: [{'idx': 0, 'return_code': 22}] == [{'idx': 0, 'return_code': 22}], passed
-2023-06-30 00:45:53,647 TADA INFO assertion 119, Test a ovis_log_register() call with NULL desc: [{'idx': 0, 'return_code': 22}] == [{'idx': 0, 'return_code': 22}], passed
-2023-06-30 00:45:53,754 TADA INFO assertion 120, Test a ovis_log_register() call with an existing subsystem: [{'idx': 0, 'return_code': 0, 'name': 'my_subsys', 'desc': 'my_subsys_desc', 'level': -1}, {'idx': 1, 'return_code': 17}] == [{'idx': 0, 'return_code': 0, 'name': 'my_subsys', 'desc': 'my_subsys_desc', 'level': -1}, {'idx': 1, 'return_code': 17}], passed
-2023-06-30 00:45:54,377 TADA INFO assertion 122, Verify that messages of DEBUG,INFO were reported from a subsystem.: Only the messages with the level not less than 'ERROR' were logged., passed
-2023-06-30 00:45:54,699 TADA INFO assertion 123, Verify that messages of DEBUG,WARNING were reported from a subsystem.: Only the messages with the level not less than 'ERROR' were logged., passed
-2023-06-30 00:45:55,010 TADA INFO assertion 124, Verify that messages of DEBUG,ERROR were reported from a subsystem.: Only the messages with the level not less than 'ERROR' were logged., passed
-2023-06-30 00:45:55,307 TADA INFO assertion 125, Verify that messages of DEBUG,CRITICAL were reported from a subsystem.: Only the messages with the level not less than 'ERROR' were logged., passed
-2023-06-30 00:45:55,619 TADA INFO assertion 126, Verify that messages of INFO,WARNING were reported from a subsystem.: Only the messages with the level not less than 'ERROR' were logged., passed
-2023-06-30 00:45:55,951 TADA INFO assertion 127, Verify that messages of INFO,ERROR were reported from a subsystem.: Only the messages with the level not less than 'ERROR' were logged., passed
-2023-06-30 00:45:56,262 TADA INFO assertion 128, Verify that messages of INFO,CRITICAL were reported from a subsystem.: Only the messages with the level not less than 'ERROR' were logged., passed
-2023-06-30 00:45:56,589 TADA INFO assertion 129, Verify that messages of WARNING,ERROR were reported from a subsystem.: Only the messages with the level not less than 'ERROR' were logged., passed
-2023-06-30 00:45:56,884 TADA INFO assertion 130, Verify that messages of WARNING,CRITICAL were reported from a subsystem.: Only the messages with the level not less than 'ERROR' were logged., passed
-2023-06-30 00:45:57,196 TADA INFO assertion 131, Verify that messages of ERROR,CRITICAL were reported from a subsystem.: Only the messages with the level not less than 'ERROR' were logged., passed
-2023-06-30 00:45:57,522 TADA INFO assertion 132, Verify that messages of DEBUG,INFO,WARNING were reported from a subsystem.: Only the messages with the level not less than 'ERROR' were logged., passed
-2023-06-30 00:45:57,831 TADA INFO assertion 133, Verify that messages of DEBUG,INFO,ERROR were reported from a subsystem.: Only the messages with the level not less than 'ERROR' were logged., passed
-2023-06-30 00:45:58,150 TADA INFO assertion 134, Verify that messages of DEBUG,INFO,CRITICAL were reported from a subsystem.: Only the messages with the level not less than 'ERROR' were logged., passed
-2023-06-30 00:45:58,465 TADA INFO assertion 135, Verify that messages of DEBUG,WARNING,ERROR were reported from a subsystem.: Only the messages with the level not less than 'ERROR' were logged., passed
-2023-06-30 00:45:58,778 TADA INFO assertion 136, Verify that messages of DEBUG,WARNING,CRITICAL were reported from a subsystem.: Only the messages with the level not less than 'ERROR' were logged., passed
-2023-06-30 00:45:59,085 TADA INFO assertion 137, Verify that messages of DEBUG,ERROR,CRITICAL were reported from a subsystem.: Only the messages with the level not less than 'ERROR' were logged., passed
-2023-06-30 00:45:59,396 TADA INFO assertion 138, Verify that messages of INFO,WARNING,ERROR were reported from a subsystem.: Only the messages with the level not less than 'ERROR' were logged., passed
-2023-06-30 00:45:59,678 TADA INFO assertion 139, Verify that messages of INFO,WARNING,CRITICAL were reported from a subsystem.: Only the messages with the level not less than 'ERROR' were logged., passed
-2023-06-30 00:46:00,022 TADA INFO assertion 140, Verify that messages of INFO,ERROR,CRITICAL were reported from a subsystem.: Only the messages with the level not less than 'ERROR' were logged., passed
-2023-06-30 00:46:00,325 TADA INFO assertion 141, Verify that messages of WARNING,ERROR,CRITICAL were reported from a subsystem.: Only the messages with the level not less than 'ERROR' were logged., passed
-2023-06-30 00:46:00,653 TADA INFO assertion 142, Verify that messages of DEBUG,INFO,WARNING,ERROR were reported from a subsystem.: Only the messages with the level not less than 'ERROR' were logged., passed
-2023-06-30 00:46:00,990 TADA INFO assertion 143, Verify that messages of DEBUG,INFO,WARNING,CRITICAL were reported from a subsystem.: Only the messages with the level not less than 'ERROR' were logged., passed
-2023-06-30 00:46:01,319 TADA INFO assertion 144, Verify that messages of DEBUG,INFO,ERROR,CRITICAL were reported from a subsystem.: Only the messages with the level not less than 'ERROR' were logged., passed
-2023-06-30 00:46:01,611 TADA INFO assertion 145, Verify that messages of DEBUG,WARNING,ERROR,CRITICAL were reported from a subsystem.: Only the messages with the level not less than 'ERROR' were logged., passed
-2023-06-30 00:46:01,934 TADA INFO assertion 146, Verify that messages of INFO,WARNING,ERROR,CRITICAL were reported from a subsystem.: Only the messages with the level not less than 'ERROR' were logged., passed
-2023-06-30 00:46:02,246 TADA INFO assertion 147, Verify that messages of DEBUG,INFO,WARNING,ERROR,CRITICAL were reported from a subsystem.: Only the messages with the level not less than 'ERROR' were logged., passed
-2023-06-30 00:46:02,542 TADA INFO assertion 148, Verify that messages of DEBUG, were reported from a subsystem.: Only the messages with the level not less than 'ERROR' were logged., passed
-2023-06-30 00:46:02,898 TADA INFO assertion 149, Verify that messages of INFO, were reported from a subsystem.: Only the messages with the level not less than 'ERROR' were logged., passed
-2023-06-30 00:46:03,191 TADA INFO assertion 150, Verify that messages of WARNING, were reported from a subsystem.: Only the messages with the level not less than 'ERROR' were logged., passed
-2023-06-30 00:46:03,512 TADA INFO assertion 151, Verify that messages of ERROR, were reported from a subsystem.: Only the messages with the level not less than 'ERROR' were logged., passed
-2023-06-30 00:46:03,825 TADA INFO assertion 152, Verify that messages of CRITICAL, were reported from a subsystem.: Only the messages with the level not less than 'ERROR' were logged., passed
-2023-06-30 00:46:04,135 TADA INFO assertion 153, Verify that messages of DEBUG were reported from a subsystem.: Only the messages with the level not less than 'ERROR' were logged., passed
-2023-06-30 00:46:04,437 TADA INFO assertion 154, Verify that messages of INFO were reported from a subsystem.: Only the messages with the level not less than 'ERROR' were logged., passed
-2023-06-30 00:46:04,767 TADA INFO assertion 155, Verify that messages of WARNING were reported from a subsystem.: Only the messages with the level not less than 'ERROR' were logged., passed
-2023-06-30 00:46:05,093 TADA INFO assertion 156, Verify that messages of ERROR were reported from a subsystem.: Only the messages with the level not less than 'ERROR' were logged., passed
-2023-06-30 00:46:05,399 TADA INFO assertion 157, Verify that messages of CRITICAL were reported from a subsystem.: Only the messages with the level not less than 'ERROR' were logged., passed
-2023-06-30 00:46:05,705 TADA INFO assertion 158, Verify that messages of DEBUG,INFO were reported from a subsystem.: Only the messages with the level not less than 'ERROR' were logged., passed
-2023-06-30 00:46:06,028 TADA INFO assertion 159, Verify that messages of DEBUG,WARNING were reported from a subsystem.: Only the messages with the level not less than 'ERROR' were logged., passed
-2023-06-30 00:46:06,324 TADA INFO assertion 160, Verify that messages of DEBUG,ERROR were reported from a subsystem.: Only the messages with the level not less than 'ERROR' were logged., passed
-2023-06-30 00:46:06,652 TADA INFO assertion 161, Verify that messages of DEBUG,CRITICAL were reported from a subsystem.: Only the messages with the level not less than 'ERROR' were logged., passed
-2023-06-30 00:46:06,984 TADA INFO assertion 162, Verify that messages of INFO,WARNING were reported from a subsystem.: Only the messages with the level not less than 'ERROR' were logged., passed
-2023-06-30 00:46:07,291 TADA INFO assertion 163, Verify that messages of INFO,ERROR were reported from a subsystem.: Only the messages with the level not less than 'ERROR' were logged., passed
-2023-06-30 00:46:07,596 TADA INFO assertion 164, Verify that messages of INFO,CRITICAL were reported from a subsystem.: Only the messages with the level not less than 'ERROR' were logged., passed
-2023-06-30 00:46:07,900 TADA INFO assertion 165, Verify that messages of WARNING,ERROR were reported from a subsystem.: Only the messages with the level not less than 'ERROR' were logged., passed
-2023-06-30 00:46:08,184 TADA INFO assertion 166, Verify that messages of WARNING,CRITICAL were reported from a subsystem.: Only the messages with the level not less than 'ERROR' were logged., passed
-2023-06-30 00:46:08,487 TADA INFO assertion 167, Verify that messages of ERROR,CRITICAL were reported from a subsystem.: Only the messages with the level not less than 'ERROR' were logged., passed
-2023-06-30 00:46:08,768 TADA INFO assertion 168, Verify that messages of DEBUG,INFO,WARNING were reported from a subsystem.: Only the messages with the level not less than 'ERROR' were logged., passed
-2023-06-30 00:46:09,099 TADA INFO assertion 169, Verify that messages of DEBUG,INFO,ERROR were reported from a subsystem.: Only the messages with the level not less than 'ERROR' were logged., passed
-2023-06-30 00:46:09,410 TADA INFO assertion 170, Verify that messages of DEBUG,INFO,CRITICAL were reported from a subsystem.: Only the messages with the level not less than 'ERROR' were logged., passed
-2023-06-30 00:46:09,716 TADA INFO assertion 171, Verify that messages of DEBUG,WARNING,ERROR were reported from a subsystem.: Only the messages with the level not less than 'ERROR' were logged., passed
-2023-06-30 00:46:10,019 TADA INFO assertion 172, Verify that messages of DEBUG,WARNING,CRITICAL were reported from a subsystem.: Only the messages with the level not less than 'ERROR' were logged., passed
-2023-06-30 00:46:10,336 TADA INFO assertion 173, Verify that messages of DEBUG,ERROR,CRITICAL were reported from a subsystem.: Only the messages with the level not less than 'ERROR' were logged., passed
-2023-06-30 00:46:10,665 TADA INFO assertion 174, Verify that messages of INFO,WARNING,ERROR were reported from a subsystem.: Only the messages with the level not less than 'ERROR' were logged., passed
-2023-06-30 00:46:10,974 TADA INFO assertion 175, Verify that messages of INFO,WARNING,CRITICAL were reported from a subsystem.: Only the messages with the level not less than 'ERROR' were logged., passed
-2023-06-30 00:46:11,288 TADA INFO assertion 176, Verify that messages of INFO,ERROR,CRITICAL were reported from a subsystem.: Only the messages with the level not less than 'ERROR' were logged., passed
-2023-06-30 00:46:11,605 TADA INFO assertion 177, Verify that messages of WARNING,ERROR,CRITICAL were reported from a subsystem.: Only the messages with the level not less than 'ERROR' were logged., passed
-2023-06-30 00:46:11,956 TADA INFO assertion 178, Verify that messages of DEBUG,INFO,WARNING,ERROR were reported from a subsystem.: Only the messages with the level not less than 'ERROR' were logged., passed
-2023-06-30 00:46:12,268 TADA INFO assertion 179, Verify that messages of DEBUG,INFO,WARNING,CRITICAL were reported from a subsystem.: Only the messages with the level not less than 'ERROR' were logged., passed
-2023-06-30 00:46:12,566 TADA INFO assertion 180, Verify that messages of DEBUG,INFO,ERROR,CRITICAL were reported from a subsystem.: Only the messages with the level not less than 'ERROR' were logged., passed
-2023-06-30 00:46:12,889 TADA INFO assertion 181, Verify that messages of DEBUG,WARNING,ERROR,CRITICAL were reported from a subsystem.: Only the messages with the level not less than 'ERROR' were logged., passed
-2023-06-30 00:46:13,198 TADA INFO assertion 182, Verify that messages of INFO,WARNING,ERROR,CRITICAL were reported from a subsystem.: Only the messages with the level not less than 'ERROR' were logged., passed
-2023-06-30 00:46:13,523 TADA INFO assertion 183, Verify that messages of DEBUG,INFO,WARNING,ERROR,CRITICAL were reported from a subsystem.: Only the messages with the level not less than 'ERROR' were logged., passed
-2023-06-30 00:46:13,857 TADA INFO assertion 184, Verify that messages of DEBUG, were reported from a subsystem.: Only the messages with the level not less than 'ERROR' were logged., passed
-2023-06-30 00:46:14,154 TADA INFO assertion 185, Verify that messages of INFO, were reported from a subsystem.: Only the messages with the level not less than 'ERROR' were logged., passed
-2023-06-30 00:46:14,458 TADA INFO assertion 186, Verify that messages of WARNING, were reported from a subsystem.: Only the messages with the level not less than 'ERROR' were logged., passed
-2023-06-30 00:46:14,781 TADA INFO assertion 187, Verify that messages of ERROR, were reported from a subsystem.: Only the messages with the level not less than 'ERROR' were logged., passed
-2023-06-30 00:46:15,094 TADA INFO assertion 188, Verify that messages of CRITICAL, were reported from a subsystem.: Only the messages with the level not less than 'ERROR' were logged., passed
-2023-06-30 00:46:15,412 TADA INFO assertion 189, Verify that messages of DEBUG were reported from a subsystem.: Only the messages with the level not less than 'ERROR' were logged., passed
-2023-06-30 00:46:15,751 TADA INFO assertion 190, Verify that messages of INFO were reported from a subsystem.: Only the messages with the level not less than 'ERROR' were logged., passed
-2023-06-30 00:46:16,086 TADA INFO assertion 191, Verify that messages of WARNING were reported from a subsystem.: Only the messages with the level not less than 'ERROR' were logged., passed
-2023-06-30 00:46:16,416 TADA INFO assertion 192, Verify that messages of ERROR were reported from a subsystem.: Only the messages with the level not less than 'ERROR' were logged., passed
-2023-06-30 00:46:16,754 TADA INFO assertion 193, Verify that messages of CRITICAL were reported from a subsystem.: Only the messages with the level not less than 'ERROR' were logged., passed
-2023-06-30 00:46:17,394 TADA INFO assertion 195, Verify that ovis_log_set_level_by_regex() returns an error when the given regular expression string is invalid.: 'result=22' in 'Fri Jun 30 00:46:17 2023:         : test: result=22
+2023-07-01 00:45:27,438 TADA INFO assertion 8, Reopen the log file at another path: ovis_log_open() closes and opens the second path successfully, passed
+2023-07-01 00:45:27,846 TADA INFO assertion 9, Convert 'DEBUG,INFO' integer to a string: DEBUG,INFO == DEBUG,INFO (expected), passed
+2023-07-01 00:45:27,944 TADA INFO assertion 10, Convert 'DEBUG,WARNING' integer to a string: DEBUG,WARNING == DEBUG,WARNING (expected), passed
+2023-07-01 00:45:28,043 TADA INFO assertion 11, Convert 'DEBUG,ERROR' integer to a string: DEBUG,ERROR == DEBUG,ERROR (expected), passed
+2023-07-01 00:45:28,170 TADA INFO assertion 12, Convert 'DEBUG,CRITICAL' integer to a string: DEBUG,CRITICAL == DEBUG,CRITICAL (expected), passed
+2023-07-01 00:45:28,292 TADA INFO assertion 13, Convert 'INFO,WARNING' integer to a string: INFO,WARNING == INFO,WARNING (expected), passed
+2023-07-01 00:45:28,395 TADA INFO assertion 14, Convert 'INFO,ERROR' integer to a string: INFO,ERROR == INFO,ERROR (expected), passed
+2023-07-01 00:45:28,502 TADA INFO assertion 15, Convert 'INFO,CRITICAL' integer to a string: INFO,CRITICAL == INFO,CRITICAL (expected), passed
+2023-07-01 00:45:28,602 TADA INFO assertion 16, Convert 'WARNING,ERROR' integer to a string: WARNING,ERROR == WARNING,ERROR (expected), passed
+2023-07-01 00:45:28,711 TADA INFO assertion 17, Convert 'WARNING,CRITICAL' integer to a string: WARNING,CRITICAL == WARNING,CRITICAL (expected), passed
+2023-07-01 00:45:28,806 TADA INFO assertion 18, Convert 'ERROR,CRITICAL' integer to a string: ERROR,CRITICAL == ERROR,CRITICAL (expected), passed
+2023-07-01 00:45:28,911 TADA INFO assertion 19, Convert 'DEBUG,INFO,WARNING' integer to a string: DEBUG,INFO,WARNING == DEBUG,INFO,WARNING (expected), passed
+2023-07-01 00:45:29,012 TADA INFO assertion 20, Convert 'DEBUG,INFO,ERROR' integer to a string: DEBUG,INFO,ERROR == DEBUG,INFO,ERROR (expected), passed
+2023-07-01 00:45:29,115 TADA INFO assertion 21, Convert 'DEBUG,INFO,CRITICAL' integer to a string: DEBUG,INFO,CRITICAL == DEBUG,INFO,CRITICAL (expected), passed
+2023-07-01 00:45:29,215 TADA INFO assertion 22, Convert 'DEBUG,WARNING,ERROR' integer to a string: DEBUG,WARNING,ERROR == DEBUG,WARNING,ERROR (expected), passed
+2023-07-01 00:45:29,324 TADA INFO assertion 23, Convert 'DEBUG,WARNING,CRITICAL' integer to a string: DEBUG,WARNING,CRITICAL == DEBUG,WARNING,CRITICAL (expected), passed
+2023-07-01 00:45:29,473 TADA INFO assertion 24, Convert 'DEBUG,ERROR,CRITICAL' integer to a string: DEBUG,ERROR,CRITICAL == DEBUG,ERROR,CRITICAL (expected), passed
+2023-07-01 00:45:29,579 TADA INFO assertion 25, Convert 'INFO,WARNING,ERROR' integer to a string: INFO,WARNING,ERROR == INFO,WARNING,ERROR (expected), passed
+2023-07-01 00:45:29,697 TADA INFO assertion 26, Convert 'INFO,WARNING,CRITICAL' integer to a string: INFO,WARNING,CRITICAL == INFO,WARNING,CRITICAL (expected), passed
+2023-07-01 00:45:29,807 TADA INFO assertion 27, Convert 'INFO,ERROR,CRITICAL' integer to a string: INFO,ERROR,CRITICAL == INFO,ERROR,CRITICAL (expected), passed
+2023-07-01 00:45:29,913 TADA INFO assertion 28, Convert 'WARNING,ERROR,CRITICAL' integer to a string: WARNING,ERROR,CRITICAL == WARNING,ERROR,CRITICAL (expected), passed
+2023-07-01 00:45:30,015 TADA INFO assertion 29, Convert 'DEBUG,INFO,WARNING,ERROR' integer to a string: DEBUG,INFO,WARNING,ERROR == DEBUG,INFO,WARNING,ERROR (expected), passed
+2023-07-01 00:45:30,118 TADA INFO assertion 30, Convert 'DEBUG,INFO,WARNING,CRITICAL' integer to a string: DEBUG,INFO,WARNING,CRITICAL == DEBUG,INFO,WARNING,CRITICAL (expected), passed
+2023-07-01 00:45:30,239 TADA INFO assertion 31, Convert 'DEBUG,INFO,ERROR,CRITICAL' integer to a string: DEBUG,INFO,ERROR,CRITICAL == DEBUG,INFO,ERROR,CRITICAL (expected), passed
+2023-07-01 00:45:30,355 TADA INFO assertion 32, Convert 'DEBUG,WARNING,ERROR,CRITICAL' integer to a string: DEBUG,WARNING,ERROR,CRITICAL == DEBUG,WARNING,ERROR,CRITICAL (expected), passed
+2023-07-01 00:45:30,466 TADA INFO assertion 33, Convert 'INFO,WARNING,ERROR,CRITICAL' integer to a string: INFO,WARNING,ERROR,CRITICAL == INFO,WARNING,ERROR,CRITICAL (expected), passed
+2023-07-01 00:45:30,567 TADA INFO assertion 34, Convert 'DEBUG,INFO,WARNING,ERROR,CRITICAL' integer to a string: DEBUG,INFO,WARNING,ERROR,CRITICAL == DEBUG,INFO,WARNING,ERROR,CRITICAL (expected), passed
+2023-07-01 00:45:30,679 TADA INFO assertion 35, Convert 'DEBUG,' integer to a string: DEBUG, == DEBUG, (expected), passed
+2023-07-01 00:45:30,779 TADA INFO assertion 36, Convert 'INFO,' integer to a string: INFO, == INFO, (expected), passed
+2023-07-01 00:45:30,892 TADA INFO assertion 37, Convert 'WARNING,' integer to a string: WARNING, == WARNING, (expected), passed
+2023-07-01 00:45:31,049 TADA INFO assertion 38, Convert 'ERROR,' integer to a string: ERROR, == ERROR, (expected), passed
+2023-07-01 00:45:31,165 TADA INFO assertion 39, Convert 'CRITICAL,' integer to a string: CRITICAL, == CRITICAL, (expected), passed
+2023-07-01 00:45:31,277 TADA INFO assertion 40, Convert an invalid integer to a level string: (null) == (null) (expected), passed
+2023-07-01 00:45:31,377 TADA INFO assertion 41, Convert the 'DEBUG,INFO' to an integer: 3 == 3 (expected), passed
+2023-07-01 00:45:31,486 TADA INFO assertion 42, Convert the 'DEBUG,WARNING' to an integer: 5 == 5 (expected), passed
+2023-07-01 00:45:31,587 TADA INFO assertion 43, Convert the 'DEBUG,ERROR' to an integer: 9 == 9 (expected), passed
+2023-07-01 00:45:31,695 TADA INFO assertion 44, Convert the 'DEBUG,CRITICAL' to an integer: 17 == 17 (expected), passed
+2023-07-01 00:45:31,801 TADA INFO assertion 45, Convert the 'INFO,WARNING' to an integer: 6 == 6 (expected), passed
+2023-07-01 00:45:31,907 TADA INFO assertion 46, Convert the 'INFO,ERROR' to an integer: 10 == 10 (expected), passed
+2023-07-01 00:45:32,009 TADA INFO assertion 47, Convert the 'INFO,CRITICAL' to an integer: 18 == 18 (expected), passed
+2023-07-01 00:45:32,113 TADA INFO assertion 48, Convert the 'WARNING,ERROR' to an integer: 12 == 12 (expected), passed
+2023-07-01 00:45:32,234 TADA INFO assertion 49, Convert the 'WARNING,CRITICAL' to an integer: 20 == 20 (expected), passed
+2023-07-01 00:45:32,341 TADA INFO assertion 50, Convert the 'ERROR,CRITICAL' to an integer: 24 == 24 (expected), passed
+2023-07-01 00:45:32,447 TADA INFO assertion 51, Convert the 'DEBUG,INFO,WARNING' to an integer: 7 == 7 (expected), passed
+2023-07-01 00:45:32,542 TADA INFO assertion 52, Convert the 'DEBUG,INFO,ERROR' to an integer: 11 == 11 (expected), passed
+2023-07-01 00:45:32,643 TADA INFO assertion 53, Convert the 'DEBUG,INFO,CRITICAL' to an integer: 19 == 19 (expected), passed
+2023-07-01 00:45:32,739 TADA INFO assertion 54, Convert the 'DEBUG,WARNING,ERROR' to an integer: 13 == 13 (expected), passed
+2023-07-01 00:45:32,839 TADA INFO assertion 55, Convert the 'DEBUG,WARNING,CRITICAL' to an integer: 21 == 21 (expected), passed
+2023-07-01 00:45:32,947 TADA INFO assertion 56, Convert the 'DEBUG,ERROR,CRITICAL' to an integer: 25 == 25 (expected), passed
+2023-07-01 00:45:33,061 TADA INFO assertion 57, Convert the 'INFO,WARNING,ERROR' to an integer: 14 == 14 (expected), passed
+2023-07-01 00:45:33,167 TADA INFO assertion 58, Convert the 'INFO,WARNING,CRITICAL' to an integer: 22 == 22 (expected), passed
+2023-07-01 00:45:33,287 TADA INFO assertion 59, Convert the 'INFO,ERROR,CRITICAL' to an integer: 26 == 26 (expected), passed
+2023-07-01 00:45:33,407 TADA INFO assertion 60, Convert the 'WARNING,ERROR,CRITICAL' to an integer: 28 == 28 (expected), passed
+2023-07-01 00:45:33,517 TADA INFO assertion 61, Convert the 'DEBUG,INFO,WARNING,ERROR' to an integer: 15 == 15 (expected), passed
+2023-07-01 00:45:33,625 TADA INFO assertion 62, Convert the 'DEBUG,INFO,WARNING,CRITICAL' to an integer: 23 == 23 (expected), passed
+2023-07-01 00:45:33,739 TADA INFO assertion 63, Convert the 'DEBUG,INFO,ERROR,CRITICAL' to an integer: 27 == 27 (expected), passed
+2023-07-01 00:45:33,844 TADA INFO assertion 64, Convert the 'DEBUG,WARNING,ERROR,CRITICAL' to an integer: 29 == 29 (expected), passed
+2023-07-01 00:45:33,945 TADA INFO assertion 65, Convert the 'INFO,WARNING,ERROR,CRITICAL' to an integer: 30 == 30 (expected), passed
+2023-07-01 00:45:34,043 TADA INFO assertion 66, Convert the 'DEBUG,INFO,WARNING,ERROR,CRITICAL' to an integer: 31 == 31 (expected), passed
+2023-07-01 00:45:34,156 TADA INFO assertion 67, Convert the 'DEBUG,' to an integer: 1 == 1 (expected), passed
+2023-07-01 00:45:34,259 TADA INFO assertion 68, Convert the 'INFO,' to an integer: 2 == 2 (expected), passed
+2023-07-01 00:45:34,370 TADA INFO assertion 69, Convert the 'WARNING,' to an integer: 4 == 4 (expected), passed
+2023-07-01 00:45:34,470 TADA INFO assertion 70, Convert the 'ERROR,' to an integer: 8 == 8 (expected), passed
+2023-07-01 00:45:34,577 TADA INFO assertion 71, Convert the 'CRITICAL,' to an integer: 16 == 16 (expected), passed
+2023-07-01 00:45:34,676 TADA INFO assertion 72, Convert the 'DEBUG' to an integer: 31 == 31 (expected), passed
+2023-07-01 00:45:34,779 TADA INFO assertion 73, Convert the 'INFO' to an integer: 30 == 30 (expected), passed
+2023-07-01 00:45:34,891 TADA INFO assertion 74, Convert the 'WARNING' to an integer: 28 == 28 (expected), passed
+2023-07-01 00:45:34,984 TADA INFO assertion 75, Convert the 'ERROR' to an integer: 24 == 24 (expected), passed
+2023-07-01 00:45:35,084 TADA INFO assertion 76, Convert the 'CRITICAL' to an integer: 16 == 16 (expected), passed
+2023-07-01 00:45:35,180 TADA INFO assertion 77, Convert an invalid level string to an integer: -22 == -22 (expected), passed
+2023-07-01 00:45:35,824 TADA INFO assertion 78, Verify that no messages were printed when the level is QUIET.: No messages were printed., passed
+2023-07-01 00:45:36,153 TADA INFO assertion 79, Verify that messages of DEBUG,INFO were reported.: Only the messages with the level not less than 'ERROR' were logged., passed
+2023-07-01 00:45:36,467 TADA INFO assertion 80, Verify that messages of DEBUG,WARNING were reported.: Only the messages with the level not less than 'ERROR' were logged., passed
+2023-07-01 00:45:36,771 TADA INFO assertion 81, Verify that messages of DEBUG,ERROR were reported.: Only the messages with the level not less than 'ERROR' were logged., passed
+2023-07-01 00:45:37,075 TADA INFO assertion 82, Verify that messages of DEBUG,CRITICAL were reported.: Only the messages with the level not less than 'ERROR' were logged., passed
+2023-07-01 00:45:37,371 TADA INFO assertion 83, Verify that messages of INFO,WARNING were reported.: Only the messages with the level not less than 'ERROR' were logged., passed
+2023-07-01 00:45:37,692 TADA INFO assertion 84, Verify that messages of INFO,ERROR were reported.: Only the messages with the level not less than 'ERROR' were logged., passed
+2023-07-01 00:45:38,021 TADA INFO assertion 85, Verify that messages of INFO,CRITICAL were reported.: Only the messages with the level not less than 'ERROR' were logged., passed
+2023-07-01 00:45:38,341 TADA INFO assertion 86, Verify that messages of WARNING,ERROR were reported.: Only the messages with the level not less than 'ERROR' were logged., passed
+2023-07-01 00:45:38,674 TADA INFO assertion 87, Verify that messages of WARNING,CRITICAL were reported.: Only the messages with the level not less than 'ERROR' were logged., passed
+2023-07-01 00:45:38,986 TADA INFO assertion 88, Verify that messages of ERROR,CRITICAL were reported.: Only the messages with the level not less than 'ERROR' were logged., passed
+2023-07-01 00:45:39,319 TADA INFO assertion 89, Verify that messages of DEBUG,INFO,WARNING were reported.: Only the messages with the level not less than 'ERROR' were logged., passed
+2023-07-01 00:45:39,621 TADA INFO assertion 90, Verify that messages of DEBUG,INFO,ERROR were reported.: Only the messages with the level not less than 'ERROR' were logged., passed
+2023-07-01 00:45:39,906 TADA INFO assertion 91, Verify that messages of DEBUG,INFO,CRITICAL were reported.: Only the messages with the level not less than 'ERROR' were logged., passed
+2023-07-01 00:45:40,251 TADA INFO assertion 92, Verify that messages of DEBUG,WARNING,ERROR were reported.: Only the messages with the level not less than 'ERROR' were logged., passed
+2023-07-01 00:45:40,561 TADA INFO assertion 93, Verify that messages of DEBUG,WARNING,CRITICAL were reported.: Only the messages with the level not less than 'ERROR' were logged., passed
+2023-07-01 00:45:40,864 TADA INFO assertion 94, Verify that messages of DEBUG,ERROR,CRITICAL were reported.: Only the messages with the level not less than 'ERROR' were logged., passed
+2023-07-01 00:45:41,185 TADA INFO assertion 95, Verify that messages of INFO,WARNING,ERROR were reported.: Only the messages with the level not less than 'ERROR' were logged., passed
+2023-07-01 00:45:41,506 TADA INFO assertion 96, Verify that messages of INFO,WARNING,CRITICAL were reported.: Only the messages with the level not less than 'ERROR' were logged., passed
+2023-07-01 00:45:41,808 TADA INFO assertion 97, Verify that messages of INFO,ERROR,CRITICAL were reported.: Only the messages with the level not less than 'ERROR' were logged., passed
+2023-07-01 00:45:42,106 TADA INFO assertion 98, Verify that messages of WARNING,ERROR,CRITICAL were reported.: Only the messages with the level not less than 'ERROR' were logged., passed
+2023-07-01 00:45:42,436 TADA INFO assertion 99, Verify that messages of DEBUG,INFO,WARNING,ERROR were reported.: Only the messages with the level not less than 'ERROR' were logged., passed
+2023-07-01 00:45:42,734 TADA INFO assertion 100, Verify that messages of DEBUG,INFO,WARNING,CRITICAL were reported.: Only the messages with the level not less than 'ERROR' were logged., passed
+2023-07-01 00:45:43,033 TADA INFO assertion 101, Verify that messages of DEBUG,INFO,ERROR,CRITICAL were reported.: Only the messages with the level not less than 'ERROR' were logged., passed
+2023-07-01 00:45:43,362 TADA INFO assertion 102, Verify that messages of DEBUG,WARNING,ERROR,CRITICAL were reported.: Only the messages with the level not less than 'ERROR' were logged., passed
+2023-07-01 00:45:43,664 TADA INFO assertion 103, Verify that messages of INFO,WARNING,ERROR,CRITICAL were reported.: Only the messages with the level not less than 'ERROR' were logged., passed
+2023-07-01 00:45:43,955 TADA INFO assertion 104, Verify that messages of DEBUG,INFO,WARNING,ERROR,CRITICAL were reported.: Only the messages with the level not less than 'ERROR' were logged., passed
+2023-07-01 00:45:44,290 TADA INFO assertion 105, Verify that messages of DEBUG, were reported.: Only the messages with the level not less than 'ERROR' were logged., passed
+2023-07-01 00:45:44,639 TADA INFO assertion 106, Verify that messages of INFO, were reported.: Only the messages with the level not less than 'ERROR' were logged., passed
+2023-07-01 00:45:44,942 TADA INFO assertion 107, Verify that messages of WARNING, were reported.: Only the messages with the level not less than 'ERROR' were logged., passed
+2023-07-01 00:45:45,260 TADA INFO assertion 108, Verify that messages of ERROR, were reported.: Only the messages with the level not less than 'ERROR' were logged., passed
+2023-07-01 00:45:45,592 TADA INFO assertion 109, Verify that messages of CRITICAL, were reported.: Only the messages with the level not less than 'ERROR' were logged., passed
+2023-07-01 00:45:45,897 TADA INFO assertion 110, Verify that messages of DEBUG were reported.: Only the messages with the level not less than 'ERROR' were logged., passed
+2023-07-01 00:45:46,211 TADA INFO assertion 111, Verify that messages of INFO were reported.: Only the messages with the level not less than 'ERROR' were logged., passed
+2023-07-01 00:45:46,510 TADA INFO assertion 112, Verify that messages of WARNING were reported.: Only the messages with the level not less than 'ERROR' were logged., passed
+2023-07-01 00:45:46,819 TADA INFO assertion 113, Verify that messages of ERROR were reported.: Only the messages with the level not less than 'ERROR' were logged., passed
+2023-07-01 00:45:47,096 TADA INFO assertion 114, Verify that messages of CRITICAL were reported.: Only the messages with the level not less than 'ERROR' were logged., passed
+2023-07-01 00:45:47,693 TADA INFO assertion 116, Verify that ovis_log_close() works properly: ovis_log_close() works properly., passed
+2023-07-01 00:45:49,547 TADA INFO assertion 115, Verify that applications can open, rename, and reopen log files to perform log rotation.: ovis_log supports open, rename (external), and reopen., passed
+2023-07-01 00:45:49,945 TADA INFO assertion 117, Test a ovis_log_register() call with valid arguments: [{'idx': 0, 'return_code': 0, 'name': 'my_subsys', 'desc': 'my_subsys_desc', 'level': -1}] == [{'idx': 0, 'return_code': 0, 'name': 'my_subsys', 'desc': 'my_subsys_desc', 'level': -1}], passed
+2023-07-01 00:45:50,061 TADA INFO assertion 118, Test a ovis_log_register() call with NULL name: [{'idx': 0, 'return_code': 22}] == [{'idx': 0, 'return_code': 22}], passed
+2023-07-01 00:45:50,161 TADA INFO assertion 119, Test a ovis_log_register() call with NULL desc: [{'idx': 0, 'return_code': 22}] == [{'idx': 0, 'return_code': 22}], passed
+2023-07-01 00:45:50,276 TADA INFO assertion 120, Test a ovis_log_register() call with an existing subsystem: [{'idx': 0, 'return_code': 0, 'name': 'my_subsys', 'desc': 'my_subsys_desc', 'level': -1}, {'idx': 1, 'return_code': 17}] == [{'idx': 0, 'return_code': 0, 'name': 'my_subsys', 'desc': 'my_subsys_desc', 'level': -1}, {'idx': 1, 'return_code': 17}], passed
+2023-07-01 00:45:50,876 TADA INFO assertion 122, Verify that messages of DEBUG,INFO were reported from a subsystem.: Only the messages with the level not less than 'ERROR' were logged., passed
+2023-07-01 00:45:51,180 TADA INFO assertion 123, Verify that messages of DEBUG,WARNING were reported from a subsystem.: Only the messages with the level not less than 'ERROR' were logged., passed
+2023-07-01 00:45:51,513 TADA INFO assertion 124, Verify that messages of DEBUG,ERROR were reported from a subsystem.: Only the messages with the level not less than 'ERROR' were logged., passed
+2023-07-01 00:45:51,831 TADA INFO assertion 125, Verify that messages of DEBUG,CRITICAL were reported from a subsystem.: Only the messages with the level not less than 'ERROR' were logged., passed
+2023-07-01 00:45:52,155 TADA INFO assertion 126, Verify that messages of INFO,WARNING were reported from a subsystem.: Only the messages with the level not less than 'ERROR' were logged., passed
+2023-07-01 00:45:52,473 TADA INFO assertion 127, Verify that messages of INFO,ERROR were reported from a subsystem.: Only the messages with the level not less than 'ERROR' were logged., passed
+2023-07-01 00:45:52,763 TADA INFO assertion 128, Verify that messages of INFO,CRITICAL were reported from a subsystem.: Only the messages with the level not less than 'ERROR' were logged., passed
+2023-07-01 00:45:53,079 TADA INFO assertion 129, Verify that messages of WARNING,ERROR were reported from a subsystem.: Only the messages with the level not less than 'ERROR' were logged., passed
+2023-07-01 00:45:53,400 TADA INFO assertion 130, Verify that messages of WARNING,CRITICAL were reported from a subsystem.: Only the messages with the level not less than 'ERROR' were logged., passed
+2023-07-01 00:45:53,735 TADA INFO assertion 131, Verify that messages of ERROR,CRITICAL were reported from a subsystem.: Only the messages with the level not less than 'ERROR' were logged., passed
+2023-07-01 00:45:54,048 TADA INFO assertion 132, Verify that messages of DEBUG,INFO,WARNING were reported from a subsystem.: Only the messages with the level not less than 'ERROR' were logged., passed
+2023-07-01 00:45:54,363 TADA INFO assertion 133, Verify that messages of DEBUG,INFO,ERROR were reported from a subsystem.: Only the messages with the level not less than 'ERROR' were logged., passed
+2023-07-01 00:45:54,683 TADA INFO assertion 134, Verify that messages of DEBUG,INFO,CRITICAL were reported from a subsystem.: Only the messages with the level not less than 'ERROR' were logged., passed
+2023-07-01 00:45:54,999 TADA INFO assertion 135, Verify that messages of DEBUG,WARNING,ERROR were reported from a subsystem.: Only the messages with the level not less than 'ERROR' were logged., passed
+2023-07-01 00:45:55,303 TADA INFO assertion 136, Verify that messages of DEBUG,WARNING,CRITICAL were reported from a subsystem.: Only the messages with the level not less than 'ERROR' were logged., passed
+2023-07-01 00:45:55,607 TADA INFO assertion 137, Verify that messages of DEBUG,ERROR,CRITICAL were reported from a subsystem.: Only the messages with the level not less than 'ERROR' were logged., passed
+2023-07-01 00:45:55,923 TADA INFO assertion 138, Verify that messages of INFO,WARNING,ERROR were reported from a subsystem.: Only the messages with the level not less than 'ERROR' were logged., passed
+2023-07-01 00:45:56,206 TADA INFO assertion 139, Verify that messages of INFO,WARNING,CRITICAL were reported from a subsystem.: Only the messages with the level not less than 'ERROR' were logged., passed
+2023-07-01 00:45:56,527 TADA INFO assertion 140, Verify that messages of INFO,ERROR,CRITICAL were reported from a subsystem.: Only the messages with the level not less than 'ERROR' were logged., passed
+2023-07-01 00:45:56,836 TADA INFO assertion 141, Verify that messages of WARNING,ERROR,CRITICAL were reported from a subsystem.: Only the messages with the level not less than 'ERROR' were logged., passed
+2023-07-01 00:45:57,123 TADA INFO assertion 142, Verify that messages of DEBUG,INFO,WARNING,ERROR were reported from a subsystem.: Only the messages with the level not less than 'ERROR' were logged., passed
+2023-07-01 00:45:57,441 TADA INFO assertion 143, Verify that messages of DEBUG,INFO,WARNING,CRITICAL were reported from a subsystem.: Only the messages with the level not less than 'ERROR' were logged., passed
+2023-07-01 00:45:57,746 TADA INFO assertion 144, Verify that messages of DEBUG,INFO,ERROR,CRITICAL were reported from a subsystem.: Only the messages with the level not less than 'ERROR' were logged., passed
+2023-07-01 00:45:58,048 TADA INFO assertion 145, Verify that messages of DEBUG,WARNING,ERROR,CRITICAL were reported from a subsystem.: Only the messages with the level not less than 'ERROR' were logged., passed
+2023-07-01 00:45:58,367 TADA INFO assertion 146, Verify that messages of INFO,WARNING,ERROR,CRITICAL were reported from a subsystem.: Only the messages with the level not less than 'ERROR' were logged., passed
+2023-07-01 00:45:58,681 TADA INFO assertion 147, Verify that messages of DEBUG,INFO,WARNING,ERROR,CRITICAL were reported from a subsystem.: Only the messages with the level not less than 'ERROR' were logged., passed
+2023-07-01 00:45:58,986 TADA INFO assertion 148, Verify that messages of DEBUG, were reported from a subsystem.: Only the messages with the level not less than 'ERROR' were logged., passed
+2023-07-01 00:45:59,293 TADA INFO assertion 149, Verify that messages of INFO, were reported from a subsystem.: Only the messages with the level not less than 'ERROR' were logged., passed
+2023-07-01 00:45:59,616 TADA INFO assertion 150, Verify that messages of WARNING, were reported from a subsystem.: Only the messages with the level not less than 'ERROR' were logged., passed
+2023-07-01 00:45:59,904 TADA INFO assertion 151, Verify that messages of ERROR, were reported from a subsystem.: Only the messages with the level not less than 'ERROR' were logged., passed
+2023-07-01 00:46:00,188 TADA INFO assertion 152, Verify that messages of CRITICAL, were reported from a subsystem.: Only the messages with the level not less than 'ERROR' were logged., passed
+2023-07-01 00:46:00,502 TADA INFO assertion 153, Verify that messages of DEBUG were reported from a subsystem.: Only the messages with the level not less than 'ERROR' were logged., passed
+2023-07-01 00:46:00,808 TADA INFO assertion 154, Verify that messages of INFO were reported from a subsystem.: Only the messages with the level not less than 'ERROR' were logged., passed
+2023-07-01 00:46:01,122 TADA INFO assertion 155, Verify that messages of WARNING were reported from a subsystem.: Only the messages with the level not less than 'ERROR' were logged., passed
+2023-07-01 00:46:01,433 TADA INFO assertion 156, Verify that messages of ERROR were reported from a subsystem.: Only the messages with the level not less than 'ERROR' were logged., passed
+2023-07-01 00:46:01,742 TADA INFO assertion 157, Verify that messages of CRITICAL were reported from a subsystem.: Only the messages with the level not less than 'ERROR' were logged., passed
+2023-07-01 00:46:02,069 TADA INFO assertion 158, Verify that messages of DEBUG,INFO were reported from a subsystem.: Only the messages with the level not less than 'ERROR' were logged., passed
+2023-07-01 00:46:02,382 TADA INFO assertion 159, Verify that messages of DEBUG,WARNING were reported from a subsystem.: Only the messages with the level not less than 'ERROR' were logged., passed
+2023-07-01 00:46:02,695 TADA INFO assertion 160, Verify that messages of DEBUG,ERROR were reported from a subsystem.: Only the messages with the level not less than 'ERROR' were logged., passed
+2023-07-01 00:46:02,986 TADA INFO assertion 161, Verify that messages of DEBUG,CRITICAL were reported from a subsystem.: Only the messages with the level not less than 'ERROR' were logged., passed
+2023-07-01 00:46:03,287 TADA INFO assertion 162, Verify that messages of INFO,WARNING were reported from a subsystem.: Only the messages with the level not less than 'ERROR' were logged., passed
+2023-07-01 00:46:03,589 TADA INFO assertion 163, Verify that messages of INFO,ERROR were reported from a subsystem.: Only the messages with the level not less than 'ERROR' were logged., passed
+2023-07-01 00:46:03,898 TADA INFO assertion 164, Verify that messages of INFO,CRITICAL were reported from a subsystem.: Only the messages with the level not less than 'ERROR' were logged., passed
+2023-07-01 00:46:04,197 TADA INFO assertion 165, Verify that messages of WARNING,ERROR were reported from a subsystem.: Only the messages with the level not less than 'ERROR' were logged., passed
+2023-07-01 00:46:04,530 TADA INFO assertion 166, Verify that messages of WARNING,CRITICAL were reported from a subsystem.: Only the messages with the level not less than 'ERROR' were logged., passed
+2023-07-01 00:46:04,863 TADA INFO assertion 167, Verify that messages of ERROR,CRITICAL were reported from a subsystem.: Only the messages with the level not less than 'ERROR' were logged., passed
+2023-07-01 00:46:05,168 TADA INFO assertion 168, Verify that messages of DEBUG,INFO,WARNING were reported from a subsystem.: Only the messages with the level not less than 'ERROR' were logged., passed
+2023-07-01 00:46:05,493 TADA INFO assertion 169, Verify that messages of DEBUG,INFO,ERROR were reported from a subsystem.: Only the messages with the level not less than 'ERROR' were logged., passed
+2023-07-01 00:46:05,802 TADA INFO assertion 170, Verify that messages of DEBUG,INFO,CRITICAL were reported from a subsystem.: Only the messages with the level not less than 'ERROR' were logged., passed
+2023-07-01 00:46:06,110 TADA INFO assertion 171, Verify that messages of DEBUG,WARNING,ERROR were reported from a subsystem.: Only the messages with the level not less than 'ERROR' were logged., passed
+2023-07-01 00:46:06,412 TADA INFO assertion 172, Verify that messages of DEBUG,WARNING,CRITICAL were reported from a subsystem.: Only the messages with the level not less than 'ERROR' were logged., passed
+2023-07-01 00:46:06,723 TADA INFO assertion 173, Verify that messages of DEBUG,ERROR,CRITICAL were reported from a subsystem.: Only the messages with the level not less than 'ERROR' were logged., passed
+2023-07-01 00:46:07,020 TADA INFO assertion 174, Verify that messages of INFO,WARNING,ERROR were reported from a subsystem.: Only the messages with the level not less than 'ERROR' were logged., passed
+2023-07-01 00:46:07,353 TADA INFO assertion 175, Verify that messages of INFO,WARNING,CRITICAL were reported from a subsystem.: Only the messages with the level not less than 'ERROR' were logged., passed
+2023-07-01 00:46:07,682 TADA INFO assertion 176, Verify that messages of INFO,ERROR,CRITICAL were reported from a subsystem.: Only the messages with the level not less than 'ERROR' were logged., passed
+2023-07-01 00:46:07,991 TADA INFO assertion 177, Verify that messages of WARNING,ERROR,CRITICAL were reported from a subsystem.: Only the messages with the level not less than 'ERROR' were logged., passed
+2023-07-01 00:46:08,314 TADA INFO assertion 178, Verify that messages of DEBUG,INFO,WARNING,ERROR were reported from a subsystem.: Only the messages with the level not less than 'ERROR' were logged., passed
+2023-07-01 00:46:08,642 TADA INFO assertion 179, Verify that messages of DEBUG,INFO,WARNING,CRITICAL were reported from a subsystem.: Only the messages with the level not less than 'ERROR' were logged., passed
+2023-07-01 00:46:08,934 TADA INFO assertion 180, Verify that messages of DEBUG,INFO,ERROR,CRITICAL were reported from a subsystem.: Only the messages with the level not less than 'ERROR' were logged., passed
+2023-07-01 00:46:09,222 TADA INFO assertion 181, Verify that messages of DEBUG,WARNING,ERROR,CRITICAL were reported from a subsystem.: Only the messages with the level not less than 'ERROR' were logged., passed
+2023-07-01 00:46:09,545 TADA INFO assertion 182, Verify that messages of INFO,WARNING,ERROR,CRITICAL were reported from a subsystem.: Only the messages with the level not less than 'ERROR' were logged., passed
+2023-07-01 00:46:09,841 TADA INFO assertion 183, Verify that messages of DEBUG,INFO,WARNING,ERROR,CRITICAL were reported from a subsystem.: Only the messages with the level not less than 'ERROR' were logged., passed
+2023-07-01 00:46:10,155 TADA INFO assertion 184, Verify that messages of DEBUG, were reported from a subsystem.: Only the messages with the level not less than 'ERROR' were logged., passed
+2023-07-01 00:46:10,488 TADA INFO assertion 185, Verify that messages of INFO, were reported from a subsystem.: Only the messages with the level not less than 'ERROR' were logged., passed
+2023-07-01 00:46:10,805 TADA INFO assertion 186, Verify that messages of WARNING, were reported from a subsystem.: Only the messages with the level not less than 'ERROR' were logged., passed
+2023-07-01 00:46:11,124 TADA INFO assertion 187, Verify that messages of ERROR, were reported from a subsystem.: Only the messages with the level not less than 'ERROR' were logged., passed
+2023-07-01 00:46:11,447 TADA INFO assertion 188, Verify that messages of CRITICAL, were reported from a subsystem.: Only the messages with the level not less than 'ERROR' were logged., passed
+2023-07-01 00:46:11,779 TADA INFO assertion 189, Verify that messages of DEBUG were reported from a subsystem.: Only the messages with the level not less than 'ERROR' were logged., passed
+2023-07-01 00:46:12,084 TADA INFO assertion 190, Verify that messages of INFO were reported from a subsystem.: Only the messages with the level not less than 'ERROR' were logged., passed
+2023-07-01 00:46:12,418 TADA INFO assertion 191, Verify that messages of WARNING were reported from a subsystem.: Only the messages with the level not less than 'ERROR' were logged., passed
+2023-07-01 00:46:12,743 TADA INFO assertion 192, Verify that messages of ERROR were reported from a subsystem.: Only the messages with the level not less than 'ERROR' were logged., passed
+2023-07-01 00:46:13,055 TADA INFO assertion 193, Verify that messages of CRITICAL were reported from a subsystem.: Only the messages with the level not less than 'ERROR' were logged., passed
+2023-07-01 00:46:13,742 TADA INFO assertion 195, Verify that ovis_log_set_level_by_regex() returns an error when the given regular expression string is invalid.: 'result=22' in 'Sat Jul 01 00:46:13 2023:         : test: result=22
 ', passed
-2023-06-30 00:46:17,694 TADA INFO assertion 194, Verify that ovis_log_set_level_by_regex() returns ENOENT when the given regular expression string doesn't match any logs.: 'result=2' in 'Fri Jun 30 00:46:17 2023:         : test: result=2
+2023-07-01 00:46:14,056 TADA INFO assertion 194, Verify that ovis_log_set_level_by_regex() returns ENOENT when the given regular expression string doesn't match any logs.: 'result=2' in 'Sat Jul 01 00:46:13 2023:         : test: result=2
+Sat Jul 01 00:46:13 2023:         : test: result=2
 ', passed
-2023-06-30 00:46:18,011 TADA INFO assertion 196, Verify that ovis_log_set_level_by_regex() sets the level of the matched log subsystems to the given value.: ('config:' in 'Fri Jun 30 00:46:17 2023:         : config: ALWAYS' and (('CRITICAL' in 'Fri Jun 30 00:46:17 2023:         : config: ALWAYS') or ('ALWAYS' in Fri Jun 30 00:46:17 2023:         : config: ALWAYS)), passed
-2023-06-30 00:46:18,627 TADA INFO assertion 197, Verify that ovis_log_list() works correctly.: '[{'name': 'test', 'desc': 'The default log subsystem', 'level': 'CRITICAL,'}, {'name': 'config', 'desc': 'config', 'level': 'default'}, {'name': 'xprt', 'desc': 'xprt', 'level': 'ERROR,CRITICAL'}, {'name': 'xprt.ldms', 'desc': 'xprt.ldms', 'level': 'INFO,CRITICAL'}, {'name': 'xprt.zap', 'desc': 'xprt.zap', 'level': 'WARNING,'}]' == '[{'name': 'test (default)', 'desc': 'The default log subsystem', 'level': 'CRITICAL,'}, {'name': 'config', 'desc': 'config', 'level': 'default'}, {'name': 'xprt', 'desc': 'xprt', 'level': 'ERROR,CRITICAL'}, {'name': 'xprt.ldms', 'desc': 'xprt.ldms', 'level': 'INFO,CRITICAL'}, {'name': 'xprt.zap', 'desc': 'xprt.zap', 'level': 'WARNING,'}]', failed
-2023-06-30 00:46:18,628 TADA INFO test libovis_log_test ended
+2023-07-01 00:46:14,363 TADA INFO assertion 196, Verify that ovis_log_set_level_by_regex() sets the level of the matched log subsystems to the given value.: ('config:' in 'Sat Jul 01 00:46:14 2023:         : config: ALWAYS' and (('CRITICAL' in 'Sat Jul 01 00:46:14 2023:         : config: ALWAYS') or ('ALWAYS' in Sat Jul 01 00:46:14 2023:         : config: ALWAYS)), passed
+2023-07-01 00:46:14,994 TADA INFO assertion 197, Verify that ovis_log_list() works correctly.: '[{'name': 'test', 'desc': 'The default log subsystem', 'level': 'CRITICAL,'}, {'name': 'config', 'desc': 'config', 'level': 'default'}, {'name': 'xprt', 'desc': 'xprt', 'level': 'ERROR,CRITICAL'}, {'name': 'xprt.ldms', 'desc': 'xprt.ldms', 'level': 'INFO,CRITICAL'}, {'name': 'xprt.zap', 'desc': 'xprt.zap', 'level': 'WARNING,'}]' == '[{'name': 'test (default)', 'desc': 'The default log subsystem', 'level': 'CRITICAL,'}, {'name': 'config', 'desc': 'config', 'level': 'default'}, {'name': 'xprt', 'desc': 'xprt', 'level': 'ERROR,CRITICAL'}, {'name': 'xprt.ldms', 'desc': 'xprt.ldms', 'level': 'INFO,CRITICAL'}, {'name': 'xprt.zap', 'desc': 'xprt.zap', 'level': 'WARNING,'}]', failed
+2023-07-01 00:46:14,994 TADA INFO test libovis_log_test ended
