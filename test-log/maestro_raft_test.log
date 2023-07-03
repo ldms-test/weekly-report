@@ -1,17 +1,17 @@
-2023-07-01 01:49:28,934 TADA INFO starting test `maestro_raft_test`
-2023-07-01 01:49:28,935 TADA INFO   test-id: f4cf590342c897e45d253115e342c1d5b2b081c899fe645af64daaea49820479
-2023-07-01 01:49:28,935 TADA INFO   test-suite: LDMSD
-2023-07-01 01:49:28,935 TADA INFO   test-name: maestro_raft_test
-2023-07-01 01:49:28,935 TADA INFO   test-user: narate
-2023-07-01 01:49:28,935 TADA INFO   commit-id: 26f8c63d31947afe7b20b74b1c158c9fdd735a13
-2023-07-01 01:49:38,946 __main__ INFO -- Get or create cluster --
-2023-07-01 01:50:14,041 __main__ INFO -- Start daemons --
-2023-07-01 01:51:49,446 __main__ INFO -- making known hosts (ssh) --
-2023-07-01 01:51:56,380 __main__ INFO ... make sure ldmsd's are up
-2023-07-01 01:52:11,197 TADA INFO assertion 1, Statuses of maestros, 1 leader + 2 followers: [('FOLLOWER', 2), ('LEADER', 1)], passed
-2023-07-01 01:52:23,560 TADA INFO assertion 2, All ldmsds are up and configured: sets verified, passed
-2023-07-01 01:52:23,824 TADA INFO assertion 3, Data are being stored: data check, passed
-2023-07-01 01:52:28,730 TADA INFO assertion 4, New leader elected: checked, passed
+2023-07-02 01:50:54,911 TADA INFO starting test `maestro_raft_test`
+2023-07-02 01:50:54,911 TADA INFO   test-id: 603fbe4838b50a2e7d8c122b7363269d1985c5d106f07f5944cce4130ef2ae52
+2023-07-02 01:50:54,911 TADA INFO   test-suite: LDMSD
+2023-07-02 01:50:54,911 TADA INFO   test-name: maestro_raft_test
+2023-07-02 01:50:54,911 TADA INFO   test-user: narate
+2023-07-02 01:50:54,911 TADA INFO   commit-id: 26f8c63d31947afe7b20b74b1c158c9fdd735a13
+2023-07-02 01:51:04,918 __main__ INFO -- Get or create cluster --
+2023-07-02 01:51:40,235 __main__ INFO -- Start daemons --
+2023-07-02 01:53:15,380 __main__ INFO -- making known hosts (ssh) --
+2023-07-02 01:53:22,354 __main__ INFO ... make sure ldmsd's are up
+2023-07-02 01:53:38,285 TADA INFO assertion 1, Statuses of maestros, 1 leader + 2 followers: [('FOLLOWER', 2), ('LEADER', 1)], passed
+2023-07-02 01:53:50,664 TADA INFO assertion 2, All ldmsds are up and configured: sets verified, passed
+2023-07-02 01:53:50,925 TADA INFO assertion 3, Data are being stored: data check, passed
+2023-07-02 01:53:55,841 TADA INFO assertion 4, New leader elected: checked, passed
 ---Wait for config to write to file---
 Traceback (most recent call last):
   File "maestro_raft_test", line 512, in <module>
@@ -30,23 +30,7 @@ Traceback (most recent call last):
     lset.update(cb = update_cb)
 AttributeError: 'NoneType' object has no attribute 'update'
 
-2023-07-02 00:30:09,228 TADA INFO assertion 5, Restarted ldmsd is configured: skipped
-2023-07-02 00:30:09,228 TADA INFO assertion 6, New data are presented in the store: skipped
-2023-07-02 00:30:09,228 TADA INFO assertion 7, The restarted maestro becomes a follower: skipped
-2023-07-02 00:30:09,229 TADA INFO test maestro_raft_test ended
-Error in atexit._run_exitfuncs:
-Traceback (most recent call last):
-  File "/usr/lib/python3.6/site-packages/docker/api/client.py", line 261, in _raise_for_status
-    response.raise_for_status()
-  File "/usr/lib/python3.6/site-packages/requests/models.py", line 941, in raise_for_status
-    raise HTTPError(http_error_msg, response=self)
-requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http+docker://localhost/v1.35/networks/nkym8r32vtqct7idy1v8o8ous
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/usr/lib/python3.6/site-packages/docker/api/client.py", line 263, in _raise_for_status
-    raise create_api_error_from_http_exception(e)
-  File "/usr/lib/python3.6/site-packages/docker/errors.py", line 31, in create_api_error_from_http_exception
-    raise cls(e, response=response, explanation=explanation)
-docker.errors.NotFound: 404 Client Error: Not Found ("rpc error: code = NotFound desc = network nkym8r32vtqct7idy1v8o8ous not found")
+2023-07-03 00:30:08,744 TADA INFO assertion 5, Restarted ldmsd is configured: skipped
+2023-07-03 00:30:08,744 TADA INFO assertion 6, New data are presented in the store: skipped
+2023-07-03 00:30:08,744 TADA INFO assertion 7, The restarted maestro becomes a follower: skipped
+2023-07-03 00:30:08,745 TADA INFO test maestro_raft_test ended
