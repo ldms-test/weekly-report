@@ -1,16 +1,52 @@
-2023-07-03 00:31:34,352 __main__ INFO -- Get or create the cluster --
-2023-07-03 00:31:34,352 TADA INFO starting test `updtr_add test`
-2023-07-03 00:31:34,352 TADA INFO   test-id: 43f08876c6700e65e8f92d963f39fd0c53ea4866b5b9c7dea2d7c4ea058f3585
-2023-07-03 00:31:34,352 TADA INFO   test-suite: LDMSD
-2023-07-03 00:31:34,352 TADA INFO   test-name: updtr_add test
-2023-07-03 00:31:34,352 TADA INFO   test-user: narate
-2023-07-03 00:31:34,352 TADA INFO   commit-id: 26f8c63d31947afe7b20b74b1c158c9fdd735a13
-2023-07-03 00:31:42,149 __main__ INFO -- Start daemons --
-2023-07-03 00:31:57,577 __main__ INFO Waiting ... for all LDMSDs to start
-2023-07-03 00:31:57,893 __main__ INFO All LDMSDs are up.
-2023-07-03 00:31:59,110 TADA INFO assertion 1, updtr_del a non-existing updater: report(rc = 2) == expect(rc = 2), passed
-2023-07-03 00:32:00,327 TADA INFO assertion 2, updtr_del a running updater: report(rc = 16) == expect(rc = 16), passed
-2023-07-03 00:32:01,539 TADA INFO assertion 3, updtr_del a stopped updater: report(rc = 0) == expect(rc = 0), passed
-2023-07-03 00:32:02,760 TADA INFO assertion 4, updtr_del a just-added updater: report(rc = 0) == expect(rc = 0), passed
-2023-07-03 00:32:02,760 __main__ INFO --- done ---
-2023-07-03 00:32:02,760 TADA INFO test updtr_add test ended
+2023-07-05 01:09:48,592 __main__ INFO -- Get or create the cluster --
+2023-07-05 01:09:48,593 TADA INFO starting test `updtr_add test`
+2023-07-05 01:09:48,593 TADA INFO   test-id: fa98f303058bf96728324de03e6ba6dbadaa82dce76fafdb643dcf7601e701de
+2023-07-05 01:09:48,593 TADA INFO   test-suite: LDMSD
+2023-07-05 01:09:48,593 TADA INFO   test-name: updtr_add test
+2023-07-05 01:09:48,593 TADA INFO   test-user: narate
+2023-07-05 01:09:48,593 TADA INFO   commit-id: 636a1c6eed94acbb98f830d7507cbfe1ed9a92a0
+2023-07-05 01:09:56,763 __main__ INFO -- Start daemons --
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/site-packages/docker/api/client.py", line 261, in _raise_for_status
+    response.raise_for_status()
+  File "/usr/lib/python3.6/site-packages/requests/models.py", line 941, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 409 Client Error: Conflict for url: http+docker://localhost/v1.35/containers/fa18dde17b1c6720babc9706afb074848eca461c3f24c04b64d4f294f5eb3f75/exec
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "updtr_del_test", line 252, in <module>
+    cluster.start_daemons()
+  File "/home/narate/cron/ldms-test/LDMS_Test.py", line 1998, in start_daemons
+    cont.start_daemons()
+  File "/home/narate/cron/ldms-test/LDMS_Test.py", line 1260, in start_daemons
+    fn(**daemon)
+  File "/home/narate/cron/ldms-test/LDMS_Test.py", line 1003, in start_ldmsd
+    cond_timedwait(_check_listen, 5)
+  File "/home/narate/cron/ldms-test/LDMS_Test.py", line 2604, in cond_timedwait
+    if cond():
+  File "/home/narate/cron/ldms-test/LDMS_Test.py", line 1001, in _check_listen
+    rc, out = self.exec_run(grp_cmd)
+  File "/home/narate/cron/ldms-test/runtime/docker.py", line 144, in exec_run
+    return self._exec_run(cmd, environment=env, user=user)
+  File "/home/narate/cron/ldms-test/runtime/docker.py", line 148, in _exec_run
+    (rc, out) = self.obj.exec_run(*args, **kwargs)
+  File "/usr/lib/python3.6/site-packages/docker/models/containers.py", line 196, in exec_run
+    workdir=workdir,
+  File "/usr/lib/python3.6/site-packages/docker/utils/decorators.py", line 19, in wrapped
+    return f(self, resource_id, *args, **kwargs)
+  File "/usr/lib/python3.6/site-packages/docker/api/exec_api.py", line 80, in exec_create
+    return self._result(res, True)
+  File "/usr/lib/python3.6/site-packages/docker/api/client.py", line 267, in _result
+    self._raise_for_status(response)
+  File "/usr/lib/python3.6/site-packages/docker/api/client.py", line 263, in _raise_for_status
+    raise create_api_error_from_http_exception(e)
+  File "/usr/lib/python3.6/site-packages/docker/errors.py", line 31, in create_api_error_from_http_exception
+    raise cls(e, response=response, explanation=explanation)
+docker.errors.APIError: 409 Client Error: Conflict ("Container fa18dde17b1c6720babc9706afb074848eca461c3f24c04b64d4f294f5eb3f75 is not running")
+2023-07-05 01:09:59,904 TADA INFO assertion 1, updtr_del a non-existing updater: skipped
+2023-07-05 01:09:59,904 TADA INFO assertion 2, updtr_del a running updater: skipped
+2023-07-05 01:09:59,904 TADA INFO assertion 3, updtr_del a stopped updater: skipped
+2023-07-05 01:09:59,904 TADA INFO assertion 4, updtr_del a just-added updater: skipped
+2023-07-05 01:09:59,904 TADA INFO test updtr_add test ended

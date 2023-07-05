@@ -1,20 +1,56 @@
-2023-07-03 00:30:44,591 __main__ INFO -- Get or create the cluster --
-2023-07-03 00:30:44,591 TADA INFO starting test `updtr_add test`
-2023-07-03 00:30:44,591 TADA INFO   test-id: 8f76045575d74a6072f00793dd734df1ab3e516e6bd0d41ce491ff1a6e97bb44
-2023-07-03 00:30:44,592 TADA INFO   test-suite: LDMSD
-2023-07-03 00:30:44,592 TADA INFO   test-name: updtr_add test
-2023-07-03 00:30:44,592 TADA INFO   test-user: narate
-2023-07-03 00:30:44,592 TADA INFO   commit-id: 26f8c63d31947afe7b20b74b1c158c9fdd735a13
-2023-07-03 00:30:52,602 __main__ INFO -- Start daemons --
-2023-07-03 00:31:08,148 __main__ INFO Waiting ... for all LDMSDs to start
-2023-07-03 00:31:08,463 __main__ INFO All LDMSDs are up.
-2023-07-03 00:31:09,752 TADA INFO assertion 1, Add an updater with a negative interval: report(rc = 22) == expect(rc = 22), passed
-2023-07-03 00:31:10,971 TADA INFO assertion 2, Add an updater with a zero interval: report(rc = 22) == expect(rc = 22), passed
-2023-07-03 00:31:12,185 TADA INFO assertion 3, Add an updater with an alphabet interval: report(rc = 22) == expect(rc = 22), passed
-2023-07-03 00:31:13,403 TADA INFO assertion 4, Add an updater with a negative offset: report(rc = 0) == expect(rc = 0), passed
-2023-07-03 00:31:14,619 TADA INFO assertion 5, Add an updater with an alphabet offset: report(rc = 22) == expect(rc = 22), passed
-2023-07-03 00:31:17,053 TADA INFO assertion 6, Add an updater without an offset: report(rc = 0, status = [{'name': 'without_offset', 'interval': '1000000', 'offset': '0', 'sync': 'true', 'mode': 'Pull', 'auto': 'false', 'state': 'STOPPED', 'producers': [], 'outstanding count': 0, 'oversampled count': 0}]) == expect(rc = 0, status = [{'name': 'without_offset', 'interval': '1000000', 'offset': '0', 'sync': 'true', 'mode': 'Pull', 'auto': 'false', 'state': 'STOPPED', 'producers': [], 'outstanding count': 0, 'oversampled count': 0}]), passed
-2023-07-03 00:31:19,474 TADA INFO assertion 7, Add an updater with a valid offset: report(rc = 0, status = [{'name': 'with_offset', 'interval': '1000000', 'offset': '100000', 'sync': 'true', 'mode': 'Pull', 'auto': 'false', 'state': 'STOPPED', 'producers': [], 'outstanding count': 0, 'oversampled count': 0}]) == expect(rc = 0, status = [{'name': 'with_offset', 'interval': '1000000', 'offset': '100000', 'sync': 'true', 'mode': 'Pull', 'auto': 'false', 'state': 'STOPPED', 'producers': [], 'outstanding count': 0, 'oversampled count': 0}]), passed
-2023-07-03 00:31:20,693 TADA INFO assertion 8, Add an updater with an existing name: report(rc = 17) == expect(rc = 17), passed
-2023-07-03 00:31:20,693 __main__ INFO --- done ---
-2023-07-03 00:31:20,693 TADA INFO test updtr_add test ended
+2023-07-05 01:09:22,412 __main__ INFO -- Get or create the cluster --
+2023-07-05 01:09:22,412 TADA INFO starting test `updtr_add test`
+2023-07-05 01:09:22,412 TADA INFO   test-id: 558b203deda41d34a293e004b5d42d785035e7192c54b632abb355d62b4ce82d
+2023-07-05 01:09:22,413 TADA INFO   test-suite: LDMSD
+2023-07-05 01:09:22,413 TADA INFO   test-name: updtr_add test
+2023-07-05 01:09:22,413 TADA INFO   test-user: narate
+2023-07-05 01:09:22,413 TADA INFO   commit-id: 636a1c6eed94acbb98f830d7507cbfe1ed9a92a0
+2023-07-05 01:09:30,293 __main__ INFO -- Start daemons --
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/site-packages/docker/api/client.py", line 261, in _raise_for_status
+    response.raise_for_status()
+  File "/usr/lib/python3.6/site-packages/requests/models.py", line 941, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 409 Client Error: Conflict for url: http+docker://localhost/v1.35/containers/439d76f6ba83b86d74ca16470ac3ad394cf0af0a7d1028550dc2615dc593f8b0/exec
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "updtr_add_test", line 255, in <module>
+    cluster.start_daemons()
+  File "/home/narate/cron/ldms-test/LDMS_Test.py", line 1998, in start_daemons
+    cont.start_daemons()
+  File "/home/narate/cron/ldms-test/LDMS_Test.py", line 1260, in start_daemons
+    fn(**daemon)
+  File "/home/narate/cron/ldms-test/LDMS_Test.py", line 1003, in start_ldmsd
+    cond_timedwait(_check_listen, 5)
+  File "/home/narate/cron/ldms-test/LDMS_Test.py", line 2604, in cond_timedwait
+    if cond():
+  File "/home/narate/cron/ldms-test/LDMS_Test.py", line 1001, in _check_listen
+    rc, out = self.exec_run(grp_cmd)
+  File "/home/narate/cron/ldms-test/runtime/docker.py", line 144, in exec_run
+    return self._exec_run(cmd, environment=env, user=user)
+  File "/home/narate/cron/ldms-test/runtime/docker.py", line 148, in _exec_run
+    (rc, out) = self.obj.exec_run(*args, **kwargs)
+  File "/usr/lib/python3.6/site-packages/docker/models/containers.py", line 196, in exec_run
+    workdir=workdir,
+  File "/usr/lib/python3.6/site-packages/docker/utils/decorators.py", line 19, in wrapped
+    return f(self, resource_id, *args, **kwargs)
+  File "/usr/lib/python3.6/site-packages/docker/api/exec_api.py", line 80, in exec_create
+    return self._result(res, True)
+  File "/usr/lib/python3.6/site-packages/docker/api/client.py", line 267, in _result
+    self._raise_for_status(response)
+  File "/usr/lib/python3.6/site-packages/docker/api/client.py", line 263, in _raise_for_status
+    raise create_api_error_from_http_exception(e)
+  File "/usr/lib/python3.6/site-packages/docker/errors.py", line 31, in create_api_error_from_http_exception
+    raise cls(e, response=response, explanation=explanation)
+docker.errors.APIError: 409 Client Error: Conflict ("Container 439d76f6ba83b86d74ca16470ac3ad394cf0af0a7d1028550dc2615dc593f8b0 is not running")
+2023-07-05 01:09:34,716 TADA INFO assertion 1, Add an updater with a negative interval: skipped
+2023-07-05 01:09:34,717 TADA INFO assertion 2, Add an updater with a zero interval: skipped
+2023-07-05 01:09:34,717 TADA INFO assertion 3, Add an updater with an alphabet interval: skipped
+2023-07-05 01:09:34,717 TADA INFO assertion 4, Add an updater with a negative offset: skipped
+2023-07-05 01:09:34,717 TADA INFO assertion 5, Add an updater with an alphabet offset: skipped
+2023-07-05 01:09:34,717 TADA INFO assertion 6, Add an updater without an offset: skipped
+2023-07-05 01:09:34,717 TADA INFO assertion 7, Add an updater with a valid offset: skipped
+2023-07-05 01:09:34,717 TADA INFO assertion 8, Add an updater with an existing name: skipped
+2023-07-05 01:09:34,718 TADA INFO test updtr_add test ended

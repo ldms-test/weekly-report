@@ -1,15 +1,89 @@
-2023-07-02 01:11:29,098 TADA INFO starting test `ldmsd_auth_test`
-2023-07-02 01:11:29,098 TADA INFO   test-id: 063a865993f355cab09d5ddca0e9ca6581fd8ef16c0d6ade64b7065106535948
-2023-07-02 01:11:29,098 TADA INFO   test-suite: LDMSD
-2023-07-02 01:11:29,098 TADA INFO   test-name: ldmsd_auth_test
-2023-07-02 01:11:29,098 TADA INFO   test-user: narate
-2023-07-02 01:11:29,098 TADA INFO   commit-id: 26f8c63d31947afe7b20b74b1c158c9fdd735a13
-2023-07-02 01:11:29,099 __main__ INFO -- Get or create the cluster --
-2023-07-02 01:11:47,389 __main__ INFO -- Start daemons --
-2023-07-02 01:12:33,818 __main__ INFO ... wait a bit to make sure ldmsd's are up
-2023-07-02 01:12:38,955 TADA INFO assertion 1, root@agg-2(dom3) ldms_ls to agg-2:10000: see all sets, passed
-2023-07-02 01:12:39,069 TADA INFO assertion 2, user@agg-2(dom3) ldms_ls to agg-2:10000: see only meminfo, passed
-2023-07-02 01:12:39,187 TADA INFO assertion 3, root@headnode(dom4) ldms_ls to agg-2:10001: see all sets, passed
-2023-07-02 01:12:39,306 TADA INFO assertion 4, user@headnode(dom4) ldms_ls to agg-2:10001: see only meminfo, passed
-2023-07-02 01:12:39,413 TADA INFO assertion 5, root@headnode(dom4) ldms_ls to agg-11:10000: unexpected result: ['Sun Jul 02 01:12:39 2023:    ERROR: auth_munge: munge_decode() failed. Invalid credential', 'Connection failed/rejected.'], failed
-2023-07-02 01:12:39,413 TADA INFO test ldmsd_auth_test ended
+2023-07-05 00:56:00,761 TADA INFO starting test `ldmsd_auth_test`
+2023-07-05 00:56:00,761 TADA INFO   test-id: 9634c515575681bdd189f9eecc6b68e36c28b9181487023af35618f26888471e
+2023-07-05 00:56:00,761 TADA INFO   test-suite: LDMSD
+2023-07-05 00:56:00,761 TADA INFO   test-name: ldmsd_auth_test
+2023-07-05 00:56:00,761 TADA INFO   test-user: narate
+2023-07-05 00:56:00,761 TADA INFO   commit-id: 636a1c6eed94acbb98f830d7507cbfe1ed9a92a0
+2023-07-05 00:56:00,762 __main__ INFO -- Get or create the cluster --
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/site-packages/docker/api/client.py", line 261, in _raise_for_status
+    response.raise_for_status()
+  File "/usr/lib/python3.6/site-packages/requests/models.py", line 941, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http+docker://localhost/v1.35/networks/narate-ldmsd_auth_test-636a1c6
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/narate/cron/ldms-test/runtime/docker.py", line 685, in _get
+    net = dc.networks.get(name)
+  File "/usr/lib/python3.6/site-packages/docker/models/networks.py", line 180, in get
+    self.client.api.inspect_network(network_id, *args, **kwargs)
+  File "/usr/lib/python3.6/site-packages/docker/utils/decorators.py", line 19, in wrapped
+    return f(self, resource_id, *args, **kwargs)
+  File "/usr/lib/python3.6/site-packages/docker/api/network.py", line 213, in inspect_network
+    return self._result(res, json=True)
+  File "/usr/lib/python3.6/site-packages/docker/api/client.py", line 267, in _result
+    self._raise_for_status(response)
+  File "/usr/lib/python3.6/site-packages/docker/api/client.py", line 263, in _raise_for_status
+    raise create_api_error_from_http_exception(e)
+  File "/usr/lib/python3.6/site-packages/docker/errors.py", line 31, in create_api_error_from_http_exception
+    raise cls(e, response=response, explanation=explanation)
+docker.errors.NotFound: 404 Client Error: Not Found ("network narate-ldmsd_auth_test-636a1c6 not found")
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/narate/cron/ldms-test/LDMS_Test.py", line 1619, in get
+    cluster = _cls._get(name)
+  File "/home/narate/cron/ldms-test/runtime/docker.py", line 688, in _get
+    raise LookupError()
+LookupError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/site-packages/docker/api/client.py", line 261, in _raise_for_status
+    response.raise_for_status()
+  File "/usr/lib/python3.6/site-packages/requests/models.py", line 941, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http+docker://localhost/v1.35/containers/27e7f794c585f7d560285e4df3a219384e023d5f3a19bdbb9c140359cb61daba/json
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "ldmsd_auth_test", line 352, in <module>
+    cluster = LDMSDCluster.get(spec["name"], create = True, spec = spec)
+  File "/home/narate/cron/ldms-test/LDMS_Test.py", line 1626, in get
+    return _cls.create(spec)
+  File "/home/narate/cron/ldms-test/LDMS_Test.py", line 1598, in create
+    cluster.make_ovis_env()
+  File "/home/narate/cron/ldms-test/LDMS_Test.py", line 1942, in make_ovis_env
+    "/opt/ovis/lib\n"
+  File "/home/narate/cron/ldms-test/runtime/docker.py", line 204, in write_file
+    rc, sock = self._exec_run(cmd, stdin=True, socket=True, user = user)
+  File "/home/narate/cron/ldms-test/runtime/docker.py", line 147, in _exec_run
+    self.wait_running()
+  File "/home/narate/cron/ldms-test/runtime/docker.py", line 137, in wait_running
+    self.obj.reload()
+  File "/usr/lib/python3.6/site-packages/docker/models/resource.py", line 48, in reload
+    new_model = self.collection.get(self.id)
+  File "/usr/lib/python3.6/site-packages/docker/models/containers.py", line 880, in get
+    resp = self.client.api.inspect_container(container_id)
+  File "/usr/lib/python3.6/site-packages/docker/utils/decorators.py", line 19, in wrapped
+    return f(self, resource_id, *args, **kwargs)
+  File "/usr/lib/python3.6/site-packages/docker/api/container.py", line 758, in inspect_container
+    self._get(self._url("/containers/{0}/json", container)), True
+  File "/usr/lib/python3.6/site-packages/docker/api/client.py", line 267, in _result
+    self._raise_for_status(response)
+  File "/usr/lib/python3.6/site-packages/docker/api/client.py", line 263, in _raise_for_status
+    raise create_api_error_from_http_exception(e)
+  File "/usr/lib/python3.6/site-packages/docker/errors.py", line 31, in create_api_error_from_http_exception
+    raise cls(e, response=response, explanation=explanation)
+docker.errors.NotFound: 404 Client Error: Not Found ("No such container: 27e7f794c585f7d560285e4df3a219384e023d5f3a19bdbb9c140359cb61daba")
+2023-07-05 00:56:17,390 TADA INFO assertion 1, root@agg-2(dom3) ldms_ls to agg-2:10000: skipped
+2023-07-05 00:56:17,391 TADA INFO assertion 2, user@agg-2(dom3) ldms_ls to agg-2:10000: skipped
+2023-07-05 00:56:17,391 TADA INFO assertion 3, root@headnode(dom4) ldms_ls to agg-2:10001: skipped
+2023-07-05 00:56:17,391 TADA INFO assertion 4, user@headnode(dom4) ldms_ls to agg-2:10001: skipped
+2023-07-05 00:56:17,392 TADA INFO assertion 5, root@headnode(dom4) ldms_ls to agg-11:10000: skipped
+2023-07-05 00:56:17,392 TADA INFO test ldmsd_auth_test ended

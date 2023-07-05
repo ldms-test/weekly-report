@@ -1,17 +1,67 @@
-2023-07-03 00:36:11,772 __main__ INFO -- Get or create the cluster --
-2023-07-03 00:36:11,772 TADA INFO starting test `updtr_status test`
-2023-07-03 00:36:11,772 TADA INFO   test-id: 656caf147c74e2bcaeee6046faca2ba3a7001eb2fafaeefaf50d97d558644ee2
-2023-07-03 00:36:11,772 TADA INFO   test-suite: LDMSD
-2023-07-03 00:36:11,772 TADA INFO   test-name: updtr_status test
-2023-07-03 00:36:11,772 TADA INFO   test-user: narate
-2023-07-03 00:36:11,772 TADA INFO   commit-id: 26f8c63d31947afe7b20b74b1c158c9fdd735a13
-2023-07-03 00:36:22,034 __main__ INFO -- Start daemons --
-2023-07-03 00:36:42,631 __main__ INFO Waiting ... for all LDMSDs to start
-2023-07-03 00:36:43,053 __main__ INFO All LDMSDs are up.
-2023-07-03 00:36:44,282 TADA INFO assertion 1, Send 'updtr_status' to an LDMSD without any Updaters: [], passed
-2023-07-03 00:36:45,509 TADA INFO assertion 2, Send 'updtr_status name=foo', where updtr 'foo' doesn't exist.: report(updtr 'foo' doesn't exist.) == expect(updtr 'foo' doesn't exist.), passed
-2023-07-03 00:36:46,735 TADA INFO assertion 3, Send 'updtr_status name=all', where 'all' exists.: report([{'name': 'meminfo', 'interval': '1000000', 'offset': '100000', 'sync': 'true', 'mode': 'Pull', 'auto': 'false', 'state': 'RUNNING', 'producers': [{'name': 'sampler-1', 'host': 'sampler-1', 'port': 10000, 'transport': 'sock', 'state': 'CONNECTED'}, {'name': 'sampler-2', 'host': 'sampler-2', 'port': 10000, 'transport': 'sock', 'state': 'CONNECTED'}], 'outstanding count': 0, 'oversampled count': 0}]) == expect([{'name': 'meminfo', 'interval': '1000000', 'offset': '100000', 'sync': 'true', 'mode': 'Pull', 'auto': 'false', 'state': 'RUNNING', 'producers': [{'name': 'sampler-1', 'host': 'sampler-1', 'port': 10000, 'transport': 'sock', 'state': 'CONNECTED'}, {'name': 'sampler-2', 'host': 'sampler-2', 'port': 10000, 'transport': 'sock', 'state': 'CONNECTED'}], 'outstanding count': 0, 'oversampled count': 0}]), passed
-2023-07-03 00:36:47,965 TADA INFO assertion 4, Send 'updtr_status' to an LDMSD with a single Updater: report([{'name': 'agg11', 'interval': '1000000', 'offset': '200000', 'sync': 'true', 'mode': 'Pull', 'auto': 'false', 'state': 'RUNNING', 'producers': [{'name': 'agg11', 'host': 'L1', 'port': 10000, 'transport': 'sock', 'state': 'CONNECTED'}], 'outstanding count': 0, 'oversampled count': 0}]) == expect([{'name': 'agg11', 'interval': '1000000', 'offset': '200000', 'sync': 'true', 'mode': 'Pull', 'auto': 'false', 'state': 'RUNNING', 'producers': [{'name': 'agg11', 'host': 'L1', 'port': 10000, 'transport': 'sock', 'state': 'CONNECTED'}], 'outstanding count': 0, 'oversampled count': 0}]), passed
-2023-07-03 00:36:49,193 TADA INFO assertion 5, Send 'updtr_status' to an LDMSD with 2 updaters: report([{'name': 'meminfo', 'interval': '1000000', 'offset': '100000', 'sync': 'true', 'mode': 'Pull', 'auto': 'false', 'state': 'RUNNING', 'producers': [{'name': 'sampler-1', 'host': 'sampler-1', 'port': 10000, 'transport': 'sock', 'state': 'CONNECTED'}, {'name': 'sampler-2', 'host': 'sampler-2', 'port': 10000, 'transport': 'sock', 'state': 'CONNECTED'}], 'outstanding count': 0, 'oversampled count': 0}, {'name': 'sampler-2', 'interval': '1000000', 'offset': '100000', 'sync': 'true', 'mode': 'Pull', 'auto': 'false', 'state': 'STOPPED', 'producers': [{'name': 'sampler-2', 'host': 'sampler-2', 'port': 10000, 'transport': 'sock', 'state': 'CONNECTED'}], 'outstanding count': 0, 'oversampled count': 0}]) == expect([{'name': 'meminfo', 'interval': '1000000', 'offset': '100000', 'sync': 'true', 'mode': 'Pull', 'auto': 'false', 'state': 'RUNNING', 'producers': [{'name': 'sampler-1', 'host': 'sampler-1', 'port': 10000, 'transport': 'sock', 'state': 'CONNECTED'}, {'name': 'sampler-2', 'host': 'sampler-2', 'port': 10000, 'transport': 'sock', 'state': 'CONNECTED'}], 'outstanding count': 0, 'oversampled count': 0}, {'name': 'sampler-2', 'interval': '1000000', 'offset': '100000', 'sync': 'true', 'mode': 'Pull', 'auto': 'false', 'state': 'STOPPED', 'producers': [{'name': 'sampler-2', 'host': 'sampler-2', 'port': 10000, 'transport': 'sock', 'state': 'CONNECTED'}], 'outstanding count': 0, 'oversampled count': 0}]), passed
-2023-07-03 00:36:49,193 __main__ INFO --- done ---
-2023-07-03 00:36:49,194 TADA INFO test updtr_status test ended
+2023-07-05 01:12:42,939 __main__ INFO -- Get or create the cluster --
+2023-07-05 01:12:42,939 TADA INFO starting test `updtr_status test`
+2023-07-05 01:12:42,939 TADA INFO   test-id: 1946a9e467eff964c90090dd29d8a49f3be3ded950cb526fd8ae577717bb0cdc
+2023-07-05 01:12:42,939 TADA INFO   test-suite: LDMSD
+2023-07-05 01:12:42,939 TADA INFO   test-name: updtr_status test
+2023-07-05 01:12:42,939 TADA INFO   test-user: narate
+2023-07-05 01:12:42,939 TADA INFO   commit-id: 636a1c6eed94acbb98f830d7507cbfe1ed9a92a0
+2023-07-05 01:12:53,084 __main__ INFO -- Start daemons --
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/site-packages/docker/api/client.py", line 261, in _raise_for_status
+    response.raise_for_status()
+  File "/usr/lib/python3.6/site-packages/requests/models.py", line 941, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 409 Client Error: Conflict for url: http+docker://localhost/v1.35/containers/b5be3efecbb12f2e98df580949dfed1f50282de705a0c8465df13cb4f110c6a0/exec
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "updtr_status_test", line 286, in <module>
+    cluster.start_daemons()
+  File "/home/narate/cron/ldms-test/LDMS_Test.py", line 1998, in start_daemons
+    cont.start_daemons()
+  File "/home/narate/cron/ldms-test/LDMS_Test.py", line 1260, in start_daemons
+    fn(**daemon)
+  File "/home/narate/cron/ldms-test/LDMS_Test.py", line 1245, in start_sshd
+    rc, out = self.pgrep("-c -x sshd")
+  File "/home/narate/cron/ldms-test/LDMS_Test.py", line 930, in pgrep
+    return self.exec_run("pgrep " + " ".join(args))
+  File "/home/narate/cron/ldms-test/runtime/docker.py", line 144, in exec_run
+    return self._exec_run(cmd, environment=env, user=user)
+  File "/home/narate/cron/ldms-test/runtime/docker.py", line 148, in _exec_run
+    (rc, out) = self.obj.exec_run(*args, **kwargs)
+  File "/usr/lib/python3.6/site-packages/docker/models/containers.py", line 196, in exec_run
+    workdir=workdir,
+  File "/usr/lib/python3.6/site-packages/docker/utils/decorators.py", line 19, in wrapped
+    return f(self, resource_id, *args, **kwargs)
+  File "/usr/lib/python3.6/site-packages/docker/api/exec_api.py", line 80, in exec_create
+    return self._result(res, True)
+  File "/usr/lib/python3.6/site-packages/docker/api/client.py", line 267, in _result
+    self._raise_for_status(response)
+  File "/usr/lib/python3.6/site-packages/docker/api/client.py", line 263, in _raise_for_status
+    raise create_api_error_from_http_exception(e)
+  File "/usr/lib/python3.6/site-packages/docker/errors.py", line 31, in create_api_error_from_http_exception
+    raise cls(e, response=response, explanation=explanation)
+docker.errors.APIError: 409 Client Error: Conflict ("Container b5be3efecbb12f2e98df580949dfed1f50282de705a0c8465df13cb4f110c6a0 is not running")
+2023-07-05 01:12:53,647 TADA INFO assertion 1, Send 'updtr_status' to an LDMSD without any Updaters: skipped
+2023-07-05 01:12:53,647 TADA INFO assertion 2, Send 'updtr_status name=foo', where updtr 'foo' doesn't exist.: skipped
+2023-07-05 01:12:53,647 TADA INFO assertion 3, Send 'updtr_status name=all', where 'all' exists.: skipped
+2023-07-05 01:12:53,647 TADA INFO assertion 4, Send 'updtr_status' to an LDMSD with a single Updater: skipped
+2023-07-05 01:12:53,647 TADA INFO assertion 5, Send 'updtr_status' to an LDMSD with 2 updaters: skipped
+2023-07-05 01:12:53,648 TADA INFO test updtr_status test ended
+Error in atexit._run_exitfuncs:
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/site-packages/docker/api/client.py", line 261, in _raise_for_status
+    response.raise_for_status()
+  File "/usr/lib/python3.6/site-packages/requests/models.py", line 941, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 400 Client Error: Bad Request for url: http+docker://localhost/v1.35/networks/byyjwxiphht3buys3vw7uaz82
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/site-packages/docker/api/client.py", line 263, in _raise_for_status
+    raise create_api_error_from_http_exception(e)
+  File "/usr/lib/python3.6/site-packages/docker/errors.py", line 31, in create_api_error_from_http_exception
+    raise cls(e, response=response, explanation=explanation)
+docker.errors.APIError: 400 Client Error: Bad Request ("rpc error: code = FailedPrecondition desc = network byyjwxiphht3buys3vw7uaz82 is in use by task jcu5r2b5r4b3brrvtikegti4i")

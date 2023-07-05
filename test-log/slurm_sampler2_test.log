@@ -1,27 +1,96 @@
-2023-07-03 00:39:18,468 TADA INFO starting test `slurm_sampler2_test`
-2023-07-03 00:39:18,469 TADA INFO   test-id: c878ba20c52320c5b8468df04f5a176ba25d12d2ff2198f2a6d642fb8d03c203
-2023-07-03 00:39:18,469 TADA INFO   test-suite: LDMSD
-2023-07-03 00:39:18,469 TADA INFO   test-name: slurm_sampler2_test
-2023-07-03 00:39:18,469 TADA INFO   test-user: narate
-2023-07-03 00:39:18,469 TADA INFO   commit-id: 26f8c63d31947afe7b20b74b1c158c9fdd735a13
-2023-07-03 00:39:18,469 __main__ INFO -- Get or create the cluster --
-2023-07-03 00:39:32,143 __main__ INFO -- Add users --
-2023-07-03 00:39:37,878 __main__ INFO -- Preparing job script & programs --
-2023-07-03 00:39:38,696 __main__ INFO -- Start daemons --
-2023-07-03 00:40:20,740 TADA INFO assertion 1, Processing the stream data from slurm_notifier: The metric values are as expected on all nodes., passed
-2023-07-03 00:40:25,425 TADA INFO assertion 2.1, Deleting completed jobs -- job_init: The metric values are as expected on all nodes., passed
-2023-07-03 00:40:28,116 TADA INFO assertion 2.2, Deleting completed jobs -- step_init: The metric values are as expected on all nodes., passed
-2023-07-03 00:40:30,767 TADA INFO assertion 2.3, Deleting completed jobs -- task_init: The metric values are as expected on all nodes., passed
-2023-07-03 00:40:33,428 TADA INFO assertion 2.4, Deleting completed jobs -- task_exit: The metric values are as expected on all nodes., passed
-2023-07-03 00:40:36,171 TADA INFO assertion 2.5, Deleting completed jobs -- job_exit: The metric values are as expected on all nodes., passed
-2023-07-03 00:40:40,837 TADA INFO assertion 3.1, Expanding the set heap -- job_init: The metric values are as expected on all nodes., passed
-2023-07-03 00:40:43,502 TADA INFO assertion 3.2, Expanding the set heap -- step_init: The metric values are as expected on all nodes., passed
-2023-07-03 00:40:47,502 TADA INFO assertion 3.3, Expanding the set heap -- task_init: The metric values are as expected on all nodes., passed
-2023-07-03 00:40:51,497 TADA INFO assertion 3.4, Expanding the set heap -- task_exit: The metric values are as expected on all nodes., passed
-2023-07-03 00:40:54,196 TADA INFO assertion 3.5, Expanding the set heap -- job_exit: The metric values are as expected on all nodes., passed
-2023-07-03 00:41:00,456 TADA INFO assertion 4.1, Multi-tenant -- job_init: The metric values are as expected on all nodes., passed
-2023-07-03 00:41:02,183 TADA INFO assertion 4.2, Multi-tenant -- step_init: The metric values are as expected on all nodes., passed
-2023-07-03 00:41:04,693 TADA INFO assertion 4.3, Multi-tenant -- task_init: The metric values are as expected on all nodes., passed
-2023-07-03 00:41:07,203 TADA INFO assertion 4.4, Multi-tenant -- task_exit: The metric values are as expected on all nodes., passed
-2023-07-03 00:41:08,898 TADA INFO assertion 4.5, Multi-tenant -- job_exit: The metric values are as expected on all nodes., passed
-2023-07-03 00:41:08,899 TADA INFO test slurm_sampler2_test ended
+2023-07-05 01:13:59,585 TADA INFO starting test `slurm_sampler2_test`
+2023-07-05 01:13:59,585 TADA INFO   test-id: 20ead0de71609c832061322c90f1ca183e59e6b72070b25e2b5b715b39797f5a
+2023-07-05 01:13:59,585 TADA INFO   test-suite: LDMSD
+2023-07-05 01:13:59,585 TADA INFO   test-name: slurm_sampler2_test
+2023-07-05 01:13:59,585 TADA INFO   test-user: narate
+2023-07-05 01:13:59,585 TADA INFO   commit-id: 636a1c6eed94acbb98f830d7507cbfe1ed9a92a0
+2023-07-05 01:13:59,586 __main__ INFO -- Get or create the cluster --
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/site-packages/docker/api/client.py", line 261, in _raise_for_status
+    response.raise_for_status()
+  File "/usr/lib/python3.6/site-packages/requests/models.py", line 941, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http+docker://localhost/v1.35/networks/narate-slurm_sampler2_test-636a1c6
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/narate/cron/ldms-test/runtime/docker.py", line 685, in _get
+    net = dc.networks.get(name)
+  File "/usr/lib/python3.6/site-packages/docker/models/networks.py", line 180, in get
+    self.client.api.inspect_network(network_id, *args, **kwargs)
+  File "/usr/lib/python3.6/site-packages/docker/utils/decorators.py", line 19, in wrapped
+    return f(self, resource_id, *args, **kwargs)
+  File "/usr/lib/python3.6/site-packages/docker/api/network.py", line 213, in inspect_network
+    return self._result(res, json=True)
+  File "/usr/lib/python3.6/site-packages/docker/api/client.py", line 267, in _result
+    self._raise_for_status(response)
+  File "/usr/lib/python3.6/site-packages/docker/api/client.py", line 263, in _raise_for_status
+    raise create_api_error_from_http_exception(e)
+  File "/usr/lib/python3.6/site-packages/docker/errors.py", line 31, in create_api_error_from_http_exception
+    raise cls(e, response=response, explanation=explanation)
+docker.errors.NotFound: 404 Client Error: Not Found ("network narate-slurm_sampler2_test-636a1c6 not found")
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/narate/cron/ldms-test/LDMS_Test.py", line 1619, in get
+    cluster = _cls._get(name)
+  File "/home/narate/cron/ldms-test/runtime/docker.py", line 688, in _get
+    raise LookupError()
+LookupError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/site-packages/docker/api/client.py", line 261, in _raise_for_status
+    response.raise_for_status()
+  File "/usr/lib/python3.6/site-packages/requests/models.py", line 941, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 409 Client Error: Conflict for url: http+docker://localhost/v1.35/containers/001af82f3690414c400571dd8569bf1ace4ab19a5e6066dc7165dc68cdaf5ae1/exec
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "slurm_sampler2_test", line 736, in <module>
+    cluster = LDMSDCluster.get(spec["name"], create = True, spec = spec)
+  File "/home/narate/cron/ldms-test/LDMS_Test.py", line 1626, in get
+    return _cls.create(spec)
+  File "/home/narate/cron/ldms-test/LDMS_Test.py", line 1598, in create
+    cluster.make_ovis_env()
+  File "/home/narate/cron/ldms-test/LDMS_Test.py", line 1942, in make_ovis_env
+    "/opt/ovis/lib\n"
+  File "/home/narate/cron/ldms-test/runtime/docker.py", line 204, in write_file
+    rc, sock = self._exec_run(cmd, stdin=True, socket=True, user = user)
+  File "/home/narate/cron/ldms-test/runtime/docker.py", line 148, in _exec_run
+    (rc, out) = self.obj.exec_run(*args, **kwargs)
+  File "/usr/lib/python3.6/site-packages/docker/models/containers.py", line 196, in exec_run
+    workdir=workdir,
+  File "/usr/lib/python3.6/site-packages/docker/utils/decorators.py", line 19, in wrapped
+    return f(self, resource_id, *args, **kwargs)
+  File "/usr/lib/python3.6/site-packages/docker/api/exec_api.py", line 80, in exec_create
+    return self._result(res, True)
+  File "/usr/lib/python3.6/site-packages/docker/api/client.py", line 267, in _result
+    self._raise_for_status(response)
+  File "/usr/lib/python3.6/site-packages/docker/api/client.py", line 263, in _raise_for_status
+    raise create_api_error_from_http_exception(e)
+  File "/usr/lib/python3.6/site-packages/docker/errors.py", line 31, in create_api_error_from_http_exception
+    raise cls(e, response=response, explanation=explanation)
+docker.errors.APIError: 409 Client Error: Conflict ("Container 001af82f3690414c400571dd8569bf1ace4ab19a5e6066dc7165dc68cdaf5ae1 is not running")
+2023-07-05 01:14:10,314 TADA INFO assertion 1, Processing the stream data from slurm_notifier: skipped
+2023-07-05 01:14:10,315 TADA INFO assertion 2.1, Deleting completed jobs -- job_init: skipped
+2023-07-05 01:14:10,315 TADA INFO assertion 3.1, Expanding the set heap -- job_init: skipped
+2023-07-05 01:14:10,315 TADA INFO assertion 4.1, Multi-tenant -- job_init: skipped
+2023-07-05 01:14:10,315 TADA INFO assertion 2.2, Deleting completed jobs -- step_init: skipped
+2023-07-05 01:14:10,315 TADA INFO assertion 3.2, Expanding the set heap -- step_init: skipped
+2023-07-05 01:14:10,315 TADA INFO assertion 4.2, Multi-tenant -- step_init: skipped
+2023-07-05 01:14:10,316 TADA INFO assertion 2.3, Deleting completed jobs -- task_init: skipped
+2023-07-05 01:14:10,316 TADA INFO assertion 3.3, Expanding the set heap -- task_init: skipped
+2023-07-05 01:14:10,316 TADA INFO assertion 4.3, Multi-tenant -- task_init: skipped
+2023-07-05 01:14:10,316 TADA INFO assertion 2.4, Deleting completed jobs -- task_exit: skipped
+2023-07-05 01:14:10,316 TADA INFO assertion 3.4, Expanding the set heap -- task_exit: skipped
+2023-07-05 01:14:10,316 TADA INFO assertion 4.4, Multi-tenant -- task_exit: skipped
+2023-07-05 01:14:10,317 TADA INFO assertion 2.5, Deleting completed jobs -- job_exit: skipped
+2023-07-05 01:14:10,317 TADA INFO assertion 3.5, Expanding the set heap -- job_exit: skipped
+2023-07-05 01:14:10,317 TADA INFO assertion 4.5, Multi-tenant -- job_exit: skipped
+2023-07-05 01:14:10,317 TADA INFO test slurm_sampler2_test ended

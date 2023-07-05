@@ -1,25 +1,72 @@
-2023-07-02 01:04:26,087 TADA INFO starting test `agg_test`
-2023-07-02 01:04:26,088 TADA INFO   test-id: dd003586cdf78d0f78bec46c37d5f562ac5edce0c723732e5c80a20da81e3d6d
-2023-07-02 01:04:26,088 TADA INFO   test-suite: LDMSD
-2023-07-02 01:04:26,088 TADA INFO   test-name: agg_test
-2023-07-02 01:04:26,088 TADA INFO   test-user: narate
-2023-07-02 01:04:26,088 TADA INFO   commit-id: 26f8c63d31947afe7b20b74b1c158c9fdd735a13
-2023-07-02 01:04:26,088 __main__ INFO -- Get or create the cluster --
-2023-07-02 01:04:44,349 __main__ INFO -- Start daemons --
-2023-07-02 01:05:21,021 __main__ INFO ... wait a bit to make sure ldmsd's are up
-2023-07-02 01:05:26,026 __main__ INFO -- ldms_ls to agg-2 --
-2023-07-02 01:05:26,137 TADA INFO assertion 1, ldms_ls agg-2: dir result verified, passed
-2023-07-02 01:05:26,918 TADA INFO assertion 2, meminfo data verification: data verified, passed
-2023-07-02 01:05:26,918 __main__ INFO -- Terminating ldmsd on node-1 --
-2023-07-02 01:05:29,268 TADA INFO assertion 3, node-1 ldmsd terminated, sets removed from agg-11: list({'node-3/meminfo'}) == expect({'node-3/meminfo'}), passed
-2023-07-02 01:05:29,487 TADA INFO assertion 4, node-1 ldmsd terminated, sets removed from agg-2: list({'node-3/meminfo', 'node-2/meminfo', 'node-4/meminfo'}) == expect({'node-3/meminfo', 'node-4/meminfo', 'node-2/meminfo'}), passed
-2023-07-02 01:05:29,488 __main__ INFO -- Resurrecting ldmsd on node-1 --
-2023-07-02 01:05:39,092 TADA INFO assertion 5, node-1 ldmsd revived, sets added to agg-11: list({'node-1/meminfo', 'node-3/meminfo'}) == expect({'node-3/meminfo', 'node-1/meminfo'}), passed
-2023-07-02 01:05:39,203 TADA INFO assertion 6, node-1 ldmsd revived, sets added to agg-2: list({'node-3/meminfo', 'node-1/meminfo', 'node-2/meminfo', 'node-4/meminfo'}) == expect({'node-3/meminfo', 'node-4/meminfo', 'node-2/meminfo', 'node-1/meminfo'}), passed
-2023-07-02 01:05:39,203 __main__ INFO -- Terminating ldmsd on agg-11 --
-2023-07-02 01:05:41,549 TADA INFO assertion 7, agg-11 ldmsd terminated, sets removed from agg-2: list({'node-2/meminfo', 'node-4/meminfo'}) == expect({'node-4/meminfo', 'node-2/meminfo'}), passed
-2023-07-02 01:05:41,664 TADA INFO assertion 8, agg-11 ldmsd terminated, node-1 ldmsd is still running: list({'node-1/meminfo'}) == expect({'node-1/meminfo'}), passed
-2023-07-02 01:05:41,774 TADA INFO assertion 9, agg-11 ldmsd terminated, node-3 ldmsd is still running: list({'node-3/meminfo'}) == expect({'node-3/meminfo'}), passed
-2023-07-02 01:05:41,775 __main__ INFO -- Resurrecting ldmsd on agg-11 --
-2023-07-02 01:06:00,358 TADA INFO assertion 10, agg-11 ldmsd revived, sets added to agg-2: list({'node-3/meminfo', 'node-1/meminfo', 'node-2/meminfo', 'node-4/meminfo'}) == expect({'node-3/meminfo', 'node-4/meminfo', 'node-2/meminfo', 'node-1/meminfo'}), passed
-2023-07-02 01:06:00,358 TADA INFO test agg_test ended
+2023-07-04 01:05:00,686 TADA INFO starting test `agg_test`
+2023-07-04 01:05:00,687 TADA INFO   test-id: b0283c0ceddd1320ad1664926d7217a7684d01e3b5af2a3c80215c6ca0e271aa
+2023-07-04 01:05:00,687 TADA INFO   test-suite: LDMSD
+2023-07-04 01:05:00,687 TADA INFO   test-name: agg_test
+2023-07-04 01:05:00,687 TADA INFO   test-user: narate
+2023-07-04 01:05:00,687 TADA INFO   commit-id: 636a1c6eed94acbb98f830d7507cbfe1ed9a92a0
+2023-07-04 01:05:00,688 __main__ INFO -- Get or create the cluster --
+2023-07-04 01:05:18,813 __main__ INFO -- Start daemons --
+2023-07-04 01:05:55,518 __main__ INFO ... wait a bit to make sure ldmsd's are up
+2023-07-04 01:06:00,523 __main__ INFO -- ldms_ls to agg-2 --
+2023-07-04 01:06:00,635 TADA INFO assertion 1, ldms_ls agg-2: dir result verified, passed
+2023-07-04 01:06:01,393 TADA INFO assertion 2, meminfo data verification: data verified, passed
+2023-07-04 01:06:01,393 __main__ INFO -- Terminating ldmsd on node-1 --
+2023-07-04 01:06:03,730 TADA INFO assertion 3, node-1 ldmsd terminated, sets removed from agg-11: list({'node-3/meminfo'}) == expect({'node-3/meminfo'}), passed
+2023-07-04 01:06:03,949 TADA INFO assertion 4, node-1 ldmsd terminated, sets removed from agg-2: list({'node-3/meminfo', 'node-4/meminfo', 'node-2/meminfo'}) == expect({'node-3/meminfo', 'node-4/meminfo', 'node-2/meminfo'}), passed
+2023-07-04 01:06:03,949 __main__ INFO -- Resurrecting ldmsd on node-1 --
+2023-07-05 00:30:05,177 __main__ WARNING ldmsd on node-1 is not ready, ldms_ls: set()
+2023-07-05 00:30:05,177 __main__ INFO -- Terminating ldmsd on agg-11 --
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/site-packages/docker/api/client.py", line 261, in _raise_for_status
+    response.raise_for_status()
+  File "/usr/lib/python3.6/site-packages/requests/models.py", line 941, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http+docker://localhost/v1.35/containers/fd3fbb2e4bcddc5b34cb3a8f0e91c86e8989af41895fee6efb2f6dc203a85f9c/exec
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "agg_test", line 361, in <module>
+    agg11.kill_ldmsd()
+  File "/home/narate/cron/ldms-test/LDMS_Test.py", line 1007, in kill_ldmsd
+    self.exec_run("pkill ldmsd")
+  File "/home/narate/cron/ldms-test/runtime/docker.py", line 144, in exec_run
+    return self._exec_run(cmd, environment=env, user=user)
+  File "/home/narate/cron/ldms-test/runtime/docker.py", line 148, in _exec_run
+    (rc, out) = self.obj.exec_run(*args, **kwargs)
+  File "/usr/lib/python3.6/site-packages/docker/models/containers.py", line 196, in exec_run
+    workdir=workdir,
+  File "/usr/lib/python3.6/site-packages/docker/utils/decorators.py", line 19, in wrapped
+    return f(self, resource_id, *args, **kwargs)
+  File "/usr/lib/python3.6/site-packages/docker/api/exec_api.py", line 80, in exec_create
+    return self._result(res, True)
+  File "/usr/lib/python3.6/site-packages/docker/api/client.py", line 267, in _result
+    self._raise_for_status(response)
+  File "/usr/lib/python3.6/site-packages/docker/api/client.py", line 263, in _raise_for_status
+    raise create_api_error_from_http_exception(e)
+  File "/usr/lib/python3.6/site-packages/docker/errors.py", line 31, in create_api_error_from_http_exception
+    raise cls(e, response=response, explanation=explanation)
+docker.errors.NotFound: 404 Client Error: Not Found ("No such container: fd3fbb2e4bcddc5b34cb3a8f0e91c86e8989af41895fee6efb2f6dc203a85f9c")
+2023-07-05 00:30:05,204 TADA INFO assertion 5, node-1 ldmsd revived, sets added to agg-11: skipped
+2023-07-05 00:30:05,204 TADA INFO assertion 6, node-1 ldmsd revived, sets added to agg-2: skipped
+2023-07-05 00:30:05,204 TADA INFO assertion 7, agg-11 ldmsd terminated, sets removed from agg-2: skipped
+2023-07-05 00:30:05,204 TADA INFO assertion 8, agg-11 ldmsd terminated, node-1 ldmsd is still running: skipped
+2023-07-05 00:30:05,205 TADA INFO assertion 9, agg-11 ldmsd terminated, node-3 ldmsd is still running: skipped
+2023-07-05 00:30:05,205 TADA INFO assertion 10, agg-11 ldmsd revived, sets added to agg-2: skipped
+2023-07-05 00:30:05,205 TADA INFO test agg_test ended
+Error in atexit._run_exitfuncs:
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/site-packages/docker/api/client.py", line 261, in _raise_for_status
+    response.raise_for_status()
+  File "/usr/lib/python3.6/site-packages/requests/models.py", line 941, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http+docker://localhost/v1.35/networks/8rz03q7abqpvnww0kry3cv2fp
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/site-packages/docker/api/client.py", line 263, in _raise_for_status
+    raise create_api_error_from_http_exception(e)
+  File "/usr/lib/python3.6/site-packages/docker/errors.py", line 31, in create_api_error_from_http_exception
+    raise cls(e, response=response, explanation=explanation)
+docker.errors.NotFound: 404 Client Error: Not Found ("rpc error: code = NotFound desc = network 8rz03q7abqpvnww0kry3cv2fp not found")

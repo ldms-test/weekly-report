@@ -1,149 +1,95 @@
-2023-07-03 00:41:25,263 inside_cont_test INFO ===========================================================
-2023-07-03 00:41:25,263 inside_cont_test INFO plugin_config_cmd: Start testing plugin_config_cmd
-2023-07-03 00:41:25,265 TADA INFO starting test `plugin_config_cmd`
-2023-07-03 00:41:25,265 TADA INFO   test-id: 3b73e7765a66b81bf5fcae0078d1ef0ebb51fe7e0f5638457201af15bfd1cd2e
-2023-07-03 00:41:25,265 TADA INFO   test-suite: LDMSD
-2023-07-03 00:41:25,266 TADA INFO   test-name: plugin_config_cmd
-2023-07-03 00:41:25,266 TADA INFO   test-user: narate
-2023-07-03 00:41:25,266 TADA INFO   commit-id: 26f8c63d31947afe7b20b74b1c158c9fdd735a13
-2023-07-03 00:41:25,266 inside_cont_test INFO plugin_config_cmd: Preparing the containers
-2023-07-03 00:41:34,674 inside_cont_test INFO plugin_config_cmd: Running the test script
-2023-07-03 00:41:38,175 TADA INFO assertion status-1, Get the plugin statuses: status is as expected, passed
-2023-07-03 00:41:38,175 TADA INFO assertion load-1, Load a non-existing plugin: resp['errcode'] (4294967295) != 0, passed
-2023-07-03 00:41:38,175 TADA INFO assertion load-2, load a plugin: resp['errcode'] (0) == 0, passed
-2023-07-03 00:41:38,175 TADA INFO assertion load-3, load a loadded plugin: resp['errcode'] (17) == 17, passed
-2023-07-03 00:41:38,175 TADA INFO assertion config-1, Configure a plugin that hasn't been loaded: resp['errcode'] (2) == 2, passed
-2023-07-03 00:41:38,175 TADA INFO assertion config-2, Misconfigure a loadded plugin: resp['errcode'] (22) != 0, passed
-2023-07-03 00:41:38,176 TADA INFO assertion config-3, Correctly configure a loaded plugin: resp['errcode'] (0) == 0, passed
-2023-07-03 00:41:38,176 TADA INFO assertion start-1, Start a plugin that hasn't been loaded: resp['errcode'] (2) == 2, passed
-2023-07-03 00:41:38,176 TADA INFO assertion start-2, Start a store plugin: resp['errcode'] (22) == 22, passed
-2023-07-03 00:41:38,176 TADA INFO assertion start-4, Start a sampler plugin using a negative interval: resp['errcode'] (22) == 22, passed
-2023-07-03 00:41:38,176 TADA INFO assertion start-5, Start a sampler plugin without an offset: resp['errcode'] (0) == 0, passed
-2023-07-03 00:41:38,177 TADA INFO assertion start-3, Start a running sampler plugin: resp['errcode'] (16) == 16, passed
-2023-07-03 00:41:38,177 TADA INFO assertion start-6, Start a sampler plugin with an offset larger than half of interval: resp['errcode'] (0) == 0, passed
-2023-07-03 00:41:38,177 TADA INFO assertion start-7, Start a sampler plugin: resp['errcode'] (0) == 0, passed
-2023-07-03 00:41:38,177 TADA INFO assertion start-8, Check the status of the plugins: status is as expected, passed
-2023-07-03 00:41:38,177 TADA INFO assertion stop-1, Stop a p lugin that hasn't been loaded: resp['errcode'] (2) == 2, passed
-2023-07-03 00:41:38,177 TADA INFO assertion stop-2, Stop a sampler plugin that is not running: resp['errcode'] (22) != 0, passed
-2023-07-03 00:41:38,178 TADA INFO assertion stop-3, Stop a running sampler plugin: resp['errcode'] (0) == 0, passed
-2023-07-03 00:41:38,178 TADA INFO assertion stop-4, Check the status of the plugins: status is as expected, passed
-2023-07-03 00:41:38,178 TADA INFO assertion term-1, Terminate a plugin that hasn't been loaded: resp['errcode'] (2) == 2, passed
-2023-07-03 00:41:38,178 TADA INFO assertion term-2, Terminate a running sampler plugin: resp['errcode'] (22) == 22, passed
-2023-07-03 00:41:38,178 TADA INFO assertion term-3, Terminate an in-used store plugin: resp['errcode'] (22) == 22, passed
-2023-07-03 00:41:38,179 TADA INFO assertion term-4, Terminate a sampler plugin: resp['errcode'] (0) == 0, passed
-2023-07-03 00:41:38,179 TADA INFO assertion term-5, Terminate a store plugin: resp['errcode'] (0) == 0, passed
-2023-07-03 00:41:38,179 TADA INFO assertion term-6, Check the status of the plugins: status is as expected, passed
-2023-07-03 00:41:38,179 TADA INFO test plugin_config_cmd ended
-2023-07-03 00:41:38,179 inside_cont_test INFO plugin_config_cmd: done
-2023-07-03 00:41:39,007 inside_cont_test INFO ===========================================================
-2023-07-03 00:41:39,007 inside_cont_test INFO prdcr_config_cmd: Start testing prdcr_config_cmd
-2023-07-03 00:41:39,009 TADA INFO starting test `prdcr_config_cmd`
-2023-07-03 00:41:39,009 TADA INFO   test-id: 18d6cc9d5235083edf5ed0197438c75ca831c59fee5b21d1c3c1125bc0ae9702
-2023-07-03 00:41:39,009 TADA INFO   test-suite: LDMSD
-2023-07-03 00:41:39,009 TADA INFO   test-name: prdcr_config_cmd
-2023-07-03 00:41:39,009 TADA INFO   test-user: narate
-2023-07-03 00:41:39,009 TADA INFO   commit-id: 26f8c63d31947afe7b20b74b1c158c9fdd735a13
-2023-07-03 00:41:39,009 inside_cont_test INFO prdcr_config_cmd: Preparing the containers
-2023-07-03 00:42:47,168 inside_cont_test INFO prdcr_config_cmd: Running the test script
-2023-07-03 00:42:55,687 TADA INFO assertion status-1, LDMSD has no producers.: len(status) == 0, passed
-2023-07-03 00:42:55,688 TADA INFO assertion status-2, Get prdcr_status of a non-existing producer.: resp['errcode'] (2) == 2, passed
-2023-07-03 00:42:55,688 TADA INFO assertion status-3, Get the result of a single producer: status is as expected, passed
-2023-07-03 00:42:55,688 TADA INFO assertion status-4, Get the result of a single producer with sets: status is as expected, passed
-2023-07-03 00:42:55,688 TADA INFO assertion status-5, Get the result of a passive producer: status is as expected, passed
-2023-07-03 00:42:55,688 TADA INFO assertion status-6, Get the results of two producers: status is as expected, passed
-2023-07-03 00:42:55,688 TADA INFO assertion add-1, prdcr_add an active producer: resp['errcode'] (0) == 0, passed
-2023-07-03 00:42:55,689 TADA INFO assertion add-2, prdcr_add a passive producer: resp['errcode'] (0) == 0, passed
-2023-07-03 00:42:55,689 TADA INFO assertion add-3, prdcr_add with a string interval: resp['errcode'] (22) == 22, passed
-2023-07-03 00:42:55,689 TADA INFO assertion add-4, prdcr_add with a negative interval: resp['errcode'] (22) == 22, passed
-2023-07-03 00:42:55,689 TADA INFO assertion add-5, prdcr_add with zero interval: resp['errcode'] (22) == 22, passed
-2023-07-03 00:42:55,689 TADA INFO assertion add-6, prdcr_add with an invalid type: resp['errcode'] (22) == 22, passed
-2023-07-03 00:42:55,690 TADA INFO assertion add-7, prdcr_add with a negative port: resp['errcode'] (22) == 22, passed
-2023-07-03 00:42:55,690 TADA INFO assertion add-8, prdcr_add with a non-existing host: resp['errcode'] (97) == 97, passed
-2023-07-03 00:42:55,690 TADA INFO assertion add-9, prdcr_add an existing producer: resp['errcode'] (17) == 17, passed
-2023-07-03 00:42:55,690 TADA INFO assertion start-1, prdcr_start a non-existing producer: resp['errcode'] (2) == 2, passed
-2023-07-03 00:42:55,690 TADA INFO assertion start-2.1, prdcr_start a stopped producer -- checking the errcode: resp['errcode'] (0) == 0, passed
-2023-07-03 00:42:55,690 TADA INFO assertion start-2.2, prdcdr_start a stopped producer -- checking the status: status is as expected, passed
-2023-07-03 00:42:55,691 TADA INFO assertion start-3.1, prdcr_start a running producer -- checking the errcode: resp['errcode'] (16) == 16, passed
-2023-07-03 00:42:55,691 TADA INFO assertion start-3.2, prdcr_start a running producer -- checking the status: status is as expected, passed
-2023-07-03 00:42:55,691 TADA INFO assertion start_regex-1, prdcr_start_regex using an invalid regex: resp['errcode'] (2) != 0, passed
-2023-07-03 00:42:55,691 TADA INFO assertion start_regex-2.1, prdcr_start_regex matching no producers -- checking the errcode: resp['errcode'] (0) == 0, passed
-2023-07-03 00:42:55,691 TADA INFO assertion start_regex-2.2, prdcr_start_regex matching no producers -- checking the statuses: status is as expected, passed
-2023-07-03 00:42:55,692 TADA INFO assertion start_regex-3.1, prdcr_start_regex matching running producers -- checking the errcode: resp['errcode'] (0) == 0, passed
-2023-07-03 00:42:55,692 TADA INFO assertion start_regex-3.2, prdcr_start_regex matching running producers -- checking the statuses: status is as expected, passed
-2023-07-03 00:42:55,692 TADA INFO assertion stop-1, prdcr_stop a non-existing producer: resp['errcode'] (2) == 2, passed
-2023-07-03 00:42:55,692 TADA INFO assertion stop-2, prdcr_stop a never-started producer: resp['errcode'] (0) == 0, passed
-2023-07-03 00:42:55,692 TADA INFO assertion stop-3.1, prdcr_stop a connected producer -- checking the errcode: resp['errcode'] (0) == 0, passed
-2023-07-03 00:42:55,693 TADA INFO assertion stop-3.2, prdcr_stop a connected producer -- checking the status: status is as expected, passed
-2023-07-03 00:42:55,693 TADA INFO assertion stop-4, prdcr_stop a stopped producer: resp['errcode'] (0) == 0, passed
-2023-07-03 00:42:55,693 TADA INFO assertion stop_regex-1, prdcr_stop_regex using an invalid regex: resp['errcode'] (2) != 0, passed
-2023-07-03 00:42:55,693 TADA INFO assertion stop_regex-2.1, prdcr_stop_regex matching no producers -- checking the errcode: resp['errcode'] (0) == 0, passed
-2023-07-03 00:42:55,693 TADA INFO assertion stop_regex-2.2, prdcr_stop_regex matching no producers -- checking the status: status is as expected, passed
-2023-07-03 00:42:55,693 TADA INFO assertion stop_regex-3.1, prdcr_stop_regex matching a running producer -- checking the errcode: resp['errcode'] (0) == 0, passed
-2023-07-03 00:42:55,694 TADA INFO assertion stop_regex-3.2, prdcr_stop_regex matching a running producer -- checking the status: status is as expected, passed
-2023-07-03 00:42:55,694 TADA INFO assertion del-1, prdcr_del a non-existing producer: resp['errcode'] (2) == 2, passed
-2023-07-03 00:42:55,694 TADA INFO assertion del-2.1, prdcr_del a stopped producer -- checking the errcode: resp['errcode'] (0) == 0, passed
-2023-07-03 00:42:55,694 TADA INFO assertion del-2.2, prdcr_del a stopped producer -- checking the status: status is as expected, passed
-2023-07-03 00:42:55,694 TADA INFO assertion del-3.1, prdcr_del a running producer -- checking the errcode: resp['errcode'] (16) == 16, passed
-2023-07-03 00:42:55,695 TADA INFO assertion del-3.2, prdcr_del a running producer -- checking the status: status is as expected, passed
-2023-07-03 00:42:55,695 TADA INFO assertion start-4.1, prdcr_start a passive producer -- checking the errcode: skipped
-2023-07-03 00:42:55,695 TADA INFO assertion start-4.2, prdcr_start a passive producer -- checking the status: skipped
-2023-07-03 00:42:55,695 TADA INFO test prdcr_config_cmd ended
-2023-07-03 00:42:55,695 inside_cont_test INFO prdcr_config_cmd: done
-2023-07-03 00:43:01,939 inside_cont_test INFO ===========================================================
-2023-07-03 00:43:01,939 inside_cont_test INFO strgp_config_cmd: Start testing strgp_config_cmd
-2023-07-03 00:43:01,941 TADA INFO starting test `strgp_config_cmd`
-2023-07-03 00:43:01,941 TADA INFO   test-id: d5be2debf058555eea02d6d0c2ce5ee54508f55325846d13d4ec700643ce15bb
-2023-07-03 00:43:01,941 TADA INFO   test-suite: LDMSD
-2023-07-03 00:43:01,941 TADA INFO   test-name: strgp_config_cmd
-2023-07-03 00:43:01,941 TADA INFO   test-user: narate
-2023-07-03 00:43:01,941 TADA INFO   commit-id: 26f8c63d31947afe7b20b74b1c158c9fdd735a13
-2023-07-03 00:43:01,942 inside_cont_test INFO strgp_config_cmd: Preparing the containers
-2023-07-03 00:44:24,147 inside_cont_test INFO strgp_config_cmd: Running the test script
-2023-07-03 00:44:27,637 TADA INFO assertion status-1, LDMSD has no storage policies: len(status) == 0, passed
-2023-07-03 00:44:27,637 TADA INFO assertion status-2, Get the status of a non-existing storage policy: resp['errcode'] (2) == 2, passed
-2023-07-03 00:44:27,638 TADA INFO assertion status-3, Get the status of a storage policy with a single producer: [{'name': 'single_prdcr', 'container': 'single_prdcr', 'schema': 'schema_m3', 'regex': '-', 'plugin': 'store_flatfile', 'flush': '0.000000', 'state': 'RUNNING', 'decomp': '-', 'producers': ['^samplerd-1$'], 'metrics': ['m1', 'd1', 'd2']}] == [{'name': 'single_prdcr', 'container': 'single_prdcr', 'schema': 'schema_m3', 'plugin': 'store_flatfile', 'flush': '0.000000', 'state': 'RUNNING', 'producers': ['^samplerd-1$'], 'metrics': ['m1', 'd1', 'd2']}], failed
-2023-07-03 00:44:27,638 TADA INFO assertion status-4, Get the status of a storage policy with a single metric: [{'name': 'single_metric', 'container': 'single_metric', 'schema': 'schema_m3', 'regex': '-', 'plugin': 'store_flatfile', 'flush': '0.000000', 'state': 'RUNNING', 'decomp': '-', 'producers': [], 'metrics': ['m1']}] == [{'name': 'single_metric', 'container': 'single_metric', 'schema': 'schema_m3', 'plugin': 'store_flatfile', 'flush': '0.000000', 'state': 'RUNNING', 'producers': [], 'metrics': ['m1']}], failed
-2023-07-03 00:44:27,638 TADA INFO assertion status-5, Sending strgp_status with no attributes: [{'name': 'all', 'container': 'all', 'schema': 'schema_m3', 'regex': '-', 'plugin': 'store_flatfile', 'flush': '0.000000', 'state': 'RUNNING', 'decomp': '-', 'producers': [], 'metrics': ['m1', 'd1', 'd2']}, {'name': 'single_metric', 'container': 'single_metric', 'schema': 'schema_m3', 'regex': '-', 'plugin': 'store_flatfile', 'flush': '0.000000', 'state': 'RUNNING', 'decomp': '-', 'producers': [], 'metrics': ['m1']}, {'name': 'single_prdcr', 'container': 'single_prdcr', 'schema': 'schema_m3', 'regex': '-', 'plugin': 'store_flatfile', 'flush': '0.000000', 'state': 'RUNNING', 'decomp': '-', 'producers': ['^samplerd-1$'], 'metrics': ['m1', 'd1', 'd2']}, {'name': 'stopped', 'container': 'stopped', 'schema': 'schema_default', 'regex': '-', 'plugin': 'store_flatfile', 'flush': '0.000000', 'state': 'STOPPED', 'decomp': '-', 'producers': [], 'metrics': []}] == [{'name': 'all', 'container': 'all', 'schema': 'schema_m3', 'plugin': 'store_flatfile', 'flush': '0.000000', 'state': 'RUNNING', 'producers': [], 'metrics': ['m1', 'd1', 'd2']}, {'name': 'single_metric', 'container': 'single_metric', 'schema': 'schema_m3', 'plugin': 'store_flatfile', 'flush': '0.000000', 'state': 'RUNNING', 'producers': [], 'metrics': ['m1']}, {'name': 'single_prdcr', 'container': 'single_prdcr', 'schema': 'schema_m3', 'plugin': 'store_flatfile', 'flush': '0.000000', 'state': 'RUNNING', 'producers': ['^samplerd-1$'], 'metrics': ['m1', 'd1', 'd2']}, {'name': 'stopped', 'container': 'stopped', 'schema': 'schema_default', 'plugin': 'store_flatfile', 'flush': '0.000000', 'state': 'STOPPED', 'producers': [], 'metrics': []}], failed
-2023-07-03 00:44:27,639 TADA INFO assertion status-6, Get the status of a stopped storage policy: [{'name': 'stopped', 'container': 'stopped', 'schema': 'schema_default', 'regex': '-', 'plugin': 'store_flatfile', 'flush': '0.000000', 'state': 'STOPPED', 'decomp': '-', 'producers': [], 'metrics': []}] == [{'name': 'stopped', 'container': 'stopped', 'schema': 'schema_default', 'plugin': 'store_flatfile', 'flush': '0.000000', 'state': 'STOPPED', 'producers': [], 'metrics': []}], failed
-2023-07-03 00:44:27,639 TADA INFO assertion add-1.1, Add a new strgp -- checking the error code: resp['errcode'] (0) == 0, passed
-2023-07-03 00:44:27,639 TADA INFO assertion add-1.2, Add a new strgp -- checking the status: [{'name': 'foo', 'container': 'foo', 'schema': 'schema_m3', 'regex': '-', 'plugin': 'store_csv', 'flush': '0.000000', 'state': 'STOPPED', 'decomp': '-', 'producers': [], 'metrics': []}] == [{'name': 'foo', 'container': 'foo', 'schema': 'schema_m3', 'plugin': 'store_csv', 'flush': '0.000000', 'state': 'STOPPED', 'producers': [], 'metrics': []}], failed
-2023-07-03 00:44:27,640 TADA INFO assertion add-2, Add an existing strgp: resp['errcode'] (17) == 17, passed
-2023-07-03 00:44:27,640 TADA INFO assertion prdcr_add-1, strgp_prdcr_add with an invalid regex: resp['errcode'] (2) != 0, passed
-2023-07-03 00:44:27,641 TADA INFO assertion prdcr_add-2, strgp_prdcr_add to a non-existing strgp: resp['errcode'] (2) == 2, passed
-2023-07-03 00:44:27,641 TADA INFO assertion prdcr_add-3, strgp_prdcr_add to a running strgp: resp['errcode'] (16) == 16, passed
-2023-07-03 00:44:27,641 TADA INFO assertion prdcr_add-4.1, strgp_prdcr_add to a strgp -- checking the error code: resp['errcode'] (0) == 0, passed
-2023-07-03 00:44:27,642 TADA INFO assertion prdcr_add-4.2, strgp_prdcr_add to a strgp -- checking the status: [{'name': 'single_prdcr', 'container': 'single_prdcr', 'schema': 'schema_m3', 'regex': '-', 'plugin': 'store_flatfile', 'flush': '0.000000', 'state': 'STOPPED', 'decomp': '-', 'producers': ['^samplerd-1$'], 'metrics': []}] == [{'name': 'single_prdcr', 'container': 'single_prdcr', 'schema': 'schema_m3', 'plugin': 'store_flatfile', 'flush': '0.000000', 'state': 'STOPPED', 'producers': ['^samplerd-1$'], 'metrics': []}], failed
-2023-07-03 00:44:27,642 TADA INFO assertion metric_add-1, strgp_metric_add to a non existing strgp: resp['errcode'] (2) == 2, passed
-2023-07-03 00:44:27,642 TADA INFO assertion metric_add-2, strgp_metric_add to a running strgp: resp['errcode'] (16) == 16, passed
-2023-07-03 00:44:27,643 TADA INFO assertion metric_add-3.1, strgp_metric_add to a stopped strgp -- checking the errcode: resp['errcode'] (0) == 0, passed
-2023-07-03 00:44:27,643 TADA INFO assertion metric_add-3.2, strgp_metric_add to a stopped strgp -- checking the status: [{'name': 'single_metric', 'container': 'single_metric', 'schema': 'schema_m3', 'regex': '-', 'plugin': 'store_flatfile', 'flush': '0.000000', 'state': 'STOPPED', 'decomp': '-', 'producers': [], 'metrics': ['d1']}] == [{'name': 'single_metric', 'container': 'single_metric', 'schema': 'schema_m3', 'plugin': 'store_flatfile', 'flush': '0.000000', 'state': 'STOPPED', 'producers': [], 'metrics': ['d1']}], failed
-2023-07-03 00:44:27,643 TADA INFO assertion start-1, strgp_start a non existing strgp: resp['errcode'] (2) == 2, passed
-2023-07-03 00:44:27,644 TADA INFO assertion start-2, strgp_start a running strgp: resp['errcode'] (16) == 16, passed
-2023-07-03 00:44:27,644 TADA INFO assertion start-3, strgp_start a strgp with a non-configured plugin: resp['errcode'] (0) == 0, passed
-2023-07-03 00:44:27,644 TADA INFO assertion start-4.1, strgp_start a strgp with a producer filter -- checking the errcode: resp['errcode'] (0) == 0, passed
-2023-07-03 00:44:27,645 TADA INFO assertion start-4.2, strgp_start a strgp with a producer filter -- checking the status: [{'name': 'single_prdcr', 'container': 'single_prdcr', 'schema': 'schema_m3', 'regex': '-', 'plugin': 'store_flatfile', 'flush': '0.000000', 'state': 'RUNNING', 'decomp': '-', 'producers': ['^samplerd-1$'], 'metrics': ['m1', 'd1', 'd2']}] == [{'name': 'single_prdcr', 'container': 'single_prdcr', 'schema': 'schema_m3', 'plugin': 'store_flatfile', 'flush': '0.000000', 'state': 'RUNNING', 'producers': ['^samplerd-1$'], 'metrics': ['m1', 'd1', 'd2']}], failed
-2023-07-03 00:44:27,645 TADA INFO assertion start-5.1, strgp_start a strgp with a metric filter -- checking the errcode: resp['errcode'] (0) == 0, passed
-2023-07-03 00:44:27,645 TADA INFO assertion start-5.2, strgp_start a strgp with a metric filter -- checking the status: [{'name': 'single_metric', 'container': 'single_metric', 'schema': 'schema_m3', 'regex': '-', 'plugin': 'store_flatfile', 'flush': '0.000000', 'state': 'RUNNING', 'decomp': '-', 'producers': [], 'metrics': ['d1']}] == [{'name': 'single_metric', 'container': 'single_metric', 'schema': 'schema_m3', 'plugin': 'store_flatfile', 'flush': '0.000000', 'state': 'RUNNING', 'producers': [], 'metrics': ['d1']}], failed
-2023-07-03 00:44:27,645 TADA INFO assertion start-6.1, strgp_start a stopped strgp -- checking the errcode: resp['errcode'] (0) == 0, passed
-2023-07-03 00:44:27,646 TADA INFO assertion start-6.2, strgp_start a stopped strgp -- checking the status: [{'name': 'stopped', 'container': 'stopped', 'schema': 'schema_m3', 'regex': '-', 'plugin': 'store_flatfile', 'flush': '0.000000', 'state': 'RUNNING', 'decomp': '-', 'producers': [], 'metrics': ['m1', 'd1', 'd2']}] == [{'name': 'stopped', 'container': 'stopped', 'schema': 'schema_m3', 'plugin': 'store_flatfile', 'flush': '0.000000', 'state': 'RUNNING', 'producers': [], 'metrics': ['m1', 'd1', 'd2']}], failed
-2023-07-03 00:44:27,646 TADA INFO assertion start-6.3, strgp_start a stopped strgp -- checking the database: Database is not empty., passed
-2023-07-03 00:44:27,646 TADA INFO assertion prdcr_del-1, strgp_prdcr_del a non existing strgp: resp['errcode'] (2) == 2, passed
-2023-07-03 00:44:27,646 TADA INFO assertion prdcr_del-2, strgp_prdcr_del a running strgp: resp['errcode'] (16) == 16, passed
-2023-07-03 00:44:27,646 TADA INFO assertion prdcr_del-3, strgp_prdcr_del a strgp that doesn't have the prdcr regex: resp['errcode'] (2) == 2, passed
-2023-07-03 00:44:27,646 TADA INFO assertion prdcr_del-4.1, strgp_prdcr_del a strgp with a producer filter -- checking the errcode: resp['errcode'] (0) == 0, passed
-2023-07-03 00:44:27,647 TADA INFO assertion prdcr_del-4.2, strgp_prdcr_del a strgp with a producer filter -- checking the status: [{'name': 'single_prdcr', 'container': 'single_prdcr', 'schema': 'schema_m3', 'regex': '-', 'plugin': 'store_flatfile', 'flush': '0.000000', 'state': 'STOPPED', 'decomp': '-', 'producers': [], 'metrics': []}] == [{'name': 'single_prdcr', 'container': 'single_prdcr', 'schema': 'schema_m3', 'plugin': 'store_flatfile', 'flush': '0.000000', 'state': 'STOPPED', 'producers': [], 'metrics': []}], failed
-2023-07-03 00:44:27,647 TADA INFO assertion metric_del-1, strgp_metric_del a non-existing strgp: resp['errcode'] (2) == 2, passed
-2023-07-03 00:44:27,647 TADA INFO assertion metric_del-2, strgp_metric_del a running strgp: resp['errcode'] (16) == 16, passed
-2023-07-03 00:44:27,647 TADA INFO assertion metric_del-3, strgp_metric_del a strgp that doesn't contain the metric name: resp['errcode'] (2) == 2, passed
-2023-07-03 00:44:27,647 TADA INFO assertion metric_del-4.1, strgp_metric_del from a strgp -- checking the errcode: resp['errcode'] (0) == 0, passed
-2023-07-03 00:44:27,648 TADA INFO assertion metric_del-4.2, strgp_metric_del from a strgp -- checking the status: [{'name': 'single_metric', 'container': 'single_metric', 'schema': 'schema_m3', 'regex': '-', 'plugin': 'store_flatfile', 'flush': '0.000000', 'state': 'STOPPED', 'decomp': '-', 'producers': [], 'metrics': []}] == [{'name': 'single_metric', 'container': 'single_metric', 'schema': 'schema_m3', 'plugin': 'store_flatfile', 'flush': '0.000000', 'state': 'STOPPED', 'producers': [], 'metrics': []}], failed
-2023-07-03 00:44:27,648 TADA INFO assertion stop-1, strgp_stop a non existing strgp: resp['errcode'] (2) == 2, passed
-2023-07-03 00:44:27,648 TADA INFO assertion stop-2, strgp_stop a stopped strgp: resp['errcode'] (16) == 16, passed
-2023-07-03 00:44:27,648 TADA INFO assertion stop-3.1, strgp_stop a running strgp -- checking the errcode: resp['errcode'] (0) == 0, passed
-2023-07-03 00:44:27,648 TADA INFO assertion stop-3.2, strgp_stop a running strgp -- checking the status: [{'name': 'all', 'container': 'all', 'schema': 'schema_m3', 'regex': '-', 'plugin': 'store_flatfile', 'flush': '0.000000', 'state': 'STOPPED', 'decomp': '-', 'producers': [], 'metrics': ['m1', 'd1', 'd2']}] == [{'name': 'all', 'container': 'all', 'schema': 'schema_m3', 'plugin': 'store_flatfile', 'flush': '0.000000', 'state': 'STOPPED', 'producers': [], 'metrics': ['m1', 'd1', 'd2']}], failed
-2023-07-03 00:44:27,649 TADA INFO assertion del-1, Delete a non-existing strgp: resp['errcode'] (2) == 2, passed
-2023-07-03 00:44:27,649 TADA INFO assertion del-2, Delete a running strgp: resp['errcode'] (16) == 16, passed
-2023-07-03 00:44:27,649 TADA INFO assertion del-3.1, Delete a stopped strgp -- checking the errcode: resp['errcode'] (0) == 0, passed
-2023-07-03 00:44:27,649 TADA INFO assertion del-3.2, Delete a stopped strgp -- checking the status: [{'name': 'all', 'container': 'all', 'schema': 'schema_m3', 'regex': '-', 'plugin': 'store_flatfile', 'flush': '0.000000', 'state': 'RUNNING', 'decomp': '-', 'producers': [], 'metrics': ['m1', 'd1', 'd2']}] == [{'name': 'all', 'container': 'all', 'schema': 'schema_m3', 'plugin': 'store_flatfile', 'flush': '0.000000', 'state': 'RUNNING', 'producers': [], 'metrics': ['m1', 'd1', 'd2']}], failed
-2023-07-03 00:44:27,649 TADA INFO test strgp_config_cmd ended
-2023-07-03 00:44:27,649 inside_cont_test INFO strgp_config_cmd: done
+2023-07-05 01:14:23,459 inside_cont_test INFO ===========================================================
+2023-07-05 01:14:23,459 inside_cont_test INFO plugin_config_cmd: Start testing plugin_config_cmd
+2023-07-05 01:14:23,461 TADA INFO starting test `plugin_config_cmd`
+2023-07-05 01:14:23,461 TADA INFO   test-id: 219a8e132d20ef4e9a22d148b0cebeccd5c766d93db88cb5b01b72f20bf541e5
+2023-07-05 01:14:23,461 TADA INFO   test-suite: LDMSD
+2023-07-05 01:14:23,461 TADA INFO   test-name: plugin_config_cmd
+2023-07-05 01:14:23,461 TADA INFO   test-user: narate
+2023-07-05 01:14:23,462 TADA INFO   commit-id: 636a1c6eed94acbb98f830d7507cbfe1ed9a92a0
+2023-07-05 01:14:23,462 inside_cont_test INFO plugin_config_cmd: Preparing the containers
+2023-07-05 01:14:32,997 inside_cont_test INFO plugin_config_cmd: Running the test script
+2023-07-05 01:14:34,063 inside_cont_test ERROR plugin_config_cmd: The test script failed! Exit code 137: 
+2023-07-05 01:14:34,066 inside_cont_test INFO ===========================================================
+2023-07-05 01:14:34,066 inside_cont_test INFO prdcr_config_cmd: Start testing prdcr_config_cmd
+2023-07-05 01:14:34,068 TADA INFO starting test `prdcr_config_cmd`
+2023-07-05 01:14:34,068 TADA INFO   test-id: f591cfef0132574631fe5968c1d573fdc232506afe6c56211dc446b54a47607e
+2023-07-05 01:14:34,068 TADA INFO   test-suite: LDMSD
+2023-07-05 01:14:34,068 TADA INFO   test-name: prdcr_config_cmd
+2023-07-05 01:14:34,068 TADA INFO   test-user: narate
+2023-07-05 01:14:34,068 TADA INFO   commit-id: 636a1c6eed94acbb98f830d7507cbfe1ed9a92a0
+2023-07-05 01:14:34,069 inside_cont_test INFO prdcr_config_cmd: Preparing the containers
+2023-07-05 01:15:36,157 inside_cont_test ERROR 409 Client Error: Conflict ("Container a1e0d0b5ff9e53cdd833816d42e7c321bfa7ee2ecafc9c13637e44ebe63cac6f is not running")
+2023-07-05 01:15:36,163 inside_cont_test INFO ===========================================================
+2023-07-05 01:15:36,163 inside_cont_test INFO strgp_config_cmd: Start testing strgp_config_cmd
+2023-07-05 01:15:36,166 TADA INFO starting test `strgp_config_cmd`
+2023-07-05 01:15:36,166 TADA INFO   test-id: 6da8a7c2aad81fe09ebfffa61c7b75bf279b012dab6887b8f232cf5d7eca3aa1
+2023-07-05 01:15:36,166 TADA INFO   test-suite: LDMSD
+2023-07-05 01:15:36,166 TADA INFO   test-name: strgp_config_cmd
+2023-07-05 01:15:36,166 TADA INFO   test-user: narate
+2023-07-05 01:15:36,166 TADA INFO   commit-id: 636a1c6eed94acbb98f830d7507cbfe1ed9a92a0
+2023-07-05 01:15:36,166 inside_cont_test INFO strgp_config_cmd: Preparing the containers
+2023-07-05 01:17:02,281 inside_cont_test INFO strgp_config_cmd: Running the test script
+2023-07-05 01:17:05,958 TADA INFO assertion status-1, LDMSD has no storage policies: len(status) == 0, passed
+2023-07-05 01:17:05,958 TADA INFO assertion status-2, Get the status of a non-existing storage policy: resp['errcode'] (2) == 2, passed
+2023-07-05 01:17:05,958 TADA INFO assertion status-3, Get the status of a storage policy with a single producer: [{'name': 'single_prdcr', 'container': 'single_prdcr', 'schema': 'schema_m3', 'regex': '-', 'plugin': 'store_flatfile', 'flush': '0.000000', 'state': 'RUNNING', 'decomp': '-', 'producers': ['^samplerd-1$'], 'metrics': ['m1', 'd1', 'd2']}] == [{'name': 'single_prdcr', 'container': 'single_prdcr', 'schema': 'schema_m3', 'plugin': 'store_flatfile', 'flush': '0.000000', 'state': 'RUNNING', 'producers': ['^samplerd-1$'], 'metrics': ['m1', 'd1', 'd2']}], failed
+2023-07-05 01:17:05,958 TADA INFO assertion status-4, Get the status of a storage policy with a single metric: [{'name': 'single_metric', 'container': 'single_metric', 'schema': 'schema_m3', 'regex': '-', 'plugin': 'store_flatfile', 'flush': '0.000000', 'state': 'RUNNING', 'decomp': '-', 'producers': [], 'metrics': ['m1']}] == [{'name': 'single_metric', 'container': 'single_metric', 'schema': 'schema_m3', 'plugin': 'store_flatfile', 'flush': '0.000000', 'state': 'RUNNING', 'producers': [], 'metrics': ['m1']}], failed
+2023-07-05 01:17:05,959 TADA INFO assertion status-5, Sending strgp_status with no attributes: [{'name': 'all', 'container': 'all', 'schema': 'schema_m3', 'regex': '-', 'plugin': 'store_flatfile', 'flush': '0.000000', 'state': 'RUNNING', 'decomp': '-', 'producers': [], 'metrics': ['m1', 'd1', 'd2']}, {'name': 'single_metric', 'container': 'single_metric', 'schema': 'schema_m3', 'regex': '-', 'plugin': 'store_flatfile', 'flush': '0.000000', 'state': 'RUNNING', 'decomp': '-', 'producers': [], 'metrics': ['m1']}, {'name': 'single_prdcr', 'container': 'single_prdcr', 'schema': 'schema_m3', 'regex': '-', 'plugin': 'store_flatfile', 'flush': '0.000000', 'state': 'RUNNING', 'decomp': '-', 'producers': ['^samplerd-1$'], 'metrics': ['m1', 'd1', 'd2']}, {'name': 'stopped', 'container': 'stopped', 'schema': 'schema_default', 'regex': '-', 'plugin': 'store_flatfile', 'flush': '0.000000', 'state': 'STOPPED', 'decomp': '-', 'producers': [], 'metrics': []}] == [{'name': 'all', 'container': 'all', 'schema': 'schema_m3', 'plugin': 'store_flatfile', 'flush': '0.000000', 'state': 'RUNNING', 'producers': [], 'metrics': ['m1', 'd1', 'd2']}, {'name': 'single_metric', 'container': 'single_metric', 'schema': 'schema_m3', 'plugin': 'store_flatfile', 'flush': '0.000000', 'state': 'RUNNING', 'producers': [], 'metrics': ['m1']}, {'name': 'single_prdcr', 'container': 'single_prdcr', 'schema': 'schema_m3', 'plugin': 'store_flatfile', 'flush': '0.000000', 'state': 'RUNNING', 'producers': ['^samplerd-1$'], 'metrics': ['m1', 'd1', 'd2']}, {'name': 'stopped', 'container': 'stopped', 'schema': 'schema_default', 'plugin': 'store_flatfile', 'flush': '0.000000', 'state': 'STOPPED', 'producers': [], 'metrics': []}], failed
+2023-07-05 01:17:05,959 TADA INFO assertion status-6, Get the status of a stopped storage policy: [{'name': 'stopped', 'container': 'stopped', 'schema': 'schema_default', 'regex': '-', 'plugin': 'store_flatfile', 'flush': '0.000000', 'state': 'STOPPED', 'decomp': '-', 'producers': [], 'metrics': []}] == [{'name': 'stopped', 'container': 'stopped', 'schema': 'schema_default', 'plugin': 'store_flatfile', 'flush': '0.000000', 'state': 'STOPPED', 'producers': [], 'metrics': []}], failed
+2023-07-05 01:17:05,959 TADA INFO assertion add-1.1, Add a new strgp -- checking the error code: resp['errcode'] (0) == 0, passed
+2023-07-05 01:17:05,959 TADA INFO assertion add-1.2, Add a new strgp -- checking the status: [{'name': 'foo', 'container': 'foo', 'schema': 'schema_m3', 'regex': '-', 'plugin': 'store_csv', 'flush': '0.000000', 'state': 'STOPPED', 'decomp': '-', 'producers': [], 'metrics': []}] == [{'name': 'foo', 'container': 'foo', 'schema': 'schema_m3', 'plugin': 'store_csv', 'flush': '0.000000', 'state': 'STOPPED', 'producers': [], 'metrics': []}], failed
+2023-07-05 01:17:05,959 TADA INFO assertion add-2, Add an existing strgp: resp['errcode'] (17) == 17, passed
+2023-07-05 01:17:05,960 TADA INFO assertion prdcr_add-1, strgp_prdcr_add with an invalid regex: resp['errcode'] (2) != 0, passed
+2023-07-05 01:17:05,960 TADA INFO assertion prdcr_add-2, strgp_prdcr_add to a non-existing strgp: resp['errcode'] (2) == 2, passed
+2023-07-05 01:17:05,960 TADA INFO assertion prdcr_add-3, strgp_prdcr_add to a running strgp: resp['errcode'] (16) == 16, passed
+2023-07-05 01:17:05,960 TADA INFO assertion prdcr_add-4.1, strgp_prdcr_add to a strgp -- checking the error code: resp['errcode'] (0) == 0, passed
+2023-07-05 01:17:05,960 TADA INFO assertion prdcr_add-4.2, strgp_prdcr_add to a strgp -- checking the status: [{'name': 'single_prdcr', 'container': 'single_prdcr', 'schema': 'schema_m3', 'regex': '-', 'plugin': 'store_flatfile', 'flush': '0.000000', 'state': 'STOPPED', 'decomp': '-', 'producers': ['^samplerd-1$'], 'metrics': []}] == [{'name': 'single_prdcr', 'container': 'single_prdcr', 'schema': 'schema_m3', 'plugin': 'store_flatfile', 'flush': '0.000000', 'state': 'STOPPED', 'producers': ['^samplerd-1$'], 'metrics': []}], failed
+2023-07-05 01:17:05,960 TADA INFO assertion metric_add-1, strgp_metric_add to a non existing strgp: resp['errcode'] (2) == 2, passed
+2023-07-05 01:17:05,961 TADA INFO assertion metric_add-2, strgp_metric_add to a running strgp: resp['errcode'] (16) == 16, passed
+2023-07-05 01:17:05,961 TADA INFO assertion metric_add-3.1, strgp_metric_add to a stopped strgp -- checking the errcode: resp['errcode'] (0) == 0, passed
+2023-07-05 01:17:05,961 TADA INFO assertion metric_add-3.2, strgp_metric_add to a stopped strgp -- checking the status: [{'name': 'single_metric', 'container': 'single_metric', 'schema': 'schema_m3', 'regex': '-', 'plugin': 'store_flatfile', 'flush': '0.000000', 'state': 'STOPPED', 'decomp': '-', 'producers': [], 'metrics': ['d1']}] == [{'name': 'single_metric', 'container': 'single_metric', 'schema': 'schema_m3', 'plugin': 'store_flatfile', 'flush': '0.000000', 'state': 'STOPPED', 'producers': [], 'metrics': ['d1']}], failed
+2023-07-05 01:17:05,961 TADA INFO assertion start-1, strgp_start a non existing strgp: resp['errcode'] (2) == 2, passed
+2023-07-05 01:17:05,961 TADA INFO assertion start-2, strgp_start a running strgp: resp['errcode'] (16) == 16, passed
+2023-07-05 01:17:05,962 TADA INFO assertion start-3, strgp_start a strgp with a non-configured plugin: resp['errcode'] (0) == 0, passed
+2023-07-05 01:17:05,962 TADA INFO assertion start-4.1, strgp_start a strgp with a producer filter -- checking the errcode: resp['errcode'] (0) == 0, passed
+2023-07-05 01:17:05,962 TADA INFO assertion start-4.2, strgp_start a strgp with a producer filter -- checking the status: [{'name': 'single_prdcr', 'container': 'single_prdcr', 'schema': 'schema_m3', 'regex': '-', 'plugin': 'store_flatfile', 'flush': '0.000000', 'state': 'RUNNING', 'decomp': '-', 'producers': ['^samplerd-1$'], 'metrics': ['m1', 'd1', 'd2']}] == [{'name': 'single_prdcr', 'container': 'single_prdcr', 'schema': 'schema_m3', 'plugin': 'store_flatfile', 'flush': '0.000000', 'state': 'RUNNING', 'producers': ['^samplerd-1$'], 'metrics': ['m1', 'd1', 'd2']}], failed
+2023-07-05 01:17:05,962 TADA INFO assertion start-5.1, strgp_start a strgp with a metric filter -- checking the errcode: resp['errcode'] (0) == 0, passed
+2023-07-05 01:17:05,962 TADA INFO assertion start-5.2, strgp_start a strgp with a metric filter -- checking the status: [{'name': 'single_metric', 'container': 'single_metric', 'schema': 'schema_m3', 'regex': '-', 'plugin': 'store_flatfile', 'flush': '0.000000', 'state': 'RUNNING', 'decomp': '-', 'producers': [], 'metrics': ['d1']}] == [{'name': 'single_metric', 'container': 'single_metric', 'schema': 'schema_m3', 'plugin': 'store_flatfile', 'flush': '0.000000', 'state': 'RUNNING', 'producers': [], 'metrics': ['d1']}], failed
+2023-07-05 01:17:05,962 TADA INFO assertion start-6.1, strgp_start a stopped strgp -- checking the errcode: resp['errcode'] (0) == 0, passed
+2023-07-05 01:17:05,963 TADA INFO assertion start-6.2, strgp_start a stopped strgp -- checking the status: [{'name': 'stopped', 'container': 'stopped', 'schema': 'schema_m3', 'regex': '-', 'plugin': 'store_flatfile', 'flush': '0.000000', 'state': 'RUNNING', 'decomp': '-', 'producers': [], 'metrics': ['m1', 'd1', 'd2']}] == [{'name': 'stopped', 'container': 'stopped', 'schema': 'schema_m3', 'plugin': 'store_flatfile', 'flush': '0.000000', 'state': 'RUNNING', 'producers': [], 'metrics': ['m1', 'd1', 'd2']}], failed
+2023-07-05 01:17:05,963 TADA INFO assertion start-6.3, strgp_start a stopped strgp -- checking the database: Database is not empty., passed
+2023-07-05 01:17:05,963 TADA INFO assertion prdcr_del-1, strgp_prdcr_del a non existing strgp: resp['errcode'] (2) == 2, passed
+2023-07-05 01:17:05,963 TADA INFO assertion prdcr_del-2, strgp_prdcr_del a running strgp: resp['errcode'] (16) == 16, passed
+2023-07-05 01:17:05,963 TADA INFO assertion prdcr_del-3, strgp_prdcr_del a strgp that doesn't have the prdcr regex: resp['errcode'] (2) == 2, passed
+2023-07-05 01:17:05,964 TADA INFO assertion prdcr_del-4.1, strgp_prdcr_del a strgp with a producer filter -- checking the errcode: resp['errcode'] (0) == 0, passed
+2023-07-05 01:17:05,964 TADA INFO assertion prdcr_del-4.2, strgp_prdcr_del a strgp with a producer filter -- checking the status: [{'name': 'single_prdcr', 'container': 'single_prdcr', 'schema': 'schema_m3', 'regex': '-', 'plugin': 'store_flatfile', 'flush': '0.000000', 'state': 'STOPPED', 'decomp': '-', 'producers': [], 'metrics': []}] == [{'name': 'single_prdcr', 'container': 'single_prdcr', 'schema': 'schema_m3', 'plugin': 'store_flatfile', 'flush': '0.000000', 'state': 'STOPPED', 'producers': [], 'metrics': []}], failed
+2023-07-05 01:17:05,964 TADA INFO assertion metric_del-1, strgp_metric_del a non-existing strgp: resp['errcode'] (2) == 2, passed
+2023-07-05 01:17:05,964 TADA INFO assertion metric_del-2, strgp_metric_del a running strgp: resp['errcode'] (16) == 16, passed
+2023-07-05 01:17:05,964 TADA INFO assertion metric_del-3, strgp_metric_del a strgp that doesn't contain the metric name: resp['errcode'] (2) == 2, passed
+2023-07-05 01:17:05,964 TADA INFO assertion metric_del-4.1, strgp_metric_del from a strgp -- checking the errcode: resp['errcode'] (0) == 0, passed
+2023-07-05 01:17:05,965 TADA INFO assertion metric_del-4.2, strgp_metric_del from a strgp -- checking the status: [{'name': 'single_metric', 'container': 'single_metric', 'schema': 'schema_m3', 'regex': '-', 'plugin': 'store_flatfile', 'flush': '0.000000', 'state': 'STOPPED', 'decomp': '-', 'producers': [], 'metrics': []}] == [{'name': 'single_metric', 'container': 'single_metric', 'schema': 'schema_m3', 'plugin': 'store_flatfile', 'flush': '0.000000', 'state': 'STOPPED', 'producers': [], 'metrics': []}], failed
+2023-07-05 01:17:05,965 TADA INFO assertion stop-1, strgp_stop a non existing strgp: resp['errcode'] (2) == 2, passed
+2023-07-05 01:17:05,965 TADA INFO assertion stop-2, strgp_stop a stopped strgp: resp['errcode'] (16) == 16, passed
+2023-07-05 01:17:05,965 TADA INFO assertion stop-3.1, strgp_stop a running strgp -- checking the errcode: resp['errcode'] (0) == 0, passed
+2023-07-05 01:17:05,965 TADA INFO assertion stop-3.2, strgp_stop a running strgp -- checking the status: [{'name': 'all', 'container': 'all', 'schema': 'schema_m3', 'regex': '-', 'plugin': 'store_flatfile', 'flush': '0.000000', 'state': 'STOPPED', 'decomp': '-', 'producers': [], 'metrics': ['m1', 'd1', 'd2']}] == [{'name': 'all', 'container': 'all', 'schema': 'schema_m3', 'plugin': 'store_flatfile', 'flush': '0.000000', 'state': 'STOPPED', 'producers': [], 'metrics': ['m1', 'd1', 'd2']}], failed
+2023-07-05 01:17:05,966 TADA INFO assertion del-1, Delete a non-existing strgp: resp['errcode'] (2) == 2, passed
+2023-07-05 01:17:05,966 TADA INFO assertion del-2, Delete a running strgp: resp['errcode'] (16) == 16, passed
+2023-07-05 01:17:05,966 TADA INFO assertion del-3.1, Delete a stopped strgp -- checking the errcode: resp['errcode'] (0) == 0, passed
+2023-07-05 01:17:05,966 TADA INFO assertion del-3.2, Delete a stopped strgp -- checking the status: [{'name': 'all', 'container': 'all', 'schema': 'schema_m3', 'regex': '-', 'plugin': 'store_flatfile', 'flush': '0.000000', 'state': 'RUNNING', 'decomp': '-', 'producers': [], 'metrics': ['m1', 'd1', 'd2']}] == [{'name': 'all', 'container': 'all', 'schema': 'schema_m3', 'plugin': 'store_flatfile', 'flush': '0.000000', 'state': 'RUNNING', 'producers': [], 'metrics': ['m1', 'd1', 'd2']}], failed
+2023-07-05 01:17:05,966 TADA INFO test strgp_config_cmd ended
+2023-07-05 01:17:05,967 inside_cont_test INFO strgp_config_cmd: done
+Error in atexit._run_exitfuncs:
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/site-packages/docker/api/client.py", line 261, in _raise_for_status
+    response.raise_for_status()
+  File "/usr/lib/python3.6/site-packages/requests/models.py", line 941, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http+docker://localhost/v1.35/containers/d95c892e107b617650c45a358308724c8a9642394814ee10ed95013d41641adc/exec
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/site-packages/docker/api/client.py", line 263, in _raise_for_status
+    raise create_api_error_from_http_exception(e)
+  File "/usr/lib/python3.6/site-packages/docker/errors.py", line 31, in create_api_error_from_http_exception
+    raise cls(e, response=response, explanation=explanation)
+docker.errors.NotFound: 404 Client Error: Not Found ("No such container: d95c892e107b617650c45a358308724c8a9642394814ee10ed95013d41641adc")

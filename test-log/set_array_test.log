@@ -1,13 +1,45 @@
-2023-07-02 01:32:52,244 TADA INFO starting test `set_array_test`
-2023-07-02 01:32:52,244 TADA INFO   test-id: a0ebe35e9fe694a5c870557a2869cfd78841ac0cfcc97efecc91492ad34d3a98
-2023-07-02 01:32:52,244 TADA INFO   test-suite: LDMSD
-2023-07-02 01:32:52,244 TADA INFO   test-name: set_array_test
-2023-07-02 01:32:52,244 TADA INFO   test-user: narate
-2023-07-02 01:32:52,244 TADA INFO   commit-id: 26f8c63d31947afe7b20b74b1c158c9fdd735a13
-2023-07-02 01:32:52,245 __main__ INFO -- Get or create the cluster --
-2023-07-02 01:32:57,481 __main__ INFO -- Start daemons --
-2023-07-02 01:33:03,365 __main__ INFO ... wait a bit to make sure ldmsd's are up
-2023-07-02 01:33:30,535 TADA INFO assertion 1, 1st update got some callbacks: verified hunk of 2 snapshots, passed
-2023-07-02 01:33:30,535 TADA INFO assertion 2, 2nd update got N callbacks: verified hunk of 5 snapshots, passed
-2023-07-02 01:33:30,536 TADA INFO assertion 3, 3nd update got N callbacks: verified hunk of 5 snapshots, passed
-2023-07-02 01:33:30,536 TADA INFO test set_array_test ended
+2023-07-05 01:01:46,224 TADA INFO starting test `set_array_test`
+2023-07-05 01:01:46,224 TADA INFO   test-id: e84dc407ff902ff190239aa428082964cb8ad5a269864a18e22eb62dc1db7835
+2023-07-05 01:01:46,224 TADA INFO   test-suite: LDMSD
+2023-07-05 01:01:46,224 TADA INFO   test-name: set_array_test
+2023-07-05 01:01:46,224 TADA INFO   test-user: narate
+2023-07-05 01:01:46,224 TADA INFO   commit-id: 636a1c6eed94acbb98f830d7507cbfe1ed9a92a0
+2023-07-05 01:01:46,225 __main__ INFO -- Get or create the cluster --
+2023-07-05 01:01:51,447 __main__ INFO -- Start daemons --
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/site-packages/docker/api/client.py", line 261, in _raise_for_status
+    response.raise_for_status()
+  File "/usr/lib/python3.6/site-packages/requests/models.py", line 941, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 500 Server Error: Internal Server Error for url: http+docker://localhost/v1.35/exec/1f845a1e496b8876a50a2954bdafd3e247276539e8ed5bda474f24fcb7c30f46/start
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "set_array_test", line 170, in <module>
+    cluster.make_known_hosts()
+  File "/home/narate/cron/ldms-test/LDMS_Test.py", line 1832, in make_known_hosts
+    cont.exec_run("mkdir -m 0700 -p /root/.ssh")
+  File "/home/narate/cron/ldms-test/runtime/docker.py", line 144, in exec_run
+    return self._exec_run(cmd, environment=env, user=user)
+  File "/home/narate/cron/ldms-test/runtime/docker.py", line 148, in _exec_run
+    (rc, out) = self.obj.exec_run(*args, **kwargs)
+  File "/usr/lib/python3.6/site-packages/docker/models/containers.py", line 200, in exec_run
+    demux=demux
+  File "/usr/lib/python3.6/site-packages/docker/utils/decorators.py", line 19, in wrapped
+    return f(self, resource_id, *args, **kwargs)
+  File "/usr/lib/python3.6/site-packages/docker/api/exec_api.py", line 169, in exec_start
+    return self._read_from_socket(res, stream, tty=tty, demux=demux)
+  File "/usr/lib/python3.6/site-packages/docker/api/client.py", line 400, in _read_from_socket
+    socket = self._get_raw_response_socket(response)
+  File "/usr/lib/python3.6/site-packages/docker/api/client.py", line 311, in _get_raw_response_socket
+    self._raise_for_status(response)
+  File "/usr/lib/python3.6/site-packages/docker/api/client.py", line 263, in _raise_for_status
+    raise create_api_error_from_http_exception(e)
+  File "/usr/lib/python3.6/site-packages/docker/errors.py", line 31, in create_api_error_from_http_exception
+    raise cls(e, response=response, explanation=explanation)
+docker.errors.APIError: 500 Server Error: Internal Server Error ("Container 00c1fe578713ef3e7d95bab319d3df700622fe625c3b53cafb1f02d6112399ff is not running: Removal In Progress")
+2023-07-05 01:01:57,492 TADA INFO assertion 1, 1st update got some callbacks: skipped
+2023-07-05 01:01:57,493 TADA INFO assertion 2, 2nd update got N callbacks: skipped
+2023-07-05 01:01:57,493 TADA INFO assertion 3, 3nd update got N callbacks: skipped
+2023-07-05 01:01:57,493 TADA INFO test set_array_test ended

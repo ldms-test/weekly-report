@@ -1,22 +1,60 @@
-2023-07-02 01:49:38,845 __main__ INFO -- Get or create the cluster --
-2023-07-02 01:49:38,846 TADA INFO starting test `store_sos_lists_test`
-2023-07-02 01:49:38,846 TADA INFO   test-id: 329f0620ba03fa417611ec9da8f4e178a42aa7893345078adaff020a5974ab10
-2023-07-02 01:49:38,846 TADA INFO   test-suite: LDMSD
-2023-07-02 01:49:38,846 TADA INFO   test-name: store_sos_lists_test
-2023-07-02 01:49:38,846 TADA INFO   test-user: narate
-2023-07-02 01:49:38,846 TADA INFO   commit-id: 26f8c63d31947afe7b20b74b1c158c9fdd735a13
-2023-07-02 01:49:46,919 __main__ INFO Waiting ... for all LDMSDs to start
-2023-07-02 01:50:02,529 __main__ INFO All sampler daemons are up.
-2023-07-02 01:50:02,627 TADA INFO assertion 1, aggregator with store_sos has started properly.: agg_sos.check_ldmsd(), passed
-2023-07-02 01:50:02,735 TADA INFO assertion 2, aggregator with store_csv has started properly.: agg_csv.check_ldmsd(), passed
-2023-07-02 01:50:04,049 TADA INFO assertion 3, store_sos is storing data.: file_exists(a) for a in supported_schema, passed
-2023-07-02 01:50:04,855 TADA INFO assertion 4, store_sos stores data correctly.: verify_data(db) for db in all_db, passed
-2023-07-02 01:50:13,783 TADA INFO assertion 5, store_sos stores data after restarted correctly.: verify_data(db) for db in all_db, passed
-2023-07-02 01:50:14,415 TADA INFO assertion 6, store_sos reports multiple list errror messages resulted by the config file.: store_sos reported the multiple list error messages., passed
-2023-07-02 01:50:19,155 TADA INFO assertion 7, store_sos reports multiple list errror messages resulted by ldmsd_controller.: store_sos reported the multiple list error messages., passed
-2023-07-02 01:50:19,476 TADA INFO assertion 8, store_csv is storing data.: file_exists(a) for a in supported_schema, passed
-2023-07-02 01:50:25,918 TADA INFO assertion 9, store_csv stores data correctly.: verify_data(db) for db in all_db, passed
-2023-07-02 01:50:35,582 TADA INFO assertion 10, store_csv stores data after restarted correctly.: verify_data(db) for db in all_db, passed
-2023-07-02 01:50:36,229 TADA INFO assertion 11, store_csv reports multiple list errror messages resulted by the config file.: store_csv reported the multiple list error messages., passed
-2023-07-02 01:50:41,029 TADA INFO assertion 12, store_csv reports multiple list errror messages resulted by ldmsd_controller.: store_csv reported the multiple list error messages., passed
-2023-07-02 01:50:41,029 TADA INFO test store_sos_lists_test ended
+2023-07-05 01:07:21,141 __main__ INFO -- Get or create the cluster --
+2023-07-05 01:07:21,141 TADA INFO starting test `store_sos_lists_test`
+2023-07-05 01:07:21,141 TADA INFO   test-id: ff364db114b84a830ca7b6fd5da33c511bd67a62ce13025fbfcb4a2c514cc31c
+2023-07-05 01:07:21,141 TADA INFO   test-suite: LDMSD
+2023-07-05 01:07:21,141 TADA INFO   test-name: store_sos_lists_test
+2023-07-05 01:07:21,142 TADA INFO   test-user: narate
+2023-07-05 01:07:21,142 TADA INFO   commit-id: 636a1c6eed94acbb98f830d7507cbfe1ed9a92a0
+2023-07-05 01:07:28,913 __main__ INFO Waiting ... for all LDMSDs to start
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/site-packages/docker/api/client.py", line 261, in _raise_for_status
+    response.raise_for_status()
+  File "/usr/lib/python3.6/site-packages/requests/models.py", line 941, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 409 Client Error: Conflict for url: http+docker://localhost/v1.35/containers/ac7a791824dfbdc23703cc5972b248ffe00ee7e3890fb012b24b530751b3960b/exec
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "store_list_record_test", line 455, in <module>
+    cluster.start_daemons()
+  File "/home/narate/cron/ldms-test/LDMS_Test.py", line 1998, in start_daemons
+    cont.start_daemons()
+  File "/home/narate/cron/ldms-test/LDMS_Test.py", line 1260, in start_daemons
+    fn(**daemon)
+  File "/home/narate/cron/ldms-test/LDMS_Test.py", line 1003, in start_ldmsd
+    cond_timedwait(_check_listen, 5)
+  File "/home/narate/cron/ldms-test/LDMS_Test.py", line 2604, in cond_timedwait
+    if cond():
+  File "/home/narate/cron/ldms-test/LDMS_Test.py", line 1001, in _check_listen
+    rc, out = self.exec_run(grp_cmd)
+  File "/home/narate/cron/ldms-test/runtime/docker.py", line 144, in exec_run
+    return self._exec_run(cmd, environment=env, user=user)
+  File "/home/narate/cron/ldms-test/runtime/docker.py", line 148, in _exec_run
+    (rc, out) = self.obj.exec_run(*args, **kwargs)
+  File "/usr/lib/python3.6/site-packages/docker/models/containers.py", line 196, in exec_run
+    workdir=workdir,
+  File "/usr/lib/python3.6/site-packages/docker/utils/decorators.py", line 19, in wrapped
+    return f(self, resource_id, *args, **kwargs)
+  File "/usr/lib/python3.6/site-packages/docker/api/exec_api.py", line 80, in exec_create
+    return self._result(res, True)
+  File "/usr/lib/python3.6/site-packages/docker/api/client.py", line 267, in _result
+    self._raise_for_status(response)
+  File "/usr/lib/python3.6/site-packages/docker/api/client.py", line 263, in _raise_for_status
+    raise create_api_error_from_http_exception(e)
+  File "/usr/lib/python3.6/site-packages/docker/errors.py", line 31, in create_api_error_from_http_exception
+    raise cls(e, response=response, explanation=explanation)
+docker.errors.APIError: 409 Client Error: Conflict ("Container ac7a791824dfbdc23703cc5972b248ffe00ee7e3890fb012b24b530751b3960b is not running")
+2023-07-05 01:07:31,820 TADA INFO assertion 1, aggregator with store_sos has started properly.: skipped
+2023-07-05 01:07:31,820 TADA INFO assertion 2, aggregator with store_csv has started properly.: skipped
+2023-07-05 01:07:31,820 TADA INFO assertion 3, store_sos is storing data.: skipped
+2023-07-05 01:07:31,820 TADA INFO assertion 4, store_sos stores data correctly.: skipped
+2023-07-05 01:07:31,820 TADA INFO assertion 5, store_sos stores data after restarted correctly.: skipped
+2023-07-05 01:07:31,821 TADA INFO assertion 6, store_sos reports multiple list errror messages resulted by the config file.: skipped
+2023-07-05 01:07:31,821 TADA INFO assertion 7, store_sos reports multiple list errror messages resulted by ldmsd_controller.: skipped
+2023-07-05 01:07:31,821 TADA INFO assertion 8, store_csv is storing data.: skipped
+2023-07-05 01:07:31,821 TADA INFO assertion 9, store_csv stores data correctly.: skipped
+2023-07-05 01:07:31,821 TADA INFO assertion 10, store_csv stores data after restarted correctly.: skipped
+2023-07-05 01:07:31,821 TADA INFO assertion 11, store_csv reports multiple list errror messages resulted by the config file.: skipped
+2023-07-05 01:07:31,821 TADA INFO assertion 12, store_csv reports multiple list errror messages resulted by ldmsd_controller.: skipped
+2023-07-05 01:07:31,822 TADA INFO test store_sos_lists_test ended

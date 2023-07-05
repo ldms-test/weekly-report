@@ -1,19 +1,57 @@
-2023-07-03 00:32:59,974 __main__ INFO -- Get or create the cluster --
-2023-07-03 00:32:59,975 TADA INFO starting test `updtr_add test`
-2023-07-03 00:32:59,975 TADA INFO   test-id: bae9c1d684ceca848a116442781e308b49202029014dded54ba3c83f99870c39
-2023-07-03 00:32:59,975 TADA INFO   test-suite: LDMSD
-2023-07-03 00:32:59,975 TADA INFO   test-name: updtr_add test
-2023-07-03 00:32:59,975 TADA INFO   test-user: narate
-2023-07-03 00:32:59,975 TADA INFO   commit-id: 26f8c63d31947afe7b20b74b1c158c9fdd735a13
-2023-07-03 00:33:08,103 __main__ INFO -- Start daemons --
-2023-07-03 00:33:23,580 __main__ INFO Waiting ... for all LDMSDs to start
-2023-07-03 00:33:23,886 __main__ INFO All LDMSDs are up.
-2023-07-03 00:33:25,094 TADA INFO assertion 1, Send updtr_match_del with an invalid regex: report(rc = 2) == expect(rc = 22), passed
-2023-07-03 00:33:26,305 TADA INFO assertion 2, Send updtr_match_del to a non-existing updater: report(rc = 2) == expect(rc = 2), passed
-2023-07-03 00:33:27,510 TADA INFO assertion 3, Send updtr_match_del with a non-existing inst match: report(rc = 2) == expect(rc = 2), passed
-2023-07-03 00:33:28,733 TADA INFO assertion 4, Send updtr_match_del with a non-existing schema match: report(rc = 2) == expect(rc = 2), passed
-2023-07-03 00:33:29,955 TADA INFO assertion 5, Send updater_match_del with an invalid match type: report(rc = 22) == expect(rc = 22), passed
-2023-07-03 00:33:31,174 TADA INFO assertion 6, Send updater_match_del with a valid regex of the inst type: report(rc = 0) == expect(rc = 0), passed
-2023-07-03 00:33:32,393 TADA INFO assertion 7, Send updater_match_del with a valid regex of the schema type: report(rc = 0) == expect(rc = 0), passed
-2023-07-03 00:33:32,393 __main__ INFO --- done ---
-2023-07-03 00:33:32,393 TADA INFO test updtr_add test ended
+2023-07-05 01:11:06,693 __main__ INFO -- Get or create the cluster --
+2023-07-05 01:11:06,694 TADA INFO starting test `updtr_add test`
+2023-07-05 01:11:06,694 TADA INFO   test-id: 9e546855a7d09fb0ceadb8790ff0947475cfbf9aa750e2fca95676cc5dbb1fd3
+2023-07-05 01:11:06,694 TADA INFO   test-suite: LDMSD
+2023-07-05 01:11:06,694 TADA INFO   test-name: updtr_add test
+2023-07-05 01:11:06,694 TADA INFO   test-user: narate
+2023-07-05 01:11:06,694 TADA INFO   commit-id: 636a1c6eed94acbb98f830d7507cbfe1ed9a92a0
+2023-07-05 01:11:14,635 __main__ INFO -- Start daemons --
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/site-packages/docker/api/client.py", line 261, in _raise_for_status
+    response.raise_for_status()
+  File "/usr/lib/python3.6/site-packages/requests/models.py", line 941, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 500 Server Error: Internal Server Error for url: http+docker://localhost/v1.35/exec/695532f94fb85138fe264bd2450f5696bead193ea8498ab7545f9f20b39fd837/start
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "updtr_match_del_test", line 262, in <module>
+    cluster.start_daemons()
+  File "/home/narate/cron/ldms-test/LDMS_Test.py", line 1998, in start_daemons
+    cont.start_daemons()
+  File "/home/narate/cron/ldms-test/LDMS_Test.py", line 1260, in start_daemons
+    fn(**daemon)
+  File "/home/narate/cron/ldms-test/LDMS_Test.py", line 1003, in start_ldmsd
+    cond_timedwait(_check_listen, 5)
+  File "/home/narate/cron/ldms-test/LDMS_Test.py", line 2604, in cond_timedwait
+    if cond():
+  File "/home/narate/cron/ldms-test/LDMS_Test.py", line 1001, in _check_listen
+    rc, out = self.exec_run(grp_cmd)
+  File "/home/narate/cron/ldms-test/runtime/docker.py", line 144, in exec_run
+    return self._exec_run(cmd, environment=env, user=user)
+  File "/home/narate/cron/ldms-test/runtime/docker.py", line 148, in _exec_run
+    (rc, out) = self.obj.exec_run(*args, **kwargs)
+  File "/usr/lib/python3.6/site-packages/docker/models/containers.py", line 200, in exec_run
+    demux=demux
+  File "/usr/lib/python3.6/site-packages/docker/utils/decorators.py", line 19, in wrapped
+    return f(self, resource_id, *args, **kwargs)
+  File "/usr/lib/python3.6/site-packages/docker/api/exec_api.py", line 169, in exec_start
+    return self._read_from_socket(res, stream, tty=tty, demux=demux)
+  File "/usr/lib/python3.6/site-packages/docker/api/client.py", line 400, in _read_from_socket
+    socket = self._get_raw_response_socket(response)
+  File "/usr/lib/python3.6/site-packages/docker/api/client.py", line 311, in _get_raw_response_socket
+    self._raise_for_status(response)
+  File "/usr/lib/python3.6/site-packages/docker/api/client.py", line 263, in _raise_for_status
+    raise create_api_error_from_http_exception(e)
+  File "/usr/lib/python3.6/site-packages/docker/errors.py", line 31, in create_api_error_from_http_exception
+    raise cls(e, response=response, explanation=explanation)
+docker.errors.APIError: 500 Server Error: Internal Server Error ("Container 45a92f9b1f0c4bc15ab513e2bfc402063909231807843c89af77d2f99e08a6cc is not running: Removal In Progress")
+2023-07-05 01:11:18,008 TADA INFO assertion 1, Send updtr_match_del with an invalid regex: skipped
+2023-07-05 01:11:18,008 TADA INFO assertion 2, Send updtr_match_del to a non-existing updater: skipped
+2023-07-05 01:11:18,008 TADA INFO assertion 3, Send updtr_match_del with a non-existing inst match: skipped
+2023-07-05 01:11:18,008 TADA INFO assertion 4, Send updtr_match_del with a non-existing schema match: skipped
+2023-07-05 01:11:18,009 TADA INFO assertion 5, Send updater_match_del with an invalid match type: skipped
+2023-07-05 01:11:18,009 TADA INFO assertion 6, Send updater_match_del with a valid regex of the inst type: skipped
+2023-07-05 01:11:18,009 TADA INFO assertion 7, Send updater_match_del with a valid regex of the schema type: skipped
+2023-07-05 01:11:18,009 TADA INFO test updtr_add test ended

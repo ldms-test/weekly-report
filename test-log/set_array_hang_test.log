@@ -1,16 +1,38 @@
-2023-07-02 01:42:02,285 TADA INFO starting test `set_array_hang_test`
-2023-07-02 01:42:02,285 TADA INFO   test-id: e890934f21860c84284dc523dfc23f5d299462ccfcba79ecda473f4039f587ec
-2023-07-02 01:42:02,285 TADA INFO   test-suite: LDMSD
-2023-07-02 01:42:02,285 TADA INFO   test-name: set_array_hang_test
-2023-07-02 01:42:02,285 TADA INFO   test-user: narate
-2023-07-02 01:42:02,285 TADA INFO   commit-id: 26f8c63d31947afe7b20b74b1c158c9fdd735a13
-2023-07-02 01:42:02,286 __main__ INFO -- Get or create the cluster --
-2023-07-02 01:42:05,767 __main__ INFO -- Start processes --
-2023-07-02 01:42:05,767 __main__ INFO starting interactive set_array_samp.py
-2023-07-02 01:42:08,781 TADA INFO assertion 1, start set_array_samp.py: data verified, passed
-2023-07-02 01:42:11,797 TADA INFO assertion 2, start set_array_agg.py: data verified, passed
-2023-07-02 01:42:19,007 TADA INFO assertion 3, agg update before the 1st sample: data verified, passed
-2023-07-02 01:42:26,216 TADA INFO assertion 4, sampling 2 times then agg update: data verified, passed
-2023-07-02 01:42:29,822 TADA INFO assertion 5, agg update w/o new sampling: data verified, passed
-2023-07-02 01:42:37,031 TADA INFO assertion 6, sampling 5 times then agg update: data verified, passed
-2023-07-02 01:42:37,032 TADA INFO test set_array_hang_test ended
+2023-07-05 01:04:42,486 TADA INFO starting test `set_array_hang_test`
+2023-07-05 01:04:42,486 TADA INFO   test-id: 05660353267c16aa9a1fe4e7ae34f59e2044cded9a476b131842a513788222c9
+2023-07-05 01:04:42,486 TADA INFO   test-suite: LDMSD
+2023-07-05 01:04:42,486 TADA INFO   test-name: set_array_hang_test
+2023-07-05 01:04:42,486 TADA INFO   test-user: narate
+2023-07-05 01:04:42,486 TADA INFO   commit-id: 636a1c6eed94acbb98f830d7507cbfe1ed9a92a0
+2023-07-05 01:04:42,487 __main__ INFO -- Get or create the cluster --
+2023-07-05 01:04:45,768 __main__ INFO -- Start processes --
+2023-07-05 01:04:45,768 __main__ INFO starting interactive set_array_samp.py
+2023-07-05 01:04:48,782 TADA INFO assertion 1, start set_array_samp.py: data verified, passed
+2023-07-05 01:04:51,799 TADA INFO assertion 2, start set_array_agg.py: data verified, passed
+Traceback (most recent call last):
+  File "set_array_hang_test", line 192, in <module>
+    """)
+  File "set_array_hang_test", line 129, in pycmd
+    raise RuntimeError("Python '{cmd}` not responding".format(**vars()))
+RuntimeError: Python 'update_set(s1);update_set(s3);t=sem.acquire();sem.release();jprint(update_rec);update_rec.clear();` not responding
+2023-07-05 01:04:53,805 TADA INFO assertion 3, agg update before the 1st sample: skipped
+2023-07-05 01:04:53,805 TADA INFO assertion 4, sampling 2 times then agg update: skipped
+2023-07-05 01:04:53,805 TADA INFO assertion 5, agg update w/o new sampling: skipped
+2023-07-05 01:04:53,805 TADA INFO assertion 6, sampling 5 times then agg update: skipped
+2023-07-05 01:04:53,805 TADA INFO test set_array_hang_test ended
+Error in atexit._run_exitfuncs:
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/site-packages/docker/api/client.py", line 261, in _raise_for_status
+    response.raise_for_status()
+  File "/usr/lib/python3.6/site-packages/requests/models.py", line 941, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 500 Server Error: Internal Server Error for url: http+docker://localhost/v1.35/networks/pjex64922w7oy44shmcqu1wei
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/site-packages/docker/api/client.py", line 263, in _raise_for_status
+    raise create_api_error_from_http_exception(e)
+  File "/usr/lib/python3.6/site-packages/docker/errors.py", line 31, in create_api_error_from_http_exception
+    raise cls(e, response=response, explanation=explanation)
+docker.errors.APIError: 500 Server Error: Internal Server Error ("network pjex64922w7oy44shmcqu1wei not found")

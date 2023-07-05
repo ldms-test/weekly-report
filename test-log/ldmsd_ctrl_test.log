@@ -1,20 +1,58 @@
-2023-07-02 01:12:56,679 TADA INFO starting test `ldmsd_ctrl_test`
-2023-07-02 01:12:56,679 TADA INFO   test-id: f5d9f784c918623246bc4c5fae75a35b4ba7c5f5085ccb7946c6de9aedd82bc0
-2023-07-02 01:12:56,679 TADA INFO   test-suite: LDMSD
-2023-07-02 01:12:56,679 TADA INFO   test-name: ldmsd_ctrl_test
-2023-07-02 01:12:56,679 TADA INFO   test-user: narate
-2023-07-02 01:12:56,679 TADA INFO   commit-id: 26f8c63d31947afe7b20b74b1c158c9fdd735a13
-2023-07-02 01:12:56,680 __main__ INFO -- Get or create the cluster --
-2023-07-02 01:13:06,031 __main__ INFO -- Start daemons --
-2023-07-02 01:13:22,237 __main__ INFO ... wait a bit to make sure ldmsd's are up
-2023-07-02 01:13:28,356 TADA INFO assertion 1, ldmsd_controller interactive session: connected, passed
-2023-07-02 01:13:29,472 TADA INFO assertion 2, ldmsctl interactive session: connected, passed
-2023-07-02 01:13:30,073 TADA INFO assertion 3, ldmsd_controller start bogus producer: expected output verified, passed
-2023-07-02 01:13:30,675 TADA INFO assertion 4, ldmsctl start bogus producer: expected output verified, passed
-2023-07-02 01:13:31,276 TADA INFO assertion 5, ldmsd_controller bogus command: expected output verified, passed
-2023-07-02 01:13:31,878 TADA INFO assertion 6, ldmsctl bogus command: expected output verified, passed
-2023-07-02 01:13:32,479 TADA INFO assertion 7, ldmsd_controller load bogus plugin: expected output verified, passed
-2023-07-02 01:13:33,081 TADA INFO assertion 8, ldmsctl load bogus plugin: expected output verified, passed
-2023-07-02 01:13:50,296 TADA INFO assertion 9, ldmsd_controller prdcr/updtr: verified, passed
-2023-07-02 01:14:07,490 TADA INFO assertion 10, ldmsctl prdcr/updtr: verified, passed
-2023-07-02 01:14:07,490 TADA INFO test ldmsd_ctrl_test ended
+2023-07-05 00:56:34,311 TADA INFO starting test `ldmsd_ctrl_test`
+2023-07-05 00:56:34,311 TADA INFO   test-id: d7d47ec9268419eb99f3d122dcaa022f21e33925cedb49a808ab303715590f39
+2023-07-05 00:56:34,311 TADA INFO   test-suite: LDMSD
+2023-07-05 00:56:34,311 TADA INFO   test-name: ldmsd_ctrl_test
+2023-07-05 00:56:34,311 TADA INFO   test-user: narate
+2023-07-05 00:56:34,311 TADA INFO   commit-id: 636a1c6eed94acbb98f830d7507cbfe1ed9a92a0
+2023-07-05 00:56:34,312 __main__ INFO -- Get or create the cluster --
+2023-07-05 00:56:43,505 __main__ INFO -- Start daemons --
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/site-packages/docker/api/client.py", line 261, in _raise_for_status
+    response.raise_for_status()
+  File "/usr/lib/python3.6/site-packages/requests/models.py", line 941, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 409 Client Error: Conflict for url: http+docker://localhost/v1.35/containers/4bc6254d112d91e369b23810f07746e9a831764c68614ff8428bffb6616b2824/exec
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "ldmsd_ctrl_test", line 211, in <module>
+    cluster.start_daemons()
+  File "/home/narate/cron/ldms-test/LDMS_Test.py", line 1998, in start_daemons
+    cont.start_daemons()
+  File "/home/narate/cron/ldms-test/LDMS_Test.py", line 1260, in start_daemons
+    fn(**daemon)
+  File "/home/narate/cron/ldms-test/LDMS_Test.py", line 1003, in start_ldmsd
+    cond_timedwait(_check_listen, 5)
+  File "/home/narate/cron/ldms-test/LDMS_Test.py", line 2604, in cond_timedwait
+    if cond():
+  File "/home/narate/cron/ldms-test/LDMS_Test.py", line 1001, in _check_listen
+    rc, out = self.exec_run(grp_cmd)
+  File "/home/narate/cron/ldms-test/runtime/docker.py", line 144, in exec_run
+    return self._exec_run(cmd, environment=env, user=user)
+  File "/home/narate/cron/ldms-test/runtime/docker.py", line 148, in _exec_run
+    (rc, out) = self.obj.exec_run(*args, **kwargs)
+  File "/usr/lib/python3.6/site-packages/docker/models/containers.py", line 196, in exec_run
+    workdir=workdir,
+  File "/usr/lib/python3.6/site-packages/docker/utils/decorators.py", line 19, in wrapped
+    return f(self, resource_id, *args, **kwargs)
+  File "/usr/lib/python3.6/site-packages/docker/api/exec_api.py", line 80, in exec_create
+    return self._result(res, True)
+  File "/usr/lib/python3.6/site-packages/docker/api/client.py", line 267, in _result
+    self._raise_for_status(response)
+  File "/usr/lib/python3.6/site-packages/docker/api/client.py", line 263, in _raise_for_status
+    raise create_api_error_from_http_exception(e)
+  File "/usr/lib/python3.6/site-packages/docker/errors.py", line 31, in create_api_error_from_http_exception
+    raise cls(e, response=response, explanation=explanation)
+docker.errors.APIError: 409 Client Error: Conflict ("Container 4bc6254d112d91e369b23810f07746e9a831764c68614ff8428bffb6616b2824 is not running")
+2023-07-05 00:56:45,014 TADA INFO assertion 1, ldmsd_controller interactive session: skipped
+2023-07-05 00:56:45,015 TADA INFO assertion 2, ldmsctl interactive session: skipped
+2023-07-05 00:56:45,015 TADA INFO assertion 3, ldmsd_controller start bogus producer: skipped
+2023-07-05 00:56:45,015 TADA INFO assertion 4, ldmsctl start bogus producer: skipped
+2023-07-05 00:56:45,015 TADA INFO assertion 5, ldmsd_controller bogus command: skipped
+2023-07-05 00:56:45,015 TADA INFO assertion 6, ldmsctl bogus command: skipped
+2023-07-05 00:56:45,015 TADA INFO assertion 7, ldmsd_controller load bogus plugin: skipped
+2023-07-05 00:56:45,016 TADA INFO assertion 8, ldmsctl load bogus plugin: skipped
+2023-07-05 00:56:45,016 TADA INFO assertion 9, ldmsd_controller prdcr/updtr: skipped
+2023-07-05 00:56:45,016 TADA INFO assertion 10, ldmsctl prdcr/updtr: skipped
+2023-07-05 00:56:45,016 TADA INFO test ldmsd_ctrl_test ended

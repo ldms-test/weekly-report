@@ -1,21 +1,56 @@
-2023-07-02 01:33:43,557 TADA INFO starting test `setgroup_test`
-2023-07-02 01:33:43,558 TADA INFO   test-id: 774c318f1d5aae4674add163657123dd6fe5b8e298231481b44c66fde43f00db
-2023-07-02 01:33:43,558 TADA INFO   test-suite: LDMSD
-2023-07-02 01:33:43,558 TADA INFO   test-name: setgroup_test
-2023-07-02 01:33:43,558 TADA INFO   test-user: narate
-2023-07-02 01:33:43,558 TADA INFO   commit-id: 26f8c63d31947afe7b20b74b1c158c9fdd735a13
-2023-07-02 01:33:43,559 __main__ INFO -- Get or create the cluster --
-2023-07-02 01:33:53,131 __main__ INFO -- Start daemons --
-2023-07-02 01:34:09,363 __main__ INFO ... wait a bit to make sure ldmsd's are up
-2023-07-02 01:34:14,368 __main__ INFO -- ldms_ls to agg-2 --
-2023-07-02 01:34:14,497 TADA INFO assertion 1, ldms_ls grp on agg-2: dir result verified, passed
-2023-07-02 01:34:16,747 TADA INFO assertion 2, members on agg-2 are being updated: data verified, passed
-2023-07-02 01:34:16,747 __main__ INFO -- Removing test_2 from grp --
-2023-07-02 01:34:17,234 TADA INFO assertion 3, test_2 is removed fom grp on sampler: expect {'node-1/grp', 'node-1/test_1'}, got {'node-1/grp', 'node-1/test_1'}, passed
-2023-07-02 01:34:21,363 TADA INFO assertion 4, test_2 is removed from grp on agg-1: expect {'node-1/grp', 'node-1/test_1'}, got {'node-1/grp', 'node-1/test_1'}, passed
-2023-07-02 01:34:25,488 TADA INFO assertion 5, test_2 is removed from grp on agg-2: expect {'node-1/grp', 'node-1/test_1'}, got {'node-1/grp', 'node-1/test_1'}, passed
-2023-07-02 01:34:29,493 __main__ INFO -- Adding test_2 back into grp --
-2023-07-02 01:34:29,979 TADA INFO assertion 6, test_2 is added back to grp on sampler: expect {'node-1/test_2', 'node-1/grp', 'node-1/test_1'}, got {'node-1/test_2', 'node-1/grp', 'node-1/test_1'}, passed
-2023-07-02 01:34:34,121 TADA INFO assertion 7, test_2 is added back to grp on agg-1: expect {'node-1/test_2', 'node-1/grp', 'node-1/test_1'}, got {'node-1/test_2', 'node-1/grp', 'node-1/test_1'}, passed
-2023-07-02 01:34:36,255 TADA INFO assertion 8, test_2 is added back to grp on agg-2: expect {'node-1/test_2', 'node-1/grp', 'node-1/test_1'}, got {'node-1/test_2', 'node-1/grp', 'node-1/test_1'}, passed
-2023-07-02 01:34:38,257 TADA INFO test setgroup_test ended
+2023-07-05 01:02:12,348 TADA INFO starting test `setgroup_test`
+2023-07-05 01:02:12,348 TADA INFO   test-id: 2779ed0198d6671c74075f331fbd3207e54f340c7658e4b1864c5d4f8489e010
+2023-07-05 01:02:12,348 TADA INFO   test-suite: LDMSD
+2023-07-05 01:02:12,348 TADA INFO   test-name: setgroup_test
+2023-07-05 01:02:12,349 TADA INFO   test-user: narate
+2023-07-05 01:02:12,349 TADA INFO   commit-id: 636a1c6eed94acbb98f830d7507cbfe1ed9a92a0
+2023-07-05 01:02:12,350 __main__ INFO -- Get or create the cluster --
+2023-07-05 01:02:21,652 __main__ INFO -- Start daemons --
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/site-packages/docker/api/client.py", line 261, in _raise_for_status
+    response.raise_for_status()
+  File "/usr/lib/python3.6/site-packages/requests/models.py", line 941, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 409 Client Error: Conflict for url: http+docker://localhost/v1.35/containers/ea14fe9cd82ceb5f2ab63f2686c20df99c98d309b7a850073435627ffaf4d412/exec
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "setgroup_test", line 278, in <module>
+    cluster.start_daemons()
+  File "/home/narate/cron/ldms-test/LDMS_Test.py", line 1998, in start_daemons
+    cont.start_daemons()
+  File "/home/narate/cron/ldms-test/LDMS_Test.py", line 1260, in start_daemons
+    fn(**daemon)
+  File "/home/narate/cron/ldms-test/LDMS_Test.py", line 1003, in start_ldmsd
+    cond_timedwait(_check_listen, 5)
+  File "/home/narate/cron/ldms-test/LDMS_Test.py", line 2604, in cond_timedwait
+    if cond():
+  File "/home/narate/cron/ldms-test/LDMS_Test.py", line 1001, in _check_listen
+    rc, out = self.exec_run(grp_cmd)
+  File "/home/narate/cron/ldms-test/runtime/docker.py", line 144, in exec_run
+    return self._exec_run(cmd, environment=env, user=user)
+  File "/home/narate/cron/ldms-test/runtime/docker.py", line 148, in _exec_run
+    (rc, out) = self.obj.exec_run(*args, **kwargs)
+  File "/usr/lib/python3.6/site-packages/docker/models/containers.py", line 196, in exec_run
+    workdir=workdir,
+  File "/usr/lib/python3.6/site-packages/docker/utils/decorators.py", line 19, in wrapped
+    return f(self, resource_id, *args, **kwargs)
+  File "/usr/lib/python3.6/site-packages/docker/api/exec_api.py", line 80, in exec_create
+    return self._result(res, True)
+  File "/usr/lib/python3.6/site-packages/docker/api/client.py", line 267, in _result
+    self._raise_for_status(response)
+  File "/usr/lib/python3.6/site-packages/docker/api/client.py", line 263, in _raise_for_status
+    raise create_api_error_from_http_exception(e)
+  File "/usr/lib/python3.6/site-packages/docker/errors.py", line 31, in create_api_error_from_http_exception
+    raise cls(e, response=response, explanation=explanation)
+docker.errors.APIError: 409 Client Error: Conflict ("Container ea14fe9cd82ceb5f2ab63f2686c20df99c98d309b7a850073435627ffaf4d412 is not running")
+2023-07-05 01:02:23,052 TADA INFO assertion 1, ldms_ls grp on agg-2: skipped
+2023-07-05 01:02:23,052 TADA INFO assertion 2, members on agg-2 are being updated: skipped
+2023-07-05 01:02:23,052 TADA INFO assertion 3, test_2 is removed fom grp on sampler: skipped
+2023-07-05 01:02:23,053 TADA INFO assertion 4, test_2 is removed from grp on agg-1: skipped
+2023-07-05 01:02:23,053 TADA INFO assertion 5, test_2 is removed from grp on agg-2: skipped
+2023-07-05 01:02:23,053 TADA INFO assertion 6, test_2 is added back to grp on sampler: skipped
+2023-07-05 01:02:23,053 TADA INFO assertion 7, test_2 is added back to grp on agg-1: skipped
+2023-07-05 01:02:23,053 TADA INFO assertion 8, test_2 is added back to grp on agg-2: skipped
+2023-07-05 01:02:23,053 TADA INFO test setgroup_test ended

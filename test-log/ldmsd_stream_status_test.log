@@ -1,19 +1,56 @@
-2023-07-02 01:48:44,175 __main__ INFO -- Get or create the cluster --
-2023-07-02 01:48:44,175 TADA INFO starting test `ldmsd_stream_status`
-2023-07-02 01:48:44,175 TADA INFO   test-id: bf688b38b8d960f3a366025ef5daef9f803c9f6039d5aa8fccb78dab92dad264
-2023-07-02 01:48:44,175 TADA INFO   test-suite: LDMSD
-2023-07-02 01:48:44,175 TADA INFO   test-name: ldmsd_stream_status
-2023-07-02 01:48:44,175 TADA INFO   test-user: narate
-2023-07-02 01:48:44,175 TADA INFO   commit-id: 26f8c63d31947afe7b20b74b1c158c9fdd735a13
-2023-07-02 01:48:52,808 __main__ INFO -- Start daemons --
-2023-07-02 01:49:08,336 __main__ INFO waiting ... for all LDMSDs to start
-2023-07-02 01:49:08,655 __main__ INFO All LDMSDs are up.
-2023-07-02 01:49:09,867 TADA INFO assertion 1, No Stream data: {} == {}, passed
-2023-07-02 01:49:11,196 TADA INFO assertion 2, stream_status -- one stream message: {'foo': {'mode': 'not subscribed', 'pub': {}, 'recv': {'first_ts': 1688280549, 'last_ts': 1688280549, 'count': 1, 'total_bytes': 6}, 'publishers': {}}, '_OVERALL_': {'pub': {}, 'recv': {'first_ts': 1688280549, 'last_ts': 1688280549, 'count': 1, 'total_bytes': 6}}} == {'foo': {'mode': 'not subscribed', 'recv': {'count': 1, 'total_bytes': 6, 'first_ts': 1688280549, 'last_ts': 1688280549}, 'pub': {}, 'publishers': {}}, '_OVERALL_': {'recv': {'count': 1, 'total_bytes': 6, 'first_ts': 1688280549, 'last_ts': 1688280549}, 'pub': {}}}, passed
-2023-07-02 01:49:13,641 TADA INFO assertion 3, stream_status --  multiple stream messages: {'foo': {'mode': 'not subscribed', 'pub': {}, 'recv': {'first_ts': 1688280549, 'last_ts': 1688280552, 'count': 3, 'total_bytes': 18, 'msg/sec': 1.0, 'bytes/sec': 6.0}, 'publishers': {}}, '_OVERALL_': {'pub': {}, 'recv': {'first_ts': 1688280549, 'last_ts': 1688280552, 'count': 3, 'total_bytes': 18, 'msg/sec': 1.0, 'bytes/sec': 6.0}}} == {'foo': {'mode': 'not subscribed', 'recv': {'count': 3, 'total_bytes': 18, 'first_ts': 1688280549, 'last_ts': 1688280552, 'bytes/sec': 6.0, 'msg/sec': 1.0}, 'pub': {}, 'publishers': {}}, '_OVERALL_': {'recv': {'count': 3, 'total_bytes': 18, 'first_ts': 1688280549, 'last_ts': 1688280552, 'bytes/sec': 6.0, 'msg/sec': 1.0}, 'pub': {}}}, passed
-2023-07-02 01:49:14,850 TADA INFO assertion 4, prdcr_stream_status to agg -- one producer: {'_OVERALL_': {'samplerd-1': {'pub': {}, 'recv': {'msg/sec': 1.0, 'total_bytes': 18, 'last_ts': 1688280552, 'first_ts': 1688280549, 'bytes/sec': 6.0, 'count': 3}}}, 'foo': {'samplerd-1': {'mode': 'not subscribed', 'pub': {}, 'recv': {'msg/sec': 1.0, 'total_bytes': 18, 'last_ts': 1688280552, 'first_ts': 1688280549, 'bytes/sec': 6.0, 'count': 3}}}} == {'foo': {'samplerd-1': {'mode': 'not subscribed', 'recv': {'count': 3, 'total_bytes': 18, 'first_ts': 1688280549, 'last_ts': 1688280552, 'bytes/sec': 6.0, 'msg/sec': 1.0}, 'pub': {}}}, '_OVERALL_': {'samplerd-1': {'recv': {'count': 3, 'total_bytes': 18, 'first_ts': 1688280549, 'last_ts': 1688280552, 'bytes/sec': 6.0, 'msg/sec': 1.0}, 'pub': {}}}}, passed
-2023-07-02 01:49:18,626 TADA INFO assertion 5, stream_status -- mulitple streams: {'bar': {'mode': 'not subscribed', 'pub': {}, 'recv': {'first_ts': 1688280556, 'last_ts': 1688280557, 'count': 3, 'total_bytes': 48, 'msg/sec': 3.0, 'bytes/sec': 48.0}, 'publishers': {}}, 'foo': {'mode': 'not subscribed', 'pub': {}, 'recv': {'first_ts': 1688280554, 'last_ts': 1688280556, 'count': 2, 'total_bytes': 12, 'msg/sec': 1.0, 'bytes/sec': 6.0}, 'publishers': {}}, '_OVERALL_': {'pub': {}, 'recv': {'first_ts': 1688280554, 'last_ts': 1688280557, 'count': 5, 'total_bytes': 60, 'msg/sec': 1.666667, 'bytes/sec': 20.0}}} == {'foo': {'mode': 'not subscribed', 'recv': {'count': 2, 'total_bytes': 12, 'first_ts': 1688280554, 'last_ts': 1688280556, 'bytes/sec': 6.0, 'msg/sec': 1.0}, 'pub': {}, 'publishers': {}}, 'bar': {'mode': 'not subscribed', 'recv': {'count': 3, 'total_bytes': 48, 'first_ts': 1688280556, 'last_ts': 1688280557, 'bytes/sec': 48.0, 'msg/sec': 3.0}, 'pub': {}, 'publishers': {}}, '_OVERALL_': {'recv': {'count': 5, 'total_bytes': 60, 'first_ts': 1688280554, 'last_ts': 1688280557, 'bytes/sec': 20.0, 'msg/sec': 1.666667}, 'pub': {}}}, passed
-2023-07-02 01:49:19,842 TADA INFO assertion 6, prdcr_stream_status to agg -- two producers: {'_OVERALL_': {'samplerd-2': {'pub': {}, 'recv': {'msg/sec': 1.666667, 'total_bytes': 60, 'last_ts': 1688280557, 'first_ts': 1688280554, 'bytes/sec': 20.0, 'count': 5}}, 'samplerd-1': {'pub': {}, 'recv': {'msg/sec': 1.0, 'total_bytes': 18, 'last_ts': 1688280552, 'first_ts': 1688280549, 'bytes/sec': 6.0, 'count': 3}}}, 'foo': {'samplerd-2': {'mode': 'not subscribed', 'pub': {}, 'recv': {'msg/sec': 1.0, 'total_bytes': 12, 'last_ts': 1688280556, 'first_ts': 1688280554, 'bytes/sec': 6.0, 'count': 2}}, 'samplerd-1': {'mode': 'not subscribed', 'pub': {}, 'recv': {'msg/sec': 1.0, 'total_bytes': 18, 'last_ts': 1688280552, 'first_ts': 1688280549, 'bytes/sec': 6.0, 'count': 3}}}, 'bar': {'samplerd-2': {'mode': 'not subscribed', 'pub': {}, 'recv': {'msg/sec': 3.0, 'total_bytes': 48, 'last_ts': 1688280557, 'first_ts': 1688280556, 'bytes/sec': 48.0, 'count': 3}}}} == {'foo': {'samplerd-1': {'mode': 'not subscribed', 'recv': {'count': 3, 'total_bytes': 18, 'first_ts': 1688280549, 'last_ts': 1688280552, 'bytes/sec': 6.0, 'msg/sec': 1.0}, 'pub': {}}, 'samplerd-2': {'mode': 'not subscribed', 'recv': {'count': 2, 'total_bytes': 12, 'first_ts': 1688280554, 'last_ts': 1688280556, 'bytes/sec': 6.0, 'msg/sec': 1.0}, 'pub': {}}}, 'bar': {'samplerd-2': {'mode': 'not subscribed', 'recv': {'count': 3, 'total_bytes': 48, 'first_ts': 1688280556, 'last_ts': 1688280557, 'bytes/sec': 48.0, 'msg/sec': 3.0}, 'pub': {}}}, '_OVERALL_': {'samplerd-1': {'recv': {'count': 3, 'total_bytes': 18, 'first_ts': 1688280549, 'last_ts': 1688280552, 'bytes/sec': 6.0, 'msg/sec': 1.0}, 'pub': {}}, 'samplerd-2': {'recv': {'count': 5, 'total_bytes': 60, 'first_ts': 1688280554, 'last_ts': 1688280557, 'bytes/sec': 20.0, 'msg/sec': 1.666667}, 'pub': {}}}}, passed
-2023-07-02 01:49:23,514 TADA INFO assertion 7, stream_status to agg after one producer republished stream: {'foo': {'mode': 'not subscribed', 'pub': {}, 'recv': {'first_ts': 1688280561, 'last_ts': 1688280562, 'count': 2, 'total_bytes': 12, 'msg/sec': 2.0, 'bytes/sec': 12.0}, 'publishers': {'samplerd-1': {'recv': {'first_ts': 1688280561, 'last_ts': 1688280562, 'count': 2, 'total_bytes': 12, 'msg/sec': 2.0, 'bytes/sec': 12.0}}}}, '_OVERALL_': {'pub': {}, 'recv': {'first_ts': 1688280561, 'last_ts': 1688280562, 'count': 2, 'total_bytes': 12, 'msg/sec': 2.0, 'bytes/sec': 12.0}}} == {'foo': {'mode': 'not subscribed', 'recv': {'count': 2, 'total_bytes': 12, 'first_ts': 1688280561, 'last_ts': 1688280562, 'bytes/sec': 12.0, 'msg/sec': 2.0}, 'pub': {}, 'publishers': {'samplerd-1': {'recv': {'count': 2, 'total_bytes': 12, 'first_ts': 1688280561, 'last_ts': 1688280562, 'bytes/sec': 12.0, 'msg/sec': 2.0}}}}, '_OVERALL_': {'recv': {'count': 2, 'total_bytes': 12, 'first_ts': 1688280561, 'last_ts': 1688280562, 'bytes/sec': 12.0, 'msg/sec': 2.0}, 'pub': {}}}, passed
-2023-07-02 01:49:25,093 TADA INFO assertion 8, stream_status to agg after two producers republished stream: {'foo': {'mode': 'not subscribed', 'pub': {}, 'recv': {'first_ts': 1688280561, 'last_ts': 1688280563, 'count': 5, 'total_bytes': 30, 'msg/sec': 2.5, 'bytes/sec': 15.0}, 'publishers': {'samplerd-1': {'recv': {'first_ts': 1688280561, 'last_ts': 1688280562, 'count': 2, 'total_bytes': 12, 'msg/sec': 2.0, 'bytes/sec': 12.0}}, 'samplerd-2': {'recv': {'first_ts': 1688280563, 'last_ts': 1688280563, 'count': 3, 'total_bytes': 18}}}}, '_OVERALL_': {'pub': {}, 'recv': {'first_ts': 1688280561, 'last_ts': 1688280563, 'count': 5, 'total_bytes': 30, 'msg/sec': 2.5, 'bytes/sec': 15.0}}} == {'foo': {'mode': 'not subscribed', 'recv': {'count': 5, 'total_bytes': 30, 'first_ts': 1688280561, 'last_ts': 1688280563, 'bytes/sec': 15.0, 'msg/sec': 2.5}, 'pub': {}, 'publishers': {'samplerd-1': {'recv': {'count': 2, 'total_bytes': 12, 'first_ts': 1688280561, 'last_ts': 1688280562, 'bytes/sec': 12.0, 'msg/sec': 2.0}}, 'samplerd-2': {'recv': {'count': 3, 'total_bytes': 18, 'first_ts': 1688280563, 'last_ts': 1688280563}}}}, '_OVERALL_': {'recv': {'count': 5, 'total_bytes': 30, 'first_ts': 1688280561, 'last_ts': 1688280563, 'bytes/sec': 15.0, 'msg/sec': 2.5}, 'pub': {}}}, passed
-2023-07-02 01:49:25,093 TADA INFO test ldmsd_stream_status ended
+2023-07-05 01:06:54,792 __main__ INFO -- Get or create the cluster --
+2023-07-05 01:06:54,792 TADA INFO starting test `ldmsd_stream_status`
+2023-07-05 01:06:54,792 TADA INFO   test-id: c94256cc2836b7bb67e1c494ae1fc9df90a0880f5605d266610ef1563e39f948
+2023-07-05 01:06:54,792 TADA INFO   test-suite: LDMSD
+2023-07-05 01:06:54,792 TADA INFO   test-name: ldmsd_stream_status
+2023-07-05 01:06:54,792 TADA INFO   test-user: narate
+2023-07-05 01:06:54,792 TADA INFO   commit-id: 636a1c6eed94acbb98f830d7507cbfe1ed9a92a0
+2023-07-05 01:07:03,401 __main__ INFO -- Start daemons --
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/site-packages/docker/api/client.py", line 261, in _raise_for_status
+    response.raise_for_status()
+  File "/usr/lib/python3.6/site-packages/requests/models.py", line 941, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 409 Client Error: Conflict for url: http+docker://localhost/v1.35/containers/eb372a2d190226f5bd4604c3f4560f490ed4b255765fec9ea09422a1d5387d26/exec
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "ldmsd_stream_status_test", line 304, in <module>
+    cluster.start_daemons()
+  File "/home/narate/cron/ldms-test/LDMS_Test.py", line 1998, in start_daemons
+    cont.start_daemons()
+  File "/home/narate/cron/ldms-test/LDMS_Test.py", line 1260, in start_daemons
+    fn(**daemon)
+  File "/home/narate/cron/ldms-test/LDMS_Test.py", line 1003, in start_ldmsd
+    cond_timedwait(_check_listen, 5)
+  File "/home/narate/cron/ldms-test/LDMS_Test.py", line 2604, in cond_timedwait
+    if cond():
+  File "/home/narate/cron/ldms-test/LDMS_Test.py", line 1001, in _check_listen
+    rc, out = self.exec_run(grp_cmd)
+  File "/home/narate/cron/ldms-test/runtime/docker.py", line 144, in exec_run
+    return self._exec_run(cmd, environment=env, user=user)
+  File "/home/narate/cron/ldms-test/runtime/docker.py", line 148, in _exec_run
+    (rc, out) = self.obj.exec_run(*args, **kwargs)
+  File "/usr/lib/python3.6/site-packages/docker/models/containers.py", line 196, in exec_run
+    workdir=workdir,
+  File "/usr/lib/python3.6/site-packages/docker/utils/decorators.py", line 19, in wrapped
+    return f(self, resource_id, *args, **kwargs)
+  File "/usr/lib/python3.6/site-packages/docker/api/exec_api.py", line 80, in exec_create
+    return self._result(res, True)
+  File "/usr/lib/python3.6/site-packages/docker/api/client.py", line 267, in _result
+    self._raise_for_status(response)
+  File "/usr/lib/python3.6/site-packages/docker/api/client.py", line 263, in _raise_for_status
+    raise create_api_error_from_http_exception(e)
+  File "/usr/lib/python3.6/site-packages/docker/errors.py", line 31, in create_api_error_from_http_exception
+    raise cls(e, response=response, explanation=explanation)
+docker.errors.APIError: 409 Client Error: Conflict ("Container eb372a2d190226f5bd4604c3f4560f490ed4b255765fec9ea09422a1d5387d26 is not running")
+2023-07-05 01:07:06,305 TADA INFO assertion 1, No Stream data: skipped
+2023-07-05 01:07:06,305 TADA INFO assertion 2, stream_status -- one stream message: skipped
+2023-07-05 01:07:06,305 TADA INFO assertion 3, stream_status --  multiple stream messages: skipped
+2023-07-05 01:07:06,305 TADA INFO assertion 4, prdcr_stream_status to agg -- one producer: skipped
+2023-07-05 01:07:06,305 TADA INFO assertion 5, stream_status -- mulitple streams: skipped
+2023-07-05 01:07:06,306 TADA INFO assertion 6, prdcr_stream_status to agg -- two producers: skipped
+2023-07-05 01:07:06,306 TADA INFO assertion 7, stream_status to agg after one producer republished stream: skipped
+2023-07-05 01:07:06,306 TADA INFO assertion 8, stream_status to agg after two producers republished stream: skipped
+2023-07-05 01:07:06,306 TADA INFO test ldmsd_stream_status ended
