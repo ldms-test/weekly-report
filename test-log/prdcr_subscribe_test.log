@@ -1,53 +1,103 @@
-2023-07-05 01:01:19,758 TADA INFO starting test `prdcr_subscribe_test`
-2023-07-05 01:01:19,758 TADA INFO   test-id: 7666c36f7520dd2ad0d6a00d0660a40f55ebd9e22f2c4b45d82af759d439255b
-2023-07-05 01:01:19,758 TADA INFO   test-suite: LDMSD
-2023-07-05 01:01:19,758 TADA INFO   test-name: prdcr_subscribe_test
-2023-07-05 01:01:19,758 TADA INFO   test-user: narate
-2023-07-05 01:01:19,758 TADA INFO   commit-id: 636a1c6eed94acbb98f830d7507cbfe1ed9a92a0
+2023-07-05 01:03:41,927 TADA INFO starting test `prdcr_subscribe_test`
+2023-07-05 01:03:41,927 TADA INFO   test-id: b744ceb4e0803386e909c59402ae1163f91e9ae67ee2e864512dc4122896e824
+2023-07-05 01:03:41,927 TADA INFO   test-suite: LDMSD
+2023-07-05 01:03:41,927 TADA INFO   test-name: prdcr_subscribe_test
+2023-07-05 01:03:41,927 TADA INFO   test-user: narate
+2023-07-05 01:03:41,927 TADA INFO   commit-id: 636a1c6eed94acbb98f830d7507cbfe1ed9a92a0
 Traceback (most recent call last):
-  File "prdcr_subscribe_test", line 352, in <module>
-    raise RuntimeError("libtada build failed, output: {}".format(out))
-RuntimeError: libtada build failed, output: make: Entering directory '/tada-src/C'
-LDMSD_VERSRION LDMSD_VERSION 4.3.11.96-636a LDMSD_VERSION_PATCH 0x02 LDMSD_VERSION_MAJOR 0x03 LDMSD_VERSION_FLAGS 0x00 LDMSD_VERSION_MINOR 0x02 4.3.11.96-636a LDMSD_VERSION_REQ
-mkdir -p /data/tada/lib
-gcc -o /data/tada/lib/libutil.so -fPIC -shared util.c util.h -ggdb3 -O0
-mkdir -p /data/tada/lib
-gcc -o /data/tada/lib/libtada.so -fPIC -shared tada.c tada.h -ldl -pthread -lcrypto -ggdb3 -O0
-mkdir -p /data/tada/lib
-gcc -I /opt/ovis/include -o /data/tada/lib/libtest_stream_sampler.so -fPIC -shared \
-    test_stream_sampler.c -L/opt/ovis/lib -L/data/tada/lib -L/opt/ovis/lib64 \
-    -lldmsd_stream -lovis_util -lcoll -pthread -lovis_json -lovis_log -ltada \
-    -ggdb3 -O0
-ln -fs /data/tada/lib/libtest_stream_sampler.so /data/tada/lib/libtest_stream_sampler.so.0
-mkdir -p /data/tada/lib
-gcc -I /opt/ovis/include -o /data/tada/lib/test_ovis_ev \
-	test_ovis_ev.c -L/opt/ovis/lib -L/opt/ovis/lib64 -L/data/tada/lib \
-	-ltada -lutil \
-	-lovis_ev -pthread -ggdb3 -O0
-mkdir -p /data/tada/lib
-gcc -I /opt/ovis/include -o /data/tada/lib/test_ovis_json \
-	test_ovis_json.c -L/opt/ovis/lib -L/opt/ovis/lib64 -L/data/tada/lib \
-	-ltada -lutil \
-	-lcoll -lovis_json -ggdb3 -O0
+  File "/usr/lib/python3.6/site-packages/docker/api/client.py", line 261, in _raise_for_status
+    response.raise_for_status()
+  File "/usr/lib/python3.6/site-packages/requests/models.py", line 941, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http+docker://localhost/v1.35/networks/narate-prdcr_subscribe_test-636a1c6
 
-2023-07-05 01:01:30,440 TADA INFO assertion 0, ldmsd_stream_publish of JSON data to stream-sampler-1 succeeds: skipped
-2023-07-05 01:01:30,441 TADA INFO assertion 1, ldmsd_stream_publish of STRING data to stream-sampler-1 succeeds: skipped
-2023-07-05 01:01:30,441 TADA INFO assertion 2, ldmsd_stream_publish to JSON data to stream-sampler-2 succeeds: skipped
-2023-07-05 01:01:30,441 TADA INFO assertion 3, ldmsd_stream_publish of STRING data to stream-sampler-2 succeeds: skipped
-2023-07-05 01:01:30,441 TADA INFO assertion 4, ldmsd_stream data check on agg-2: skipped
-2023-07-05 01:01:30,441 TADA INFO assertion 5, Stopping the producers succeeds: skipped
-2023-07-05 01:01:30,442 TADA INFO assertion 6, Restarting the producers succeeds: skipped
-2023-07-05 01:01:30,442 TADA INFO assertion 7, JSON stream data resumes after producer restart on stream-sampler-1: skipped
-2023-07-05 01:01:30,442 TADA INFO assertion 8, STRING stream data resumes after producer rerestart on stream-sampler-1: skipped
-2023-07-05 01:01:30,442 TADA INFO assertion 9, JSON stream data resumes after producer restart on stream-sampler-2: skipped
-2023-07-05 01:01:30,442 TADA INFO assertion 10, STRING stream data resumes after producer rerestart on stream-sampler-2: skipped
-2023-07-05 01:01:30,442 TADA INFO assertion 11, ldmsd_stream data resume check on agg-2: skipped
-2023-07-05 01:01:30,443 TADA INFO assertion 12, stream-sampler-1 is not running: skipped
-2023-07-05 01:01:30,443 TADA INFO assertion 13, stream-sampler-1 has restarted: skipped
-2023-07-05 01:01:30,443 TADA INFO assertion 14, JSON stream data resumes after stream-sampler-1 restart: skipped
-2023-07-05 01:01:30,443 TADA INFO assertion 15, STRING stream data resumes after stream-sampler-1 restart: skipped
-2023-07-05 01:01:30,443 TADA INFO assertion 16, ldmsd_stream data check on agg-2 after stream-sampler-1 restart: skipped
-2023-07-05 01:01:30,443 TADA INFO assertion 17, agg-1 unsubscribes stream-sampler-1: skipped
-2023-07-05 01:01:30,444 TADA INFO assertion 18, agg-1 receives data only from stream-sampler-2: skipped
-2023-07-05 01:01:30,444 TADA INFO assertion 19, stream-sampler-2 removes agg-1 stream client after disconnected: skipped
-2023-07-05 01:01:30,444 TADA INFO test prdcr_subscribe_test ended
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/narate/cron/ldms-test/runtime/docker.py", line 685, in _get
+    net = dc.networks.get(name)
+  File "/usr/lib/python3.6/site-packages/docker/models/networks.py", line 180, in get
+    self.client.api.inspect_network(network_id, *args, **kwargs)
+  File "/usr/lib/python3.6/site-packages/docker/utils/decorators.py", line 19, in wrapped
+    return f(self, resource_id, *args, **kwargs)
+  File "/usr/lib/python3.6/site-packages/docker/api/network.py", line 213, in inspect_network
+    return self._result(res, json=True)
+  File "/usr/lib/python3.6/site-packages/docker/api/client.py", line 267, in _result
+    self._raise_for_status(response)
+  File "/usr/lib/python3.6/site-packages/docker/api/client.py", line 263, in _raise_for_status
+    raise create_api_error_from_http_exception(e)
+  File "/usr/lib/python3.6/site-packages/docker/errors.py", line 31, in create_api_error_from_http_exception
+    raise cls(e, response=response, explanation=explanation)
+docker.errors.NotFound: 404 Client Error: Not Found ("network narate-prdcr_subscribe_test-636a1c6 not found")
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/narate/cron/ldms-test/LDMS_Test.py", line 1619, in get
+    cluster = _cls._get(name)
+  File "/home/narate/cron/ldms-test/runtime/docker.py", line 688, in _get
+    raise LookupError()
+LookupError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/site-packages/docker/api/client.py", line 261, in _raise_for_status
+    response.raise_for_status()
+  File "/usr/lib/python3.6/site-packages/requests/models.py", line 941, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http+docker://localhost/v1.35/containers/193b4a7bf7dff9377000ab143ca57ac397f59efecfde658e34fc2978f68d26f6/json
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "prdcr_subscribe_test", line 344, in <module>
+    cluster = LDMSDCluster.get(clustername, create = True, spec = spec)
+  File "/home/narate/cron/ldms-test/LDMS_Test.py", line 1626, in get
+    return _cls.create(spec)
+  File "/home/narate/cron/ldms-test/LDMS_Test.py", line 1598, in create
+    cluster.make_ovis_env()
+  File "/home/narate/cron/ldms-test/LDMS_Test.py", line 1942, in make_ovis_env
+    "/opt/ovis/lib\n"
+  File "/home/narate/cron/ldms-test/runtime/docker.py", line 204, in write_file
+    rc, sock = self._exec_run(cmd, stdin=True, socket=True, user = user)
+  File "/home/narate/cron/ldms-test/runtime/docker.py", line 147, in _exec_run
+    self.wait_running()
+  File "/home/narate/cron/ldms-test/runtime/docker.py", line 137, in wait_running
+    self.obj.reload()
+  File "/usr/lib/python3.6/site-packages/docker/models/resource.py", line 48, in reload
+    new_model = self.collection.get(self.id)
+  File "/usr/lib/python3.6/site-packages/docker/models/containers.py", line 880, in get
+    resp = self.client.api.inspect_container(container_id)
+  File "/usr/lib/python3.6/site-packages/docker/utils/decorators.py", line 19, in wrapped
+    return f(self, resource_id, *args, **kwargs)
+  File "/usr/lib/python3.6/site-packages/docker/api/container.py", line 758, in inspect_container
+    self._get(self._url("/containers/{0}/json", container)), True
+  File "/usr/lib/python3.6/site-packages/docker/api/client.py", line 267, in _result
+    self._raise_for_status(response)
+  File "/usr/lib/python3.6/site-packages/docker/api/client.py", line 263, in _raise_for_status
+    raise create_api_error_from_http_exception(e)
+  File "/usr/lib/python3.6/site-packages/docker/errors.py", line 31, in create_api_error_from_http_exception
+    raise cls(e, response=response, explanation=explanation)
+docker.errors.NotFound: 404 Client Error: Not Found ("No such container: 193b4a7bf7dff9377000ab143ca57ac397f59efecfde658e34fc2978f68d26f6")
+2023-07-05 01:03:50,905 TADA INFO assertion 0, ldmsd_stream_publish of JSON data to stream-sampler-1 succeeds: skipped
+2023-07-05 01:03:50,905 TADA INFO assertion 1, ldmsd_stream_publish of STRING data to stream-sampler-1 succeeds: skipped
+2023-07-05 01:03:50,906 TADA INFO assertion 2, ldmsd_stream_publish to JSON data to stream-sampler-2 succeeds: skipped
+2023-07-05 01:03:50,906 TADA INFO assertion 3, ldmsd_stream_publish of STRING data to stream-sampler-2 succeeds: skipped
+2023-07-05 01:03:50,906 TADA INFO assertion 4, ldmsd_stream data check on agg-2: skipped
+2023-07-05 01:03:50,906 TADA INFO assertion 5, Stopping the producers succeeds: skipped
+2023-07-05 01:03:50,906 TADA INFO assertion 6, Restarting the producers succeeds: skipped
+2023-07-05 01:03:50,906 TADA INFO assertion 7, JSON stream data resumes after producer restart on stream-sampler-1: skipped
+2023-07-05 01:03:50,906 TADA INFO assertion 8, STRING stream data resumes after producer rerestart on stream-sampler-1: skipped
+2023-07-05 01:03:50,907 TADA INFO assertion 9, JSON stream data resumes after producer restart on stream-sampler-2: skipped
+2023-07-05 01:03:50,907 TADA INFO assertion 10, STRING stream data resumes after producer rerestart on stream-sampler-2: skipped
+2023-07-05 01:03:50,907 TADA INFO assertion 11, ldmsd_stream data resume check on agg-2: skipped
+2023-07-05 01:03:50,907 TADA INFO assertion 12, stream-sampler-1 is not running: skipped
+2023-07-05 01:03:50,907 TADA INFO assertion 13, stream-sampler-1 has restarted: skipped
+2023-07-05 01:03:50,907 TADA INFO assertion 14, JSON stream data resumes after stream-sampler-1 restart: skipped
+2023-07-05 01:03:50,907 TADA INFO assertion 15, STRING stream data resumes after stream-sampler-1 restart: skipped
+2023-07-05 01:03:50,907 TADA INFO assertion 16, ldmsd_stream data check on agg-2 after stream-sampler-1 restart: skipped
+2023-07-05 01:03:50,908 TADA INFO assertion 17, agg-1 unsubscribes stream-sampler-1: skipped
+2023-07-05 01:03:50,908 TADA INFO assertion 18, agg-1 receives data only from stream-sampler-2: skipped
+2023-07-05 01:03:50,908 TADA INFO assertion 19, stream-sampler-2 removes agg-1 stream client after disconnected: skipped
+2023-07-05 01:03:50,908 TADA INFO test prdcr_subscribe_test ended

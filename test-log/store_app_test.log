@@ -1,16 +1,42 @@
-2023-07-04 01:00:16,721 TADA INFO starting test `store_app_test`
-2023-07-04 01:00:16,721 TADA INFO   test-id: 3768f4a3feb2750459c52a9347ee21c67999e35b736d1fb05ac124490c56d53c
-2023-07-04 01:00:16,721 TADA INFO   test-suite: LDMSD
-2023-07-04 01:00:16,722 TADA INFO   test-name: store_app_test
-2023-07-04 01:00:16,722 TADA INFO   test-user: narate
-2023-07-04 01:00:16,722 TADA INFO   commit-id: 636a1c6eed94acbb98f830d7507cbfe1ed9a92a0
-2023-07-04 01:00:16,723 __main__ INFO -- Get or create the cluster --
-2023-07-04 01:00:31,782 __main__ INFO -- Preparing job script & programs --
-2023-07-04 01:00:32,218 __main__ INFO -- Start daemons --
-2023-07-04 01:01:04,234 __main__ INFO ... wait a bit to make sure ldmsd's are up
-2023-07-04 01:01:09,241 __main__ INFO -- Submitting jobs --
-2023-07-04 01:01:09,454 __main__ INFO job_one: 1
-2023-07-04 01:01:14,655 __main__ INFO job_two: 2
-2023-07-04 01:01:23,857 __main__ INFO Verifying data ...
-2023-07-04 01:03:29,085 TADA INFO assertion 1, Verify data: sos data is not empty and sos data < ldms_ls data, passed
-2023-07-04 01:03:29,086 TADA INFO test store_app_test ended
+2023-07-05 00:56:16,883 TADA INFO starting test `store_app_test`
+2023-07-05 00:56:16,883 TADA INFO   test-id: fb4482db06c404bcea9eb8982296ba51869cc857ea408ec4554586c6df752103
+2023-07-05 00:56:16,883 TADA INFO   test-suite: LDMSD
+2023-07-05 00:56:16,883 TADA INFO   test-name: store_app_test
+2023-07-05 00:56:16,883 TADA INFO   test-user: narate
+2023-07-05 00:56:16,884 TADA INFO   commit-id: 636a1c6eed94acbb98f830d7507cbfe1ed9a92a0
+2023-07-05 00:56:16,884 __main__ INFO -- Get or create the cluster --
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/site-packages/docker/api/client.py", line 261, in _raise_for_status
+    response.raise_for_status()
+  File "/usr/lib/python3.6/site-packages/requests/models.py", line 941, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http+docker://localhost/v1.35/containers/1e8857f270741e6d28a76d742a4485f0360074aecd3791f37b5c37b976c58d31/exec
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "store_app_test", line 331, in <module>
+    cluster.all_exec_run("pkill ldmsd")
+  File "/home/narate/cron/ldms-test/LDMS_Test.py", line 2001, in all_exec_run
+    return { c.hostname : c.exec_run(cmd) for c in self.containers }
+  File "/home/narate/cron/ldms-test/LDMS_Test.py", line 2001, in <dictcomp>
+    return { c.hostname : c.exec_run(cmd) for c in self.containers }
+  File "/home/narate/cron/ldms-test/runtime/docker.py", line 144, in exec_run
+    return self._exec_run(cmd, environment=env, user=user)
+  File "/home/narate/cron/ldms-test/runtime/docker.py", line 148, in _exec_run
+    (rc, out) = self.obj.exec_run(*args, **kwargs)
+  File "/usr/lib/python3.6/site-packages/docker/models/containers.py", line 196, in exec_run
+    workdir=workdir,
+  File "/usr/lib/python3.6/site-packages/docker/utils/decorators.py", line 19, in wrapped
+    return f(self, resource_id, *args, **kwargs)
+  File "/usr/lib/python3.6/site-packages/docker/api/exec_api.py", line 80, in exec_create
+    return self._result(res, True)
+  File "/usr/lib/python3.6/site-packages/docker/api/client.py", line 267, in _result
+    self._raise_for_status(response)
+  File "/usr/lib/python3.6/site-packages/docker/api/client.py", line 263, in _raise_for_status
+    raise create_api_error_from_http_exception(e)
+  File "/usr/lib/python3.6/site-packages/docker/errors.py", line 31, in create_api_error_from_http_exception
+    raise cls(e, response=response, explanation=explanation)
+docker.errors.NotFound: 404 Client Error: Not Found ("No such container: 1e8857f270741e6d28a76d742a4485f0360074aecd3791f37b5c37b976c58d31")
+2023-07-05 00:56:31,064 TADA INFO assertion 1, Verify data: skipped
+2023-07-05 00:56:31,064 TADA INFO test store_app_test ended

@@ -1,18 +1,83 @@
-2023-07-05 00:57:31,797 TADA INFO starting test `maestro_cfg_test`
-2023-07-05 00:57:31,798 TADA INFO   test-id: 6d820d942e340bb83aebe80f2261466dc26954925e4b138aa43c919c87506244
-2023-07-05 00:57:31,798 TADA INFO   test-suite: LDMSD
-2023-07-05 00:57:31,798 TADA INFO   test-name: maestro_cfg_test
-2023-07-05 00:57:31,798 TADA INFO   test-user: narate
-2023-07-05 00:57:31,798 TADA INFO   commit-id: 636a1c6eed94acbb98f830d7507cbfe1ed9a92a0
-2023-07-05 00:57:41,809 __main__ INFO -- Get or create cluster --
-2023-07-05 00:58:13,638 __main__ INFO -- Start daemons --
-2023-07-05 00:59:15,791 __main__ INFO ... make sure ldmsd's are up
-2023-07-05 00:59:23,859 TADA INFO assertion 1, load maestro etcd cluster: Unexpected output: LDMS cluster configuration saved to etcd cluster.
-, failed
-2023-07-05 01:00:03,893 TADA INFO assertion 2, config ldmsd cluster with maestro: Maestro ldmsd configuration successful, passed
-2023-07-05 01:00:05,524 TADA INFO assertion 3, verify sampler daemons: OK, passed
-2023-07-05 01:00:06,133 TADA INFO assertion 4, verify L1 aggregator daemons: OK, passed
-2023-07-05 01:00:06,389 TADA INFO assertion 5, verify L2 aggregator daemon: OK, passed
-2023-07-05 01:00:06,657 TADA INFO assertion 6, verify data storage: OK, passed
+2023-07-05 01:02:24,990 TADA INFO starting test `maestro_cfg_test`
+2023-07-05 01:02:24,990 TADA INFO   test-id: 1c74f2c20516bc9d4bbd4932bdc881b837a903b5870fd82e905b0677761aeaa3
+2023-07-05 01:02:24,990 TADA INFO   test-suite: LDMSD
+2023-07-05 01:02:24,990 TADA INFO   test-name: maestro_cfg_test
+2023-07-05 01:02:24,990 TADA INFO   test-user: narate
+2023-07-05 01:02:24,990 TADA INFO   commit-id: 636a1c6eed94acbb98f830d7507cbfe1ed9a92a0
+2023-07-05 01:02:35,002 __main__ INFO -- Get or create cluster --
 ---Wait for config to write to file---
-2023-07-05 01:00:06,657 TADA INFO test maestro_cfg_test ended
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/site-packages/docker/api/client.py", line 261, in _raise_for_status
+    response.raise_for_status()
+  File "/usr/lib/python3.6/site-packages/requests/models.py", line 941, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http+docker://localhost/v1.35/networks/narate-maestro_cfg_test-636a1c6
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/narate/cron/ldms-test/runtime/docker.py", line 685, in _get
+    net = dc.networks.get(name)
+  File "/usr/lib/python3.6/site-packages/docker/models/networks.py", line 180, in get
+    self.client.api.inspect_network(network_id, *args, **kwargs)
+  File "/usr/lib/python3.6/site-packages/docker/utils/decorators.py", line 19, in wrapped
+    return f(self, resource_id, *args, **kwargs)
+  File "/usr/lib/python3.6/site-packages/docker/api/network.py", line 213, in inspect_network
+    return self._result(res, json=True)
+  File "/usr/lib/python3.6/site-packages/docker/api/client.py", line 267, in _result
+    self._raise_for_status(response)
+  File "/usr/lib/python3.6/site-packages/docker/api/client.py", line 263, in _raise_for_status
+    raise create_api_error_from_http_exception(e)
+  File "/usr/lib/python3.6/site-packages/docker/errors.py", line 31, in create_api_error_from_http_exception
+    raise cls(e, response=response, explanation=explanation)
+docker.errors.NotFound: 404 Client Error: Not Found ("network narate-maestro_cfg_test-636a1c6 not found")
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/narate/cron/ldms-test/LDMS_Test.py", line 1619, in get
+    cluster = _cls._get(name)
+  File "/home/narate/cron/ldms-test/runtime/docker.py", line 688, in _get
+    raise LookupError()
+LookupError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/site-packages/docker/api/client.py", line 261, in _raise_for_status
+    response.raise_for_status()
+  File "/usr/lib/python3.6/site-packages/requests/models.py", line 941, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 500 Server Error: Internal Server Error for url: http+docker://localhost/v1.35/containers/61ff35c6e8c7bc9e65727be2c48b87c7574282538fd847b64b0458c53254c85b/start
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "maestro_cfg_test", line 289, in <module>
+    cluster = LDMSDCluster.get(spec['name'], create = True, spec = spec)
+  File "/home/narate/cron/ldms-test/LDMS_Test.py", line 1626, in get
+    return _cls.create(spec)
+  File "/home/narate/cron/ldms-test/LDMS_Test.py", line 1597, in create
+    cluster = _cls._create(spec)
+  File "/home/narate/cron/ldms-test/runtime/docker.py", line 419, in _create
+    return cls.__create(spec=sp, **kwargs)
+  File "/home/narate/cron/ldms-test/runtime/docker.py", line 597, in __create
+    cont.start()
+  File "/usr/lib/python3.6/site-packages/docker/models/containers.py", line 400, in start
+    return self.client.api.start(self.id, **kwargs)
+  File "/usr/lib/python3.6/site-packages/docker/utils/decorators.py", line 19, in wrapped
+    return f(self, resource_id, *args, **kwargs)
+  File "/usr/lib/python3.6/site-packages/docker/api/container.py", line 1095, in start
+    self._raise_for_status(res)
+  File "/usr/lib/python3.6/site-packages/docker/api/client.py", line 263, in _raise_for_status
+    raise create_api_error_from_http_exception(e)
+  File "/usr/lib/python3.6/site-packages/docker/errors.py", line 31, in create_api_error_from_http_exception
+    raise cls(e, response=response, explanation=explanation)
+docker.errors.APIError: 500 Server Error: Internal Server Error ("Could not attach to network narate-maestro_cfg_test-636a1c6: rpc error: code = NotFound desc = network narate-maestro_cfg_test-636a1c6 not found")
+2023-07-05 01:02:38,920 TADA INFO assertion 1, load maestro etcd cluster: skipped
+2023-07-05 01:02:38,921 TADA INFO assertion 2, config ldmsd cluster with maestro: skipped
+2023-07-05 01:02:38,921 TADA INFO assertion 3, verify sampler daemons: skipped
+2023-07-05 01:02:38,921 TADA INFO assertion 4, verify L1 aggregator daemons: skipped
+2023-07-05 01:02:38,921 TADA INFO assertion 5, verify L2 aggregator daemon: skipped
+2023-07-05 01:02:38,922 TADA INFO assertion 6, verify data storage: skipped
+2023-07-05 01:02:38,922 TADA INFO test maestro_cfg_test ended

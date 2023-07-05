@@ -1,56 +1,22 @@
-2023-07-05 01:06:54,792 __main__ INFO -- Get or create the cluster --
-2023-07-05 01:06:54,792 TADA INFO starting test `ldmsd_stream_status`
-2023-07-05 01:06:54,792 TADA INFO   test-id: c94256cc2836b7bb67e1c494ae1fc9df90a0880f5605d266610ef1563e39f948
-2023-07-05 01:06:54,792 TADA INFO   test-suite: LDMSD
-2023-07-05 01:06:54,792 TADA INFO   test-name: ldmsd_stream_status
-2023-07-05 01:06:54,792 TADA INFO   test-user: narate
-2023-07-05 01:06:54,792 TADA INFO   commit-id: 636a1c6eed94acbb98f830d7507cbfe1ed9a92a0
-2023-07-05 01:07:03,401 __main__ INFO -- Start daemons --
+2023-07-05 01:09:13,291 __main__ INFO -- Get or create the cluster --
+2023-07-05 01:09:13,291 TADA INFO starting test `ldmsd_stream_status`
+2023-07-05 01:09:13,291 TADA INFO   test-id: 476bc4eb20e3cd130da816110fef15b65c39501dab21d3b214bcffa81cec8492
+2023-07-05 01:09:13,291 TADA INFO   test-suite: LDMSD
+2023-07-05 01:09:13,291 TADA INFO   test-name: ldmsd_stream_status
+2023-07-05 01:09:13,291 TADA INFO   test-user: narate
+2023-07-05 01:09:13,292 TADA INFO   commit-id: 636a1c6eed94acbb98f830d7507cbfe1ed9a92a0
 Traceback (most recent call last):
-  File "/usr/lib/python3.6/site-packages/docker/api/client.py", line 261, in _raise_for_status
-    response.raise_for_status()
-  File "/usr/lib/python3.6/site-packages/requests/models.py", line 941, in raise_for_status
-    raise HTTPError(http_error_msg, response=self)
-requests.exceptions.HTTPError: 409 Client Error: Conflict for url: http+docker://localhost/v1.35/containers/eb372a2d190226f5bd4604c3f4560f490ed4b255765fec9ea09422a1d5387d26/exec
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "ldmsd_stream_status_test", line 304, in <module>
-    cluster.start_daemons()
-  File "/home/narate/cron/ldms-test/LDMS_Test.py", line 1998, in start_daemons
-    cont.start_daemons()
-  File "/home/narate/cron/ldms-test/LDMS_Test.py", line 1260, in start_daemons
-    fn(**daemon)
-  File "/home/narate/cron/ldms-test/LDMS_Test.py", line 1003, in start_ldmsd
-    cond_timedwait(_check_listen, 5)
-  File "/home/narate/cron/ldms-test/LDMS_Test.py", line 2604, in cond_timedwait
-    if cond():
-  File "/home/narate/cron/ldms-test/LDMS_Test.py", line 1001, in _check_listen
-    rc, out = self.exec_run(grp_cmd)
-  File "/home/narate/cron/ldms-test/runtime/docker.py", line 144, in exec_run
-    return self._exec_run(cmd, environment=env, user=user)
-  File "/home/narate/cron/ldms-test/runtime/docker.py", line 148, in _exec_run
-    (rc, out) = self.obj.exec_run(*args, **kwargs)
-  File "/usr/lib/python3.6/site-packages/docker/models/containers.py", line 196, in exec_run
-    workdir=workdir,
-  File "/usr/lib/python3.6/site-packages/docker/utils/decorators.py", line 19, in wrapped
-    return f(self, resource_id, *args, **kwargs)
-  File "/usr/lib/python3.6/site-packages/docker/api/exec_api.py", line 80, in exec_create
-    return self._result(res, True)
-  File "/usr/lib/python3.6/site-packages/docker/api/client.py", line 267, in _result
-    self._raise_for_status(response)
-  File "/usr/lib/python3.6/site-packages/docker/api/client.py", line 263, in _raise_for_status
-    raise create_api_error_from_http_exception(e)
-  File "/usr/lib/python3.6/site-packages/docker/errors.py", line 31, in create_api_error_from_http_exception
-    raise cls(e, response=response, explanation=explanation)
-docker.errors.APIError: 409 Client Error: Conflict ("Container eb372a2d190226f5bd4604c3f4560f490ed4b255765fec9ea09422a1d5387d26 is not running")
-2023-07-05 01:07:06,305 TADA INFO assertion 1, No Stream data: skipped
-2023-07-05 01:07:06,305 TADA INFO assertion 2, stream_status -- one stream message: skipped
-2023-07-05 01:07:06,305 TADA INFO assertion 3, stream_status --  multiple stream messages: skipped
-2023-07-05 01:07:06,305 TADA INFO assertion 4, prdcr_stream_status to agg -- one producer: skipped
-2023-07-05 01:07:06,305 TADA INFO assertion 5, stream_status -- mulitple streams: skipped
-2023-07-05 01:07:06,306 TADA INFO assertion 6, prdcr_stream_status to agg -- two producers: skipped
-2023-07-05 01:07:06,306 TADA INFO assertion 7, stream_status to agg after one producer republished stream: skipped
-2023-07-05 01:07:06,306 TADA INFO assertion 8, stream_status to agg after two producers republished stream: skipped
-2023-07-05 01:07:06,306 TADA INFO test ldmsd_stream_status ended
+  File "ldmsd_stream_status_test", line 300, in <module>
+    c.write_file(FOO_FILE, FOO_DATA)
+  File "/home/narate/cron/ldms-test/runtime/docker.py", line 216, in write_file
+    raise RuntimeError(ret)
+RuntimeError
+2023-07-05 01:09:20,895 TADA INFO assertion 1, No Stream data: skipped
+2023-07-05 01:09:20,895 TADA INFO assertion 2, stream_status -- one stream message: skipped
+2023-07-05 01:09:20,896 TADA INFO assertion 3, stream_status --  multiple stream messages: skipped
+2023-07-05 01:09:20,896 TADA INFO assertion 4, prdcr_stream_status to agg -- one producer: skipped
+2023-07-05 01:09:20,896 TADA INFO assertion 5, stream_status -- mulitple streams: skipped
+2023-07-05 01:09:20,896 TADA INFO assertion 6, prdcr_stream_status to agg -- two producers: skipped
+2023-07-05 01:09:20,897 TADA INFO assertion 7, stream_status to agg after one producer republished stream: skipped
+2023-07-05 01:09:20,897 TADA INFO assertion 8, stream_status to agg after two producers republished stream: skipped
+2023-07-05 01:09:20,897 TADA INFO test ldmsd_stream_status ended

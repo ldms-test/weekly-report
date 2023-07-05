@@ -1,19 +1,19 @@
-2023-07-05 01:04:15,981 TADA INFO starting test `quick_set_add_rm_test`
-2023-07-05 01:04:15,981 TADA INFO   test-id: 273cd14e60099eb4b22c99f8735d54bf7f960ff2ddd57058cd42de60b4306797
-2023-07-05 01:04:15,981 TADA INFO   test-suite: LDMSD
-2023-07-05 01:04:15,981 TADA INFO   test-name: quick_set_add_rm_test
-2023-07-05 01:04:15,981 TADA INFO   test-user: narate
-2023-07-05 01:04:15,981 TADA INFO   commit-id: 636a1c6eed94acbb98f830d7507cbfe1ed9a92a0
-2023-07-05 01:04:15,982 __main__ INFO -- Get or create the cluster --
-2023-07-05 01:04:23,339 __main__ INFO -- Start samp.py --
-2023-07-05 01:04:28,355 TADA INFO assertion 1, start samp.py: prompt checked, passed
-2023-07-05 01:04:28,356 __main__ INFO -- Start daemons --
+2023-07-05 01:06:16,390 TADA INFO starting test `quick_set_add_rm_test`
+2023-07-05 01:06:16,390 TADA INFO   test-id: 716ed066e13a3f1c07f8c03264c3a7c47adad418baa21c20fe9f7aa5ab363397
+2023-07-05 01:06:16,390 TADA INFO   test-suite: LDMSD
+2023-07-05 01:06:16,390 TADA INFO   test-name: quick_set_add_rm_test
+2023-07-05 01:06:16,390 TADA INFO   test-user: narate
+2023-07-05 01:06:16,390 TADA INFO   commit-id: 636a1c6eed94acbb98f830d7507cbfe1ed9a92a0
+2023-07-05 01:06:16,391 __main__ INFO -- Get or create the cluster --
+2023-07-05 01:06:24,132 __main__ INFO -- Start samp.py --
+2023-07-05 01:06:29,145 TADA INFO assertion 1, start samp.py: prompt checked, passed
+2023-07-05 01:06:29,146 __main__ INFO -- Start daemons --
 Traceback (most recent call last):
   File "/usr/lib/python3.6/site-packages/docker/api/client.py", line 261, in _raise_for_status
     response.raise_for_status()
   File "/usr/lib/python3.6/site-packages/requests/models.py", line 941, in raise_for_status
     raise HTTPError(http_error_msg, response=self)
-requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http+docker://localhost/v1.35/containers/90c0a35d27ac549ff37af3aa93eaf70231f6147dadd6d905c5277d9e6311675e/exec
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http+docker://localhost/v1.35/containers/b4b11e2d7d245ef958e5e951dd7489f7df14f50e8221cb9243f28d89fa370202/exec
 
 During handling of the above exception, another exception occurred:
 
@@ -44,10 +44,26 @@ Traceback (most recent call last):
     raise create_api_error_from_http_exception(e)
   File "/usr/lib/python3.6/site-packages/docker/errors.py", line 31, in create_api_error_from_http_exception
     raise cls(e, response=response, explanation=explanation)
-docker.errors.NotFound: 404 Client Error: Not Found ("No such container: 90c0a35d27ac549ff37af3aa93eaf70231f6147dadd6d905c5277d9e6311675e")
-2023-07-05 01:04:28,369 TADA INFO assertion 2, verify data: skipped
-2023-07-05 01:04:28,369 TADA INFO assertion 3, samp.py adds set1 / verify data: skipped
-2023-07-05 01:04:28,370 TADA INFO assertion 4, samp.py removes set1 / verify data: skipped
-2023-07-05 01:04:28,370 TADA INFO assertion 5, samp.py quickly adds and removes set2 / verify data: skipped
-2023-07-05 01:04:28,370 TADA INFO assertion 6, agg-1 log stays empty: skipped
-2023-07-05 01:04:28,370 TADA INFO test quick_set_add_rm_test ended
+docker.errors.NotFound: 404 Client Error: Not Found ("No such container: b4b11e2d7d245ef958e5e951dd7489f7df14f50e8221cb9243f28d89fa370202")
+2023-07-05 01:06:29,160 TADA INFO assertion 2, verify data: skipped
+2023-07-05 01:06:29,161 TADA INFO assertion 3, samp.py adds set1 / verify data: skipped
+2023-07-05 01:06:29,161 TADA INFO assertion 4, samp.py removes set1 / verify data: skipped
+2023-07-05 01:06:29,161 TADA INFO assertion 5, samp.py quickly adds and removes set2 / verify data: skipped
+2023-07-05 01:06:29,161 TADA INFO assertion 6, agg-1 log stays empty: skipped
+2023-07-05 01:06:29,161 TADA INFO test quick_set_add_rm_test ended
+Error in atexit._run_exitfuncs:
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/site-packages/docker/api/client.py", line 261, in _raise_for_status
+    response.raise_for_status()
+  File "/usr/lib/python3.6/site-packages/requests/models.py", line 941, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http+docker://localhost/v1.35/networks/4gx5x84cemni7mqpv2tkezkdr
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/site-packages/docker/api/client.py", line 263, in _raise_for_status
+    raise create_api_error_from_http_exception(e)
+  File "/usr/lib/python3.6/site-packages/docker/errors.py", line 31, in create_api_error_from_http_exception
+    raise cls(e, response=response, explanation=explanation)
+docker.errors.NotFound: 404 Client Error: Not Found ("network 4gx5x84cemni7mqpv2tkezkdr not found")

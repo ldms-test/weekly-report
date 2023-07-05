@@ -1,17 +1,17 @@
-2023-07-05 00:56:34,311 TADA INFO starting test `ldmsd_ctrl_test`
-2023-07-05 00:56:34,311 TADA INFO   test-id: d7d47ec9268419eb99f3d122dcaa022f21e33925cedb49a808ab303715590f39
-2023-07-05 00:56:34,311 TADA INFO   test-suite: LDMSD
-2023-07-05 00:56:34,311 TADA INFO   test-name: ldmsd_ctrl_test
-2023-07-05 00:56:34,311 TADA INFO   test-user: narate
-2023-07-05 00:56:34,311 TADA INFO   commit-id: 636a1c6eed94acbb98f830d7507cbfe1ed9a92a0
-2023-07-05 00:56:34,312 __main__ INFO -- Get or create the cluster --
-2023-07-05 00:56:43,505 __main__ INFO -- Start daemons --
+2023-07-05 01:01:32,975 TADA INFO starting test `ldmsd_ctrl_test`
+2023-07-05 01:01:32,975 TADA INFO   test-id: 2f8d05bdb0979effc9e1e08a740cee3eef1d4d1b71a9647fd3479d5991cb3a51
+2023-07-05 01:01:32,975 TADA INFO   test-suite: LDMSD
+2023-07-05 01:01:32,975 TADA INFO   test-name: ldmsd_ctrl_test
+2023-07-05 01:01:32,975 TADA INFO   test-user: narate
+2023-07-05 01:01:32,975 TADA INFO   commit-id: 636a1c6eed94acbb98f830d7507cbfe1ed9a92a0
+2023-07-05 01:01:32,976 __main__ INFO -- Get or create the cluster --
+2023-07-05 01:01:42,545 __main__ INFO -- Start daemons --
 Traceback (most recent call last):
   File "/usr/lib/python3.6/site-packages/docker/api/client.py", line 261, in _raise_for_status
     response.raise_for_status()
   File "/usr/lib/python3.6/site-packages/requests/models.py", line 941, in raise_for_status
     raise HTTPError(http_error_msg, response=self)
-requests.exceptions.HTTPError: 409 Client Error: Conflict for url: http+docker://localhost/v1.35/containers/4bc6254d112d91e369b23810f07746e9a831764c68614ff8428bffb6616b2824/exec
+requests.exceptions.HTTPError: 409 Client Error: Conflict for url: http+docker://localhost/v1.35/containers/72ada37ca8d08404eb0bbaa815b03ae45698fcda0b4aae212ea23a46f8795cb4/exec
 
 During handling of the above exception, another exception occurred:
 
@@ -44,15 +44,15 @@ Traceback (most recent call last):
     raise create_api_error_from_http_exception(e)
   File "/usr/lib/python3.6/site-packages/docker/errors.py", line 31, in create_api_error_from_http_exception
     raise cls(e, response=response, explanation=explanation)
-docker.errors.APIError: 409 Client Error: Conflict ("Container 4bc6254d112d91e369b23810f07746e9a831764c68614ff8428bffb6616b2824 is not running")
-2023-07-05 00:56:45,014 TADA INFO assertion 1, ldmsd_controller interactive session: skipped
-2023-07-05 00:56:45,015 TADA INFO assertion 2, ldmsctl interactive session: skipped
-2023-07-05 00:56:45,015 TADA INFO assertion 3, ldmsd_controller start bogus producer: skipped
-2023-07-05 00:56:45,015 TADA INFO assertion 4, ldmsctl start bogus producer: skipped
-2023-07-05 00:56:45,015 TADA INFO assertion 5, ldmsd_controller bogus command: skipped
-2023-07-05 00:56:45,015 TADA INFO assertion 6, ldmsctl bogus command: skipped
-2023-07-05 00:56:45,015 TADA INFO assertion 7, ldmsd_controller load bogus plugin: skipped
-2023-07-05 00:56:45,016 TADA INFO assertion 8, ldmsctl load bogus plugin: skipped
-2023-07-05 00:56:45,016 TADA INFO assertion 9, ldmsd_controller prdcr/updtr: skipped
-2023-07-05 00:56:45,016 TADA INFO assertion 10, ldmsctl prdcr/updtr: skipped
-2023-07-05 00:56:45,016 TADA INFO test ldmsd_ctrl_test ended
+docker.errors.APIError: 409 Client Error: Conflict ("Container 72ada37ca8d08404eb0bbaa815b03ae45698fcda0b4aae212ea23a46f8795cb4 is not running")
+2023-07-05 01:01:44,232 TADA INFO assertion 1, ldmsd_controller interactive session: skipped
+2023-07-05 01:01:44,232 TADA INFO assertion 2, ldmsctl interactive session: skipped
+2023-07-05 01:01:44,232 TADA INFO assertion 3, ldmsd_controller start bogus producer: skipped
+2023-07-05 01:01:44,233 TADA INFO assertion 4, ldmsctl start bogus producer: skipped
+2023-07-05 01:01:44,233 TADA INFO assertion 5, ldmsd_controller bogus command: skipped
+2023-07-05 01:01:44,233 TADA INFO assertion 6, ldmsctl bogus command: skipped
+2023-07-05 01:01:44,233 TADA INFO assertion 7, ldmsd_controller load bogus plugin: skipped
+2023-07-05 01:01:44,233 TADA INFO assertion 8, ldmsctl load bogus plugin: skipped
+2023-07-05 01:01:44,233 TADA INFO assertion 9, ldmsd_controller prdcr/updtr: skipped
+2023-07-05 01:01:44,234 TADA INFO assertion 10, ldmsctl prdcr/updtr: skipped
+2023-07-05 01:01:44,234 TADA INFO test ldmsd_ctrl_test ended

@@ -1,23 +1,56 @@
-2023-07-04 01:03:44,731 TADA INFO starting test `syspapi_test`
-2023-07-04 01:03:44,731 TADA INFO   test-id: 6877cc179e4c1a101cc95716d9ff8f66bd8f351b6ea5d59179916c06b976db72
-2023-07-04 01:03:44,731 TADA INFO   test-suite: LDMSD
-2023-07-04 01:03:44,731 TADA INFO   test-name: syspapi_test
-2023-07-04 01:03:44,731 TADA INFO   test-user: narate
-2023-07-04 01:03:44,731 TADA INFO   commit-id: 636a1c6eed94acbb98f830d7507cbfe1ed9a92a0
-2023-07-04 01:03:44,732 __main__ INFO -- Get or create the cluster --
-2023-07-04 01:03:56,353 __main__ INFO -- Write syspapi JSON config files --
-2023-07-04 01:03:56,354 __main__ INFO    - db/syspapi-1.json
-2023-07-04 01:03:56,355 __main__ INFO    - db/syspapi-bad.json
-2023-07-04 01:03:56,355 __main__ INFO -- Start daemons --
-2023-07-04 01:04:16,665 __main__ INFO ... wait a bit to make sure ldmsd's are up
-2023-07-04 01:04:21,670 __main__ INFO -- Verifying --
-2023-07-04 01:04:21,809 TADA INFO assertion 1, verify set creation by cfg_file: set existed (with correct instance name), passed
-2023-07-04 01:04:21,810 TADA INFO assertion 2, verify schema name by cfg_file: verify schema name, passed
-2023-07-04 01:04:21,915 TADA INFO assertion 3, verify metrics (events) by cfg_file: verify events (metrics), passed
-2023-07-04 01:04:24,025 TADA INFO assertion 4, verify increment counters: verify increment of supported counters, passed
-2023-07-04 01:04:24,132 TADA INFO assertion 5, verify cfg_file syntax error report: verify JSON parse error, passed
-2023-07-04 01:04:24,267 TADA INFO assertion 6, verify cfg_file unsupported events report: verify unsupported event report, passed
-2023-07-04 01:04:45,777 TADA INFO assertion 7, verify cfg_file for many events: each event has either 'sucees' or 'failed' report, passed
-2023-07-04 01:04:45,777 __main__ INFO  events succeeded: 77
-2023-07-04 01:04:45,777 __main__ INFO  events failed: 114
-2023-07-04 01:04:45,778 TADA INFO test syspapi_test ended
+2023-07-05 00:56:46,992 TADA INFO starting test `syspapi_test`
+2023-07-05 00:56:46,992 TADA INFO   test-id: 65f321505e2374399f57ca4032fe5a3988b63fa82389ffdcb3ab28efa4b59d22
+2023-07-05 00:56:46,992 TADA INFO   test-suite: LDMSD
+2023-07-05 00:56:46,992 TADA INFO   test-name: syspapi_test
+2023-07-05 00:56:46,992 TADA INFO   test-user: narate
+2023-07-05 00:56:46,993 TADA INFO   commit-id: 636a1c6eed94acbb98f830d7507cbfe1ed9a92a0
+2023-07-05 00:56:46,993 __main__ INFO -- Get or create the cluster --
+2023-07-05 00:56:58,439 __main__ INFO -- Write syspapi JSON config files --
+2023-07-05 00:56:58,440 __main__ INFO    - db/syspapi-1.json
+2023-07-05 00:56:58,440 __main__ INFO    - db/syspapi-bad.json
+2023-07-05 00:56:58,441 __main__ INFO -- Start daemons --
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/site-packages/docker/api/client.py", line 261, in _raise_for_status
+    response.raise_for_status()
+  File "/usr/lib/python3.6/site-packages/requests/models.py", line 941, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http+docker://localhost/v1.35/containers/e587a3f58f2b9b943c59bccf2d6e24d6baad12effdff1789d50b4f9e8346d59d/exec
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "syspapi_test", line 434, in <module>
+    cluster.start_daemons()
+  File "/home/narate/cron/ldms-test/LDMS_Test.py", line 1998, in start_daemons
+    cont.start_daemons()
+  File "/home/narate/cron/ldms-test/LDMS_Test.py", line 1260, in start_daemons
+    fn(**daemon)
+  File "/home/narate/cron/ldms-test/LDMS_Test.py", line 1245, in start_sshd
+    rc, out = self.pgrep("-c -x sshd")
+  File "/home/narate/cron/ldms-test/LDMS_Test.py", line 930, in pgrep
+    return self.exec_run("pgrep " + " ".join(args))
+  File "/home/narate/cron/ldms-test/runtime/docker.py", line 144, in exec_run
+    return self._exec_run(cmd, environment=env, user=user)
+  File "/home/narate/cron/ldms-test/runtime/docker.py", line 148, in _exec_run
+    (rc, out) = self.obj.exec_run(*args, **kwargs)
+  File "/usr/lib/python3.6/site-packages/docker/models/containers.py", line 196, in exec_run
+    workdir=workdir,
+  File "/usr/lib/python3.6/site-packages/docker/utils/decorators.py", line 19, in wrapped
+    return f(self, resource_id, *args, **kwargs)
+  File "/usr/lib/python3.6/site-packages/docker/api/exec_api.py", line 80, in exec_create
+    return self._result(res, True)
+  File "/usr/lib/python3.6/site-packages/docker/api/client.py", line 267, in _result
+    self._raise_for_status(response)
+  File "/usr/lib/python3.6/site-packages/docker/api/client.py", line 263, in _raise_for_status
+    raise create_api_error_from_http_exception(e)
+  File "/usr/lib/python3.6/site-packages/docker/errors.py", line 31, in create_api_error_from_http_exception
+    raise cls(e, response=response, explanation=explanation)
+docker.errors.NotFound: 404 Client Error: Not Found ("No such container: e587a3f58f2b9b943c59bccf2d6e24d6baad12effdff1789d50b4f9e8346d59d")
+2023-07-05 00:56:58,455 TADA INFO assertion 1, verify set creation by cfg_file: skipped
+2023-07-05 00:56:58,455 TADA INFO assertion 2, verify schema name by cfg_file: skipped
+2023-07-05 00:56:58,455 TADA INFO assertion 3, verify metrics (events) by cfg_file: skipped
+2023-07-05 00:56:58,455 TADA INFO assertion 4, verify increment counters: skipped
+2023-07-05 00:56:58,455 TADA INFO assertion 5, verify cfg_file syntax error report: skipped
+2023-07-05 00:56:58,455 TADA INFO assertion 6, verify cfg_file unsupported events report: skipped
+2023-07-05 00:56:58,456 TADA INFO assertion 7, verify cfg_file for many events: skipped
+2023-07-05 00:56:58,456 TADA INFO test syspapi_test ended

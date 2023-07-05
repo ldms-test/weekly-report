@@ -1,17 +1,17 @@
-2023-07-05 01:02:39,203 TADA INFO starting test `slurm_stream_test`
-2023-07-05 01:02:39,203 TADA INFO   test-id: 4eac0e9ecd69763a6ec45b19520647b5398f104873b2d3038cf93e19227bf859
-2023-07-05 01:02:39,203 TADA INFO   test-suite: LDMSD
-2023-07-05 01:02:39,203 TADA INFO   test-name: slurm_stream_test
-2023-07-05 01:02:39,203 TADA INFO   test-user: narate
-2023-07-05 01:02:39,204 TADA INFO   commit-id: 636a1c6eed94acbb98f830d7507cbfe1ed9a92a0
-2023-07-05 01:02:39,204 __main__ INFO -- Get or create the cluster --
-2023-07-05 01:02:46,568 __main__ INFO -- Start daemons --
+2023-07-05 01:04:54,652 TADA INFO starting test `slurm_stream_test`
+2023-07-05 01:04:54,652 TADA INFO   test-id: 9efc0313167f3a4708733810ac0f12c0ac63587833bb2bef1647280c7b99b0be
+2023-07-05 01:04:54,652 TADA INFO   test-suite: LDMSD
+2023-07-05 01:04:54,652 TADA INFO   test-name: slurm_stream_test
+2023-07-05 01:04:54,652 TADA INFO   test-user: narate
+2023-07-05 01:04:54,652 TADA INFO   commit-id: 636a1c6eed94acbb98f830d7507cbfe1ed9a92a0
+2023-07-05 01:04:54,653 __main__ INFO -- Get or create the cluster --
+2023-07-05 01:05:01,699 __main__ INFO -- Start daemons --
 Traceback (most recent call last):
   File "/usr/lib/python3.6/site-packages/docker/api/client.py", line 261, in _raise_for_status
     response.raise_for_status()
   File "/usr/lib/python3.6/site-packages/requests/models.py", line 941, in raise_for_status
     raise HTTPError(http_error_msg, response=self)
-requests.exceptions.HTTPError: 500 Server Error: Internal Server Error for url: http+docker://localhost/v1.35/exec/a2d3b3c63ba6cef2123bf17bbb2658ba2b851348d0e1c70317cd4b8dba4b11ce/start
+requests.exceptions.HTTPError: 409 Client Error: Conflict for url: http+docker://localhost/v1.35/containers/706c2ac592060ce9338511b9b1f7743c184fc5ed645b6d6cf8e9f2c215b5f891/exec
 
 During handling of the above exception, another exception occurred:
 
@@ -32,174 +32,172 @@ Traceback (most recent call last):
     return self._exec_run(cmd, environment=env, user=user)
   File "/home/narate/cron/ldms-test/runtime/docker.py", line 148, in _exec_run
     (rc, out) = self.obj.exec_run(*args, **kwargs)
-  File "/usr/lib/python3.6/site-packages/docker/models/containers.py", line 200, in exec_run
-    demux=demux
+  File "/usr/lib/python3.6/site-packages/docker/models/containers.py", line 196, in exec_run
+    workdir=workdir,
   File "/usr/lib/python3.6/site-packages/docker/utils/decorators.py", line 19, in wrapped
     return f(self, resource_id, *args, **kwargs)
-  File "/usr/lib/python3.6/site-packages/docker/api/exec_api.py", line 169, in exec_start
-    return self._read_from_socket(res, stream, tty=tty, demux=demux)
-  File "/usr/lib/python3.6/site-packages/docker/api/client.py", line 400, in _read_from_socket
-    socket = self._get_raw_response_socket(response)
-  File "/usr/lib/python3.6/site-packages/docker/api/client.py", line 311, in _get_raw_response_socket
+  File "/usr/lib/python3.6/site-packages/docker/api/exec_api.py", line 80, in exec_create
+    return self._result(res, True)
+  File "/usr/lib/python3.6/site-packages/docker/api/client.py", line 267, in _result
     self._raise_for_status(response)
   File "/usr/lib/python3.6/site-packages/docker/api/client.py", line 263, in _raise_for_status
     raise create_api_error_from_http_exception(e)
   File "/usr/lib/python3.6/site-packages/docker/errors.py", line 31, in create_api_error_from_http_exception
     raise cls(e, response=response, explanation=explanation)
-docker.errors.APIError: 500 Server Error: Internal Server Error ("Container 26b62cdd396835ad5ccd27677269d030e1dcd1a48241d9470b032d935600f51e is not running: Removal In Progress")
-2023-07-05 01:02:50,480 TADA INFO assertion 1, Job properly assigned to correct slot: skipped
-2023-07-05 01:02:50,480 TADA INFO assertion 2, job_start correctly represented in metric set: skipped
-2023-07-05 01:02:50,480 TADA INFO assertion 3, job_end correctly represented in metric set: skipped
-2023-07-05 01:02:50,480 TADA INFO assertion 4, task_pid correctly represented: skipped
-2023-07-05 01:02:50,481 TADA INFO assertion 5, task_pid correctly represented: skipped
-2023-07-05 01:02:50,481 TADA INFO assertion 6, task_pid correctly represented: skipped
-2023-07-05 01:02:50,481 TADA INFO assertion 7, task_pid correctly represented: skipped
-2023-07-05 01:02:50,481 TADA INFO assertion 8, Job properly assigned to correct slot: skipped
-2023-07-05 01:02:50,481 TADA INFO assertion 9, job_start correctly represented in metric set: skipped
-2023-07-05 01:02:50,481 TADA INFO assertion 10, job_end correctly represented in metric set: skipped
-2023-07-05 01:02:50,481 TADA INFO assertion 11, task_pid correctly represented: skipped
-2023-07-05 01:02:50,482 TADA INFO assertion 12, task_pid correctly represented: skipped
-2023-07-05 01:02:50,482 TADA INFO assertion 13, task_pid correctly represented: skipped
-2023-07-05 01:02:50,482 TADA INFO assertion 14, task_pid correctly represented: skipped
-2023-07-05 01:02:50,482 TADA INFO assertion 15, Job properly assigned to correct slot: skipped
-2023-07-05 01:02:50,482 TADA INFO assertion 16, job_start correctly represented in metric set: skipped
-2023-07-05 01:02:50,482 TADA INFO assertion 17, job_end correctly represented in metric set: skipped
-2023-07-05 01:02:50,482 TADA INFO assertion 18, task_pid correctly represented: skipped
-2023-07-05 01:02:50,483 TADA INFO assertion 19, task_pid correctly represented: skipped
-2023-07-05 01:02:50,483 TADA INFO assertion 20, task_pid correctly represented: skipped
-2023-07-05 01:02:50,483 TADA INFO assertion 21, task_pid correctly represented: skipped
-2023-07-05 01:02:50,483 TADA INFO assertion 22, Job properly assigned to correct slot: skipped
-2023-07-05 01:02:50,483 TADA INFO assertion 23, job_start correctly represented in metric set: skipped
-2023-07-05 01:02:50,483 TADA INFO assertion 24, job_end correctly represented in metric set: skipped
-2023-07-05 01:02:50,484 TADA INFO assertion 25, task_pid correctly represented: skipped
-2023-07-05 01:02:50,484 TADA INFO assertion 26, task_pid correctly represented: skipped
-2023-07-05 01:02:50,484 TADA INFO assertion 27, task_pid correctly represented: skipped
-2023-07-05 01:02:50,484 TADA INFO assertion 28, task_pid correctly represented: skipped
-2023-07-05 01:02:50,484 TADA INFO assertion 29, Job properly assigned to correct slot: skipped
-2023-07-05 01:02:50,484 TADA INFO assertion 30, job_start correctly represented in metric set: skipped
-2023-07-05 01:02:50,484 TADA INFO assertion 31, job_end correctly represented in metric set: skipped
-2023-07-05 01:02:50,485 TADA INFO assertion 32, task_pid correctly represented: skipped
-2023-07-05 01:02:50,485 TADA INFO assertion 33, task_pid correctly represented: skipped
-2023-07-05 01:02:50,485 TADA INFO assertion 34, task_pid correctly represented: skipped
-2023-07-05 01:02:50,485 TADA INFO assertion 35, task_pid correctly represented: skipped
-2023-07-05 01:02:50,485 TADA INFO assertion 36, Job properly assigned to correct slot: skipped
-2023-07-05 01:02:50,485 TADA INFO assertion 37, job_start correctly represented in metric set: skipped
-2023-07-05 01:02:50,485 TADA INFO assertion 38, job_end correctly represented in metric set: skipped
-2023-07-05 01:02:50,486 TADA INFO assertion 39, task_pid correctly represented: skipped
-2023-07-05 01:02:50,486 TADA INFO assertion 40, task_pid correctly represented: skipped
-2023-07-05 01:02:50,486 TADA INFO assertion 41, task_pid correctly represented: skipped
-2023-07-05 01:02:50,486 TADA INFO assertion 42, task_pid correctly represented: skipped
-2023-07-05 01:02:50,486 TADA INFO assertion 43, Job properly assigned to correct slot: skipped
-2023-07-05 01:02:50,486 TADA INFO assertion 44, job_start correctly represented in metric set: skipped
-2023-07-05 01:02:50,486 TADA INFO assertion 45, job_end correctly represented in metric set: skipped
-2023-07-05 01:02:50,487 TADA INFO assertion 46, task_pid correctly represented: skipped
-2023-07-05 01:02:50,487 TADA INFO assertion 47, task_pid correctly represented: skipped
-2023-07-05 01:02:50,487 TADA INFO assertion 48, task_pid correctly represented: skipped
-2023-07-05 01:02:50,487 TADA INFO assertion 49, task_pid correctly represented: skipped
-2023-07-05 01:02:50,487 TADA INFO assertion 50, Job properly assigned to correct slot: skipped
-2023-07-05 01:02:50,487 TADA INFO assertion 51, job_start correctly represented in metric set: skipped
-2023-07-05 01:02:50,487 TADA INFO assertion 52, job_end correctly represented in metric set: skipped
-2023-07-05 01:02:50,488 TADA INFO assertion 53, task_pid correctly represented: skipped
-2023-07-05 01:02:50,488 TADA INFO assertion 54, task_pid correctly represented: skipped
-2023-07-05 01:02:50,488 TADA INFO assertion 55, task_pid correctly represented: skipped
-2023-07-05 01:02:50,488 TADA INFO assertion 56, task_pid correctly represented: skipped
-2023-07-05 01:02:50,488 TADA INFO assertion 57, Job properly assigned to correct slot: skipped
-2023-07-05 01:02:50,488 TADA INFO assertion 58, job_start correctly represented in metric set: skipped
-2023-07-05 01:02:50,488 TADA INFO assertion 59, job_end correctly represented in metric set: skipped
-2023-07-05 01:02:50,489 TADA INFO assertion 60, task_pid correctly represented: skipped
-2023-07-05 01:02:50,489 TADA INFO assertion 61, task_pid correctly represented: skipped
-2023-07-05 01:02:50,489 TADA INFO assertion 62, task_pid correctly represented: skipped
-2023-07-05 01:02:50,489 TADA INFO assertion 63, task_pid correctly represented: skipped
-2023-07-05 01:02:50,489 TADA INFO assertion 64, task_pid correctly represented: skipped
-2023-07-05 01:02:50,489 TADA INFO assertion 65, task_pid correctly represented: skipped
-2023-07-05 01:02:50,490 TADA INFO assertion 66, task_pid correctly represented: skipped
-2023-07-05 01:02:50,490 TADA INFO assertion 67, task_pid correctly represented: skipped
-2023-07-05 01:02:50,490 TADA INFO assertion 68, Job properly assigned to correct slot: skipped
-2023-07-05 01:02:50,490 TADA INFO assertion 69, job_start correctly represented in metric set: skipped
-2023-07-05 01:02:50,490 TADA INFO assertion 70, job_end correctly represented in metric set: skipped
-2023-07-05 01:02:50,490 TADA INFO assertion 71, task_pid correctly represented: skipped
-2023-07-05 01:02:50,490 TADA INFO assertion 72, task_pid correctly represented: skipped
-2023-07-05 01:02:50,490 TADA INFO assertion 73, task_pid correctly represented: skipped
-2023-07-05 01:02:50,491 TADA INFO assertion 74, task_pid correctly represented: skipped
-2023-07-05 01:02:50,491 TADA INFO assertion 75, task_pid correctly represented: skipped
-2023-07-05 01:02:50,491 TADA INFO assertion 76, task_pid correctly represented: skipped
-2023-07-05 01:02:50,491 TADA INFO assertion 77, task_pid correctly represented: skipped
-2023-07-05 01:02:50,491 TADA INFO assertion 78, task_pid correctly represented: skipped
-2023-07-05 01:02:50,491 TADA INFO assertion 79, Job properly assigned to correct slot: skipped
-2023-07-05 01:02:50,491 TADA INFO assertion 80, job_start correctly represented in metric set: skipped
-2023-07-05 01:02:50,492 TADA INFO assertion 81, job_end correctly represented in metric set: skipped
-2023-07-05 01:02:50,492 TADA INFO assertion 82, task_pid correctly represented: skipped
-2023-07-05 01:02:50,492 TADA INFO assertion 83, task_pid correctly represented: skipped
-2023-07-05 01:02:50,492 TADA INFO assertion 84, task_pid correctly represented: skipped
-2023-07-05 01:02:50,492 TADA INFO assertion 85, task_pid correctly represented: skipped
-2023-07-05 01:02:50,492 TADA INFO assertion 86, task_pid correctly represented: skipped
-2023-07-05 01:02:50,492 TADA INFO assertion 87, task_pid correctly represented: skipped
-2023-07-05 01:02:50,493 TADA INFO assertion 88, task_pid correctly represented: skipped
-2023-07-05 01:02:50,493 TADA INFO assertion 89, task_pid correctly represented: skipped
-2023-07-05 01:02:50,493 TADA INFO assertion 90, Job properly assigned to correct slot: skipped
-2023-07-05 01:02:50,493 TADA INFO assertion 91, job_start correctly represented in metric set: skipped
-2023-07-05 01:02:50,493 TADA INFO assertion 92, job_end correctly represented in metric set: skipped
-2023-07-05 01:02:50,493 TADA INFO assertion 93, task_pid correctly represented: skipped
-2023-07-05 01:02:50,493 TADA INFO assertion 94, task_pid correctly represented: skipped
-2023-07-05 01:02:50,494 TADA INFO assertion 95, task_pid correctly represented: skipped
-2023-07-05 01:02:50,494 TADA INFO assertion 96, task_pid correctly represented: skipped
-2023-07-05 01:02:50,494 TADA INFO assertion 97, task_pid correctly represented: skipped
-2023-07-05 01:02:50,494 TADA INFO assertion 98, task_pid correctly represented: skipped
-2023-07-05 01:02:50,494 TADA INFO assertion 99, task_pid correctly represented: skipped
-2023-07-05 01:02:50,494 TADA INFO assertion 100, task_pid correctly represented: skipped
-2023-07-05 01:02:50,494 TADA INFO assertion 101, Job properly assigned to correct slot: skipped
-2023-07-05 01:02:50,495 TADA INFO assertion 102, job_start correctly represented in metric set: skipped
-2023-07-05 01:02:50,495 TADA INFO assertion 103, job_end correctly represented in metric set: skipped
-2023-07-05 01:02:50,495 TADA INFO assertion 104, task_pid correctly represented: skipped
-2023-07-05 01:02:50,495 TADA INFO assertion 105, task_pid correctly represented: skipped
-2023-07-05 01:02:50,495 TADA INFO assertion 106, task_pid correctly represented: skipped
-2023-07-05 01:02:50,495 TADA INFO assertion 107, task_pid correctly represented: skipped
-2023-07-05 01:02:50,495 TADA INFO assertion 108, task_pid correctly represented: skipped
-2023-07-05 01:02:50,496 TADA INFO assertion 109, task_pid correctly represented: skipped
-2023-07-05 01:02:50,496 TADA INFO assertion 110, task_pid correctly represented: skipped
-2023-07-05 01:02:50,496 TADA INFO assertion 111, task_pid correctly represented: skipped
-2023-07-05 01:02:50,496 TADA INFO assertion 112, Job properly assigned to correct slot: skipped
-2023-07-05 01:02:50,496 TADA INFO assertion 113, job_start correctly represented in metric set: skipped
-2023-07-05 01:02:50,496 TADA INFO assertion 114, job_end correctly represented in metric set: skipped
-2023-07-05 01:02:50,497 TADA INFO assertion 115, task_pid correctly represented: skipped
-2023-07-05 01:02:50,497 TADA INFO assertion 116, task_pid correctly represented: skipped
-2023-07-05 01:02:50,497 TADA INFO assertion 117, task_pid correctly represented: skipped
-2023-07-05 01:02:50,497 TADA INFO assertion 118, task_pid correctly represented: skipped
-2023-07-05 01:02:50,497 TADA INFO assertion 119, task_pid correctly represented: skipped
-2023-07-05 01:02:50,497 TADA INFO assertion 120, task_pid correctly represented: skipped
-2023-07-05 01:02:50,497 TADA INFO assertion 121, task_pid correctly represented: skipped
-2023-07-05 01:02:50,498 TADA INFO assertion 122, task_pid correctly represented: skipped
-2023-07-05 01:02:50,498 TADA INFO assertion 123, Job properly assigned to correct slot: skipped
-2023-07-05 01:02:50,498 TADA INFO assertion 124, job_start correctly represented in metric set: skipped
-2023-07-05 01:02:50,498 TADA INFO assertion 125, job_end correctly represented in metric set: skipped
-2023-07-05 01:02:50,498 TADA INFO assertion 126, task_pid correctly represented: skipped
-2023-07-05 01:02:50,498 TADA INFO assertion 127, task_pid correctly represented: skipped
-2023-07-05 01:02:50,498 TADA INFO assertion 128, task_pid correctly represented: skipped
-2023-07-05 01:02:50,499 TADA INFO assertion 129, task_pid correctly represented: skipped
-2023-07-05 01:02:50,499 TADA INFO assertion 130, task_pid correctly represented: skipped
-2023-07-05 01:02:50,499 TADA INFO assertion 131, task_pid correctly represented: skipped
-2023-07-05 01:02:50,499 TADA INFO assertion 132, task_pid correctly represented: skipped
-2023-07-05 01:02:50,499 TADA INFO assertion 133, task_pid correctly represented: skipped
-2023-07-05 01:02:50,499 TADA INFO assertion 134, Job properly assigned to correct slot: skipped
-2023-07-05 01:02:50,500 TADA INFO assertion 135, job_start correctly represented in metric set: skipped
-2023-07-05 01:02:50,500 TADA INFO assertion 136, job_end correctly represented in metric set: skipped
-2023-07-05 01:02:50,500 TADA INFO assertion 137, task_pid correctly represented: skipped
-2023-07-05 01:02:50,500 TADA INFO assertion 138, task_pid correctly represented: skipped
-2023-07-05 01:02:50,500 TADA INFO assertion 139, task_pid correctly represented: skipped
-2023-07-05 01:02:50,500 TADA INFO assertion 140, task_pid correctly represented: skipped
-2023-07-05 01:02:50,500 TADA INFO assertion 141, task_pid correctly represented: skipped
-2023-07-05 01:02:50,501 TADA INFO assertion 142, task_pid correctly represented: skipped
-2023-07-05 01:02:50,501 TADA INFO assertion 143, task_pid correctly represented: skipped
-2023-07-05 01:02:50,501 TADA INFO assertion 144, task_pid correctly represented: skipped
-2023-07-05 01:02:50,501 TADA INFO assertion 145, new job correctly replaces oldest slot: skipped
-2023-07-05 01:02:50,501 TADA INFO assertion 146, new job_start correctly represented in metric set: skipped
-2023-07-05 01:02:50,501 TADA INFO assertion 147, new job_end correctly represented in metric set: skipped
-2023-07-05 01:02:50,502 TADA INFO assertion 148, new job's task replaces oldest slot: skipped
-2023-07-05 01:02:50,502 TADA INFO assertion 149, new job's task replaces oldest slot: skipped
-2023-07-05 01:02:50,502 TADA INFO assertion 150, new job's task replaces oldest slot: skipped
-2023-07-05 01:02:50,502 TADA INFO assertion 151, new job's task replaces oldest slot: skipped
-2023-07-05 01:02:50,502 TADA INFO assertion 152, new job's task replaces oldest slot: skipped
-2023-07-05 01:02:50,502 TADA INFO assertion 153, new job's task replaces oldest slot: skipped
-2023-07-05 01:02:50,502 TADA INFO assertion 154, new job's task replaces oldest slot: skipped
-2023-07-05 01:02:50,503 TADA INFO assertion 155, new job's task replaces oldest slot: skipped
-2023-07-05 01:02:50,503 TADA INFO test slurm_stream_test ended
+docker.errors.APIError: 409 Client Error: Conflict ("Container 706c2ac592060ce9338511b9b1f7743c184fc5ed645b6d6cf8e9f2c215b5f891 is not running")
+2023-07-05 01:05:05,517 TADA INFO assertion 1, Job properly assigned to correct slot: skipped
+2023-07-05 01:05:05,517 TADA INFO assertion 2, job_start correctly represented in metric set: skipped
+2023-07-05 01:05:05,518 TADA INFO assertion 3, job_end correctly represented in metric set: skipped
+2023-07-05 01:05:05,518 TADA INFO assertion 4, task_pid correctly represented: skipped
+2023-07-05 01:05:05,518 TADA INFO assertion 5, task_pid correctly represented: skipped
+2023-07-05 01:05:05,518 TADA INFO assertion 6, task_pid correctly represented: skipped
+2023-07-05 01:05:05,518 TADA INFO assertion 7, task_pid correctly represented: skipped
+2023-07-05 01:05:05,518 TADA INFO assertion 8, Job properly assigned to correct slot: skipped
+2023-07-05 01:05:05,518 TADA INFO assertion 9, job_start correctly represented in metric set: skipped
+2023-07-05 01:05:05,519 TADA INFO assertion 10, job_end correctly represented in metric set: skipped
+2023-07-05 01:05:05,519 TADA INFO assertion 11, task_pid correctly represented: skipped
+2023-07-05 01:05:05,519 TADA INFO assertion 12, task_pid correctly represented: skipped
+2023-07-05 01:05:05,519 TADA INFO assertion 13, task_pid correctly represented: skipped
+2023-07-05 01:05:05,519 TADA INFO assertion 14, task_pid correctly represented: skipped
+2023-07-05 01:05:05,519 TADA INFO assertion 15, Job properly assigned to correct slot: skipped
+2023-07-05 01:05:05,519 TADA INFO assertion 16, job_start correctly represented in metric set: skipped
+2023-07-05 01:05:05,520 TADA INFO assertion 17, job_end correctly represented in metric set: skipped
+2023-07-05 01:05:05,520 TADA INFO assertion 18, task_pid correctly represented: skipped
+2023-07-05 01:05:05,520 TADA INFO assertion 19, task_pid correctly represented: skipped
+2023-07-05 01:05:05,520 TADA INFO assertion 20, task_pid correctly represented: skipped
+2023-07-05 01:05:05,520 TADA INFO assertion 21, task_pid correctly represented: skipped
+2023-07-05 01:05:05,520 TADA INFO assertion 22, Job properly assigned to correct slot: skipped
+2023-07-05 01:05:05,521 TADA INFO assertion 23, job_start correctly represented in metric set: skipped
+2023-07-05 01:05:05,521 TADA INFO assertion 24, job_end correctly represented in metric set: skipped
+2023-07-05 01:05:05,521 TADA INFO assertion 25, task_pid correctly represented: skipped
+2023-07-05 01:05:05,521 TADA INFO assertion 26, task_pid correctly represented: skipped
+2023-07-05 01:05:05,521 TADA INFO assertion 27, task_pid correctly represented: skipped
+2023-07-05 01:05:05,521 TADA INFO assertion 28, task_pid correctly represented: skipped
+2023-07-05 01:05:05,522 TADA INFO assertion 29, Job properly assigned to correct slot: skipped
+2023-07-05 01:05:05,522 TADA INFO assertion 30, job_start correctly represented in metric set: skipped
+2023-07-05 01:05:05,522 TADA INFO assertion 31, job_end correctly represented in metric set: skipped
+2023-07-05 01:05:05,522 TADA INFO assertion 32, task_pid correctly represented: skipped
+2023-07-05 01:05:05,522 TADA INFO assertion 33, task_pid correctly represented: skipped
+2023-07-05 01:05:05,522 TADA INFO assertion 34, task_pid correctly represented: skipped
+2023-07-05 01:05:05,522 TADA INFO assertion 35, task_pid correctly represented: skipped
+2023-07-05 01:05:05,523 TADA INFO assertion 36, Job properly assigned to correct slot: skipped
+2023-07-05 01:05:05,523 TADA INFO assertion 37, job_start correctly represented in metric set: skipped
+2023-07-05 01:05:05,523 TADA INFO assertion 38, job_end correctly represented in metric set: skipped
+2023-07-05 01:05:05,523 TADA INFO assertion 39, task_pid correctly represented: skipped
+2023-07-05 01:05:05,523 TADA INFO assertion 40, task_pid correctly represented: skipped
+2023-07-05 01:05:05,523 TADA INFO assertion 41, task_pid correctly represented: skipped
+2023-07-05 01:05:05,524 TADA INFO assertion 42, task_pid correctly represented: skipped
+2023-07-05 01:05:05,524 TADA INFO assertion 43, Job properly assigned to correct slot: skipped
+2023-07-05 01:05:05,524 TADA INFO assertion 44, job_start correctly represented in metric set: skipped
+2023-07-05 01:05:05,524 TADA INFO assertion 45, job_end correctly represented in metric set: skipped
+2023-07-05 01:05:05,524 TADA INFO assertion 46, task_pid correctly represented: skipped
+2023-07-05 01:05:05,524 TADA INFO assertion 47, task_pid correctly represented: skipped
+2023-07-05 01:05:05,525 TADA INFO assertion 48, task_pid correctly represented: skipped
+2023-07-05 01:05:05,525 TADA INFO assertion 49, task_pid correctly represented: skipped
+2023-07-05 01:05:05,525 TADA INFO assertion 50, Job properly assigned to correct slot: skipped
+2023-07-05 01:05:05,525 TADA INFO assertion 51, job_start correctly represented in metric set: skipped
+2023-07-05 01:05:05,525 TADA INFO assertion 52, job_end correctly represented in metric set: skipped
+2023-07-05 01:05:05,525 TADA INFO assertion 53, task_pid correctly represented: skipped
+2023-07-05 01:05:05,525 TADA INFO assertion 54, task_pid correctly represented: skipped
+2023-07-05 01:05:05,526 TADA INFO assertion 55, task_pid correctly represented: skipped
+2023-07-05 01:05:05,526 TADA INFO assertion 56, task_pid correctly represented: skipped
+2023-07-05 01:05:05,526 TADA INFO assertion 57, Job properly assigned to correct slot: skipped
+2023-07-05 01:05:05,526 TADA INFO assertion 58, job_start correctly represented in metric set: skipped
+2023-07-05 01:05:05,526 TADA INFO assertion 59, job_end correctly represented in metric set: skipped
+2023-07-05 01:05:05,526 TADA INFO assertion 60, task_pid correctly represented: skipped
+2023-07-05 01:05:05,526 TADA INFO assertion 61, task_pid correctly represented: skipped
+2023-07-05 01:05:05,527 TADA INFO assertion 62, task_pid correctly represented: skipped
+2023-07-05 01:05:05,527 TADA INFO assertion 63, task_pid correctly represented: skipped
+2023-07-05 01:05:05,527 TADA INFO assertion 64, task_pid correctly represented: skipped
+2023-07-05 01:05:05,527 TADA INFO assertion 65, task_pid correctly represented: skipped
+2023-07-05 01:05:05,527 TADA INFO assertion 66, task_pid correctly represented: skipped
+2023-07-05 01:05:05,527 TADA INFO assertion 67, task_pid correctly represented: skipped
+2023-07-05 01:05:05,527 TADA INFO assertion 68, Job properly assigned to correct slot: skipped
+2023-07-05 01:05:05,528 TADA INFO assertion 69, job_start correctly represented in metric set: skipped
+2023-07-05 01:05:05,528 TADA INFO assertion 70, job_end correctly represented in metric set: skipped
+2023-07-05 01:05:05,528 TADA INFO assertion 71, task_pid correctly represented: skipped
+2023-07-05 01:05:05,528 TADA INFO assertion 72, task_pid correctly represented: skipped
+2023-07-05 01:05:05,528 TADA INFO assertion 73, task_pid correctly represented: skipped
+2023-07-05 01:05:05,528 TADA INFO assertion 74, task_pid correctly represented: skipped
+2023-07-05 01:05:05,528 TADA INFO assertion 75, task_pid correctly represented: skipped
+2023-07-05 01:05:05,529 TADA INFO assertion 76, task_pid correctly represented: skipped
+2023-07-05 01:05:05,529 TADA INFO assertion 77, task_pid correctly represented: skipped
+2023-07-05 01:05:05,529 TADA INFO assertion 78, task_pid correctly represented: skipped
+2023-07-05 01:05:05,529 TADA INFO assertion 79, Job properly assigned to correct slot: skipped
+2023-07-05 01:05:05,529 TADA INFO assertion 80, job_start correctly represented in metric set: skipped
+2023-07-05 01:05:05,529 TADA INFO assertion 81, job_end correctly represented in metric set: skipped
+2023-07-05 01:05:05,530 TADA INFO assertion 82, task_pid correctly represented: skipped
+2023-07-05 01:05:05,530 TADA INFO assertion 83, task_pid correctly represented: skipped
+2023-07-05 01:05:05,530 TADA INFO assertion 84, task_pid correctly represented: skipped
+2023-07-05 01:05:05,530 TADA INFO assertion 85, task_pid correctly represented: skipped
+2023-07-05 01:05:05,530 TADA INFO assertion 86, task_pid correctly represented: skipped
+2023-07-05 01:05:05,531 TADA INFO assertion 87, task_pid correctly represented: skipped
+2023-07-05 01:05:05,531 TADA INFO assertion 88, task_pid correctly represented: skipped
+2023-07-05 01:05:05,531 TADA INFO assertion 89, task_pid correctly represented: skipped
+2023-07-05 01:05:05,531 TADA INFO assertion 90, Job properly assigned to correct slot: skipped
+2023-07-05 01:05:05,531 TADA INFO assertion 91, job_start correctly represented in metric set: skipped
+2023-07-05 01:05:05,531 TADA INFO assertion 92, job_end correctly represented in metric set: skipped
+2023-07-05 01:05:05,531 TADA INFO assertion 93, task_pid correctly represented: skipped
+2023-07-05 01:05:05,532 TADA INFO assertion 94, task_pid correctly represented: skipped
+2023-07-05 01:05:05,532 TADA INFO assertion 95, task_pid correctly represented: skipped
+2023-07-05 01:05:05,532 TADA INFO assertion 96, task_pid correctly represented: skipped
+2023-07-05 01:05:05,532 TADA INFO assertion 97, task_pid correctly represented: skipped
+2023-07-05 01:05:05,532 TADA INFO assertion 98, task_pid correctly represented: skipped
+2023-07-05 01:05:05,532 TADA INFO assertion 99, task_pid correctly represented: skipped
+2023-07-05 01:05:05,532 TADA INFO assertion 100, task_pid correctly represented: skipped
+2023-07-05 01:05:05,533 TADA INFO assertion 101, Job properly assigned to correct slot: skipped
+2023-07-05 01:05:05,533 TADA INFO assertion 102, job_start correctly represented in metric set: skipped
+2023-07-05 01:05:05,533 TADA INFO assertion 103, job_end correctly represented in metric set: skipped
+2023-07-05 01:05:05,533 TADA INFO assertion 104, task_pid correctly represented: skipped
+2023-07-05 01:05:05,533 TADA INFO assertion 105, task_pid correctly represented: skipped
+2023-07-05 01:05:05,533 TADA INFO assertion 106, task_pid correctly represented: skipped
+2023-07-05 01:05:05,534 TADA INFO assertion 107, task_pid correctly represented: skipped
+2023-07-05 01:05:05,534 TADA INFO assertion 108, task_pid correctly represented: skipped
+2023-07-05 01:05:05,534 TADA INFO assertion 109, task_pid correctly represented: skipped
+2023-07-05 01:05:05,534 TADA INFO assertion 110, task_pid correctly represented: skipped
+2023-07-05 01:05:05,534 TADA INFO assertion 111, task_pid correctly represented: skipped
+2023-07-05 01:05:05,534 TADA INFO assertion 112, Job properly assigned to correct slot: skipped
+2023-07-05 01:05:05,534 TADA INFO assertion 113, job_start correctly represented in metric set: skipped
+2023-07-05 01:05:05,535 TADA INFO assertion 114, job_end correctly represented in metric set: skipped
+2023-07-05 01:05:05,535 TADA INFO assertion 115, task_pid correctly represented: skipped
+2023-07-05 01:05:05,535 TADA INFO assertion 116, task_pid correctly represented: skipped
+2023-07-05 01:05:05,535 TADA INFO assertion 117, task_pid correctly represented: skipped
+2023-07-05 01:05:05,535 TADA INFO assertion 118, task_pid correctly represented: skipped
+2023-07-05 01:05:05,535 TADA INFO assertion 119, task_pid correctly represented: skipped
+2023-07-05 01:05:05,536 TADA INFO assertion 120, task_pid correctly represented: skipped
+2023-07-05 01:05:05,536 TADA INFO assertion 121, task_pid correctly represented: skipped
+2023-07-05 01:05:05,536 TADA INFO assertion 122, task_pid correctly represented: skipped
+2023-07-05 01:05:05,536 TADA INFO assertion 123, Job properly assigned to correct slot: skipped
+2023-07-05 01:05:05,536 TADA INFO assertion 124, job_start correctly represented in metric set: skipped
+2023-07-05 01:05:05,536 TADA INFO assertion 125, job_end correctly represented in metric set: skipped
+2023-07-05 01:05:05,536 TADA INFO assertion 126, task_pid correctly represented: skipped
+2023-07-05 01:05:05,537 TADA INFO assertion 127, task_pid correctly represented: skipped
+2023-07-05 01:05:05,537 TADA INFO assertion 128, task_pid correctly represented: skipped
+2023-07-05 01:05:05,537 TADA INFO assertion 129, task_pid correctly represented: skipped
+2023-07-05 01:05:05,537 TADA INFO assertion 130, task_pid correctly represented: skipped
+2023-07-05 01:05:05,537 TADA INFO assertion 131, task_pid correctly represented: skipped
+2023-07-05 01:05:05,537 TADA INFO assertion 132, task_pid correctly represented: skipped
+2023-07-05 01:05:05,537 TADA INFO assertion 133, task_pid correctly represented: skipped
+2023-07-05 01:05:05,538 TADA INFO assertion 134, Job properly assigned to correct slot: skipped
+2023-07-05 01:05:05,538 TADA INFO assertion 135, job_start correctly represented in metric set: skipped
+2023-07-05 01:05:05,538 TADA INFO assertion 136, job_end correctly represented in metric set: skipped
+2023-07-05 01:05:05,538 TADA INFO assertion 137, task_pid correctly represented: skipped
+2023-07-05 01:05:05,538 TADA INFO assertion 138, task_pid correctly represented: skipped
+2023-07-05 01:05:05,538 TADA INFO assertion 139, task_pid correctly represented: skipped
+2023-07-05 01:05:05,538 TADA INFO assertion 140, task_pid correctly represented: skipped
+2023-07-05 01:05:05,539 TADA INFO assertion 141, task_pid correctly represented: skipped
+2023-07-05 01:05:05,539 TADA INFO assertion 142, task_pid correctly represented: skipped
+2023-07-05 01:05:05,539 TADA INFO assertion 143, task_pid correctly represented: skipped
+2023-07-05 01:05:05,539 TADA INFO assertion 144, task_pid correctly represented: skipped
+2023-07-05 01:05:05,539 TADA INFO assertion 145, new job correctly replaces oldest slot: skipped
+2023-07-05 01:05:05,539 TADA INFO assertion 146, new job_start correctly represented in metric set: skipped
+2023-07-05 01:05:05,539 TADA INFO assertion 147, new job_end correctly represented in metric set: skipped
+2023-07-05 01:05:05,540 TADA INFO assertion 148, new job's task replaces oldest slot: skipped
+2023-07-05 01:05:05,540 TADA INFO assertion 149, new job's task replaces oldest slot: skipped
+2023-07-05 01:05:05,540 TADA INFO assertion 150, new job's task replaces oldest slot: skipped
+2023-07-05 01:05:05,540 TADA INFO assertion 151, new job's task replaces oldest slot: skipped
+2023-07-05 01:05:05,540 TADA INFO assertion 152, new job's task replaces oldest slot: skipped
+2023-07-05 01:05:05,540 TADA INFO assertion 153, new job's task replaces oldest slot: skipped
+2023-07-05 01:05:05,541 TADA INFO assertion 154, new job's task replaces oldest slot: skipped
+2023-07-05 01:05:05,541 TADA INFO assertion 155, new job's task replaces oldest slot: skipped
+2023-07-05 01:05:05,541 TADA INFO test slurm_stream_test ended

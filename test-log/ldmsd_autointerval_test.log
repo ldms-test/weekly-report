@@ -1,17 +1,17 @@
-2023-07-05 01:05:06,447 TADA INFO starting test `ldmsd_autointerval_test`
-2023-07-05 01:05:06,448 TADA INFO   test-id: 792d4dfb2c33883c00b2f7fbc8e2e75e8df077d5cbe118246284ac5ebdacc0ac
-2023-07-05 01:05:06,448 TADA INFO   test-suite: LDMSD
-2023-07-05 01:05:06,448 TADA INFO   test-name: ldmsd_autointerval_test
-2023-07-05 01:05:06,448 TADA INFO   test-user: narate
-2023-07-05 01:05:06,448 TADA INFO   commit-id: 636a1c6eed94acbb98f830d7507cbfe1ed9a92a0
-2023-07-05 01:05:06,449 __main__ INFO -- Get or create the cluster --
-2023-07-05 01:05:13,793 __main__ INFO -- Start daemons --
+2023-07-05 01:07:08,174 TADA INFO starting test `ldmsd_autointerval_test`
+2023-07-05 01:07:08,174 TADA INFO   test-id: 40eced60595471f025cfc1728a91d71610e7858414b776922ea8acb4f0d361bf
+2023-07-05 01:07:08,174 TADA INFO   test-suite: LDMSD
+2023-07-05 01:07:08,174 TADA INFO   test-name: ldmsd_autointerval_test
+2023-07-05 01:07:08,174 TADA INFO   test-user: narate
+2023-07-05 01:07:08,174 TADA INFO   commit-id: 636a1c6eed94acbb98f830d7507cbfe1ed9a92a0
+2023-07-05 01:07:08,175 __main__ INFO -- Get or create the cluster --
+2023-07-05 01:07:15,519 __main__ INFO -- Start daemons --
 Traceback (most recent call last):
   File "/usr/lib/python3.6/site-packages/docker/api/client.py", line 261, in _raise_for_status
     response.raise_for_status()
   File "/usr/lib/python3.6/site-packages/requests/models.py", line 941, in raise_for_status
     raise HTTPError(http_error_msg, response=self)
-requests.exceptions.HTTPError: 409 Client Error: Conflict for url: http+docker://localhost/v1.35/containers/01448e724c217b6c66d5e0e255ec7f93c832750f2a591ba20dd3050a92404561/exec
+requests.exceptions.HTTPError: 500 Server Error: Internal Server Error for url: http+docker://localhost/v1.35/exec/d1dbf1374ca03e963ae610e6fde4505a5ad2b7a46a74fe12f49bf4731fee4ce0/start
 
 During handling of the above exception, another exception occurred:
 
@@ -32,23 +32,25 @@ Traceback (most recent call last):
     return self._exec_run(cmd, environment=env, user=user)
   File "/home/narate/cron/ldms-test/runtime/docker.py", line 148, in _exec_run
     (rc, out) = self.obj.exec_run(*args, **kwargs)
-  File "/usr/lib/python3.6/site-packages/docker/models/containers.py", line 196, in exec_run
-    workdir=workdir,
+  File "/usr/lib/python3.6/site-packages/docker/models/containers.py", line 200, in exec_run
+    demux=demux
   File "/usr/lib/python3.6/site-packages/docker/utils/decorators.py", line 19, in wrapped
     return f(self, resource_id, *args, **kwargs)
-  File "/usr/lib/python3.6/site-packages/docker/api/exec_api.py", line 80, in exec_create
-    return self._result(res, True)
-  File "/usr/lib/python3.6/site-packages/docker/api/client.py", line 267, in _result
+  File "/usr/lib/python3.6/site-packages/docker/api/exec_api.py", line 169, in exec_start
+    return self._read_from_socket(res, stream, tty=tty, demux=demux)
+  File "/usr/lib/python3.6/site-packages/docker/api/client.py", line 400, in _read_from_socket
+    socket = self._get_raw_response_socket(response)
+  File "/usr/lib/python3.6/site-packages/docker/api/client.py", line 311, in _get_raw_response_socket
     self._raise_for_status(response)
   File "/usr/lib/python3.6/site-packages/docker/api/client.py", line 263, in _raise_for_status
     raise create_api_error_from_http_exception(e)
   File "/usr/lib/python3.6/site-packages/docker/errors.py", line 31, in create_api_error_from_http_exception
     raise cls(e, response=response, explanation=explanation)
-docker.errors.APIError: 409 Client Error: Conflict ("Container 01448e724c217b6c66d5e0e255ec7f93c832750f2a591ba20dd3050a92404561 is not running")
-2023-07-05 01:05:18,427 TADA INFO assertion 1, start all daemons and interactive controller: skipped
-2023-07-05 01:05:18,427 TADA INFO assertion 2, verify sampling interval and update hints: skipped
-2023-07-05 01:05:18,428 TADA INFO assertion 3, set and verify 2nd sampling interval / update hints: skipped
-2023-07-05 01:05:18,428 TADA INFO assertion 4, set and verify 3rd sampling interval / update hints: skipped
-2023-07-05 01:05:18,428 TADA INFO assertion 5, verify SOS data: skipped
-2023-07-05 01:05:18,428 TADA INFO assertion 6, verify 'oversampled' in the agg2 log: skipped
-2023-07-05 01:05:18,428 TADA INFO test ldmsd_autointerval_test ended
+docker.errors.APIError: 500 Server Error: Internal Server Error ("Container 5f97c937d9c089bcbbf1dc21d6ef5f26f66182f467d9c4fe5d56f7d253d8e25b is not running: Removal In Progress")
+2023-07-05 01:07:19,032 TADA INFO assertion 1, start all daemons and interactive controller: skipped
+2023-07-05 01:07:19,032 TADA INFO assertion 2, verify sampling interval and update hints: skipped
+2023-07-05 01:07:19,033 TADA INFO assertion 3, set and verify 2nd sampling interval / update hints: skipped
+2023-07-05 01:07:19,033 TADA INFO assertion 4, set and verify 3rd sampling interval / update hints: skipped
+2023-07-05 01:07:19,033 TADA INFO assertion 5, verify SOS data: skipped
+2023-07-05 01:07:19,033 TADA INFO assertion 6, verify 'oversampled' in the agg2 log: skipped
+2023-07-05 01:07:19,033 TADA INFO test ldmsd_autointerval_test ended

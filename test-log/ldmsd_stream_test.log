@@ -1,16 +1,16 @@
-2023-07-05 00:57:00,786 TADA INFO starting test `ldmsd_stream_test`
-2023-07-05 00:57:00,786 TADA INFO   test-id: a518c89568b434f40bf684a9f50e90c1f7474161f7979e48340dd5dcffefcbe3
-2023-07-05 00:57:00,786 TADA INFO   test-suite: LDMSD
-2023-07-05 00:57:00,786 TADA INFO   test-name: ldmsd_stream_test
-2023-07-05 00:57:00,786 TADA INFO   test-user: narate
-2023-07-05 00:57:00,786 TADA INFO   commit-id: 636a1c6eed94acbb98f830d7507cbfe1ed9a92a0
-2023-07-05 00:57:12,645 __main__ INFO waiting for libraries to be available across all containers...
+2023-07-05 01:01:58,446 TADA INFO starting test `ldmsd_stream_test`
+2023-07-05 01:01:58,446 TADA INFO   test-id: 87744991f413c2d05c313f65244a80f1ac7a212f1643e25356d8e6d817741fb6
+2023-07-05 01:01:58,447 TADA INFO   test-suite: LDMSD
+2023-07-05 01:01:58,447 TADA INFO   test-name: ldmsd_stream_test
+2023-07-05 01:01:58,447 TADA INFO   test-user: narate
+2023-07-05 01:01:58,447 TADA INFO   commit-id: 636a1c6eed94acbb98f830d7507cbfe1ed9a92a0
+2023-07-05 01:02:09,740 __main__ INFO waiting for libraries to be available across all containers...
 Traceback (most recent call last):
   File "/usr/lib/python3.6/site-packages/docker/api/client.py", line 261, in _raise_for_status
     response.raise_for_status()
   File "/usr/lib/python3.6/site-packages/requests/models.py", line 941, in raise_for_status
     raise HTTPError(http_error_msg, response=self)
-requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http+docker://localhost/v1.35/containers/1fe75024868fc634c31075ec1d7f2492858fec7b029c0427fc671675ad79dcb0/exec
+requests.exceptions.HTTPError: 409 Client Error: Conflict for url: http+docker://localhost/v1.35/containers/10c19b20eeda874424cbb54ee14d397e4e06daa483bc491f056aedcdd64b3910/exec
 
 During handling of the above exception, another exception occurred:
 
@@ -39,17 +39,33 @@ Traceback (most recent call last):
     raise create_api_error_from_http_exception(e)
   File "/usr/lib/python3.6/site-packages/docker/errors.py", line 31, in create_api_error_from_http_exception
     raise cls(e, response=response, explanation=explanation)
-docker.errors.NotFound: 404 Client Error: Not Found ("No such container: 1fe75024868fc634c31075ec1d7f2492858fec7b029c0427fc671675ad79dcb0")
-2023-07-05 00:57:12,658 TADA INFO assertion 1, ldmsd_stream_subscribe receives large json streams: skipped
-2023-07-05 00:57:12,658 TADA INFO assertion 2, samplerd receives large json streams: skipped
-2023-07-05 00:57:12,658 TADA INFO assertion 3, agg receives large json streams: skipped
-2023-07-05 00:57:12,659 TADA INFO assertion 4, ldmsd_stream_subscribe receives small json streams: skipped
-2023-07-05 00:57:12,659 TADA INFO assertion 5, samplerd receives small json streams: skipped
-2023-07-05 00:57:12,659 TADA INFO assertion 6, agg receives small json streams: skipped
-2023-07-05 00:57:12,659 TADA INFO assertion 7, ldmsd_stream_subscribe receives large string streams: skipped
-2023-07-05 00:57:12,660 TADA INFO assertion 8, samplerd receives large string streams: skipped
-2023-07-05 00:57:12,660 TADA INFO assertion 9, agg receives large string streams: skipped
-2023-07-05 00:57:12,660 TADA INFO assertion 10, ldmsd_stream_subscribe receives small string streams: skipped
-2023-07-05 00:57:12,660 TADA INFO assertion 11, samplerd receives small string streams: skipped
-2023-07-05 00:57:12,661 TADA INFO assertion 12, agg receives small string streams: skipped
-2023-07-05 00:57:12,661 TADA INFO test ldmsd_stream_test ended
+docker.errors.APIError: 409 Client Error: Conflict ("Container 10c19b20eeda874424cbb54ee14d397e4e06daa483bc491f056aedcdd64b3910 is not running")
+2023-07-05 01:02:09,839 TADA INFO assertion 1, ldmsd_stream_subscribe receives large json streams: skipped
+2023-07-05 01:02:09,839 TADA INFO assertion 2, samplerd receives large json streams: skipped
+2023-07-05 01:02:09,839 TADA INFO assertion 3, agg receives large json streams: skipped
+2023-07-05 01:02:09,839 TADA INFO assertion 4, ldmsd_stream_subscribe receives small json streams: skipped
+2023-07-05 01:02:09,840 TADA INFO assertion 5, samplerd receives small json streams: skipped
+2023-07-05 01:02:09,840 TADA INFO assertion 6, agg receives small json streams: skipped
+2023-07-05 01:02:09,840 TADA INFO assertion 7, ldmsd_stream_subscribe receives large string streams: skipped
+2023-07-05 01:02:09,840 TADA INFO assertion 8, samplerd receives large string streams: skipped
+2023-07-05 01:02:09,840 TADA INFO assertion 9, agg receives large string streams: skipped
+2023-07-05 01:02:09,841 TADA INFO assertion 10, ldmsd_stream_subscribe receives small string streams: skipped
+2023-07-05 01:02:09,841 TADA INFO assertion 11, samplerd receives small string streams: skipped
+2023-07-05 01:02:09,841 TADA INFO assertion 12, agg receives small string streams: skipped
+2023-07-05 01:02:09,841 TADA INFO test ldmsd_stream_test ended
+Error in atexit._run_exitfuncs:
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/site-packages/docker/api/client.py", line 261, in _raise_for_status
+    response.raise_for_status()
+  File "/usr/lib/python3.6/site-packages/requests/models.py", line 941, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http+docker://localhost/v1.35/networks/o446m99yfs420rf331z4giddq
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/site-packages/docker/api/client.py", line 263, in _raise_for_status
+    raise create_api_error_from_http_exception(e)
+  File "/usr/lib/python3.6/site-packages/docker/errors.py", line 31, in create_api_error_from_http_exception
+    raise cls(e, response=response, explanation=explanation)
+docker.errors.NotFound: 404 Client Error: Not Found ("rpc error: code = NotFound desc = network o446m99yfs420rf331z4giddq not found")
