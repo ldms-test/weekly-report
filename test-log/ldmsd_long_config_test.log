@@ -1,12 +1,51 @@
-2023-07-05 01:23:13,204 TADA INFO starting test `ldmsd_long_config_line`
-2023-07-05 01:23:13,204 TADA INFO   test-id: edac232c854d926b9980c55e64b6e437463beea22cf3183657f19e016fcbf84f
-2023-07-05 01:23:13,204 TADA INFO   test-suite: LDMSD
-2023-07-05 01:23:13,205 TADA INFO   test-name: ldmsd_long_config_line
-2023-07-05 01:23:13,205 TADA INFO   test-user: narate
-2023-07-05 01:23:13,205 TADA INFO   commit-id: 636a1c6eed94acbb98f830d7507cbfe1ed9a92a0
-2023-07-05 01:23:13,205 __main__ INFO ---Get or create the cluster --
-2023-07-05 01:23:20,815 __main__ INFO --- Start daemons ---
-2023-07-05 01:23:37,458 TADA INFO assertion 1, LDMSD correctly processes a config line in a config file: LDMSD processed the long config line in the config file correctly., passed
-2023-07-05 01:23:38,004 TADA INFO assertion 2, LDMSD correctly handle a config line from ldmsd_controller: LDMSD receives the correct message from ldmsd_controller., passed
-2023-07-05 01:23:38,698 TADA INFO assertion 3, LDMSD correctly handle a config line from ldmsctl: LDMSD receives the correct message from ldmsctl., passed
-2023-07-05 01:23:38,699 TADA INFO test ldmsd_long_config_line ended
+2023-07-08 01:06:38,565 TADA INFO starting test `ldmsd_long_config_line`
+2023-07-08 01:06:38,565 TADA INFO   test-id: 9c62dd17552ad8885532271ba7ecca69f27cba95cff1d9ba6f0fbefb1cf29731
+2023-07-08 01:06:38,565 TADA INFO   test-suite: LDMSD
+2023-07-08 01:06:38,565 TADA INFO   test-name: ldmsd_long_config_line
+2023-07-08 01:06:38,565 TADA INFO   test-user: narate
+2023-07-08 01:06:38,566 TADA INFO   commit-id: 636a1c6eed94acbb98f830d7507cbfe1ed9a92a0
+2023-07-08 01:06:38,566 __main__ INFO ---Get or create the cluster --
+2023-07-08 01:06:46,122 __main__ INFO --- Start daemons ---
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/site-packages/docker/api/client.py", line 261, in _raise_for_status
+    response.raise_for_status()
+  File "/usr/lib/python3.6/site-packages/requests/models.py", line 941, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 409 Client Error: Conflict for url: http+docker://localhost/v1.35/containers/ffa212e54a16f44d00e2a1bc5036f6ae354ce90d432595b1d04c32410fc0b16f/exec
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "ldmsd_long_config_test", line 170, in <module>
+    cluster.start_daemons()
+  File "/home/narate/cron/ldms-test/LDMS_Test.py", line 1998, in start_daemons
+    cont.start_daemons()
+  File "/home/narate/cron/ldms-test/LDMS_Test.py", line 1260, in start_daemons
+    fn(**daemon)
+  File "/home/narate/cron/ldms-test/LDMS_Test.py", line 1003, in start_ldmsd
+    cond_timedwait(_check_listen, 5)
+  File "/home/narate/cron/ldms-test/LDMS_Test.py", line 2604, in cond_timedwait
+    if cond():
+  File "/home/narate/cron/ldms-test/LDMS_Test.py", line 1001, in _check_listen
+    rc, out = self.exec_run(grp_cmd)
+  File "/home/narate/cron/ldms-test/runtime/docker.py", line 144, in exec_run
+    return self._exec_run(cmd, environment=env, user=user)
+  File "/home/narate/cron/ldms-test/runtime/docker.py", line 148, in _exec_run
+    (rc, out) = self.obj.exec_run(*args, **kwargs)
+  File "/usr/lib/python3.6/site-packages/docker/models/containers.py", line 196, in exec_run
+    workdir=workdir,
+  File "/usr/lib/python3.6/site-packages/docker/utils/decorators.py", line 19, in wrapped
+    return f(self, resource_id, *args, **kwargs)
+  File "/usr/lib/python3.6/site-packages/docker/api/exec_api.py", line 80, in exec_create
+    return self._result(res, True)
+  File "/usr/lib/python3.6/site-packages/docker/api/client.py", line 267, in _result
+    self._raise_for_status(response)
+  File "/usr/lib/python3.6/site-packages/docker/api/client.py", line 263, in _raise_for_status
+    raise create_api_error_from_http_exception(e)
+  File "/usr/lib/python3.6/site-packages/docker/errors.py", line 31, in create_api_error_from_http_exception
+    raise cls(e, response=response, explanation=explanation)
+docker.errors.APIError: 409 Client Error: Conflict ("Container ffa212e54a16f44d00e2a1bc5036f6ae354ce90d432595b1d04c32410fc0b16f is not running")
+2023-07-08 01:06:50,631 TADA INFO assertion 1, LDMSD correctly processes a config line in a config file: skipped
+2023-07-08 01:06:50,632 TADA INFO assertion 2, LDMSD correctly handle a config line from ldmsd_controller: skipped
+2023-07-08 01:06:50,632 TADA INFO assertion 3, LDMSD correctly handle a config line from ldmsctl: skipped
+2023-07-08 01:06:50,632 TADA INFO test ldmsd_long_config_line ended

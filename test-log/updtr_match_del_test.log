@@ -1,17 +1,17 @@
-2023-07-05 01:12:56,222 __main__ INFO -- Get or create the cluster --
-2023-07-05 01:12:56,223 TADA INFO starting test `updtr_add test`
-2023-07-05 01:12:56,223 TADA INFO   test-id: 02e52826022ba7e097da6731150ddc27b91b9a3866ef199684014e2afde3c7da
-2023-07-05 01:12:56,223 TADA INFO   test-suite: LDMSD
-2023-07-05 01:12:56,223 TADA INFO   test-name: updtr_add test
-2023-07-05 01:12:56,223 TADA INFO   test-user: narate
-2023-07-05 01:12:56,223 TADA INFO   commit-id: 636a1c6eed94acbb98f830d7507cbfe1ed9a92a0
-2023-07-05 01:13:04,432 __main__ INFO -- Start daemons --
+2023-07-08 00:59:38,135 __main__ INFO -- Get or create the cluster --
+2023-07-08 00:59:38,136 TADA INFO starting test `updtr_add test`
+2023-07-08 00:59:38,136 TADA INFO   test-id: d9c57175efa1a5594e7f79ece6b8f97a1231979fcb89aac247cc89700a0bc209
+2023-07-08 00:59:38,136 TADA INFO   test-suite: LDMSD
+2023-07-08 00:59:38,136 TADA INFO   test-name: updtr_add test
+2023-07-08 00:59:38,136 TADA INFO   test-user: narate
+2023-07-08 00:59:38,136 TADA INFO   commit-id: 636a1c6eed94acbb98f830d7507cbfe1ed9a92a0
+2023-07-08 00:59:46,113 __main__ INFO -- Start daemons --
 Traceback (most recent call last):
   File "/usr/lib/python3.6/site-packages/docker/api/client.py", line 261, in _raise_for_status
     response.raise_for_status()
   File "/usr/lib/python3.6/site-packages/requests/models.py", line 941, in raise_for_status
     raise HTTPError(http_error_msg, response=self)
-requests.exceptions.HTTPError: 409 Client Error: Conflict for url: http+docker://localhost/v1.35/containers/0f453a468aa6ea2312bec48d3f197f4d4075494a4a868c06f5db75a8da87e372/exec
+requests.exceptions.HTTPError: 409 Client Error: Conflict for url: http+docker://localhost/v1.35/containers/36e56f270257c4596db38120a1b485d94cb3e0bdcc96d99bdc20afc0fa759521/exec
 
 During handling of the above exception, another exception occurred:
 
@@ -44,12 +44,12 @@ Traceback (most recent call last):
     raise create_api_error_from_http_exception(e)
   File "/usr/lib/python3.6/site-packages/docker/errors.py", line 31, in create_api_error_from_http_exception
     raise cls(e, response=response, explanation=explanation)
-docker.errors.APIError: 409 Client Error: Conflict ("Container 0f453a468aa6ea2312bec48d3f197f4d4075494a4a868c06f5db75a8da87e372 is not running")
-2023-07-05 01:13:06,383 TADA INFO assertion 1, Send updtr_match_del with an invalid regex: skipped
-2023-07-05 01:13:06,383 TADA INFO assertion 2, Send updtr_match_del to a non-existing updater: skipped
-2023-07-05 01:13:06,384 TADA INFO assertion 3, Send updtr_match_del with a non-existing inst match: skipped
-2023-07-05 01:13:06,384 TADA INFO assertion 4, Send updtr_match_del with a non-existing schema match: skipped
-2023-07-05 01:13:06,384 TADA INFO assertion 5, Send updater_match_del with an invalid match type: skipped
-2023-07-05 01:13:06,384 TADA INFO assertion 6, Send updater_match_del with a valid regex of the inst type: skipped
-2023-07-05 01:13:06,384 TADA INFO assertion 7, Send updater_match_del with a valid regex of the schema type: skipped
-2023-07-05 01:13:06,384 TADA INFO test updtr_add test ended
+docker.errors.APIError: 409 Client Error: Conflict ("Container 36e56f270257c4596db38120a1b485d94cb3e0bdcc96d99bdc20afc0fa759521 is not running")
+2023-07-08 00:59:47,771 TADA INFO assertion 1, Send updtr_match_del with an invalid regex: skipped
+2023-07-08 00:59:47,771 TADA INFO assertion 2, Send updtr_match_del to a non-existing updater: skipped
+2023-07-08 00:59:47,771 TADA INFO assertion 3, Send updtr_match_del with a non-existing inst match: skipped
+2023-07-08 00:59:47,771 TADA INFO assertion 4, Send updtr_match_del with a non-existing schema match: skipped
+2023-07-08 00:59:47,771 TADA INFO assertion 5, Send updater_match_del with an invalid match type: skipped
+2023-07-08 00:59:47,772 TADA INFO assertion 6, Send updater_match_del with a valid regex of the inst type: skipped
+2023-07-08 00:59:47,772 TADA INFO assertion 7, Send updater_match_del with a valid regex of the schema type: skipped
+2023-07-08 00:59:47,772 TADA INFO test updtr_add test ended

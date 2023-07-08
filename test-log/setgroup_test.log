@@ -1,58 +1,21 @@
-2023-07-05 01:04:29,734 TADA INFO starting test `setgroup_test`
-2023-07-05 01:04:29,734 TADA INFO   test-id: 0f7750890f8dd06baf011fce4c1037ff7356c73c986d06c94c0323cb61ea089a
-2023-07-05 01:04:29,735 TADA INFO   test-suite: LDMSD
-2023-07-05 01:04:29,735 TADA INFO   test-name: setgroup_test
-2023-07-05 01:04:29,735 TADA INFO   test-user: narate
-2023-07-05 01:04:29,735 TADA INFO   commit-id: 636a1c6eed94acbb98f830d7507cbfe1ed9a92a0
-2023-07-05 01:04:29,736 __main__ INFO -- Get or create the cluster --
-2023-07-05 01:04:39,088 __main__ INFO -- Start daemons --
-Traceback (most recent call last):
-  File "/usr/lib/python3.6/site-packages/docker/api/client.py", line 261, in _raise_for_status
-    response.raise_for_status()
-  File "/usr/lib/python3.6/site-packages/requests/models.py", line 941, in raise_for_status
-    raise HTTPError(http_error_msg, response=self)
-requests.exceptions.HTTPError: 500 Server Error: Internal Server Error for url: http+docker://localhost/v1.35/exec/f6378aab2dcf3f5d9f6fc1dbcf80cfdd27bcb55aa2cd77de7a47f4d14cb4f7e5/start
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "setgroup_test", line 278, in <module>
-    cluster.start_daemons()
-  File "/home/narate/cron/ldms-test/LDMS_Test.py", line 1998, in start_daemons
-    cont.start_daemons()
-  File "/home/narate/cron/ldms-test/LDMS_Test.py", line 1260, in start_daemons
-    fn(**daemon)
-  File "/home/narate/cron/ldms-test/LDMS_Test.py", line 1003, in start_ldmsd
-    cond_timedwait(_check_listen, 5)
-  File "/home/narate/cron/ldms-test/LDMS_Test.py", line 2604, in cond_timedwait
-    if cond():
-  File "/home/narate/cron/ldms-test/LDMS_Test.py", line 1001, in _check_listen
-    rc, out = self.exec_run(grp_cmd)
-  File "/home/narate/cron/ldms-test/runtime/docker.py", line 144, in exec_run
-    return self._exec_run(cmd, environment=env, user=user)
-  File "/home/narate/cron/ldms-test/runtime/docker.py", line 148, in _exec_run
-    (rc, out) = self.obj.exec_run(*args, **kwargs)
-  File "/usr/lib/python3.6/site-packages/docker/models/containers.py", line 200, in exec_run
-    demux=demux
-  File "/usr/lib/python3.6/site-packages/docker/utils/decorators.py", line 19, in wrapped
-    return f(self, resource_id, *args, **kwargs)
-  File "/usr/lib/python3.6/site-packages/docker/api/exec_api.py", line 169, in exec_start
-    return self._read_from_socket(res, stream, tty=tty, demux=demux)
-  File "/usr/lib/python3.6/site-packages/docker/api/client.py", line 400, in _read_from_socket
-    socket = self._get_raw_response_socket(response)
-  File "/usr/lib/python3.6/site-packages/docker/api/client.py", line 311, in _get_raw_response_socket
-    self._raise_for_status(response)
-  File "/usr/lib/python3.6/site-packages/docker/api/client.py", line 263, in _raise_for_status
-    raise create_api_error_from_http_exception(e)
-  File "/usr/lib/python3.6/site-packages/docker/errors.py", line 31, in create_api_error_from_http_exception
-    raise cls(e, response=response, explanation=explanation)
-docker.errors.APIError: 500 Server Error: Internal Server Error ("Container 10fcef9ca6a49aad55976a2c96eecef9dc30ad409dc8060d3b759d6bd989dfd6 is not running: Removal In Progress")
-2023-07-05 01:04:40,500 TADA INFO assertion 1, ldms_ls grp on agg-2: skipped
-2023-07-05 01:04:40,500 TADA INFO assertion 2, members on agg-2 are being updated: skipped
-2023-07-05 01:04:40,500 TADA INFO assertion 3, test_2 is removed fom grp on sampler: skipped
-2023-07-05 01:04:40,500 TADA INFO assertion 4, test_2 is removed from grp on agg-1: skipped
-2023-07-05 01:04:40,500 TADA INFO assertion 5, test_2 is removed from grp on agg-2: skipped
-2023-07-05 01:04:40,501 TADA INFO assertion 6, test_2 is added back to grp on sampler: skipped
-2023-07-05 01:04:40,501 TADA INFO assertion 7, test_2 is added back to grp on agg-1: skipped
-2023-07-05 01:04:40,501 TADA INFO assertion 8, test_2 is added back to grp on agg-2: skipped
-2023-07-05 01:04:40,501 TADA INFO test setgroup_test ended
+2023-07-07 00:42:03,533 TADA INFO starting test `setgroup_test`
+2023-07-07 00:42:03,534 TADA INFO   test-id: 727a6b019faa95b6b0a96516ba21923a3f5afdae59023b31685b3fda3969e76e
+2023-07-07 00:42:03,534 TADA INFO   test-suite: LDMSD
+2023-07-07 00:42:03,534 TADA INFO   test-name: setgroup_test
+2023-07-07 00:42:03,534 TADA INFO   test-user: narate
+2023-07-07 00:42:03,534 TADA INFO   commit-id: 636a1c6eed94acbb98f830d7507cbfe1ed9a92a0
+2023-07-07 00:42:03,535 __main__ INFO -- Get or create the cluster --
+2023-07-07 00:42:12,941 __main__ INFO -- Start daemons --
+2023-07-07 00:42:29,108 __main__ INFO ... wait a bit to make sure ldmsd's are up
+2023-07-07 00:42:34,113 __main__ INFO -- ldms_ls to agg-2 --
+2023-07-07 00:42:34,243 TADA INFO assertion 1, ldms_ls grp on agg-2: dir result verified, passed
+2023-07-07 00:42:36,486 TADA INFO assertion 2, members on agg-2 are being updated: data verified, passed
+2023-07-07 00:42:36,486 __main__ INFO -- Removing test_2 from grp --
+2023-07-07 00:42:36,979 TADA INFO assertion 3, test_2 is removed fom grp on sampler: expect {'node-1/grp', 'node-1/test_1'}, got {'node-1/grp', 'node-1/test_1'}, passed
+2023-07-07 00:42:41,112 TADA INFO assertion 4, test_2 is removed from grp on agg-1: expect {'node-1/grp', 'node-1/test_1'}, got {'node-1/grp', 'node-1/test_1'}, passed
+2023-07-07 00:42:45,242 TADA INFO assertion 5, test_2 is removed from grp on agg-2: expect {'node-1/grp', 'node-1/test_1'}, got {'node-1/grp', 'node-1/test_1'}, passed
+2023-07-07 00:42:49,245 __main__ INFO -- Adding test_2 back into grp --
+2023-07-07 00:42:49,740 TADA INFO assertion 6, test_2 is added back to grp on sampler: expect {'node-1/grp', 'node-1/test_2', 'node-1/test_1'}, got {'node-1/grp', 'node-1/test_2', 'node-1/test_1'}, passed
+2023-07-07 00:42:53,873 TADA INFO assertion 7, test_2 is added back to grp on agg-1: expect {'node-1/grp', 'node-1/test_2', 'node-1/test_1'}, got {'node-1/grp', 'node-1/test_2', 'node-1/test_1'}, passed
+2023-07-07 00:42:55,993 TADA INFO assertion 8, test_2 is added back to grp on agg-2: expect {'node-1/grp', 'node-1/test_2', 'node-1/test_1'}, got {'node-1/grp', 'node-1/test_2', 'node-1/test_1'}, passed
+2023-07-07 00:42:57,996 TADA INFO test setgroup_test ended

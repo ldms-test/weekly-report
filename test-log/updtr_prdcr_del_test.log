@@ -1,17 +1,17 @@
-2023-07-05 01:13:46,519 __main__ INFO -- Get or create the cluster --
-2023-07-05 01:13:46,520 TADA INFO starting test `updtr_add test`
-2023-07-05 01:13:46,520 TADA INFO   test-id: 01f644a7a0f02b23e2d1454511e48f160355e26bf94b0167f4a897272611e16b
-2023-07-05 01:13:46,520 TADA INFO   test-suite: LDMSD
-2023-07-05 01:13:46,520 TADA INFO   test-name: updtr_add test
-2023-07-05 01:13:46,520 TADA INFO   test-user: narate
-2023-07-05 01:13:46,520 TADA INFO   commit-id: 636a1c6eed94acbb98f830d7507cbfe1ed9a92a0
-2023-07-05 01:13:54,343 __main__ INFO -- Start daemons --
+2023-07-08 01:00:31,340 __main__ INFO -- Get or create the cluster --
+2023-07-08 01:00:31,341 TADA INFO starting test `updtr_add test`
+2023-07-08 01:00:31,341 TADA INFO   test-id: d37f0a44adf2d2666f0491efd6b94b046d679ca0cc394a8d8bf7f03558c4e08c
+2023-07-08 01:00:31,341 TADA INFO   test-suite: LDMSD
+2023-07-08 01:00:31,341 TADA INFO   test-name: updtr_add test
+2023-07-08 01:00:31,341 TADA INFO   test-user: narate
+2023-07-08 01:00:31,341 TADA INFO   commit-id: 636a1c6eed94acbb98f830d7507cbfe1ed9a92a0
+2023-07-08 01:00:39,278 __main__ INFO -- Start daemons --
 Traceback (most recent call last):
   File "/usr/lib/python3.6/site-packages/docker/api/client.py", line 261, in _raise_for_status
     response.raise_for_status()
   File "/usr/lib/python3.6/site-packages/requests/models.py", line 941, in raise_for_status
     raise HTTPError(http_error_msg, response=self)
-requests.exceptions.HTTPError: 409 Client Error: Conflict for url: http+docker://localhost/v1.35/containers/975b03433a8d0d5ae51a6119da55278a25cc1df93e5830f57c5e6b8618e09f9c/exec
+requests.exceptions.HTTPError: 409 Client Error: Conflict for url: http+docker://localhost/v1.35/containers/533270651d6292da4bb6490f7e7821824ba88132533f9674f042b30150295e66/exec
 
 During handling of the above exception, another exception occurred:
 
@@ -44,9 +44,9 @@ Traceback (most recent call last):
     raise create_api_error_from_http_exception(e)
   File "/usr/lib/python3.6/site-packages/docker/errors.py", line 31, in create_api_error_from_http_exception
     raise cls(e, response=response, explanation=explanation)
-docker.errors.APIError: 409 Client Error: Conflict ("Container 975b03433a8d0d5ae51a6119da55278a25cc1df93e5830f57c5e6b8618e09f9c is not running")
-2023-07-05 01:13:57,260 TADA INFO assertion 1, Send updtr_prdcr_del with an invalid regex: skipped
-2023-07-05 01:13:57,260 TADA INFO assertion 3, Send updtr_prdcr_del to a non-existing updater: skipped
-2023-07-05 01:13:57,260 TADA INFO assertion 4, Send updtr_prdcr_del successfully: skipped
-2023-07-05 01:13:57,260 TADA INFO assertion 2, Send updtr_prdcr_del to a running updater: skipped
-2023-07-05 01:13:57,260 TADA INFO test updtr_add test ended
+docker.errors.APIError: 409 Client Error: Conflict ("Container 533270651d6292da4bb6490f7e7821824ba88132533f9674f042b30150295e66 is not running")
+2023-07-08 01:00:42,025 TADA INFO assertion 1, Send updtr_prdcr_del with an invalid regex: skipped
+2023-07-08 01:00:42,025 TADA INFO assertion 3, Send updtr_prdcr_del to a non-existing updater: skipped
+2023-07-08 01:00:42,025 TADA INFO assertion 4, Send updtr_prdcr_del successfully: skipped
+2023-07-08 01:00:42,026 TADA INFO assertion 2, Send updtr_prdcr_del to a running updater: skipped
+2023-07-08 01:00:42,026 TADA INFO test updtr_add test ended

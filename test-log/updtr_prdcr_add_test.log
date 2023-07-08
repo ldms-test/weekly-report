@@ -1,24 +1,17 @@
-2023-07-05 01:13:23,435 __main__ INFO -- Get or create the cluster --
-2023-07-05 01:13:23,435 TADA INFO starting test `updtr_add test`
-2023-07-05 01:13:23,435 TADA INFO   test-id: d8e982243a0df88fce44dab171945542abee56a70040ca5ff31033a18c4321f3
-2023-07-05 01:13:23,435 TADA INFO   test-suite: LDMSD
-2023-07-05 01:13:23,435 TADA INFO   test-name: updtr_add test
-2023-07-05 01:13:23,435 TADA INFO   test-user: narate
-2023-07-05 01:13:23,435 TADA INFO   commit-id: 636a1c6eed94acbb98f830d7507cbfe1ed9a92a0
-2023-07-05 01:13:31,971 __main__ INFO -- Start daemons --
-Traceback (most recent call last):
-  File "/home/narate/cron/ldms-test/LDMS_Test.py", line 59, in __get__
-    return cache[self.name]
-KeyError: 'ldmsd_version'
-
-During handling of the above exception, another exception occurred:
-
+2023-07-08 01:00:06,146 __main__ INFO -- Get or create the cluster --
+2023-07-08 01:00:06,146 TADA INFO starting test `updtr_add test`
+2023-07-08 01:00:06,146 TADA INFO   test-id: 5d79a49408327d98fb01a64ac917eb3de0c98fb94d38b20a1aeacdefe7c629c2
+2023-07-08 01:00:06,146 TADA INFO   test-suite: LDMSD
+2023-07-08 01:00:06,146 TADA INFO   test-name: updtr_add test
+2023-07-08 01:00:06,146 TADA INFO   test-user: narate
+2023-07-08 01:00:06,146 TADA INFO   commit-id: 636a1c6eed94acbb98f830d7507cbfe1ed9a92a0
+2023-07-08 01:00:14,258 __main__ INFO -- Start daemons --
 Traceback (most recent call last):
   File "/usr/lib/python3.6/site-packages/docker/api/client.py", line 261, in _raise_for_status
     response.raise_for_status()
   File "/usr/lib/python3.6/site-packages/requests/models.py", line 941, in raise_for_status
     raise HTTPError(http_error_msg, response=self)
-requests.exceptions.HTTPError: 409 Client Error: Conflict for url: http+docker://localhost/v1.35/containers/1a72f51b66b1cd6589e21abfc1d1005331f5dcf76b42048c39a5e230ad0b2436/exec
+requests.exceptions.HTTPError: 500 Server Error: Internal Server Error for url: http+docker://localhost/v1.35/exec/75f42f0854ceb11a2101ca1860340ca798ba844f1a130b2885d6180d714a4fb8/start
 
 During handling of the above exception, another exception occurred:
 
@@ -29,34 +22,34 @@ Traceback (most recent call last):
     cont.start_daemons()
   File "/home/narate/cron/ldms-test/LDMS_Test.py", line 1260, in start_daemons
     fn(**daemon)
-  File "/home/narate/cron/ldms-test/LDMS_Test.py", line 985, in start_ldmsd
-    cfg = self.get_ldmsd_config(spec)
-  File "/home/narate/cron/ldms-test/LDMS_Test.py", line 1110, in get_ldmsd_config
-    return get_ldmsd_config(spec, ver = self.ldmsd_version)
-  File "/home/narate/cron/ldms-test/LDMS_Test.py", line 61, in __get__
-    cache[self.name] = val = self.func(obj)
-  File "/home/narate/cron/ldms-test/LDMS_Test.py", line 1298, in ldmsd_version
-    rc, out = self.exec_run("ldmsd -V")
+  File "/home/narate/cron/ldms-test/LDMS_Test.py", line 1003, in start_ldmsd
+    cond_timedwait(_check_listen, 5)
+  File "/home/narate/cron/ldms-test/LDMS_Test.py", line 2604, in cond_timedwait
+    if cond():
+  File "/home/narate/cron/ldms-test/LDMS_Test.py", line 1001, in _check_listen
+    rc, out = self.exec_run(grp_cmd)
   File "/home/narate/cron/ldms-test/runtime/docker.py", line 144, in exec_run
     return self._exec_run(cmd, environment=env, user=user)
   File "/home/narate/cron/ldms-test/runtime/docker.py", line 148, in _exec_run
     (rc, out) = self.obj.exec_run(*args, **kwargs)
-  File "/usr/lib/python3.6/site-packages/docker/models/containers.py", line 196, in exec_run
-    workdir=workdir,
+  File "/usr/lib/python3.6/site-packages/docker/models/containers.py", line 200, in exec_run
+    demux=demux
   File "/usr/lib/python3.6/site-packages/docker/utils/decorators.py", line 19, in wrapped
     return f(self, resource_id, *args, **kwargs)
-  File "/usr/lib/python3.6/site-packages/docker/api/exec_api.py", line 80, in exec_create
-    return self._result(res, True)
-  File "/usr/lib/python3.6/site-packages/docker/api/client.py", line 267, in _result
+  File "/usr/lib/python3.6/site-packages/docker/api/exec_api.py", line 169, in exec_start
+    return self._read_from_socket(res, stream, tty=tty, demux=demux)
+  File "/usr/lib/python3.6/site-packages/docker/api/client.py", line 400, in _read_from_socket
+    socket = self._get_raw_response_socket(response)
+  File "/usr/lib/python3.6/site-packages/docker/api/client.py", line 311, in _get_raw_response_socket
     self._raise_for_status(response)
   File "/usr/lib/python3.6/site-packages/docker/api/client.py", line 263, in _raise_for_status
     raise create_api_error_from_http_exception(e)
   File "/usr/lib/python3.6/site-packages/docker/errors.py", line 31, in create_api_error_from_http_exception
     raise cls(e, response=response, explanation=explanation)
-docker.errors.APIError: 409 Client Error: Conflict ("Container 1a72f51b66b1cd6589e21abfc1d1005331f5dcf76b42048c39a5e230ad0b2436 is not running")
-2023-07-05 01:13:32,870 TADA INFO assertion 1, Send updtr_prdcr_add with an invalid regex: skipped
-2023-07-05 01:13:32,871 TADA INFO assertion 2, Send updtr_prdcr_add with a regex matching no prdcrs: skipped
-2023-07-05 01:13:32,871 TADA INFO assertion 3, Send updtr_prdcdr_add with a regex matching some prdcrs: skipped
-2023-07-05 01:13:32,871 TADA INFO assertion 4, Send updtr_prdcdr_add to a running updtr: skipped
-2023-07-05 01:13:32,871 TADA INFO assertion 5, Send updtr_prdcr_add to a not-existing updtr: skipped
-2023-07-05 01:13:32,871 TADA INFO test updtr_add test ended
+docker.errors.APIError: 500 Server Error: Internal Server Error ("Container 9e0449615df3a20c278369738b4df7a73735a42cd36bfa5f3ba94fc00b5164da is not running: Removal In Progress")
+2023-07-08 01:00:17,105 TADA INFO assertion 1, Send updtr_prdcr_add with an invalid regex: skipped
+2023-07-08 01:00:17,105 TADA INFO assertion 2, Send updtr_prdcr_add with a regex matching no prdcrs: skipped
+2023-07-08 01:00:17,105 TADA INFO assertion 3, Send updtr_prdcdr_add with a regex matching some prdcrs: skipped
+2023-07-08 01:00:17,105 TADA INFO assertion 4, Send updtr_prdcdr_add to a running updtr: skipped
+2023-07-08 01:00:17,106 TADA INFO assertion 5, Send updtr_prdcr_add to a not-existing updtr: skipped
+2023-07-08 01:00:17,106 TADA INFO test updtr_add test ended

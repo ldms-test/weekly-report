@@ -1,55 +1,15 @@
-2023-07-05 01:00:44,620 TADA INFO starting test `ldmsd_auth_test`
-2023-07-05 01:00:44,620 TADA INFO   test-id: 35ce25e63f9e0f3c091d6284f5bbbcad4315fa5b5d4c2f874e441361611aec98
-2023-07-05 01:00:44,620 TADA INFO   test-suite: LDMSD
-2023-07-05 01:00:44,620 TADA INFO   test-name: ldmsd_auth_test
-2023-07-05 01:00:44,620 TADA INFO   test-user: narate
-2023-07-05 01:00:44,620 TADA INFO   commit-id: 636a1c6eed94acbb98f830d7507cbfe1ed9a92a0
-2023-07-05 01:00:44,621 __main__ INFO -- Get or create the cluster --
-2023-07-05 01:01:02,425 __main__ INFO -- Start daemons --
-Traceback (most recent call last):
-  File "/usr/lib/python3.6/site-packages/docker/api/client.py", line 261, in _raise_for_status
-    response.raise_for_status()
-  File "/usr/lib/python3.6/site-packages/requests/models.py", line 941, in raise_for_status
-    raise HTTPError(http_error_msg, response=self)
-requests.exceptions.HTTPError: 500 Server Error: Internal Server Error for url: http+docker://localhost/v1.35/exec/0f65b777410c7a1e69abaa83b7c73f9ff12f8b1dd1ec456b4d0b2edd74a2c4f4/start
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "ldmsd_auth_test", line 364, in <module>
-    cluster.start_daemons()
-  File "/home/narate/cron/ldms-test/LDMS_Test.py", line 1998, in start_daemons
-    cont.start_daemons()
-  File "/home/narate/cron/ldms-test/LDMS_Test.py", line 1260, in start_daemons
-    fn(**daemon)
-  File "/home/narate/cron/ldms-test/LDMS_Test.py", line 1003, in start_ldmsd
-    cond_timedwait(_check_listen, 5)
-  File "/home/narate/cron/ldms-test/LDMS_Test.py", line 2604, in cond_timedwait
-    if cond():
-  File "/home/narate/cron/ldms-test/LDMS_Test.py", line 1001, in _check_listen
-    rc, out = self.exec_run(grp_cmd)
-  File "/home/narate/cron/ldms-test/runtime/docker.py", line 144, in exec_run
-    return self._exec_run(cmd, environment=env, user=user)
-  File "/home/narate/cron/ldms-test/runtime/docker.py", line 148, in _exec_run
-    (rc, out) = self.obj.exec_run(*args, **kwargs)
-  File "/usr/lib/python3.6/site-packages/docker/models/containers.py", line 200, in exec_run
-    demux=demux
-  File "/usr/lib/python3.6/site-packages/docker/utils/decorators.py", line 19, in wrapped
-    return f(self, resource_id, *args, **kwargs)
-  File "/usr/lib/python3.6/site-packages/docker/api/exec_api.py", line 169, in exec_start
-    return self._read_from_socket(res, stream, tty=tty, demux=demux)
-  File "/usr/lib/python3.6/site-packages/docker/api/client.py", line 400, in _read_from_socket
-    socket = self._get_raw_response_socket(response)
-  File "/usr/lib/python3.6/site-packages/docker/api/client.py", line 311, in _get_raw_response_socket
-    self._raise_for_status(response)
-  File "/usr/lib/python3.6/site-packages/docker/api/client.py", line 263, in _raise_for_status
-    raise create_api_error_from_http_exception(e)
-  File "/usr/lib/python3.6/site-packages/docker/errors.py", line 31, in create_api_error_from_http_exception
-    raise cls(e, response=response, explanation=explanation)
-docker.errors.APIError: 500 Server Error: Internal Server Error ("Container 86f0553a4713528d4e2b9621e60c69cdcc677c987a00796007d2b2b2cf67cc83 is not running: Removal In Progress")
-2023-07-05 01:01:17,730 TADA INFO assertion 1, root@agg-2(dom3) ldms_ls to agg-2:10000: skipped
-2023-07-05 01:01:17,730 TADA INFO assertion 2, user@agg-2(dom3) ldms_ls to agg-2:10000: skipped
-2023-07-05 01:01:17,730 TADA INFO assertion 3, root@headnode(dom4) ldms_ls to agg-2:10001: skipped
-2023-07-05 01:01:17,731 TADA INFO assertion 4, user@headnode(dom4) ldms_ls to agg-2:10001: skipped
-2023-07-05 01:01:17,731 TADA INFO assertion 5, root@headnode(dom4) ldms_ls to agg-11:10000: skipped
-2023-07-05 01:01:17,731 TADA INFO test ldmsd_auth_test ended
+2023-07-07 00:33:18,977 TADA INFO starting test `ldmsd_auth_test`
+2023-07-07 00:33:18,977 TADA INFO   test-id: fed4ef34fbad2eb8be4bef241009a3d807d635a6d2931b49a564865b22d5fe20
+2023-07-07 00:33:18,977 TADA INFO   test-suite: LDMSD
+2023-07-07 00:33:18,977 TADA INFO   test-name: ldmsd_auth_test
+2023-07-07 00:33:18,977 TADA INFO   test-user: narate
+2023-07-07 00:33:18,977 TADA INFO   commit-id: 636a1c6eed94acbb98f830d7507cbfe1ed9a92a0
+2023-07-07 00:33:18,978 __main__ INFO -- Get or create the cluster --
+2023-07-07 00:33:37,182 __main__ INFO -- Start daemons --
+2023-07-07 00:34:23,632 __main__ INFO ... wait a bit to make sure ldmsd's are up
+2023-07-07 00:34:28,766 TADA INFO assertion 1, root@agg-2(dom3) ldms_ls to agg-2:10000: result({'Connection failed/rejected.'}) != expect({'node-3/meminfo', 'node-1/meminfo', 'node-1/vmstat', 'node-4/vmstat', 'node-4/meminfo', 'node-2/vmstat', 'node-3/vmstat', 'node-2/meminfo'}), failed
+2023-07-07 00:34:28,877 TADA INFO assertion 2, user@agg-2(dom3) ldms_ls to agg-2:10000: result({'Connection failed/rejected.'}) != expect({'node-2/meminfo', 'node-4/meminfo', 'node-3/meminfo', 'node-1/meminfo'}), failed
+2023-07-07 00:34:29,006 TADA INFO assertion 3, root@headnode(dom4) ldms_ls to agg-2:10001: result({'Connection failed/rejected.'}) != expect({'node-3/meminfo', 'node-1/meminfo', 'node-1/vmstat', 'node-4/vmstat', 'node-4/meminfo', 'node-2/vmstat', 'node-3/vmstat', 'node-2/meminfo'}), failed
+2023-07-07 00:34:29,113 TADA INFO assertion 4, user@headnode(dom4) ldms_ls to agg-2:10001: result({'Connection failed/rejected.'}) != expect({'node-2/meminfo', 'node-4/meminfo', 'node-3/meminfo', 'node-1/meminfo'}), failed
+2023-07-07 00:34:29,229 TADA INFO assertion 5, root@headnode(dom4) ldms_ls to agg-11:10000: connection rejected, passed
+2023-07-07 00:34:29,229 TADA INFO test ldmsd_auth_test ended

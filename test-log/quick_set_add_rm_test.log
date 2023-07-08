@@ -1,63 +1,33 @@
-2023-07-05 01:06:16,390 TADA INFO starting test `quick_set_add_rm_test`
-2023-07-05 01:06:16,390 TADA INFO   test-id: 716ed066e13a3f1c07f8c03264c3a7c47adad418baa21c20fe9f7aa5ab363397
-2023-07-05 01:06:16,390 TADA INFO   test-suite: LDMSD
-2023-07-05 01:06:16,390 TADA INFO   test-name: quick_set_add_rm_test
-2023-07-05 01:06:16,390 TADA INFO   test-user: narate
-2023-07-05 01:06:16,390 TADA INFO   commit-id: 636a1c6eed94acbb98f830d7507cbfe1ed9a92a0
-2023-07-05 01:06:16,391 __main__ INFO -- Get or create the cluster --
-2023-07-05 01:06:24,132 __main__ INFO -- Start samp.py --
-2023-07-05 01:06:29,145 TADA INFO assertion 1, start samp.py: prompt checked, passed
-2023-07-05 01:06:29,146 __main__ INFO -- Start daemons --
+2023-07-07 00:49:21,828 TADA INFO starting test `quick_set_add_rm_test`
+2023-07-07 00:49:21,828 TADA INFO   test-id: eae1b0e2a52adf9727365bcd292fc0996f74589a197ea7cadd17861b6eec630b
+2023-07-07 00:49:21,828 TADA INFO   test-suite: LDMSD
+2023-07-07 00:49:21,828 TADA INFO   test-name: quick_set_add_rm_test
+2023-07-07 00:49:21,828 TADA INFO   test-user: narate
+2023-07-07 00:49:21,828 TADA INFO   commit-id: 636a1c6eed94acbb98f830d7507cbfe1ed9a92a0
+2023-07-07 00:49:21,829 __main__ INFO -- Get or create the cluster --
+2023-07-07 00:49:29,444 __main__ INFO -- Start samp.py --
+2023-07-07 00:49:34,557 TADA INFO assertion 1, start samp.py: prompt checked, passed
+2023-07-07 00:49:34,557 __main__ INFO -- Start daemons --
+2023-07-07 00:49:44,291 __main__ INFO ... wait a bit to make sure ldmsd's are up
+2023-07-08 00:30:03,565 TADA INFO assertion 2, verify data: Expecting '{'node-1/set0'}' but got 'set()' from agg-1, failed
 Traceback (most recent call last):
-  File "/usr/lib/python3.6/site-packages/docker/api/client.py", line 261, in _raise_for_status
-    response.raise_for_status()
-  File "/usr/lib/python3.6/site-packages/requests/models.py", line 941, in raise_for_status
-    raise HTTPError(http_error_msg, response=self)
-requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http+docker://localhost/v1.35/containers/b4b11e2d7d245ef958e5e951dd7489f7df14f50e8221cb9243f28d89fa370202/exec
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "quick_set_add_rm_test", line 240, in <module>
-    cluster.start_daemons()
-  File "/home/narate/cron/ldms-test/LDMS_Test.py", line 1998, in start_daemons
-    cont.start_daemons()
-  File "/home/narate/cron/ldms-test/LDMS_Test.py", line 1260, in start_daemons
-    fn(**daemon)
-  File "/home/narate/cron/ldms-test/LDMS_Test.py", line 1245, in start_sshd
-    rc, out = self.pgrep("-c -x sshd")
-  File "/home/narate/cron/ldms-test/LDMS_Test.py", line 930, in pgrep
-    return self.exec_run("pgrep " + " ".join(args))
-  File "/home/narate/cron/ldms-test/runtime/docker.py", line 144, in exec_run
-    return self._exec_run(cmd, environment=env, user=user)
-  File "/home/narate/cron/ldms-test/runtime/docker.py", line 148, in _exec_run
-    (rc, out) = self.obj.exec_run(*args, **kwargs)
-  File "/usr/lib/python3.6/site-packages/docker/models/containers.py", line 196, in exec_run
-    workdir=workdir,
-  File "/usr/lib/python3.6/site-packages/docker/utils/decorators.py", line 19, in wrapped
-    return f(self, resource_id, *args, **kwargs)
-  File "/usr/lib/python3.6/site-packages/docker/api/exec_api.py", line 80, in exec_create
-    return self._result(res, True)
-  File "/usr/lib/python3.6/site-packages/docker/api/client.py", line 267, in _result
-    self._raise_for_status(response)
-  File "/usr/lib/python3.6/site-packages/docker/api/client.py", line 263, in _raise_for_status
-    raise create_api_error_from_http_exception(e)
-  File "/usr/lib/python3.6/site-packages/docker/errors.py", line 31, in create_api_error_from_http_exception
-    raise cls(e, response=response, explanation=explanation)
-docker.errors.NotFound: 404 Client Error: Not Found ("No such container: b4b11e2d7d245ef958e5e951dd7489f7df14f50e8221cb9243f28d89fa370202")
-2023-07-05 01:06:29,160 TADA INFO assertion 2, verify data: skipped
-2023-07-05 01:06:29,161 TADA INFO assertion 3, samp.py adds set1 / verify data: skipped
-2023-07-05 01:06:29,161 TADA INFO assertion 4, samp.py removes set1 / verify data: skipped
-2023-07-05 01:06:29,161 TADA INFO assertion 5, samp.py quickly adds and removes set2 / verify data: skipped
-2023-07-05 01:06:29,161 TADA INFO assertion 6, agg-1 log stays empty: skipped
-2023-07-05 01:06:29,161 TADA INFO test quick_set_add_rm_test ended
+  File "quick_set_add_rm_test", line 256, in <module>
+    verify_data(3, ["node-1/set0", "node-1/set1"])
+  File "quick_set_add_rm_test", line 186, in verify_data
+    s = set(ls.keys())
+AttributeError: 'NoneType' object has no attribute 'keys'
+2023-07-08 00:30:06,580 TADA INFO assertion 3, samp.py adds set1 / verify data: skipped
+2023-07-08 00:30:06,580 TADA INFO assertion 4, samp.py removes set1 / verify data: skipped
+2023-07-08 00:30:06,580 TADA INFO assertion 5, samp.py quickly adds and removes set2 / verify data: skipped
+2023-07-08 00:30:06,581 TADA INFO assertion 6, agg-1 log stays empty: skipped
+2023-07-08 00:30:06,581 TADA INFO test quick_set_add_rm_test ended
 Error in atexit._run_exitfuncs:
 Traceback (most recent call last):
   File "/usr/lib/python3.6/site-packages/docker/api/client.py", line 261, in _raise_for_status
     response.raise_for_status()
   File "/usr/lib/python3.6/site-packages/requests/models.py", line 941, in raise_for_status
     raise HTTPError(http_error_msg, response=self)
-requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http+docker://localhost/v1.35/networks/4gx5x84cemni7mqpv2tkezkdr
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http+docker://localhost/v1.35/networks/yo0uewif9c6upzjs3ao099ajb
 
 During handling of the above exception, another exception occurred:
 
@@ -66,4 +36,4 @@ Traceback (most recent call last):
     raise create_api_error_from_http_exception(e)
   File "/usr/lib/python3.6/site-packages/docker/errors.py", line 31, in create_api_error_from_http_exception
     raise cls(e, response=response, explanation=explanation)
-docker.errors.NotFound: 404 Client Error: Not Found ("network 4gx5x84cemni7mqpv2tkezkdr not found")
+docker.errors.NotFound: 404 Client Error: Not Found ("network yo0uewif9c6upzjs3ao099ajb not found")

@@ -1,71 +1,31 @@
-2023-07-05 01:01:58,446 TADA INFO starting test `ldmsd_stream_test`
-2023-07-05 01:01:58,446 TADA INFO   test-id: 87744991f413c2d05c313f65244a80f1ac7a212f1643e25356d8e6d817741fb6
-2023-07-05 01:01:58,447 TADA INFO   test-suite: LDMSD
-2023-07-05 01:01:58,447 TADA INFO   test-name: ldmsd_stream_test
-2023-07-05 01:01:58,447 TADA INFO   test-user: narate
-2023-07-05 01:01:58,447 TADA INFO   commit-id: 636a1c6eed94acbb98f830d7507cbfe1ed9a92a0
-2023-07-05 01:02:09,740 __main__ INFO waiting for libraries to be available across all containers...
+2023-07-07 00:35:57,738 TADA INFO starting test `ldmsd_stream_test`
+2023-07-07 00:35:57,739 TADA INFO   test-id: e00b912d7c193342c5b9b5f385b405955842e4734a8b8eae0cad99630cbeef1f
+2023-07-07 00:35:57,739 TADA INFO   test-suite: LDMSD
+2023-07-07 00:35:57,739 TADA INFO   test-name: ldmsd_stream_test
+2023-07-07 00:35:57,739 TADA INFO   test-user: narate
+2023-07-07 00:35:57,739 TADA INFO   commit-id: 636a1c6eed94acbb98f830d7507cbfe1ed9a92a0
+2023-07-07 00:36:09,393 __main__ INFO waiting for libraries to be available across all containers...
+2023-07-07 00:36:10,279 __main__ INFO _lib_avail: True
+2023-07-07 00:37:25,402 __main__ INFO test ldmsd_stream_subscribe with large json streams
+2023-07-07 00:37:31,518 __main__ INFO --- Sending stream to ldmsd_stream_subscriber
 Traceback (most recent call last):
-  File "/usr/lib/python3.6/site-packages/docker/api/client.py", line 261, in _raise_for_status
-    response.raise_for_status()
-  File "/usr/lib/python3.6/site-packages/requests/models.py", line 941, in raise_for_status
-    raise HTTPError(http_error_msg, response=self)
-requests.exceptions.HTTPError: 409 Client Error: Conflict for url: http+docker://localhost/v1.35/containers/10c19b20eeda874424cbb54ee14d397e4e06daa483bc491f056aedcdd64b3910/exec
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "ldmsd_stream_test", line 344, in <module>
-    cond_timedwait(_lib_avail, 60)
-  File "/home/narate/cron/ldms-test/LDMS_Test.py", line 2604, in cond_timedwait
-    if cond():
-  File "ldmsd_stream_test", line 340, in _lib_avail
-    "test_ovis_ev", "test_ovis_json"]
-  File "ldmsd_stream_test", line 331, in files_avail
-    rc, out = _cont.exec_run(cmd)
-  File "/home/narate/cron/ldms-test/runtime/docker.py", line 144, in exec_run
-    return self._exec_run(cmd, environment=env, user=user)
-  File "/home/narate/cron/ldms-test/runtime/docker.py", line 148, in _exec_run
-    (rc, out) = self.obj.exec_run(*args, **kwargs)
-  File "/usr/lib/python3.6/site-packages/docker/models/containers.py", line 196, in exec_run
-    workdir=workdir,
-  File "/usr/lib/python3.6/site-packages/docker/utils/decorators.py", line 19, in wrapped
-    return f(self, resource_id, *args, **kwargs)
-  File "/usr/lib/python3.6/site-packages/docker/api/exec_api.py", line 80, in exec_create
-    return self._result(res, True)
-  File "/usr/lib/python3.6/site-packages/docker/api/client.py", line 267, in _result
-    self._raise_for_status(response)
-  File "/usr/lib/python3.6/site-packages/docker/api/client.py", line 263, in _raise_for_status
-    raise create_api_error_from_http_exception(e)
-  File "/usr/lib/python3.6/site-packages/docker/errors.py", line 31, in create_api_error_from_http_exception
-    raise cls(e, response=response, explanation=explanation)
-docker.errors.APIError: 409 Client Error: Conflict ("Container 10c19b20eeda874424cbb54ee14d397e4e06daa483bc491f056aedcdd64b3910 is not running")
-2023-07-05 01:02:09,839 TADA INFO assertion 1, ldmsd_stream_subscribe receives large json streams: skipped
-2023-07-05 01:02:09,839 TADA INFO assertion 2, samplerd receives large json streams: skipped
-2023-07-05 01:02:09,839 TADA INFO assertion 3, agg receives large json streams: skipped
-2023-07-05 01:02:09,839 TADA INFO assertion 4, ldmsd_stream_subscribe receives small json streams: skipped
-2023-07-05 01:02:09,840 TADA INFO assertion 5, samplerd receives small json streams: skipped
-2023-07-05 01:02:09,840 TADA INFO assertion 6, agg receives small json streams: skipped
-2023-07-05 01:02:09,840 TADA INFO assertion 7, ldmsd_stream_subscribe receives large string streams: skipped
-2023-07-05 01:02:09,840 TADA INFO assertion 8, samplerd receives large string streams: skipped
-2023-07-05 01:02:09,840 TADA INFO assertion 9, agg receives large string streams: skipped
-2023-07-05 01:02:09,841 TADA INFO assertion 10, ldmsd_stream_subscribe receives small string streams: skipped
-2023-07-05 01:02:09,841 TADA INFO assertion 11, samplerd receives small string streams: skipped
-2023-07-05 01:02:09,841 TADA INFO assertion 12, agg receives small string streams: skipped
-2023-07-05 01:02:09,841 TADA INFO test ldmsd_stream_test ended
-Error in atexit._run_exitfuncs:
-Traceback (most recent call last):
-  File "/usr/lib/python3.6/site-packages/docker/api/client.py", line 261, in _raise_for_status
-    response.raise_for_status()
-  File "/usr/lib/python3.6/site-packages/requests/models.py", line 941, in raise_for_status
-    raise HTTPError(http_error_msg, response=self)
-requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http+docker://localhost/v1.35/networks/o446m99yfs420rf331z4giddq
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/usr/lib/python3.6/site-packages/docker/api/client.py", line 263, in _raise_for_status
-    raise create_api_error_from_http_exception(e)
-  File "/usr/lib/python3.6/site-packages/docker/errors.py", line 31, in create_api_error_from_http_exception
-    raise cls(e, response=response, explanation=explanation)
-docker.errors.NotFound: 404 Client Error: Not Found ("rpc error: code = NotFound desc = network o446m99yfs420rf331z4giddq not found")
+  File "ldmsd_stream_test", line 481, in <module>
+    subscriber_case(sub_cont, pub_cont, sub_cont.hostname, t, sz)
+  File "ldmsd_stream_test", line 372, in subscriber_case
+    start_publisher(pub_cont, hostname, PORTS[stream_type], stream_type, cont_fin)
+  File "ldmsd_stream_test", line 256, in start_publisher
+    raise RuntimeError("Failed to start ldmsd_stream_publish. Error {}".format(rc))
+RuntimeError: Failed to start ldmsd_stream_publish. Error 107
+2023-07-07 00:37:31,683 TADA INFO assertion 1, ldmsd_stream_subscribe receives large json streams: skipped
+2023-07-07 00:37:31,684 TADA INFO assertion 2, samplerd receives large json streams: skipped
+2023-07-07 00:37:31,684 TADA INFO assertion 3, agg receives large json streams: skipped
+2023-07-07 00:37:31,684 TADA INFO assertion 4, ldmsd_stream_subscribe receives small json streams: skipped
+2023-07-07 00:37:31,685 TADA INFO assertion 5, samplerd receives small json streams: skipped
+2023-07-07 00:37:31,685 TADA INFO assertion 6, agg receives small json streams: skipped
+2023-07-07 00:37:31,685 TADA INFO assertion 7, ldmsd_stream_subscribe receives large string streams: skipped
+2023-07-07 00:37:31,685 TADA INFO assertion 8, samplerd receives large string streams: skipped
+2023-07-07 00:37:31,685 TADA INFO assertion 9, agg receives large string streams: skipped
+2023-07-07 00:37:31,686 TADA INFO assertion 10, ldmsd_stream_subscribe receives small string streams: skipped
+2023-07-07 00:37:31,686 TADA INFO assertion 11, samplerd receives small string streams: skipped
+2023-07-07 00:37:31,686 TADA INFO assertion 12, agg receives small string streams: skipped
+2023-07-07 00:37:31,686 TADA INFO test ldmsd_stream_test ended

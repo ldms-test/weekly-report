@@ -1,85 +1,58 @@
-2023-07-05 01:07:33,669 TADA INFO starting test `ldms_record_test`
-2023-07-05 01:07:33,670 TADA INFO   test-id: 20755223764d0075d75c9cb92ea359b716c03632592617adbc0e9a84261b7673
-2023-07-05 01:07:33,670 TADA INFO   test-suite: LDMSD
-2023-07-05 01:07:33,670 TADA INFO   test-name: ldms_record_test
-2023-07-05 01:07:33,670 TADA INFO   test-user: narate
-2023-07-05 01:07:33,670 TADA INFO   commit-id: 636a1c6eed94acbb98f830d7507cbfe1ed9a92a0
-2023-07-05 01:07:33,670 __main__ INFO -- Get or create the cluster --
-2023-07-05 01:07:36,640 __main__ INFO -- Start daemons --
-Traceback (most recent call last):
-  File "/usr/lib/python3.6/site-packages/docker/api/client.py", line 261, in _raise_for_status
-    response.raise_for_status()
-  File "/usr/lib/python3.6/site-packages/requests/models.py", line 941, in raise_for_status
-    raise HTTPError(http_error_msg, response=self)
-requests.exceptions.HTTPError: 409 Client Error: Conflict for url: http+docker://localhost/v1.35/containers/fcd99a8de8dc7066cc36ffcdf68e25641b770350fdbc410eb88bdb5c226a76c3/exec
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "ldms_record_test", line 213, in <module>
-    cluster.start_daemons()
-  File "/home/narate/cron/ldms-test/LDMS_Test.py", line 1998, in start_daemons
-    cont.start_daemons()
-  File "/home/narate/cron/ldms-test/LDMS_Test.py", line 1260, in start_daemons
-    fn(**daemon)
-  File "/home/narate/cron/ldms-test/LDMS_Test.py", line 1003, in start_ldmsd
-    cond_timedwait(_check_listen, 5)
-  File "/home/narate/cron/ldms-test/LDMS_Test.py", line 2604, in cond_timedwait
-    if cond():
-  File "/home/narate/cron/ldms-test/LDMS_Test.py", line 1001, in _check_listen
-    rc, out = self.exec_run(grp_cmd)
-  File "/home/narate/cron/ldms-test/runtime/docker.py", line 144, in exec_run
-    return self._exec_run(cmd, environment=env, user=user)
-  File "/home/narate/cron/ldms-test/runtime/docker.py", line 148, in _exec_run
-    (rc, out) = self.obj.exec_run(*args, **kwargs)
-  File "/usr/lib/python3.6/site-packages/docker/models/containers.py", line 196, in exec_run
-    workdir=workdir,
-  File "/usr/lib/python3.6/site-packages/docker/utils/decorators.py", line 19, in wrapped
-    return f(self, resource_id, *args, **kwargs)
-  File "/usr/lib/python3.6/site-packages/docker/api/exec_api.py", line 80, in exec_create
-    return self._result(res, True)
-  File "/usr/lib/python3.6/site-packages/docker/api/client.py", line 267, in _result
-    self._raise_for_status(response)
-  File "/usr/lib/python3.6/site-packages/docker/api/client.py", line 263, in _raise_for_status
-    raise create_api_error_from_http_exception(e)
-  File "/usr/lib/python3.6/site-packages/docker/errors.py", line 31, in create_api_error_from_http_exception
-    raise cls(e, response=response, explanation=explanation)
-docker.errors.APIError: 409 Client Error: Conflict ("Container fcd99a8de8dc7066cc36ffcdf68e25641b770350fdbc410eb88bdb5c226a76c3 is not running")
-2023-07-05 01:07:44,379 TADA INFO assertion 1, check record_sampler on record_agg.py: skipped
-2023-07-05 01:07:44,379 TADA INFO assertion 2, (1st update) check set1 on record_samp.py: skipped
-2023-07-05 01:07:44,379 TADA INFO assertion 3, (1st update) check set3_p on record_samp.py: skipped
-2023-07-05 01:07:44,380 TADA INFO assertion 4, (1st update) check set3_c on record_samp.py: skipped
-2023-07-05 01:07:44,380 TADA INFO assertion 5, (1st update) check set1 on record_agg.py: skipped
-2023-07-05 01:07:44,380 TADA INFO assertion 6, (1st update) check set3_p on record_agg.py: skipped
-2023-07-05 01:07:44,380 TADA INFO assertion 7, (1st update) check set3_c on record_agg.py: skipped
-2023-07-05 01:07:44,380 TADA INFO assertion 8, (2nd update) check set1 on record_samp.py: skipped
-2023-07-05 01:07:44,380 TADA INFO assertion 9, (2nd update) check set3_p on record_samp.py: skipped
-2023-07-05 01:07:44,380 TADA INFO assertion 10, (2nd update) check set3_c on record_samp.py: skipped
-2023-07-05 01:07:44,381 TADA INFO assertion 11, (2nd update) check set1 on record_agg.py: skipped
-2023-07-05 01:07:44,381 TADA INFO assertion 12, (2nd update) check set3_p on record_agg.py: skipped
-2023-07-05 01:07:44,381 TADA INFO assertion 13, (2nd update) check set3_c on record_agg.py: skipped
-2023-07-05 01:07:44,381 TADA INFO assertion 14, (3rd update) check set1 on record_samp.py: skipped
-2023-07-05 01:07:44,381 TADA INFO assertion 15, (3rd update) check set3_p on record_samp.py: skipped
-2023-07-05 01:07:44,381 TADA INFO assertion 16, (3rd update) check set3_c on record_samp.py: skipped
-2023-07-05 01:07:44,382 TADA INFO assertion 17, (3rd update) check set1 on record_agg.py: skipped
-2023-07-05 01:07:44,382 TADA INFO assertion 18, (3rd update) check set3_p on record_agg.py: skipped
-2023-07-05 01:07:44,382 TADA INFO assertion 19, (3rd update) check set3_c on record_agg.py: skipped
-2023-07-05 01:07:44,382 TADA INFO assertion 20, (4th update; record uncahnged) check set1 on record_samp.py: skipped
-2023-07-05 01:07:44,382 TADA INFO assertion 21, (4th update; record uncahnged) check set3_p on record_samp.py: skipped
-2023-07-05 01:07:44,382 TADA INFO assertion 22, (4th update; record uncahnged) check set3_c on record_samp.py: skipped
-2023-07-05 01:07:44,382 TADA INFO assertion 23, (4th update; record uncahnged) check set1 on record_agg.py: skipped
-2023-07-05 01:07:44,383 TADA INFO assertion 24, (4th update; record uncahnged) check set3_p on record_agg.py: skipped
-2023-07-05 01:07:44,383 TADA INFO assertion 25, (4th update; record uncahnged) check set3_c on record_agg.py: skipped
-2023-07-05 01:07:44,383 TADA INFO assertion 26, (5th update; record del) check set1 on record_samp.py: skipped
-2023-07-05 01:07:44,383 TADA INFO assertion 27, (5th update; record del) check set3_p on record_samp.py: skipped
-2023-07-05 01:07:44,383 TADA INFO assertion 28, (5th update; record del) check set3_c on record_samp.py: skipped
-2023-07-05 01:07:44,383 TADA INFO assertion 29, (5th update; record del) check set1 on record_agg.py: skipped
-2023-07-05 01:07:44,383 TADA INFO assertion 30, (5th update; record del) check set3_p on record_agg.py: skipped
-2023-07-05 01:07:44,384 TADA INFO assertion 31, (5th update; record del) check set3_c on record_agg.py: skipped
-2023-07-05 01:07:44,384 TADA INFO assertion 32, (6th update; record unchanged) check set1 on record_samp.py: skipped
-2023-07-05 01:07:44,384 TADA INFO assertion 33, (6th update; record unchanged) check set3_p on record_samp.py: skipped
-2023-07-05 01:07:44,384 TADA INFO assertion 34, (6th update; record unchanged) check set3_c on record_samp.py: skipped
-2023-07-05 01:07:44,384 TADA INFO assertion 35, (6th update; record unchanged) check set1 on record_agg.py: skipped
-2023-07-05 01:07:44,384 TADA INFO assertion 36, (6th update; record unchanged) check set3_p on record_agg.py: skipped
-2023-07-05 01:07:44,384 TADA INFO assertion 37, (6th update; record unchanged) check set3_c on record_agg.py: skipped
-2023-07-05 01:07:44,385 TADA INFO test ldms_record_test ended
+2023-07-08 00:32:41,257 TADA INFO starting test `ldms_record_test`
+2023-07-08 00:32:41,258 TADA INFO   test-id: a1ea257aadfd3ab8d64d30a4d5e23517346019675b373f0b24c5e0e4612af7f8
+2023-07-08 00:32:41,258 TADA INFO   test-suite: LDMSD
+2023-07-08 00:32:41,258 TADA INFO   test-name: ldms_record_test
+2023-07-08 00:32:41,258 TADA INFO   test-user: narate
+2023-07-08 00:32:41,258 TADA INFO   commit-id: 636a1c6eed94acbb98f830d7507cbfe1ed9a92a0
+2023-07-08 00:32:41,259 __main__ INFO -- Get or create the cluster --
+2023-07-08 00:32:44,661 __main__ INFO -- Start daemons --
+2023-07-08 00:32:53,041 __main__ INFO ... wait a bit to make sure ldmsd's are up
+2023-07-08 00:32:55,043 __main__ INFO start record_samp.py and record_agg.py interactive sessions
+2023-07-08 00:33:01,079 TADA INFO assertion 1, check record_sampler on record_agg.py: OK, passed
+2023-07-08 00:33:01,079 TADA INFO assertion 2, (1st update) check set1 on record_samp.py: OK, passed
+2023-07-08 00:33:01,079 TADA INFO assertion 3, (1st update) check set3_p on record_samp.py: OK, passed
+2023-07-08 00:33:01,080 TADA INFO assertion 4, (1st update) check set3_c on record_samp.py: OK, passed
+2023-07-08 00:33:01,080 TADA INFO assertion 5, (1st update) check set1 on record_agg.py: OK, passed
+2023-07-08 00:33:01,080 TADA INFO assertion 6, (1st update) check set3_p on record_agg.py: OK, passed
+2023-07-08 00:33:01,081 TADA INFO assertion 7, (1st update) check set3_c on record_agg.py: OK, passed
+2023-07-08 00:33:01,081 __main__ INFO 2nd sampling on the sampler...
+2023-07-08 00:33:08,291 TADA INFO assertion 8, (2nd update) check set1 on record_samp.py: OK, passed
+2023-07-08 00:33:08,291 TADA INFO assertion 9, (2nd update) check set3_p on record_samp.py: OK, passed
+2023-07-08 00:33:08,291 TADA INFO assertion 10, (2nd update) check set3_c on record_samp.py: OK, passed
+2023-07-08 00:33:08,291 __main__ INFO 2nd update on the aggregator...
+2023-07-08 00:33:15,501 TADA INFO assertion 11, (2nd update) check set1 on record_agg.py: OK, passed
+2023-07-08 00:33:15,502 TADA INFO assertion 12, (2nd update) check set3_p on record_agg.py: OK, passed
+2023-07-08 00:33:15,502 TADA INFO assertion 13, (2nd update) check set3_c on record_agg.py: OK, passed
+2023-07-08 00:33:15,502 __main__ INFO 3rd sampling on the sampler...
+2023-07-08 00:33:22,710 TADA INFO assertion 14, (3rd update) check set1 on record_samp.py: OK, passed
+2023-07-08 00:33:22,711 TADA INFO assertion 15, (3rd update) check set3_p on record_samp.py: OK, passed
+2023-07-08 00:33:22,711 TADA INFO assertion 16, (3rd update) check set3_c on record_samp.py: OK, passed
+2023-07-08 00:33:22,711 __main__ INFO 3rd update on the aggregator...
+2023-07-08 00:33:29,919 TADA INFO assertion 17, (3rd update) check set1 on record_agg.py: OK, passed
+2023-07-08 00:33:29,920 TADA INFO assertion 18, (3rd update) check set3_p on record_agg.py: OK, passed
+2023-07-08 00:33:29,920 TADA INFO assertion 19, (3rd update) check set3_c on record_agg.py: OK, passed
+2023-07-08 00:33:29,920 __main__ INFO 4th sampling on the sampler...
+2023-07-08 00:33:37,128 TADA INFO assertion 20, (4th update; record uncahnged) check set1 on record_samp.py: OK, passed
+2023-07-08 00:33:37,129 TADA INFO assertion 21, (4th update; record uncahnged) check set3_p on record_samp.py: OK, passed
+2023-07-08 00:33:37,129 TADA INFO assertion 22, (4th update; record uncahnged) check set3_c on record_samp.py: OK, passed
+2023-07-08 00:33:37,129 __main__ INFO 4th update on the aggregator...
+2023-07-08 00:33:44,338 TADA INFO assertion 23, (4th update; record uncahnged) check set1 on record_agg.py: OK, passed
+2023-07-08 00:33:44,339 TADA INFO assertion 24, (4th update; record uncahnged) check set3_p on record_agg.py: OK, passed
+2023-07-08 00:33:44,339 TADA INFO assertion 25, (4th update; record uncahnged) check set3_c on record_agg.py: OK, passed
+2023-07-08 00:33:44,339 __main__ INFO 5th sampling on the sampler...
+2023-07-08 00:33:51,549 TADA INFO assertion 26, (5th update; record del) check set1 on record_samp.py: OK, passed
+2023-07-08 00:33:51,549 TADA INFO assertion 27, (5th update; record del) check set3_p on record_samp.py: OK, passed
+2023-07-08 00:33:51,549 TADA INFO assertion 28, (5th update; record del) check set3_c on record_samp.py: OK, passed
+2023-07-08 00:33:51,549 __main__ INFO 5th update on the aggregator...
+2023-07-08 00:33:58,759 TADA INFO assertion 29, (5th update; record del) check set1 on record_agg.py: OK, passed
+2023-07-08 00:33:58,759 TADA INFO assertion 30, (5th update; record del) check set3_p on record_agg.py: OK, passed
+2023-07-08 00:33:58,759 TADA INFO assertion 31, (5th update; record del) check set3_c on record_agg.py: OK, passed
+2023-07-08 00:33:58,759 __main__ INFO 6th sampling on the sampler...
+2023-07-08 00:34:05,969 TADA INFO assertion 32, (6th update; record unchanged) check set1 on record_samp.py: OK, passed
+2023-07-08 00:34:05,969 TADA INFO assertion 33, (6th update; record unchanged) check set3_p on record_samp.py: OK, passed
+2023-07-08 00:34:05,969 TADA INFO assertion 34, (6th update; record unchanged) check set3_c on record_samp.py: OK, passed
+2023-07-08 00:34:05,970 __main__ INFO 6th update on the updator...
+2023-07-08 00:34:13,179 TADA INFO assertion 35, (6th update; record unchanged) check set1 on record_agg.py: OK, passed
+2023-07-08 00:34:13,179 TADA INFO assertion 36, (6th update; record unchanged) check set3_p on record_agg.py: OK, passed
+2023-07-08 00:34:13,179 TADA INFO assertion 37, (6th update; record unchanged) check set3_c on record_agg.py: OK, passed
+2023-07-08 00:34:13,180 TADA INFO test ldms_record_test ended

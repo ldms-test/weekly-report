@@ -1,10 +1,10 @@
-2023-07-05 01:02:24,990 TADA INFO starting test `maestro_cfg_test`
-2023-07-05 01:02:24,990 TADA INFO   test-id: 1c74f2c20516bc9d4bbd4932bdc881b837a903b5870fd82e905b0677761aeaa3
-2023-07-05 01:02:24,990 TADA INFO   test-suite: LDMSD
-2023-07-05 01:02:24,990 TADA INFO   test-name: maestro_cfg_test
-2023-07-05 01:02:24,990 TADA INFO   test-user: narate
-2023-07-05 01:02:24,990 TADA INFO   commit-id: 636a1c6eed94acbb98f830d7507cbfe1ed9a92a0
-2023-07-05 01:02:35,002 __main__ INFO -- Get or create cluster --
+2023-07-07 00:37:45,873 TADA INFO starting test `maestro_cfg_test`
+2023-07-07 00:37:45,874 TADA INFO   test-id: 2f38e7c3d13a297b78e5e728a3c03658875a4f0ab9006a97423b2ed76edc5756
+2023-07-07 00:37:45,874 TADA INFO   test-suite: LDMSD
+2023-07-07 00:37:45,874 TADA INFO   test-name: maestro_cfg_test
+2023-07-07 00:37:45,874 TADA INFO   test-user: narate
+2023-07-07 00:37:45,874 TADA INFO   commit-id: 636a1c6eed94acbb98f830d7507cbfe1ed9a92a0
+2023-07-07 00:37:55,885 __main__ INFO -- Get or create cluster --
 ---Wait for config to write to file---
 Traceback (most recent call last):
   File "/usr/lib/python3.6/site-packages/docker/api/client.py", line 261, in _raise_for_status
@@ -48,7 +48,7 @@ Traceback (most recent call last):
     response.raise_for_status()
   File "/usr/lib/python3.6/site-packages/requests/models.py", line 941, in raise_for_status
     raise HTTPError(http_error_msg, response=self)
-requests.exceptions.HTTPError: 500 Server Error: Internal Server Error for url: http+docker://localhost/v1.35/containers/61ff35c6e8c7bc9e65727be2c48b87c7574282538fd847b64b0458c53254c85b/start
+requests.exceptions.HTTPError: 409 Client Error: Conflict for url: http+docker://localhost/v1.35/containers/create?name=narate-maestro_cfg_test-636a1c6-node-2
 
 During handling of the above exception, another exception occurred:
 
@@ -61,23 +61,25 @@ Traceback (most recent call last):
     cluster = _cls._create(spec)
   File "/home/narate/cron/ldms-test/runtime/docker.py", line 419, in _create
     return cls.__create(spec=sp, **kwargs)
-  File "/home/narate/cron/ldms-test/runtime/docker.py", line 597, in __create
-    cont.start()
-  File "/usr/lib/python3.6/site-packages/docker/models/containers.py", line 400, in start
-    return self.client.api.start(self.id, **kwargs)
-  File "/usr/lib/python3.6/site-packages/docker/utils/decorators.py", line 19, in wrapped
-    return f(self, resource_id, *args, **kwargs)
-  File "/usr/lib/python3.6/site-packages/docker/api/container.py", line 1095, in start
-    self._raise_for_status(res)
+  File "/home/narate/cron/ldms-test/runtime/docker.py", line 591, in __create
+    cont = cl.containers.create(**params)
+  File "/usr/lib/python3.6/site-packages/docker/models/containers.py", line 861, in create
+    resp = self.client.api.create_container(**create_kwargs)
+  File "/usr/lib/python3.6/site-packages/docker/api/container.py", line 430, in create_container
+    return self.create_container_from_config(config, name)
+  File "/usr/lib/python3.6/site-packages/docker/api/container.py", line 441, in create_container_from_config
+    return self._result(res, True)
+  File "/usr/lib/python3.6/site-packages/docker/api/client.py", line 267, in _result
+    self._raise_for_status(response)
   File "/usr/lib/python3.6/site-packages/docker/api/client.py", line 263, in _raise_for_status
     raise create_api_error_from_http_exception(e)
   File "/usr/lib/python3.6/site-packages/docker/errors.py", line 31, in create_api_error_from_http_exception
     raise cls(e, response=response, explanation=explanation)
-docker.errors.APIError: 500 Server Error: Internal Server Error ("Could not attach to network narate-maestro_cfg_test-636a1c6: rpc error: code = NotFound desc = network narate-maestro_cfg_test-636a1c6 not found")
-2023-07-05 01:02:38,920 TADA INFO assertion 1, load maestro etcd cluster: skipped
-2023-07-05 01:02:38,921 TADA INFO assertion 2, config ldmsd cluster with maestro: skipped
-2023-07-05 01:02:38,921 TADA INFO assertion 3, verify sampler daemons: skipped
-2023-07-05 01:02:38,921 TADA INFO assertion 4, verify L1 aggregator daemons: skipped
-2023-07-05 01:02:38,921 TADA INFO assertion 5, verify L2 aggregator daemon: skipped
-2023-07-05 01:02:38,922 TADA INFO assertion 6, verify data storage: skipped
-2023-07-05 01:02:38,922 TADA INFO test maestro_cfg_test ended
+docker.errors.APIError: 409 Client Error: Conflict ("Conflict. The container name "/narate-maestro_cfg_test-636a1c6-node-2" is already in use by container "61ff35c6e8c7bc9e65727be2c48b87c7574282538fd847b64b0458c53254c85b". You have to remove (or rename) that container to be able to reuse that name.")
+2023-07-07 00:37:58,427 TADA INFO assertion 1, load maestro etcd cluster: skipped
+2023-07-07 00:37:58,428 TADA INFO assertion 2, config ldmsd cluster with maestro: skipped
+2023-07-07 00:37:58,428 TADA INFO assertion 3, verify sampler daemons: skipped
+2023-07-07 00:37:58,428 TADA INFO assertion 4, verify L1 aggregator daemons: skipped
+2023-07-07 00:37:58,428 TADA INFO assertion 5, verify L2 aggregator daemon: skipped
+2023-07-07 00:37:58,428 TADA INFO assertion 6, verify data storage: skipped
+2023-07-07 00:37:58,428 TADA INFO test maestro_cfg_test ended

@@ -1,43 +1,13 @@
-2023-07-05 01:04:03,404 TADA INFO starting test `set_array_test`
-2023-07-05 01:04:03,404 TADA INFO   test-id: 21d9b6bfb61b4d91c11995a36f3a4a81af1963b3b1b94b4835163423bd9a51c3
-2023-07-05 01:04:03,404 TADA INFO   test-suite: LDMSD
-2023-07-05 01:04:03,404 TADA INFO   test-name: set_array_test
-2023-07-05 01:04:03,404 TADA INFO   test-user: narate
-2023-07-05 01:04:03,404 TADA INFO   commit-id: 636a1c6eed94acbb98f830d7507cbfe1ed9a92a0
-2023-07-05 01:04:03,405 __main__ INFO -- Get or create the cluster --
-2023-07-05 01:04:08,763 __main__ INFO -- Start daemons --
-Traceback (most recent call last):
-  File "/usr/lib/python3.6/site-packages/docker/api/client.py", line 261, in _raise_for_status
-    response.raise_for_status()
-  File "/usr/lib/python3.6/site-packages/requests/models.py", line 941, in raise_for_status
-    raise HTTPError(http_error_msg, response=self)
-requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http+docker://localhost/v1.35/containers/2e96c34fbb1d8a4948fcb3b60daf61d99b5118806c3f60223fb573f966c6cf22/exec
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "set_array_test", line 170, in <module>
-    cluster.make_known_hosts()
-  File "/home/narate/cron/ldms-test/LDMS_Test.py", line 1832, in make_known_hosts
-    cont.exec_run("mkdir -m 0700 -p /root/.ssh")
-  File "/home/narate/cron/ldms-test/runtime/docker.py", line 144, in exec_run
-    return self._exec_run(cmd, environment=env, user=user)
-  File "/home/narate/cron/ldms-test/runtime/docker.py", line 148, in _exec_run
-    (rc, out) = self.obj.exec_run(*args, **kwargs)
-  File "/usr/lib/python3.6/site-packages/docker/models/containers.py", line 196, in exec_run
-    workdir=workdir,
-  File "/usr/lib/python3.6/site-packages/docker/utils/decorators.py", line 19, in wrapped
-    return f(self, resource_id, *args, **kwargs)
-  File "/usr/lib/python3.6/site-packages/docker/api/exec_api.py", line 80, in exec_create
-    return self._result(res, True)
-  File "/usr/lib/python3.6/site-packages/docker/api/client.py", line 267, in _result
-    self._raise_for_status(response)
-  File "/usr/lib/python3.6/site-packages/docker/api/client.py", line 263, in _raise_for_status
-    raise create_api_error_from_http_exception(e)
-  File "/usr/lib/python3.6/site-packages/docker/errors.py", line 31, in create_api_error_from_http_exception
-    raise cls(e, response=response, explanation=explanation)
-docker.errors.NotFound: 404 Client Error: Not Found ("No such container: 2e96c34fbb1d8a4948fcb3b60daf61d99b5118806c3f60223fb573f966c6cf22")
-2023-07-05 01:04:14,186 TADA INFO assertion 1, 1st update got some callbacks: skipped
-2023-07-05 01:04:14,186 TADA INFO assertion 2, 2nd update got N callbacks: skipped
-2023-07-05 01:04:14,187 TADA INFO assertion 3, 3nd update got N callbacks: skipped
-2023-07-05 01:04:14,187 TADA INFO test set_array_test ended
+2023-07-07 00:41:09,979 TADA INFO starting test `set_array_test`
+2023-07-07 00:41:09,980 TADA INFO   test-id: 41fca8d0dafbb541b064ed3c151030aa53823bd125e796b4b22f2b0fcacbcd31
+2023-07-07 00:41:09,980 TADA INFO   test-suite: LDMSD
+2023-07-07 00:41:09,980 TADA INFO   test-name: set_array_test
+2023-07-07 00:41:09,980 TADA INFO   test-user: narate
+2023-07-07 00:41:09,980 TADA INFO   commit-id: 636a1c6eed94acbb98f830d7507cbfe1ed9a92a0
+2023-07-07 00:41:09,980 __main__ INFO -- Get or create the cluster --
+2023-07-07 00:41:15,401 __main__ INFO -- Start daemons --
+2023-07-07 00:41:21,287 __main__ INFO ... wait a bit to make sure ldmsd's are up
+2023-07-07 00:41:50,537 TADA INFO assertion 1, 1st update got some callbacks: verified hunk of 4 snapshots, passed
+2023-07-07 00:41:50,538 TADA INFO assertion 2, 2nd update got N callbacks: verified hunk of 5 snapshots, passed
+2023-07-07 00:41:50,538 TADA INFO assertion 3, 3nd update got N callbacks: verified hunk of 5 snapshots, passed
+2023-07-07 00:41:50,538 TADA INFO test set_array_test ended

@@ -1,56 +1,36 @@
-2023-07-05 01:10:01,744 TADA INFO starting test `maestro_raft_test`
-2023-07-05 01:10:01,745 TADA INFO   test-id: b5d6503077f71bbd30fce1764f5c9067374c179079b713156ec60606d740ae55
-2023-07-05 01:10:01,745 TADA INFO   test-suite: LDMSD
-2023-07-05 01:10:01,745 TADA INFO   test-name: maestro_raft_test
-2023-07-05 01:10:01,745 TADA INFO   test-user: narate
-2023-07-05 01:10:01,745 TADA INFO   commit-id: 636a1c6eed94acbb98f830d7507cbfe1ed9a92a0
-2023-07-05 01:10:11,753 __main__ INFO -- Get or create cluster --
-2023-07-05 01:10:48,935 __main__ INFO -- Start daemons --
+2023-07-08 00:38:56,934 TADA INFO starting test `maestro_raft_test`
+2023-07-08 00:38:56,934 TADA INFO   test-id: 2bc349d2211caa16be89ba23de195acb0b0f2793856ce78f366ad80f15da2d3e
+2023-07-08 00:38:56,934 TADA INFO   test-suite: LDMSD
+2023-07-08 00:38:56,934 TADA INFO   test-name: maestro_raft_test
+2023-07-08 00:38:56,934 TADA INFO   test-user: narate
+2023-07-08 00:38:56,934 TADA INFO   commit-id: 636a1c6eed94acbb98f830d7507cbfe1ed9a92a0
+2023-07-08 00:39:06,941 __main__ INFO -- Get or create cluster --
+2023-07-08 00:39:42,683 __main__ INFO -- Start daemons --
+2023-07-08 00:41:17,978 __main__ INFO -- making known hosts (ssh) --
+2023-07-08 00:41:24,873 __main__ INFO ... make sure ldmsd's are up
+2023-07-08 00:41:42,408 TADA INFO assertion 1, Statuses of maestros, 1 leader + 2 followers: [('FOLLOWER', 2), ('LEADER', 1)], passed
+2023-07-08 00:41:54,859 TADA INFO assertion 2, All ldmsds are up and configured: sets verified, passed
+2023-07-08 00:41:55,145 TADA INFO assertion 3, Data are being stored: data check, passed
+2023-07-08 00:41:59,990 TADA INFO assertion 4, New leader elected: checked, passed
 ---Wait for config to write to file---
 Traceback (most recent call last):
-  File "/usr/lib/python3.6/site-packages/docker/api/client.py", line 261, in _raise_for_status
-    response.raise_for_status()
-  File "/usr/lib/python3.6/site-packages/requests/models.py", line 941, in raise_for_status
-    raise HTTPError(http_error_msg, response=self)
-requests.exceptions.HTTPError: 409 Client Error: Conflict for url: http+docker://localhost/v1.35/containers/72aa548da0ba0176ac9d3aa679f20fa65dad08bb2120f415fc854a9d8d5238b3/exec
-
-During handling of the above exception, another exception occurred:
-
+  File "maestro_raft_test", line 512, in <module>
+    verify_ldmsds(5)
+  File "maestro_raft_test", line 431, in verify_ldmsds
+    objs = ldms_ls(f"agg{i}")
+  File "maestro_raft_test", line 282, in ldms_ls
+    raise RuntimeError(f"ldms_ls error {rc}, out: {out}")
+RuntimeError: ldms_ls error 137, out: Traceback (most recent call last):
+  File "/tada-src/python/ldms_ls.py", line 107, in lookup_cb
+    lset.update(cb = update_cb)
+AttributeError: 'NoneType' object has no attribute 'update'
+Exception ignored in: 'python.ldms.lookup_cb'
 Traceback (most recent call last):
-  File "maestro_raft_test", line 381, in <module>
-    cluster.start_daemons()
-  File "/home/narate/cron/ldms-test/LDMS_Test.py", line 1998, in start_daemons
-    cont.start_daemons()
-  File "/home/narate/cron/ldms-test/LDMS_Test.py", line 1260, in start_daemons
-    fn(**daemon)
-  File "/home/narate/cron/ldms-test/LDMS_Test.py", line 1003, in start_ldmsd
-    cond_timedwait(_check_listen, 5)
-  File "/home/narate/cron/ldms-test/LDMS_Test.py", line 2604, in cond_timedwait
-    if cond():
-  File "/home/narate/cron/ldms-test/LDMS_Test.py", line 1001, in _check_listen
-    rc, out = self.exec_run(grp_cmd)
-  File "/home/narate/cron/ldms-test/runtime/docker.py", line 144, in exec_run
-    return self._exec_run(cmd, environment=env, user=user)
-  File "/home/narate/cron/ldms-test/runtime/docker.py", line 148, in _exec_run
-    (rc, out) = self.obj.exec_run(*args, **kwargs)
-  File "/usr/lib/python3.6/site-packages/docker/models/containers.py", line 196, in exec_run
-    workdir=workdir,
-  File "/usr/lib/python3.6/site-packages/docker/utils/decorators.py", line 19, in wrapped
-    return f(self, resource_id, *args, **kwargs)
-  File "/usr/lib/python3.6/site-packages/docker/api/exec_api.py", line 80, in exec_create
-    return self._result(res, True)
-  File "/usr/lib/python3.6/site-packages/docker/api/client.py", line 267, in _result
-    self._raise_for_status(response)
-  File "/usr/lib/python3.6/site-packages/docker/api/client.py", line 263, in _raise_for_status
-    raise create_api_error_from_http_exception(e)
-  File "/usr/lib/python3.6/site-packages/docker/errors.py", line 31, in create_api_error_from_http_exception
-    raise cls(e, response=response, explanation=explanation)
-docker.errors.APIError: 409 Client Error: Conflict ("Container 72aa548da0ba0176ac9d3aa679f20fa65dad08bb2120f415fc854a9d8d5238b3 is not running")
-2023-07-05 01:10:58,963 TADA INFO assertion 1, Statuses of maestros, 1 leader + 2 followers: skipped
-2023-07-05 01:10:58,963 TADA INFO assertion 2, All ldmsds are up and configured: skipped
-2023-07-05 01:10:58,964 TADA INFO assertion 3, Data are being stored: skipped
-2023-07-05 01:10:58,964 TADA INFO assertion 4, New leader elected: skipped
-2023-07-05 01:10:58,964 TADA INFO assertion 5, Restarted ldmsd is configured: skipped
-2023-07-05 01:10:58,964 TADA INFO assertion 6, New data are presented in the store: skipped
-2023-07-05 01:10:58,964 TADA INFO assertion 7, The restarted maestro becomes a follower: skipped
-2023-07-05 01:10:58,964 TADA INFO test maestro_raft_test ended
+  File "/tada-src/python/ldms_ls.py", line 107, in lookup_cb
+    lset.update(cb = update_cb)
+AttributeError: 'NoneType' object has no attribute 'update'
+
+2023-07-08 00:57:42,265 TADA INFO assertion 5, Restarted ldmsd is configured: skipped
+2023-07-08 00:57:42,265 TADA INFO assertion 6, New data are presented in the store: skipped
+2023-07-08 00:57:42,266 TADA INFO assertion 7, The restarted maestro becomes a follower: skipped
+2023-07-08 00:57:42,266 TADA INFO test maestro_raft_test ended

@@ -1,79 +1,58 @@
-2023-07-05 01:05:50,767 TADA INFO starting test `ldms_list_test`
-2023-07-05 01:05:50,767 TADA INFO   test-id: 3b405f29811a65aee76a67d490d08bf0e0efc164e3d83cab7cd07a119d48bafd
-2023-07-05 01:05:50,767 TADA INFO   test-suite: LDMSD
-2023-07-05 01:05:50,768 TADA INFO   test-name: ldms_list_test
-2023-07-05 01:05:50,768 TADA INFO   test-user: narate
-2023-07-05 01:05:50,768 TADA INFO   commit-id: 636a1c6eed94acbb98f830d7507cbfe1ed9a92a0
-2023-07-05 01:05:50,768 __main__ INFO -- Get or create the cluster --
-2023-07-05 01:05:53,941 __main__ INFO -- Start daemons --
-Traceback (most recent call last):
-  File "/usr/lib/python3.6/site-packages/docker/api/client.py", line 261, in _raise_for_status
-    response.raise_for_status()
-  File "/usr/lib/python3.6/site-packages/requests/models.py", line 941, in raise_for_status
-    raise HTTPError(http_error_msg, response=self)
-requests.exceptions.HTTPError: 500 Server Error: Internal Server Error for url: http+docker://localhost/v1.35/exec/fd4934f474665c1b559bc1874f6fb7f97427a07c22235f7c4851da5bf41b1e19/start
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "ldms_list_test", line 217, in <module>
-    cluster.make_known_hosts()
-  File "/home/narate/cron/ldms-test/LDMS_Test.py", line 1832, in make_known_hosts
-    cont.exec_run("mkdir -m 0700 -p /root/.ssh")
-  File "/home/narate/cron/ldms-test/runtime/docker.py", line 144, in exec_run
-    return self._exec_run(cmd, environment=env, user=user)
-  File "/home/narate/cron/ldms-test/runtime/docker.py", line 148, in _exec_run
-    (rc, out) = self.obj.exec_run(*args, **kwargs)
-  File "/usr/lib/python3.6/site-packages/docker/models/containers.py", line 200, in exec_run
-    demux=demux
-  File "/usr/lib/python3.6/site-packages/docker/utils/decorators.py", line 19, in wrapped
-    return f(self, resource_id, *args, **kwargs)
-  File "/usr/lib/python3.6/site-packages/docker/api/exec_api.py", line 169, in exec_start
-    return self._read_from_socket(res, stream, tty=tty, demux=demux)
-  File "/usr/lib/python3.6/site-packages/docker/api/client.py", line 400, in _read_from_socket
-    socket = self._get_raw_response_socket(response)
-  File "/usr/lib/python3.6/site-packages/docker/api/client.py", line 311, in _get_raw_response_socket
-    self._raise_for_status(response)
-  File "/usr/lib/python3.6/site-packages/docker/api/client.py", line 263, in _raise_for_status
-    raise create_api_error_from_http_exception(e)
-  File "/usr/lib/python3.6/site-packages/docker/errors.py", line 31, in create_api_error_from_http_exception
-    raise cls(e, response=response, explanation=explanation)
-docker.errors.APIError: 500 Server Error: Internal Server Error ("Container e682c073cb487d1bbc5ee7f3442ac3691bd378754e8da254ac7dad9dd63e7325 is not running: Removal In Progress")
-2023-07-05 01:06:02,727 TADA INFO assertion 1, check list_sampler on list_agg.py: skipped
-2023-07-05 01:06:02,727 TADA INFO assertion 2, (1st update) check set1 on list_samp.py: skipped
-2023-07-05 01:06:02,727 TADA INFO assertion 3, (1st update) check set3_p on list_samp.py: skipped
-2023-07-05 01:06:02,728 TADA INFO assertion 4, (1st update)check set3_c on list_samp.py: skipped
-2023-07-05 01:06:02,728 TADA INFO assertion 5, (1st update)check set1 on list_agg.py: skipped
-2023-07-05 01:06:02,728 TADA INFO assertion 6, (1st update)check set3_p on list_agg.py: skipped
-2023-07-05 01:06:02,728 TADA INFO assertion 7, (1st update)check set3_c on list_agg.py: skipped
-2023-07-05 01:06:02,728 TADA INFO assertion 8, (2nd update) check set1 on list_samp.py: skipped
-2023-07-05 01:06:02,728 TADA INFO assertion 9, (2nd update) check set3_p on list_samp.py: skipped
-2023-07-05 01:06:02,728 TADA INFO assertion 10, (2nd update) check set3_c on list_samp.py: skipped
-2023-07-05 01:06:02,729 TADA INFO assertion 11, (2nd update) check set1 on list_agg.py: skipped
-2023-07-05 01:06:02,729 TADA INFO assertion 12, (2nd update) check set3_p on list_agg.py: skipped
-2023-07-05 01:06:02,729 TADA INFO assertion 13, (2nd update) check set3_c on list_agg.py: skipped
-2023-07-05 01:06:02,729 TADA INFO assertion 14, (3rd update) check set1 on list_samp.py: skipped
-2023-07-05 01:06:02,729 TADA INFO assertion 15, (3rd update) check set3_p on list_samp.py: skipped
-2023-07-05 01:06:02,729 TADA INFO assertion 16, (3rd update) check set3_c on list_samp.py: skipped
-2023-07-05 01:06:02,730 TADA INFO assertion 17, (3rd update) check set1 on list_agg.py: skipped
-2023-07-05 01:06:02,730 TADA INFO assertion 18, (3rd update) check set3_p on list_agg.py: skipped
-2023-07-05 01:06:02,730 TADA INFO assertion 19, (3rd update) check set3_c on list_agg.py: skipped
-2023-07-05 01:06:02,730 TADA INFO assertion 20, (4th update; list uncahnged) check set1 on list_samp.py: skipped
-2023-07-05 01:06:02,730 TADA INFO assertion 21, (4th update; list uncahnged) check set3_p on list_samp.py: skipped
-2023-07-05 01:06:02,730 TADA INFO assertion 22, (4th update; list uncahnged) check set3_c on list_samp.py: skipped
-2023-07-05 01:06:02,730 TADA INFO assertion 23, (4th update; list uncahnged) check set1 on list_agg.py: skipped
-2023-07-05 01:06:02,731 TADA INFO assertion 24, (4th update; list uncahnged) check set3_p on list_agg.py: skipped
-2023-07-05 01:06:02,731 TADA INFO assertion 25, (4th update; list uncahnged) check set3_c on list_agg.py: skipped
-2023-07-05 01:06:02,731 TADA INFO assertion 26, (5th update; list del) check set1 on list_samp.py: skipped
-2023-07-05 01:06:02,731 TADA INFO assertion 27, (5th update; list del) check set3_p on list_samp.py: skipped
-2023-07-05 01:06:02,731 TADA INFO assertion 28, (5th update; list del) check set3_c on list_samp.py: skipped
-2023-07-05 01:06:02,731 TADA INFO assertion 29, (5th update; list del) check set1 on list_agg.py: skipped
-2023-07-05 01:06:02,732 TADA INFO assertion 30, (5th update; list del) check set3_p on list_agg.py: skipped
-2023-07-05 01:06:02,732 TADA INFO assertion 31, (5th update; list del) check set3_c on list_agg.py: skipped
-2023-07-05 01:06:02,732 TADA INFO assertion 32, (6th update; list unchanged) check set1 on list_samp.py: skipped
-2023-07-05 01:06:02,732 TADA INFO assertion 33, (6th update; list unchanged) check set3_p on list_samp.py: skipped
-2023-07-05 01:06:02,732 TADA INFO assertion 34, (6th update; list unchanged) check set3_c on list_samp.py: skipped
-2023-07-05 01:06:02,732 TADA INFO assertion 35, (6th update; list unchanged) check set1 on list_agg.py: skipped
-2023-07-05 01:06:02,733 TADA INFO assertion 36, (6th update; list unchanged) check set3_p on list_agg.py: skipped
-2023-07-05 01:06:02,733 TADA INFO assertion 37, (6th update; list unchanged) check set3_c on list_agg.py: skipped
-2023-07-05 01:06:02,733 TADA INFO test ldms_list_test ended
+2023-07-07 00:47:37,961 TADA INFO starting test `ldms_list_test`
+2023-07-07 00:47:37,961 TADA INFO   test-id: 77654e63a1bfd4a4bafd635d2d1bd03674a7b811a436502f20ef8dfa93be3606
+2023-07-07 00:47:37,961 TADA INFO   test-suite: LDMSD
+2023-07-07 00:47:37,961 TADA INFO   test-name: ldms_list_test
+2023-07-07 00:47:37,961 TADA INFO   test-user: narate
+2023-07-07 00:47:37,962 TADA INFO   commit-id: 636a1c6eed94acbb98f830d7507cbfe1ed9a92a0
+2023-07-07 00:47:37,962 __main__ INFO -- Get or create the cluster --
+2023-07-07 00:47:41,072 __main__ INFO -- Start daemons --
+2023-07-07 00:47:49,416 __main__ INFO ... wait a bit to make sure ldmsd's are up
+2023-07-07 00:47:51,419 __main__ INFO start list_samp.py and list_agg.py interactive sessions
+2023-07-07 00:47:57,454 TADA INFO assertion 1, check list_sampler on list_agg.py: OK, passed
+2023-07-07 00:47:57,454 TADA INFO assertion 2, (1st update) check set1 on list_samp.py: OK, passed
+2023-07-07 00:47:57,454 TADA INFO assertion 3, (1st update) check set3_p on list_samp.py: OK, passed
+2023-07-07 00:47:57,455 TADA INFO assertion 4, (1st update)check set3_c on list_samp.py: OK, passed
+2023-07-07 00:47:57,455 TADA INFO assertion 5, (1st update)check set1 on list_agg.py: OK, passed
+2023-07-07 00:47:57,455 TADA INFO assertion 6, (1st update)check set3_p on list_agg.py: OK, passed
+2023-07-07 00:47:57,456 TADA INFO assertion 7, (1st update)check set3_c on list_agg.py: OK, passed
+2023-07-07 00:47:57,456 __main__ INFO 2nd sampling on the sampler...
+2023-07-07 00:48:04,665 TADA INFO assertion 8, (2nd update) check set1 on list_samp.py: OK, passed
+2023-07-07 00:48:04,666 TADA INFO assertion 9, (2nd update) check set3_p on list_samp.py: OK, passed
+2023-07-07 00:48:04,666 TADA INFO assertion 10, (2nd update) check set3_c on list_samp.py: OK, passed
+2023-07-07 00:48:04,666 __main__ INFO 2nd update on the aggregator...
+2023-07-07 00:48:11,876 TADA INFO assertion 11, (2nd update) check set1 on list_agg.py: OK, passed
+2023-07-07 00:48:11,876 TADA INFO assertion 12, (2nd update) check set3_p on list_agg.py: OK, passed
+2023-07-07 00:48:11,876 TADA INFO assertion 13, (2nd update) check set3_c on list_agg.py: OK, passed
+2023-07-07 00:48:11,877 __main__ INFO 3rd sampling on the sampler...
+2023-07-07 00:48:19,086 TADA INFO assertion 14, (3rd update) check set1 on list_samp.py: OK, passed
+2023-07-07 00:48:19,086 TADA INFO assertion 15, (3rd update) check set3_p on list_samp.py: OK, passed
+2023-07-07 00:48:19,087 TADA INFO assertion 16, (3rd update) check set3_c on list_samp.py: OK, passed
+2023-07-07 00:48:19,087 __main__ INFO 3rd update on the aggregator...
+2023-07-07 00:48:26,296 TADA INFO assertion 17, (3rd update) check set1 on list_agg.py: OK, passed
+2023-07-07 00:48:26,297 TADA INFO assertion 18, (3rd update) check set3_p on list_agg.py: OK, passed
+2023-07-07 00:48:26,297 TADA INFO assertion 19, (3rd update) check set3_c on list_agg.py: OK, passed
+2023-07-07 00:48:26,297 __main__ INFO 4th sampling on the sampler...
+2023-07-07 00:48:33,507 TADA INFO assertion 20, (4th update; list uncahnged) check set1 on list_samp.py: OK, passed
+2023-07-07 00:48:33,507 TADA INFO assertion 21, (4th update; list uncahnged) check set3_p on list_samp.py: OK, passed
+2023-07-07 00:48:33,507 TADA INFO assertion 22, (4th update; list uncahnged) check set3_c on list_samp.py: OK, passed
+2023-07-07 00:48:33,507 __main__ INFO 4th update on the aggregator...
+2023-07-07 00:48:40,717 TADA INFO assertion 23, (4th update; list uncahnged) check set1 on list_agg.py: OK, passed
+2023-07-07 00:48:40,717 TADA INFO assertion 24, (4th update; list uncahnged) check set3_p on list_agg.py: OK, passed
+2023-07-07 00:48:40,717 TADA INFO assertion 25, (4th update; list uncahnged) check set3_c on list_agg.py: OK, passed
+2023-07-07 00:48:40,718 __main__ INFO 5th sampling on the sampler...
+2023-07-07 00:48:47,927 TADA INFO assertion 26, (5th update; list del) check set1 on list_samp.py: OK, passed
+2023-07-07 00:48:47,927 TADA INFO assertion 27, (5th update; list del) check set3_p on list_samp.py: OK, passed
+2023-07-07 00:48:47,927 TADA INFO assertion 28, (5th update; list del) check set3_c on list_samp.py: OK, passed
+2023-07-07 00:48:47,928 __main__ INFO 5th update on the aggregator...
+2023-07-07 00:48:55,137 TADA INFO assertion 29, (5th update; list del) check set1 on list_agg.py: OK, passed
+2023-07-07 00:48:55,137 TADA INFO assertion 30, (5th update; list del) check set3_p on list_agg.py: OK, passed
+2023-07-07 00:48:55,138 TADA INFO assertion 31, (5th update; list del) check set3_c on list_agg.py: OK, passed
+2023-07-07 00:48:55,138 __main__ INFO 6th sampling on the sampler...
+2023-07-07 00:49:02,347 TADA INFO assertion 32, (6th update; list unchanged) check set1 on list_samp.py: OK, passed
+2023-07-07 00:49:02,347 TADA INFO assertion 33, (6th update; list unchanged) check set3_p on list_samp.py: OK, passed
+2023-07-07 00:49:02,347 TADA INFO assertion 34, (6th update; list unchanged) check set3_c on list_samp.py: OK, passed
+2023-07-07 00:49:02,347 __main__ INFO 6th update on the updator...
+2023-07-07 00:49:09,557 TADA INFO assertion 35, (6th update; list unchanged) check set1 on list_agg.py: OK, passed
+2023-07-07 00:49:09,557 TADA INFO assertion 36, (6th update; list unchanged) check set3_p on list_agg.py: OK, passed
+2023-07-07 00:49:09,557 TADA INFO assertion 37, (6th update; list unchanged) check set3_c on list_agg.py: OK, passed
+2023-07-07 00:49:09,558 TADA INFO test ldms_list_test ended

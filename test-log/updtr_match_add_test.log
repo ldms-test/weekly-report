@@ -1,35 +1,24 @@
-2023-07-05 01:12:30,300 __main__ INFO -- Get or create the cluster --
-2023-07-05 01:12:30,300 TADA INFO starting test `updtr_add test`
-2023-07-05 01:12:30,300 TADA INFO   test-id: 18d9bef650803b9f3eb21333a1a5a4ab7146c195a059b5f9b884a2a7b5259ccd
-2023-07-05 01:12:30,300 TADA INFO   test-suite: LDMSD
-2023-07-05 01:12:30,300 TADA INFO   test-name: updtr_add test
-2023-07-05 01:12:30,300 TADA INFO   test-user: narate
-2023-07-05 01:12:30,300 TADA INFO   commit-id: 636a1c6eed94acbb98f830d7507cbfe1ed9a92a0
-2023-07-05 01:12:38,345 __main__ INFO -- Start daemons --
+2023-07-08 00:59:11,667 __main__ INFO -- Get or create the cluster --
+2023-07-08 00:59:11,668 TADA INFO starting test `updtr_add test`
+2023-07-08 00:59:11,668 TADA INFO   test-id: cefb6dc7c95fbe9caf67ae43e48a143dded4f59897e6881a485f37a40e63e93a
+2023-07-08 00:59:11,668 TADA INFO   test-suite: LDMSD
+2023-07-08 00:59:11,668 TADA INFO   test-name: updtr_add test
+2023-07-08 00:59:11,668 TADA INFO   test-user: narate
+2023-07-08 00:59:11,668 TADA INFO   commit-id: 636a1c6eed94acbb98f830d7507cbfe1ed9a92a0
 Traceback (most recent call last):
   File "/usr/lib/python3.6/site-packages/docker/api/client.py", line 261, in _raise_for_status
     response.raise_for_status()
   File "/usr/lib/python3.6/site-packages/requests/models.py", line 941, in raise_for_status
     raise HTTPError(http_error_msg, response=self)
-requests.exceptions.HTTPError: 409 Client Error: Conflict for url: http+docker://localhost/v1.35/containers/35f5a837652c5258c7a1baf867c097c190dfa0e2dfdd6893d1272d83fc4515c4/exec
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http+docker://localhost/v1.35/containers/a72857cafe0570701393be1a82addc21cbe4b37b5b0f85138adb1fd07f1f33f8/exec
 
 During handling of the above exception, another exception occurred:
 
 Traceback (most recent call last):
-  File "updtr_match_add_test", line 248, in <module>
-    cluster.start_daemons()
-  File "/home/narate/cron/ldms-test/LDMS_Test.py", line 1998, in start_daemons
-    cont.start_daemons()
-  File "/home/narate/cron/ldms-test/LDMS_Test.py", line 1260, in start_daemons
-    fn(**daemon)
-  File "/home/narate/cron/ldms-test/LDMS_Test.py", line 1003, in start_ldmsd
-    cond_timedwait(_check_listen, 5)
-  File "/home/narate/cron/ldms-test/LDMS_Test.py", line 2604, in cond_timedwait
-    if cond():
-  File "/home/narate/cron/ldms-test/LDMS_Test.py", line 1001, in _check_listen
-    rc, out = self.exec_run(grp_cmd)
-  File "/home/narate/cron/ldms-test/runtime/docker.py", line 144, in exec_run
-    return self._exec_run(cmd, environment=env, user=user)
+  File "updtr_match_add_test", line 244, in <module>
+    c.write_file("/db/ldmsd_request_send.py", open(SCRIPT_DIR + "/ldmsd_request_send.py").read())
+  File "/home/narate/cron/ldms-test/runtime/docker.py", line 204, in write_file
+    rc, sock = self._exec_run(cmd, stdin=True, socket=True, user = user)
   File "/home/narate/cron/ldms-test/runtime/docker.py", line 148, in _exec_run
     (rc, out) = self.obj.exec_run(*args, **kwargs)
   File "/usr/lib/python3.6/site-packages/docker/models/containers.py", line 196, in exec_run
@@ -44,10 +33,10 @@ Traceback (most recent call last):
     raise create_api_error_from_http_exception(e)
   File "/usr/lib/python3.6/site-packages/docker/errors.py", line 31, in create_api_error_from_http_exception
     raise cls(e, response=response, explanation=explanation)
-docker.errors.APIError: 409 Client Error: Conflict ("Container 35f5a837652c5258c7a1baf867c097c190dfa0e2dfdd6893d1272d83fc4515c4 is not running")
-2023-07-05 01:12:41,043 TADA INFO assertion 1, updtr_match_add with an invalid regex: skipped
-2023-07-05 01:12:41,043 TADA INFO assertion 2, updtr_match_add with an invalid match: skipped
-2023-07-05 01:12:41,043 TADA INFO assertion 3, updtr_match_add of a non-existing updater: skipped
-2023-07-05 01:12:41,043 TADA INFO assertion 4, A success updtr_match_add: skipped
-2023-07-05 01:12:41,043 TADA INFO assertion 5, updtr_match_add of a running updater: skipped
-2023-07-05 01:12:41,043 TADA INFO test updtr_add test ended
+docker.errors.NotFound: 404 Client Error: Not Found ("No such container: a72857cafe0570701393be1a82addc21cbe4b37b5b0f85138adb1fd07f1f33f8")
+2023-07-08 00:59:19,407 TADA INFO assertion 1, updtr_match_add with an invalid regex: skipped
+2023-07-08 00:59:19,407 TADA INFO assertion 2, updtr_match_add with an invalid match: skipped
+2023-07-08 00:59:19,408 TADA INFO assertion 3, updtr_match_add of a non-existing updater: skipped
+2023-07-08 00:59:19,408 TADA INFO assertion 4, A success updtr_match_add: skipped
+2023-07-08 00:59:19,408 TADA INFO assertion 5, updtr_match_add of a running updater: skipped
+2023-07-08 00:59:19,408 TADA INFO test updtr_add test ended
