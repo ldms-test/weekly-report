@@ -1,39 +1,17 @@
-2023-07-07 00:49:21,828 TADA INFO starting test `quick_set_add_rm_test`
-2023-07-07 00:49:21,828 TADA INFO   test-id: eae1b0e2a52adf9727365bcd292fc0996f74589a197ea7cadd17861b6eec630b
-2023-07-07 00:49:21,828 TADA INFO   test-suite: LDMSD
-2023-07-07 00:49:21,828 TADA INFO   test-name: quick_set_add_rm_test
-2023-07-07 00:49:21,828 TADA INFO   test-user: narate
-2023-07-07 00:49:21,828 TADA INFO   commit-id: 636a1c6eed94acbb98f830d7507cbfe1ed9a92a0
-2023-07-07 00:49:21,829 __main__ INFO -- Get or create the cluster --
-2023-07-07 00:49:29,444 __main__ INFO -- Start samp.py --
-2023-07-07 00:49:34,557 TADA INFO assertion 1, start samp.py: prompt checked, passed
-2023-07-07 00:49:34,557 __main__ INFO -- Start daemons --
-2023-07-07 00:49:44,291 __main__ INFO ... wait a bit to make sure ldmsd's are up
-2023-07-08 00:30:03,565 TADA INFO assertion 2, verify data: Expecting '{'node-1/set0'}' but got 'set()' from agg-1, failed
-Traceback (most recent call last):
-  File "quick_set_add_rm_test", line 256, in <module>
-    verify_data(3, ["node-1/set0", "node-1/set1"])
-  File "quick_set_add_rm_test", line 186, in verify_data
-    s = set(ls.keys())
-AttributeError: 'NoneType' object has no attribute 'keys'
-2023-07-08 00:30:06,580 TADA INFO assertion 3, samp.py adds set1 / verify data: skipped
-2023-07-08 00:30:06,580 TADA INFO assertion 4, samp.py removes set1 / verify data: skipped
-2023-07-08 00:30:06,580 TADA INFO assertion 5, samp.py quickly adds and removes set2 / verify data: skipped
-2023-07-08 00:30:06,581 TADA INFO assertion 6, agg-1 log stays empty: skipped
-2023-07-08 00:30:06,581 TADA INFO test quick_set_add_rm_test ended
-Error in atexit._run_exitfuncs:
-Traceback (most recent call last):
-  File "/usr/lib/python3.6/site-packages/docker/api/client.py", line 261, in _raise_for_status
-    response.raise_for_status()
-  File "/usr/lib/python3.6/site-packages/requests/models.py", line 941, in raise_for_status
-    raise HTTPError(http_error_msg, response=self)
-requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http+docker://localhost/v1.35/networks/yo0uewif9c6upzjs3ao099ajb
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/usr/lib/python3.6/site-packages/docker/api/client.py", line 263, in _raise_for_status
-    raise create_api_error_from_http_exception(e)
-  File "/usr/lib/python3.6/site-packages/docker/errors.py", line 31, in create_api_error_from_http_exception
-    raise cls(e, response=response, explanation=explanation)
-docker.errors.NotFound: 404 Client Error: Not Found ("network yo0uewif9c6upzjs3ao099ajb not found")
+2023-07-19 12:21:26,738 TADA INFO starting test `quick_set_add_rm_test`
+2023-07-19 12:21:26,739 TADA INFO   test-id: bb2cc28376f3fb58e75b9eb1c53034513dd4bea1d098a37c8b5ad586196a3154
+2023-07-19 12:21:26,739 TADA INFO   test-suite: LDMSD
+2023-07-19 12:21:26,739 TADA INFO   test-name: quick_set_add_rm_test
+2023-07-19 12:21:26,739 TADA INFO   test-user: narate
+2023-07-19 12:21:26,739 TADA INFO   commit-id: a62e3ad784829c003b4139783a83936dcfdc6ac6
+2023-07-19 12:21:26,739 __main__ INFO -- Get or create the cluster --
+2023-07-19 12:21:33,886 __main__ INFO -- Start samp.py --
+2023-07-19 12:21:39,002 TADA INFO assertion 1, start samp.py: prompt checked, passed
+2023-07-19 12:21:39,003 __main__ INFO -- Start daemons --
+2023-07-19 12:21:48,712 __main__ INFO ... wait a bit to make sure ldmsd's are up
+2023-07-19 12:21:54,302 TADA INFO assertion 2, verify data: verified, passed
+2023-07-19 12:21:58,889 TADA INFO assertion 3, samp.py adds set1 / verify data: verified, passed
+2023-07-19 12:22:03,466 TADA INFO assertion 4, samp.py removes set1 / verify data: verified, passed
+2023-07-19 12:22:08,074 TADA INFO assertion 5, samp.py quickly adds and removes set2 / verify data: verified, passed
+2023-07-19 12:22:13,202 TADA INFO assertion 6, agg-1 log stays empty: verified, passed
+2023-07-19 12:22:13,203 TADA INFO test quick_set_add_rm_test ended

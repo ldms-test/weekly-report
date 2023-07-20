@@ -1,22 +1,14 @@
-2023-07-07 00:32:49,388 TADA INFO starting test `ldmsd_auth_ovis_test`
-2023-07-07 00:32:49,388 TADA INFO   test-id: 15de4bf53550cb4e0bcecf5faec5a610d33ba0087dac90945fb62f5672796e8f
-2023-07-07 00:32:49,388 TADA INFO   test-suite: LDMSD
-2023-07-07 00:32:49,388 TADA INFO   test-name: ldmsd_auth_ovis_test
-2023-07-07 00:32:49,388 TADA INFO   test-user: narate
-2023-07-07 00:32:49,388 TADA INFO   commit-id: 636a1c6eed94acbb98f830d7507cbfe1ed9a92a0
-2023-07-07 00:32:49,389 __main__ INFO -- Get or create the cluster --
-2023-07-07 00:32:54,580 __main__ INFO -- Start daemons --
-2023-07-07 00:33:00,413 __main__ INFO ... wait a bit to make sure ldmsd's are up
-2023-07-07 00:33:05,539 TADA INFO assertion 1, ldms_ls with auth none: verified, passed
-2023-07-07 00:33:05,661 TADA INFO assertion 2, ldms_ls with wrong secret: verified, passed
-2023-07-07 00:33:05,768 TADA INFO assertion 3, ldms_ls 'dir' with right secret: result({'Connection failed/rejected.'}) != expect({'node-1/vmstat', 'node-1/meminfo'}), failed
-Traceback (most recent call last):
-  File "ldmsd_auth_ovis_test", line 262, in <module>
-    auth="ovis", auth_args={"conf": "/db/auth0.conf"})
-  File "ldmsd_auth_ovis_test", line 188, in ldms_ls
-    return parse_ldms_ls(out)
-  File "/home/narate/cron/ldms-test/LDMS_Test.py", line 176, in parse_ldms_ls
-    raise RuntimeError("Bad line format: {}".format(l))
-RuntimeError: Bad line format: Connection failed/rejected.
-2023-07-07 00:33:05,877 TADA INFO assertion 4, ldms_ls 'read' with right secret: skipped
-2023-07-07 00:33:05,877 TADA INFO test ldmsd_auth_ovis_test ended
+2023-07-19 12:03:21,918 TADA INFO starting test `ldmsd_auth_ovis_test`
+2023-07-19 12:03:21,918 TADA INFO   test-id: d641b7d24c1d9461a0345c3c03578c86012423e50ebcb78a30f0732ea2540cca
+2023-07-19 12:03:21,918 TADA INFO   test-suite: LDMSD
+2023-07-19 12:03:21,918 TADA INFO   test-name: ldmsd_auth_ovis_test
+2023-07-19 12:03:21,918 TADA INFO   test-user: narate
+2023-07-19 12:03:21,919 TADA INFO   commit-id: a62e3ad784829c003b4139783a83936dcfdc6ac6
+2023-07-19 12:03:21,919 __main__ INFO -- Get or create the cluster --
+2023-07-19 12:03:26,989 __main__ INFO -- Start daemons --
+2023-07-19 12:03:32,823 __main__ INFO ... wait a bit to make sure ldmsd's are up
+2023-07-19 12:03:37,935 TADA INFO assertion 1, ldms_ls with auth none: verified, passed
+2023-07-19 12:03:38,052 TADA INFO assertion 2, ldms_ls with wrong secret: verified, passed
+2023-07-19 12:03:38,178 TADA INFO assertion 3, ldms_ls 'dir' with right secret: verified, passed
+2023-07-19 12:03:38,450 TADA INFO assertion 4, ldms_ls 'read' with right secret: verified, passed
+2023-07-19 12:03:38,450 TADA INFO test ldmsd_auth_ovis_test ended

@@ -1,57 +1,16 @@
-2023-07-08 00:58:48,142 __main__ INFO -- Get or create the cluster --
-2023-07-08 00:58:48,143 TADA INFO starting test `updtr_add test`
-2023-07-08 00:58:48,143 TADA INFO   test-id: 9712d7c8c34d563e707082f807a41f51070de4127800d304308aaf1a2295798f
-2023-07-08 00:58:48,143 TADA INFO   test-suite: LDMSD
-2023-07-08 00:58:48,143 TADA INFO   test-name: updtr_add test
-2023-07-08 00:58:48,143 TADA INFO   test-user: narate
-2023-07-08 00:58:48,143 TADA INFO   commit-id: 636a1c6eed94acbb98f830d7507cbfe1ed9a92a0
-Traceback (most recent call last):
-  File "/usr/lib/python3.6/site-packages/docker/api/client.py", line 261, in _raise_for_status
-    response.raise_for_status()
-  File "/usr/lib/python3.6/site-packages/requests/models.py", line 941, in raise_for_status
-    raise HTTPError(http_error_msg, response=self)
-requests.exceptions.HTTPError: 409 Client Error: Conflict for url: http+docker://localhost/v1.35/containers/78ea101e0eb145cc80bc8de476ea60e0a8905888025e9f29ccc5e3e245239c40/exec
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "updtr_del_test", line 248, in <module>
-    c.write_file("/db/ldmsd_request_send.py", open(SCRIPT_DIR + "/ldmsd_request_send.py").read())
-  File "/home/narate/cron/ldms-test/runtime/docker.py", line 204, in write_file
-    rc, sock = self._exec_run(cmd, stdin=True, socket=True, user = user)
-  File "/home/narate/cron/ldms-test/runtime/docker.py", line 148, in _exec_run
-    (rc, out) = self.obj.exec_run(*args, **kwargs)
-  File "/usr/lib/python3.6/site-packages/docker/models/containers.py", line 196, in exec_run
-    workdir=workdir,
-  File "/usr/lib/python3.6/site-packages/docker/utils/decorators.py", line 19, in wrapped
-    return f(self, resource_id, *args, **kwargs)
-  File "/usr/lib/python3.6/site-packages/docker/api/exec_api.py", line 80, in exec_create
-    return self._result(res, True)
-  File "/usr/lib/python3.6/site-packages/docker/api/client.py", line 267, in _result
-    self._raise_for_status(response)
-  File "/usr/lib/python3.6/site-packages/docker/api/client.py", line 263, in _raise_for_status
-    raise create_api_error_from_http_exception(e)
-  File "/usr/lib/python3.6/site-packages/docker/errors.py", line 31, in create_api_error_from_http_exception
-    raise cls(e, response=response, explanation=explanation)
-docker.errors.APIError: 409 Client Error: Conflict ("Container 78ea101e0eb145cc80bc8de476ea60e0a8905888025e9f29ccc5e3e245239c40 is not running")
-2023-07-08 00:58:56,367 TADA INFO assertion 1, updtr_del a non-existing updater: skipped
-2023-07-08 00:58:56,368 TADA INFO assertion 2, updtr_del a running updater: skipped
-2023-07-08 00:58:56,368 TADA INFO assertion 3, updtr_del a stopped updater: skipped
-2023-07-08 00:58:56,368 TADA INFO assertion 4, updtr_del a just-added updater: skipped
-2023-07-08 00:58:56,368 TADA INFO test updtr_add test ended
-Error in atexit._run_exitfuncs:
-Traceback (most recent call last):
-  File "/usr/lib/python3.6/site-packages/docker/api/client.py", line 261, in _raise_for_status
-    response.raise_for_status()
-  File "/usr/lib/python3.6/site-packages/requests/models.py", line 941, in raise_for_status
-    raise HTTPError(http_error_msg, response=self)
-requests.exceptions.HTTPError: 400 Client Error: Bad Request for url: http+docker://localhost/v1.35/networks/m8h3ufyt6w0bc97ch2fo3v7ia
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/usr/lib/python3.6/site-packages/docker/api/client.py", line 263, in _raise_for_status
-    raise create_api_error_from_http_exception(e)
-  File "/usr/lib/python3.6/site-packages/docker/errors.py", line 31, in create_api_error_from_http_exception
-    raise cls(e, response=response, explanation=explanation)
-docker.errors.APIError: 400 Client Error: Bad Request ("rpc error: code = FailedPrecondition desc = network m8h3ufyt6w0bc97ch2fo3v7ia is in use by task dzet662vybu5uuq3m5uz131vm")
+2023-07-19 12:31:24,244 __main__ INFO -- Get or create the cluster --
+2023-07-19 12:31:24,244 TADA INFO starting test `updtr_add test`
+2023-07-19 12:31:24,244 TADA INFO   test-id: f70f2ea1bf4cab9e73fa2f8ea4021925837c4e36c7c281d535f770e849b41aa2
+2023-07-19 12:31:24,244 TADA INFO   test-suite: LDMSD
+2023-07-19 12:31:24,244 TADA INFO   test-name: updtr_add test
+2023-07-19 12:31:24,245 TADA INFO   test-user: narate
+2023-07-19 12:31:24,245 TADA INFO   commit-id: a62e3ad784829c003b4139783a83936dcfdc6ac6
+2023-07-19 12:31:31,949 __main__ INFO -- Start daemons --
+2023-07-19 12:31:47,286 __main__ INFO Waiting ... for all LDMSDs to start
+2023-07-19 12:31:47,586 __main__ INFO All LDMSDs are up.
+2023-07-19 12:31:48,792 TADA INFO assertion 1, updtr_del a non-existing updater: report(rc = 2) == expect(rc = 2), passed
+2023-07-19 12:31:50,015 TADA INFO assertion 2, updtr_del a running updater: report(rc = 16) == expect(rc = 16), passed
+2023-07-19 12:31:51,235 TADA INFO assertion 3, updtr_del a stopped updater: report(rc = 0) == expect(rc = 0), passed
+2023-07-19 12:31:52,452 TADA INFO assertion 4, updtr_del a just-added updater: report(rc = 0) == expect(rc = 0), passed
+2023-07-19 12:31:52,453 __main__ INFO --- done ---
+2023-07-19 12:31:52,453 TADA INFO test updtr_add test ended

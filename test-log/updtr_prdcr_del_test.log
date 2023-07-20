@@ -1,52 +1,16 @@
-2023-07-08 01:00:31,340 __main__ INFO -- Get or create the cluster --
-2023-07-08 01:00:31,341 TADA INFO starting test `updtr_add test`
-2023-07-08 01:00:31,341 TADA INFO   test-id: d37f0a44adf2d2666f0491efd6b94b046d679ca0cc394a8d8bf7f03558c4e08c
-2023-07-08 01:00:31,341 TADA INFO   test-suite: LDMSD
-2023-07-08 01:00:31,341 TADA INFO   test-name: updtr_add test
-2023-07-08 01:00:31,341 TADA INFO   test-user: narate
-2023-07-08 01:00:31,341 TADA INFO   commit-id: 636a1c6eed94acbb98f830d7507cbfe1ed9a92a0
-2023-07-08 01:00:39,278 __main__ INFO -- Start daemons --
-Traceback (most recent call last):
-  File "/usr/lib/python3.6/site-packages/docker/api/client.py", line 261, in _raise_for_status
-    response.raise_for_status()
-  File "/usr/lib/python3.6/site-packages/requests/models.py", line 941, in raise_for_status
-    raise HTTPError(http_error_msg, response=self)
-requests.exceptions.HTTPError: 409 Client Error: Conflict for url: http+docker://localhost/v1.35/containers/533270651d6292da4bb6490f7e7821824ba88132533f9674f042b30150295e66/exec
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "updtr_prdcr_del_test", line 252, in <module>
-    cluster.start_daemons()
-  File "/home/narate/cron/ldms-test/LDMS_Test.py", line 1998, in start_daemons
-    cont.start_daemons()
-  File "/home/narate/cron/ldms-test/LDMS_Test.py", line 1260, in start_daemons
-    fn(**daemon)
-  File "/home/narate/cron/ldms-test/LDMS_Test.py", line 1003, in start_ldmsd
-    cond_timedwait(_check_listen, 5)
-  File "/home/narate/cron/ldms-test/LDMS_Test.py", line 2604, in cond_timedwait
-    if cond():
-  File "/home/narate/cron/ldms-test/LDMS_Test.py", line 1001, in _check_listen
-    rc, out = self.exec_run(grp_cmd)
-  File "/home/narate/cron/ldms-test/runtime/docker.py", line 144, in exec_run
-    return self._exec_run(cmd, environment=env, user=user)
-  File "/home/narate/cron/ldms-test/runtime/docker.py", line 148, in _exec_run
-    (rc, out) = self.obj.exec_run(*args, **kwargs)
-  File "/usr/lib/python3.6/site-packages/docker/models/containers.py", line 196, in exec_run
-    workdir=workdir,
-  File "/usr/lib/python3.6/site-packages/docker/utils/decorators.py", line 19, in wrapped
-    return f(self, resource_id, *args, **kwargs)
-  File "/usr/lib/python3.6/site-packages/docker/api/exec_api.py", line 80, in exec_create
-    return self._result(res, True)
-  File "/usr/lib/python3.6/site-packages/docker/api/client.py", line 267, in _result
-    self._raise_for_status(response)
-  File "/usr/lib/python3.6/site-packages/docker/api/client.py", line 263, in _raise_for_status
-    raise create_api_error_from_http_exception(e)
-  File "/usr/lib/python3.6/site-packages/docker/errors.py", line 31, in create_api_error_from_http_exception
-    raise cls(e, response=response, explanation=explanation)
-docker.errors.APIError: 409 Client Error: Conflict ("Container 533270651d6292da4bb6490f7e7821824ba88132533f9674f042b30150295e66 is not running")
-2023-07-08 01:00:42,025 TADA INFO assertion 1, Send updtr_prdcr_del with an invalid regex: skipped
-2023-07-08 01:00:42,025 TADA INFO assertion 3, Send updtr_prdcr_del to a non-existing updater: skipped
-2023-07-08 01:00:42,025 TADA INFO assertion 4, Send updtr_prdcr_del successfully: skipped
-2023-07-08 01:00:42,026 TADA INFO assertion 2, Send updtr_prdcr_del to a running updater: skipped
-2023-07-08 01:00:42,026 TADA INFO test updtr_add test ended
+2023-07-19 12:34:21,221 __main__ INFO -- Get or create the cluster --
+2023-07-19 12:34:21,221 TADA INFO starting test `updtr_add test`
+2023-07-19 12:34:21,221 TADA INFO   test-id: b0b809fc03ed0a15ecb19219968c4435e9ef3bb91670969a505dd859e24cc820
+2023-07-19 12:34:21,221 TADA INFO   test-suite: LDMSD
+2023-07-19 12:34:21,221 TADA INFO   test-name: updtr_add test
+2023-07-19 12:34:21,221 TADA INFO   test-user: narate
+2023-07-19 12:34:21,221 TADA INFO   commit-id: a62e3ad784829c003b4139783a83936dcfdc6ac6
+2023-07-19 12:34:29,220 __main__ INFO -- Start daemons --
+2023-07-19 12:34:44,586 __main__ INFO Waiting ... for all LDMSDs to start
+2023-07-19 12:34:44,891 __main__ INFO All LDMSDs are up.
+2023-07-19 12:34:46,113 TADA INFO assertion 1, Send updtr_prdcr_del with an invalid regex: report(rc = 22) == expect(rc = 22), passed
+2023-07-19 12:34:47,325 TADA INFO assertion 2, Send updtr_prdcr_del to a running updater: report(rc = 16) == expect(rc = 16), passed
+2023-07-19 12:34:48,534 TADA INFO assertion 3, Send updtr_prdcr_del to a non-existing updater: report(rc = 2) == expect(rc = 2), passed
+2023-07-19 12:34:50,952 TADA INFO assertion 4, Send updtr_prdcr_del successfully: report(rc = 0, status = [{'name': 'all', 'interval': '1000000', 'offset': '100000', 'sync': 'true', 'mode': 'Pull', 'auto': 'false', 'state': 'STOPPED', 'producers': [{'name': 'sampler-2', 'host': 'sampler-2', 'port': 10000, 'transport': 'sock', 'state': 'CONNECTED'}], 'outstanding count': 0, 'oversampled count': 0}]) == expect(rc = 0, status = [{'name': 'all', 'interval': '1000000', 'offset': '100000', 'sync': 'true', 'mode': 'Pull', 'auto': 'false', 'state': 'STOPPED', 'producers': [{'name': 'sampler-2', 'host': 'sampler-2', 'port': 10000, 'transport': 'sock', 'state': 'CONNECTED'}], 'outstanding count': 0, 'oversampled count': 0}], passed
+2023-07-19 12:34:50,953 __main__ INFO --- done ---
+2023-07-19 12:34:50,953 TADA INFO test updtr_add test ended

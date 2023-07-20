@@ -1,27 +1,40 @@
-2023-07-07 00:34:46,835 TADA INFO starting test `ldmsd_ctrl_test`
-2023-07-07 00:34:46,835 TADA INFO   test-id: c4d5c3a0f3169ddc40fc07fbbcc6b6e21c2c94e92ea56ce019a450327169c5be
-2023-07-07 00:34:46,835 TADA INFO   test-suite: LDMSD
-2023-07-07 00:34:46,835 TADA INFO   test-name: ldmsd_ctrl_test
-2023-07-07 00:34:46,835 TADA INFO   test-user: narate
-2023-07-07 00:34:46,835 TADA INFO   commit-id: 636a1c6eed94acbb98f830d7507cbfe1ed9a92a0
-2023-07-07 00:34:46,836 __main__ INFO -- Get or create the cluster --
-2023-07-07 00:34:56,236 __main__ INFO -- Start daemons --
-2023-07-07 00:35:12,475 __main__ INFO ... wait a bit to make sure ldmsd's are up
-2023-07-07 00:35:18,596 TADA INFO assertion 1, ldmsd_controller interactive session: connected, passed
-2023-07-07 00:35:19,712 TADA INFO assertion 2, ldmsctl interactive session: connected, passed
-2023-07-07 00:35:20,314 TADA INFO assertion 3, ldmsd_controller start bogus producer: expected output verified, passed
-2023-07-07 00:35:20,915 TADA INFO assertion 4, ldmsctl start bogus producer: expected output verified, passed
-2023-07-07 00:35:21,517 TADA INFO assertion 5, ldmsd_controller bogus command: expected output verified, passed
-2023-07-07 00:35:22,118 TADA INFO assertion 6, ldmsctl bogus command: expected output verified, passed
-2023-07-07 00:35:22,720 TADA INFO assertion 7, ldmsd_controller load bogus plugin: expected output verified, passed
-2023-07-07 00:35:23,321 TADA INFO assertion 8, ldmsctl load bogus plugin: expected output verified, passed
-2023-07-07 00:35:26,325 TADA INFO assertion 9, ldmsd_controller prdcr/updtr: Unexpected output: prdcr_add name=prdcr host=node-1 xprt=sock port=10000 type=active interval=1000000
-Error: The attribute(s) {'credits', 'rail'} are required by prdcr_add
+2023-07-19 12:05:17,672 TADA INFO starting test `ldmsd_ctrl_test`
+2023-07-19 12:05:17,672 TADA INFO   test-id: 9e2e02cee151ad0e577556b1565b1042fd49d1bf1403dc40be469f127564af31
+2023-07-19 12:05:17,672 TADA INFO   test-suite: LDMSD
+2023-07-19 12:05:17,672 TADA INFO   test-name: ldmsd_ctrl_test
+2023-07-19 12:05:17,672 TADA INFO   test-user: narate
+2023-07-19 12:05:17,672 TADA INFO   commit-id: a62e3ad784829c003b4139783a83936dcfdc6ac6
+2023-07-19 12:05:17,673 __main__ INFO -- Get or create the cluster --
+2023-07-19 12:05:26,857 __main__ INFO -- Start daemons --
+2023-07-19 12:05:42,919 __main__ INFO ... wait a bit to make sure ldmsd's are up
+2023-07-19 12:05:49,041 TADA INFO assertion 1, ldmsd_controller interactive session: connected, passed
+2023-07-19 12:05:50,159 TADA INFO assertion 2, ldmsctl interactive session: connected, passed
+2023-07-19 12:05:50,761 TADA INFO assertion 3, ldmsd_controller start bogus producer: expected output verified, passed
+2023-07-19 12:05:51,362 TADA INFO assertion 4, ldmsctl start bogus producer: expected output verified, passed
+2023-07-19 12:05:51,963 TADA INFO assertion 5, ldmsd_controller bogus command: expected output verified, passed
+2023-07-19 12:05:52,565 TADA INFO assertion 6, ldmsctl bogus command: expected output verified, passed
+2023-07-19 12:05:53,166 TADA INFO assertion 7, ldmsd_controller load bogus plugin: expected output verified, passed
+2023-07-19 12:05:53,768 TADA INFO assertion 8, ldmsctl load bogus plugin: expected output verified, passed
+2023-07-19 12:05:56,772 TADA INFO assertion 9, ldmsd_controller prdcr/updtr: Unexpected output: prdcr_add name=prdcr host=node-1 xprt=sock port=10000 type=active interval=1000000
+'interval' is being deprecated'. Please, use 'reconnect' in the future.
 sock:agg-11:10000> prdcr_start name=prdcr
-Error starting prdcr prdcr: The producer specified does not exist.
 sock:agg-11:10000> updtr_add name=updtr interval=1000000 offset=500000
 sock:agg-11:10000> updtr_prdcr_add name=updtr regex=prdcr
 sock:agg-11:10000> updtr_start name=updtr
 sock:agg-11:10000> , failed
-2023-07-07 00:35:43,528 TADA INFO assertion 10, ldmsctl prdcr/updtr: verified, passed
-2023-07-07 00:35:43,529 TADA INFO test ldmsd_ctrl_test ended
+Traceback (most recent call last):
+  File "ldmsd_ctrl_test", line 395, in <module>
+    prdcr_updtr_routine(9, "agg-11", ldmsd_controller, "sock:agg-11:10000> ")
+  File "ldmsd_ctrl_test", line 362, in prdcr_updtr_routine
+    test.assert_test(_id, False, "Unexpected output: {}".format(_out))
+  File "/home/narate/cron/ldms-test/TADA.py", line 157, in assert_test
+    raise AssertionException(self.test_desc + ", " + cond_str + ": FAILED")
+TADA.AssertionException: Test ldmsd_controller and ldmsctl, Unexpected output: prdcr_add name=prdcr host=node-1 xprt=sock port=10000 type=active interval=1000000
+'interval' is being deprecated'. Please, use 'reconnect' in the future.
+sock:agg-11:10000> prdcr_start name=prdcr
+sock:agg-11:10000> updtr_add name=updtr interval=1000000 offset=500000
+sock:agg-11:10000> updtr_prdcr_add name=updtr regex=prdcr
+sock:agg-11:10000> updtr_start name=updtr
+sock:agg-11:10000> : FAILED
+2023-07-19 12:05:56,774 TADA INFO assertion 10, ldmsctl prdcr/updtr: skipped
+2023-07-19 12:05:56,775 TADA INFO test ldmsd_ctrl_test ended

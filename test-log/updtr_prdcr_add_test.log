@@ -1,55 +1,17 @@
-2023-07-08 01:00:06,146 __main__ INFO -- Get or create the cluster --
-2023-07-08 01:00:06,146 TADA INFO starting test `updtr_add test`
-2023-07-08 01:00:06,146 TADA INFO   test-id: 5d79a49408327d98fb01a64ac917eb3de0c98fb94d38b20a1aeacdefe7c629c2
-2023-07-08 01:00:06,146 TADA INFO   test-suite: LDMSD
-2023-07-08 01:00:06,146 TADA INFO   test-name: updtr_add test
-2023-07-08 01:00:06,146 TADA INFO   test-user: narate
-2023-07-08 01:00:06,146 TADA INFO   commit-id: 636a1c6eed94acbb98f830d7507cbfe1ed9a92a0
-2023-07-08 01:00:14,258 __main__ INFO -- Start daemons --
-Traceback (most recent call last):
-  File "/usr/lib/python3.6/site-packages/docker/api/client.py", line 261, in _raise_for_status
-    response.raise_for_status()
-  File "/usr/lib/python3.6/site-packages/requests/models.py", line 941, in raise_for_status
-    raise HTTPError(http_error_msg, response=self)
-requests.exceptions.HTTPError: 500 Server Error: Internal Server Error for url: http+docker://localhost/v1.35/exec/75f42f0854ceb11a2101ca1860340ca798ba844f1a130b2885d6180d714a4fb8/start
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "updtr_prdcr_add_test", line 249, in <module>
-    cluster.start_daemons()
-  File "/home/narate/cron/ldms-test/LDMS_Test.py", line 1998, in start_daemons
-    cont.start_daemons()
-  File "/home/narate/cron/ldms-test/LDMS_Test.py", line 1260, in start_daemons
-    fn(**daemon)
-  File "/home/narate/cron/ldms-test/LDMS_Test.py", line 1003, in start_ldmsd
-    cond_timedwait(_check_listen, 5)
-  File "/home/narate/cron/ldms-test/LDMS_Test.py", line 2604, in cond_timedwait
-    if cond():
-  File "/home/narate/cron/ldms-test/LDMS_Test.py", line 1001, in _check_listen
-    rc, out = self.exec_run(grp_cmd)
-  File "/home/narate/cron/ldms-test/runtime/docker.py", line 144, in exec_run
-    return self._exec_run(cmd, environment=env, user=user)
-  File "/home/narate/cron/ldms-test/runtime/docker.py", line 148, in _exec_run
-    (rc, out) = self.obj.exec_run(*args, **kwargs)
-  File "/usr/lib/python3.6/site-packages/docker/models/containers.py", line 200, in exec_run
-    demux=demux
-  File "/usr/lib/python3.6/site-packages/docker/utils/decorators.py", line 19, in wrapped
-    return f(self, resource_id, *args, **kwargs)
-  File "/usr/lib/python3.6/site-packages/docker/api/exec_api.py", line 169, in exec_start
-    return self._read_from_socket(res, stream, tty=tty, demux=demux)
-  File "/usr/lib/python3.6/site-packages/docker/api/client.py", line 400, in _read_from_socket
-    socket = self._get_raw_response_socket(response)
-  File "/usr/lib/python3.6/site-packages/docker/api/client.py", line 311, in _get_raw_response_socket
-    self._raise_for_status(response)
-  File "/usr/lib/python3.6/site-packages/docker/api/client.py", line 263, in _raise_for_status
-    raise create_api_error_from_http_exception(e)
-  File "/usr/lib/python3.6/site-packages/docker/errors.py", line 31, in create_api_error_from_http_exception
-    raise cls(e, response=response, explanation=explanation)
-docker.errors.APIError: 500 Server Error: Internal Server Error ("Container 9e0449615df3a20c278369738b4df7a73735a42cd36bfa5f3ba94fc00b5164da is not running: Removal In Progress")
-2023-07-08 01:00:17,105 TADA INFO assertion 1, Send updtr_prdcr_add with an invalid regex: skipped
-2023-07-08 01:00:17,105 TADA INFO assertion 2, Send updtr_prdcr_add with a regex matching no prdcrs: skipped
-2023-07-08 01:00:17,105 TADA INFO assertion 3, Send updtr_prdcdr_add with a regex matching some prdcrs: skipped
-2023-07-08 01:00:17,105 TADA INFO assertion 4, Send updtr_prdcdr_add to a running updtr: skipped
-2023-07-08 01:00:17,106 TADA INFO assertion 5, Send updtr_prdcr_add to a not-existing updtr: skipped
-2023-07-08 01:00:17,106 TADA INFO test updtr_add test ended
+2023-07-19 12:33:35,654 __main__ INFO -- Get or create the cluster --
+2023-07-19 12:33:35,654 TADA INFO starting test `updtr_add test`
+2023-07-19 12:33:35,654 TADA INFO   test-id: 7e3241f0c8e9be3d4593fa97e6ad39da44cb569fab2da1e623120402fc09763f
+2023-07-19 12:33:35,654 TADA INFO   test-suite: LDMSD
+2023-07-19 12:33:35,654 TADA INFO   test-name: updtr_add test
+2023-07-19 12:33:35,654 TADA INFO   test-user: narate
+2023-07-19 12:33:35,654 TADA INFO   commit-id: a62e3ad784829c003b4139783a83936dcfdc6ac6
+2023-07-19 12:33:43,365 __main__ INFO -- Start daemons --
+2023-07-19 12:33:58,691 __main__ INFO Waiting ... for all LDMSDs to start
+2023-07-19 12:33:59,017 __main__ INFO All LDMSDs are up.
+2023-07-19 12:34:00,242 TADA INFO assertion 1, Send updtr_prdcr_add with an invalid regex: report(rc = 22) == expect(rc = 22), passed
+2023-07-19 12:34:02,651 TADA INFO assertion 2, Send updtr_prdcr_add with a regex matching no prdcrs: report(rc = 0, status = [{'name': 'all', 'interval': '1000000', 'offset': '100000', 'sync': 'true', 'mode': 'Pull', 'auto': 'false', 'state': 'STOPPED', 'producers': [], 'outstanding count': 0, 'oversampled count': 0}]) == expect(rc = 0, status = [{'name': 'all', 'interval': '1000000', 'offset': '100000', 'sync': 'true', 'mode': 'Pull', 'auto': 'false', 'state': 'STOPPED', 'producers': [], 'outstanding count': 0, 'oversampled count': 0}]), passed
+2023-07-19 12:34:05,085 TADA INFO assertion 3, Send updtr_prdcdr_add with a regex matching some prdcrs: report(rc = 0, status = [{'name': 'all', 'interval': '1000000', 'offset': '100000', 'sync': 'true', 'mode': 'Pull', 'auto': 'false', 'state': 'STOPPED', 'producers': [{'name': 'sampler-1', 'host': 'sampler-1', 'port': 10000, 'transport': 'sock', 'state': 'CONNECTED'}], 'outstanding count': 0, 'oversampled count': 0}]) == expect(rc = 0, status = [{'name': 'all', 'interval': '1000000', 'offset': '100000', 'sync': 'true', 'mode': 'Pull', 'auto': 'false', 'state': 'STOPPED', 'producers': [{'name': 'sampler-1', 'host': 'sampler-1', 'port': 10000, 'transport': 'sock', 'state': 'CONNECTED'}], 'outstanding count': 0, 'oversampled count': 0}]), passed
+2023-07-19 12:34:06,290 TADA INFO assertion 4, Send updtr_prdcdr_add to a running updtr: report(rc = 16) == expect(rc = 16), passed
+2023-07-19 12:34:07,499 TADA INFO assertion 5, Send updtr_prdcr_add to a not-existing updtr: report(rc = 2) == expect(rc = 2), passed
+2023-07-19 12:34:07,500 __main__ INFO --- done ---
+2023-07-19 12:34:07,500 TADA INFO test updtr_add test ended
