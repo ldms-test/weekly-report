@@ -1,73 +1,17 @@
-2023-07-19 12:07:08,191 TADA INFO starting test `maestro_cfg_test`
-2023-07-19 12:07:08,192 TADA INFO   test-id: 9f7543109349fa7f17dd98c4402c34018df3a287bb86a579bc1eaefbe8106e51
-2023-07-19 12:07:08,192 TADA INFO   test-suite: LDMSD
-2023-07-19 12:07:08,192 TADA INFO   test-name: maestro_cfg_test
-2023-07-19 12:07:08,192 TADA INFO   test-user: narate
-2023-07-19 12:07:08,192 TADA INFO   commit-id: a62e3ad784829c003b4139783a83936dcfdc6ac6
-2023-07-19 12:07:18,200 __main__ INFO -- Get or create cluster --
-2023-07-19 12:07:44,438 __main__ INFO -- Start daemons --
-2023-07-19 12:08:45,834 __main__ INFO ... make sure ldmsd's are up
-2023-07-19 12:08:53,629 TADA INFO assertion 1, load maestro etcd cluster: etcd cluster loaded successfully, passed
-2023-07-19 12:09:33,669 TADA INFO assertion 2, config ldmsd cluster with maestro: Unexpected output: Rebalance cluster...
-Error 107: samp-8 status returned None
-Adding sampler plugins to sampler samp-1
-Adding sampler plugins to sampler samp-2
-Adding sampler plugins to sampler samp-3
-Adding sampler plugins to sampler samp-4
-Adding sampler plugins to sampler samp-5
-Adding sampler plugins to sampler samp-6
-Adding sampler plugins to sampler samp-7
-Starting.. meminfo on samp-1
-Starting.. meminfo on samp-2
-Starting.. meminfo on samp-3
-Starting.. meminfo on samp-4
-Starting.. meminfo on samp-5
-Starting.. meminfo on samp-6
-Starting.. meminfo on samp-7
-Adding 8 producers to agg agg-1
-Adding 8 producers to agg agg-2
-Adding 8 producers to agg agg-3
-Adding 3 producers to agg agg-4
-Starting agg agg-1 3 producers
-Starting agg agg-2 3 producers
-Starting agg agg-3 2 producers
-Starting agg agg-4 3 producers
-Finished load balancing.
-, failed
+2023-07-21 12:02:11,768 TADA INFO starting test `maestro_cfg_test`
+2023-07-21 12:02:11,768 TADA INFO   test-id: 56276eede3613d083b31323ab53f663ac7721c097d064d3d503a00e3fc4c9bff
+2023-07-21 12:02:11,768 TADA INFO   test-suite: LDMSD
+2023-07-21 12:02:11,769 TADA INFO   test-name: maestro_cfg_test
+2023-07-21 12:02:11,769 TADA INFO   test-user: narate
+2023-07-21 12:02:11,769 TADA INFO   commit-id: 841f538cd5dc1b6336459d711ef8cc723e733f0a
+2023-07-21 12:02:21,780 __main__ INFO -- Get or create cluster --
+2023-07-21 12:02:47,707 __main__ INFO -- Start daemons --
+2023-07-21 12:03:49,305 __main__ INFO ... make sure ldmsd's are up
+2023-07-21 12:03:57,247 TADA INFO assertion 1, load maestro etcd cluster: etcd cluster loaded successfully, passed
+2023-07-21 12:04:37,284 TADA INFO assertion 2, config ldmsd cluster with maestro: Maestro ldmsd configuration successful, passed
+2023-07-21 12:04:38,885 TADA INFO assertion 3, verify sampler daemons: OK, passed
+2023-07-21 12:04:39,478 TADA INFO assertion 4, verify L1 aggregator daemons: OK, passed
+2023-07-21 12:04:39,743 TADA INFO assertion 5, verify L2 aggregator daemon: OK, passed
+2023-07-21 12:04:39,987 TADA INFO assertion 6, verify data storage: OK, passed
 ---Wait for config to write to file---
-Traceback (most recent call last):
-  File "maestro_cfg_test", line 370, in <module>
-    test.assert_test(2, False, "Unexpected output: {}".format(out))
-  File "/home/narate/cron/ldms-test/TADA.py", line 157, in assert_test
-    raise AssertionException(self.test_desc + ", " + cond_str + ": FAILED")
-TADA.AssertionException: Test for ldmsd configuration with maestro_ctrl, Unexpected output: Rebalance cluster...
-Error 107: samp-8 status returned None
-Adding sampler plugins to sampler samp-1
-Adding sampler plugins to sampler samp-2
-Adding sampler plugins to sampler samp-3
-Adding sampler plugins to sampler samp-4
-Adding sampler plugins to sampler samp-5
-Adding sampler plugins to sampler samp-6
-Adding sampler plugins to sampler samp-7
-Starting.. meminfo on samp-1
-Starting.. meminfo on samp-2
-Starting.. meminfo on samp-3
-Starting.. meminfo on samp-4
-Starting.. meminfo on samp-5
-Starting.. meminfo on samp-6
-Starting.. meminfo on samp-7
-Adding 8 producers to agg agg-1
-Adding 8 producers to agg agg-2
-Adding 8 producers to agg agg-3
-Adding 3 producers to agg agg-4
-Starting agg agg-1 3 producers
-Starting agg agg-2 3 producers
-Starting agg agg-3 2 producers
-Starting agg agg-4 3 producers
-Finished load balancing.
-: FAILED
-2023-07-19 12:09:33,671 TADA INFO assertion 3, verify sampler daemons: skipped
-2023-07-19 12:09:33,671 TADA INFO assertion 4, verify L1 aggregator daemons: skipped
-2023-07-19 12:09:33,671 TADA INFO assertion 5, verify L2 aggregator daemon: skipped
-2023-07-19 12:09:33,672 TADA INFO assertion 6, verify data storage: skipped
-2023-07-19 12:09:33,672 TADA INFO test maestro_cfg_test ended
+2023-07-21 12:04:39,988 TADA INFO test maestro_cfg_test ended
