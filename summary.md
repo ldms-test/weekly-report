@@ -45,7 +45,7 @@ Test Summary
 * [ldmsd_long_config_test](test-log/ldmsd_long_config_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
 * [ldms_rail_test](test-log/ldms_rail_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
 * [ldms_stream_test](test-log/ldms_stream_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
-* [cont-test-ldms](test-log/cont-test-ldms.log): $\textcolor{red}{\text{FAILED}}$
+* [cont-test-ldms](test-log/cont-test-ldms.log): $\textcolor{lightgreen}{\text{PASSED}}$
 * [cont-test-maestro](test-log/cont-test-maestro.log): $\textcolor{lightgreen}{\text{PASSED}}$
-* [cont-test-maestro-hostmunge](test-log/cont-test-maestro-hostmunge.log): $\textcolor{red}{\text{FAILED}}$
-* [cont-test-maestro-munge](test-log/cont-test-maestro-munge.log): $\textcolor{red}{\text{FAILED}}$
+* [cont-test-maestro-hostmunge](test-log/cont-test-maestro-hostmunge.log): $\textcolor{lightgreen}{\text{PASSED}}$
+* [cont-test-maestro-munge](test-log/cont-test-maestro-munge.log): $\textcolor{lightgreen}{\text{PASSED}}$
