@@ -1,17 +1,28 @@
-2023-07-29 11:08:07,939 TADA INFO starting test `maestro_cfg_test`
-2023-07-29 11:08:07,940 TADA INFO   test-id: c64a426181617a0e335eeed1a4767b3921a0d082eb26ba0ff6e185752c3bad44
-2023-07-29 11:08:07,940 TADA INFO   test-suite: LDMSD
-2023-07-29 11:08:07,940 TADA INFO   test-name: maestro_cfg_test
-2023-07-29 11:08:07,940 TADA INFO   test-user: narate
-2023-07-29 11:08:07,940 TADA INFO   commit-id: 925affbefabc13830ec3385b8ea358a0296d2a42
-2023-07-29 11:08:17,952 __main__ INFO -- Get or create cluster --
-2023-07-29 11:08:43,379 __main__ INFO -- Start daemons --
-2023-07-29 11:09:45,116 __main__ INFO ... make sure ldmsd's are up
-2023-07-29 11:09:52,626 TADA INFO assertion 1, load maestro etcd cluster: etcd cluster loaded successfully, passed
-2023-07-29 11:10:32,672 TADA INFO assertion 2, config ldmsd cluster with maestro: Maestro ldmsd configuration successful, passed
-2023-07-29 11:10:34,301 TADA INFO assertion 3, verify sampler daemons: OK, passed
-2023-07-29 11:10:34,907 TADA INFO assertion 4, verify L1 aggregator daemons: OK, passed
-2023-07-29 11:10:35,153 TADA INFO assertion 5, verify L2 aggregator daemon: OK, passed
-2023-07-29 11:10:35,460 TADA INFO assertion 6, verify data storage: OK, passed
+2023-08-10 16:18:24,355 TADA INFO starting test `maestro_cfg_test`
+2023-08-10 16:18:24,355 TADA INFO   test-id: 5c533b78a0412e6b79e57d2ca95da587fb40182d8e92e12d73a8fc80316bd2ff
+2023-08-10 16:18:24,355 TADA INFO   test-suite: LDMSD
+2023-08-10 16:18:24,355 TADA INFO   test-name: maestro_cfg_test
+2023-08-10 16:18:24,356 TADA INFO   test-user: narate
+2023-08-10 16:18:24,356 TADA INFO   commit-id: 3b206c99fefb698222470a58fbc89d5c9df5ac75
+2023-08-10 16:18:34,368 __main__ INFO -- Get or create cluster --
+2023-08-10 16:19:00,438 __main__ INFO -- Start daemons --
+2023-08-10 16:20:02,517 __main__ INFO ... make sure ldmsd's are up
+2023-08-10 16:20:09,970 TADA INFO assertion 1, load maestro etcd cluster: etcd cluster loaded successfully, passed
+2023-08-10 16:20:50,006 TADA INFO assertion 2, config ldmsd cluster with maestro: Maestro ldmsd configuration successful, passed
 ---Wait for config to write to file---
-2023-07-29 11:10:35,461 TADA INFO test maestro_cfg_test ended
+Traceback (most recent call last):
+  File "maestro_cfg_test", line 382, in <module>
+    obj = ldms_ls(f"node-{i}")
+  File "maestro_cfg_test", line 376, in ldms_ls
+    raise RuntimeError(f"ldms_ls error {rc}, out: {out}")
+RuntimeError: ldms_ls error 1, out: Traceback (most recent call last):
+  File "/tada-src/python/ldms_ls.py", line 128, in <module>
+    x.connect(host = args.host, port = args.port)
+  File "ldms.pyx", line 3233, in python.ldms.Xprt.connect
+ConnectionError: [Errno 103] Connect error: ECONNABORTED(103)
+
+2023-08-10 16:20:51,056 TADA INFO assertion 3, verify sampler daemons: skipped
+2023-08-10 16:20:51,056 TADA INFO assertion 4, verify L1 aggregator daemons: skipped
+2023-08-10 16:20:51,056 TADA INFO assertion 5, verify L2 aggregator daemon: skipped
+2023-08-10 16:20:51,056 TADA INFO assertion 6, verify data storage: skipped
+2023-08-10 16:20:51,056 TADA INFO test maestro_cfg_test ended
