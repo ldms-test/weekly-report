@@ -1,18 +1,18 @@
-2023-11-05 01:02:52,119 TADA INFO starting test `ldmsd_long_config_line`
-2023-11-05 01:02:52,119 TADA INFO   test-id: 9d6c27a35d28ea34732489f8577ef4bb8e00a6509dc79df456aab4bd94f9685d
-2023-11-05 01:02:52,120 TADA INFO   test-suite: LDMSD
-2023-11-05 01:02:52,120 TADA INFO   test-name: ldmsd_long_config_line
-2023-11-05 01:02:52,120 TADA INFO   test-user: narate
-2023-11-05 01:02:52,120 TADA INFO   commit-id: 32d5252f2776353a2e7fc9be6a15930f6c1f575b
-2023-11-05 01:02:52,120 __main__ INFO ---Get or create the cluster --
-2023-11-05 01:06:19,148 __main__ INFO --- Start daemons ---
-2023-11-05 01:06:35,931 TADA INFO assertion 1, LDMSD correctly processes a config line in a config file: LDMSD processed the long config line in the config file correctly., passed
-2023-11-05 01:06:36,455 TADA INFO assertion 2, LDMSD correctly handle a config line from ldmsd_controller: LDMSD receives the correct message from ldmsd_controller., passed
-2023-11-05 01:06:42,752 TADA INFO assertion 3, LDMSD correctly handle a config line from ldmsctl: LDMSD receives the correct message from ldmsctl., failed
+2023-11-06 01:36:43,473 TADA INFO starting test `ldmsd_long_config_line`
+2023-11-06 01:36:43,474 TADA INFO   test-id: 2df6b13a704517733c050722a9afc9afe1e7dfcafd3012fda403c5568216f41a
+2023-11-06 01:36:43,474 TADA INFO   test-suite: LDMSD
+2023-11-06 01:36:43,474 TADA INFO   test-name: ldmsd_long_config_line
+2023-11-06 01:36:43,474 TADA INFO   test-user: narate
+2023-11-06 01:36:43,474 TADA INFO   commit-id: 32d5252f2776353a2e7fc9be6a15930f6c1f575b
+2023-11-06 01:36:43,474 __main__ INFO ---Get or create the cluster --
+2023-11-06 01:36:59,767 __main__ INFO --- Start daemons ---
+2023-11-06 01:37:16,447 TADA INFO assertion 1, LDMSD correctly processes a config line in a config file: LDMSD processed the long config line in the config file correctly., passed
+2023-11-06 01:37:16,977 TADA INFO assertion 2, LDMSD correctly handle a config line from ldmsd_controller: LDMSD receives the correct message from ldmsd_controller., passed
+2023-11-06 01:37:17,625 TADA INFO assertion 3, LDMSD correctly handle a config line from ldmsctl: LDMSD receives the correct message from ldmsctl., failed
 Traceback (most recent call last):
   File "ldmsd_long_config_test", line 202, in <module>
     "LDMSD receives the correct message from ldmsctl.")
   File "/home/narate/cron/ldms-test/TADA.py", line 157, in assert_test
     raise AssertionException(self.test_desc + ", " + cond_str + ": FAILED")
 TADA.AssertionException: Test the code path that handles long config lines that larger than the max of the transport message size, LDMSD receives the correct message from ldmsctl.: FAILED
-2023-11-05 01:06:42,753 TADA INFO test ldmsd_long_config_line ended
+2023-11-06 01:37:17,625 TADA INFO test ldmsd_long_config_line ended
