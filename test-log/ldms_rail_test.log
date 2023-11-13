@@ -1,53 +1,53 @@
-2023-11-12 01:38:27,504 TADA INFO starting test `ldms_rail_test`
-2023-11-12 01:38:27,504 TADA INFO   test-id: 89128e288b15c2afaaa994d0b75f9cdf838eb42dc7862324c496b80abd2fd08f
-2023-11-12 01:38:27,504 TADA INFO   test-suite: LDMSD
-2023-11-12 01:38:27,504 TADA INFO   test-name: ldms_rail_test
-2023-11-12 01:38:27,504 TADA INFO   test-user: narate
-2023-11-12 01:38:27,504 TADA INFO   commit-id: 32d5252f2776353a2e7fc9be6a15930f6c1f575b
-2023-11-12 01:38:27,505 __main__ INFO -- Get or create the cluster --
-2023-11-12 01:38:43,656 __main__ INFO -- Start daemons --
-2023-11-12 01:38:48,366 __main__ INFO ... wait a bit to make sure ldmsd's are up
-2023-11-12 01:38:50,368 __main__ INFO start ldms_rail_server.py and ldms_rail_client.py interactive sessions
-2023-11-12 01:38:53,388 TADA INFO assertion 1, Start interactive LDMS server: OK, passed
-2023-11-12 01:38:56,405 TADA INFO assertion 2, Start interactive LDMS client: OK, passed
-2023-11-12 01:39:00,010 TADA INFO assertion 3, Client rail has 8 endpoints on 8 thread pools: OK, passed
-2023-11-12 01:39:03,615 TADA INFO assertion 4, Server rail has 8 endpoints on 8 thread pools: OK, passed
-2023-11-12 01:39:07,220 TADA INFO assertion 5, Sets on client are processed by different threads: OK, passed
-2023-11-12 01:39:10,825 TADA INFO assertion 6, Verify sets on the client: OK, passed
-2023-11-12 01:39:13,843 TADA INFO assertion 7, Start interactive LDMS client2: OK, passed
-2023-11-12 01:39:17,448 TADA INFO assertion 8, Client2 rail has 8 endpoints on 4 thread pools: OK, passed
-2023-11-12 01:39:20,465 TADA INFO assertion 9, Client3 (wrong auth) cannot connect: OK, passed
-2023-11-12 01:39:23,483 TADA INFO assertion 10, Start interactive client4 (for push mode): OK, passed
-2023-11-12 01:39:23,483 __main__ INFO waiting push ...
-2023-11-12 01:39:25,486 __main__ INFO server: sampling new data (2)
-2023-11-12 01:39:30,092 __main__ INFO client4: set pushes received
-2023-11-12 01:39:30,092 __main__ INFO client4: verifying data in sets
-2023-11-12 01:39:33,696 __main__ INFO client4: verifying threads-sets-endpoints spread
-2023-11-12 01:39:44,510 TADA INFO assertion 11, Client4 got push callback from the corresponding thread: OK, passed
-2023-11-12 01:39:47,530 TADA INFO assertion 12, Client5 started (for clean-up path test): OK, passed
-2023-11-12 01:39:47,530 __main__ INFO xprt close by client1
-2023-11-12 01:40:00,346 TADA INFO assertion 13, Active-side close: client1 clean up: OK, passed
-2023-11-12 01:40:03,951 TADA INFO assertion 14, Active-side close: server-side clean up: OK, passed
-2023-11-12 01:40:20,371 TADA INFO assertion 15, Passive-side close: client2 clean up: OK, passed
-2023-11-12 01:40:20,371 TADA INFO assertion 16, Passive-side close: server-side clean up: OK, passed
-2023-11-12 01:40:25,978 TADA INFO assertion 17, Active-side term: server-side clean up: OK, passed
-2023-11-12 01:40:33,187 TADA INFO assertion 18, Passive-side term: client5 clean up: OK, passed
-2023-11-12 01:40:53,648 TADA INFO assertion 19, server -> client overspending send: error message verified, passed
-2023-11-12 01:41:04,462 TADA INFO assertion 20, client -> server overspending send: error message verified, passed
-2023-11-12 01:41:08,066 TADA INFO assertion 21, verify send credits on the server: OK, passed
-2023-11-12 01:41:11,671 TADA INFO assertion 22, verify send credits on the client: OK, passed
-2023-11-12 01:41:19,782 TADA INFO assertion 23, server unblock, verify recv data: recv data verified, passed
-2023-11-12 01:41:27,892 TADA INFO assertion 24, client unblock, verify recv data: recv data verified, passed
-2023-11-12 01:41:31,497 TADA INFO assertion 25, verify send credits on the server: OK, passed
-2023-11-12 01:41:35,102 TADA INFO assertion 26, verify send credits on the client: OK, passed
-2023-11-12 01:41:38,707 TADA INFO assertion 27, server -> client send after credited back: OK, passed
-2023-11-12 01:41:42,312 TADA INFO assertion 28, client -> server send after credited back: OK, passed
-2023-11-12 01:41:45,917 TADA INFO assertion 29, verify send credits on the server: OK, passed
-2023-11-12 01:41:49,521 TADA INFO assertion 30, verify send credits on the client: OK, passed
-2023-11-12 01:41:53,126 TADA INFO assertion 31, server unblock, verify recv data: OK, passed
-2023-11-12 01:41:56,731 TADA INFO assertion 32, client unblock, verify recv data: OK, passed
-2023-11-12 01:42:00,336 TADA INFO assertion 33, verify send credits on the server: OK, passed
-2023-11-12 01:42:03,941 TADA INFO assertion 34, verify send credits on the client: OK, passed
-2023-11-12 01:42:07,546 TADA INFO assertion 35, verify send-credit deposits on the server: expected [(17, 0), (32, 0), (32, 0)], got [(17, 0), (32, 0), (32, 0)], passed
-2023-11-12 01:42:11,151 TADA INFO assertion 36, verify send-credit deposits on the client: expected [(17, 0), (32, 0), (32, 0)], got [(17, 0), (32, 0), (32, 0)], passed
-2023-11-12 01:42:11,151 TADA INFO test ldms_rail_test ended
+2023-11-13 01:37:24,768 TADA INFO starting test `ldms_rail_test`
+2023-11-13 01:37:24,768 TADA INFO   test-id: 5c5e00b848f549a6cd0c04a2b622e570eadc1670cedc8cbd16ffeb9885605d10
+2023-11-13 01:37:24,769 TADA INFO   test-suite: LDMSD
+2023-11-13 01:37:24,769 TADA INFO   test-name: ldms_rail_test
+2023-11-13 01:37:24,769 TADA INFO   test-user: narate
+2023-11-13 01:37:24,769 TADA INFO   commit-id: 32d5252f2776353a2e7fc9be6a15930f6c1f575b
+2023-11-13 01:37:24,769 __main__ INFO -- Get or create the cluster --
+2023-11-13 01:37:41,151 __main__ INFO -- Start daemons --
+2023-11-13 01:37:45,957 __main__ INFO ... wait a bit to make sure ldmsd's are up
+2023-11-13 01:37:47,960 __main__ INFO start ldms_rail_server.py and ldms_rail_client.py interactive sessions
+2023-11-13 01:37:50,979 TADA INFO assertion 1, Start interactive LDMS server: OK, passed
+2023-11-13 01:37:53,996 TADA INFO assertion 2, Start interactive LDMS client: OK, passed
+2023-11-13 01:37:57,600 TADA INFO assertion 3, Client rail has 8 endpoints on 8 thread pools: OK, passed
+2023-11-13 01:38:01,205 TADA INFO assertion 4, Server rail has 8 endpoints on 8 thread pools: OK, passed
+2023-11-13 01:38:04,810 TADA INFO assertion 5, Sets on client are processed by different threads: OK, passed
+2023-11-13 01:38:08,415 TADA INFO assertion 6, Verify sets on the client: OK, passed
+2023-11-13 01:38:11,435 TADA INFO assertion 7, Start interactive LDMS client2: OK, passed
+2023-11-13 01:38:15,040 TADA INFO assertion 8, Client2 rail has 8 endpoints on 4 thread pools: OK, passed
+2023-11-13 01:38:18,060 TADA INFO assertion 9, Client3 (wrong auth) cannot connect: OK, passed
+2023-11-13 01:38:21,078 TADA INFO assertion 10, Start interactive client4 (for push mode): OK, passed
+2023-11-13 01:38:21,078 __main__ INFO waiting push ...
+2023-11-13 01:38:23,080 __main__ INFO server: sampling new data (2)
+2023-11-13 01:38:27,686 __main__ INFO client4: set pushes received
+2023-11-13 01:38:27,686 __main__ INFO client4: verifying data in sets
+2023-11-13 01:38:31,291 __main__ INFO client4: verifying threads-sets-endpoints spread
+2023-11-13 01:38:42,104 TADA INFO assertion 11, Client4 got push callback from the corresponding thread: OK, passed
+2023-11-13 01:38:45,124 TADA INFO assertion 12, Client5 started (for clean-up path test): OK, passed
+2023-11-13 01:38:45,124 __main__ INFO xprt close by client1
+2023-11-13 01:38:57,939 TADA INFO assertion 13, Active-side close: client1 clean up: OK, passed
+2023-11-13 01:39:01,544 TADA INFO assertion 14, Active-side close: server-side clean up: OK, passed
+2023-11-13 01:39:17,964 TADA INFO assertion 15, Passive-side close: client2 clean up: OK, passed
+2023-11-13 01:39:17,965 TADA INFO assertion 16, Passive-side close: server-side clean up: OK, passed
+2023-11-13 01:39:23,572 TADA INFO assertion 17, Active-side term: server-side clean up: OK, passed
+2023-11-13 01:39:30,781 TADA INFO assertion 18, Passive-side term: client5 clean up: OK, passed
+2023-11-13 01:39:51,234 TADA INFO assertion 19, server -> client overspending send: error message verified, passed
+2023-11-13 01:40:02,048 TADA INFO assertion 20, client -> server overspending send: error message verified, passed
+2023-11-13 01:40:05,653 TADA INFO assertion 21, verify send credits on the server: OK, passed
+2023-11-13 01:40:09,257 TADA INFO assertion 22, verify send credits on the client: OK, passed
+2023-11-13 01:40:17,368 TADA INFO assertion 23, server unblock, verify recv data: recv data verified, passed
+2023-11-13 01:40:25,478 TADA INFO assertion 24, client unblock, verify recv data: recv data verified, passed
+2023-11-13 01:40:29,083 TADA INFO assertion 25, verify send credits on the server: OK, passed
+2023-11-13 01:40:32,687 TADA INFO assertion 26, verify send credits on the client: OK, passed
+2023-11-13 01:40:36,292 TADA INFO assertion 27, server -> client send after credited back: OK, passed
+2023-11-13 01:40:39,897 TADA INFO assertion 28, client -> server send after credited back: OK, passed
+2023-11-13 01:40:43,502 TADA INFO assertion 29, verify send credits on the server: OK, passed
+2023-11-13 01:40:47,106 TADA INFO assertion 30, verify send credits on the client: OK, passed
+2023-11-13 01:40:50,711 TADA INFO assertion 31, server unblock, verify recv data: OK, passed
+2023-11-13 01:40:54,316 TADA INFO assertion 32, client unblock, verify recv data: OK, passed
+2023-11-13 01:40:57,921 TADA INFO assertion 33, verify send credits on the server: OK, passed
+2023-11-13 01:41:01,526 TADA INFO assertion 34, verify send credits on the client: OK, passed
+2023-11-13 01:41:05,131 TADA INFO assertion 35, verify send-credit deposits on the server: expected [(17, 0), (32, 0), (32, 0)], got [(17, 0), (32, 0), (32, 0)], passed
+2023-11-13 01:41:08,735 TADA INFO assertion 36, verify send-credit deposits on the client: expected [(17, 0), (32, 0), (32, 0)], got [(17, 0), (32, 0), (32, 0)], passed
+2023-11-13 01:41:08,736 TADA INFO test ldms_rail_test ended
