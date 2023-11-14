@@ -4,7 +4,7 @@ Test Summary
 * [direct_prdcr_subscribe_test](test-log/direct_prdcr_subscribe_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
 * [agg_slurm_test](test-log/agg_slurm_test.log): $\textcolor{red}{\text{FAILED}}$
 * [papi_sampler_test](test-log/papi_sampler_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
-* [papi_store_test](test-log/papi_store_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
+* [papi_store_test](test-log/papi_store_test.log): $\textcolor{red}{\text{FAILED}}$
 * [store_app_test](test-log/store_app_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
 * [syspapi_test](test-log/syspapi_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
 * [agg_test](test-log/agg_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
@@ -29,7 +29,7 @@ Test Summary
 * [ldms_schema_digest_test](test-log/ldms_schema_digest_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
 * [ldmsd_decomp_test](test-log/ldmsd_decomp_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
 * [ldmsd_stream_status_test](test-log/ldmsd_stream_status_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
-* [store_list_record_test](test-log/store_list_record_test.log): $\textcolor{red}{\text{FAILED}}$
+* [store_list_record_test](test-log/store_list_record_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
 * [maestro_raft_test](test-log/maestro_raft_test.log): $\textcolor{red}{\text{FAILED}}$
 * [ovis_json_test](test-log/ovis_json_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
 * [updtr_add_test](test-log/updtr_add_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
@@ -43,8 +43,8 @@ Test Summary
 * [updtr_stop_test](test-log/updtr_stop_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
 * [ldmsd_flex_decomp_test](test-log/ldmsd_flex_decomp_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
 * [ldms_set_info_test](test-log/ldms_set_info_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
-* [slurm_sampler2_test](test-log/slurm_sampler2_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
-* [libovis_log_test](test-log/libovis_log_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
+* [slurm_sampler2_test](test-log/slurm_sampler2_test.log): $\textcolor{red}{\text{FAILED}}$
+* [libovis_log_test](test-log/libovis_log_test.log): $\textcolor{red}{\text{FAILED}}$
 * [ldmsd_long_config_test](test-log/ldmsd_long_config_test.log): $\textcolor{red}{\text{FAILED}}$
 * [ldms_rail_test](test-log/ldms_rail_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
 * [ldms_stream_test](test-log/ldms_stream_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
