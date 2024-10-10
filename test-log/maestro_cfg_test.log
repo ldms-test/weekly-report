@@ -1,23 +1,17 @@
-2023-11-14 00:51:55,609 TADA INFO starting test `maestro_cfg_test`
-2023-11-14 00:51:55,609 TADA INFO   test-id: ba8a73e381469eadfacbecab08e75bf196c91afcde09fabd420f5b345baa5850
-2023-11-14 00:51:55,609 TADA INFO   test-suite: LDMSD
-2023-11-14 00:51:55,609 TADA INFO   test-name: maestro_cfg_test
-2023-11-14 00:51:55,609 TADA INFO   test-user: narate
-2023-11-14 00:51:55,609 TADA INFO   commit-id: 32d5252f2776353a2e7fc9be6a15930f6c1f575b
-2023-11-14 00:52:05,621 __main__ INFO -- Get or create cluster --
-2023-11-14 00:52:49,676 __main__ INFO -- Start daemons --
-2023-11-14 00:53:51,685 __main__ INFO ... make sure ldmsd's are up
-2023-11-14 00:53:57,178 TADA INFO assertion 1, load maestro etcd cluster: Unexpected output: , failed
+2024-10-10 16:56:20,037 TADA INFO starting test `maestro_cfg_test`
+2024-10-10 16:56:20,037 TADA INFO   test-id: 9f60c4b82cf7ea4b207b465f7719ce8288299c27f39f19a2e71386ab4c2384d5
+2024-10-10 16:56:20,037 TADA INFO   test-suite: LDMSD
+2024-10-10 16:56:20,037 TADA INFO   test-name: maestro_cfg_test
+2024-10-10 16:56:20,037 TADA INFO   test-user: narate
+2024-10-10 16:56:20,038 TADA INFO   commit-id: 56c320912294f3e2917bd8dc39e3869bdff27229
+2024-10-10 16:56:30,049 __main__ INFO -- Get or create cluster --
+2024-10-10 16:57:14,676 __main__ INFO -- Start daemons --
+2024-10-10 16:58:54,102 __main__ INFO ... make sure ldmsd's are up
+2024-10-10 16:59:02,019 TADA INFO assertion 1, load maestro etcd cluster: etcd cluster loaded successfully, passed
+2024-10-10 16:59:42,052 TADA INFO assertion 2, config ldmsd cluster with maestro: Maestro ldmsd configuration successful, passed
+2024-10-10 16:59:43,757 TADA INFO assertion 3, verify sampler daemons: OK, passed
+2024-10-10 16:59:44,373 TADA INFO assertion 4, verify L1 aggregator daemons: OK, passed
+2024-10-10 16:59:44,664 TADA INFO assertion 5, verify L2 aggregator daemon: OK, passed
+2024-10-10 16:59:44,997 TADA INFO assertion 6, verify data storage: OK, passed
 ---Wait for config to write to file---
-Traceback (most recent call last):
-  File "maestro_cfg_test", line 324, in <module>
-    test.assert_test(1, False, "Unexpected output: {}".format(out))
-  File "/home/narate/cron/ldms-test/TADA.py", line 157, in assert_test
-    raise AssertionException(self.test_desc + ", " + cond_str + ": FAILED")
-TADA.AssertionException: Test for ldmsd configuration with maestro_ctrl, Unexpected output: : FAILED
-2023-11-14 00:53:57,179 TADA INFO assertion 2, config ldmsd cluster with maestro: skipped
-2023-11-14 00:53:57,179 TADA INFO assertion 3, verify sampler daemons: skipped
-2023-11-14 00:53:57,179 TADA INFO assertion 4, verify L1 aggregator daemons: skipped
-2023-11-14 00:53:57,179 TADA INFO assertion 5, verify L2 aggregator daemon: skipped
-2023-11-14 00:53:57,179 TADA INFO assertion 6, verify data storage: skipped
-2023-11-14 00:53:57,179 TADA INFO test maestro_cfg_test ended
+2024-10-10 16:59:44,998 TADA INFO test maestro_cfg_test ended

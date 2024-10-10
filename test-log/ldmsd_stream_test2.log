@@ -1,25 +1,31 @@
-2023-11-14 00:50:47,928 TADA INFO starting test `ldmsd_stream_test`
-2023-11-14 00:50:47,928 TADA INFO   test-id: c759cce053d3f6f86b9d411b6d602c23091b70ee678be8db1c34ff0199573244
-2023-11-14 00:50:47,929 TADA INFO   test-suite: LDMSD
-2023-11-14 00:50:47,929 TADA INFO   test-name: ldmsd_stream_test
-2023-11-14 00:50:47,929 TADA INFO   test-user: narate
-2023-11-14 00:50:47,929 TADA INFO   commit-id: 32d5252f2776353a2e7fc9be6a15930f6c1f575b
-2023-11-14 00:50:47,929 __main__ INFO -- Get or create the cluster --
-2023-11-14 00:51:07,212 __main__ INFO -- Start daemons --
-2023-11-14 00:51:24,872 __main__ INFO ... wait a bit to make sure ldmsd's are up
-2023-11-14 00:51:26,874 root INFO starting /tada-src/python/pypubsub.py on narate-ldmsd_stream_test2-32d5252-new 
-2023-11-14 00:51:29,893 root INFO starting /tada-src/python/pypubsub.py on narate-ldmsd_stream_test2-32d5252-agg-2 
-2023-11-14 00:51:40,323 TADA INFO assertion 1, Check data from old ldmsd_stream at agg-1: , passed
-2023-11-14 00:51:40,324 TADA INFO assertion 2, Check data from old ldmsd_stream at agg-2: , passed
-2023-11-14 00:51:40,324 TADA INFO assertion 3, Check data from old ldmsd_stream at the last subscriber: , passed
-2023-11-14 00:51:40,324 TADA INFO assertion 4, Check data from the matching new ldms stream at agg-1: , passed
-2023-11-14 00:51:40,325 TADA INFO assertion 5, Check data from the matching new ldms stream at agg-2: , passed
-2023-11-14 00:51:40,325 TADA INFO assertion 6, Check data from the matching new ldms stream at the last subscriber: , passed
-2023-11-14 00:51:40,325 TADA INFO assertion 7, Check data from the non-matching new ldms stream at agg-1: , passed
-2023-11-14 00:51:40,326 TADA INFO assertion 8, Check data from the non-matching new ldms stream at agg-2: , passed
-2023-11-14 00:51:40,326 TADA INFO assertion 9, Check data from the non-matching new ldms stream at last subscriber: , passed
-2023-11-14 00:51:40,893 TADA INFO assertion 10, Check stream_stats before stream data transfer: , passed
-2023-11-14 00:51:40,893 TADA INFO assertion 11, Check stream_client_stats before stream data transfer: , passed
-2023-11-14 00:51:40,894 TADA INFO assertion 12, Check stream_stats after stream data transfer: , passed
-2023-11-14 00:51:40,894 TADA INFO assertion 13, Check stream_client_stats after stream data transfer: , passed
-2023-11-14 00:51:40,894 TADA INFO test ldmsd_stream_test ended
+2024-10-10 16:55:10,560 TADA INFO starting test `ldmsd_stream_test`
+2024-10-10 16:55:10,560 TADA INFO   test-id: 0955af1c354651213ea3286652b1ae1cb62060dc7bac7b060acc7a53a230b1b7
+2024-10-10 16:55:10,561 TADA INFO   test-suite: LDMSD
+2024-10-10 16:55:10,561 TADA INFO   test-name: ldmsd_stream_test
+2024-10-10 16:55:10,561 TADA INFO   test-user: narate
+2024-10-10 16:55:10,561 TADA INFO   commit-id: 56c320912294f3e2917bd8dc39e3869bdff27229
+2024-10-10 16:55:10,561 __main__ INFO -- Get or create the cluster --
+2024-10-10 16:55:29,940 __main__ INFO -- Start daemons --
+2024-10-10 16:55:53,752 __main__ INFO ... wait a bit to make sure ldmsd's are up
+2024-10-10 16:55:55,755 root INFO starting /tada-src/python/pypubsub.py on narate-ldmsd_stream_test2-56c3209-new 
+2024-10-10 16:55:56,171 root INFO starting /tada-src/python/pypubsub.py on narate-ldmsd_stream_test2-56c3209-agg-2 
+2024-10-10 16:56:04,045 TADA INFO assertion 1, Check data from old ldmsd_stream at agg-1: , failed
+Traceback (most recent call last):
+  File "ldmsd_stream_test2", line 353, in <module>
+    test.assert_test(1, a1_recs == ERECS, "")
+  File "/home/narate/projects/ldms-test/TADA.py", line 157, in assert_test
+    raise AssertionException(self.test_desc + ", " + cond_str + ": FAILED")
+TADA.AssertionException: Test ldms_stream (on rails) with ldmsd, : FAILED
+2024-10-10 16:56:04,046 TADA INFO assertion 2, Check data from old ldmsd_stream at agg-2: skipped
+2024-10-10 16:56:04,047 TADA INFO assertion 3, Check data from old ldmsd_stream at the last subscriber: skipped
+2024-10-10 16:56:04,047 TADA INFO assertion 4, Check data from the matching new ldms stream at agg-1: skipped
+2024-10-10 16:56:04,047 TADA INFO assertion 5, Check data from the matching new ldms stream at agg-2: skipped
+2024-10-10 16:56:04,047 TADA INFO assertion 6, Check data from the matching new ldms stream at the last subscriber: skipped
+2024-10-10 16:56:04,048 TADA INFO assertion 7, Check data from the non-matching new ldms stream at agg-1: skipped
+2024-10-10 16:56:04,048 TADA INFO assertion 8, Check data from the non-matching new ldms stream at agg-2: skipped
+2024-10-10 16:56:04,048 TADA INFO assertion 9, Check data from the non-matching new ldms stream at last subscriber: skipped
+2024-10-10 16:56:04,049 TADA INFO assertion 10, Check stream_stats before stream data transfer: skipped
+2024-10-10 16:56:04,049 TADA INFO assertion 11, Check stream_client_stats before stream data transfer: skipped
+2024-10-10 16:56:04,049 TADA INFO assertion 12, Check stream_stats after stream data transfer: skipped
+2024-10-10 16:56:04,049 TADA INFO assertion 13, Check stream_client_stats after stream data transfer: skipped
+2024-10-10 16:56:04,050 TADA INFO test ldmsd_stream_test ended
