@@ -1,0 +1,32 @@
+2024-10-16 15:33:09,213 TADA INFO starting test `ldmsd_qgroup_test`
+2024-10-16 15:33:09,214 TADA INFO   test-id: f41cfe550b45e629958f6a1455b2351bdd5745096efea263b471de3e877e0ad0
+2024-10-16 15:33:09,214 TADA INFO   test-suite: LDMSD
+2024-10-16 15:33:09,214 TADA INFO   test-name: ldmsd_qgroup_test
+2024-10-16 15:33:09,214 TADA INFO   test-user: narate
+2024-10-16 15:33:09,214 TADA INFO   commit-id: 04c74b7b45c1467071acf9512ffb3dfdd68bc649
+2024-10-16 15:33:09,215 __main__ INFO -- Get or create the cluster --
+2024-10-16 15:33:46,886 __main__ INFO -- Start daemons --
+2024-10-16 15:35:18,579 __main__ INFO ... wait a bit to make sure daemons are up
+2024-10-16 15:35:26,636 root INFO starting /tada-src/python/ldms_qgroup_app.py on narate-ldmsd_qgroup_test-04c74b7-samp1 
+2024-10-16 15:35:27,053 root INFO starting /tada-src/python/ldms_qgroup_app.py on narate-ldmsd_qgroup_test-04c74b7-samp2 
+2024-10-16 15:35:27,469 root INFO starting /tada-src/python/ldms_qgroup_app.py on narate-ldmsd_qgroup_test-04c74b7-samp3 
+2024-10-16 15:35:27,884 root INFO starting /tada-src/python/ldms_qgroup_app.py on narate-ldmsd_qgroup_test-04c74b7-samp4 
+Traceback (most recent call last):
+  File "ldmsd_qgroup_test", line 305, in <module>
+    py_app4 = PyPty(samp4, PY_APP_CMD)
+  File "/home/narate/cron/ldms-test/LDMS_Test.py", line 903, in __init__
+    self.pty = py_pty(node, script_path, user)
+  File "/home/narate/cron/ldms-test/LDMS_Test.py", line 894, in py_pty
+    EXPECT(_out, ">>> ")
+  File "/home/narate/cron/ldms-test/LDMS_Test.py", line 825, in EXPECT
+    raise RuntimeError("\n  EXPECTING: {}\n  GOT: {}".format(expected, val))
+RuntimeError: 
+  EXPECTING: >>> 
+  GOT: 
+2024-10-16 15:35:28,101 TADA INFO assertion 1, Throughput without limit: skipped
+2024-10-16 15:35:28,102 TADA INFO assertion 2, Data received after quota: skipped
+2024-10-16 15:35:28,102 TADA INFO assertion 3, Throughput with limit: skipped
+2024-10-16 15:35:28,102 TADA INFO assertion 4, Check data loss: skipped
+2024-10-16 15:35:28,102 TADA INFO assertion 5, Check starvation: skipped
+2024-10-16 15:35:28,102 TADA INFO assertion 6, Single publisher saturation test: skipped
+2024-10-16 15:35:28,102 TADA INFO test ldmsd_qgroup_test ended
