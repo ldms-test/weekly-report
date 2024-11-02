@@ -22,8 +22,8 @@ Test Summary
 * [ldmsd_autointerval_test](test-log/ldmsd_autointerval_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
 * [ldms_record_test](test-log/ldms_record_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
 * [ldms_schema_digest_test](test-log/ldms_schema_digest_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
-* [ldmsd_decomp_test](test-log/ldmsd_decomp_test.log): $\textcolor{red}{\text{FAILED}}$
-* [ldmsd_decomp_no_fill_test](test-log/ldmsd_decomp_no_fill_test.log): $\textcolor{red}{\text{FAILED}}$
+* [ldmsd_decomp_test](test-log/ldmsd_decomp_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
+* [ldmsd_decomp_no_fill_test](test-log/ldmsd_decomp_no_fill_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
 * [ldmsd_stream_status_test](test-log/ldmsd_stream_status_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
 * [store_list_record_test](test-log/store_list_record_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
 * [maestro_raft_test](test-log/maestro_raft_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
@@ -37,7 +37,7 @@ Test Summary
 * [updtr_start_test](test-log/updtr_start_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
 * [updtr_status_test](test-log/updtr_status_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
 * [updtr_stop_test](test-log/updtr_stop_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
-* [ldmsd_flex_decomp_test](test-log/ldmsd_flex_decomp_test.log): $\textcolor{red}{\text{FAILED}}$
+* [ldmsd_flex_decomp_test](test-log/ldmsd_flex_decomp_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
 * [ldms_set_info_test](test-log/ldms_set_info_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
 * [slurm_sampler2_test](test-log/slurm_sampler2_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
 * [ldmsd_long_config_test](test-log/ldmsd_long_config_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
