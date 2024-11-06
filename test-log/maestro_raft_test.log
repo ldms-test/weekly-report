@@ -1,28 +1,21 @@
-2024-10-29 01:33:35,530 TADA INFO starting test `maestro_raft_test`
-2024-10-29 01:33:35,530 TADA INFO   test-id: 96e154f0ea33810c4eaeb8d1b5372f3971b9db155c4e47f691de2cbb0a0dc475
-2024-10-29 01:33:35,530 TADA INFO   test-suite: LDMSD
-2024-10-29 01:33:35,530 TADA INFO   test-name: maestro_raft_test
-2024-10-29 01:33:35,530 TADA INFO   test-user: narate
-2024-10-29 01:33:35,530 TADA INFO   commit-id: 2efafc5c182285db4428129ebfb8b0937aee0c9c
-2024-10-29 01:33:45,542 __main__ INFO -- Get or create cluster --
-2024-10-29 01:34:42,500 __main__ INFO -- Start daemons --
-2024-10-29 01:36:17,864 __main__ INFO -- making known hosts (ssh) --
-2024-10-29 01:36:24,844 __main__ INFO ... make sure ldmsd's are up
-2024-10-29 01:36:41,687 __main__ INFO Wait a bit for all maestro daemons to sync...
-2024-10-29 01:36:52,363 TADA INFO assertion 1, Statuses of maestros, 1 leader + 2 followers: [('FOLLOWER', 2), ('LEADER', 1)], passed
-2024-10-29 01:37:02,576 TADA INFO assertion 2, All ldmsds are up and configured: samp1: expecting ['samp1/meminfo'], but got [], failed
+2024-11-06 09:36:47,642 TADA INFO starting test `maestro_raft_test`
+2024-11-06 09:36:47,642 TADA INFO   test-id: 68ea8402a1557da418972010f5fee57bd1dcb32a4f693d952d6813cc5784b116
+2024-11-06 09:36:47,642 TADA INFO   test-suite: LDMSD
+2024-11-06 09:36:47,642 TADA INFO   test-name: maestro_raft_test
+2024-11-06 09:36:47,642 TADA INFO   test-user: narate
+2024-11-06 09:36:47,642 TADA INFO   commit-id: 2efafc5c182285db4428129ebfb8b0937aee0c9c
+2024-11-06 09:36:57,654 __main__ INFO -- Get or create cluster --
+2024-11-06 09:37:54,700 __main__ INFO -- Start daemons --
+2024-11-06 09:39:30,419 __main__ INFO -- making known hosts (ssh) --
+2024-11-06 09:39:37,428 __main__ INFO ... make sure ldmsd's are up
+2024-11-06 09:39:53,870 __main__ INFO Wait a bit for all maestro daemons to sync...
+2024-11-06 09:40:04,561 TADA INFO assertion 1, Statuses of maestros, 1 leader + 2 followers: [('FOLLOWER', 2), ('LEADER', 1)], passed
+2024-11-06 09:40:17,133 TADA INFO assertion 2, All ldmsds are up and configured: sets verified, passed
+2024-11-06 09:40:17,406 TADA INFO assertion 3, Data are being stored: data check, passed
+2024-11-06 09:40:22,315 TADA INFO assertion 4, New leader elected: checked, passed
+2024-11-06 09:40:29,784 __main__ INFO Wait a bit for agg4 reconfiguration ...
+2024-11-06 09:41:32,336 TADA INFO assertion 5, Restarted ldmsd is configured: sets verified, passed
+2024-11-06 09:41:32,609 TADA INFO assertion 6, New data are presented in the store: data check, passed
+2024-11-06 09:41:43,641 TADA INFO assertion 7, The restarted maestro becomes a follower: checked, passed
 ---Wait for config to write to file---
-Traceback (most recent call last):
-  File "maestro_raft_test", line 457, in <module>
-    verify_ldmsds(2)
-  File "maestro_raft_test", line 423, in verify_ldmsds
-    f"samp{i}: expecting {expected_sets}, but got {sets}")
-  File "/home/narate/cron/ldms-test/TADA.py", line 157, in assert_test
-    raise AssertionException(self.test_desc + ", " + cond_str + ": FAILED")
-TADA.AssertionException: Test maestros on RAFT, samp1: expecting ['samp1/meminfo'], but got []: FAILED
-2024-10-29 01:37:02,578 TADA INFO assertion 3, Data are being stored: skipped
-2024-10-29 01:37:02,578 TADA INFO assertion 4, New leader elected: skipped
-2024-10-29 01:37:02,578 TADA INFO assertion 5, Restarted ldmsd is configured: skipped
-2024-10-29 01:37:02,579 TADA INFO assertion 6, New data are presented in the store: skipped
-2024-10-29 01:37:02,579 TADA INFO assertion 7, The restarted maestro becomes a follower: skipped
-2024-10-29 01:37:02,579 TADA INFO test maestro_raft_test ended
+2024-11-06 09:41:43,641 TADA INFO test maestro_raft_test ended
