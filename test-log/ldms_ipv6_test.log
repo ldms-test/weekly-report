@@ -1,16 +1,16 @@
-2024-11-06 10:24:18,173 TADA INFO starting test `ldms_ipv6_test`
-2024-11-06 10:24:18,174 TADA INFO   test-id: a7260330e1884f6a01587767c7cb91fface2cac7c5e56ad7c38d76c1d43c2442
-2024-11-06 10:24:18,174 TADA INFO   test-suite: LDMSD
-2024-11-06 10:24:18,174 TADA INFO   test-name: ldms_ipv6_test
-2024-11-06 10:24:18,174 TADA INFO   test-user: narate
-2024-11-06 10:24:18,174 TADA INFO   commit-id: 2efafc5c182285db4428129ebfb8b0937aee0c9c
-2024-11-06 10:24:18,175 __main__ INFO -- Get or create the cluster --
+2024-11-12 02:19:12,214 TADA INFO starting test `ldms_ipv6_test`
+2024-11-12 02:19:12,214 TADA INFO   test-id: 7a6b569f9ad4ad8016569c4fbac01d4545eea8e5703cb85df67127aabce8d86f
+2024-11-12 02:19:12,214 TADA INFO   test-suite: LDMSD
+2024-11-12 02:19:12,214 TADA INFO   test-name: ldms_ipv6_test
+2024-11-12 02:19:12,214 TADA INFO   test-user: narate
+2024-11-12 02:19:12,214 TADA INFO   commit-id: c6647b6c218ca63bba9ebe5ec76338525e26282b
+2024-11-12 02:19:12,215 __main__ INFO -- Get or create the cluster --
 Traceback (most recent call last):
   File "/usr/lib/python3.6/site-packages/docker/api/client.py", line 261, in _raise_for_status
     response.raise_for_status()
   File "/usr/lib/python3.6/site-packages/requests/models.py", line 941, in raise_for_status
     raise HTTPError(http_error_msg, response=self)
-requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http+docker://localhost/v1.35/networks/narate-ldms_ipv6_test-2efafc5
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http+docker://localhost/v1.35/networks/narate-ldms_ipv6_test-c6647b6
 
 During handling of the above exception, another exception occurred:
 
@@ -29,7 +29,7 @@ Traceback (most recent call last):
     raise create_api_error_from_http_exception(e)
   File "/usr/lib/python3.6/site-packages/docker/errors.py", line 31, in create_api_error_from_http_exception
     raise cls(e, response=response, explanation=explanation)
-docker.errors.NotFound: 404 Client Error: Not Found ("network narate-ldms_ipv6_test-2efafc5 not found")
+docker.errors.NotFound: 404 Client Error: Not Found ("network narate-ldms_ipv6_test-c6647b6 not found")
 
 During handling of the above exception, another exception occurred:
 
@@ -47,7 +47,7 @@ Traceback (most recent call last):
     response.raise_for_status()
   File "/usr/lib/python3.6/site-packages/requests/models.py", line 941, in raise_for_status
     raise HTTPError(http_error_msg, response=self)
-requests.exceptions.HTTPError: 403 Client Error: Forbidden for url: http+docker://localhost/v1.35/containers/687058053f7d8154b59643791291d8f1b40337c009e5a6242081bfa7c4c27fc2/start
+requests.exceptions.HTTPError: 500 Server Error: Internal Server Error for url: http+docker://localhost/v1.35/containers/2a65820c5ebf3398536adffeaf24136a4005334cb671f35a219affb96af1aadb/start
 
 During handling of the above exception, another exception occurred:
 
@@ -72,12 +72,12 @@ Traceback (most recent call last):
     raise create_api_error_from_http_exception(e)
   File "/usr/lib/python3.6/site-packages/docker/errors.py", line 31, in create_api_error_from_http_exception
     raise cls(e, response=response, explanation=explanation)
-docker.errors.APIError: 403 Client Error: Forbidden ("Address already in use")
-2024-11-06 10:24:32,623 TADA INFO assertion 1, ldms_ls to samp using IPv6: skipped
-2024-11-06 10:24:32,624 TADA INFO assertion 2, ldms_ls to agg-2 using IPv6: skipped
-2024-11-06 10:24:32,624 TADA INFO assertion 3, ldms_ls to agg-2 contains 'samp/meminfo': skipped
-2024-11-06 10:24:32,625 TADA INFO assertion 4, python stream publish using IPv6: skipped
-2024-11-06 10:24:32,625 TADA INFO assertion 5, python stream subscribe using IPv6: skipped
-2024-11-06 10:24:32,625 TADA INFO assertion 6, steam data contain IPv6 addressing: skipped
-2024-11-06 10:24:32,625 TADA INFO assertion 7, stream stats reported IPv6 addresses: skipped
-2024-11-06 10:24:32,626 TADA INFO test ldms_ipv6_test ended
+docker.errors.APIError: 500 Server Error: Internal Server Error ("attaching to network failed, make sure your network options are correct and check manager logs: context deadline exceeded")
+2024-11-12 02:19:38,886 TADA INFO assertion 1, ldms_ls to samp using IPv6: skipped
+2024-11-12 02:19:38,886 TADA INFO assertion 2, ldms_ls to agg-2 using IPv6: skipped
+2024-11-12 02:19:38,887 TADA INFO assertion 3, ldms_ls to agg-2 contains 'samp/meminfo': skipped
+2024-11-12 02:19:38,887 TADA INFO assertion 4, python stream publish using IPv6: skipped
+2024-11-12 02:19:38,887 TADA INFO assertion 5, python stream subscribe using IPv6: skipped
+2024-11-12 02:19:38,887 TADA INFO assertion 6, steam data contain IPv6 addressing: skipped
+2024-11-12 02:19:38,887 TADA INFO assertion 7, stream stats reported IPv6 addresses: skipped
+2024-11-12 02:19:38,887 TADA INFO test ldms_ipv6_test ended
