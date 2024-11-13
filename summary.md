@@ -15,7 +15,7 @@ Test Summary
 * [set_array_test](test-log/set_array_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
 * [setgroup_test](test-log/setgroup_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
 * [slurm_stream_test](test-log/slurm_stream_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
-* [spank_notifier_test](test-log/spank_notifier_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
+* [spank_notifier_test](test-log/spank_notifier_test.log): $\textcolor{red}{\text{FAILED}}$
 * [ldms_list_test](test-log/ldms_list_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
 * [quick_set_add_rm_test](test-log/quick_set_add_rm_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
 * [set_array_hang_test](test-log/set_array_hang_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
@@ -43,7 +43,7 @@ Test Summary
 * [ldmsd_long_config_test](test-log/ldmsd_long_config_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
 * [set_sec_mod_test](test-log/set_sec_mod_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
 * [dump_cfg_test](test-log/dump_cfg_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
-* [ldmsd_decomp_static_omit_test](test-log/ldmsd_decomp_static_omit_test.log): $\textcolor{red}{\text{FAILED}}$
+* [ldmsd_decomp_static_omit_test](test-log/ldmsd_decomp_static_omit_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
 * [agg_slurm_test](test-log/agg_slurm_test.log): $\textcolor{red}{\text{FAILED}}$
 * [papi_sampler_test](test-log/papi_sampler_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
 * [papi_store_test](test-log/papi_store_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
