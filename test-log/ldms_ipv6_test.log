@@ -1,16 +1,16 @@
-2024-11-13 02:19:14,980 TADA INFO starting test `ldms_ipv6_test`
-2024-11-13 02:19:14,980 TADA INFO   test-id: bedbe8e88d3564dacb9f43c07b9b89a121e23ae45c8fc553e0d1441cdcdff08b
-2024-11-13 02:19:14,980 TADA INFO   test-suite: LDMSD
-2024-11-13 02:19:14,980 TADA INFO   test-name: ldms_ipv6_test
-2024-11-13 02:19:14,980 TADA INFO   test-user: narate
-2024-11-13 02:19:14,980 TADA INFO   commit-id: 8df197a047dcd92cfc8111b9ae04edabf3cbb1d6
-2024-11-13 02:19:14,981 __main__ INFO -- Get or create the cluster --
+2024-11-15 02:20:30,264 TADA INFO starting test `ldms_ipv6_test`
+2024-11-15 02:20:30,264 TADA INFO   test-id: 3db1eedbcf23505f22d411d3c7e710c1582707f6d2dc2eb2b89fc4191266f882
+2024-11-15 02:20:30,264 TADA INFO   test-suite: LDMSD
+2024-11-15 02:20:30,264 TADA INFO   test-name: ldms_ipv6_test
+2024-11-15 02:20:30,264 TADA INFO   test-user: narate
+2024-11-15 02:20:30,264 TADA INFO   commit-id: c47cff88d6c668b10ace5326b099a865839204f8
+2024-11-15 02:20:30,265 __main__ INFO -- Get or create the cluster --
 Traceback (most recent call last):
   File "/usr/lib/python3.6/site-packages/docker/api/client.py", line 261, in _raise_for_status
     response.raise_for_status()
   File "/usr/lib/python3.6/site-packages/requests/models.py", line 941, in raise_for_status
     raise HTTPError(http_error_msg, response=self)
-requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http+docker://localhost/v1.35/networks/narate-ldms_ipv6_test-8df197a
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http+docker://localhost/v1.35/networks/narate-ldms_ipv6_test-c47cff8
 
 During handling of the above exception, another exception occurred:
 
@@ -29,7 +29,7 @@ Traceback (most recent call last):
     raise create_api_error_from_http_exception(e)
   File "/usr/lib/python3.6/site-packages/docker/errors.py", line 31, in create_api_error_from_http_exception
     raise cls(e, response=response, explanation=explanation)
-docker.errors.NotFound: 404 Client Error: Not Found ("network narate-ldms_ipv6_test-8df197a not found")
+docker.errors.NotFound: 404 Client Error: Not Found ("network narate-ldms_ipv6_test-c47cff8 not found")
 
 During handling of the above exception, another exception occurred:
 
@@ -47,7 +47,7 @@ Traceback (most recent call last):
     response.raise_for_status()
   File "/usr/lib/python3.6/site-packages/requests/models.py", line 941, in raise_for_status
     raise HTTPError(http_error_msg, response=self)
-requests.exceptions.HTTPError: 500 Server Error: Internal Server Error for url: http+docker://localhost/v1.35/containers/8defdc6d09ca15c88fdfeb8213b2205ab98a1622f6e9af6402f8114aafea9dc3/start
+requests.exceptions.HTTPError: 403 Client Error: Forbidden for url: http+docker://localhost/v1.35/containers/693edd6b6b86ba58d184742a59cf0c0681318a353e80e740f8f6a90b7541a73a/start
 
 During handling of the above exception, another exception occurred:
 
@@ -72,12 +72,12 @@ Traceback (most recent call last):
     raise create_api_error_from_http_exception(e)
   File "/usr/lib/python3.6/site-packages/docker/errors.py", line 31, in create_api_error_from_http_exception
     raise cls(e, response=response, explanation=explanation)
-docker.errors.APIError: 500 Server Error: Internal Server Error ("attaching to network failed, make sure your network options are correct and check manager logs: context deadline exceeded")
-2024-11-13 02:19:41,886 TADA INFO assertion 1, ldms_ls to samp using IPv6: skipped
-2024-11-13 02:19:41,886 TADA INFO assertion 2, ldms_ls to agg-2 using IPv6: skipped
-2024-11-13 02:19:41,886 TADA INFO assertion 3, ldms_ls to agg-2 contains 'samp/meminfo': skipped
-2024-11-13 02:19:41,886 TADA INFO assertion 4, python stream publish using IPv6: skipped
-2024-11-13 02:19:41,886 TADA INFO assertion 5, python stream subscribe using IPv6: skipped
-2024-11-13 02:19:41,886 TADA INFO assertion 6, steam data contain IPv6 addressing: skipped
-2024-11-13 02:19:41,887 TADA INFO assertion 7, stream stats reported IPv6 addresses: skipped
-2024-11-13 02:19:41,887 TADA INFO test ldms_ipv6_test ended
+docker.errors.APIError: 403 Client Error: Forbidden ("Address already in use")
+2024-11-15 02:20:38,401 TADA INFO assertion 1, ldms_ls to samp using IPv6: skipped
+2024-11-15 02:20:38,402 TADA INFO assertion 2, ldms_ls to agg-2 using IPv6: skipped
+2024-11-15 02:20:38,402 TADA INFO assertion 3, ldms_ls to agg-2 contains 'samp/meminfo': skipped
+2024-11-15 02:20:38,402 TADA INFO assertion 4, python stream publish using IPv6: skipped
+2024-11-15 02:20:38,402 TADA INFO assertion 5, python stream subscribe using IPv6: skipped
+2024-11-15 02:20:38,402 TADA INFO assertion 6, steam data contain IPv6 addressing: skipped
+2024-11-15 02:20:38,402 TADA INFO assertion 7, stream stats reported IPv6 addresses: skipped
+2024-11-15 02:20:38,403 TADA INFO test ldms_ipv6_test ended
