@@ -6,7 +6,7 @@ Test Summary
 * [failover_test](test-log/failover_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
 * [ldmsd_auth_ovis_test](test-log/ldmsd_auth_ovis_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
 * [ldmsd_auth_test](test-log/ldmsd_auth_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
-* [ldmsd_ctrl_test](test-log/ldmsd_ctrl_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
+* [ldmsd_ctrl_test](test-log/ldmsd_ctrl_test.log): $\textcolor{red}{\text{FAILED}}$
 * [ldmsd_stream_test](test-log/ldmsd_stream_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
 * [maestro_cfg_test](test-log/maestro_cfg_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
 * [mt-slurm-test](test-log/mt-slurm-test.log): $\textcolor{lightgreen}{\text{PASSED}}$
@@ -44,12 +44,13 @@ Test Summary
 * [set_sec_mod_test](test-log/set_sec_mod_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
 * [dump_cfg_test](test-log/dump_cfg_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
 * [ldmsd_decomp_static_omit_test](test-log/ldmsd_decomp_static_omit_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
+* [ldmsd_decomp_static_op_test](test-log/ldmsd_decomp_static_op_test.log): $\textcolor{red}{\text{FAILED}}$
 * [agg_slurm_test](test-log/agg_slurm_test.log): $\textcolor{red}{\text{FAILED}}$
 * [papi_sampler_test](test-log/papi_sampler_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
 * [papi_store_test](test-log/papi_store_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
 * [store_app_test](test-log/store_app_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
 * [syspapi_test](test-log/syspapi_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
-* [cont-test-ldms](test-log/cont-test-ldms.log): $\textcolor{lightgreen}{\text{PASSED}}$
+* [cont-test-ldms](test-log/cont-test-ldms.log): $\textcolor{red}{\text{FAILED}}$
 * [cont-test-maestro](test-log/cont-test-maestro.log): $\textcolor{lightgreen}{\text{PASSED}}$
 * [cont-test-maestro-hostmunge](test-log/cont-test-maestro-hostmunge.log): $\textcolor{lightgreen}{\text{PASSED}}$
 * [cont-test-maestro-munge](test-log/cont-test-maestro-munge.log): $\textcolor{lightgreen}{\text{PASSED}}$
