@@ -1,77 +1,23 @@
-2024-11-15 02:22:54,172 TADA INFO starting test `ldmsd_decomp_static_op_test`
-2024-11-15 02:22:54,172 TADA INFO   test-id: d317b98067276fd3bd51ae6af915bae92dd39f4d9547678318d424a249026b4b
-2024-11-15 02:22:54,172 TADA INFO   test-suite: LDMSD
-2024-11-15 02:22:54,173 TADA INFO   test-name: ldmsd_decomp_static_op_test
-2024-11-15 02:22:54,173 TADA INFO   test-user: narate
-2024-11-15 02:22:54,173 TADA INFO   commit-id: c47cff88d6c668b10ace5326b099a865839204f8
-2024-11-15 02:22:54,173 __main__ INFO -- Get or create the cluster --
-2024-11-15 02:23:22,959 __main__ INFO -- Start daemons --
-2024-11-15 02:24:08,304 __main__ INFO ... wait a bit to make sure ldmsd's are up
-2024-11-15 02:24:51,386 TADA INFO assertion 1, `static` decomposition, ldms_test_op sos schema check: OK, passed
-2024-11-15 02:24:51,387 TADA INFO assertion 2, `static` decomposition, record_op sos schema check: OK, passed
-2024-11-15 02:24:51,387 TADA INFO assertion 3, `static` decomposition, ldms_test_op csv schema check: OK, passed
-2024-11-15 02:24:51,387 TADA INFO assertion 4, `static` decomposition, record_op csv schema check: OK, passed
-2024-11-15 02:24:51,387 TADA INFO assertion 5, `static` decomposition, ldms_test_op kafka schema check: OK, passed
-2024-11-15 02:24:51,387 TADA INFO assertion 6, `static` decomposition, record_op kafka schema check: OK, passed
-2024-11-15 02:24:51,400 TADA INFO assertion 7, `static` decomposition, ldms_test_op sos data check: Expecting {'timestamp': 1731659035.001776, 'producer': 'samp-1', 'instance': 'samp-1/test_sampler', 'count': 5, 'component_id': 1, 'u8': 5, 'u8_diff': 1, 'u8_min': 4, 'u8_max': 5, 'u8_mean': 4, 's8': 5, 's8_diff': 1, 's8_min': 4, 's8_max': 5, 's8_mean': 4, 'u16': 5, 'u16_diff': 1, 'u16_min': 4, 'u16_max': 5, 'u16_mean': 4, 's16': 5, 's16_diff': 1, 's16_min': 4, 's16_max': 5, 's16_mean': 4, 'u32': 5, 'u32_diff': 1, 'u32_min': 4, 'u32_max': 5, 'u32_mean': 4, 's32': 5, 's32_diff': 1, 's32_min': 4, 's32_max': 5, 's32_mean': 4, 'u64': 5, 'u64_diff': 1, 'u64_min': 4, 'u64_max': 5, 'u64_mean': 4, 's64': 5, 's64_diff': 1, 's64_min': 4, 's64_max': 5, 's64_mean': 4, 'f32': 5.0, 'f32_diff': 1, 'f32_min': 4.0, 'f32_max': 5.0, 'f32_mean': 4.5, 'd64': 5.0, 'd64_diff': 1, 'd64_min': 4.0, 'd64_max': 5.0, 'd64_mean': 4.5} but got {'timestamp': 1731659035.001776, 'producer': 'samp-1', 'instance': 'samp-1/test_sampler', 'count': 5, 'component_id': 1, 's8': 5, 's8_diff': 2, 's8_min': 3, 's8_mean': 4, 's8_max': 5, 'u8': 5, 'u8_diff': 2, 'u8_min': 3, 'u8_mean': 4, 'u8_max': 5, 's16': 5, 's16_diff': 2, 's16_min': 3, 's16_mean': 4, 's16_max': 5, 'u16': 5, 'u16_diff': 2, 'u16_min': 3, 'u16_mean': 4, 'u16_max': 5, 's32': 5, 's32_diff': 2, 's32_min': 3, 's32_mean': 4, 's32_max': 5, 'u32': 5, 'u32_diff': 2, 'u32_min': 3, 'u32_mean': 4, 'u32_max': 5, 's64': 5, 's64_diff': 2, 's64_min': 3, 's64_mean': 4, 's64_max': 5, 'u64': 5, 'u64_diff': 2, 'u64_min': 3, 'u64_mean': 4, 'u64_max': 5, 'f32': 5.0, 'f32_diff': 2.0, 'f32_min': 3.0, 'f32_mean': 4.0, 'f32_max': 5.0, 'd64': 5.0, 'd64_diff': 2.0, 'd64_min': 3.0, 'd64_mean': 4.0, 'd64_max': 5.0}, failed
-Dict diff [31m-expecting [32m+getting
-[31m- d64_mean: 4.5[0m
-[32m+ d64_mean: 4.0[0m
-[31m- d64_diff: 1[0m
-[32m+ d64_diff: 2.0[0m
-[31m- s16_diff: 1[0m
-[32m+ s16_diff: 2[0m
-[31m- d64_min: 4.0[0m
-[32m+ d64_min: 3.0[0m
-[31m- s8_min: 4[0m
-[32m+ s8_min: 3[0m
-[31m- u16_diff: 1[0m
-[32m+ u16_diff: 2[0m
-[31m- s8_diff: 1[0m
-[32m+ s8_diff: 2[0m
-[31m- u32_min: 4[0m
-[32m+ u32_min: 3[0m
-[31m- u64_min: 4[0m
-[32m+ u64_min: 3[0m
-[31m- s16_min: 4[0m
-[32m+ s16_min: 3[0m
-[31m- u16_min: 4[0m
-[32m+ u16_min: 3[0m
-[31m- s64_min: 4[0m
-[32m+ s64_min: 3[0m
-[31m- u64_diff: 1[0m
-[32m+ u64_diff: 2[0m
-[31m- f32_min: 4.0[0m
-[32m+ f32_min: 3.0[0m
-[31m- f32_diff: 1[0m
-[32m+ f32_diff: 2.0[0m
-[31m- s64_diff: 1[0m
-[32m+ s64_diff: 2[0m
-[31m- u8_diff: 1[0m
-[32m+ u8_diff: 2[0m
-[31m- s32_diff: 1[0m
-[32m+ s32_diff: 2[0m
-[31m- u8_min: 4[0m
-[32m+ u8_min: 3[0m
-[31m- s32_min: 4[0m
-[32m+ s32_min: 3[0m
-[31m- u32_diff: 1[0m
-[32m+ u32_diff: 2[0m
-[31m- f32_mean: 4.5[0m
-[32m+ f32_mean: 4.0[0m
-Traceback (most recent call last):
-  File "ldmsd_decomp_static_op_test", line 804, in <module>
-    check_fn(snaps, i, st)
-  File "ldmsd_decomp_static_op_test", line 759, in ldms_test_op_snaps_check
-    if not dict_expect(g, v, test_id):
-  File "ldmsd_decomp_static_op_test", line 351, in dict_expect
-    test.assert_test(test_id, False, f"Expecting {e} but got {v}")
-  File "/home/narate/cron/ldms-test/TADA.py", line 157, in assert_test
-    raise AssertionException(self.test_desc + ", " + cond_str + ": FAILED")
-TADA.AssertionException: Static decomposition with 'op' test, Expecting {'timestamp': 1731659035.001776, 'producer': 'samp-1', 'instance': 'samp-1/test_sampler', 'count': 5, 'component_id': 1, 'u8': 5, 'u8_diff': 1, 'u8_min': 4, 'u8_max': 5, 'u8_mean': 4, 's8': 5, 's8_diff': 1, 's8_min': 4, 's8_max': 5, 's8_mean': 4, 'u16': 5, 'u16_diff': 1, 'u16_min': 4, 'u16_max': 5, 'u16_mean': 4, 's16': 5, 's16_diff': 1, 's16_min': 4, 's16_max': 5, 's16_mean': 4, 'u32': 5, 'u32_diff': 1, 'u32_min': 4, 'u32_max': 5, 'u32_mean': 4, 's32': 5, 's32_diff': 1, 's32_min': 4, 's32_max': 5, 's32_mean': 4, 'u64': 5, 'u64_diff': 1, 'u64_min': 4, 'u64_max': 5, 'u64_mean': 4, 's64': 5, 's64_diff': 1, 's64_min': 4, 's64_max': 5, 's64_mean': 4, 'f32': 5.0, 'f32_diff': 1, 'f32_min': 4.0, 'f32_max': 5.0, 'f32_mean': 4.5, 'd64': 5.0, 'd64_diff': 1, 'd64_min': 4.0, 'd64_max': 5.0, 'd64_mean': 4.5} but got {'timestamp': 1731659035.001776, 'producer': 'samp-1', 'instance': 'samp-1/test_sampler', 'count': 5, 'component_id': 1, 's8': 5, 's8_diff': 2, 's8_min': 3, 's8_mean': 4, 's8_max': 5, 'u8': 5, 'u8_diff': 2, 'u8_min': 3, 'u8_mean': 4, 'u8_max': 5, 's16': 5, 's16_diff': 2, 's16_min': 3, 's16_mean': 4, 's16_max': 5, 'u16': 5, 'u16_diff': 2, 'u16_min': 3, 'u16_mean': 4, 'u16_max': 5, 's32': 5, 's32_diff': 2, 's32_min': 3, 's32_mean': 4, 's32_max': 5, 'u32': 5, 'u32_diff': 2, 'u32_min': 3, 'u32_mean': 4, 'u32_max': 5, 's64': 5, 's64_diff': 2, 's64_min': 3, 's64_mean': 4, 's64_max': 5, 'u64': 5, 'u64_diff': 2, 'u64_min': 3, 'u64_mean': 4, 'u64_max': 5, 'f32': 5.0, 'f32_diff': 2.0, 'f32_min': 3.0, 'f32_mean': 4.0, 'f32_max': 5.0, 'd64': 5.0, 'd64_diff': 2.0, 'd64_min': 3.0, 'd64_mean': 4.0, 'd64_max': 5.0}: FAILED
-2024-11-15 02:24:51,402 TADA INFO assertion 8, `static` decomposition, record_op sos data check: skipped
-2024-11-15 02:24:51,403 TADA INFO assertion 9, `static` decomposition, ldms_test_op csv data check: skipped
-2024-11-15 02:24:51,403 TADA INFO assertion 10, `static` decomposition, record_op csv data check: skipped
-2024-11-15 02:24:51,403 TADA INFO assertion 11, `static` decomposition, ldms_test_op kafka data check: skipped
-2024-11-15 02:24:51,403 TADA INFO assertion 12, `static` decomposition, record_op kafka data check: skipped
-2024-11-15 02:24:51,403 TADA INFO test ldmsd_decomp_static_op_test ended
+2024-11-20 02:23:44,600 TADA INFO starting test `ldmsd_decomp_static_op_test`
+2024-11-20 02:23:44,601 TADA INFO   test-id: 597b66b3943adc8431121f99d14b0573fa54a1a6baa1908f285fbee2265975e2
+2024-11-20 02:23:44,601 TADA INFO   test-suite: LDMSD
+2024-11-20 02:23:44,601 TADA INFO   test-name: ldmsd_decomp_static_op_test
+2024-11-20 02:23:44,601 TADA INFO   test-user: narate
+2024-11-20 02:23:44,601 TADA INFO   commit-id: b4ea6e4672b4301cc47eb43aa7d4d4b40e630b21
+2024-11-20 02:23:44,602 __main__ INFO -- Get or create the cluster --
+2024-11-20 02:24:13,559 __main__ INFO -- Start daemons --
+2024-11-20 02:24:58,744 __main__ INFO ... wait a bit to make sure ldmsd's are up
+2024-11-20 02:25:41,643 TADA INFO assertion 1, `static` decomposition, ldms_test_op sos schema check: OK, passed
+2024-11-20 02:25:41,643 TADA INFO assertion 2, `static` decomposition, record_op sos schema check: OK, passed
+2024-11-20 02:25:41,644 TADA INFO assertion 3, `static` decomposition, ldms_test_op csv schema check: OK, passed
+2024-11-20 02:25:41,644 TADA INFO assertion 4, `static` decomposition, record_op csv schema check: OK, passed
+2024-11-20 02:25:41,644 TADA INFO assertion 5, `static` decomposition, ldms_test_op kafka schema check: OK, passed
+2024-11-20 02:25:41,644 TADA INFO assertion 6, `static` decomposition, record_op kafka schema check: OK, passed
+2024-11-20 02:25:41,652 TADA INFO assertion 7, `static` decomposition, ldms_test_op sos data check: OK, passed
+2024-11-20 02:25:41,672 TADA INFO assertion 8, `static` decomposition, record_op sos data check: OK, passed
+2024-11-20 02:25:41,680 TADA INFO assertion 9, `static` decomposition, ldms_test_op csv data check: OK, passed
+2024-11-20 02:25:41,700 TADA INFO assertion 10, `static` decomposition, record_op csv data check: OK, passed
+2024-11-20 02:25:41,703 TADA INFO assertion 11, `static` decomposition, ldms_test_op kafka data check: OK, passed
+2024-11-20 02:25:41,712 TADA INFO assertion 12, `static` decomposition, record_op kafka data check: OK, passed
+2024-11-20 02:25:41,712 TADA INFO test ldmsd_decomp_static_op_test ended
+2024-11-20 02:25:41,712 TADA INFO test ldmsd_decomp_static_op_test ended

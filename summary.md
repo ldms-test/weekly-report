@@ -49,9 +49,10 @@ Test Summary
 * [dump_cfg_test](test-log/dump_cfg_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
 * [ldmsd_stream_rate_test](test-log/ldmsd_stream_rate_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
 * [ldms_rate_test](test-log/ldms_rate_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
-* [ldms_ipv6_test](test-log/ldms_ipv6_test.log): $\textcolor{red}{\text{FAILED}}$
+* [ldms_ipv6_test](test-log/ldms_ipv6_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
 * [ldmsd_decomp_static_omit_test](test-log/ldmsd_decomp_static_omit_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
-* [ldmsd_decomp_static_op_test](test-log/ldmsd_decomp_static_op_test.log): $\textcolor{red}{\text{FAILED}}$
+* [ldmsd_decomp_static_op_test](test-log/ldmsd_decomp_static_op_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
+* [ldmsd_decomp_static_rowcache_test](test-log/ldmsd_decomp_static_rowcache_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
 * [json_stream_sampler_test](test-log/json_stream_sampler_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
 * [ldms_qgroup_test](test-log/ldms_qgroup_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
 * [ldmsd_qgroup_test](test-log/ldmsd_qgroup_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
