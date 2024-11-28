@@ -6,7 +6,7 @@ Test Summary
 * [failover_test](test-log/failover_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
 * [ldmsd_auth_ovis_test](test-log/ldmsd_auth_ovis_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
 * [ldmsd_auth_test](test-log/ldmsd_auth_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
-* [ldmsd_ctrl_test](test-log/ldmsd_ctrl_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
+* [ldmsd_ctrl_test](test-log/ldmsd_ctrl_test.log): $\textcolor{red}{\text{FAILED}}$
 * [ldmsd_stream_test2](test-log/ldmsd_stream_test2.log): $\textcolor{lightgreen}{\text{PASSED}}$
 * [maestro_cfg_test](test-log/maestro_cfg_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
 * [mt-slurm-test](test-log/mt-slurm-test.log): $\textcolor{lightgreen}{\text{PASSED}}$
@@ -26,7 +26,7 @@ Test Summary
 * [ldmsd_decomp_no_fill_test](test-log/ldmsd_decomp_no_fill_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
 * [ldmsd_stream_status_test](test-log/ldmsd_stream_status_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
 * [store_list_record_test](test-log/store_list_record_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
-* [maestro_raft_test](test-log/maestro_raft_test.log): $\textcolor{red}{\text{FAILED}}$
+* [maestro_raft_test](test-log/maestro_raft_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
 * [ovis_json_test](test-log/ovis_json_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
 * [updtr_add_test](test-log/updtr_add_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
 * [updtr_del_test](test-log/updtr_del_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
@@ -49,7 +49,7 @@ Test Summary
 * [dump_cfg_test](test-log/dump_cfg_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
 * [ldmsd_stream_rate_test](test-log/ldmsd_stream_rate_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
 * [ldms_rate_test](test-log/ldms_rate_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
-* [ldms_ipv6_test](test-log/ldms_ipv6_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
+* [ldms_ipv6_test](test-log/ldms_ipv6_test.log): $\textcolor{red}{\text{FAILED}}$
 * [ldmsd_decomp_static_omit_test](test-log/ldmsd_decomp_static_omit_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
 * [ldmsd_decomp_static_op_test](test-log/ldmsd_decomp_static_op_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
 * [ldmsd_decomp_static_rowcache_test](test-log/ldmsd_decomp_static_rowcache_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
@@ -57,11 +57,11 @@ Test Summary
 * [ldms_qgroup_test](test-log/ldms_qgroup_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
 * [ldmsd_qgroup_test](test-log/ldmsd_qgroup_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
 * [agg_slurm_test](test-log/agg_slurm_test.log): $\textcolor{red}{\text{FAILED}}$
-* [papi_sampler_test](test-log/papi_sampler_test.log): $\textcolor{red}{\text{FAILED}}$
+* [papi_sampler_test](test-log/papi_sampler_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
 * [papi_store_test](test-log/papi_store_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
 * [store_app_test](test-log/store_app_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
 * [syspapi_test](test-log/syspapi_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
-* [cont-test-ldms](test-log/cont-test-ldms.log): $\textcolor{lightgreen}{\text{PASSED}}$
+* [cont-test-ldms](test-log/cont-test-ldms.log): $\textcolor{red}{\text{FAILED}}$
 * [cont-test-maestro](test-log/cont-test-maestro.log): $\textcolor{lightgreen}{\text{PASSED}}$
 * [cont-test-maestro-hostmunge](test-log/cont-test-maestro-hostmunge.log): $\textcolor{lightgreen}{\text{PASSED}}$
 * [cont-test-maestro-munge](test-log/cont-test-maestro-munge.log): $\textcolor{lightgreen}{\text{PASSED}}$

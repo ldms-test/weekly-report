@@ -1,19 +1,83 @@
-2024-11-25 02:20:24,994 TADA INFO starting test `ldms_ipv6_test`
-2024-11-25 02:20:24,995 TADA INFO   test-id: 62739e8a1574ced6885fbe7dd5cb29f7c699db6b86ac50d86f52f4162900522d
-2024-11-25 02:20:24,995 TADA INFO   test-suite: LDMSD
-2024-11-25 02:20:24,995 TADA INFO   test-name: ldms_ipv6_test
-2024-11-25 02:20:24,995 TADA INFO   test-user: narate
-2024-11-25 02:20:24,995 TADA INFO   commit-id: fb97e1cc07189f33ac540f957068f8634f21c370
-2024-11-25 02:20:24,996 __main__ INFO -- Get or create the cluster --
-2024-11-25 02:20:42,234 __main__ INFO -- Start daemons --
-2024-11-25 02:21:08,773 __main__ INFO ... wait a bit to make sure ldmsd's are up
-2024-11-25 02:21:10,776 root INFO starting /tada-src/python/pypubsub.py on narate-ldms_ipv6_test-fb97e1c-samp 
-2024-11-25 02:21:12,993 root INFO starting /tada-src/python/pypubsub.py on narate-ldms_ipv6_test-fb97e1c-agg-2 
-2024-11-25 02:21:17,325 TADA INFO assertion 1, ldms_ls to samp using IPv6: expecting ['fd00:0:0:1::5'], got ['fd00:0:0:1::5'], passed
-2024-11-25 02:21:17,427 TADA INFO assertion 2, ldms_ls to agg-2 using IPv6: expecting ['fd00:0:0:1::5'], got ['fd00:0:0:1::5'], passed
-2024-11-25 02:21:17,427 TADA INFO assertion 3, ldms_ls to agg-2 contains 'samp/meminfo': samp/meminfo found, passed
-2024-11-25 02:21:20,432 TADA INFO assertion 4, python stream publish using IPv6: verified, passed
-2024-11-25 02:21:23,437 TADA INFO assertion 5, python stream subscribe using IPv6: verified, passed
-2024-11-25 02:21:23,939 TADA INFO assertion 6, steam data contain IPv6 addressing: expecting fd00:0:0:1::5, got fd00:0:0:1::5, passed
-2024-11-25 02:21:24,247 TADA INFO assertion 7, stream stats reported IPv6 addresses: Expecting fd00:0:0:1::3, got fd00:0:0:1::3, passed
-2024-11-25 02:21:24,248 TADA INFO test ldms_ipv6_test ended
+2024-11-28 02:21:53,050 TADA INFO starting test `ldms_ipv6_test`
+2024-11-28 02:21:53,050 TADA INFO   test-id: f08d32f9cdf88ce092b8ff5aeff80fd019032b76247abd1554102c1637428728
+2024-11-28 02:21:53,050 TADA INFO   test-suite: LDMSD
+2024-11-28 02:21:53,050 TADA INFO   test-name: ldms_ipv6_test
+2024-11-28 02:21:53,050 TADA INFO   test-user: narate
+2024-11-28 02:21:53,050 TADA INFO   commit-id: 575828804894135ec1c232f1369d572c43a12a88
+2024-11-28 02:21:53,051 __main__ INFO -- Get or create the cluster --
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/site-packages/docker/api/client.py", line 261, in _raise_for_status
+    response.raise_for_status()
+  File "/usr/lib/python3.6/site-packages/requests/models.py", line 941, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http+docker://localhost/v1.35/networks/narate-ldms_ipv6_test-5758288
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/narate/cron/ldms-test/runtime/docker.py", line 828, in _get
+    net = dc.networks.get(name)
+  File "/usr/lib/python3.6/site-packages/docker/models/networks.py", line 180, in get
+    self.client.api.inspect_network(network_id, *args, **kwargs)
+  File "/usr/lib/python3.6/site-packages/docker/utils/decorators.py", line 19, in wrapped
+    return f(self, resource_id, *args, **kwargs)
+  File "/usr/lib/python3.6/site-packages/docker/api/network.py", line 213, in inspect_network
+    return self._result(res, json=True)
+  File "/usr/lib/python3.6/site-packages/docker/api/client.py", line 267, in _result
+    self._raise_for_status(response)
+  File "/usr/lib/python3.6/site-packages/docker/api/client.py", line 263, in _raise_for_status
+    raise create_api_error_from_http_exception(e)
+  File "/usr/lib/python3.6/site-packages/docker/errors.py", line 31, in create_api_error_from_http_exception
+    raise cls(e, response=response, explanation=explanation)
+docker.errors.NotFound: 404 Client Error: Not Found ("network narate-ldms_ipv6_test-5758288 not found")
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/narate/cron/ldms-test/LDMS_Test.py", line 1983, in get
+    cluster = _cls._get(name)
+  File "/home/narate/cron/ldms-test/runtime/docker.py", line 831, in _get
+    raise LookupError()
+LookupError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/site-packages/docker/api/client.py", line 261, in _raise_for_status
+    response.raise_for_status()
+  File "/usr/lib/python3.6/site-packages/requests/models.py", line 941, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 403 Client Error: Forbidden for url: http+docker://localhost/v1.35/containers/607b97b007384973b4a51c8e03c9a59bb0332f4d5d2c408bdbf4965ff5544f30/start
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "ldms_ipv6_test", line 249, in <module>
+    cluster = LDMSDCluster.get(spec["name"], create = True, spec = spec)
+  File "/home/narate/cron/ldms-test/LDMS_Test.py", line 1990, in get
+    return _cls.create(spec)
+  File "/home/narate/cron/ldms-test/LDMS_Test.py", line 1961, in create
+    cluster = _cls._create(spec)
+  File "/home/narate/cron/ldms-test/runtime/docker.py", line 509, in _create
+    return cls.__create(spec=sp, **kwargs)
+  File "/home/narate/cron/ldms-test/runtime/docker.py", line 720, in __create
+    cont.start()
+  File "/usr/lib/python3.6/site-packages/docker/models/containers.py", line 400, in start
+    return self.client.api.start(self.id, **kwargs)
+  File "/usr/lib/python3.6/site-packages/docker/utils/decorators.py", line 19, in wrapped
+    return f(self, resource_id, *args, **kwargs)
+  File "/usr/lib/python3.6/site-packages/docker/api/container.py", line 1095, in start
+    self._raise_for_status(res)
+  File "/usr/lib/python3.6/site-packages/docker/api/client.py", line 263, in _raise_for_status
+    raise create_api_error_from_http_exception(e)
+  File "/usr/lib/python3.6/site-packages/docker/errors.py", line 31, in create_api_error_from_http_exception
+    raise cls(e, response=response, explanation=explanation)
+docker.errors.APIError: 403 Client Error: Forbidden ("Address already in use")
+2024-11-28 02:22:01,258 TADA INFO assertion 1, ldms_ls to samp using IPv6: skipped
+2024-11-28 02:22:01,258 TADA INFO assertion 2, ldms_ls to agg-2 using IPv6: skipped
+2024-11-28 02:22:01,259 TADA INFO assertion 3, ldms_ls to agg-2 contains 'samp/meminfo': skipped
+2024-11-28 02:22:01,259 TADA INFO assertion 4, python stream publish using IPv6: skipped
+2024-11-28 02:22:01,259 TADA INFO assertion 5, python stream subscribe using IPv6: skipped
+2024-11-28 02:22:01,259 TADA INFO assertion 6, steam data contain IPv6 addressing: skipped
+2024-11-28 02:22:01,260 TADA INFO assertion 7, stream stats reported IPv6 addresses: skipped
+2024-11-28 02:22:01,260 TADA INFO test ldms_ipv6_test ended
