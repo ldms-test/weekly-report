@@ -25,7 +25,7 @@ Test Summary
 * [ldmsd_decomp_test](test-log/ldmsd_decomp_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
 * [ldmsd_decomp_no_fill_test](test-log/ldmsd_decomp_no_fill_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
 * [ldmsd_stream_status_test](test-log/ldmsd_stream_status_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
-* [store_list_record_test](test-log/store_list_record_test.log): $\textcolor{red}{\text{FAILED}}$
+* [store_list_record_test](test-log/store_list_record_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
 * [maestro_raft_test](test-log/maestro_raft_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
 * [ovis_json_test](test-log/ovis_json_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
 * [updtr_add_test](test-log/updtr_add_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
