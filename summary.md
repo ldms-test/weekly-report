@@ -46,7 +46,7 @@ Test Summary
 * [ldmsd_decomp_static_omit_test](test-log/ldmsd_decomp_static_omit_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
 * [ldmsd_decomp_static_op_test](test-log/ldmsd_decomp_static_op_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
 * [ldmsd_decomp_static_rowcache_test](test-log/ldmsd_decomp_static_rowcache_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
-* [agg_slurm_test](test-log/agg_slurm_test.log): $\textcolor{red}{\text{FAILED}}$
+* [agg_slurm_test](test-log/agg_slurm_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
 * [papi_sampler_test](test-log/papi_sampler_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
 * [papi_store_test](test-log/papi_store_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
 * [store_app_test](test-log/store_app_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
