@@ -1,36 +1,20 @@
-2024-12-12 04:55:51,275 TADA INFO starting test `ldmsd_ctrl_test`
-2024-12-12 04:55:51,276 TADA INFO   test-id: 2e2ac793728a24eea9c1c181f594ea66e42b3d19b22d035000af4e9eea77206a
-2024-12-12 04:55:51,276 TADA INFO   test-suite: LDMSD
-2024-12-12 04:55:51,276 TADA INFO   test-name: ldmsd_ctrl_test
-2024-12-12 04:55:51,276 TADA INFO   test-user: narate
-2024-12-12 04:55:51,276 TADA INFO   commit-id: 33ee0e4918c448538ce68a05bc561eebc3ef24dd
-2024-12-12 04:55:51,277 __main__ INFO -- Get or create the cluster --
-2024-12-12 04:56:10,705 __main__ INFO -- Start daemons --
-2024-12-12 04:56:15,131 __main__ INFO ... wait a bit to make sure ldmsd's are up
-2024-12-12 04:56:21,249 TADA INFO assertion 1, ldmsd_controller interactive session: connected, passed
-2024-12-12 04:56:22,364 TADA INFO assertion 2, ldmsctl interactive session: connected, passed
-2024-12-12 04:56:22,966 TADA INFO assertion 3, ldmsd_controller start bogus producer: expected output verified, passed
-2024-12-12 04:56:23,567 TADA INFO assertion 4, ldmsctl start bogus producer: expected output verified, passed
-2024-12-12 04:56:24,169 TADA INFO assertion 5, ldmsd_controller bogus command: expected output verified, passed
-2024-12-12 04:56:24,770 TADA INFO assertion 6, ldmsctl bogus command: expected output verified, passed
-2024-12-12 04:56:25,372 TADA INFO assertion 7, ldmsd_controller load bogus plugin: expected output verified, passed
-2024-12-12 04:56:25,973 TADA INFO assertion 8, ldmsctl load bogus plugin: expected output verified, passed
-2024-12-12 04:56:28,477 TADA INFO assertion 9, ldmsd_controller prdcr/updtr: Unexpected output: prdcr_add name=prdcr host=node-1 xprt=sock port=10000 type=active reconnect=1000000
-'cache_ip'
-prdcr_start name=prdcr
-updtr_add name=updtr interval=1000000 offset=500000
-, failed
-Traceback (most recent call last):
-  File "ldmsd_ctrl_test", line 395, in <module>
-    prdcr_updtr_routine(9, "agg-11", ldmsd_controller, "sock:agg-11:10000> ")
-  File "ldmsd_ctrl_test", line 362, in prdcr_updtr_routine
-    test.assert_test(_id, False, "Unexpected output: {}".format(_out))
-  File "/home/narate/cron/ldms-test-b4.4/TADA.py", line 157, in assert_test
-    raise AssertionException(self.test_desc + ", " + cond_str + ": FAILED")
-TADA.AssertionException: Test ldmsd_controller and ldmsctl, Unexpected output: prdcr_add name=prdcr host=node-1 xprt=sock port=10000 type=active reconnect=1000000
-'cache_ip'
-prdcr_start name=prdcr
-updtr_add name=updtr interval=1000000 offset=500000
-: FAILED
-2024-12-12 04:56:28,479 TADA INFO assertion 10, ldmsctl prdcr/updtr: skipped
-2024-12-12 04:56:28,479 TADA INFO test ldmsd_ctrl_test ended
+2024-12-13 04:55:42,986 TADA INFO starting test `ldmsd_ctrl_test`
+2024-12-13 04:55:42,986 TADA INFO   test-id: 5088591ae47c4143e7cd4c1b3ef7eabf10e493a0d4ea6684246f557cf673b680
+2024-12-13 04:55:42,986 TADA INFO   test-suite: LDMSD
+2024-12-13 04:55:42,987 TADA INFO   test-name: ldmsd_ctrl_test
+2024-12-13 04:55:42,987 TADA INFO   test-user: narate
+2024-12-13 04:55:42,987 TADA INFO   commit-id: 39f72b8aca395392263af70ea1bc2113333f28ed
+2024-12-13 04:55:42,987 __main__ INFO -- Get or create the cluster --
+2024-12-13 04:56:03,000 __main__ INFO -- Start daemons --
+2024-12-13 04:56:07,497 __main__ INFO ... wait a bit to make sure ldmsd's are up
+2024-12-13 04:56:13,616 TADA INFO assertion 1, ldmsd_controller interactive session: connected, passed
+2024-12-13 04:56:14,733 TADA INFO assertion 2, ldmsctl interactive session: connected, passed
+2024-12-13 04:56:15,334 TADA INFO assertion 3, ldmsd_controller start bogus producer: expected output verified, passed
+2024-12-13 04:56:15,935 TADA INFO assertion 4, ldmsctl start bogus producer: expected output verified, passed
+2024-12-13 04:56:16,537 TADA INFO assertion 5, ldmsd_controller bogus command: expected output verified, passed
+2024-12-13 04:56:17,138 TADA INFO assertion 6, ldmsctl bogus command: expected output verified, passed
+2024-12-13 04:56:17,739 TADA INFO assertion 7, ldmsd_controller load bogus plugin: expected output verified, passed
+2024-12-13 04:56:18,341 TADA INFO assertion 8, ldmsctl load bogus plugin: expected output verified, passed
+2024-12-13 04:56:35,535 TADA INFO assertion 9, ldmsd_controller prdcr/updtr: verified, passed
+2024-12-13 04:56:52,737 TADA INFO assertion 10, ldmsctl prdcr/updtr: verified, passed
+2024-12-13 04:56:52,737 TADA INFO test ldmsd_ctrl_test ended
