@@ -1,18 +1,28 @@
-2024-12-11 02:20:25,195 TADA INFO starting test `ldms_rate_test`
-2024-12-11 02:20:25,195 TADA INFO   test-id: 9c08506606470e18530690167c624302c9aa689f5926244b5e39bf88c0496caf
-2024-12-11 02:20:25,195 TADA INFO   test-suite: LDMSD
-2024-12-11 02:20:25,195 TADA INFO   test-name: ldms_rate_test
-2024-12-11 02:20:25,195 TADA INFO   test-user: narate
-2024-12-11 02:20:25,195 TADA INFO   commit-id: f495350018921574a32f2ca96221873be1cc5be2
-2024-12-11 02:20:25,196 __main__ INFO -- Get or create the cluster --
-2024-12-11 02:20:35,407 __main__ INFO -- Start daemons --
-2024-12-11 02:20:36,257 __main__ INFO ... wait a bit to make sure ldmsd's are up
-2024-12-11 02:20:38,260 root INFO starting /tada-src/python/ldms_rate.py on narate-ldms_rate_test-f495350-node-1 
-2024-12-11 02:20:40,478 root INFO starting /tada-src/python/ldms_rate.py on narate-ldms_rate_test-f495350-node-1 
-2024-12-11 02:21:14,654 TADA INFO assertion 1, Publisher cannot publish all data (rail rate limit): received stream data is limited, passed
-2024-12-11 02:21:15,156 TADA INFO assertion 2, Publisher get a rate limit error: publisher got rate limit errors, passed
-2024-12-11 02:21:15,156 TADA INFO assertion 3, After the wait, the publisher can publish: stream data received, passed
-2024-12-11 02:21:15,157 TADA INFO assertion 4, Publisher cannot publish all data (stream rate limit): received stream data is limited, passed
-2024-12-11 02:21:15,659 TADA INFO assertion 5, Publisher get a rate limit error (by stream): publisher got rate limit errors, passed
-2024-12-11 02:21:15,659 TADA INFO assertion 6, After the wait, the publisher can publish (by stream): stream data received, passed
-2024-12-11 02:21:15,660 TADA INFO test ldms_rate_test ended
+2024-12-13 02:17:39,901 TADA INFO starting test `ldms_rate_test`
+2024-12-13 02:17:39,901 TADA INFO   test-id: 2a3a73c5970f09245eb54663a7219845fe356360dff1f6da362ee50a903a9bc2
+2024-12-13 02:17:39,901 TADA INFO   test-suite: LDMSD
+2024-12-13 02:17:39,901 TADA INFO   test-name: ldms_rate_test
+2024-12-13 02:17:39,901 TADA INFO   test-user: narate
+2024-12-13 02:17:39,901 TADA INFO   commit-id: 5160ffc4cac64e0f69288c609246d92b126f5d28
+2024-12-13 02:17:39,902 __main__ INFO -- Get or create the cluster --
+2024-12-13 02:17:50,330 __main__ INFO -- Start daemons --
+2024-12-13 02:17:51,210 __main__ INFO ... wait a bit to make sure ldmsd's are up
+2024-12-13 02:17:53,212 root INFO starting /tada-src/python/ldms_rate.py on narate-ldms_rate_test-5160ffc-node-1 
+2024-12-13 02:17:55,430 root INFO starting /tada-src/python/ldms_rate.py on narate-ldms_rate_test-5160ffc-node-1 
+Traceback (most recent call last):
+  File "ldms_rate_test", line 168, in <module>
+    pypub.cmd("pub_routine()", retry = 100)
+  File "/home/narate/cron/ldms-test/LDMS_Test.py", line 907, in cmd
+    return pycmd(self.pty, cmd, retry)
+  File "/home/narate/cron/ldms-test/LDMS_Test.py", line 828, in pycmd
+    return icmd(tty, cmd, prompt=">>> ", retry=retry)
+  File "/home/narate/cron/ldms-test/LDMS_Test.py", line 865, in icmd
+    raise RuntimeError("Command '{cmd}` not responding".format(**vars()))
+RuntimeError: Command 'pub_routine()` not responding
+2024-12-13 02:18:05,562 TADA INFO assertion 1, Publisher cannot publish all data (rail rate limit): skipped
+2024-12-13 02:18:05,563 TADA INFO assertion 2, Publisher get a rate limit error: skipped
+2024-12-13 02:18:05,563 TADA INFO assertion 3, After the wait, the publisher can publish: skipped
+2024-12-13 02:18:05,563 TADA INFO assertion 4, Publisher cannot publish all data (stream rate limit): skipped
+2024-12-13 02:18:05,564 TADA INFO assertion 5, Publisher get a rate limit error (by stream): skipped
+2024-12-13 02:18:05,564 TADA INFO assertion 6, After the wait, the publisher can publish (by stream): skipped
+2024-12-13 02:18:05,564 TADA INFO test ldms_rate_test ended
