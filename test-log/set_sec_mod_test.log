@@ -1,23 +1,23 @@
-2024-12-13 05:52:43,103 TADA INFO starting test `set_sec_test`
-2024-12-13 05:52:43,103 TADA INFO   test-id: 51ae9c5246278ad35cbac3f227c00e299d8ed5de8e25b5e4e895b7435ede4338
-2024-12-13 05:52:43,103 TADA INFO   test-suite: LDMSD
-2024-12-13 05:52:43,103 TADA INFO   test-name: set_sec_test
-2024-12-13 05:52:43,103 TADA INFO   test-user: narate
-2024-12-13 05:52:43,103 TADA INFO   commit-id: 39f72b8aca395392263af70ea1bc2113333f28ed
-2024-12-13 05:52:43,104 __main__ INFO ---Get or create the cluster ---
-2024-12-13 05:52:56,240 __main__ INFO --- Start daemons ---
-2024-12-13 05:53:02,250 TADA INFO assertion 1, Change UID to an existing username: {'set_1': {'uid': 1111, 'gid': 1000, 'perm': '0440'}} == {'set_1': {'uid': 1111, 'gid': 1000, 'perm': '0440'}}, passed
-2024-12-13 05:53:03,470 TADA INFO assertion 2, Change UID to a not-existing username: errcode (22) == expected (22), passed
-2024-12-13 05:53:04,883 TADA INFO assertion 3, Change UID to a valid UID: {'set_3': {'uid': 2222, 'gid': 1000, 'perm': '0440'}} == {'set_3': {'uid': 2222, 'gid': 1000, 'perm': '0440'}}, passed
-2024-12-13 05:53:06,091 TADA INFO assertion 4, Change UID to an invalid UID: errcode (22) == expected (22), passed
-2024-12-13 05:53:07,516 TADA INFO assertion 5, Change GID to an existing groupname: {'set_5': {'uid': 1000, 'gid': 1111, 'perm': '0440'}} == {'set_5': {'uid': 1000, 'gid': 1111, 'perm': '0440'}}, passed
-2024-12-13 05:53:08,726 TADA INFO assertion 6, Change GID to a not-existing groupname: errcode (22) == expected (22), passed
-2024-12-13 05:53:10,132 TADA INFO assertion 7, Change GID to a valid GID: {'set_7': {'uid': 1000, 'gid': 2222, 'perm': '0440'}} == {'set_7': {'uid': 1000, 'gid': 2222, 'perm': '0440'}}, passed
-2024-12-13 05:53:11,348 TADA INFO assertion 8, Change GID to an invalid GID: errcode (22) == expected (22), passed
-2024-12-13 05:53:12,762 TADA INFO assertion 9, Change permission bits to a valid permission value: {'set_9': {'uid': 1000, 'gid': 1000, 'perm': '0400'}} == {'set_9': {'uid': 1000, 'gid': 1000, 'perm': '0400'}}, passed
-2024-12-13 05:53:13,971 TADA INFO assertion 10, Change permission bits to an invalid permission value: errcode (22) == expected (22), passed
-2024-12-13 05:53:14,153 TADA INFO assertion 11, Verify that the aggregator got sets' new security info: {'set_9': {'uid': 1000, 'gid': 1000, 'perm': '0400'}, 'set_8': {'uid': 1000, 'gid': 1000, 'perm': '0440'}, 'set_7': {'uid': 1000, 'gid': 2222, 'perm': '0440'}, 'set_6': {'uid': 1000, 'gid': 1000, 'perm': '0440'}, 'set_5': {'uid': 1000, 'gid': 1111, 'perm': '0440'}, 'set_4': {'uid': 1000, 'gid': 1000, 'perm': '0440'}, 'set_3': {'uid': 2222, 'gid': 1000, 'perm': '0440'}, 'set_2': {'uid': 1000, 'gid': 1000, 'perm': '0440'}, 'set_10': {'uid': 1000, 'gid': 1000, 'perm': '0440'}, 'set_1': {'uid': 1111, 'gid': 1000, 'perm': '0440'}} == {'set_1': {'uid': 1111, 'gid': 1000, 'perm': '0440'}, 'set_2': {'uid': 1000, 'gid': 1000, 'perm': '0440'}, 'set_3': {'uid': 2222, 'gid': 1000, 'perm': '0440'}, 'set_4': {'uid': 1000, 'gid': 1000, 'perm': '0440'}, 'set_5': {'uid': 1000, 'gid': 1111, 'perm': '0440'}, 'set_6': {'uid': 1000, 'gid': 1000, 'perm': '0440'}, 'set_7': {'uid': 1000, 'gid': 2222, 'perm': '0440'}, 'set_8': {'uid': 1000, 'gid': 1000, 'perm': '0440'}, 'set_9': {'uid': 1000, 'gid': 1000, 'perm': '0400'}, 'set_10': {'uid': 1000, 'gid': 1000, 'perm': '0440'}}, passed
-2024-12-13 05:53:14,365 TADA INFO assertion 12.1, Clients with different UID and the same GID cannot access 0400 sets.: {'set_8': {'uid': 1000, 'gid': 1000, 'perm': '0440'}, 'set_6': {'uid': 1000, 'gid': 1000, 'perm': '0440'}, 'set_4': {'uid': 1000, 'gid': 1000, 'perm': '0440'}, 'set_3': {'uid': 2222, 'gid': 1000, 'perm': '0440'}, 'set_2': {'uid': 1000, 'gid': 1000, 'perm': '0440'}, 'set_10': {'uid': 1000, 'gid': 1000, 'perm': '0440'}, 'set_1': {'uid': 1111, 'gid': 1000, 'perm': '0440'}} == {'set_1': {'uid': 1111, 'gid': 1000, 'perm': '0440'}, 'set_2': {'uid': 1000, 'gid': 1000, 'perm': '0440'}, 'set_3': {'uid': 2222, 'gid': 1000, 'perm': '0440'}, 'set_4': {'uid': 1000, 'gid': 1000, 'perm': '0440'}, 'set_6': {'uid': 1000, 'gid': 1000, 'perm': '0440'}, 'set_8': {'uid': 1000, 'gid': 1000, 'perm': '0440'}, 'set_10': {'uid': 1000, 'gid': 1000, 'perm': '0440'}}, passed
-2024-12-13 05:53:14,570 TADA INFO assertion 12.2, Clients with different UID and GID cannot access 04## sets.: {} == {}, passed
-2024-12-13 05:53:14,570 __main__ INFO --- done ---
-2024-12-13 05:53:14,570 TADA INFO test set_sec_test ended
+2024-12-14 05:52:39,197 TADA INFO starting test `set_sec_test`
+2024-12-14 05:52:39,197 TADA INFO   test-id: cb4c79634d0cfffcf6452c5c3dab243a963eb2f79a92fb92c42c6d86e13787c9
+2024-12-14 05:52:39,197 TADA INFO   test-suite: LDMSD
+2024-12-14 05:52:39,197 TADA INFO   test-name: set_sec_test
+2024-12-14 05:52:39,198 TADA INFO   test-user: narate
+2024-12-14 05:52:39,198 TADA INFO   commit-id: 9e8feabff37d0c4e6088e58da7311481fa3d89df
+2024-12-14 05:52:39,198 __main__ INFO ---Get or create the cluster ---
+2024-12-14 05:52:52,375 __main__ INFO --- Start daemons ---
+2024-12-14 05:52:58,370 TADA INFO assertion 1, Change UID to an existing username: {'set_1': {'uid': 1111, 'gid': 1000, 'perm': '0440'}} == {'set_1': {'uid': 1111, 'gid': 1000, 'perm': '0440'}}, passed
+2024-12-14 05:52:59,571 TADA INFO assertion 2, Change UID to a not-existing username: errcode (22) == expected (22), passed
+2024-12-14 05:53:00,979 TADA INFO assertion 3, Change UID to a valid UID: {'set_3': {'uid': 2222, 'gid': 1000, 'perm': '0440'}} == {'set_3': {'uid': 2222, 'gid': 1000, 'perm': '0440'}}, passed
+2024-12-14 05:53:02,194 TADA INFO assertion 4, Change UID to an invalid UID: errcode (22) == expected (22), passed
+2024-12-14 05:53:03,617 TADA INFO assertion 5, Change GID to an existing groupname: {'set_5': {'uid': 1000, 'gid': 1111, 'perm': '0440'}} == {'set_5': {'uid': 1000, 'gid': 1111, 'perm': '0440'}}, passed
+2024-12-14 05:53:04,834 TADA INFO assertion 6, Change GID to a not-existing groupname: errcode (22) == expected (22), passed
+2024-12-14 05:53:06,239 TADA INFO assertion 7, Change GID to a valid GID: {'set_7': {'uid': 1000, 'gid': 2222, 'perm': '0440'}} == {'set_7': {'uid': 1000, 'gid': 2222, 'perm': '0440'}}, passed
+2024-12-14 05:53:07,446 TADA INFO assertion 8, Change GID to an invalid GID: errcode (22) == expected (22), passed
+2024-12-14 05:53:08,850 TADA INFO assertion 9, Change permission bits to a valid permission value: {'set_9': {'uid': 1000, 'gid': 1000, 'perm': '0400'}} == {'set_9': {'uid': 1000, 'gid': 1000, 'perm': '0400'}}, passed
+2024-12-14 05:53:10,067 TADA INFO assertion 10, Change permission bits to an invalid permission value: errcode (22) == expected (22), passed
+2024-12-14 05:53:10,282 TADA INFO assertion 11, Verify that the aggregator got sets' new security info: {'set_9': {'uid': 1000, 'gid': 1000, 'perm': '0400'}, 'set_8': {'uid': 1000, 'gid': 1000, 'perm': '0440'}, 'set_7': {'uid': 1000, 'gid': 2222, 'perm': '0440'}, 'set_6': {'uid': 1000, 'gid': 1000, 'perm': '0440'}, 'set_5': {'uid': 1000, 'gid': 1111, 'perm': '0440'}, 'set_4': {'uid': 1000, 'gid': 1000, 'perm': '0440'}, 'set_3': {'uid': 2222, 'gid': 1000, 'perm': '0440'}, 'set_2': {'uid': 1000, 'gid': 1000, 'perm': '0440'}, 'set_10': {'uid': 1000, 'gid': 1000, 'perm': '0440'}, 'set_1': {'uid': 1111, 'gid': 1000, 'perm': '0440'}} == {'set_1': {'uid': 1111, 'gid': 1000, 'perm': '0440'}, 'set_2': {'uid': 1000, 'gid': 1000, 'perm': '0440'}, 'set_3': {'uid': 2222, 'gid': 1000, 'perm': '0440'}, 'set_4': {'uid': 1000, 'gid': 1000, 'perm': '0440'}, 'set_5': {'uid': 1000, 'gid': 1111, 'perm': '0440'}, 'set_6': {'uid': 1000, 'gid': 1000, 'perm': '0440'}, 'set_7': {'uid': 1000, 'gid': 2222, 'perm': '0440'}, 'set_8': {'uid': 1000, 'gid': 1000, 'perm': '0440'}, 'set_9': {'uid': 1000, 'gid': 1000, 'perm': '0400'}, 'set_10': {'uid': 1000, 'gid': 1000, 'perm': '0440'}}, passed
+2024-12-14 05:53:10,501 TADA INFO assertion 12.1, Clients with different UID and the same GID cannot access 0400 sets.: {'set_8': {'uid': 1000, 'gid': 1000, 'perm': '0440'}, 'set_6': {'uid': 1000, 'gid': 1000, 'perm': '0440'}, 'set_4': {'uid': 1000, 'gid': 1000, 'perm': '0440'}, 'set_3': {'uid': 2222, 'gid': 1000, 'perm': '0440'}, 'set_2': {'uid': 1000, 'gid': 1000, 'perm': '0440'}, 'set_10': {'uid': 1000, 'gid': 1000, 'perm': '0440'}, 'set_1': {'uid': 1111, 'gid': 1000, 'perm': '0440'}} == {'set_1': {'uid': 1111, 'gid': 1000, 'perm': '0440'}, 'set_2': {'uid': 1000, 'gid': 1000, 'perm': '0440'}, 'set_3': {'uid': 2222, 'gid': 1000, 'perm': '0440'}, 'set_4': {'uid': 1000, 'gid': 1000, 'perm': '0440'}, 'set_6': {'uid': 1000, 'gid': 1000, 'perm': '0440'}, 'set_8': {'uid': 1000, 'gid': 1000, 'perm': '0440'}, 'set_10': {'uid': 1000, 'gid': 1000, 'perm': '0440'}}, passed
+2024-12-14 05:53:10,694 TADA INFO assertion 12.2, Clients with different UID and GID cannot access 04## sets.: {} == {}, passed
+2024-12-14 05:53:10,694 __main__ INFO --- done ---
+2024-12-14 05:53:10,694 TADA INFO test set_sec_test ended
