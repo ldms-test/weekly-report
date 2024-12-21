@@ -1,78 +1,77 @@
-2024-12-13 01:14:08,970 TADA INFO starting test `spank_notifier_test`
-2024-12-13 01:14:08,970 TADA INFO   test-id: a7d3307c90016dde7457951832c6d4f24221620b34146072639daebd866abcee
-2024-12-13 01:14:08,970 TADA INFO   test-suite: Slurm_Plugins
-2024-12-13 01:14:08,970 TADA INFO   test-name: spank_notifier_test
-2024-12-13 01:14:08,971 TADA INFO   test-user: narate
-2024-12-13 01:14:08,971 TADA INFO   commit-id: 5160ffc4cac64e0f69288c609246d92b126f5d28
-2024-12-13 01:14:08,971 __main__ INFO -- Create the cluster --
-2024-12-13 01:14:50,179 __main__ INFO -- Cleanup output --
-2024-12-13 01:14:50,479 __main__ INFO -- Test bad plugstack config --
-2024-12-13 01:14:50,479 __main__ INFO Starting slurm ...
-2024-12-13 01:15:04,560 __main__ INFO Starting slurm ... OK
-2024-12-13 01:15:25,018 __main__ INFO -- Submitting job with num_tasks 4 --
-2024-12-13 01:15:25,124 __main__ INFO   jobid = 1
-2024-12-13 01:15:25,327 __main__ INFO -- Submitting job with num_tasks 4 --
-2024-12-13 01:15:25,438 __main__ INFO   jobid = 2
-2024-12-13 01:15:25,658 __main__ INFO -- Submitting job with num_tasks 4 --
-2024-12-13 01:15:25,784 __main__ INFO   jobid = 3
-2024-12-13 01:15:26,010 __main__ INFO -- Submitting job with num_tasks 4 --
-2024-12-13 01:15:26,136 __main__ INFO   jobid = 4
-2024-12-13 01:15:35,822 TADA INFO assertion 60, Bad config does not affect jobs: jobs verified, passed
-2024-12-13 01:15:35,822 __main__ INFO Killin slurm ...
-2024-12-13 01:15:38,768 __main__ INFO Killin slurm ... OK
-2024-12-13 01:15:58,788 __main__ INFO -- Start daemons --
-2024-12-13 01:16:09,228 __main__ INFO Starting slurm ... OK
-2024-12-13 01:16:29,471 __main__ INFO -- Submitting job with no stream listener --
-2024-12-13 01:16:29,696 __main__ INFO -- Submitting job with num_tasks 8 --
-2024-12-13 01:16:29,809 __main__ INFO   jobid = 5
-2024-12-13 01:16:45,804 TADA INFO assertion 0, Missing stream listener on node-1 does not affect job execution: job output file created, passed
-2024-12-13 01:16:45,804 TADA INFO assertion 1, Missing stream listener on node-2 does not affect job execution: job output file created, passed
-2024-12-13 01:16:51,650 __main__ INFO -- Submitting job with listener --
-2024-12-13 01:16:51,874 __main__ INFO -- Submitting job with num_tasks 1 --
-2024-12-13 01:16:52,006 __main__ INFO   jobid = 6
-2024-12-13 01:16:52,216 __main__ INFO -- Submitting job with num_tasks 2 --
-2024-12-13 01:16:52,325 __main__ INFO   jobid = 7
-2024-12-13 01:16:52,551 __main__ INFO -- Submitting job with num_tasks 4 --
-2024-12-13 01:16:52,659 __main__ INFO   jobid = 8
-2024-12-13 01:16:52,887 __main__ INFO -- Submitting job with num_tasks 8 --
-2024-12-13 01:16:53,025 __main__ INFO   jobid = 9
-2024-12-13 01:16:53,221 __main__ INFO -- Submitting job with num_tasks 27 --
-2024-12-13 01:16:53,349 __main__ INFO   jobid = 10
-2024-12-13 01:17:15,111 __main__ INFO -- Verifying Events --
-2024-12-13 01:17:15,111 TADA INFO assertion 2, 1-task job: first event is 'init': `init` verified, passed
-2024-12-13 01:17:15,112 TADA INFO assertion 3, 1-task job: 'step_init' event contains subscriber data: `init` subscriber_data verified, passed
-2024-12-13 01:17:15,112 TADA INFO assertion 4, 1-task job: second event is 'task_init_priv': `task_init_priv` verified, passed
-2024-12-13 01:17:15,112 TADA INFO assertion 5, 1-task job: third event is 'task_exit': `task_exit` verified, passed
-2024-12-13 01:17:15,112 TADA INFO assertion 6, 1-task job: fourth event is 'exit': `exit` verified, passed
-2024-12-13 01:17:15,113 TADA INFO assertion 7, 2-task job: first event is 'init': `init` verified, passed
-2024-12-13 01:17:15,113 TADA INFO assertion 8, 2-task job: 'step_init' event contains subscriber data: `init` subscriber_data verified, passed
-2024-12-13 01:17:15,113 TADA INFO assertion 9, 2-task job: second event is 'task_init_priv': `task_init_priv` verified, passed
-2024-12-13 01:17:15,114 TADA INFO assertion 10, 2-task job: third event is 'task_exit': `task_exit` verified, passed
-2024-12-13 01:17:15,114 TADA INFO assertion 11, 2-task job: fourth event is 'exit': `exit` verified, passed
-2024-12-13 01:17:15,114 TADA INFO assertion 12, 4-task job: first event is 'init': `init` verified, passed
-2024-12-13 01:17:15,115 TADA INFO assertion 13, 4-task job: 'step_init' event contains subscriber data: `init` subscriber_data verified, passed
-2024-12-13 01:17:15,115 TADA INFO assertion 14, 4-task job: second event is 'task_init_priv': `task_init_priv` verified, passed
-2024-12-13 01:17:15,115 TADA INFO assertion 15, 4-task job: third event is 'task_exit': `task_exit` verified, passed
-2024-12-13 01:17:15,115 TADA INFO assertion 16, 4-task job: fourth event is 'exit': `exit` verified, passed
-2024-12-13 01:17:15,116 TADA INFO assertion 17, 8-task job: first event is 'init': `init` verified, passed
-2024-12-13 01:17:15,116 TADA INFO assertion 18, 8-task job: 'step_init' event contains subscriber data: `init` subscriber_data verified, passed
-2024-12-13 01:17:15,116 TADA INFO assertion 19, 8-task job: second event is 'task_init_priv': `task_init_priv` verified, passed
-2024-12-13 01:17:15,117 TADA INFO assertion 20, 8-task job: third event is 'task_exit': `task_exit` verified, passed
-2024-12-13 01:17:15,117 TADA INFO assertion 21, 8-task job: fourth event is 'exit': `exit` verified, passed
-2024-12-13 01:17:15,118 TADA INFO assertion 23, 27-task job: 'step_init' event contains subscriber data: Expecting "step_init" event, but got task_init_priv, failed
-Traceback (most recent call last):
-  File "spank_notifier_test", line 492, in <module>
-    verify_jobinfo(cluster, test, node_events, jobinfo)
-  File "spank_notifier_test", line 160, in verify_jobinfo
-    .format(ev['event']))
-  File "/home/narate/cron/ldms-test/TADA.py", line 157, in assert_test
-    raise AssertionException(self.test_desc + ", " + cond_str + ": FAILED")
-TADA.AssertionException: The test to verify ldmsd-stream SPANK notifier., Expecting "step_init" event, but got task_init_priv: FAILED
-2024-12-13 01:17:15,119 TADA INFO assertion 22, 27-task job: first event is 'init': skipped
-2024-12-13 01:17:15,119 TADA INFO assertion 24, 27-task job: second event is 'task_init_priv': skipped
-2024-12-13 01:17:15,119 TADA INFO assertion 25, 27-task job: third event is 'task_exit': skipped
-2024-12-13 01:17:15,120 TADA INFO assertion 26, 27-task job: fourth event is 'exit': skipped
-2024-12-13 01:17:15,120 TADA INFO assertion 50, Multi-tenant verification: skipped
-2024-12-13 01:17:15,120 TADA INFO assertion 51, Killing stream listener does not affect job execution on node-1: skipped
-2024-12-13 01:17:15,120 TADA INFO assertion 52, Killing stream listener does not affect job execution on node-2: skipped
-2024-12-13 01:17:15,120 TADA INFO test spank_notifier_test ended
+2024-12-21 01:14:54,152 TADA INFO starting test `spank_notifier_test`
+2024-12-21 01:14:54,152 TADA INFO   test-id: 5f587134b8d09c75446764dec7abf0ca2bef322916f2212f55f1c19dc999f66b
+2024-12-21 01:14:54,152 TADA INFO   test-suite: Slurm_Plugins
+2024-12-21 01:14:54,152 TADA INFO   test-name: spank_notifier_test
+2024-12-21 01:14:54,152 TADA INFO   test-user: narate
+2024-12-21 01:14:54,152 TADA INFO   commit-id: 2902a3ccee89a895fecfef7110608e96bf1eb0e1
+2024-12-21 01:14:54,153 __main__ INFO -- Create the cluster --
+2024-12-21 01:15:35,790 __main__ INFO -- Cleanup output --
+2024-12-21 01:15:36,118 __main__ INFO -- Test bad plugstack config --
+2024-12-21 01:15:36,118 __main__ INFO Starting slurm ...
+2024-12-21 01:15:50,135 __main__ INFO Starting slurm ... OK
+2024-12-21 01:16:10,623 __main__ INFO -- Submitting job with num_tasks 4 --
+2024-12-21 01:16:10,745 __main__ INFO   jobid = 1
+2024-12-21 01:16:10,962 __main__ INFO -- Submitting job with num_tasks 4 --
+2024-12-21 01:16:11,074 __main__ INFO   jobid = 2
+2024-12-21 01:16:11,295 __main__ INFO -- Submitting job with num_tasks 4 --
+2024-12-21 01:16:11,400 __main__ INFO   jobid = 3
+2024-12-21 01:16:11,590 __main__ INFO -- Submitting job with num_tasks 4 --
+2024-12-21 01:16:11,708 __main__ INFO   jobid = 4
+2024-12-21 01:16:21,410 TADA INFO assertion 60, Bad config does not affect jobs: jobs verified, passed
+2024-12-21 01:16:21,410 __main__ INFO Killin slurm ...
+2024-12-21 01:16:24,406 __main__ INFO Killin slurm ... OK
+2024-12-21 01:16:44,426 __main__ INFO -- Start daemons --
+2024-12-21 01:16:54,852 __main__ INFO Starting slurm ... OK
+2024-12-21 01:17:15,141 __main__ INFO -- Submitting job with no stream listener --
+2024-12-21 01:17:15,351 __main__ INFO -- Submitting job with num_tasks 8 --
+2024-12-21 01:17:15,484 __main__ INFO   jobid = 5
+2024-12-21 01:17:31,476 TADA INFO assertion 0, Missing stream listener on node-1 does not affect job execution: job output file created, passed
+2024-12-21 01:17:31,477 TADA INFO assertion 1, Missing stream listener on node-2 does not affect job execution: job output file created, passed
+2024-12-21 01:17:37,416 __main__ INFO -- Submitting job with listener --
+2024-12-21 01:17:37,634 __main__ INFO -- Submitting job with num_tasks 1 --
+2024-12-21 01:17:37,750 __main__ INFO   jobid = 6
+2024-12-21 01:17:37,955 __main__ INFO -- Submitting job with num_tasks 2 --
+2024-12-21 01:17:38,068 __main__ INFO   jobid = 7
+2024-12-21 01:17:38,279 __main__ INFO -- Submitting job with num_tasks 4 --
+2024-12-21 01:17:38,404 __main__ INFO   jobid = 8
+2024-12-21 01:17:38,651 __main__ INFO -- Submitting job with num_tasks 8 --
+2024-12-21 01:17:38,770 __main__ INFO   jobid = 9
+2024-12-21 01:17:38,974 __main__ INFO -- Submitting job with num_tasks 27 --
+2024-12-21 01:17:39,106 __main__ INFO   jobid = 10
+2024-12-21 01:18:00,919 __main__ INFO -- Verifying Events --
+2024-12-21 01:18:00,919 TADA INFO assertion 2, 1-task job: first event is 'init': `init` verified, passed
+2024-12-21 01:18:00,919 TADA INFO assertion 3, 1-task job: 'step_init' event contains subscriber data: `init` subscriber_data verified, passed
+2024-12-21 01:18:00,919 TADA INFO assertion 4, 1-task job: second event is 'task_init_priv': `task_init_priv` verified, passed
+2024-12-21 01:18:00,919 TADA INFO assertion 5, 1-task job: third event is 'task_exit': `task_exit` verified, passed
+2024-12-21 01:18:00,920 TADA INFO assertion 6, 1-task job: fourth event is 'exit': `exit` verified, passed
+2024-12-21 01:18:00,920 TADA INFO assertion 7, 2-task job: first event is 'init': `init` verified, passed
+2024-12-21 01:18:00,920 TADA INFO assertion 8, 2-task job: 'step_init' event contains subscriber data: `init` subscriber_data verified, passed
+2024-12-21 01:18:00,920 TADA INFO assertion 9, 2-task job: second event is 'task_init_priv': `task_init_priv` verified, passed
+2024-12-21 01:18:00,920 TADA INFO assertion 10, 2-task job: third event is 'task_exit': `task_exit` verified, passed
+2024-12-21 01:18:00,921 TADA INFO assertion 11, 2-task job: fourth event is 'exit': `exit` verified, passed
+2024-12-21 01:18:00,921 TADA INFO assertion 12, 4-task job: first event is 'init': `init` verified, passed
+2024-12-21 01:18:00,921 TADA INFO assertion 13, 4-task job: 'step_init' event contains subscriber data: `init` subscriber_data verified, passed
+2024-12-21 01:18:00,921 TADA INFO assertion 14, 4-task job: second event is 'task_init_priv': `task_init_priv` verified, passed
+2024-12-21 01:18:00,921 TADA INFO assertion 15, 4-task job: third event is 'task_exit': `task_exit` verified, passed
+2024-12-21 01:18:00,922 TADA INFO assertion 16, 4-task job: fourth event is 'exit': `exit` verified, passed
+2024-12-21 01:18:00,922 TADA INFO assertion 17, 8-task job: first event is 'init': `init` verified, passed
+2024-12-21 01:18:00,922 TADA INFO assertion 18, 8-task job: 'step_init' event contains subscriber data: `init` subscriber_data verified, passed
+2024-12-21 01:18:00,922 TADA INFO assertion 19, 8-task job: second event is 'task_init_priv': `task_init_priv` verified, passed
+2024-12-21 01:18:00,922 TADA INFO assertion 20, 8-task job: third event is 'task_exit': `task_exit` verified, passed
+2024-12-21 01:18:00,923 TADA INFO assertion 21, 8-task job: fourth event is 'exit': `exit` verified, passed
+2024-12-21 01:18:00,923 TADA INFO assertion 22, 27-task job: first event is 'init': `init` verified, passed
+2024-12-21 01:18:00,923 TADA INFO assertion 23, 27-task job: 'step_init' event contains subscriber data: `init` subscriber_data verified, passed
+2024-12-21 01:18:00,923 TADA INFO assertion 24, 27-task job: second event is 'task_init_priv': `task_init_priv` verified, passed
+2024-12-21 01:18:00,924 TADA INFO assertion 25, 27-task job: third event is 'task_exit': `task_exit` verified, passed
+2024-12-21 01:18:00,924 TADA INFO assertion 26, 27-task job: fourth event is 'exit': `exit` verified, passed
+2024-12-21 01:18:00,924 __main__ INFO job 6 multi-tenant with dict_keys([7])
+2024-12-21 01:18:00,924 __main__ INFO job 10 multi-tenant with dict_keys([7, 6])
+2024-12-21 01:18:00,924 __main__ INFO job 10 multi-tenant with dict_keys([8])
+2024-12-21 01:18:00,924 __main__ INFO job 10 multi-tenant with dict_keys([9])
+2024-12-21 01:18:00,924 __main__ INFO job 10 multi-tenant with dict_keys([9])
+2024-12-21 01:18:00,925 TADA INFO assertion 50, Multi-tenant verification: Multi-tenant jobs found, passed
+2024-12-21 01:18:01,139 __main__ INFO -- Submitting job that crashes listener --
+2024-12-21 01:18:01,260 __main__ INFO   jobid = 11
+2024-12-21 01:18:11,504 TADA INFO assertion 51, Killing stream listener does not affect job execution on node-1: job output file created, passed
+2024-12-21 01:18:11,624 TADA INFO assertion 52, Killing stream listener does not affect job execution on node-2: job output file created, passed
+2024-12-21 01:18:11,624 TADA INFO test spank_notifier_test ended
