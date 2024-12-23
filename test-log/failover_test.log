@@ -1,43 +1,43 @@
-2024-12-21 04:51:53,775 TADA INFO starting test `failover_test`
-2024-12-21 04:51:53,775 TADA INFO   test-id: b22c57938dc30617967b67d9e796eb65f2e9bc3dbe7a4c811b4be0f1c36fcbab
-2024-12-21 04:51:53,775 TADA INFO   test-suite: LDMSD
-2024-12-21 04:51:53,775 TADA INFO   test-name: failover_test
-2024-12-21 04:51:53,776 TADA INFO   test-user: narate
-2024-12-21 04:51:53,776 TADA INFO   commit-id: c8d6b2f73163cfbacce4454c097c67760a9cb336
-2024-12-21 04:51:53,776 __main__ INFO -- Get or create the cluster --
-2024-12-21 04:52:25,199 __main__ INFO -- Start daemons --
-2024-12-21 04:52:34,439 __main__ INFO ... wait a bit to make sure ldmsd's are up
-2024-12-21 04:52:49,455 __main__ INFO -- ldms_ls to agg-2 --
-2024-12-21 04:52:49,582 TADA INFO assertion 1, 
+2024-12-23 04:51:53,923 TADA INFO starting test `failover_test`
+2024-12-23 04:51:53,923 TADA INFO   test-id: d5b340b9d1bdc0eb810718bcb631e9e870e8c1178b0623ca7ce5018a8e890a3b
+2024-12-23 04:51:53,923 TADA INFO   test-suite: LDMSD
+2024-12-23 04:51:53,923 TADA INFO   test-name: failover_test
+2024-12-23 04:51:53,923 TADA INFO   test-user: narate
+2024-12-23 04:51:53,923 TADA INFO   commit-id: 9c18084762007af2df7daece505df8c7169fe270
+2024-12-23 04:51:53,924 __main__ INFO -- Get or create the cluster --
+2024-12-23 04:52:26,152 __main__ INFO -- Start daemons --
+2024-12-23 04:52:35,525 __main__ INFO ... wait a bit to make sure ldmsd's are up
+2024-12-23 04:52:50,540 __main__ INFO -- ldms_ls to agg-2 --
+2024-12-23 04:52:50,666 TADA INFO assertion 1, 
 ldms_ls agg-2: dir result verified, passed
-2024-12-21 04:52:50,368 TADA INFO assertion 2, 
+2024-12-23 04:52:51,423 TADA INFO assertion 2, 
 meminfo data verification: data verified, passed
-2024-12-21 04:52:50,368 __main__ INFO -- Terminating ldmsd on agg-11 --
-2024-12-21 04:52:55,698 TADA INFO assertion 3, 
-agg-11 ldmsd terminated, sets added to agg-12: list({'node-2/meminfo', 'node-3/meminfo', 'node-4/meminfo', 'node-1/meminfo'}) == expect({'node-2/meminfo', 'node-3/meminfo', 'node-4/meminfo', 'node-1/meminfo'}), passed
-2024-12-21 04:52:55,823 TADA INFO assertion 4, 
-agg-11 ldmsd terminated, all sets running on agg-2: list({'node-2/meminfo', 'node-3/meminfo', 'node-4/meminfo', 'node-1/meminfo'}) == expect({'node-2/meminfo', 'node-3/meminfo', 'node-4/meminfo', 'node-1/meminfo'}), passed
-2024-12-21 04:52:55,952 TADA INFO assertion 5, 
+2024-12-23 04:52:51,423 __main__ INFO -- Terminating ldmsd on agg-11 --
+2024-12-23 04:52:56,784 TADA INFO assertion 3, 
+agg-11 ldmsd terminated, sets added to agg-12: list({'node-1/meminfo', 'node-4/meminfo', 'node-2/meminfo', 'node-3/meminfo'}) == expect({'node-4/meminfo', 'node-2/meminfo', 'node-1/meminfo', 'node-3/meminfo'}), passed
+2024-12-23 04:52:56,903 TADA INFO assertion 4, 
+agg-11 ldmsd terminated, all sets running on agg-2: list({'node-1/meminfo', 'node-4/meminfo', 'node-2/meminfo', 'node-3/meminfo'}) == expect({'node-4/meminfo', 'node-2/meminfo', 'node-1/meminfo', 'node-3/meminfo'}), passed
+2024-12-23 04:52:57,019 TADA INFO assertion 5, 
 agg-11 ldmsd terminated, node-1 ldmsd is still running: list({'node-1/meminfo'}) == expect({'node-1/meminfo'}), passed
-2024-12-21 04:52:56,065 TADA INFO assertion 6, 
+2024-12-23 04:52:57,128 TADA INFO assertion 6, 
 agg-11 ldmsd terminated, node-3 ldmsd is still running: list({'node-3/meminfo'}) == expect({'node-3/meminfo'}), passed
-2024-12-21 04:52:56,065 __main__ INFO -- Resurrecting ldmsd on agg-11 --
-2024-12-21 04:53:16,782 TADA INFO assertion 7, 
-agg-11 ldmsd revived, sets removed from agg-12: list({'node-2/meminfo', 'node-4/meminfo'}) == expect({'node-2/meminfo', 'node-4/meminfo'}), passed
-2024-12-21 04:53:16,895 TADA INFO assertion 8, 
-agg-11 ldmsd revived, all sets running on agg-2: list({'node-2/meminfo', 'node-3/meminfo', 'node-4/meminfo', 'node-1/meminfo'}) == expect({'node-2/meminfo', 'node-3/meminfo', 'node-4/meminfo', 'node-1/meminfo'}), passed
-2024-12-21 04:53:16,895 __main__ INFO -- Terminating ldmsd on agg-12 --
-2024-12-21 04:53:22,269 TADA INFO assertion 9, 
-agg-12 ldmsd terminated, sets added to agg-11: list({'node-2/meminfo', 'node-3/meminfo', 'node-4/meminfo', 'node-1/meminfo'}) == expect({'node-2/meminfo', 'node-3/meminfo', 'node-4/meminfo', 'node-1/meminfo'}), passed
-2024-12-21 04:53:22,392 TADA INFO assertion 10, 
-agg-12 ldmsd terminated, all sets running on agg-2: list({'node-2/meminfo', 'node-3/meminfo', 'node-4/meminfo', 'node-1/meminfo'}) == expect({'node-2/meminfo', 'node-3/meminfo', 'node-4/meminfo', 'node-1/meminfo'}), passed
-2024-12-21 04:53:22,502 TADA INFO assertion 11, 
+2024-12-23 04:52:57,128 __main__ INFO -- Resurrecting ldmsd on agg-11 --
+2024-12-23 04:53:17,775 TADA INFO assertion 7, 
+agg-11 ldmsd revived, sets removed from agg-12: list({'node-4/meminfo', 'node-2/meminfo'}) == expect({'node-4/meminfo', 'node-2/meminfo'}), passed
+2024-12-23 04:53:17,898 TADA INFO assertion 8, 
+agg-11 ldmsd revived, all sets running on agg-2: list({'node-1/meminfo', 'node-4/meminfo', 'node-2/meminfo', 'node-3/meminfo'}) == expect({'node-4/meminfo', 'node-2/meminfo', 'node-1/meminfo', 'node-3/meminfo'}), passed
+2024-12-23 04:53:17,898 __main__ INFO -- Terminating ldmsd on agg-12 --
+2024-12-23 04:53:23,260 TADA INFO assertion 9, 
+agg-12 ldmsd terminated, sets added to agg-11: list({'node-1/meminfo', 'node-4/meminfo', 'node-2/meminfo', 'node-3/meminfo'}) == expect({'node-4/meminfo', 'node-2/meminfo', 'node-1/meminfo', 'node-3/meminfo'}), passed
+2024-12-23 04:53:23,385 TADA INFO assertion 10, 
+agg-12 ldmsd terminated, all sets running on agg-2: list({'node-1/meminfo', 'node-4/meminfo', 'node-2/meminfo', 'node-3/meminfo'}) == expect({'node-4/meminfo', 'node-2/meminfo', 'node-1/meminfo', 'node-3/meminfo'}), passed
+2024-12-23 04:53:23,500 TADA INFO assertion 11, 
 agg-12 ldmsd terminated, node-2 ldmsd is still running: list({'node-2/meminfo'}) == expect({'node-2/meminfo'}), passed
-2024-12-21 04:53:22,610 TADA INFO assertion 12, 
+2024-12-23 04:53:23,611 TADA INFO assertion 12, 
 agg-12 ldmsd terminated, node-4 ldmsd is still running: list({'node-4/meminfo'}) == expect({'node-4/meminfo'}), passed
-2024-12-21 04:53:22,610 __main__ INFO -- Resurrecting ldmsd on agg-12 --
-2024-12-21 04:53:43,295 TADA INFO assertion 13, 
-agg-12 ldmsd revived, sets removed from agg-11: list({'node-3/meminfo', 'node-1/meminfo'}) == expect({'node-3/meminfo', 'node-1/meminfo'}), passed
-2024-12-21 04:53:43,414 TADA INFO assertion 14, 
-agg-12 ldmsd revived, all sets running on agg-2: list({'node-2/meminfo', 'node-3/meminfo', 'node-4/meminfo', 'node-1/meminfo'}) == expect({'node-2/meminfo', 'node-3/meminfo', 'node-4/meminfo', 'node-1/meminfo'}), passed
-2024-12-21 04:53:43,414 TADA INFO test failover_test ended
+2024-12-23 04:53:23,611 __main__ INFO -- Resurrecting ldmsd on agg-12 --
+2024-12-23 04:53:44,319 TADA INFO assertion 13, 
+agg-12 ldmsd revived, sets removed from agg-11: list({'node-1/meminfo', 'node-3/meminfo'}) == expect({'node-1/meminfo', 'node-3/meminfo'}), passed
+2024-12-23 04:53:44,438 TADA INFO assertion 14, 
+agg-12 ldmsd revived, all sets running on agg-2: list({'node-1/meminfo', 'node-4/meminfo', 'node-2/meminfo', 'node-3/meminfo'}) == expect({'node-4/meminfo', 'node-2/meminfo', 'node-1/meminfo', 'node-3/meminfo'}), passed
+2024-12-23 04:53:44,438 TADA INFO test failover_test ended
