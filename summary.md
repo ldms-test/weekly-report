@@ -1,7 +1,7 @@
 Test Summary
 ============
 * [direct_ldms_ls_conn_test](test-log/direct_ldms_ls_conn_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
-* [direct_prdcr_subscribe_test](test-log/direct_prdcr_subscribe_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
+* [direct_prdcr_subscribe_test](test-log/direct_prdcr_subscribe_test.log): $\textcolor{red}{\text{FAILED}}$
 * [agg_test](test-log/agg_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
 * [failover_test](test-log/failover_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
 * [ldmsd_auth_ovis_test](test-log/ldmsd_auth_ovis_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
@@ -15,7 +15,7 @@ Test Summary
 * [set_array_test](test-log/set_array_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
 * [setgroup_test](test-log/setgroup_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
 * [slurm_stream_test](test-log/slurm_stream_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
-* [spank_notifier_test](test-log/spank_notifier_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
+* [spank_notifier_test](test-log/spank_notifier_test.log): $\textcolor{red}{\text{FAILED}}$
 * [ldms_list_test](test-log/ldms_list_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
 * [quick_set_add_rm_test](test-log/quick_set_add_rm_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
 * [set_array_hang_test](test-log/set_array_hang_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
@@ -25,7 +25,7 @@ Test Summary
 * [ldmsd_decomp_test](test-log/ldmsd_decomp_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
 * [ldmsd_decomp_no_fill_test](test-log/ldmsd_decomp_no_fill_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
 * [ldmsd_stream_status_test](test-log/ldmsd_stream_status_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
-* [store_list_record_test](test-log/store_list_record_test.log): $\textcolor{red}{\text{FAILED}}$
+* [store_list_record_test](test-log/store_list_record_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
 * [maestro_raft_test](test-log/maestro_raft_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
 * [ovis_json_test](test-log/ovis_json_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
 * [updtr_add_test](test-log/updtr_add_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
