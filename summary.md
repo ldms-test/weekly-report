@@ -13,7 +13,7 @@ Test Summary
 * [ldmsd_auth_test](test-log/ldmsd_auth_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
 * [ldmsd_ctrl_test](test-log/ldmsd_ctrl_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
 * [ldmsd_stream_test](test-log/ldmsd_stream_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
-* [maestro_cfg_test](test-log/maestro_cfg_test.log): $\textcolor{red}{\text{FAILED}}$
+* [maestro_cfg_test](test-log/maestro_cfg_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
 * [mt-slurm-test](test-log/mt-slurm-test.log): $\textcolor{lightgreen}{\text{PASSED}}$
 * [ovis_ev_test](test-log/ovis_ev_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
 * [prdcr_subscribe_test](test-log/prdcr_subscribe_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
@@ -31,7 +31,7 @@ Test Summary
 * [ldmsd_decomp_no_fill_test](test-log/ldmsd_decomp_no_fill_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
 * [ldmsd_stream_status_test](test-log/ldmsd_stream_status_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
 * [store_list_record_test](test-log/store_list_record_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
-* [maestro_raft_test](test-log/maestro_raft_test.log): $\textcolor{red}{\text{FAILED}}$
+* [maestro_raft_test](test-log/maestro_raft_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
 * [ovis_json_test](test-log/ovis_json_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
 * [updtr_add_test](test-log/updtr_add_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
 * [updtr_del_test](test-log/updtr_del_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
@@ -52,6 +52,6 @@ Test Summary
 * [ldmsd_decomp_static_op_test](test-log/ldmsd_decomp_static_op_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
 * [ldmsd_decomp_static_rowcache_test](test-log/ldmsd_decomp_static_rowcache_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
 * [cont-test-ldms](test-log/cont-test-ldms.log): $\textcolor{lightgreen}{\text{PASSED}}$
-* [cont-test-maestro](test-log/cont-test-maestro.log): $\textcolor{red}{\text{FAILED}}$
-* [cont-test-maestro-hostmunge](test-log/cont-test-maestro-hostmunge.log): $\textcolor{red}{\text{FAILED}}$
-* [cont-test-maestro-munge](test-log/cont-test-maestro-munge.log): $\textcolor{red}{\text{FAILED}}$
+* [cont-test-maestro](test-log/cont-test-maestro.log): $\textcolor{lightgreen}{\text{PASSED}}$
+* [cont-test-maestro-hostmunge](test-log/cont-test-maestro-hostmunge.log): $\textcolor{lightgreen}{\text{PASSED}}$
+* [cont-test-maestro-munge](test-log/cont-test-maestro-munge.log): $\textcolor{lightgreen}{\text{PASSED}}$

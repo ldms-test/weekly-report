@@ -1,23 +1,21 @@
-2025-02-04 10:59:44,728 TADA INFO starting test `maestro_raft_test`
-2025-02-04 10:59:44,728 TADA INFO   test-id: fb56bfcae3cb88b0bf6cb44436f39e16db0eebdc7a09458979b9078befa73863
-2025-02-04 10:59:44,728 TADA INFO   test-suite: LDMSD
-2025-02-04 10:59:44,728 TADA INFO   test-name: maestro_raft_test
-2025-02-04 10:59:44,728 TADA INFO   test-user: narate
-2025-02-04 10:59:44,728 TADA INFO   commit-id: b4166793614a868883ff531116c0723888d32e5b
-2025-02-04 10:59:54,740 __main__ INFO -- Get or create cluster --
-2025-02-04 11:00:52,203 __main__ INFO -- Start daemons --
-2025-02-04 11:02:03,546 __main__ INFO -- making known hosts (ssh) --
-2025-02-04 11:02:10,768 __main__ INFO ... make sure ldmsd's are up
+2025-02-04 18:11:34,013 TADA INFO starting test `maestro_raft_test`
+2025-02-04 18:11:34,013 TADA INFO   test-id: a93e1af1f3341fce77c4bac6b4b573591521621014d35e8414d601cd68e3d737
+2025-02-04 18:11:34,013 TADA INFO   test-suite: LDMSD
+2025-02-04 18:11:34,013 TADA INFO   test-name: maestro_raft_test
+2025-02-04 18:11:34,013 TADA INFO   test-user: narate
+2025-02-04 18:11:34,013 TADA INFO   commit-id: b4166793614a868883ff531116c0723888d32e5b
+2025-02-04 18:11:44,025 __main__ INFO -- Get or create cluster --
+2025-02-04 18:12:42,292 __main__ INFO -- Start daemons --
+2025-02-04 18:13:53,361 __main__ INFO -- making known hosts (ssh) --
+2025-02-04 18:14:00,396 __main__ INFO ... make sure ldmsd's are up
+2025-02-04 18:14:15,143 __main__ INFO Wait a bit for all maestro daemons to sync...
+2025-02-04 18:14:25,837 TADA INFO assertion 1, Statuses of maestros, 1 leader + 2 followers: [('FOLLOWER', 2), ('LEADER', 1)], passed
+2025-02-04 18:14:38,265 TADA INFO assertion 2, All ldmsds are up and configured: sets verified, passed
+2025-02-04 18:14:38,610 TADA INFO assertion 3, Data are being stored: data check, passed
+2025-02-04 18:14:43,568 TADA INFO assertion 4, New leader elected: checked, passed
+2025-02-04 18:14:48,916 __main__ INFO Wait a bit for agg4 reconfiguration ...
+2025-02-04 18:15:51,418 TADA INFO assertion 5, Restarted ldmsd is configured: sets verified, passed
+2025-02-04 18:15:51,828 TADA INFO assertion 6, New data are presented in the store: data check, passed
+2025-02-04 18:16:02,882 TADA INFO assertion 7, The restarted maestro becomes a follower: checked, passed
 ---Wait for config to write to file---
-Traceback (most recent call last):
-  File "maestro_raft_test", line 394, in <module>
-    raise RuntimeError(f"maestro_ctl error rc: {rc}, out: {out}")
-RuntimeError: maestro_ctl error rc: 1, out: 
-2025-02-04 11:02:16,270 TADA INFO assertion 1, Statuses of maestros, 1 leader + 2 followers: skipped
-2025-02-04 11:02:16,270 TADA INFO assertion 2, All ldmsds are up and configured: skipped
-2025-02-04 11:02:16,270 TADA INFO assertion 3, Data are being stored: skipped
-2025-02-04 11:02:16,271 TADA INFO assertion 4, New leader elected: skipped
-2025-02-04 11:02:16,271 TADA INFO assertion 5, Restarted ldmsd is configured: skipped
-2025-02-04 11:02:16,271 TADA INFO assertion 6, New data are presented in the store: skipped
-2025-02-04 11:02:16,271 TADA INFO assertion 7, The restarted maestro becomes a follower: skipped
-2025-02-04 11:02:16,271 TADA INFO test maestro_raft_test ended
+2025-02-04 18:16:02,882 TADA INFO test maestro_raft_test ended
