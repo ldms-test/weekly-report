@@ -1,28 +1,28 @@
-2025-01-22 02:21:22,461 TADA INFO starting test `ldms_rate_test`
-2025-01-22 02:21:22,461 TADA INFO   test-id: 562c7460de284983b95979c0cabe2ea0330e6a2b2758e81a94370a72e9c25160
-2025-01-22 02:21:22,461 TADA INFO   test-suite: LDMSD
-2025-01-22 02:21:22,461 TADA INFO   test-name: ldms_rate_test
-2025-01-22 02:21:22,461 TADA INFO   test-user: narate
-2025-01-22 02:21:22,461 TADA INFO   commit-id: 0c19380b069f4a1cf11a720e73017799eed9875d
-2025-01-22 02:21:22,462 __main__ INFO -- Get or create the cluster --
-2025-01-22 02:21:32,697 __main__ INFO -- Start daemons --
-2025-01-22 02:21:33,641 __main__ INFO ... wait a bit to make sure ldmsd's are up
-2025-01-22 02:21:35,644 root INFO starting /tada-src/python/ldms_rate.py on narate-ldms_rate_test-0c19380-node-1 
-2025-01-22 02:21:37,862 root INFO starting /tada-src/python/ldms_rate.py on narate-ldms_rate_test-0c19380-node-1 
+2025-03-07 02:16:18,879 TADA INFO starting test `ldms_rate_test`
+2025-03-07 02:16:18,879 TADA INFO   test-id: af08cba1ba453b2dbc70e4aa0fe5ccffee58501bd5e9f780032bc4a6a0c50fc1
+2025-03-07 02:16:18,879 TADA INFO   test-suite: LDMSD
+2025-03-07 02:16:18,879 TADA INFO   test-name: ldms_rate_test
+2025-03-07 02:16:18,879 TADA INFO   test-user: narate
+2025-03-07 02:16:18,879 TADA INFO   commit-id: 7f46faf07413bf1840d58df2a034b00aa652aa40
+2025-03-07 02:16:18,880 __main__ INFO -- Get or create the cluster --
+2025-03-07 02:16:29,126 __main__ INFO -- Start daemons --
+2025-03-07 02:16:29,983 __main__ INFO ... wait a bit to make sure ldmsd's are up
+2025-03-07 02:16:31,984 root INFO starting python /tada-src/python/ldms_rate.py on narate-ldms_rate_test-7f46faf-node-1 
+2025-03-07 02:16:34,201 root INFO starting python /tada-src/python/ldms_rate.py on narate-ldms_rate_test-7f46faf-node-1 
 Traceback (most recent call last):
   File "ldms_rate_test", line 168, in <module>
     pypub.cmd("pub_routine()", retry = 100)
-  File "/home/narate/cron/ldms-test/LDMS_Test.py", line 907, in cmd
+  File "/home/narate/cron/ldms-test/LDMS_Test.py", line 910, in cmd
     return pycmd(self.pty, cmd, retry)
-  File "/home/narate/cron/ldms-test/LDMS_Test.py", line 828, in pycmd
+  File "/home/narate/cron/ldms-test/LDMS_Test.py", line 829, in pycmd
     return icmd(tty, cmd, prompt=">>> ", retry=retry)
-  File "/home/narate/cron/ldms-test/LDMS_Test.py", line 865, in icmd
+  File "/home/narate/cron/ldms-test/LDMS_Test.py", line 866, in icmd
     raise RuntimeError("Command '{cmd}` not responding".format(**vars()))
 RuntimeError: Command 'pub_routine()` not responding
-2025-01-22 02:21:47,994 TADA INFO assertion 1, Publisher cannot publish all data (rail rate limit): skipped
-2025-01-22 02:21:47,994 TADA INFO assertion 2, Publisher get a rate limit error: skipped
-2025-01-22 02:21:47,995 TADA INFO assertion 3, After the wait, the publisher can publish: skipped
-2025-01-22 02:21:47,995 TADA INFO assertion 4, Publisher cannot publish all data (stream rate limit): skipped
-2025-01-22 02:21:47,995 TADA INFO assertion 5, Publisher get a rate limit error (by stream): skipped
-2025-01-22 02:21:47,996 TADA INFO assertion 6, After the wait, the publisher can publish (by stream): skipped
-2025-01-22 02:21:47,996 TADA INFO test ldms_rate_test ended
+2025-03-07 02:16:44,334 TADA INFO assertion 1, Publisher cannot publish all data (rail rate limit): skipped
+2025-03-07 02:16:44,335 TADA INFO assertion 2, Publisher get a rate limit error: skipped
+2025-03-07 02:16:44,335 TADA INFO assertion 3, After the wait, the publisher can publish: skipped
+2025-03-07 02:16:44,335 TADA INFO assertion 4, Publisher cannot publish all data (stream rate limit): skipped
+2025-03-07 02:16:44,335 TADA INFO assertion 5, Publisher get a rate limit error (by stream): skipped
+2025-03-07 02:16:44,336 TADA INFO assertion 6, After the wait, the publisher can publish (by stream): skipped
+2025-03-07 02:16:44,336 TADA INFO test ldms_rate_test ended

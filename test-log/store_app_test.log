@@ -1,16 +1,22 @@
-2025-01-22 02:46:20,485 TADA INFO starting test `store_app_test`
-2025-01-22 02:46:20,486 TADA INFO   test-id: 758341e421599c326b255493219a5981b871592a8ed2f0eddedaa87277105d64
-2025-01-22 02:46:20,486 TADA INFO   test-suite: LDMSD
-2025-01-22 02:46:20,486 TADA INFO   test-name: store_app_test
-2025-01-22 02:46:20,486 TADA INFO   test-user: narate
-2025-01-22 02:46:20,486 TADA INFO   commit-id: 0c19380b069f4a1cf11a720e73017799eed9875d
-2025-01-22 02:46:20,488 __main__ INFO -- Get or create the cluster --
-2025-01-22 02:46:47,295 __main__ INFO -- Preparing job script & programs --
-2025-01-22 02:46:47,702 __main__ INFO -- Start daemons --
-2025-01-22 02:47:35,506 __main__ INFO ... wait a bit to make sure ldmsd's are up
-2025-01-22 02:47:40,514 __main__ INFO -- Submitting jobs --
-2025-01-22 02:47:40,735 __main__ INFO job_one: 1
-2025-01-22 02:47:45,974 __main__ INFO job_two: 2
-2025-01-22 02:47:55,386 __main__ INFO Verifying data ...
-2025-01-22 02:50:07,222 TADA INFO assertion 1, Verify data: sos data is not empty and sos data < ldms_ls data, passed
-2025-01-22 02:50:07,223 TADA INFO test store_app_test ended
+2025-03-07 02:43:25,719 TADA INFO starting test `store_app_test`
+2025-03-07 02:43:25,719 TADA INFO   test-id: 9d5065fe0425a4c0f0120a05eb20a8547250cc7a44c045e31a937d2d1bd84eb9
+2025-03-07 02:43:25,720 TADA INFO   test-suite: LDMSD
+2025-03-07 02:43:25,720 TADA INFO   test-name: store_app_test
+2025-03-07 02:43:25,720 TADA INFO   test-user: narate
+2025-03-07 02:43:25,720 TADA INFO   commit-id: 7f46faf07413bf1840d58df2a034b00aa652aa40
+2025-03-07 02:43:25,721 __main__ INFO -- Get or create the cluster --
+2025-03-07 02:43:52,806 __main__ INFO -- Preparing job script & programs --
+2025-03-07 02:43:53,214 __main__ INFO -- Start daemons --
+2025-03-07 02:44:36,731 __main__ INFO ... wait a bit to make sure ldmsd's are up
+2025-03-07 02:44:41,736 __main__ INFO -- Submitting jobs --
+2025-03-07 02:44:41,940 __main__ INFO job_one: 1
+2025-03-07 02:44:47,171 __main__ INFO job_two: 2
+2025-03-07 02:44:56,397 __main__ INFO Verifying data ...
+Traceback (most recent call last):
+  File "store_app_test", line 465, in <module>
+    for mname in thr.get_metric_names():
+  File "store_app_test", line 436, in get_metric_names
+    names = set(self.records[0]['data'].keys())
+IndexError: list index out of range
+2025-03-07 02:44:56,399 TADA INFO assertion 1, Verify data: skipped
+2025-03-07 02:44:56,399 TADA INFO test store_app_test ended
