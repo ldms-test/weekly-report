@@ -1,82 +1,28 @@
-2025-03-09 03:19:21,155 TADA INFO starting test `ldms_rate_test`
-2025-03-09 03:19:21,156 TADA INFO   test-id: ea08484d9254ab2987454e5a32aa6bec9fdb321a6df7bd399ce4358a18bbe4c6
-2025-03-09 03:19:21,156 TADA INFO   test-suite: LDMSD
-2025-03-09 03:19:21,156 TADA INFO   test-name: ldms_rate_test
-2025-03-09 03:19:21,156 TADA INFO   test-user: narate
-2025-03-09 03:19:21,156 TADA INFO   commit-id: 43c06c1996bbf3ab176c8ffdf99309a1c989a731
-2025-03-09 03:19:21,157 __main__ INFO -- Get or create the cluster --
+2025-03-29 02:13:28,589 TADA INFO starting test `ldms_rate_test`
+2025-03-29 02:13:28,589 TADA INFO   test-id: 537d1bc1f0ed04563b1ef549c891cee186557a8d97e1660086f49e31f6d179d7
+2025-03-29 02:13:28,589 TADA INFO   test-suite: LDMSD
+2025-03-29 02:13:28,589 TADA INFO   test-name: ldms_rate_test
+2025-03-29 02:13:28,589 TADA INFO   test-user: narate
+2025-03-29 02:13:28,589 TADA INFO   commit-id: 44d3d3c9334011868dffb8d230c856c003877f44
+2025-03-29 02:13:28,590 __main__ INFO -- Get or create the cluster --
+2025-03-29 02:13:38,859 __main__ INFO -- Start daemons --
+2025-03-29 02:13:39,747 __main__ INFO ... wait a bit to make sure ldmsd's are up
+2025-03-29 02:13:41,749 root INFO starting python /tada-src/python/ldms_rate.py on narate-ldms_rate_test-44d3d3c-node-1 
+2025-03-29 02:13:43,966 root INFO starting python /tada-src/python/ldms_rate.py on narate-ldms_rate_test-44d3d3c-node-1 
 Traceback (most recent call last):
-  File "/usr/lib/python3.6/site-packages/docker/api/client.py", line 261, in _raise_for_status
-    response.raise_for_status()
-  File "/usr/lib/python3.6/site-packages/requests/models.py", line 941, in raise_for_status
-    raise HTTPError(http_error_msg, response=self)
-requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http+docker://localhost/v1.35/networks/narate-ldms_rate_test-43c06c1
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/home/narate/cron/ldms-test/runtime/docker.py", line 828, in _get
-    net = dc.networks.get(name)
-  File "/usr/lib/python3.6/site-packages/docker/models/networks.py", line 180, in get
-    self.client.api.inspect_network(network_id, *args, **kwargs)
-  File "/usr/lib/python3.6/site-packages/docker/utils/decorators.py", line 19, in wrapped
-    return f(self, resource_id, *args, **kwargs)
-  File "/usr/lib/python3.6/site-packages/docker/api/network.py", line 213, in inspect_network
-    return self._result(res, json=True)
-  File "/usr/lib/python3.6/site-packages/docker/api/client.py", line 267, in _result
-    self._raise_for_status(response)
-  File "/usr/lib/python3.6/site-packages/docker/api/client.py", line 263, in _raise_for_status
-    raise create_api_error_from_http_exception(e)
-  File "/usr/lib/python3.6/site-packages/docker/errors.py", line 31, in create_api_error_from_http_exception
-    raise cls(e, response=response, explanation=explanation)
-docker.errors.NotFound: 404 Client Error: Not Found ("network narate-ldms_rate_test-43c06c1 not found")
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/home/narate/cron/ldms-test/LDMS_Test.py", line 1986, in get
-    cluster = _cls._get(name)
-  File "/home/narate/cron/ldms-test/runtime/docker.py", line 831, in _get
-    raise LookupError()
-LookupError
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/usr/lib/python3.6/site-packages/docker/api/client.py", line 261, in _raise_for_status
-    response.raise_for_status()
-  File "/usr/lib/python3.6/site-packages/requests/models.py", line 941, in raise_for_status
-    raise HTTPError(http_error_msg, response=self)
-requests.exceptions.HTTPError: 500 Server Error: Internal Server Error for url: http+docker://localhost/v1.35/containers/026b09934ff149d582cf70a34946fdcca5fca4628907b7c114a9838e820e862a/start
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "ldms_rate_test", line 145, in <module>
-    cluster = LDMSDCluster.get(spec["name"], create = True, spec = spec)
-  File "/home/narate/cron/ldms-test/LDMS_Test.py", line 1993, in get
-    return _cls.create(spec)
-  File "/home/narate/cron/ldms-test/LDMS_Test.py", line 1964, in create
-    cluster = _cls._create(spec)
-  File "/home/narate/cron/ldms-test/runtime/docker.py", line 509, in _create
-    return cls.__create(spec=sp, **kwargs)
-  File "/home/narate/cron/ldms-test/runtime/docker.py", line 720, in __create
-    cont.start()
-  File "/usr/lib/python3.6/site-packages/docker/models/containers.py", line 400, in start
-    return self.client.api.start(self.id, **kwargs)
-  File "/usr/lib/python3.6/site-packages/docker/utils/decorators.py", line 19, in wrapped
-    return f(self, resource_id, *args, **kwargs)
-  File "/usr/lib/python3.6/site-packages/docker/api/container.py", line 1095, in start
-    self._raise_for_status(res)
-  File "/usr/lib/python3.6/site-packages/docker/api/client.py", line 263, in _raise_for_status
-    raise create_api_error_from_http_exception(e)
-  File "/usr/lib/python3.6/site-packages/docker/errors.py", line 31, in create_api_error_from_http_exception
-    raise cls(e, response=response, explanation=explanation)
-docker.errors.APIError: 500 Server Error: Internal Server Error ("attaching to network failed, make sure your network options are correct and check manager logs: context deadline exceeded")
-2025-03-09 03:20:50,438 TADA INFO assertion 1, Publisher cannot publish all data (rail rate limit): skipped
-2025-03-09 03:20:50,438 TADA INFO assertion 2, Publisher get a rate limit error: skipped
-2025-03-09 03:20:50,438 TADA INFO assertion 3, After the wait, the publisher can publish: skipped
-2025-03-09 03:20:50,438 TADA INFO assertion 4, Publisher cannot publish all data (stream rate limit): skipped
-2025-03-09 03:20:50,439 TADA INFO assertion 5, Publisher get a rate limit error (by stream): skipped
-2025-03-09 03:20:50,439 TADA INFO assertion 6, After the wait, the publisher can publish (by stream): skipped
-2025-03-09 03:20:50,439 TADA INFO test ldms_rate_test ended
+  File "ldms_rate_test", line 168, in <module>
+    pypub.cmd("pub_routine()", retry = 100)
+  File "/home/narate/cron/ldms-test/LDMS_Test.py", line 910, in cmd
+    return pycmd(self.pty, cmd, retry)
+  File "/home/narate/cron/ldms-test/LDMS_Test.py", line 829, in pycmd
+    return icmd(tty, cmd, prompt=">>> ", retry=retry)
+  File "/home/narate/cron/ldms-test/LDMS_Test.py", line 866, in icmd
+    raise RuntimeError("Command '{cmd}` not responding".format(**vars()))
+RuntimeError: Command 'pub_routine()` not responding
+2025-03-29 02:13:54,101 TADA INFO assertion 1, Publisher cannot publish all data (rail rate limit): skipped
+2025-03-29 02:13:54,101 TADA INFO assertion 2, Publisher get a rate limit error: skipped
+2025-03-29 02:13:54,101 TADA INFO assertion 3, After the wait, the publisher can publish: skipped
+2025-03-29 02:13:54,102 TADA INFO assertion 4, Publisher cannot publish all data (stream rate limit): skipped
+2025-03-29 02:13:54,102 TADA INFO assertion 5, Publisher get a rate limit error (by stream): skipped
+2025-03-29 02:13:54,102 TADA INFO assertion 6, After the wait, the publisher can publish (by stream): skipped
+2025-03-29 02:13:54,103 TADA INFO test ldms_rate_test ended

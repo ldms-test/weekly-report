@@ -1,21 +1,25 @@
-2025-03-09 01:11:38,710 TADA INFO starting test `setgroup_test`
-2025-03-09 01:11:38,710 TADA INFO   test-id: 5fa39507db239c409224bb373ce3be4102b0a60149c7241dd43f18bfdbe7159c
-2025-03-09 01:11:38,710 TADA INFO   test-suite: LDMSD
-2025-03-09 01:11:38,711 TADA INFO   test-name: setgroup_test
-2025-03-09 01:11:38,711 TADA INFO   test-user: narate
-2025-03-09 01:11:38,711 TADA INFO   commit-id: 43c06c1996bbf3ab176c8ffdf99309a1c989a731
-2025-03-09 01:11:38,711 __main__ INFO -- Get or create the cluster --
-2025-03-09 01:11:58,406 __main__ INFO -- Start daemons --
-2025-03-09 01:12:20,744 __main__ INFO ... wait a bit to make sure ldmsd's are up
-2025-03-09 01:12:25,749 __main__ INFO -- ldms_ls to agg-2 --
-2025-03-09 01:12:25,884 TADA INFO assertion 1, ldms_ls grp on agg-2: dir result verified, passed
-2025-03-09 01:12:28,139 TADA INFO assertion 2, members on agg-2 are being updated: data verified, passed
-2025-03-09 01:12:28,140 __main__ INFO -- Removing test_2 from grp --
-2025-03-09 01:12:28,667 TADA INFO assertion 3, test_2 is removed fom grp on sampler: expect {'node-1/grp', 'node-1/test_1'}, got {'node-1/grp', 'node-1/test_1'}, passed
-2025-03-09 01:12:32,817 TADA INFO assertion 4, test_2 is removed from grp on agg-1: expect {'node-1/grp', 'node-1/test_1'}, got {'node-1/grp', 'node-1/test_1'}, passed
-2025-03-09 01:12:36,931 TADA INFO assertion 5, test_2 is removed from grp on agg-2: expect {'node-1/grp', 'node-1/test_1'}, got {'node-1/grp', 'node-1/test_1'}, passed
-2025-03-09 01:12:40,935 __main__ INFO -- Adding test_2 back into grp --
-2025-03-09 01:12:41,492 TADA INFO assertion 6, test_2 is added back to grp on sampler: expect {'node-1/grp', 'node-1/test_2', 'node-1/test_1'}, got {'node-1/grp', 'node-1/test_2', 'node-1/test_1'}, passed
-2025-03-09 01:12:45,643 TADA INFO assertion 7, test_2 is added back to grp on agg-1: expect {'node-1/grp', 'node-1/test_2', 'node-1/test_1'}, got {'node-1/grp', 'node-1/test_2', 'node-1/test_1'}, passed
-2025-03-09 01:12:47,773 TADA INFO assertion 8, test_2 is added back to grp on agg-2: expect {'node-1/grp', 'node-1/test_2', 'node-1/test_1'}, got {'node-1/grp', 'node-1/test_2', 'node-1/test_1'}, passed
-2025-03-09 01:12:49,776 TADA INFO test setgroup_test ended
+2025-03-29 01:11:38,900 TADA INFO starting test `setgroup_test`
+2025-03-29 01:11:38,901 TADA INFO   test-id: b5356834b0830f1547648494fefcfb3246750fc2416a04669090111f727202e4
+2025-03-29 01:11:38,901 TADA INFO   test-suite: LDMSD
+2025-03-29 01:11:38,901 TADA INFO   test-name: setgroup_test
+2025-03-29 01:11:38,901 TADA INFO   test-user: narate
+2025-03-29 01:11:38,902 TADA INFO   commit-id: 44d3d3c9334011868dffb8d230c856c003877f44
+2025-03-29 01:11:38,903 __main__ INFO -- Get or create the cluster --
+2025-03-29 01:11:58,332 __main__ INFO -- Start daemons --
+2025-03-29 01:12:18,544 __main__ INFO ... wait a bit to make sure ldmsd's are up
+2025-03-29 01:12:23,549 __main__ INFO -- ldms_ls to agg-2 --
+2025-03-29 01:12:23,688 TADA INFO assertion 1, ldms_ls grp on agg-2: dir result verified, failed
+Traceback (most recent call last):
+  File "setgroup_test", line 290, in <module>
+    test.assert_test(1, expect == result, "dir result verified")
+  File "/home/narate/cron/ldms-test/TADA.py", line 157, in assert_test
+    raise AssertionException(self.test_desc + ", " + cond_str + ": FAILED")
+TADA.AssertionException: LDMSD setgroup 2-level aggregation test, dir result verified: FAILED
+2025-03-29 01:12:23,689 TADA INFO assertion 2, members on agg-2 are being updated: skipped
+2025-03-29 01:12:23,689 TADA INFO assertion 3, test_2 is removed fom grp on sampler: skipped
+2025-03-29 01:12:23,689 TADA INFO assertion 4, test_2 is removed from grp on agg-1: skipped
+2025-03-29 01:12:23,689 TADA INFO assertion 5, test_2 is removed from grp on agg-2: skipped
+2025-03-29 01:12:23,689 TADA INFO assertion 6, test_2 is added back to grp on sampler: skipped
+2025-03-29 01:12:23,689 TADA INFO assertion 7, test_2 is added back to grp on agg-1: skipped
+2025-03-29 01:12:23,689 TADA INFO assertion 8, test_2 is added back to grp on agg-2: skipped
+2025-03-29 01:12:23,690 TADA INFO test setgroup_test ended
