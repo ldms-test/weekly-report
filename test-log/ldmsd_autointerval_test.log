@@ -1,13 +1,13 @@
-2025-03-29 01:21:31,210 TADA INFO starting test `ldmsd_autointerval_test`
-2025-03-29 01:21:31,210 TADA INFO   test-id: e39b910afd9c2e9b2f6cdbfad468bc97ea4e4b753f169351b8e6baafa633640d
-2025-03-29 01:21:31,210 TADA INFO   test-suite: LDMSD
-2025-03-29 01:21:31,210 TADA INFO   test-name: ldmsd_autointerval_test
-2025-03-29 01:21:31,210 TADA INFO   test-user: narate
-2025-03-29 01:21:31,210 TADA INFO   commit-id: 44d3d3c9334011868dffb8d230c856c003877f44
-2025-03-29 01:21:31,211 __main__ INFO -- Get or create the cluster --
-2025-03-29 01:21:47,761 __main__ INFO -- Start daemons --
-2025-03-29 01:22:09,618 __main__ INFO ... wait a bit to make sure ldmsd's are up
-2025-03-29 01:22:16,140 TADA INFO assertion 1, start all daemons and interactive controller: OK, passed
+2025-08-28 12:34:36,629 TADA INFO starting test `ldmsd_autointerval_test`
+2025-08-28 12:34:36,629 TADA INFO   test-id: 24a02ff9c8626a9878721635460c77107c618d29b42a87bc198ec9f8bd41820a
+2025-08-28 12:34:36,629 TADA INFO   test-suite: LDMSD
+2025-08-28 12:34:36,629 TADA INFO   test-name: ldmsd_autointerval_test
+2025-08-28 12:34:36,629 TADA INFO   test-user: narate
+2025-08-28 12:34:36,630 TADA INFO   commit-id: 40d241f61756ea8bcd7acf61d3d5427de48ab1b6
+2025-08-28 12:34:36,630 __main__ INFO -- Get or create the cluster --
+2025-08-28 12:34:53,109 __main__ INFO -- Start daemons --
+2025-08-28 12:35:14,924 __main__ INFO ... wait a bit to make sure ldmsd's are up
+2025-08-28 12:35:21,445 TADA INFO assertion 1, start all daemons and interactive controller: OK, passed
 Traceback (most recent call last):
   File "ldmsd_autointerval_test", line 359, in <module>
     verify_interval(INTERVAL0, 2)
@@ -17,19 +17,19 @@ Traceback (most recent call last):
     raise RuntimeError("cannot get interval from output:\n{}".format(out))
 RuntimeError: cannot get interval from output:
 
-Config Name  Plugin                   Type         libpath
------------- ------------------------ ------------ ------------
-meminfo      meminfo                  sampler      /opt/ovis/lib/ovis-ldms/libmeminfo.so
-Name             Host             Port         Transport    auth             State        Type                
----------------- ---------------- ------------ ------------ ---------------- ------------ --------------------
+Config Name              Plugin Name              Type         libpath
+------------------------ ------------------------ ------------ ------------
+meminfo                  meminfo                  sampler[M]   /opt/ovis/lib/ovis-ldms/libmeminfo.so
+Name             Host             Port         Transport    auth             Rail quota    rx_rate  State        Type                
+---------------- ---------------- ------------ ------------ ---------------- ---- -------- -------- ------------ --------------------
 Name             Interval:Offset  Auto   Mode            State
 ---------------- ---------------- ------ --------------- ---------------
 Name             Container        Schema           Regex            Plugin           Flush            State      Decomposition       
 ---------------- ---------------- ---------------- ---------------- ---------------- ---------------- ---------- --------------------
 
-2025-03-29 01:22:18,145 TADA INFO assertion 2, verify sampling interval and update hints: skipped
-2025-03-29 01:22:18,146 TADA INFO assertion 3, set and verify 2nd sampling interval / update hints: skipped
-2025-03-29 01:22:18,146 TADA INFO assertion 4, set and verify 3rd sampling interval / update hints: skipped
-2025-03-29 01:22:18,146 TADA INFO assertion 5, verify SOS data: skipped
-2025-03-29 01:22:18,147 TADA INFO assertion 6, verify 'oversampled' in the agg2 log: skipped
-2025-03-29 01:22:18,147 TADA INFO test ldmsd_autointerval_test ended
+2025-08-28 12:35:23,450 TADA INFO assertion 2, verify sampling interval and update hints: skipped
+2025-08-28 12:35:23,450 TADA INFO assertion 3, set and verify 2nd sampling interval / update hints: skipped
+2025-08-28 12:35:23,450 TADA INFO assertion 4, set and verify 3rd sampling interval / update hints: skipped
+2025-08-28 12:35:23,451 TADA INFO assertion 5, verify SOS data: skipped
+2025-08-28 12:35:23,451 TADA INFO assertion 6, verify 'oversampled' in the agg2 log: skipped
+2025-08-28 12:35:23,451 TADA INFO test ldmsd_autointerval_test ended

@@ -1,0 +1,45 @@
+2025-08-28 13:11:28,914 TADA INFO starting test `ldmsd_msg_test`
+2025-08-28 13:11:28,914 TADA INFO   test-id: b01489679e061d93569b4f9557f1fef3f64713b46b0497936e187049c79d41fa
+2025-08-28 13:11:28,914 TADA INFO   test-suite: LDMSD
+2025-08-28 13:11:28,914 TADA INFO   test-name: ldmsd_msg_test
+2025-08-28 13:11:28,915 TADA INFO   test-user: narate
+2025-08-28 13:11:28,915 TADA INFO   commit-id: 40d241f61756ea8bcd7acf61d3d5427de48ab1b6
+2025-08-28 13:11:28,915 __main__ INFO -- Get or create the cluster --
+2025-08-28 13:11:49,735 __main__ INFO -- Start daemons --
+2025-08-28 13:12:12,739 __main__ INFO ... wait a bit to make sure ldmsd's are up
+2025-08-28 13:12:14,741 root INFO starting python /tada-src/python/pypubsub.py on narate-ldmsd_msg_test-40d241f-new 
+Traceback (most recent call last):
+  File "ldmsd_msg_test", line 310, in <module>
+    pypub = PyPty(new, "/tada-src/python/pypubsub.py")
+  File "/home/narate/cron/ldms-test/LDMS_Test.py", line 922, in __init__
+    self.pty = py_pty(node, script_path, user)
+  File "/home/narate/cron/ldms-test/LDMS_Test.py", line 913, in py_pty
+    EXPECT(_out, ">>> ")
+  File "/home/narate/cron/ldms-test/LDMS_Test.py", line 842, in EXPECT
+    raise RuntimeError("\n  EXPECTING: {}\n  GOT: {}".format(expected, val))
+RuntimeError: 
+  EXPECTING: >>> 
+  GOT: Traceback (most recent call last):
+  File "/tada-src/python/pypubsub.py", line 12, in <module>
+    scli = ldms.MsgClient('.*', is_regex = True)
+  File "ldms.pyx", line 4558, in python.ldms.MsgClient.__init__
+RuntimeError: ldms_msg_subscribe() error, errno: 95
+>>> 
+2025-08-28 13:12:16,963 TADA INFO assertion 1, Check data from old ldmsd_stream at agg-1: skipped
+2025-08-28 13:12:16,963 TADA INFO assertion 2, Check data from old ldmsd_stream at agg-2: skipped
+2025-08-28 13:12:16,963 TADA INFO assertion 3, Check data from old ldmsd_stream at the last subscriber: skipped
+2025-08-28 13:12:16,964 TADA INFO assertion 4, Check data from the matching new ldms msg at agg-1: skipped
+2025-08-28 13:12:16,964 TADA INFO assertion 5, Check data from the matching new ldms msg at agg-2: skipped
+2025-08-28 13:12:16,964 TADA INFO assertion 6, Check data from the matching new ldms msg at the last subscriber: skipped
+2025-08-28 13:12:16,964 TADA INFO assertion 7, Check data from the non-matching new ldms stream at agg-1: skipped
+2025-08-28 13:12:16,965 TADA INFO assertion 8, Check data from the non-matching new ldms stream at agg-2: skipped
+2025-08-28 13:12:16,965 TADA INFO assertion 9, Check data from the non-matching new ldms stream at last subscriber: skipped
+2025-08-28 13:12:16,965 TADA INFO assertion 10, Check msg_stats before stream data transfer: skipped
+2025-08-28 13:12:16,966 TADA INFO assertion 11, Check msg_client_stats before stream data transfer: skipped
+2025-08-28 13:12:16,966 TADA INFO assertion 12, Check msg_stats after stream data transfer: skipped
+2025-08-28 13:12:16,966 TADA INFO assertion 13, Check msg_client_stats after stream data transfer: skipped
+2025-08-28 13:12:16,966 TADA INFO assertion 14, Publishing completed with a status after msg_disable: skipped
+2025-08-28 13:12:16,967 TADA INFO assertion 15, No data is propagated after msg_disable: skipped
+2025-08-28 13:12:16,967 TADA INFO assertion 16, Publisher synchronously failed afterward: skipped
+2025-08-28 13:12:16,967 TADA INFO assertion 17, New publisher synchronously failed: skipped
+2025-08-28 13:12:16,967 TADA INFO test ldmsd_msg_test ended

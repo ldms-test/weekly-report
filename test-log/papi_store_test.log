@@ -1,13 +1,27 @@
-2025-03-29 02:42:25,858 TADA INFO starting test `papi_store_test`
-2025-03-29 02:42:25,859 TADA INFO   test-id: b2f154ea95003c6b309bd29969a3d1e9fc7245486aed252410ffe0b504aba67c
-2025-03-29 02:42:25,859 TADA INFO   test-suite: LDMSD
-2025-03-29 02:42:25,859 TADA INFO   test-name: papi_store_test
-2025-03-29 02:42:25,859 TADA INFO   test-user: narate
-2025-03-29 02:42:25,859 TADA INFO   commit-id: 44d3d3c9334011868dffb8d230c856c003877f44
-2025-03-29 02:42:25,860 __main__ INFO -- Get or create the cluster --
-2025-03-29 02:42:42,518 __main__ INFO -- Start daemons --
-2025-03-29 02:43:31,682 TADA INFO assertion 1, Every job in the input data is represented in the output: {1, 2, 3, 4} = {1, 2, 3, 4}, passed
-2025-03-29 02:43:31,682 TADA INFO assertion 2, Every event in every job results in a separate row in the output: verified, passed
-2025-03-29 02:43:31,682 TADA INFO assertion 3, The schema name in the output matches the event name: verified, passed
-2025-03-29 02:43:31,682 TADA INFO assertion 4, Each rank in the job results in a row per event in the output: verified, passed
-2025-03-29 02:43:31,682 TADA INFO test papi_store_test ended
+2025-08-28 15:29:21,799 TADA INFO starting test `papi_store_test`
+2025-08-28 15:29:21,800 TADA INFO   test-id: 9a07422c503b530e589ee6732c9c95fa5b80961fa83c31509bfedf8334dfe83f
+2025-08-28 15:29:21,800 TADA INFO   test-suite: LDMSD
+2025-08-28 15:29:21,800 TADA INFO   test-name: papi_store_test
+2025-08-28 15:29:21,800 TADA INFO   test-user: narate
+2025-08-28 15:29:21,800 TADA INFO   commit-id: 40d241f61756ea8bcd7acf61d3d5427de48ab1b6
+2025-08-28 15:29:21,801 __main__ INFO -- Get or create the cluster --
+2025-08-28 15:29:39,099 __main__ INFO -- Start daemons --
+Traceback (most recent call last):
+  File "papi_store_test", line 302, in <module>
+    all_data = { e: get_papi_data(e) for e in events }
+  File "papi_store_test", line 302, in <dictcomp>
+    all_data = { e: get_papi_data(e) for e in events }
+  File "papi_store_test", line 300, in get_papi_data
+    data = json.loads(out)
+  File "/usr/lib64/python3.6/json/__init__.py", line 354, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib64/python3.6/json/decoder.py", line 339, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib64/python3.6/json/decoder.py", line 357, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+2025-08-28 15:30:27,609 TADA INFO assertion 1, Every job in the input data is represented in the output: skipped
+2025-08-28 15:30:27,609 TADA INFO assertion 2, Every event in every job results in a separate row in the output: skipped
+2025-08-28 15:30:27,609 TADA INFO assertion 3, The schema name in the output matches the event name: skipped
+2025-08-28 15:30:27,609 TADA INFO assertion 4, Each rank in the job results in a row per event in the output: skipped
+2025-08-28 15:30:27,609 TADA INFO test papi_store_test ended

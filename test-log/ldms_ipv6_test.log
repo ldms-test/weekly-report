@@ -1,19 +1,4 @@
-2025-03-29 02:14:06,634 TADA INFO starting test `ldms_ipv6_test`
-2025-03-29 02:14:06,634 TADA INFO   test-id: 6dfa01448cf2e261a3695ed61f73119818e16e8f7c561e8715560ffd75c6882f
-2025-03-29 02:14:06,634 TADA INFO   test-suite: LDMSD
-2025-03-29 02:14:06,634 TADA INFO   test-name: ldms_ipv6_test
-2025-03-29 02:14:06,635 TADA INFO   test-user: narate
-2025-03-29 02:14:06,635 TADA INFO   commit-id: 44d3d3c9334011868dffb8d230c856c003877f44
-2025-03-29 02:14:06,635 __main__ INFO -- Get or create the cluster --
-2025-03-29 02:14:23,949 __main__ INFO -- Start daemons --
-2025-03-29 02:14:50,890 __main__ INFO ... wait a bit to make sure ldmsd's are up
-2025-03-29 02:14:52,892 root INFO starting python /tada-src/python/pypubsub.py on narate-ldms_ipv6_test-44d3d3c-samp 
-2025-03-29 02:14:55,110 root INFO starting python /tada-src/python/pypubsub.py on narate-ldms_ipv6_test-44d3d3c-agg-2 
-2025-03-29 02:14:59,449 TADA INFO assertion 1, ldms_ls to samp using IPv6: expecting ['fd00:0:0:1::5'], got ['fd00:0:0:1::5'], passed
-2025-03-29 02:14:59,562 TADA INFO assertion 2, ldms_ls to agg-2 using IPv6: expecting ['fd00:0:0:1::5'], got ['fd00:0:0:1::5'], passed
-2025-03-29 02:14:59,562 TADA INFO assertion 3, ldms_ls to agg-2 contains 'samp/meminfo': samp/meminfo found, passed
-2025-03-29 02:15:02,567 TADA INFO assertion 4, python stream publish using IPv6: verified, passed
-2025-03-29 02:15:05,571 TADA INFO assertion 5, python stream subscribe using IPv6: verified, passed
-2025-03-29 02:15:06,073 TADA INFO assertion 6, steam data contain IPv6 addressing: expecting fd00:0:0:1::5, got fd00:0:0:1::5, passed
-2025-03-29 02:15:06,361 TADA INFO assertion 7, stream stats reported IPv6 addresses: Expecting fd00:0:0:1::3, got fd00:0:0:1::3, passed
-2025-03-29 02:15:06,361 TADA INFO test ldms_ipv6_test ended
+Traceback (most recent call last):
+  File "ldms_ipv6_test", line 44, in <module>
+    from LDMS_Test import LDMSDCluster, LDMSDContainer, process_args, \
+ImportError: cannot import name 'StreamData'
