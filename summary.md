@@ -40,7 +40,7 @@ Test Summary
 * [ldmsd_flex_decomp_test](test-log/ldmsd_flex_decomp_test.log): $\textcolor{red}{\text{FAILED}}$
 * [ldms_set_info_test](test-log/ldms_set_info_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
 * [slurm_sampler2_test](test-log/slurm_sampler2_test.log): $\textcolor{red}{\text{FAILED}}$
-* [libovis_log_test](test-log/libovis_log_test.log): $\textcolor{red}{\text{FAILED}}$
+* [libovis_log_test](test-log/libovis_log_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
 * [ldmsd_long_config_test](test-log/ldmsd_long_config_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
 * [ldms_rail_test](test-log/ldms_rail_test.log): $\textcolor{red}{\text{FAILED}}$
 * [ldmsd_rail_test](test-log/ldmsd_rail_test.log): $\textcolor{red}{\text{FAILED}}$
