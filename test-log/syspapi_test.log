@@ -1,21 +1,21 @@
-2025-09-05 04:46:54,668 TADA INFO starting test `syspapi_test`
-2025-09-05 04:46:54,668 TADA INFO   test-id: d5fffac5061db4fc0ac3b604ed04e3a50044b46e5c122962a84a3b27706f5792
-2025-09-05 04:46:54,668 TADA INFO   test-suite: LDMSD
-2025-09-05 04:46:54,668 TADA INFO   test-name: syspapi_test
-2025-09-05 04:46:54,668 TADA INFO   test-user: narate
-2025-09-05 04:46:54,668 TADA INFO   commit-id: 0ddbd836eda817de9ed8c93026ea9037f360f0c2
-2025-09-05 04:46:54,669 __main__ INFO -- Get or create the cluster --
-2025-09-05 04:47:17,613 __main__ INFO -- Write syspapi JSON config files --
-2025-09-05 04:47:17,613 __main__ INFO    - db/syspapi-1.json
-2025-09-05 04:47:17,613 __main__ INFO    - db/syspapi-bad.json
-2025-09-05 04:47:17,614 __main__ INFO -- Start daemons --
-2025-09-05 04:47:46,968 __main__ INFO ... wait a bit to make sure ldmsd's are up
-2025-09-05 04:47:51,973 __main__ INFO -- Verifying --
-2025-09-05 04:47:52,095 TADA INFO assertion 1, verify set creation by cfg_file: set existed (with correct instance name), passed
-2025-09-05 04:47:52,095 TADA INFO assertion 2, verify schema name by cfg_file: verify schema name, passed
-2025-09-05 04:47:52,216 TADA INFO assertion 3, verify metrics (events) by cfg_file: verify events (metrics), passed
-2025-09-05 04:47:54,341 TADA INFO assertion 4, verify increment counters: verify increment of supported counters, passed
-2025-09-05 04:47:54,453 TADA INFO assertion 5, verify cfg_file syntax error report: verify JSON parse error, failed
+2025-09-09 04:46:56,231 TADA INFO starting test `syspapi_test`
+2025-09-09 04:46:56,231 TADA INFO   test-id: 11adbe3c17e7f15eedbcb849d6195cdb54511138cf565c46e1b0caadf2521cf3
+2025-09-09 04:46:56,231 TADA INFO   test-suite: LDMSD
+2025-09-09 04:46:56,231 TADA INFO   test-name: syspapi_test
+2025-09-09 04:46:56,231 TADA INFO   test-user: narate
+2025-09-09 04:46:56,231 TADA INFO   commit-id: 2d84695662477b0367cbbe9e17ccccebaf16cc4c
+2025-09-09 04:46:56,232 __main__ INFO -- Get or create the cluster --
+2025-09-09 04:47:19,253 __main__ INFO -- Write syspapi JSON config files --
+2025-09-09 04:47:19,253 __main__ INFO    - db/syspapi-1.json
+2025-09-09 04:47:19,254 __main__ INFO    - db/syspapi-bad.json
+2025-09-09 04:47:19,255 __main__ INFO -- Start daemons --
+2025-09-09 04:47:48,649 __main__ INFO ... wait a bit to make sure ldmsd's are up
+2025-09-09 04:47:53,653 __main__ INFO -- Verifying --
+2025-09-09 04:47:53,792 TADA INFO assertion 1, verify set creation by cfg_file: set existed (with correct instance name), passed
+2025-09-09 04:47:53,793 TADA INFO assertion 2, verify schema name by cfg_file: verify schema name, passed
+2025-09-09 04:47:53,921 TADA INFO assertion 3, verify metrics (events) by cfg_file: verify events (metrics), passed
+2025-09-09 04:47:56,062 TADA INFO assertion 4, verify increment counters: verify increment of supported counters, passed
+2025-09-09 04:47:56,186 TADA INFO assertion 5, verify cfg_file syntax error report: verify JSON parse error, failed
 Traceback (most recent call last):
   File "syspapi_test", line 503, in <module>
     "verify JSON parse error")
@@ -24,6 +24,6 @@ Traceback (most recent call last):
   File "/home/narate/cron/ldms-test/TADA.py", line 157, in assert_test
     raise AssertionException(self.test_desc + ", " + cond_str + ": FAILED")
 TADA.AssertionException: LDMSD syspapi sampler test, verify JSON parse error: FAILED
-2025-09-05 04:47:54,454 TADA INFO assertion 6, verify cfg_file unsupported events report: skipped
-2025-09-05 04:47:54,455 TADA INFO assertion 7, verify cfg_file for many events: skipped
-2025-09-05 04:47:54,455 TADA INFO test syspapi_test ended
+2025-09-09 04:47:56,188 TADA INFO assertion 6, verify cfg_file unsupported events report: skipped
+2025-09-09 04:47:56,188 TADA INFO assertion 7, verify cfg_file for many events: skipped
+2025-09-09 04:47:56,188 TADA INFO test syspapi_test ended
