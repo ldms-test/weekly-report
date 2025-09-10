@@ -1,24 +1,24 @@
-2025-09-09 04:31:34,989 TADA INFO starting test `ldmsd_qgroup_test`
-2025-09-09 04:31:34,990 TADA INFO   test-id: b7d2d1ad80f9a41b86f509e975b8901af03d3bd7a73a8e52f455f6864c48317c
-2025-09-09 04:31:34,990 TADA INFO   test-suite: LDMSD
-2025-09-09 04:31:34,990 TADA INFO   test-name: ldmsd_qgroup_test
-2025-09-09 04:31:34,990 TADA INFO   test-user: narate
-2025-09-09 04:31:34,990 TADA INFO   commit-id: 2d84695662477b0367cbbe9e17ccccebaf16cc4c
-2025-09-09 04:31:34,991 __main__ INFO -- Get or create the cluster --
-2025-09-09 04:32:13,992 __main__ INFO -- Start daemons --
-2025-09-09 04:33:43,727 __main__ INFO ... wait a bit to make sure daemons are up
-2025-09-09 04:33:51,781 root INFO starting python /tada-src/python/ldms_qgroup_app.py on narate-ldmsd_qgroup_test-2d84695-samp1 
-2025-09-09 04:33:53,999 root INFO starting python /tada-src/python/ldms_qgroup_app.py on narate-ldmsd_qgroup_test-2d84695-samp2 
-2025-09-09 04:33:56,219 root INFO starting python /tada-src/python/ldms_qgroup_app.py on narate-ldmsd_qgroup_test-2d84695-samp3 
-2025-09-09 04:33:58,437 root INFO starting python /tada-src/python/ldms_qgroup_app.py on narate-ldmsd_qgroup_test-2d84695-samp4 
-2025-09-09 04:34:00,654 root INFO starting python /tada-src/python/ldms_qgroup_app.py on narate-ldmsd_qgroup_test-2d84695-samp5 
-2025-09-09 04:34:02,871 root INFO starting python /tada-src/python/ldms_qgroup_app.py on narate-ldmsd_qgroup_test-2d84695-samp6 
-2025-09-09 04:34:06,091 __main__ INFO -- starting app publisher --
-2025-09-09 04:34:09,099 __main__ INFO -- Wait a minute to get data flow (without limit) --
-2025-09-09 04:35:30,188 __main__ INFO -- Wait a minute to get data flow (with limit) --
-2025-09-09 04:36:30,200 __main__ INFO -- stopping app publisher --
-2025-09-09 04:36:33,207 __main__ INFO -- wait a bit to make sure the published data is flushed --
-2025-09-09 04:36:38,214 __main__ INFO -- collecting logs --
+2025-09-10 02:26:14,589 TADA INFO starting test `ldmsd_qgroup_test`
+2025-09-10 02:26:14,589 TADA INFO   test-id: 3d9118a08ec00afe46d42d157e2d1ff58ac5d8da671f80f1c110d78433cebfd3
+2025-09-10 02:26:14,589 TADA INFO   test-suite: LDMSD
+2025-09-10 02:26:14,589 TADA INFO   test-name: ldmsd_qgroup_test
+2025-09-10 02:26:14,589 TADA INFO   test-user: narate
+2025-09-10 02:26:14,590 TADA INFO   commit-id: 360f11b421775884d80098340ac1c0271a81132c
+2025-09-10 02:26:14,590 __main__ INFO -- Get or create the cluster --
+2025-09-10 02:26:54,456 __main__ INFO -- Start daemons --
+2025-09-10 02:28:24,319 __main__ INFO ... wait a bit to make sure daemons are up
+2025-09-10 02:28:32,372 root INFO starting python /tada-src/python/ldms_qgroup_app.py on narate-ldmsd_qgroup_test-360f11b-samp1 
+2025-09-10 02:28:34,592 root INFO starting python /tada-src/python/ldms_qgroup_app.py on narate-ldmsd_qgroup_test-360f11b-samp2 
+2025-09-10 02:28:36,809 root INFO starting python /tada-src/python/ldms_qgroup_app.py on narate-ldmsd_qgroup_test-360f11b-samp3 
+2025-09-10 02:28:39,026 root INFO starting python /tada-src/python/ldms_qgroup_app.py on narate-ldmsd_qgroup_test-360f11b-samp4 
+2025-09-10 02:28:41,243 root INFO starting python /tada-src/python/ldms_qgroup_app.py on narate-ldmsd_qgroup_test-360f11b-samp5 
+2025-09-10 02:28:43,461 root INFO starting python /tada-src/python/ldms_qgroup_app.py on narate-ldmsd_qgroup_test-360f11b-samp6 
+2025-09-10 02:28:46,678 __main__ INFO -- starting app publisher --
+2025-09-10 02:28:49,685 __main__ INFO -- Wait a minute to get data flow (without limit) --
+2025-09-10 02:30:10,765 __main__ INFO -- Wait a minute to get data flow (with limit) --
+2025-09-10 02:31:10,815 __main__ INFO -- stopping app publisher --
+2025-09-10 02:31:13,822 __main__ INFO -- wait a bit to make sure the published data is flushed --
+2025-09-10 02:31:18,829 __main__ INFO -- collecting logs --
 Traceback (most recent call last):
   File "ldmsd_qgroup_test", line 372, in <module>
     agg2_out = agg2.read_file('/var/log/stream.dump')
@@ -26,10 +26,10 @@ Traceback (most recent call last):
     raise RuntimeError("Error {} {}".format(rc, output))
 RuntimeError: Error 1 cat: /var/log/stream.dump: No such file or directory
 
-2025-09-09 04:36:39,081 TADA INFO assertion 1, Throughput without limit: skipped
-2025-09-09 04:36:39,081 TADA INFO assertion 2, Data received after quota: skipped
-2025-09-09 04:36:39,081 TADA INFO assertion 3, Throughput with limit: skipped
-2025-09-09 04:36:39,081 TADA INFO assertion 4, Check data loss: skipped
-2025-09-09 04:36:39,082 TADA INFO assertion 5, Check starvation: skipped
-2025-09-09 04:36:39,082 TADA INFO assertion 6, Single publisher saturation test: skipped
-2025-09-09 04:36:39,082 TADA INFO test ldmsd_qgroup_test ended
+2025-09-10 02:31:19,694 TADA INFO assertion 1, Throughput without limit: skipped
+2025-09-10 02:31:19,694 TADA INFO assertion 2, Data received after quota: skipped
+2025-09-10 02:31:19,694 TADA INFO assertion 3, Throughput with limit: skipped
+2025-09-10 02:31:19,695 TADA INFO assertion 4, Check data loss: skipped
+2025-09-10 02:31:19,695 TADA INFO assertion 5, Check starvation: skipped
+2025-09-10 02:31:19,695 TADA INFO assertion 6, Single publisher saturation test: skipped
+2025-09-10 02:31:19,695 TADA INFO test ldmsd_qgroup_test ended
