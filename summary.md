@@ -44,7 +44,7 @@ Test Summary
 * [ldmsd_long_config_test](test-log/ldmsd_long_config_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
 * [ldms_rail_test](test-log/ldms_rail_test.log): $\textcolor{red}{\text{FAILED}}$
 * [ldmsd_rail_test](test-log/ldmsd_rail_test.log): $\textcolor{red}{\text{FAILED}}$
-* [ldms_msg_test](test-log/ldms_msg_test.log): $\textcolor{red}{\text{FAILED}}$
+* [ldms_msg_test](test-log/ldms_msg_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
 * [ldmsd_msg_test](test-log/ldmsd_msg_test.log): $\textcolor{red}{\text{FAILED}}$
 * [set_sec_mod_test](test-log/set_sec_mod_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
 * [dump_cfg_test](test-log/dump_cfg_test.log): $\textcolor{lightgreen}{\text{PASSED}}$

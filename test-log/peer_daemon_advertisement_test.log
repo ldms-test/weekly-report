@@ -1,35 +1,35 @@
-2025-09-10 02:32:35,128 TADA INFO starting test `advertisement_passive_test`
-2025-09-10 02:32:35,128 TADA INFO   test-id: ba2b3221c4abddc702323695f719fbb45d3b22a4bdec12aaf58fb5d3afd2481c
-2025-09-10 02:32:35,128 TADA INFO   test-suite: LDMSD
-2025-09-10 02:32:35,128 TADA INFO   test-name: advertisement_passive_test
-2025-09-10 02:32:35,128 TADA INFO   test-user: narate
-2025-09-10 02:32:35,128 TADA INFO   commit-id: 360f11b421775884d80098340ac1c0271a81132c
-2025-09-10 02:32:35,129 __main__ INFO -- Get or create the cluster --
-2025-09-10 02:33:04,537 __main__ INFO -- Start daemons --
-2025-09-10 02:33:59,634 __main__ INFO ... wait a bit to make sure ldmsd's are up
-2025-09-10 02:34:05,217 TADA INFO assertion start_1, node-1's Advertiser starts before agg11's prdcr_listen starts.: Advertised producer 'node-1' exists on agg11 and is in the correct state., failed
+2025-09-11 02:46:06,487 TADA INFO starting test `advertisement_passive_test`
+2025-09-11 02:46:06,487 TADA INFO   test-id: 58054f1f6d67ed48940f5c2ab1f46c90d2cd1160ec85a0c861c700b6fe001538
+2025-09-11 02:46:06,487 TADA INFO   test-suite: LDMSD
+2025-09-11 02:46:06,487 TADA INFO   test-name: advertisement_passive_test
+2025-09-11 02:46:06,487 TADA INFO   test-user: narate
+2025-09-11 02:46:06,487 TADA INFO   commit-id: db862d10d159dc95b5a109a4ff933b7058362a2a
+2025-09-11 02:46:06,488 __main__ INFO -- Get or create the cluster --
+2025-09-11 02:46:35,554 __main__ INFO -- Start daemons --
+2025-09-11 02:47:30,704 __main__ INFO ... wait a bit to make sure ldmsd's are up
+2025-09-11 02:47:36,308 TADA INFO assertion start_1, node-1's Advertiser starts before agg11's prdcr_listen starts.: Advertised producer 'node-1' exists on agg11 and is in the correct state., failed
 Traceback (most recent call last):
   File "peer_daemon_advertisement_test", line 390, in <module>
     test.assert_test("start_1", verify_prdcr(agg11, exp_prdcr_node_1), "Advertised producer 'node-1' exists on agg11 and is in the correct state.")
   File "/home/narate/cron/ldms-test/TADA.py", line 157, in assert_test
     raise AssertionException(self.test_desc + ", " + cond_str + ": FAILED")
 TADA.AssertionException: Peer daemon Advertisement Functionality, Passive Advertised producers Test, Advertised producer 'node-1' exists on agg11 and is in the correct state.: FAILED
-2025-09-10 02:34:05,218 TADA INFO assertion start_2, node-2's Advertiser starts after agg11's prdcr_listen starts.: skipped
-2025-09-10 02:34:05,218 TADA INFO assertion agg21-aggregation-1, agg21 sees and updates node-1's sets.: skipped
-2025-09-10 02:34:05,218 TADA INFO assertion agg21-aggregation-2, agg21 sees and updates node-2's sets.: skipped
-2025-09-10 02:34:05,218 TADA INFO assertion agg11-remove-sets-1, Sets removed from agg11 after disconnecting from sampler daemon.: skipped
-2025-09-10 02:34:05,219 TADA INFO assertion agg21-remove-sets-1, Sets removed from agg21 after agg11 disconnecting from sampler daemon.: skipped
-2025-09-10 02:34:05,219 TADA INFO assertion sampler-revive-1, Agg11 collects sets from node-2 after reviving sampler daemon.: skipped
-2025-09-10 02:34:05,219 TADA INFO assertion sampler-revive-2, Agg21 collects sets from agg11 after reviving sampler daemon.: skipped
-2025-09-10 02:34:05,219 TADA INFO assertion agg21-remove-sets-2, Agg21 removed all sets after disconnecting from agg11.: skipped
-2025-09-10 02:34:05,219 TADA INFO assertion agg11-revive-1, Agg11 collects all sets after restarting.: skipped
-2025-09-10 02:34:05,219 TADA INFO assertion agg11-revive-2, Agg21 collects all sets after agg11 get restarted.: skipped
-2025-09-10 02:34:05,219 TADA INFO assertion prdcr_listen_not_start, Agg12 doesn't collect any sets before prdcr_listen start.: skipped
-2025-09-10 02:34:05,220 TADA INFO assertion prdcr_listen_limit_hostname, Agg12 collects node-1's sets after prdcr_listen accepting only node-1's hostname starts.: skipped
-2025-09-10 02:34:05,220 TADA INFO assertion prdcr_listen_limit_ip, Agg12 collects node-2's sets after prdcr_listen accepting only node-1's IP starts.: skipped
-2025-09-10 02:34:05,220 TADA INFO assertion advertiser_status, 'advertiser_status' correctly reports the output: skipped
-2025-09-10 02:34:05,220 TADA INFO assertion prdcr_listen_status-1, 'prdcr_listen_status' correctly report the single prdcr_listen.: skipped
-2025-09-10 02:34:05,220 TADA INFO assertion prdcr_listen_status-2, 'prdcr_listen_status' correctly report the two prdcr_listen objects.: skipped
-2025-09-10 02:34:05,220 TADA INFO assertion restart_advertised_prdcr-1, Stopping an advertised producer: skipped
-2025-09-10 02:34:05,220 TADA INFO assertion restart_advertised_prdcr-2, Restarting an advertised producer: skipped
-2025-09-10 02:34:05,221 TADA INFO test advertisement_passive_test ended
+2025-09-11 02:47:36,309 TADA INFO assertion start_2, node-2's Advertiser starts after agg11's prdcr_listen starts.: skipped
+2025-09-11 02:47:36,310 TADA INFO assertion agg21-aggregation-1, agg21 sees and updates node-1's sets.: skipped
+2025-09-11 02:47:36,310 TADA INFO assertion agg21-aggregation-2, agg21 sees and updates node-2's sets.: skipped
+2025-09-11 02:47:36,310 TADA INFO assertion agg11-remove-sets-1, Sets removed from agg11 after disconnecting from sampler daemon.: skipped
+2025-09-11 02:47:36,310 TADA INFO assertion agg21-remove-sets-1, Sets removed from agg21 after agg11 disconnecting from sampler daemon.: skipped
+2025-09-11 02:47:36,310 TADA INFO assertion sampler-revive-1, Agg11 collects sets from node-2 after reviving sampler daemon.: skipped
+2025-09-11 02:47:36,310 TADA INFO assertion sampler-revive-2, Agg21 collects sets from agg11 after reviving sampler daemon.: skipped
+2025-09-11 02:47:36,311 TADA INFO assertion agg21-remove-sets-2, Agg21 removed all sets after disconnecting from agg11.: skipped
+2025-09-11 02:47:36,311 TADA INFO assertion agg11-revive-1, Agg11 collects all sets after restarting.: skipped
+2025-09-11 02:47:36,311 TADA INFO assertion agg11-revive-2, Agg21 collects all sets after agg11 get restarted.: skipped
+2025-09-11 02:47:36,311 TADA INFO assertion prdcr_listen_not_start, Agg12 doesn't collect any sets before prdcr_listen start.: skipped
+2025-09-11 02:47:36,311 TADA INFO assertion prdcr_listen_limit_hostname, Agg12 collects node-1's sets after prdcr_listen accepting only node-1's hostname starts.: skipped
+2025-09-11 02:47:36,311 TADA INFO assertion prdcr_listen_limit_ip, Agg12 collects node-2's sets after prdcr_listen accepting only node-1's IP starts.: skipped
+2025-09-11 02:47:36,311 TADA INFO assertion advertiser_status, 'advertiser_status' correctly reports the output: skipped
+2025-09-11 02:47:36,312 TADA INFO assertion prdcr_listen_status-1, 'prdcr_listen_status' correctly report the single prdcr_listen.: skipped
+2025-09-11 02:47:36,312 TADA INFO assertion prdcr_listen_status-2, 'prdcr_listen_status' correctly report the two prdcr_listen objects.: skipped
+2025-09-11 02:47:36,312 TADA INFO assertion restart_advertised_prdcr-1, Stopping an advertised producer: skipped
+2025-09-11 02:47:36,312 TADA INFO assertion restart_advertised_prdcr-2, Restarting an advertised producer: skipped
+2025-09-11 02:47:36,312 TADA INFO test advertisement_passive_test ended
