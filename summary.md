@@ -7,7 +7,7 @@ Test Summary
 * [ldmsd_auth_ovis_test](test-log/ldmsd_auth_ovis_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
 * [ldmsd_auth_test](test-log/ldmsd_auth_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
 * [ldmsd_ctrl_test](test-log/ldmsd_ctrl_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
-* [ldmsd_stream_test](test-log/ldmsd_stream_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
+* [ldmsd_stream_test](test-log/ldmsd_stream_test.log): $\textcolor{red}{\text{FAILED}}$
 * [maestro_cfg_test](test-log/maestro_cfg_test.log): $\textcolor{red}{\text{FAILED}}$
 * [mt-slurm-test](test-log/mt-slurm-test.log): $\textcolor{red}{\text{FAILED}}$
 * [ovis_ev_test](test-log/ovis_ev_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
@@ -40,7 +40,7 @@ Test Summary
 * [ldmsd_flex_decomp_test](test-log/ldmsd_flex_decomp_test.log): $\textcolor{red}{\text{FAILED}}$
 * [ldms_set_info_test](test-log/ldms_set_info_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
 * [slurm_sampler2_test](test-log/slurm_sampler2_test.log): $\textcolor{red}{\text{FAILED}}$
-* [libovis_log_test](test-log/libovis_log_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
+* [libovis_log_test](test-log/libovis_log_test.log): $\textcolor{red}{\text{FAILED}}$
 * [ldmsd_long_config_test](test-log/ldmsd_long_config_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
 * [ldms_rail_test](test-log/ldms_rail_test.log): $\textcolor{red}{\text{FAILED}}$
 * [ldmsd_rail_test](test-log/ldmsd_rail_test.log): $\textcolor{red}{\text{FAILED}}$
