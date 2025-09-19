@@ -1,28 +1,22 @@
-2025-09-18 01:34:48,298 __main__ INFO -- Get or create the cluster --
-2025-09-18 01:34:48,298 TADA INFO starting test `store_sos_lists_test`
-2025-09-18 01:34:48,298 TADA INFO   test-id: 728c6349a1c8f4900be4652390abfa3a3a9c123f6a57584dd7a3aa95b547c407
-2025-09-18 01:34:48,298 TADA INFO   test-suite: LDMSD
-2025-09-18 01:34:48,299 TADA INFO   test-name: store_sos_lists_test
-2025-09-18 01:34:48,299 TADA INFO   test-user: narate
-2025-09-18 01:34:48,299 TADA INFO   commit-id: 42a30d50f17d529c913754df5b1b57ada95557a0
-2025-09-18 01:35:05,040 __main__ INFO Waiting ... for all LDMSDs to start
-2025-09-18 01:35:31,187 __main__ INFO All sampler daemons are up.
-2025-09-18 01:35:31,315 TADA INFO assertion 1, aggregator with store_sos has started properly.: agg_sos.check_ldmsd(), passed
-2025-09-18 01:35:31,430 TADA INFO assertion 2, aggregator with store_csv has started properly.: agg_csv.check_ldmsd(), passed
-2025-09-18 01:35:32,817 TADA INFO assertion 3, store_sos is storing data.: file_exists(a) for a in supported_schema, passed
-2025-09-18 01:35:33,686 TADA INFO assertion 4, store_sos stores data correctly.: verify_data(db) for db in all_db, passed
-2025-09-18 01:35:42,985 TADA INFO assertion 5, store_sos stores data after restarted correctly.: verify_data(db) for db in all_db, passed
-2025-09-18 01:35:43,105 TADA INFO assertion 6, store_sos reports multiple list errror messages resulted by the config file.: 'store.sos: 'sampler/record_record_record' contains multiple lists' in the ldmsd log, failed
-Traceback (most recent call last):
-  File "store_list_record_test", line 527, in <module>
-    test.assert_test(SOS_MULTI_LISTS_ERROR_CFGFILE, res, cond)
-  File "/home/narate/cron/ldms-test/TADA.py", line 157, in assert_test
-    raise AssertionException(self.test_desc + ", " + cond_str + ": FAILED")
-TADA.AssertionException: Test store_sos storing lists, 'store.sos: 'sampler/record_record_record' contains multiple lists' in the ldmsd log: FAILED
-2025-09-18 01:35:43,106 TADA INFO assertion 7, store_sos reports multiple list errror messages resulted by ldmsd_controller.: skipped
-2025-09-18 01:35:43,106 TADA INFO assertion 8, store_csv is storing data.: skipped
-2025-09-18 01:35:43,106 TADA INFO assertion 9, store_csv stores data correctly.: skipped
-2025-09-18 01:35:43,106 TADA INFO assertion 10, store_csv stores data after restarted correctly.: skipped
-2025-09-18 01:35:43,107 TADA INFO assertion 11, store_csv reports multiple list errror messages resulted by the config file.: skipped
-2025-09-18 01:35:43,107 TADA INFO assertion 12, store_csv reports multiple list errror messages resulted by ldmsd_controller.: skipped
-2025-09-18 01:35:43,107 TADA INFO test store_sos_lists_test ended
+2025-09-18 18:02:16,512 __main__ INFO -- Get or create the cluster --
+2025-09-18 18:02:16,513 TADA INFO starting test `store_sos_lists_test`
+2025-09-18 18:02:16,513 TADA INFO   test-id: 4310ca58c3cc47e12753da15b72deba80d0d3149e5242f45d2f2c67e84eb39f6
+2025-09-18 18:02:16,513 TADA INFO   test-suite: LDMSD
+2025-09-18 18:02:16,513 TADA INFO   test-name: store_sos_lists_test
+2025-09-18 18:02:16,513 TADA INFO   test-user: narate
+2025-09-18 18:02:16,513 TADA INFO   commit-id: 3d139ff2aced2e98e47b1440ab414615384d1f50
+2025-09-18 18:02:33,346 __main__ INFO Waiting ... for all LDMSDs to start
+2025-09-18 18:02:59,153 __main__ INFO All sampler daemons are up.
+2025-09-18 18:02:59,255 TADA INFO assertion 1, aggregator with store_sos has started properly.: agg_sos.check_ldmsd(), passed
+2025-09-18 18:02:59,377 TADA INFO assertion 2, aggregator with store_csv has started properly.: agg_csv.check_ldmsd(), passed
+2025-09-18 18:03:00,748 TADA INFO assertion 3, store_sos is storing data.: file_exists(a) for a in supported_schema, passed
+2025-09-18 18:03:01,515 TADA INFO assertion 4, store_sos stores data correctly.: verify_data(db) for db in all_db, passed
+2025-09-18 18:03:10,809 TADA INFO assertion 5, store_sos stores data after restarted correctly.: verify_data(db) for db in all_db, passed
+2025-09-18 18:03:11,488 TADA INFO assertion 6, store_sos reports multiple list errror messages resulted by the config file.: store_sos reported the multiple list error messages., passed
+2025-09-18 18:03:16,601 TADA INFO assertion 7, store_sos reports multiple list errror messages resulted by ldmsd_controller.: store_sos reported the multiple list error messages., passed
+2025-09-18 18:03:16,960 TADA INFO assertion 8, store_csv is storing data.: file_exists(a) for a in supported_schema, passed
+2025-09-18 18:03:23,530 TADA INFO assertion 9, store_csv stores data correctly.: verify_data(db) for db in all_db, passed
+2025-09-18 18:03:33,367 TADA INFO assertion 10, store_csv stores data after restarted correctly.: verify_data(db) for db in all_db, passed
+2025-09-18 18:03:34,014 TADA INFO assertion 11, store_csv reports multiple list errror messages resulted by the config file.: store_csv reported the multiple list error messages., passed
+2025-09-18 18:03:39,141 TADA INFO assertion 12, store_csv reports multiple list errror messages resulted by ldmsd_controller.: store_csv reported the multiple list error messages., passed
+2025-09-18 18:03:39,141 TADA INFO test store_sos_lists_test ended

@@ -1,4 +1,16 @@
-Traceback (most recent call last):
-  File "ldmsd_stream_rate_test", line 33, in <module>
-    from LDMS_Test import LDMSDCluster, LDMSDContainer, process_args, \
-ImportError: cannot import name 'StreamData'
+2025-09-18 18:49:37,779 TADA INFO starting test `ldmsd_stream_rate_test`
+2025-09-18 18:49:37,780 TADA INFO   test-id: 248730e1ae1dcea928a30c6c6dded12d2e8faf9565b3d0a00051cc5b2634de76
+2025-09-18 18:49:37,780 TADA INFO   test-suite: LDMSD
+2025-09-18 18:49:37,780 TADA INFO   test-name: ldmsd_stream_rate_test
+2025-09-18 18:49:37,780 TADA INFO   test-user: narate
+2025-09-18 18:49:37,780 TADA INFO   commit-id: 3d139ff2aced2e98e47b1440ab414615384d1f50
+2025-09-18 18:49:37,780 __main__ INFO -- Get or create the cluster --
+2025-09-18 18:49:51,248 __main__ INFO -- Start daemons --
+2025-09-18 18:50:08,293 __main__ INFO ... wait a bit to make sure ldmsd's are up
+2025-09-18 18:50:10,295 root INFO starting python /tada-src/python/pypubsub.py on narate-ldmsd_stream_rate_test-3d139ff-samp 
+2025-09-18 18:50:12,513 root INFO starting python /tada-src/python/pypubsub.py on narate-ldmsd_stream_rate_test-3d139ff-agg-1 
+2025-09-18 18:50:25,245 TADA INFO assertion 1, Sampler cannot publish all data (prdcr rate limit): received msg data 34 is limited by prdcr rx_rate, passed
+2025-09-18 18:50:25,246 TADA INFO assertion 2, After the wait, the sampler can publish: msg data received, passed
+2025-09-18 18:50:25,246 TADA INFO assertion 3, Sampler cannot publish all data (msg rate limit): received msg data 34 is limited by msg rx_rate, passed
+2025-09-18 18:50:25,247 TADA INFO assertion 4, After the wait, the sampler can publish: msg data received, passed
+2025-09-18 18:50:25,247 TADA INFO test ldmsd_stream_rate_test ended
