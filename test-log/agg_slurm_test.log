@@ -1,32 +1,32 @@
-2025-09-18 19:15:34,364 TADA INFO starting test `agg_slurm_test`
-2025-09-18 19:15:34,365 TADA INFO   test-id: dcdedd3b3d9d8e97069eeccfb63b1a6babcd0480cc07f19c6acc9c2e3b11a518
-2025-09-18 19:15:34,365 TADA INFO   test-suite: LDMSD
-2025-09-18 19:15:34,365 TADA INFO   test-name: agg_slurm_test
-2025-09-18 19:15:34,365 TADA INFO   test-user: narate
-2025-09-18 19:15:34,365 TADA INFO   commit-id: 3d139ff2aced2e98e47b1440ab414615384d1f50
-2025-09-18 19:15:34,366 __main__ INFO -- Get or create the cluster --
-2025-09-18 19:16:01,106 __main__ INFO -- Preparing syspapi JSON file --
-2025-09-18 19:16:01,207 __main__ INFO -- Preparing jobpapi JSON file --
-2025-09-18 19:16:01,306 __main__ INFO -- Preparing job script & programs --
-2025-09-18 19:16:02,696 __main__ INFO -- Start daemons --
-2025-09-18 19:16:50,306 __main__ INFO ... wait a bit to make sure ldmsd's are up
-2025-09-18 19:16:55,310 __main__ INFO -- ldms_ls to agg-2 --
-2025-09-18 19:16:55,430 TADA INFO assertion 1, ldms_ls agg-2: dir result verified, passed
-2025-09-18 19:16:55,573 __main__ INFO -- Give syspapi some time to work before submitting job --
-2025-09-18 19:17:00,577 __main__ INFO -- Submitting jobs --
-2025-09-18 19:17:00,711 __main__ INFO job_one: 1
-2025-09-18 19:17:00,834 __main__ INFO job_two: 2
-2025-09-18 19:17:10,841 __main__ INFO -- Cancelling jobs --
-2025-09-18 19:17:10,841 __main__ INFO job_one: 1
-2025-09-18 19:17:10,984 __main__ INFO job_two: 2
+2025-09-21 03:00:24,250 TADA INFO starting test `agg_slurm_test`
+2025-09-21 03:00:24,250 TADA INFO   test-id: d98dfb98d0c2b1c45117b783115503539633316846b2ceffbb90d94b2ae40efb
+2025-09-21 03:00:24,250 TADA INFO   test-suite: LDMSD
+2025-09-21 03:00:24,251 TADA INFO   test-name: agg_slurm_test
+2025-09-21 03:00:24,251 TADA INFO   test-user: narate
+2025-09-21 03:00:24,251 TADA INFO   commit-id: cfced96df22a7a0bea7fcec8b8057a833ea16373
+2025-09-21 03:00:24,252 __main__ INFO -- Get or create the cluster --
+2025-09-21 03:00:51,425 __main__ INFO -- Preparing syspapi JSON file --
+2025-09-21 03:00:51,551 __main__ INFO -- Preparing jobpapi JSON file --
+2025-09-21 03:00:51,671 __main__ INFO -- Preparing job script & programs --
+2025-09-21 03:00:53,083 __main__ INFO -- Start daemons --
+2025-09-21 03:01:40,795 __main__ INFO ... wait a bit to make sure ldmsd's are up
+2025-09-21 03:01:45,801 __main__ INFO -- ldms_ls to agg-2 --
+2025-09-21 03:01:45,944 TADA INFO assertion 1, ldms_ls agg-2: dir result verified, passed
+2025-09-21 03:01:46,065 __main__ INFO -- Give syspapi some time to work before submitting job --
+2025-09-21 03:01:51,069 __main__ INFO -- Submitting jobs --
+2025-09-21 03:01:51,200 __main__ INFO job_one: 1
+2025-09-21 03:01:51,353 __main__ INFO job_two: 2
+2025-09-21 03:02:01,361 __main__ INFO -- Cancelling jobs --
+2025-09-21 03:02:01,361 __main__ INFO job_one: 1
+2025-09-21 03:02:01,500 __main__ INFO job_two: 2
 Traceback (most recent call last):
-  File "agg_slurm_test", line 576, in <module>
+  File "agg_slurm_test", line 577, in <module>
     papi_tot_cyc = sos_query(agg2, "/{}/papi/papi".format(STORE_ROOT), "PAPI_TOT_CYC", "time_job")
-  File "agg_slurm_test", line 520, in sos_query
+  File "agg_slurm_test", line 521, in sos_query
     raise RuntimeError("sos_cmd error {}, out: {}".format(rc, out))
 RuntimeError: sos_cmd error 1, out: Error 2 opening the container //store/papi/papi.
 
-2025-09-18 19:18:22,266 TADA INFO assertion 2, slurm data verification: skipped
-2025-09-18 19:18:22,266 TADA INFO assertion 3, meminfo data verification: skipped
-2025-09-18 19:18:22,266 TADA INFO assertion 4, (SYS/JOB) PAPI data verification: skipped
-2025-09-18 19:18:22,267 TADA INFO test agg_slurm_test ended
+2025-09-21 03:03:12,727 TADA INFO assertion 2, slurm data verification: skipped
+2025-09-21 03:03:12,727 TADA INFO assertion 3, meminfo data verification: skipped
+2025-09-21 03:03:12,728 TADA INFO assertion 4, (SYS/JOB) PAPI data verification: skipped
+2025-09-21 03:03:12,728 TADA INFO test agg_slurm_test ended

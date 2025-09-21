@@ -1,20 +1,20 @@
-2025-09-18 18:03:54,656 TADA INFO starting test `maestro_raft_test`
-2025-09-18 18:03:54,656 TADA INFO   test-id: 6823b41f98d6b5dfbad41e5516bdeac010619fe6fcc4131a947f3e555638921e
-2025-09-18 18:03:54,656 TADA INFO   test-suite: LDMSD
-2025-09-18 18:03:54,657 TADA INFO   test-name: maestro_raft_test
-2025-09-18 18:03:54,657 TADA INFO   test-user: narate
-2025-09-18 18:03:54,657 TADA INFO   commit-id: 3d139ff2aced2e98e47b1440ab414615384d1f50
-2025-09-18 18:04:04,666 __main__ INFO -- Get or create cluster --
-2025-09-18 18:05:03,269 __main__ INFO -- Start daemons --
-2025-09-18 18:06:39,345 __main__ INFO -- making known hosts (ssh) --
-2025-09-18 18:06:46,560 __main__ INFO ... make sure ldmsd's are up
-2025-09-18 18:07:01,976 __main__ INFO Wait a bit for all maestro daemons to sync...
-2025-09-18 18:07:12,679 TADA INFO assertion 1, Statuses of maestros, 1 leader + 2 followers: [('FOLLOWER', 2), ('LEADER', 1)], passed
-2025-09-18 18:07:25,312 TADA INFO assertion 2, All ldmsds are up and configured: sets verified, passed
-2025-09-18 18:07:25,653 TADA INFO assertion 3, Data are being stored: data check, passed
-2025-09-18 18:07:30,591 TADA INFO assertion 4, New leader elected: checked, passed
-2025-09-18 18:07:38,062 __main__ INFO Wait a bit for agg4 reconfiguration ...
-2025-09-18 18:08:40,782 TADA INFO assertion 5, Restarted ldmsd is configured: agg4: expecting ['samp1/meminfo', 'samp2/meminfo', 'samp3/meminfo', 'samp4/meminfo', 'samp5/meminfo', 'samp6/meminfo', 'samp7/meminfo', 'samp8/meminfo'], but got [], failed
+2025-09-21 01:48:17,192 TADA INFO starting test `maestro_raft_test`
+2025-09-21 01:48:17,192 TADA INFO   test-id: dbf8f70be1b271ea75e2940be9e7438665fd5309df651c166cddb6bc647323c7
+2025-09-21 01:48:17,192 TADA INFO   test-suite: LDMSD
+2025-09-21 01:48:17,193 TADA INFO   test-name: maestro_raft_test
+2025-09-21 01:48:17,193 TADA INFO   test-user: narate
+2025-09-21 01:48:17,193 TADA INFO   commit-id: cfced96df22a7a0bea7fcec8b8057a833ea16373
+2025-09-21 01:48:27,205 __main__ INFO -- Get or create cluster --
+2025-09-21 01:49:24,693 __main__ INFO -- Start daemons --
+2025-09-21 01:51:00,597 __main__ INFO -- making known hosts (ssh) --
+2025-09-21 01:51:07,702 __main__ INFO ... make sure ldmsd's are up
+2025-09-21 01:51:25,364 __main__ INFO Wait a bit for all maestro daemons to sync...
+2025-09-21 01:51:36,076 TADA INFO assertion 1, Statuses of maestros, 1 leader + 2 followers: [('FOLLOWER', 2), ('LEADER', 1)], passed
+2025-09-21 01:51:48,770 TADA INFO assertion 2, All ldmsds are up and configured: sets verified, passed
+2025-09-21 01:51:49,057 TADA INFO assertion 3, Data are being stored: data check, passed
+2025-09-21 01:51:54,036 TADA INFO assertion 4, New leader elected: checked, passed
+2025-09-21 01:52:01,544 __main__ INFO Wait a bit for agg4 reconfiguration ...
+2025-09-21 01:53:04,221 TADA INFO assertion 5, Restarted ldmsd is configured: agg4: expecting ['samp1/meminfo', 'samp2/meminfo', 'samp3/meminfo', 'samp4/meminfo', 'samp5/meminfo', 'samp6/meminfo', 'samp7/meminfo', 'samp8/meminfo'], but got [], failed
 ---Wait for config to write to file---
 Traceback (most recent call last):
   File "maestro_raft_test", line 518, in <module>
@@ -24,6 +24,6 @@ Traceback (most recent call last):
   File "/home/narate/cron/ldms-test/TADA.py", line 157, in assert_test
     raise AssertionException(self.test_desc + ", " + cond_str + ": FAILED")
 TADA.AssertionException: Test maestros on RAFT, agg4: expecting ['samp1/meminfo', 'samp2/meminfo', 'samp3/meminfo', 'samp4/meminfo', 'samp5/meminfo', 'samp6/meminfo', 'samp7/meminfo', 'samp8/meminfo'], but got []: FAILED
-2025-09-18 18:08:40,783 TADA INFO assertion 6, New data are presented in the store: skipped
-2025-09-18 18:08:40,784 TADA INFO assertion 7, The restarted maestro becomes a follower: skipped
-2025-09-18 18:08:40,784 TADA INFO test maestro_raft_test ended
+2025-09-21 01:53:04,223 TADA INFO assertion 6, New data are presented in the store: skipped
+2025-09-21 01:53:04,223 TADA INFO assertion 7, The restarted maestro becomes a follower: skipped
+2025-09-21 01:53:04,223 TADA INFO test maestro_raft_test ended
