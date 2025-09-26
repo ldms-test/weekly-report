@@ -1,83 +1,19 @@
-2025-09-23 02:34:43,927 TADA INFO starting test `ldms_ipv6_test`
-2025-09-23 02:34:43,927 TADA INFO   test-id: e4c5f99fc3969ae87ab9d4c9484c41da62c10df8741f702f00d22bc17272c9fe
-2025-09-23 02:34:43,927 TADA INFO   test-suite: LDMSD
-2025-09-23 02:34:43,928 TADA INFO   test-name: ldms_ipv6_test
-2025-09-23 02:34:43,928 TADA INFO   test-user: narate
-2025-09-23 02:34:43,928 TADA INFO   commit-id: 78ba55b27cfd1e8aef5573bf98cab649a67fbc93
-2025-09-23 02:34:43,928 __main__ INFO -- Get or create the cluster --
-Traceback (most recent call last):
-  File "/usr/lib/python3.6/site-packages/docker/api/client.py", line 261, in _raise_for_status
-    response.raise_for_status()
-  File "/usr/lib/python3.6/site-packages/requests/models.py", line 941, in raise_for_status
-    raise HTTPError(http_error_msg, response=self)
-requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http+docker://localhost/v1.35/networks/narate-ldms_ipv6_test-78ba55b
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/home/narate/cron/ldms-test/runtime/docker.py", line 838, in _get
-    net = dc.networks.get(name)
-  File "/usr/lib/python3.6/site-packages/docker/models/networks.py", line 180, in get
-    self.client.api.inspect_network(network_id, *args, **kwargs)
-  File "/usr/lib/python3.6/site-packages/docker/utils/decorators.py", line 19, in wrapped
-    return f(self, resource_id, *args, **kwargs)
-  File "/usr/lib/python3.6/site-packages/docker/api/network.py", line 213, in inspect_network
-    return self._result(res, json=True)
-  File "/usr/lib/python3.6/site-packages/docker/api/client.py", line 267, in _result
-    self._raise_for_status(response)
-  File "/usr/lib/python3.6/site-packages/docker/api/client.py", line 263, in _raise_for_status
-    raise create_api_error_from_http_exception(e)
-  File "/usr/lib/python3.6/site-packages/docker/errors.py", line 31, in create_api_error_from_http_exception
-    raise cls(e, response=response, explanation=explanation)
-docker.errors.NotFound: 404 Client Error: Not Found ("network narate-ldms_ipv6_test-78ba55b not found")
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/home/narate/cron/ldms-test/LDMS_Test.py", line 2009, in get
-    cluster = _cls._get(name)
-  File "/home/narate/cron/ldms-test/runtime/docker.py", line 841, in _get
-    raise LookupError()
-LookupError
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/usr/lib/python3.6/site-packages/docker/api/client.py", line 261, in _raise_for_status
-    response.raise_for_status()
-  File "/usr/lib/python3.6/site-packages/requests/models.py", line 941, in raise_for_status
-    raise HTTPError(http_error_msg, response=self)
-requests.exceptions.HTTPError: 500 Server Error: Internal Server Error for url: http+docker://localhost/v1.35/containers/4362c4e793823c87113098ff9f5b2c11f7f41c5031e85d62636d501305775b2f/start
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "ldms_ipv6_test", line 249, in <module>
-    cluster = LDMSDCluster.get(spec["name"], create = True, spec = spec)
-  File "/home/narate/cron/ldms-test/LDMS_Test.py", line 2016, in get
-    return _cls.create(spec)
-  File "/home/narate/cron/ldms-test/LDMS_Test.py", line 1987, in create
-    cluster = _cls._create(spec)
-  File "/home/narate/cron/ldms-test/runtime/docker.py", line 513, in _create
-    return cls.__create(spec=sp, **kwargs)
-  File "/home/narate/cron/ldms-test/runtime/docker.py", line 730, in __create
-    cont.start()
-  File "/usr/lib/python3.6/site-packages/docker/models/containers.py", line 400, in start
-    return self.client.api.start(self.id, **kwargs)
-  File "/usr/lib/python3.6/site-packages/docker/utils/decorators.py", line 19, in wrapped
-    return f(self, resource_id, *args, **kwargs)
-  File "/usr/lib/python3.6/site-packages/docker/api/container.py", line 1095, in start
-    self._raise_for_status(res)
-  File "/usr/lib/python3.6/site-packages/docker/api/client.py", line 263, in _raise_for_status
-    raise create_api_error_from_http_exception(e)
-  File "/usr/lib/python3.6/site-packages/docker/errors.py", line 31, in create_api_error_from_http_exception
-    raise cls(e, response=response, explanation=explanation)
-docker.errors.APIError: 500 Server Error: Internal Server Error ("attaching to network failed, make sure your network options are correct and check manager logs: context deadline exceeded")
-2025-09-23 02:35:10,688 TADA INFO assertion 1, ldms_ls to samp using IPv6: skipped
-2025-09-23 02:35:10,689 TADA INFO assertion 2, ldms_ls to agg-2 using IPv6: skipped
-2025-09-23 02:35:10,689 TADA INFO assertion 3, ldms_ls to agg-2 contains 'samp/meminfo': skipped
-2025-09-23 02:35:10,689 TADA INFO assertion 4, python msg publish using IPv6: skipped
-2025-09-23 02:35:10,689 TADA INFO assertion 5, python msg subscribe using IPv6: skipped
-2025-09-23 02:35:10,689 TADA INFO assertion 6, steam data contain IPv6 addressing: skipped
-2025-09-23 02:35:10,689 TADA INFO assertion 7, msg stats reported IPv6 addresses: skipped
-2025-09-23 02:35:10,690 TADA INFO test ldms_ipv6_test ended
+2025-09-26 02:35:38,757 TADA INFO starting test `ldms_ipv6_test`
+2025-09-26 02:35:38,757 TADA INFO   test-id: a97cfe47e1412198b96fa075db5b85c6d0031b6b1723abee92308d710876bd00
+2025-09-26 02:35:38,757 TADA INFO   test-suite: LDMSD
+2025-09-26 02:35:38,757 TADA INFO   test-name: ldms_ipv6_test
+2025-09-26 02:35:38,757 TADA INFO   test-user: narate
+2025-09-26 02:35:38,757 TADA INFO   commit-id: 9fa021d0507dffc0d4b13aef5dc76c00beadf0f3
+2025-09-26 02:35:38,758 __main__ INFO -- Get or create the cluster --
+2025-09-26 02:35:56,106 __main__ INFO -- Start daemons --
+2025-09-26 02:36:22,665 __main__ INFO ... wait a bit to make sure ldmsd's are up
+2025-09-26 02:36:24,668 root INFO starting python /tada-src/python/pypubsub.py on narate-ldms_ipv6_test-9fa021d-samp 
+2025-09-26 02:36:26,886 root INFO starting python /tada-src/python/pypubsub.py on narate-ldms_ipv6_test-9fa021d-agg-2 
+2025-09-26 02:36:31,251 TADA INFO assertion 1, ldms_ls to samp using IPv6: expecting ['fd00:0:0:1::5'], got ['fd00:0:0:1::5'], passed
+2025-09-26 02:36:31,354 TADA INFO assertion 2, ldms_ls to agg-2 using IPv6: expecting ['fd00:0:0:1::5'], got ['fd00:0:0:1::5'], passed
+2025-09-26 02:36:31,355 TADA INFO assertion 3, ldms_ls to agg-2 contains 'samp/meminfo': samp/meminfo found, passed
+2025-09-26 02:36:34,360 TADA INFO assertion 4, python msg publish using IPv6: verified, passed
+2025-09-26 02:36:37,365 TADA INFO assertion 5, python msg subscribe using IPv6: verified, passed
+2025-09-26 02:36:37,867 TADA INFO assertion 6, steam data contain IPv6 addressing: expecting fd00:0:0:1::5, got fd00:0:0:1::5, passed
+2025-09-26 02:36:38,168 TADA INFO assertion 7, msg stats reported IPv6 addresses: Expecting fd00:0:0:1::3, got fd00:0:0:1::3, passed
+2025-09-26 02:36:38,169 TADA INFO test ldms_ipv6_test ended
