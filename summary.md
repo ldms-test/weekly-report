@@ -15,7 +15,7 @@ Test Summary
 * [set_array_test](test-log/set_array_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
 * [setgroup_test](test-log/setgroup_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
 * [slurm_stream_test](test-log/slurm_stream_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
-* [spank_notifier_test](test-log/spank_notifier_test.log): $\textcolor{red}{\text{FAILED}}$
+* [spank_notifier_test](test-log/spank_notifier_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
 * [ldms_list_test](test-log/ldms_list_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
 * [quick_set_add_rm_test](test-log/quick_set_add_rm_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
 * [set_array_hang_test](test-log/set_array_hang_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
@@ -37,10 +37,10 @@ Test Summary
 * [updtr_start_test](test-log/updtr_start_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
 * [updtr_status_test](test-log/updtr_status_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
 * [updtr_stop_test](test-log/updtr_stop_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
-* [ldmsd_flex_decomp_test](test-log/ldmsd_flex_decomp_test.log): $\textcolor{red}{\text{FAILED}}$
+* [ldmsd_flex_decomp_test](test-log/ldmsd_flex_decomp_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
 * [ldms_set_info_test](test-log/ldms_set_info_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
 * [slurm_sampler2_test](test-log/slurm_sampler2_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
-* [libovis_log_test](test-log/libovis_log_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
+* [libovis_log_test](test-log/libovis_log_test.log): $\textcolor{red}{\text{FAILED}}$
 * [ldmsd_long_config_test](test-log/ldmsd_long_config_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
 * [ldms_rail_test](test-log/ldms_rail_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
 * [ldmsd_rail_test](test-log/ldmsd_rail_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
@@ -56,7 +56,7 @@ Test Summary
 * [ldmsd_decomp_static_rowcache_test](test-log/ldmsd_decomp_static_rowcache_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
 * [json_stream_sampler_test](test-log/json_stream_sampler_test.log): $\textcolor{red}{\text{FAILED}}$
 * [ldms_qgroup_test](test-log/ldms_qgroup_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
-* [ldmsd_qgroup_test](test-log/ldmsd_qgroup_test.log): $\textcolor{red}{\text{FAILED}}$
+* [ldmsd_qgroup_test](test-log/ldmsd_qgroup_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
 * [ldmsd_sampler_exclusive_thread_test](test-log/ldmsd_sampler_exclusive_thread_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
 * [peer_daemon_advertisement_test](test-log/peer_daemon_advertisement_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
 * [agg_slurm_test](test-log/agg_slurm_test.log): $\textcolor{red}{\text{FAILED}}$
@@ -66,5 +66,5 @@ Test Summary
 * [syspapi_test](test-log/syspapi_test.log): $\textcolor{lightgreen}{\text{PASSED}}$
 * [cont-test-ldms](test-log/cont-test-ldms.log): $\textcolor{lightgreen}{\text{PASSED}}$
 * [cont-test-maestro](test-log/cont-test-maestro.log): $\textcolor{lightgreen}{\text{PASSED}}$
-* [cont-test-maestro-hostmunge](test-log/cont-test-maestro-hostmunge.log): $\textcolor{lightgreen}{\text{PASSED}}$
+* [cont-test-maestro-hostmunge](test-log/cont-test-maestro-hostmunge.log): $\textcolor{red}{\text{FAILED}}$
 * [cont-test-maestro-munge](test-log/cont-test-maestro-munge.log): $\textcolor{lightgreen}{\text{PASSED}}$
